@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projecten — Denjoy IT</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.proj-hero {
+  background: var(--dark);
+  padding: 5rem 2.5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.proj-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,107,43,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,107,43,0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.proj-hero-inner { position: relative; z-index: 1; }
+
+.proj-hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.proj-hero h1 em { font-style: normal; color: var(--orange); }
+
+.proj-hero p {
+  font-size: 0.975rem;
+  color: rgba(255,255,255,0.42);
+  line-height: 1.75;
+  max-width: 50ch;
+}
+
+/* Filter tabs */
+.filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.38rem 0.9rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: transparent;
+  color: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: all 0.18s;
+  letter-spacing: 0.04em;
+}
+
+.filter-btn:hover { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.7); }
+.filter-btn.active { background: var(--orange); border-color: var(--orange); color: var(--white); }
+
+/* Projects full list */
+.projects-section { padding: 4rem 2.5rem 6rem; }
+
+.proj-full-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.pf-card {
+  background: var(--white);
+  border: 1px solid var(--border-l);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.22s, box-shadow 0.22s, transform 0.22s;
+  cursor: default;
+}
+
+.pf-card:hover {
+  border-color: var(--orange);
+  box-shadow: 0 6px 28px var(--orange-glow);
+  transform: translateY(-3px);
+}
+
+.pf-thumb {
+  background: var(--dark);
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pf-thumb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,107,43,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,107,43,0.04) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Abstract thumb illustrations */
+.thumb-bars {
+  position: relative; z-index: 1;
+  display: flex; gap: 5px; align-items: flex-end;
+}
+
+.tb { width: 9px; border-radius: 3px 3px 0 0; background: var(--orange); }
+
+.thumb-terminal {
+  position: relative; z-index: 1;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.thumb-terminal .tc-green { color: var(--green); }
+.thumb-terminal .tc-dim { color: rgba(255,255,255,0.25); }
+.thumb-terminal .tc-orange { color: var(--orange); }
+
+.thumb-grid-abs {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5px;
+}
+
+.tga { width: 44px; height: 30px; border-radius: 5px; background: rgba(255,107,43,0.18); border: 1px solid rgba(255,107,43,0.28); }
+.tga.on { background: rgba(255,107,43,0.45); border-color: var(--orange); }
+
+.thumb-agents {
+  position: relative; z-index: 1;
+  display: flex; gap: 6px; flex-wrap: wrap; width: 140px;
+}
+
+.ta-dot {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,107,43,0.35);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.ta-dot.active { border-color: var(--orange); background: var(--orange-dim); }
+.ta-dot-inner { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); }
+
+.thumb-flow {
+  position: relative; z-index: 1;
+  display: flex; align-items: center; gap: 6px;
+}
+
+.tf-box {
+  width: 32px; height: 22px;
+  border: 1.5px solid rgba(255,107,43,0.4);
+  border-radius: 4px;
+}
+
+.tf-box.active { border-color: var(--orange); background: var(--orange-dim); }
+
+.tf-arrow {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: rgba(255,107,43,0.5);
+}
+
+.pf-body { padding: 1.5rem; }
+
+.pf-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.pf-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+.pf-year {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--muted);
+}
+
+.pf-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.55rem;
+}
+
+.pf-desc {
+  font-size: 0.845rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 1.1rem;
+}
+
+.pf-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-l);
+}
+
+.pf-stack-label {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  width: 100%;
+  margin-bottom: 0.2rem;
+}
+
+/* featured card - full width */
+.pf-card.featured {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.pf-card.featured .pf-thumb { height: auto; min-height: 240px; }
+
+@media (max-width: 820px) {
+  .proj-full-grid { grid-template-columns: 1fr; }
+  .pf-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+  .pf-card.featured .pf-thumb { height: 160px; }
+}
+</style>
+</head>
+<body>
+<div class="site-wrap">
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="logo-mark"></div>
+    <span class="logo-text">Denjoy<span>.IT</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#diensten">Diensten</a></li>
+    <li><a href="index.html#werkwijze">Werkwijze</a></li>
+    <li><a href="projects.html" class="active">Projecten</a></li>
+    <li><a href="about.html">Over</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="proj-hero">
+  <div class="proj-hero-inner reveal">
+    <div class="section-label">Portfolio</div>
+    <h1>Gebouwde <em>applicaties</em><br>& tools.</h1>
+    <p>Van multi-tenant security portals tot PowerShell dashboards — een overzicht van webapps en tools die ik heb gebouwd voor mijn MSP-praktijk en klanten.</p>
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filter('all', this)">Alles</button>
+      <button class="filter-btn" onclick="filter('react', this)">React</button>
+      <button class="filter-btn" onclick="filter('powershell', this)">PowerShell</button>
+      <button class="filter-btn" onclick="filter('api', this)">API / Backend</button>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects-section">
+  <div class="proj-full-grid" id="projGrid">
+
+    <!-- FEATURED -->
+    <div class="pf-card featured reveal" data-cat="react api">
+      <div class="pf-thumb">
+        <div class="dashboard-mock" style="width:90%;margin:1.5rem auto;box-shadow:none;border-radius:10px;overflow:hidden">
+          <div class="mock-bar" style="padding:0.5rem 0.9rem">
+            <div class="mdot r"></div><div class="mdot y"></div><div class="mdot g"></div>
+            <div class="mock-url-bar" style="font-size:0.6rem">portal.denjoy.nl/dashboard</div>
+          </div>
+          <div class="mock-body" style="min-height:170px">
+            <div class="mock-sidebar" style="padding:0.8rem 0.6rem;gap:0.2rem">
+              <div class="mock-nav-item active" style="font-size:0.7rem;padding:0.4rem 0.6rem"><div class="mnav-sq"></div>Overzicht</div>
+              <div class="mock-nav-item" style="font-size:0.7rem;padding:0.4rem 0.6rem"><div class="mnav-sq"></div>Tenants</div>
+              <div class="mock-nav-item" style="font-size:0.7rem;padding:0.4rem 0.6rem"><div class="mnav-sq"></div>Security</div>
+              <div class="mock-nav-item" style="font-size:0.7rem;padding:0.4rem 0.6rem"><div class="mnav-sq"></div>Licenties</div>
+            </div>
+            <div class="mock-content" style="padding:0.8rem;gap:0.5rem">
+              <div class="mcard" style="padding:0.7rem"><div class="mcard-label">Secure Score</div><div class="mcard-val green" style="font-size:1.3rem">87%</div></div>
+              <div class="mcard" style="padding:0.7rem"><div class="mcard-label">MFA</div><div class="mcard-val green" style="font-size:1.3rem">100%</div></div>
+              <div class="mcard" style="padding:0.7rem"><div class="mcard-label">Alerts</div><div class="mcard-val orange" style="font-size:1.3rem">0</div></div>
+              <div class="mcard wide" style="padding:0.7rem">
+                <div class="mcard-label">Tenant Gezondheid</div>
+                <div class="mbar-row"><span class="mbar-label">Tenant A</span><div class="mbar-track"><div class="mbar-fill green" data-w="94"></div></div><span class="mbar-pct">94%</span></div>
+                <div class="mbar-row"><span class="mbar-label">Tenant B</span><div class="mbar-track"><div class="mbar-fill orange" data-w="87"></div></div><span class="mbar-pct">87%</span></div>
+              </div>
+              <div class="mcard" style="padding:0.7rem"><div class="mcard-label">CA Policies</div><div class="mcard-val" style="font-size:1.3rem">14</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pf-body" style="display:flex;flex-direction:column;justify-content:center">
+        <div class="pf-meta">
+          <div class="pf-tags"><span class="tag">Featured</span></div>
+          <span class="pf-year">2024</span>
+        </div>
+        <div class="pf-title">M365 MSP Security Portal</div>
+        <p class="pf-desc">Multi-tenant monitoring dashboard voor MSP-klanten. Real-time inzicht in Secure Score, alerts, licentiegebruik en compliance-status per tenant. Gebouwd met React frontend en FastAPI backend, volledig gekoppeld via Microsoft Graph API.</p>
+        <div class="pf-stack">
+          <span class="pf-stack-label">Stack</span>
+          <span class="tag-muted">React</span>
+          <span class="tag-muted">FastAPI</span>
+          <span class="tag-muted">Microsoft Graph</span>
+          <span class="tag-muted">Python</span>
+          <span class="tag-muted">Docker</span>
+          <span class="tag-muted">Proxmox</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PSHub -->
+    <div class="pf-card reveal rd1" data-cat="react powershell">
+      <div class="pf-thumb">
+        <div class="thumb-terminal">
+          <span class="tc-dim">$ </span><span class="tc-orange">Connect-PSHub</span><br>
+          <span class="tc-green">✓ Multi-tenant ready</span><br>
+          <span class="tc-dim">Select tenant: </span><span class="tc-orange">Contoso</span><br>
+          <span class="tc-green">✓ Script loaded</span><br>
+          <span class="tc-dim">Running...</span>
+        </div>
+      </div>
+      <div class="pf-body">
+        <div class="pf-meta">
+          <div class="pf-tags"><span class="tag">React</span><span class="tag">PowerShell</span></div>
+          <span class="pf-year">2024</span>
+        </div>
+        <div class="pf-title">PSHub PowerShell Dashboard</div>
+        <p class="pf-desc">Browsergebaseerde PowerShell management portal. Multi-tenant, real-time script-executie via WebSockets, rapportage per klant. Volledig beheer zonder RDP of lokale tooling.</p>
+        <div class="pf-stack">
+          <span class="pf-stack-label">Stack</span>
+          <span class="tag-muted">React</span>
+          <span class="tag-muted">WebSockets</span>
+          <span class="tag-muted">PowerShell</span>
+          <span class="tag-muted">Multi-tenant</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Denjoy Dashboard -->
+    <div class="pf-card reveal rd2" data-cat="react api">
+      <div class="pf-thumb">
+        <div class="thumb-grid-abs">
+          <div class="tga on"></div><div class="tga"></div>
+          <div class="tga on"></div><div class="tga on"></div>
+        </div>
+      </div>
+      <div class="pf-body">
+        <div class="pf-meta">
+          <div class="pf-tags"><span class="tag">React</span><span class="tag">MSAL</span></div>
+          <span class="pf-year">2024</span>
+        </div>
+        <div class="pf-title">Denjoy IT Dashboard</div>
+        <p class="pf-desc">Entra Portal-integratie met custom Denjoy-branding. MSAL-authenticatie, card-based tenant overview en realtime data via Microsoft Graph API.</p>
+        <div class="pf-stack">
+          <span class="pf-stack-label">Stack</span>
+          <span class="tag-muted">React</span>
+          <span class="tag-muted">MSAL</span>
+          <span class="tag-muted">Entra ID</span>
+          <span class="tag-muted">Graph API</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Skills Coach -->
+    <div class="pf-card reveal rd1" data-cat="react api">
+      <div class="pf-thumb">
+        <div class="thumb-agents">
+          <div class="ta-dot active"><div class="ta-dot-inner"></div></div>
+          <div class="ta-dot active"><div class="ta-dot-inner"></div></div>
+          <div class="ta-dot"><div class="ta-dot-inner" style="opacity:0.3"></div></div>
+          <div class="ta-dot active"><div class="ta-dot-inner"></div></div>
+          <div class="ta-dot"><div class="ta-dot-inner" style="opacity:0.3"></div></div>
+          <div class="ta-dot active"><div class="ta-dot-inner"></div></div>
+          <div class="ta-dot active"><div class="ta-dot-inner"></div></div>
+          <div class="ta-dot"><div class="ta-dot-inner" style="opacity:0.3"></div></div>
+          <div class="ta-dot active"><div class="ta-dot-inner"></div></div>
+        </div>
+      </div>
+      <div class="pf-body">
+        <div class="pf-meta">
+          <div class="pf-tags"><span class="tag">React</span><span class="tag">AI</span></div>
+          <span class="pf-year">2025</span>
+        </div>
+        <div class="pf-title">AI Skills Coach</div>
+        <p class="pf-desc">React-applicatie met 9 gespecialiseerde AI-coaching agents. Nederlandstalige interface, Master Prompt skill voor cross-platform AI-profiel opbouw via Claude API.</p>
+        <div class="pf-stack">
+          <span class="pf-stack-label">Stack</span>
+          <span class="tag-muted">React</span>
+          <span class="tag-muted">TypeScript</span>
+          <span class="tag-muted">Claude API</span>
+          <span class="tag-muted">Vite</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Intune Toolkit -->
+    <div class="pf-card reveal rd2" data-cat="react api">
+      <div class="pf-thumb">
+        <div class="thumb-flow">
+          <div class="tf-box active"></div>
+          <span class="tf-arrow">→</span>
+          <div class="tf-box active"></div>
+          <span class="tf-arrow">→</span>
+          <div class="tf-box"></div>
+          <span class="tf-arrow">→</span>
+          <div class="tf-box active"></div>
+        </div>
+      </div>
+      <div class="pf-body">
+        <div class="pf-meta">
+          <div class="pf-tags"><span class="tag">React</span><span class="tag">Intune</span></div>
+          <span class="pf-year">2024</span>
+        </div>
+        <div class="pf-title">Intune Toolkit (WPF → Web)</div>
+        <p class="pf-desc">Conversie van MG-Cloudflow WPF PowerShell toolkit naar React webapp. MSAL.js authenticatie, Intune Graph API, policy-beheer volledig via de browser.</p>
+        <div class="pf-stack">
+          <span class="pf-stack-label">Stack</span>
+          <span class="tag-muted">React</span>
+          <span class="tag-muted">MSAL.js</span>
+          <span class="tag-muted">Intune API</span>
+          <span class="tag-muted">Graph API</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tenant Discovery -->
+    <div class="pf-card reveal rd1" data-cat="powershell">
+      <div class="pf-thumb">
+        <div class="thumb-terminal">
+          <span class="tc-dim">PS> </span><span class="tc-orange">Invoke-TenantDiscovery</span><br>
+          <span class="tc-green">✓ Graph connected</span><br>
+          <span class="tc-green">✓ Exchange online</span><br>
+          <span class="tc-green">✓ Azure resources</span><br>
+          <span class="tc-dim">→ Exporting Excel...</span>
+        </div>
+      </div>
+      <div class="pf-body">
+        <div class="pf-meta">
+          <div class="pf-tags"><span class="tag">PowerShell</span></div>
+          <span class="pf-year">2024</span>
+        </div>
+        <div class="pf-title">Invoke-TenantDiscovery</div>
+        <p class="pf-desc">PowerShell MSP-onboarding script voor klantintake. Microsoft Graph, Exchange Online, Azure — multi-sheet Excel output. Volledige Denjoy IT scripting standards.</p>
+        <div class="pf-stack">
+          <span class="pf-stack-label">Stack</span>
+          <span class="tag-muted">PowerShell</span>
+          <span class="tag-muted">Microsoft Graph</span>
+          <span class="tag-muted">Exchange Online</span>
+          <span class="tag-muted">ImportExcel</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="index.html" class="nav-logo">
+        <div class="logo-mark"></div>
+        <span class="logo-text" style="color:var(--white)">Denjoy<span>.IT</span></span>
+      </a>
+      <p class="footer-brand-desc">Microsoft 365 beheer en security voor MKB in Noord-Holland.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Pagina's</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">Over mij</a></li>
+        <li><a href="projects.html">Projecten</a></li>
+        <li><a href="login.html">Klantportaal</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:dennis@denjoy.nl">dennis@denjoy.nl</a></li>
+        <li><a href="https://denjoy.nl">denjoy.nl</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Denjoy IT — Dennis Jansen</span>
+  </div>
+</footer>
+
+</div>
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  setTimeout(() => {
+    document.querySelectorAll('.mbar-fill[data-w]').forEach(b => { b.style.width = b.dataset.w + '%'; });
+  }, 400);
+
+  function filter(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.pf-card').forEach(card => {
+      if (cat === 'all') { card.style.display = ''; return; }
+      const cats = (card.dataset.cat || '').split(' ');
+      card.style.display = cats.includes(cat) ? '' : 'none';
+    });
+  }
+</script>
+</body>
+</html>

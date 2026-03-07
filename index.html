@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Denjoy IT — Microsoft 365 Specialist</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── HERO ── */
+.hero {
+  background: var(--dark);
+  padding: 5.5rem 2.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,107,43,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,107,43,0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(255,107,43,0.13) 0%, transparent 68%);
+  top: -60px; right: -60px;
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--orange-dim);
+  border: 1px solid var(--orange-glow);
+  color: var(--orange);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.3rem 0.85rem;
+  border-radius: 100px;
+  margin-bottom: 1.75rem;
+  font-family: var(--mono);
+  letter-spacing: 0.04em;
+  animation: fadeUp 0.55s 0.1s both;
+}
+
+.hero-badge-dot {
+  width: 6px; height: 6px;
+  background: var(--orange);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.3} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)} }
+
+.hero h1 {
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  max-width: 15ch;
+  margin-bottom: 1.25rem;
+  animation: fadeUp 0.55s 0.2s both;
+}
+
+.hero h1 em { font-style: normal; color: var(--orange); }
+
+.hero-sub {
+  font-size: 0.975rem;
+  color: rgba(255,255,255,0.48);
+  line-height: 1.75;
+  max-width: 46ch;
+  margin-bottom: 2.25rem;
+  animation: fadeUp 0.55s 0.3s both;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  animation: fadeUp 0.55s 0.4s both;
+}
+
+/* Dashboard mockup — bottom flush */
+.hero-dash {
+  margin-top: 4rem;
+  animation: fadeUp 0.7s 0.55s both;
+}
+
+/* ── TRUSTED ── */
+.trusted {
+  background: var(--white);
+  padding: 2.25rem 2.5rem;
+  border-bottom: 1px solid var(--border-l);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.trusted-label {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.trusted-divider {
+  width: 1px; height: 20px;
+  background: var(--border-l);
+  flex-shrink: 0;
+}
+
+.trusted-logos {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.trusted-logo {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #ccc;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ── SERVICES ── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+
+.service-card {
+  background: var(--white);
+  border: 1px solid var(--border-l);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  transition: border-color 0.22s, box-shadow 0.22s, transform 0.22s;
+  cursor: default;
+}
+
+.service-card:hover {
+  border-color: var(--orange);
+  box-shadow: 0 6px 28px var(--orange-glow);
+  transform: translateY(-3px);
+}
+
+.service-icon-block {
+  width: 40px; height: 40px;
+  background: var(--orange-dim);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.1rem;
+}
+
+.svc-icon {
+  width: 18px; height: 18px;
+  border-radius: 3px;
+  border: 2px solid var(--orange);
+  position: relative;
+}
+
+.svc-icon.shield::before {
+  content: '';
+  position: absolute;
+  top: 2px; left: 50%;
+  transform: translateX(-50%);
+  width: 6px; height: 6px;
+  background: var(--orange);
+  border-radius: 50%;
+}
+
+.svc-icon.device {
+  border-radius: 4px;
+}
+
+.svc-icon.device::before {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 50%;
+  transform: translateX(-50%);
+  width: 8px; height: 2px;
+  background: var(--orange);
+}
+
+.svc-icon.bolt::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: var(--orange);
+  clip-path: polygon(60% 0%, 40% 45%, 70% 45%, 40% 100%, 60% 55%, 30% 55%);
+}
+
+.svc-icon.cloud::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  background: var(--orange);
+  border-radius: 50% 50% 0 0;
+}
+
+.svc-icon.chart::before {
+  content: '';
+  position: absolute;
+  bottom: 2px; left: 2px; right: 2px;
+  height: 8px;
+  background: linear-gradient(to right, var(--orange) 0 30%, transparent 30% 45%, var(--orange) 45% 70%, transparent 70% 85%, var(--orange) 85% 100%);
+  background-size: contain;
+}
+
+.svc-icon.migrate::before {
+  content: '→';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: var(--orange);
+  border: none;
+}
+
+.service-title {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.service-desc {
+  font-size: 0.845rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 1.1rem;
+}
+
+.service-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+/* ── DARK STEPS ── */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+  position: relative;
+}
+
+.steps-grid::before {
+  content: '';
+  position: absolute;
+  top: 26px;
+  left: calc(16.5% + 26px);
+  right: calc(16.5% + 26px);
+  height: 1px;
+  background: linear-gradient(90deg, var(--orange) 0%, rgba(255,107,43,0.15) 50%, var(--orange) 100%);
+}
+
+.step {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.step-num {
+  width: 52px; height: 52px;
+  background: var(--orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 auto 1.35rem;
+  position: relative;
+  z-index: 1;
+}
+
+.step-title {
+  font-size: 0.975rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.55rem;
+}
+
+.step-desc {
+  font-size: 0.835rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.65;
+}
+
+/* ── STATS ── */
+.stats-strip {
+  background: var(--white);
+  padding: 4rem 2.5rem;
+  border-top: 1px solid var(--border-l);
+  border-bottom: 1px solid var(--border-l);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.stat-block {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-right: 1px solid var(--border-l);
+}
+
+.stat-block:last-child { border-right: none; }
+
+.stat-num {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: var(--text);
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.stat-num sup { color: var(--orange); font-size: 1.6rem; }
+.stat-label { font-size: 0.82rem; color: var(--muted); }
+
+/* ── PROJECTS PREVIEW ── */
+.proj-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+
+.proj-card {
+  background: var(--white);
+  border: 1px solid var(--border-l);
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: border-color 0.22s, box-shadow 0.22s, transform 0.22s;
+}
+
+.proj-card:hover {
+  border-color: var(--orange);
+  box-shadow: 0 6px 28px var(--orange-glow);
+  transform: translateY(-3px);
+}
+
+.proj-thumb {
+  background: var(--dark);
+  height: 160px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proj-thumb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,107,43,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,107,43,0.04) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Abstract SVG thumb visuals */
+.thumb-visual {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.tv-bar {
+  width: 10px;
+  border-radius: 3px 3px 0 0;
+  background: var(--orange);
+  opacity: 0.7;
+}
+
+.tv-bar:nth-child(1) { height: 36px; }
+.tv-bar:nth-child(2) { height: 56px; opacity: 1; }
+.tv-bar:nth-child(3) { height: 44px; }
+.tv-bar:nth-child(4) { height: 64px; opacity: 0.8; }
+.tv-bar:nth-child(5) { height: 48px; }
+
+.thumb-visual-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.tv-cell {
+  width: 40px; height: 28px;
+  border-radius: 5px;
+  background: rgba(255,107,43,0.2);
+  border: 1px solid rgba(255,107,43,0.3);
+}
+
+.tv-cell.active {
+  background: rgba(255,107,43,0.5);
+  border-color: var(--orange);
+}
+
+.thumb-visual-line {
+  position: relative;
+  z-index: 1;
+}
+
+.thumb-visual-line svg { display: block; }
+
+.thumb-visual-ps {
+  position: relative;
+  z-index: 1;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--green);
+  text-align: left;
+  line-height: 1.7;
+}
+
+.thumb-visual-ps span { color: rgba(255,255,255,0.35); }
+
+.proj-body { padding: 1.35rem; }
+
+.proj-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.7rem; }
+
+.proj-name {
+  font-size: 0.975rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.45rem;
+}
+
+.proj-desc {
+  font-size: 0.825rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.proj-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--orange);
+  margin-top: 0.85rem;
+  transition: gap 0.2s;
+}
+
+.proj-card:hover .proj-arrow { gap: 0.6rem; }
+
+/* ── TESTIMONIAL ── */
+.testi-card {
+  max-width: 720px;
+  margin: 2.5rem auto 0;
+  background: var(--white);
+  border: 1px solid var(--border-l);
+  border-radius: 18px;
+  padding: 2.75rem;
+  text-align: center;
+  position: relative;
+}
+
+.testi-quote-mark {
+  font-family: Georgia, serif;
+  font-size: 5rem;
+  color: var(--orange);
+  opacity: 0.14;
+  line-height: 1;
+  position: absolute;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.testi-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text);
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1.75rem;
+}
+
+.testi-author {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.testi-avatar {
+  width: 38px; height: 38px;
+  background: var(--orange-dim);
+  border: 2px solid var(--orange-glow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-icon {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--orange);
+}
+
+.testi-name { font-size: 0.875rem; font-weight: 700; text-align: left; }
+.testi-role { font-size: 0.775rem; color: var(--muted); text-align: left; }
+
+/* ── CTA SECTION ── */
+.cta-wrap {
+  background: var(--dark);
+  padding: 6rem 2.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-wrap::before {
+  content: '';
+  position: absolute;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(255,107,43,0.11) 0%, transparent 65%);
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+}
+
+.cta-inner { position: relative; z-index: 1; max-width: 540px; margin: 0 auto; }
+.cta-title { color: var(--white); margin-bottom: 1.1rem; }
+.cta-sub { color: rgba(255,255,255,0.45); max-width: 42ch; margin: 0 auto 2.25rem; }
+.cta-actions { display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; }
+
+/* RESPONSIVE */
+@media (max-width: 820px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .steps-grid::before { display: none; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .proj-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="site-wrap">
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="logo-mark"></div>
+    <span class="logo-text">Denjoy<span>.IT</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#diensten">Diensten</a></li>
+    <li><a href="#werkwijze">Werkwijze</a></li>
+    <li><a href="#projecten">Projecten</a></li>
+    <li><a href="about.html">Over</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      Microsoft 365 Specialist · MSP
+    </div>
+    <h1>De IT-partner die <em>écht</em> meedenkt.</h1>
+    <p class="hero-sub">Van Zero Trust architectuur tot geautomatiseerde workflows — Denjoy IT beheert en beveiligt Microsoft 365-omgevingen voor MKB-bedrijven in Noord-Holland.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">Gratis kennismaking →</a>
+      <a href="#projecten" class="btn btn-ghost-dark">Bekijk projecten</a>
+    </div>
+  </div>
+
+  <!-- Dashboard mockup -->
+  <div class="hero-dash">
+    <div class="dashboard-mock">
+      <div class="mock-bar">
+        <div class="mdot r"></div>
+        <div class="mdot y"></div>
+        <div class="mdot g"></div>
+        <div class="mock-url-bar">portal.denjoy.nl/dashboard</div>
+      </div>
+      <div class="mock-body">
+        <div class="mock-sidebar">
+          <div class="mock-nav-item active">
+            <div class="mnav-sq"></div> Overzicht
+          </div>
+          <div class="mock-nav-item">
+            <div class="mnav-sq"></div> Tenants
+          </div>
+          <div class="mock-nav-item">
+            <div class="mnav-sq"></div> Security
+          </div>
+          <div class="mock-nav-item">
+            <div class="mnav-sq"></div> Licenties
+          </div>
+          <div class="mock-nav-item">
+            <div class="mnav-sq"></div> Rapporten
+          </div>
+        </div>
+        <div class="mock-content">
+          <div class="mcard">
+            <div class="mcard-label">Secure Score</div>
+            <div class="mcard-val green">87%</div>
+          </div>
+          <div class="mcard">
+            <div class="mcard-label">MFA Coverage</div>
+            <div class="mcard-val green">100%</div>
+          </div>
+          <div class="mcard">
+            <div class="mcard-label">Open Alerts</div>
+            <div class="mcard-val orange">0</div>
+          </div>
+          <div class="mcard wide">
+            <div class="mcard-label">Tenant Gezondheid</div>
+            <div class="mbar-row">
+              <span class="mbar-label">Tenant A</span>
+              <div class="mbar-track"><div class="mbar-fill green" data-w="94"></div></div>
+              <span class="mbar-pct">94%</span>
+            </div>
+            <div class="mbar-row">
+              <span class="mbar-label">Tenant B</span>
+              <div class="mbar-track"><div class="mbar-fill orange" data-w="87"></div></div>
+              <span class="mbar-pct">87%</span>
+            </div>
+            <div class="mbar-row">
+              <span class="mbar-label">Tenant C</span>
+              <div class="mbar-track"><div class="mbar-fill green" data-w="100"></div></div>
+              <span class="mbar-pct">100%</span>
+            </div>
+          </div>
+          <div class="mcard">
+            <div class="mcard-label">CA Policies</div>
+            <div class="mcard-val">14</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUSTED -->
+<div class="trusted">
+  <span class="trusted-label">Vertrouwd door</span>
+  <div class="trusted-divider"></div>
+  <div class="trusted-logos">
+    <span class="trusted-logo">Zorg</span>
+    <span class="trusted-logo">Bouw</span>
+    <span class="trusted-logo">Advies</span>
+    <span class="trusted-logo">Handel</span>
+    <span class="trusted-logo">Onderwijs</span>
+  </div>
+</div>
+
+<!-- DIENSTEN -->
+<section class="section" id="diensten">
+  <div class="reveal">
+    <div class="section-label">Wat ik doe</div>
+    <h2 class="section-title">Microsoft 365 beheer van A tot Z</h2>
+    <p class="section-sub">Als MSP ben ik verantwoordelijk voor de volledige Microsoft 365-omgeving van mijn klanten — strategie, implementatie én dagelijks beheer.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card reveal rd1">
+      <div class="service-icon-block"><div class="svc-icon shield"></div></div>
+      <div class="service-title">Security & Zero Trust</div>
+      <p class="service-desc">Conditional Access, MFA-rollout, Identity Protection en Defender-configuratie. Zero Trust van de grond af aan.</p>
+      <div class="service-tags">
+        <span class="tag-muted">Entra ID</span>
+        <span class="tag-muted">Defender</span>
+        <span class="tag-muted">Purview</span>
+      </div>
+    </div>
+    <div class="service-card reveal rd2">
+      <div class="service-icon-block"><div class="svc-icon device"></div></div>
+      <div class="service-title">Device Management</div>
+      <p class="service-desc">Intune-beleid, Autopilot v2 provisioning en compliance voor Windows. Zero-touch deployment voor nieuwe medewerkers.</p>
+      <div class="service-tags">
+        <span class="tag-muted">Intune</span>
+        <span class="tag-muted">Autopilot</span>
+        <span class="tag-muted">WDAC</span>
+      </div>
+    </div>
+    <div class="service-card reveal rd3">
+      <div class="service-icon-block"><div class="svc-icon bolt"></div></div>
+      <div class="service-title">Automatisering</div>
+      <p class="service-desc">PowerShell-scripts en Microsoft Graph-integraties die repetitief beheerwerk elimineren. Van user provisioning tot rapportage.</p>
+      <div class="service-tags">
+        <span class="tag-muted">PowerShell</span>
+        <span class="tag-muted">Graph API</span>
+        <span class="tag-muted">Bicep</span>
+      </div>
+    </div>
+    <div class="service-card reveal rd1">
+      <div class="service-icon-block"><div class="svc-icon cloud"></div></div>
+      <div class="service-title">Azure & Cloud</div>
+      <p class="service-desc">Azure-omgevingen via Infrastructure as Code. Governance, resource management en kostenoptimalisatie voor MKB.</p>
+      <div class="service-tags">
+        <span class="tag-muted">Azure</span>
+        <span class="tag-muted">Bicep</span>
+        <span class="tag-muted">ARM</span>
+      </div>
+    </div>
+    <div class="service-card reveal rd2">
+      <div class="service-icon-block"><div class="svc-icon chart"></div></div>
+      <div class="service-title">MSP Portals & Dashboards</div>
+      <p class="service-desc">Op maat gebouwde webapplicaties voor inzicht in uw M365-omgeving. Real-time data via Microsoft Graph API.</p>
+      <div class="service-tags">
+        <span class="tag-muted">React</span>
+        <span class="tag-muted">FastAPI</span>
+        <span class="tag-muted">Graph API</span>
+      </div>
+    </div>
+    <div class="service-card reveal rd3">
+      <div class="service-icon-block">
+        <div class="svc-icon" style="display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:var(--orange);font-weight:700;font-family:var(--mono);">→</div>
+      </div>
+      <div class="service-title">Migraties & Onboarding</div>
+      <p class="service-desc">Tenant migraties, klantintakes en technische assessments. Gestructureerd en gedocumenteerd volgens vaste standaarden.</p>
+      <div class="service-tags">
+        <span class="tag-muted">Migration</span>
+        <span class="tag-muted">Assessment</span>
+        <span class="tag-muted">Documentatie</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WERKWIJZE — dark -->
+<section class="section-dark" id="werkwijze">
+  <div class="reveal" style="text-align:center">
+    <div class="section-label" style="justify-content:center;display:flex">Aanpak</div>
+    <h2 class="section-title" style="color:var(--white)">Zo werk ik</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.42);margin:0 auto">Gestructureerd, transparant en zonder verrassingen.</p>
+  </div>
+  <div class="steps-grid" style="margin-top:3rem">
+    <div class="step reveal rd1">
+      <div class="step-num">01</div>
+      <div class="step-title">Intake & Assessment</div>
+      <p class="step-desc">Volledige inventarisatie van uw M365-omgeving. Security gaps, licentiegebruik en verbeterpunten in kaart gebracht.</p>
+    </div>
+    <div class="step reveal rd2">
+      <div class="step-num">02</div>
+      <div class="step-title">Plan & Implementatie</div>
+      <p class="step-desc">Helder implementatieplan met prioriteiten en tijdlijn. Uitvoering gedocumenteerd en reproduceerbaar.</p>
+    </div>
+    <div class="step reveal rd3">
+      <div class="step-num">03</div>
+      <div class="step-title">Beheer & Monitoring</div>
+      <p class="step-desc">Proactief beheer via eigen monitoring-portal. Maandelijkse rapportage en continue security-optimalisatie.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stats-grid">
+    <div class="stat-block reveal">
+      <span class="stat-num" data-target="20">0<sup>+</sup></span>
+      <span class="stat-label">Jaar ICT-ervaring</span>
+    </div>
+    <div class="stat-block reveal rd1">
+      <span class="stat-num" data-target="100">0<sup>%</sup></span>
+      <span class="stat-label">MFA bij alle klanten</span>
+    </div>
+    <div class="stat-block reveal rd2">
+      <span class="stat-num" data-target="6">0</span>
+      <span class="stat-label">Custom webapps gebouwd</span>
+    </div>
+    <div class="stat-block reveal rd3">
+      <span class="stat-num" data-target="0">—</span>
+      <span class="stat-label">Kritieke incidenten (12 mnd)</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTEN -->
+<section class="section" id="projecten">
+  <div class="reveal">
+    <div class="section-label">Gebouwde applicaties</div>
+    <h2 class="section-title">Projecten</h2>
+    <p class="section-sub">Naast beheerwerk bouw ik portals en tools die inzicht geven in Microsoft 365-omgevingen.</p>
+  </div>
+  <div class="proj-grid">
+    <a href="projects.html" class="proj-card reveal rd1">
+      <div class="proj-thumb">
+        <div class="thumb-visual">
+          <div class="tv-bar"></div>
+          <div class="tv-bar"></div>
+          <div class="tv-bar"></div>
+          <div class="tv-bar"></div>
+          <div class="tv-bar"></div>
+        </div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags"><span class="tag">React</span><span class="tag">FastAPI</span><span class="tag">Graph API</span></div>
+        <div class="proj-name">M365 MSP Security Portal</div>
+        <p class="proj-desc">Multi-tenant monitoring. Real-time Secure Score, alerts en compliance per klant via Microsoft Graph.</p>
+        <span class="proj-arrow">Bekijk project →</span>
+      </div>
+    </a>
+    <a href="projects.html" class="proj-card reveal rd2">
+      <div class="proj-thumb">
+        <div class="thumb-visual-ps">
+          <span>$ Invoke-TenantDiscovery</span><br>
+          <span style="color:rgba(255,255,255,0.25)">Tenant: Contoso B.V.</span><br>
+          <span>✓ Graph connected</span><br>
+          <span>✓ Exchange online</span><br>
+          <span style="color:rgba(255,255,255,0.25)">Exporting Excel...</span>
+        </div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags"><span class="tag">PowerShell</span><span class="tag">Graph API</span><span class="tag">Excel</span></div>
+        <div class="proj-name">Tenant Discovery Tool</div>
+        <p class="proj-desc">Geautomatiseerde MSP-intake. Volledige tenant-analyse via Graph, Exchange en Azure — Excel-rapport in minuten.</p>
+        <span class="proj-arrow">Bekijk project →</span>
+      </div>
+    </a>
+    <a href="projects.html" class="proj-card reveal rd1">
+      <div class="proj-thumb">
+        <div class="thumb-visual-grid">
+          <div class="tv-cell active"></div>
+          <div class="tv-cell"></div>
+          <div class="tv-cell active"></div>
+          <div class="tv-cell active"></div>
+        </div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags"><span class="tag">React</span><span class="tag">MSAL</span><span class="tag">Entra ID</span></div>
+        <div class="proj-name">Denjoy IT Dashboard</div>
+        <p class="proj-desc">Entra Portal-integratie met custom branding. MSAL-auth, card-based tenant overview en realtime Graph-data.</p>
+        <span class="proj-arrow">Bekijk project →</span>
+      </div>
+    </a>
+    <a href="projects.html" class="proj-card reveal rd2">
+      <div class="proj-thumb">
+        <div class="thumb-visual">
+          <div class="tv-bar" style="height:28px;opacity:0.5"></div>
+          <div class="tv-bar" style="height:42px"></div>
+          <div class="tv-bar" style="height:32px;opacity:0.6"></div>
+          <div class="tv-bar" style="height:50px;opacity:0.9"></div>
+          <div class="tv-bar" style="height:38px;opacity:0.7"></div>
+        </div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Claude API</span></div>
+        <div class="proj-name">AI Skills Coach</div>
+        <p class="proj-desc">9 gespecialiseerde AI-coaching agents in één React-app. Nederlandstalige interface met Claude API-integratie.</p>
+        <span class="proj-arrow">Bekijk project →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="section-white">
+  <div style="text-align:center" class="reveal">
+    <div class="section-label" style="display:flex;justify-content:center">Ervaringen</div>
+    <h2 class="section-title">Wat klanten zeggen</h2>
+  </div>
+  <div class="testi-card reveal">
+    <div class="testi-quote-mark">"</div>
+    <p class="testi-text">"Denjoy IT heeft onze Microsoft 365-omgeving volledig op orde gebracht. Van chaos naar controle — inclusief een dashboard waarop we zelf dagelijks kunnen zien hoe het ervoor staat."</p>
+    <div class="testi-author">
+      <div class="testi-avatar"><div class="avatar-icon"></div></div>
+      <div>
+        <div class="testi-name">Directeur, MKB klant</div>
+        <div class="testi-role">Noord-Holland</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-wrap" id="contact">
+  <div class="cta-inner reveal">
+    <div class="section-label" style="display:flex;justify-content:center">Klaar om te starten?</div>
+    <h2 class="section-title cta-title">Laten we kennismaken.</h2>
+    <p class="section-sub cta-sub">Vertel me over uw omgeving en uitdagingen. Ik kom graag langs voor een vrijblijvende intake.</p>
+    <div class="cta-actions">
+      <a href="mailto:dennis@denjoy.nl" class="btn btn-primary">dennis@denjoy.nl →</a>
+      <a href="https://denjoy.nl" class="btn btn-ghost-dark">denjoy.nl</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="index.html" class="nav-logo" style="margin-bottom:0.2rem">
+        <div class="logo-mark"></div>
+        <span class="logo-text" style="color:var(--white)">Denjoy<span>.IT</span></span>
+      </a>
+      <p class="footer-brand-desc">Microsoft 365 beheer en security voor MKB in Noord-Holland. MSP met 20+ jaar ICT-ervaring.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Diensten</h4>
+      <ul>
+        <li><a href="#">Security & Zero Trust</a></li>
+        <li><a href="#">Device Management</a></li>
+        <li><a href="#">Automatisering</a></li>
+        <li><a href="#">Azure & Cloud</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Pagina's</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">Over mij</a></li>
+        <li><a href="projects.html">Projecten</a></li>
+        <li><a href="login.html">Klantportaal</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:dennis@denjoy.nl">dennis@denjoy.nl</a></li>
+        <li><a href="https://denjoy.nl">denjoy.nl</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Denjoy IT — Dennis Jansen, Assendelft</span>
+    <span>KvK: 00000000 · BTW: NL000000000B01</span>
+  </div>
+</footer>
+
+</div><!-- /site-wrap -->
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Stats
+  const sObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const t = parseInt(el.dataset.target);
+      if (isNaN(t)) return;
+      const sup = el.querySelector('sup')?.outerHTML || '';
+      let cur = 0;
+      const step = Math.max(1, t / 45);
+      const timer = setInterval(() => {
+        cur = Math.min(cur + step, t);
+        el.innerHTML = Math.round(cur) + sup;
+        if (cur >= t) clearInterval(timer);
+      }, 16);
+      sObs.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.stat-num[data-target]').forEach(el => sObs.observe(el));
+
+  // Dashboard bars
+  setTimeout(() => {
+    document.querySelectorAll('.mbar-fill[data-w]').forEach(b => { b.style.width = b.dataset.w + '%'; });
+  }, 600);
+</script>
+</body>
+</html>
