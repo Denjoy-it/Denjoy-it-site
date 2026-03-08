@@ -143,6 +143,21 @@ nav {
 
 .nav-cta:hover { background: #e85d22 !important; }
 
+.nav-login {
+  font-family: var(--mono) !important;
+  font-size: 0.75rem !important;
+  color: var(--muted) !important;
+  border: 1.5px solid var(--border-l) !important;
+  border-radius: 8px !important;
+  padding: 0.38rem 0.9rem !important;
+  transition: color 0.18s, border-color 0.18s !important;
+}
+.nav-login:hover {
+  color: var(--orange) !important;
+  border-color: var(--orange) !important;
+  background: transparent !important;
+}
+
 /* ── BUTTONS ── */
 .btn {
   display: inline-flex;

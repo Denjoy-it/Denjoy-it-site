@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Werkwijze — Denjoy IT</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── WERKWIJZE HERO ── */
+.werkwijze-hero {
+  background: var(--dark);
+  padding: 5.5rem 2.5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.werkwijze-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,107,43,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,107,43,0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  pointer-events: none;
+}
+
+.werkwijze-hero::after {
+  content: '';
+  position: absolute;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(255,107,43,0.13) 0%, transparent 68%);
+  top: -80px; right: -80px;
+  pointer-events: none;
+}
+
+.werkwijze-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  animation: fadeUp 0.55s 0.1s both;
+}
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)} }
+
+.werkwijze-hero h1 {
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  margin-bottom: 1.25rem;
+}
+
+.werkwijze-hero h1 em { font-style: normal; color: var(--orange); }
+
+.werkwijze-hero-sub {
+  font-size: 0.975rem;
+  color: rgba(255,255,255,0.48);
+  line-height: 1.75;
+  max-width: 52ch;
+  margin-bottom: 2.25rem;
+}
+
+/* ── STEPS EXTENDED ── */
+.steps-ext {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  max-width: 820px;
+  margin: 3rem auto 0;
+}
+
+.step-ext {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 2rem;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border-l);
+  position: relative;
+}
+
+.step-ext:last-child { border-bottom: none; }
+
+.step-ext-num {
+  width: 52px; height: 52px;
+  background: var(--orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--white);
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.step-ext-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.step-ext-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.step-ext-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.step-ext-list li {
+  font-size: 0.855rem;
+  color: var(--muted);
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.step-ext-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+}
+
+/* ── PRINCIPES ── */
+.principes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.principe-card {
+  background: var(--dark2);
+  border: 1px solid var(--border-d);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  transition: border-color 0.22s, transform 0.22s;
+}
+
+.principe-card:hover {
+  border-color: rgba(255,107,43,0.3);
+  transform: translateY(-2px);
+}
+
+.principe-icon {
+  font-family: var(--mono);
+  font-size: 1.1rem;
+  color: var(--orange);
+  margin-bottom: 0.85rem;
+}
+
+.principe-title {
+  font-size: 0.975rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.principe-desc {
+  font-size: 0.855rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.65;
+}
+
+/* ── WERKWIJZE CTA ── */
+.werkwijze-cta {
+  background: var(--dark);
+  padding: 5rem 2.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.werkwijze-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,107,43,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,107,43,0.03) 1px, transparent 1px);
+  background-size: 44px 44px;
+  pointer-events: none;
+}
+
+.werkwijze-cta-inner {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 820px) {
+  .step-ext { grid-template-columns: 52px 1fr; gap: 1.25rem; }
+  .principes-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="site-wrap">
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="logo-mark"></div>
+    <span class="logo-text">Denjoy<span>.IT</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="diensten.html">Diensten</a></li>
+    <li><a href="werkwijze.html" class="active">Werkwijze</a></li>
+    <li><a href="projects.html">Projecten</a></li>
+    <li><a href="about.html">Over</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+    <li><a href="login.html" class="nav-login">Login</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="werkwijze-hero">
+  <div class="werkwijze-hero-inner">
+    <div class="section-label">Aanpak</div>
+    <h1>Zo werk ik — <em>stap voor stap</em></h1>
+    <p class="werkwijze-hero-sub">Gestructureerd, transparant en zonder verrassingen. Elke opdracht start met een grondige intake en eindigt met een gedocumenteerde, goed beheerde omgeving.</p>
+    <div style="display:flex;gap:0.85rem;flex-wrap:wrap">
+      <a href="index.html#contact" class="btn btn-primary">Neem contact op →</a>
+      <a href="diensten.html" class="btn btn-ghost-dark">Bekijk diensten</a>
+    </div>
+  </div>
+</section>
+
+<!-- STAPPEN -->
+<section class="section" id="stappen">
+  <div class="reveal">
+    <div class="section-label">Het proces</div>
+    <h2 class="section-title">Van intake tot beheer</h2>
+    <p class="section-sub">Iedere samenwerking volgt dezelfde gestructureerde aanpak. Zo weet je altijd waar je aan toe bent en wat je kunt verwachten.</p>
+  </div>
+
+  <div class="steps-ext">
+    <div class="step-ext reveal rd1">
+      <div class="step-ext-num">01</div>
+      <div class="step-ext-body">
+        <div class="step-ext-title">Intake &amp; Assessment</div>
+        <p class="step-ext-desc">De samenwerking begint altijd met een volledige inventarisatie van de Microsoft 365-omgeving. Ik breng alle aspecten in kaart: van licentiegebruik en gebruikersbeheer tot security-instellingen en compliance. Verbeterpunten worden geprioriteerd op basis van risico en impact.</p>
+        <ul class="step-ext-list">
+          <li>Volledige tenant-scan via Microsoft Graph API</li>
+          <li>Security assessment: Conditional Access, MFA-coverage, Secure Score</li>
+          <li>Licentie-analyse: optimalisatie en kostenreductie</li>
+          <li>Inventarisatie van devices, gebruikers en groepen</li>
+          <li>Schriftelijk rapport met bevindingen en aanbevelingen</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step-ext reveal rd2">
+      <div class="step-ext-num">02</div>
+      <div class="step-ext-body">
+        <div class="step-ext-title">Plan &amp; Implementatie</div>
+        <p class="step-ext-desc">Op basis van de intake wordt een helder implementatieplan opgesteld. Dit plan bevat concrete stappen, prioriteiten en een tijdlijn. Uitvoering verloopt gedocumenteerd en reproduceerbaar — zodat wijzigingen achteraf altijd herleidbaar zijn.</p>
+        <ul class="step-ext-list">
+          <li>Implementatieplan met prioriteiten en tijdlijn</li>
+          <li>Gefaseerde uitvoering: kritieke items eerst</li>
+          <li>Alle configuraties vastgelegd in runbooks</li>
+          <li>Infrastructure as Code (Bicep) waar van toepassing</li>
+          <li>Afstemming en communicatie gedurende het hele traject</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step-ext reveal rd3">
+      <div class="step-ext-num">03</div>
+      <div class="step-ext-body">
+        <div class="step-ext-title">Beheer &amp; Monitoring</div>
+        <p class="step-ext-desc">Na implementatie volgt proactief beheer via een eigen monitoring-portal. Afwijkingen, security-alerts en gebruikersmutaties worden continu gemonitord. Maandelijkse rapportages houden je op de hoogte van de status van de omgeving — zonder technische kennis vereist.</p>
+        <ul class="step-ext-list">
+          <li>Proactief beheer via custom monitoring-dashboard</li>
+          <li>Maandelijkse rapportage: security, licenties, devices</li>
+          <li>Continuous security-optimalisatie en patching</li>
+          <li>Directe support bij incidenten en wijzigingsverzoeken</li>
+          <li>Periodieke herevaluatie van beleid en configuraties</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPES -->
+<section class="section-dark" id="principes">
+  <div class="reveal" style="text-align:center">
+    <div class="section-label" style="display:flex;justify-content:center">Werkprincipes</div>
+    <h2 class="section-title" style="color:var(--white)">Waar ik op sta</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.42);margin:0 auto">De waarden die elke samenwerking bepalen.</p>
+  </div>
+
+  <div class="principes-grid">
+    <div class="principe-card reveal rd1">
+      <div class="principe-icon">▦</div>
+      <div class="principe-title">Gestructureerd</div>
+      <p class="principe-desc">Alles wordt gedocumenteerd en reproduceerbaar uitgevoerd. Geen losse configuraties, maar een helder systeem dat overdraagbaar is.</p>
+    </div>
+    <div class="principe-card reveal rd2">
+      <div class="principe-icon">◎</div>
+      <div class="principe-title">Transparant</div>
+      <p class="principe-desc">Je weet altijd wat er gebeurt, waarom en wat het oplevert. Geen verrassingen in de factuur of in de omgeving.</p>
+    </div>
+    <div class="principe-card reveal rd3">
+      <div class="principe-icon">⬡</div>
+      <div class="principe-title">Security-first</div>
+      <p class="principe-desc">Beveiliging is geen bijzaak maar het uitgangspunt. Zero Trust, MFA en least privilege zijn de standaard, niet de uitzondering.</p>
+    </div>
+    <div class="principe-card reveal rd1">
+      <div class="principe-icon">→</div>
+      <div class="principe-title">Proactief</div>
+      <p class="principe-desc">Problemen worden gesignaleerd vóór ze een incident worden. Continue monitoring en periodieke evaluatie voorkomen verrassingen.</p>
+    </div>
+    <div class="principe-card reveal rd2">
+      <div class="principe-icon">↑</div>
+      <div class="principe-title">Schaalbaar</div>
+      <p class="principe-desc">Oplossingen worden zo gebouwd dat ze meegroeien. Van 5 naar 50 gebruikers — de infrastructuur schaalt zonder grote herinrichting.</p>
+    </div>
+    <div class="principe-card reveal rd3">
+      <div class="principe-icon">◈</div>
+      <div class="principe-title">Hands-on</div>
+      <p class="principe-desc">Geen adviseur op afstand, maar een technicus die zelf de handen uit de mouwen steekt. Direct, praktisch en resultaatgericht.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="werkwijze-cta" id="contact">
+  <div class="werkwijze-cta-inner reveal">
+    <div class="section-label" style="display:flex;justify-content:center">Klaar om te starten?</div>
+    <h2 class="section-title" style="color:var(--white);margin-bottom:1rem">Laten we kennismaken.</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.42);margin:0 auto 2rem">Vertel me over je omgeving. Ik maak graag een gratis intake en breng in kaart wat er beter kan.</p>
+    <div style="display:flex;gap:0.85rem;justify-content:center;flex-wrap:wrap">
+      <a href="mailto:dennis@denjoy.nl" class="btn btn-primary">dennis@denjoy.nl →</a>
+      <a href="diensten.html" class="btn btn-ghost-dark">Bekijk diensten</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="index.html" class="nav-logo" style="margin-bottom:0.2rem">
+        <div class="logo-mark"></div>
+        <span class="logo-text" style="color:var(--white)">Denjoy<span>.IT</span></span>
+      </a>
+      <p class="footer-brand-desc">Microsoft 365 beheer en security. 20+ jaar ICT-ervaring.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Diensten</h4>
+      <ul>
+        <li><a href="diensten.html#security">Security &amp; Zero Trust</a></li>
+        <li><a href="diensten.html#devices">Device Management</a></li>
+        <li><a href="diensten.html#automatisering">Automatisering</a></li>
+        <li><a href="diensten.html#azure">Azure &amp; Cloud</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Pagina's</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="diensten.html">Diensten</a></li>
+        <li><a href="werkwijze.html">Werkwijze</a></li>
+        <li><a href="about.html">Over mij</a></li>
+        <li><a href="projects.html">Projecten</a></li>
+        <li><a href="login.html">Klantportaal</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:dennis@denjoy.nl">dennis@denjoy.nl</a></li>
+        <li><a href="https://denjoy.nl">denjoy.nl</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Denjoy IT — Dennis Jansen, Assendelft</span>
+    <span>KvK: 00000000 · BTW: NL000000000B01</span>
+  </div>
+</footer>
+
+</div><!-- /site-wrap -->
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
