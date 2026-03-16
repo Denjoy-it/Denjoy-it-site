@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Denjoy IT — Microsoft 365 Specialist</title>
 <link rel="stylesheet" href="style.css">
+<script>(function(){var t=localStorage.getItem('m365LocalTheme');if(t)document.documentElement.setAttribute('data-theme',t);}())</script>
 <style>
 /* ── HERO ── */
 .hero {
@@ -583,8 +584,7 @@
 <!-- NAV -->
 <nav>
   <a href="index.html" class="nav-logo">
-    <div class="logo-mark"></div>
-    <span class="logo-text">Denjoy<span>.IT</span></span>
+    <img src="portal/images/Denjoy-tp1.png" alt="Denjoy IT" class="logo-img">
   </a>
   <ul class="nav-links">
     <li><a href="diensten.html">Diensten</a></li>
@@ -593,6 +593,7 @@
     <li><a href="about.html">Over</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
     <li><a href="login.html" class="nav-login">Login</a></li>
+    <li><button id="site-theme-btn" class="nav-theme-btn" title="Thema wisselen">🌙</button></li>
   </ul>
 </nav>
 
@@ -601,10 +602,10 @@
   <div class="hero-inner">
     <div class="hero-badge">
       <div class="hero-badge-dot"></div>
-      Microsoft 365 Specialist
+      Denjoy Platform — nu beschikbaar
     </div>
-    <h1>De IT-enthousiasteling die <em>écht</em> meedenkt.</h1>
-    <p class="hero-sub">Ik richt Microsoft 365-omgevingen in en beveilig ze — van Zero Trust architectuur tot geautomatiseerde workflows.</p>
+    <h1>Microsoft 365 beheer dat zichzelf <em>verantwoordt</em>.</h1>
+    <p class="hero-sub">Ik richt M365-omgevingen in, beveilig ze en geef je via een eigen klantportaal realtime inzicht in de gezondheid van je tenant. Automated assessments, Zero Trust en volledige documentatie — op één platform.</p>
     <div class="hero-actions">
       <a href="#contact" class="btn btn-primary">Gratis kennismaking →</a>
       <a href="#projecten" class="btn btn-ghost-dark">Bekijk projecten</a>
@@ -744,7 +745,7 @@
     <div class="service-card reveal rd2">
       <div class="service-icon-block"><div class="svc-icon chart"></div></div>
       <div class="service-title">Portals & Dashboards</div>
-      <p class="service-desc">Op maat gebouwde webapplicaties voor inzicht in M365-omgevingen. Real-time data via Microsoft Graph API.</p>
+      <p class="service-desc">Het Denjoy klantportaal geeft elke klant real-time inzicht in hun tenant: score, bevindingen, rapport-viewer en een volledige kennisbank. Gebouwd op Microsoft Graph API, FastAPI en een eigen PowerShell assessment engine.</p>
       <div class="service-tags">
         <span class="tag-muted">React</span>
         <span class="tag-muted">FastAPI</span>
@@ -787,7 +788,7 @@
     <div class="step reveal rd3">
       <div class="step-num">03</div>
       <div class="step-title">Beheer & Monitoring</div>
-      <p class="step-desc">Proactief beheer via eigen monitoring-portal. Maandelijkse rapportage en continue security-optimalisatie.</p>
+      <p class="step-desc">Proactief beheer via het Denjoy klantportaal — realtime inzicht in score, alerts en bevindingen. Maandelijkse assessment-runs houden de baseline actueel.</p>
     </div>
   </div>
 </section>
@@ -804,8 +805,8 @@
       <span class="stat-label">MFA bij alle omgevingen</span>
     </div>
     <div class="stat-block reveal rd2">
-      <span class="stat-num" data-target="6">0</span>
-      <span class="stat-label">Custom webapps gebouwd</span>
+      <span class="stat-num" data-target="50">0</span>
+      <span class="stat-label">Assessment-checks per tenant</span>
     </div>
     <div class="stat-block reveal rd3">
       <span class="stat-num" data-target="0">—</span>
@@ -833,9 +834,9 @@
         </div>
       </div>
       <div class="proj-body">
-        <div class="proj-tags"><span class="tag">React</span><span class="tag">FastAPI</span><span class="tag">Graph API</span></div>
-        <div class="proj-name">M365 Security Portal</div>
-        <p class="proj-desc">Multi-tenant monitoring. Real-time Secure Score, alerts en compliance via Microsoft Graph.</p>
+        <div class="proj-tags"><span class="tag">PowerShell</span><span class="tag">FastAPI</span><span class="tag">Graph API</span></div>
+        <div class="proj-name">Denjoy Platform</div>
+        <p class="proj-desc">Het centrale platform dat ik voor al mijn klanten inzet. Automated M365 Baseline Assessment (7 fasen, 50+ checks), klantportaal met rapport-viewer, kennisbank per tenant en actie-tracking — alles via één dashboard.</p>
         <span class="proj-arrow">Bekijk project →</span>
       </div>
     </a>
@@ -850,9 +851,9 @@
         </div>
       </div>
       <div class="proj-body">
-        <div class="proj-tags"><span class="tag">PowerShell</span><span class="tag">Graph API</span><span class="tag">Excel</span></div>
-        <div class="proj-name">Tenant Discovery Tool</div>
-        <p class="proj-desc">Geautomatiseerde tenant-intake. Volledige tenant-analyse via Graph, Exchange en Azure — Excel-rapport in minuten.</p>
+        <div class="proj-tags"><span class="tag">PowerShell</span><span class="tag">Graph API</span><span class="tag">HTML Reports</span></div>
+        <div class="proj-name">M365 Baseline Assessment</div>
+        <p class="proj-desc">Geautomatiseerde tenant-assessment via PowerShell. 7 fasen, 50+ beveiligingschecks — van Conditional Access en MFA-coverage tot Azure governance. Genereert een professioneel HTML-rapport met score en aanbevelingen.</p>
         <span class="proj-arrow">Bekijk project →</span>
       </div>
     </a>
@@ -929,8 +930,7 @@
   <div class="footer-top">
     <div>
       <a href="index.html" class="nav-logo" style="margin-bottom:0.2rem">
-        <div class="logo-mark"></div>
-        <span class="logo-text" style="color:var(--white)">Denjoy<span>.IT</span></span>
+        <img src="portal/images/Denjoy-tp1.png" alt="Denjoy IT" class="logo-img">
       </a>
       <p class="footer-brand-desc">Microsoft 365 beheer en security. 20+ jaar ICT-ervaring.</p>
     </div>
@@ -1002,6 +1002,20 @@
   setTimeout(() => {
     document.querySelectorAll('.mbar-fill[data-w]').forEach(b => { b.style.width = b.dataset.w + '%'; });
   }, 600);
+  // Theme toggle
+  (function() {
+    var btn = document.getElementById('site-theme-btn');
+    if (!btn) return;
+    var t = document.documentElement.getAttribute('data-theme') || 'light';
+    btn.textContent = t === 'dark' ? '☀️' : '🌙';
+    btn.addEventListener('click', function() {
+      var cur = document.documentElement.getAttribute('data-theme') || 'light';
+      var next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('m365LocalTheme', next);
+      this.textContent = next === 'dark' ? '☀️' : '🌙';
+    });
+  }());
 </script>
 </body>
 </html>

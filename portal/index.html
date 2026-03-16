@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klantportaal — Denjoy IT</title>
+    <meta http-equiv="refresh" content="0; url=dashboard.html">
+    <link rel="stylesheet" href="css/portal.css">
+    <style>
+        body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: var(--dark); }
+        .splash {
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+        }
+        .splash-logo {
+            width: 40px; height: 40px;
+            background: var(--dark2);
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto 1.25rem;
+        }
+        .splash-logo::before {
+            content: '';
+            position: absolute;
+            inset: 6px;
+            border: 2.5px solid var(--orange);
+            border-radius: 3px;
+            transform: rotate(12deg);
+        }
+        .splash-logo::after {
+            content: '';
+            position: absolute;
+            width: 6px; height: 6px;
+            background: var(--orange);
+            border-radius: 50%;
+            top: 6px; right: 6px;
+        }
+        .splash h1 {
+            font-family: var(--font);
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.35rem;
+        }
+        .splash p {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.3);
+            margin-bottom: 1.5rem;
+        }
+        .splash-spinner {
+            width: 20px; height: 20px;
+            border: 2px solid rgba(255,107,43,0.2);
+            border-top-color: var(--orange);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .splash a {
+            display: block;
+            margin-top: 1.25rem;
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            color: rgba(255,255,255,0.25);
+            text-decoration: none;
+        }
+        .splash a:hover { color: var(--orange); }
+    </style>
+</head>
+<body>
+    <div class="splash">
+        <img src="images/Denjoy-tp1.png" alt="Denjoy IT" style="height:48px;width:auto;object-fit:contain;margin:0 auto 1.25rem;display:block;">
+        <h1>Denjoy<span style="color:var(--orange)">.IT</span></h1>
+        <p>Klantportaal laden...</p>
+        <div class="splash-spinner"></div>
+        <a href="dashboard.html">Klik hier als de pagina niet automatisch laadt</a>
+        <a href="/site/index.html" style="margin-top:0.5rem">← Terug naar website</a>
+    </div>
+    <script>
+        // Directe redirect als meta-refresh niet werkt
+        window.location.replace('dashboard.html');
+    </script>
+</body>
+</html>

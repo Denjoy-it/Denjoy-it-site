@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Werkwijze — Denjoy IT</title>
 <link rel="stylesheet" href="style.css">
+<script>(function(){var t=localStorage.getItem('m365LocalTheme');if(t)document.documentElement.setAttribute('data-theme',t);}())</script>
 <style>
 /* ── WERKWIJZE HERO ── */
 .werkwijze-hero {
@@ -214,8 +215,7 @@
 <!-- NAV -->
 <nav>
   <a href="index.html" class="nav-logo">
-    <div class="logo-mark"></div>
-    <span class="logo-text">Denjoy<span>.IT</span></span>
+    <img src="portal/images/Denjoy-tp1.png" alt="Denjoy IT" class="logo-img">
   </a>
   <ul class="nav-links">
     <li><a href="diensten.html">Diensten</a></li>
@@ -224,6 +224,7 @@
     <li><a href="about.html">Over</a></li>
     <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
     <li><a href="login.html" class="nav-login">Login</a></li>
+    <li><button id="site-theme-btn" class="nav-theme-btn" title="Thema wisselen">🌙</button></li>
   </ul>
 </nav>
 
@@ -231,8 +232,8 @@
 <section class="werkwijze-hero">
   <div class="werkwijze-hero-inner">
     <div class="section-label">Aanpak</div>
-    <h1>Zo werk ik — <em>stap voor stap</em></h1>
-    <p class="werkwijze-hero-sub">Gestructureerd, transparant en zonder verrassingen. Elke opdracht start met een grondige intake en eindigt met een gedocumenteerde, goed beheerde omgeving.</p>
+    <h1>Assessments, portals en <em>proactief beheer</em>.</h1>
+    <p class="werkwijze-hero-sub">Elke samenwerking start met een geautomatiseerde M365 Baseline Assessment. Die basis gebruiken we om te implementeren, te verbeteren en bij te houden — via het Denjoy klantportaal altijd inzichtelijk.</p>
     <div style="display:flex;gap:0.85rem;flex-wrap:wrap">
       <a href="index.html#contact" class="btn btn-primary">Neem contact op →</a>
       <a href="diensten.html" class="btn btn-ghost-dark">Bekijk diensten</a>
@@ -253,13 +254,13 @@
       <div class="step-ext-num">01</div>
       <div class="step-ext-body">
         <div class="step-ext-title">Intake &amp; Assessment</div>
-        <p class="step-ext-desc">De samenwerking begint altijd met een volledige inventarisatie van de Microsoft 365-omgeving. Ik breng alle aspecten in kaart: van licentiegebruik en gebruikersbeheer tot security-instellingen en compliance. Verbeterpunten worden geprioriteerd op basis van risico en impact.</p>
+        <p class="step-ext-desc">De samenwerking begint altijd met de <strong>M365 Baseline Assessment</strong> — een geautomatiseerd PowerShell-script dat 50+ checks uitvoert in 7 domeinen. Het resultaat is een professioneel HTML-rapport met score, bevindingen per categorie (kritiek/warning/info) en concrete aanbevelingen. Zo weten we precies waar we staan.</p>
         <ul class="step-ext-list">
-          <li>Volledige tenant-scan via Microsoft Graph API</li>
-          <li>Security assessment: Conditional Access, MFA-coverage, Secure Score</li>
+          <li>Geautomatiseerde assessment via PowerShell (7 fasen)</li>
+          <li>50+ checks: identiteit, compliance, security, devices, Azure</li>
+          <li>HTML-rapport met score, KPI's en aanbevelingen</li>
           <li>Licentie-analyse: optimalisatie en kostenreductie</li>
-          <li>Inventarisatie van devices, gebruikers en groepen</li>
-          <li>Schriftelijk rapport met bevindingen en aanbevelingen</li>
+          <li>Schriftelijke samenvatting met prioriteiten</li>
         </ul>
       </div>
     </div>
@@ -283,13 +284,13 @@
       <div class="step-ext-num">03</div>
       <div class="step-ext-body">
         <div class="step-ext-title">Beheer &amp; Monitoring</div>
-        <p class="step-ext-desc">Na implementatie volgt proactief beheer via een eigen monitoring-portal. Afwijkingen, security-alerts en gebruikersmutaties worden continu gemonitord. Maandelijkse rapportages houden je op de hoogte van de status van de omgeving — zonder technische kennis vereist.</p>
+        <p class="step-ext-desc">Na implementatie volgt proactief beheer via het <strong>Denjoy klantportaal</strong>. Elke klant heeft een eigen dashboard met hun assessment-resultaten, KPI's, rapport-historie en actie-tracking per finding. Periodieke assessment-runs houden de baseline actueel. Maandelijkse rapportages — begrijpelijk voor niet-technische lezers.</p>
         <ul class="step-ext-list">
-          <li>Proactief beheer via custom monitoring-dashboard</li>
-          <li>Maandelijkse rapportage: security, licenties, devices</li>
-          <li>Continuous security-optimalisatie en patching</li>
+          <li>Eigen klantportaal met realtime inzicht in score en bevindingen</li>
+          <li>Periodieke M365 Baseline Assessment-runs (vergelijking trend)</li>
+          <li>Actie-tracking: findings met owner, deadline en status</li>
+          <li>Kennisbank per tenant: apparaten, VLANs, documenten, contacten</li>
           <li>Directe support bij incidenten en wijzigingsverzoeken</li>
-          <li>Periodieke herevaluatie van beleid en configuraties</li>
         </ul>
       </div>
     </div>
@@ -356,8 +357,7 @@
   <div class="footer-top">
     <div>
       <a href="index.html" class="nav-logo" style="margin-bottom:0.2rem">
-        <div class="logo-mark"></div>
-        <span class="logo-text" style="color:var(--white)">Denjoy<span>.IT</span></span>
+        <img src="portal/images/Denjoy-tp1.png" alt="Denjoy IT" class="logo-img">
       </a>
       <p class="footer-brand-desc">Microsoft 365 beheer en security. 20+ jaar ICT-ervaring.</p>
     </div>
@@ -403,6 +403,20 @@
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  // Theme toggle
+  (function() {
+    var btn = document.getElementById('site-theme-btn');
+    if (!btn) return;
+    var t = document.documentElement.getAttribute('data-theme') || 'light';
+    btn.textContent = t === 'dark' ? '☀️' : '🌙';
+    btn.addEventListener('click', function() {
+      var cur = document.documentElement.getAttribute('data-theme') || 'light';
+      var next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('m365LocalTheme', next);
+      this.textContent = next === 'dark' ? '☀️' : '🌙';
+    });
+  }());
 </script>
 </body>
 </html>

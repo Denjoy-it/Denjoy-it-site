@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Klantportaal — Denjoy IT</title>
 <link rel="stylesheet" href="style.css">
+<!-- MSAL.js — Microsoft Authentication Library -->
+<script src="https://alcdn.msauth.net/browser/2.38.3/js/msal-browser.min.js"></script>
 <style>
 /* Login page — split layout */
 body { background: var(--dark); }
@@ -381,8 +383,7 @@ body { background: var(--dark); }
 <div class="login-left">
   <div class="ll-top">
     <a href="index.html" class="nav-logo">
-      <div class="logo-mark"></div>
-      <span class="logo-text" style="color:var(--white)">Denjoy<span>.IT</span></span>
+      <img src="portal/images/Denjoy-tp1.png" alt="Denjoy IT" class="logo-img">
     </a>
   </div>
 
@@ -438,12 +439,12 @@ body { background: var(--dark); }
 
     <div class="form-group">
       <label class="form-label">E-mailadres <span>*</span></label>
-      <input type="email" class="form-input" placeholder="u@uwbedrijf.nl">
+      <input type="email" id="loginEmail" class="form-input" placeholder="u@uwbedrijf.nl" autocomplete="email">
     </div>
 
     <div class="form-group">
       <label class="form-label">Wachtwoord <span>*</span></label>
-      <input type="password" class="form-input" placeholder="••••••••">
+      <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" autocomplete="current-password">
     </div>
 
     <div class="form-row">
@@ -453,19 +454,21 @@ body { background: var(--dark); }
       <a href="#" class="form-forgot">Wachtwoord vergeten?</a>
     </div>
 
-    <button class="btn-submit">Inloggen →</button>
+    <button class="btn-submit" id="emailLoginBtn" onclick="emailLogin(event)">Inloggen →</button>
+    <div id="emailError" style="display:none;margin-top:0.75rem;padding:0.75rem 1rem;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:8px;font-size:0.82rem;color:#dc2626;"></div>
 
     <div class="divider">of</div>
 
-    <a href="#" class="btn-microsoft">
+    <button type="button" class="btn-microsoft" id="msLoginBtn" onclick="msalLogin()">
       <div class="ms-logo">
         <div class="ms-sq r"></div>
         <div class="ms-sq g"></div>
         <div class="ms-sq b"></div>
         <div class="ms-sq y"></div>
       </div>
-      Inloggen met Microsoft
-    </a>
+      <span id="msLoginText">Inloggen met Microsoft</span>
+    </button>
+    <div id="msLoginError" style="display:none;margin-top:0.75rem;padding:0.75rem 1rem;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:8px;font-size:0.82rem;color:#dc2626;"></div>
 
     <div class="login-footer">
       Nog geen toegang? <a href="mailto:dennis@denjoy.nl">Neem contact op</a>
@@ -473,11 +476,117 @@ body { background: var(--dark); }
 
     <div class="login-note">
       <div class="note-icon">i</div>
-      <span>Dit portaal is uitsluitend voor Denjoy IT-gebruikers. Heb je nog geen account? Neem contact op via <strong>dennis@denjoy.nl</strong>.</span>
+      <span>Gebruik je Microsoft 365-account (werk of school). Heb je nog geen toegang? Neem contact op via <strong>dennis@denjoy.nl</strong>.</span>
     </div>
   </div>
 </div>
 
 </div>
+
+<script>
+// ── E-mail/wachtwoord login → lokale backend ──
+async function emailLogin(e) {
+  e.preventDefault();
+  const btn    = document.getElementById('emailLoginBtn');
+  const errDiv = document.getElementById('emailError');
+  const email  = document.getElementById('loginEmail')?.value?.trim() || '';
+  const pwd    = document.getElementById('loginPassword')?.value || '';
+
+  errDiv.style.display = 'none';
+  if (!email || !pwd) {
+    errDiv.textContent = 'Vul je e-mailadres en wachtwoord in.';
+    errDiv.style.display = 'block';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Inloggen...';
+
+  try {
+    const res = await fetch('/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password: pwd }),
+      credentials: 'include'
+    });
+    const data = await res.json();
+
+    if (!res.ok || !data.ok) {
+      throw new Error(data.error || 'Inloggen mislukt.');
+    }
+
+    // Sla sessie op in localStorage (blijft bewaard na refresh)
+    localStorage.setItem('denjoy_token',        data.token);
+    localStorage.setItem('denjoy_role',          data.role);
+    localStorage.setItem('denjoy_user_name',     data.display_name || data.email);
+    localStorage.setItem('denjoy_user_email',    data.email);
+    window.location.href = '/dashboard.html';
+
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = 'Inloggen →';
+    errDiv.textContent = err.message || 'Inloggen mislukt.';
+    errDiv.style.display = 'block';
+  }
+}
+
+// ── Microsoft login → MSAL redirect → dashboard registreert sessie ──
+async function msalLogin() {
+  const btn    = document.getElementById('msLoginBtn');
+  const label  = document.getElementById('msLoginText');
+  const errDiv = document.getElementById('msLoginError');
+
+  errDiv.style.display = 'none';
+  btn.disabled = true;
+  label.textContent = 'Verbinden...';
+
+  try {
+    const cfg      = await fetch('/api/config').then(r => r.json()).catch(() => ({}));
+    const clientId = cfg.auth_client_id || '';
+    const tenantId = cfg.auth_tenant_id || 'organizations';
+
+    if (!clientId) {
+      throw new Error('Geen Client ID ingesteld. Ga naar Instellingen → App-registratie en sla een Client ID op.');
+    }
+
+    const msalApp = new msal.PublicClientApplication({
+      auth: {
+        clientId,
+        authority: `https://login.microsoftonline.com/${tenantId}`,
+        redirectUri: window.location.origin + '/dashboard.html'
+      },
+      cache: { cacheLocation: 'sessionStorage' }
+    });
+    await msalApp.initialize();
+
+    sessionStorage.setItem('denjoy_msal_client_id', clientId);
+    sessionStorage.setItem('denjoy_msal_tenant_id', tenantId);
+
+    await msalApp.loginRedirect({ scopes: ['User.Read', 'openid', 'profile'] });
+
+  } catch (err) {
+    btn.disabled = false;
+    label.textContent = 'Inloggen met Microsoft';
+    errDiv.textContent = err.message || 'Login mislukt.';
+    errDiv.style.display = 'block';
+  }
+}
+
+// Controleer of al ingelogd → direct naar portaal
+(async function checkExistingSession() {
+  try {
+    const token = localStorage.getItem('denjoy_token');
+    if (token) {
+      const res = await fetch('/api/auth/verify', {
+        headers: { 'Authorization': `Bearer ${token}` },
+        credentials: 'include'
+      });
+      if (res.ok) {
+        window.location.href = '/dashboard.html';
+      }
+    }
+  } catch (_) {}
+})();
+</script>
 </body>
 </html>

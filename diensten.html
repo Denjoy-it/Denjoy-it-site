@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Diensten — Denjoy IT</title>
 <link rel="stylesheet" href="style.css">
+<script>(function(){var t=localStorage.getItem('m365LocalTheme');if(t)document.documentElement.setAttribute('data-theme',t);}())</script>
 <style>
 /* ── DIENSTEN HERO ── */
 .diensten-hero {
@@ -154,8 +155,7 @@
 <!-- NAV -->
 <nav>
   <a href="index.html" class="nav-logo">
-    <div class="logo-mark"></div>
-    <span class="logo-text">Denjoy<span>.IT</span></span>
+    <img src="portal/images/Denjoy-tp1.png" alt="Denjoy IT" class="logo-img">
   </a>
   <ul class="nav-links">
     <li><a href="diensten.html" class="active">Diensten</a></li>
@@ -164,6 +164,7 @@
     <li><a href="about.html">Over</a></li>
     <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
     <li><a href="login.html" class="nav-login">Login</a></li>
+    <li><button id="site-theme-btn" class="nav-theme-btn" title="Thema wisselen">🌙</button></li>
   </ul>
 </nav>
 
@@ -172,7 +173,7 @@
   <div class="diensten-hero-inner">
     <div class="section-label">Wat ik doe</div>
     <h1>Microsoft 365 beheer van <em>A tot Z</em></h1>
-    <p class="diensten-hero-sub">Van security en device management tot automatisering en portals — ik richt complete Microsoft 365-omgevingen in en zorg voor structureel, proactief beheer.</p>
+    <p class="diensten-hero-sub">Van security en device management tot automated assessments en een eigen klantportaal — ik richt complete Microsoft 365-omgevingen in en maak de kwaliteit ervan inzichtelijk via het Denjoy Platform.</p>
     <div style="display:flex;gap:0.85rem;flex-wrap:wrap">
       <a href="index.html#contact" class="btn btn-primary">Neem contact op →</a>
       <a href="werkwijze.html" class="btn btn-ghost-dark">Bekijk werkwijze</a>
@@ -247,14 +248,14 @@
     <!-- Portals -->
     <div class="service-card-ext reveal rd2" id="portals">
       <div class="service-icon-block"><div class="svc-icon chart"></div></div>
-      <div class="service-title">Portals &amp; Dashboards</div>
-      <p class="service-desc">Op maat gebouwde webapplicaties die Microsoft 365-data inzichtelijk maken. Via Microsoft Graph API haal ik real-time gegevens op over gebruikers, licenties, security en apparaten. De frontend is gebouwd in React, de backend in FastAPI (Python). Klanten krijgen een eigen portaal waarop ze zelf de gezondheid van hun tenant kunnen monitoren — zonder technische kennis.</p>
+      <div class="service-title">Denjoy Klantportaal</div>
+      <p class="service-desc">Het Denjoy Platform geeft elke klant een eigen portaal met realtime inzicht in hun M365-omgeving. De geautomatiseerde M365 Baseline Assessment (PowerShell, 7 fasen, 50+ checks) genereert een HTML-rapport met score, bevindingen en aanbevelingen. Het portaal toont KPI's, rapport-historie, vergelijkingen tussen runs en actie-tracking per finding. Klanten hebben altijd inzicht — zonder technische kennis vereist.</p>
       <div class="service-tags">
-        <span class="tag-muted">React</span>
+        <span class="tag-muted">PowerShell</span>
         <span class="tag-muted">FastAPI</span>
         <span class="tag-muted">Graph API</span>
-        <span class="tag-muted">Python</span>
-        <span class="tag-muted">MSAL</span>
+        <span class="tag-muted">HTML Reports</span>
+        <span class="tag-muted">SQLite</span>
       </div>
     </div>
 
@@ -293,8 +294,7 @@
   <div class="footer-top">
     <div>
       <a href="index.html" class="nav-logo" style="margin-bottom:0.2rem">
-        <div class="logo-mark"></div>
-        <span class="logo-text" style="color:var(--white)">Denjoy<span>.IT</span></span>
+        <img src="portal/images/Denjoy-tp1.png" alt="Denjoy IT" class="logo-img">
       </a>
       <p class="footer-brand-desc">Microsoft 365 beheer en security. 20+ jaar ICT-ervaring.</p>
     </div>
@@ -340,6 +340,20 @@
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  // Theme toggle
+  (function() {
+    var btn = document.getElementById('site-theme-btn');
+    if (!btn) return;
+    var t = document.documentElement.getAttribute('data-theme') || 'light';
+    btn.textContent = t === 'dark' ? '☀️' : '🌙';
+    btn.addEventListener('click', function() {
+      var cur = document.documentElement.getAttribute('data-theme') || 'light';
+      var next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('m365LocalTheme', next);
+      this.textContent = next === 'dark' ? '☀️' : '🌙';
+    });
+  }());
 </script>
 </body>
 </html>

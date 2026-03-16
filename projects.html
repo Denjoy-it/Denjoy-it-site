@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projecten — Denjoy IT</title>
 <link rel="stylesheet" href="style.css">
+<script>(function(){var t=localStorage.getItem('m365LocalTheme');if(t)document.documentElement.setAttribute('data-theme',t);}())</script>
 <style>
 .proj-hero {
   background: var(--dark);
@@ -246,8 +247,7 @@
 <!-- NAV -->
 <nav>
   <a href="index.html" class="nav-logo">
-    <div class="logo-mark"></div>
-    <span class="logo-text">Denjoy<span>.IT</span></span>
+    <img src="portal/images/Denjoy-tp1.png" alt="Denjoy IT" class="logo-img">
   </a>
   <ul class="nav-links">
     <li><a href="diensten.html">Diensten</a></li>
@@ -256,6 +256,7 @@
     <li><a href="about.html">Over</a></li>
     <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
     <li><a href="login.html" class="nav-login">Login</a></li>
+    <li><button id="site-theme-btn" class="nav-theme-btn" title="Thema wisselen">🌙</button></li>
   </ul>
 </nav>
 
@@ -264,7 +265,7 @@
   <div class="proj-hero-inner reveal">
     <div class="section-label">Portfolio</div>
     <h1>Gebouwde <em>applicaties</em><br>& tools.</h1>
-    <p>Van multi-tenant security portals tot PowerShell dashboards — een overzicht van webapps en tools die ik heb gebouwd voor mezelf en anderen.</p>
+    <p>Van het Denjoy Platform — een compleet M365-beheerstoolset — tot PowerShell-scripts en custom portals: een overzicht van wat ik heb gebouwd voor mezelf en mijn klanten.</p>
     <div class="filter-bar">
       <button class="filter-btn active" onclick="filter('all', this)">Alles</button>
       <button class="filter-btn" onclick="filter('react', this)">React</button>
@@ -310,18 +311,17 @@
       <div class="pf-body" style="display:flex;flex-direction:column;justify-content:center">
         <div class="pf-meta">
           <div class="pf-tags"><span class="tag">Featured</span></div>
-          <span class="pf-year">2024</span>
+          <span class="pf-year">2025</span>
         </div>
-        <div class="pf-title">M365 Security Portal</div>
-        <p class="pf-desc">Multi-tenant monitoring dashboard. Real-time inzicht in Secure Score, alerts, licentiegebruik en compliance-status per tenant. Gebouwd met React frontend en FastAPI backend, volledig gekoppeld via Microsoft Graph API.</p>
+        <div class="pf-title">Denjoy Platform</div>
+        <p class="pf-desc">Het platform dat ik voor al mijn klanten inzet. Een geautomatiseerde M365 Baseline Assessment in PowerShell (7 fasen: gebruikers, samenwerking, compliance, security, Intune, Azure, hybrid) genereert per run een HTML-rapport met score en bevindingen. Het klantportaal toont KPI's, rapport-viewer met fase-tabs, run-vergelijking, actie-tracking per finding en een volledige kennisbank per tenant (apparaten, VLANs, documenten, contacten, software, domeinen).</p>
         <div class="pf-stack">
           <span class="pf-stack-label">Stack</span>
-          <span class="tag-muted">React</span>
+          <span class="tag-muted">PowerShell</span>
           <span class="tag-muted">FastAPI</span>
           <span class="tag-muted">Microsoft Graph</span>
-          <span class="tag-muted">Python</span>
-          <span class="tag-muted">Docker</span>
-          <span class="tag-muted">Proxmox</span>
+          <span class="tag-muted">HTML Reports</span>
+          <span class="tag-muted">SQLite</span>
         </div>
       </div>
     </div>
@@ -343,7 +343,7 @@
           <span class="pf-year">2024</span>
         </div>
         <div class="pf-title">PSHub PowerShell Dashboard</div>
-        <p class="pf-desc">Browsergebaseerde PowerShell management portal. Multi-tenant, real-time script-executie via WebSockets, rapportage per tenant. Volledig beheer zonder RDP of lokale tooling.</p>
+        <p class="pf-desc">Browsergebaseerde PowerShell management portal. Multi-tenant, real-time script-executie, rapportage per tenant. Voorganger van de geïntegreerde assessment-engine in het Denjoy Platform.</p>
         <div class="pf-stack">
           <span class="pf-stack-label">Stack</span>
           <span class="tag-muted">React</span>
@@ -477,8 +477,7 @@
   <div class="footer-top">
     <div>
       <a href="index.html" class="nav-logo">
-        <div class="logo-mark"></div>
-        <span class="logo-text" style="color:var(--white)">Denjoy<span>.IT</span></span>
+        <img src="portal/images/Denjoy-tp1.png" alt="Denjoy IT" class="logo-img">
       </a>
       <p class="footer-brand-desc">Microsoft 365 beheer en security.</p>
     </div>
@@ -536,6 +535,20 @@
       card.style.display = cats.includes(cat) ? '' : 'none';
     });
   }
+  // Theme toggle
+  (function() {
+    var btn = document.getElementById('site-theme-btn');
+    if (!btn) return;
+    var t = document.documentElement.getAttribute('data-theme') || 'light';
+    btn.textContent = t === 'dark' ? '☀️' : '🌙';
+    btn.addEventListener('click', function() {
+      var cur = document.documentElement.getAttribute('data-theme') || 'light';
+      var next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('m365LocalTheme', next);
+      this.textContent = next === 'dark' ? '☀️' : '🌙';
+    });
+  }());
 </script>
 </body>
 </html>

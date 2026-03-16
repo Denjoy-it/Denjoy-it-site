@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Over — Denjoy IT</title>
 <link rel="stylesheet" href="style.css">
+<script>(function(){var t=localStorage.getItem('m365LocalTheme');if(t)document.documentElement.setAttribute('data-theme',t);}())</script>
 <style>
 /* ── ABOUT HERO ── */
 .about-hero {
@@ -376,8 +377,7 @@
 <!-- NAV -->
 <nav>
   <a href="index.html" class="nav-logo">
-    <div class="logo-mark"></div>
-    <span class="logo-text">Denjoy<span>.IT</span></span>
+    <img src="portal/images/Denjoy-tp1.png" alt="Denjoy IT" class="logo-img">
   </a>
   <ul class="nav-links">
     <li><a href="diensten.html">Diensten</a></li>
@@ -386,6 +386,7 @@
     <li><a href="about.html" class="active">Over</a></li>
     <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
     <li><a href="login.html" class="nav-login">Login</a></li>
+    <li><button id="site-theme-btn" class="nav-theme-btn" title="Thema wisselen">🌙</button></li>
   </ul>
 </nav>
 
@@ -394,8 +395,8 @@
   <div class="about-hero-inner">
     <div class="about-hero-left reveal">
       <div class="section-label">Over mij</div>
-      <h1>20 jaar IT.<br><em>Eén focus.</em></h1>
-      <p>Van service desk naar senior consultant — ik adviseer en implementeer Microsoft 365-omgevingen omdat het mijn passie is. Technische keuzes én de uitvoering zijn mijn verantwoordelijkheid.</p>
+      <h1>20 jaar IT.<br><em>Één platform.</em></h1>
+      <p>Van service desk naar senior consultant — ik adviseer, implementeer én bouw de tools die ik zelf voor mijn klanten gebruik. Het Denjoy Platform is het resultaat: een compleet M365-beheersplatform met automated assessments, klantportaal en kennisbank per tenant.</p>
     </div>
     <div class="profile-card reveal rd2">
       <div class="profile-avatar">
@@ -440,9 +441,9 @@
   </div>
   <div class="bio-grid">
     <div class="bio-text reveal rd1">
-      <p>Ik ben Dennis Jansen, eigenaar van <strong>Denjoy IT</strong> en werkzaam als Modern Workplace Consultant. Met meer dan 20 jaar ICT-ervaring — van service desk tot senior consulting — richt ik graag Microsoft 365-omgevingen professioneel in en beveilig ik ze.</p>
-      <p>Ik werk graag aan meerdere omgevingen tegelijk en ben persoonlijk verantwoordelijk voor de technische keuzes én de uitvoering. Mijn aanpak is altijd <strong>gestructureerd</strong>: vaste scripting-standaarden, reproduceerbare deployments en portals die inzicht geven in de omgeving.</p>
-      <p>Naast beheerwerk bouw ik op maat gemaakte webapplicaties — van multi-tenant security dashboards tot PowerShell-beheerportals. Techniek en consultancy gaan bij mij hand in hand.</p>
+      <p>Ik ben Dennis Jansen, eigenaar van <strong>Denjoy IT</strong> en werkzaam als Modern Workplace Consultant. Met meer dan 20 jaar ICT-ervaring — van service desk tot senior consulting — richt ik Microsoft 365-omgevingen professioneel in, beveilig ze en houd ze gezond.</p>
+      <p>Ik geloof dat goed beheer niet stopt bij configureren. Daarom heb ik het <strong>Denjoy Platform</strong> gebouwd: een compleet systeem met een geautomatiseerde M365 Baseline Assessment (PowerShell, 7 fasen, 50+ checks), een klantportaal met rapport-viewer en actie-tracking, en een kennisbank per tenant. Klanten zien realtime de gezondheid van hun omgeving — zonder technische kennis.</p>
+      <p>Techniek en consultancy gaan bij mij hand in hand. De tools die ik bouw gebruik ik zelf dagelijks — dat garandeert dat ze kloppen in de praktijk. Van PowerShell automation en Microsoft Graph tot FastAPI en HTML-rapportages: alles is in eigen beheer ontwikkeld.</p>
     </div>
     <div class="skills-block reveal rd2">
       <div class="skills-header">Expertise</div>
@@ -584,8 +585,8 @@
     <span class="about-stat-label">Jaar ICT-ervaring</span>
   </div>
   <div class="about-stat reveal rd1">
-    <span class="about-stat-num" data-target="6">0</span>
-    <span class="about-stat-label">Custom webapps gebouwd</span>
+    <span class="about-stat-num" data-target="50">0</span>
+    <span class="about-stat-label">Assessment-checks per run</span>
   </div>
   <div class="about-stat reveal rd2">
     <span class="about-stat-num" data-target="100">0<sup>%</sup></span>
@@ -615,8 +616,7 @@
   <div class="footer-top">
     <div>
       <a href="index.html" class="nav-logo">
-        <div class="logo-mark"></div>
-        <span class="logo-text" style="color:var(--white)">Denjoy<span>.IT</span></span>
+        <img src="portal/images/Denjoy-tp1.png" alt="Denjoy IT" class="logo-img">
       </a>
       <p class="footer-brand-desc">Microsoft 365 beheer en security.</p>
     </div>
@@ -680,6 +680,20 @@
     });
   }, { threshold: 0.5 });
   document.querySelectorAll('[data-target]').forEach(el => sObs.observe(el));
+  // Theme toggle
+  (function() {
+    var btn = document.getElementById('site-theme-btn');
+    if (!btn) return;
+    var t = document.documentElement.getAttribute('data-theme') || 'light';
+    btn.textContent = t === 'dark' ? '☀️' : '🌙';
+    btn.addEventListener('click', function() {
+      var cur = document.documentElement.getAttribute('data-theme') || 'light';
+      var next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('m365LocalTheme', next);
+      this.textContent = next === 'dark' ? '☀️' : '🌙';
+    });
+  }());
 </script>
 </body>
 </html>

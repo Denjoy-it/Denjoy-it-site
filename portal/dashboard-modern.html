@@ -1,0 +1,74 @@
+
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>M365 Baseline Dashboard</title>
+  <link rel="stylesheet" href="css/qube-design.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">M365</div>
+      <nav class="nav">
+        <a href="#" class="nav-item active" data-section="overview">Overview</a>
+        <a href="#" class="nav-item" data-section="history">Geschiedenis</a>
+      </nav>
+      <button id="refreshBtn" class="btn">Vernieuwen</button>
+      <button id="downloadBtn" class="btn">Download JSON</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <h1 style="margin-bottom:8px">M365 Baseline Assessment</h1>
+      <p style="margin-bottom:20px;color:#6B7280">Qube-stijl frontend (eenvoudig overdraagbaar)</p>
+
+      <section id="overviewSection">
+        <div class="grid grid-4" style="margin-bottom:16px">
+          <div class="card score-card">
+            <div class="score-value" id="secureScore">-</div>
+            <div>Secure Score</div>
+          </div>
+          <div class="card"><div>Compliance</div><div id="compliancePercent" style="font-size:28px;font-weight:700;margin-top:8px">-</div></div>
+          <div class="card"><div>Gebruikers</div><div id="userCount" style="font-size:28px;font-weight:700;margin-top:8px">-</div></div>
+          <div class="card"><div>Laatste Scan</div><div id="assessmentDate" style="margin-top:8px">-</div></div>
+        </div>
+
+        <div class="card" style="margin-bottom:16px">
+          <h3 style="margin-bottom:12px">Samenvatting</h3>
+          <div class="grid grid-3">
+            <div><span class="badge ok">Geslaagd</span> <strong id="passCount">-</strong></div>
+            <div><span class="badge warn">Waarschuwing</span> <strong id="warningCount">-</strong></div>
+            <div><span class="badge danger">Mislukt</span> <strong id="failCount">-</strong></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom:16px">
+          <h3 style="margin-bottom:12px">Categorieën</h3>
+          <table class="table">
+            <thead><tr><th>Categorie</th><th>Pass</th><th>Warn</th><th>Fail</th></tr></thead>
+            <tbody id="categoryTable"><tr><td colspan="4">Laden...</td></tr></tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom:12px">Top aanbevelingen</h3>
+          <div id="recommendationsList">Laden...</div>
+        </div>
+      </section>
+
+      <section id="historySection" style="display:none">
+        <div class="card">
+          <h3 style="margin-bottom:12px">Historie</h3>
+          <table class="table"><thead><tr><th>Datum</th><th>Score</th><th>Pass</th><th>Fail</th></tr></thead><tbody id="historyTable"><tr><td colspan="4">Laden...</td></tr></tbody></table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">M365 Baseline modern frontend</footer>
+  <script src="js/dashboard-modern.js"></script>
+</body>
+</html>

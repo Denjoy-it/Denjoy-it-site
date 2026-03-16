@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klantportaal — Denjoy IT</title>
+    <link rel="stylesheet" href="css/portal.css">
+    <link rel="stylesheet" href="css/kb.css">
+    <link rel="stylesheet" href="css/assessment-ui.css">
+    <!-- MSAL.js — Microsoft Authentication Library -->
+    <script src="https://alcdn.msauth.net/browser/2.38.3/js/msal-browser.min.js"></script>
+</head>
+<body>
+<div class="site-wrap dashboard-site-wrap">
+<div class="dashboard-container">
+
+    <nav class="portal-nav-bar" aria-label="Portaal navigatie">
+        <div class="portal-nav-inner">
+
+            <!-- Logo -->
+            <a href="/site/index.html" class="nav-logo">
+                <img src="images/Denjoy-tp1.png" alt="Denjoy IT" class="logo-img">
+            </a>
+
+            <!-- Nav links -->
+            <ul class="portal-nav-links">
+                <li><a href="#" class="portal-nav-link active" data-section="overview">Overzicht</a></li>
+                <li><a href="#" class="portal-nav-link" data-section="assessment">Assessment</a></li>
+                <li><a href="#" class="portal-nav-link" data-section="results">Rapporten</a></li>
+                <li><a href="#" class="portal-nav-link" data-section="kb">Kennisbank</a></li>
+                <li><a href="#" class="portal-nav-link" data-section="settings">Admin</a></li>
+            </ul>
+
+            <!-- Rechts: tenant pill, thema, refresh, avatar -->
+            <div class="portal-nav-right">
+
+                <!-- Tenant pill (compact badge + dropdown) -->
+                <div class="portal-tenant-pill" id="tenantPill" role="button" tabindex="0" title="Wissel van tenant">
+                    <span class="tenant-pill-dot" id="tenantPillDot"></span>
+                    <span class="tenant-pill-name" id="tenantPillName">Geen tenant</span>
+                    <svg class="tenant-pill-chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <div class="tenant-pill-dropdown" id="tenantPillDropdown" style="display:none;"></div>
+                </div>
+                <!-- Hidden select — blijft functioneel voor bestaande event listeners -->
+                <select id="tenantSelect" style="display:none;" aria-label="Tenant selecteren">
+                    <option value="">Selecteer...</option>
+                </select>
+
+                <!-- Thema toggle -->
+                <button id="themeCycleButton" class="portal-nav-icon-btn" type="button" title="Wissel thema">🌙</button>
+
+                <!-- Ververs (icoon-only) -->
+                <button id="logoutButton" type="button" class="portal-nav-icon-btn" title="Ververs data">↻</button>
+
+                <!-- Gebruiker avatar met dropdown -->
+                <div class="portal-user-wrap" id="portalUserWrap">
+                    <button type="button" class="portal-user-avatar" id="userAvatarBtn" title="Gebruikersopties">
+                        <span id="userInitials">?</span>
+                    </button>
+                    <div class="portal-user-dropdown" id="portalUserDropdown" style="display:none;">
+                        <div class="user-dd-header">
+                            <span id="userName" class="user-dd-name">Lokaal</span>
+                        </div>
+                        <a href="/site/index.html" class="user-dd-item">← Website</a>
+                        <button type="button" class="user-dd-item" id="signoutBtn">Afmelden</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Top loading bar — wordt actief tijdens API calls -->
+    <div id="topLoadingBar" class="top-loading-bar" aria-hidden="true"></div>
+
+    <main class="content-area">
+        <section class="portal-hero" id="portalHero" style="display:none;">
+            <div class="portal-hero-grid">
+                <div class="portal-hero-copy">
+                    <div class="hero-badge">
+                        <span class="hero-badge-dot"></span>
+                        Klantportaal & Assessment
+                    </div>
+                    <h1>De IT-enthousiasteling die <em>echt</em> meedenkt.</h1>
+                    <p class="hero-sub">
+                        Een portal in dezelfde Denjoy-stijl als de website, met tenantinzichten, kennisbank,
+                        assessmentbevindingen en live navigatie op basis van wat er echt gevonden is.
+                    </p>
+                    <div class="hero-actions">
+                        <button type="button" class="btn btn-primary" onclick="showSection('assessment')">Open assessment</button>
+                        <button type="button" class="btn btn-outline" onclick="showSection('kb', {kbTab:'overview'})">Bekijk kennisbank</button>
+                    </div>
+                </div>
+                <div class="portal-hero-dashboard">
+                    <div class="portal-shell-window">
+                        <div class="portal-shell-topbar">
+                            <span class="shell-dot shell-dot-red"></span>
+                            <span class="shell-dot shell-dot-yellow"></span>
+                            <span class="shell-dot shell-dot-green"></span>
+                            <span class="portal-shell-url">portal.denjoy.nl/dashboard</span>
+                        </div>
+                        <div class="portal-shell-body">
+                            <aside class="portal-shell-nav">
+                                <button type="button" class="portal-shell-link is-active">Overzicht</button>
+                                <button type="button" class="portal-shell-link">Assessment</button>
+                                <button type="button" class="portal-shell-link">Kennisbank</button>
+                                <button type="button" class="portal-shell-link">Rapporten</button>
+                            </aside>
+                            <div class="portal-shell-main">
+                                <div class="portal-shell-cards">
+                                    <article class="portal-shell-card">
+                                        <span>Secure score</span>
+                                        <strong id="heroSecureScore">—</strong>
+                                    </article>
+                                    <article class="portal-shell-card">
+                                        <span>MFA coverage</span>
+                                        <strong id="heroMfaStatus">—</strong>
+                                    </article>
+                                    <article class="portal-shell-card">
+                                        <span>CA policies</span>
+                                        <strong id="heroCaPolicies">—</strong>
+                                    </article>
+                                </div>
+                                <div class="portal-shell-card portal-shell-card-wide">
+                                    <span>Tenant gebruikers</span>
+                                    <strong id="heroUserCount">—</strong>
+                                    <div class="portal-shell-bars">
+                                        <div class="portal-shell-bar"><span style="width:87%"></span></div>
+                                        <div class="portal-shell-bar"><span style="width:72%"></span></div>
+                                        <div class="portal-shell-bar"><span style="width:94%"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sub-nav: contextgevoelige secondaire navigatie -->
+        <nav id="portalSubnav" class="portal-subnav" aria-label="Sectie navigatie" style="display:none;"></nav>
+
+
+        <!-- Secties -->
+        <div class="dashboard-main">
+
+            <!-- ── OVERVIEW ── -->
+            <section id="overviewSection" class="content-section active">
+                <div class="section-label">Dashboard</div>
+                <h2>Tenant Overzicht</h2>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-content">
+                            <h3>Gebruikers</h3>
+                            <p class="stat-value" id="userCount">—</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🔐</div>
+                        <div class="stat-content">
+                            <h3>MFA Status</h3>
+                            <p class="stat-value" id="mfaStatus">—</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🛡️</div>
+                        <div class="stat-content">
+                            <h3>Secure Score</h3>
+                            <p class="stat-value" id="secureScore">—</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📋</div>
+                        <div class="stat-content">
+                            <h3>CA Policies</h3>
+                            <p class="stat-value" id="caPolicies">—</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-assessments">
+                    <h3>Recente Assessments</h3>
+                    <div id="recentAssessmentsList" class="assessment-list">
+                        <p class="empty-state">Nog geen assessments uitgevoerd</p>
+                    </div>
+                </div>
+
+                <div class="portal-feature-grid">
+                    <article class="portal-feature-card">
+                        <div class="portal-feature-icon">🛡️</div>
+                        <h3>Security &amp; Zero Trust</h3>
+                        <p>Conditional Access, MFA-dekking en tenantbevindingen vanuit de assessment direct in beeld.</p>
+                        <div class="portal-feature-tags">
+                            <span class="tag-muted">Entra ID</span>
+                            <span class="tag-muted">Defender</span>
+                            <span class="tag-muted">Purview</span>
+                        </div>
+                    </article>
+                    <article class="portal-feature-card">
+                        <div class="portal-feature-icon">☁️</div>
+                        <h3>Portals &amp; Dashboards</h3>
+                        <p>Live tenantinzichten, rapportvergelijking en een kennisbank in dezelfde Denjoy-huisstijl.</p>
+                        <div class="portal-feature-tags">
+                            <span class="tag-muted">Reactie snel</span>
+                            <span class="tag-muted">FastAPI</span>
+                            <span class="tag-muted">Graph API</span>
+                        </div>
+                    </article>
+                    <article class="portal-feature-card">
+                        <div class="portal-feature-icon">📚</div>
+                        <h3>Documentatie &amp; NetDocs</h3>
+                        <p>Apparaten, switches, licenties, contacten en documentatie centraal per tenant vastgelegd.</p>
+                        <div class="portal-feature-tags">
+                            <span class="tag-muted">Kennisbank</span>
+                            <span class="tag-muted">Switch docs</span>
+                            <span class="tag-muted">Assessment</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ── ASSESSMENT ── -->
+            <section id="assessmentSection" class="content-section">
+                <div id="assessmentExperienceRoot"></div>
+
+                <div id="assessmentLegacyRunner" class="assessment-legacy-runner">
+                    <div class="section-label">Uitvoeren</div>
+                    <h2>Start Nieuwe Assessment</h2>
+
+                    <div class="assessment-config">
+                        <h3>Selecteer Assessment Fasen</h3>
+                        <div class="phase-selector">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="phase" value="phase1" checked>
+                                <span>Phase 1: Users, Licensing &amp; Security Basics</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="phase" value="phase2" checked>
+                                <span>Phase 2: Collaboration &amp; Storage</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="phase" value="phase3" checked>
+                                <span>Phase 3: Compliance &amp; Security Policies</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="phase" value="phase4" checked>
+                                <span>Phase 4: Advanced Security &amp; Compliance</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="phase" value="phase5" checked>
+                                <span>Phase 5: Intune Configuration</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="phase" value="phase6" checked>
+                                <span>Phase 6: Azure Infrastructure</span>
+                            </label>
+                        </div>
+                        <button id="startAssessmentButton" class="btn btn-primary btn-large">
+                            Start Assessment →
+                        </button>
+                    </div>
+
+                    <div id="assessmentProgress" class="assessment-progress" style="display:none;">
+                        <h3>Assessment wordt uitgevoerd...</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="progress-log" id="progressLog">
+                            <p>Initialiseren...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── RAPPORTEN ── -->
+            <section id="resultsSection" class="content-section nb-section">
+                <div class="nb-layout">
+
+                    <nav class="nb-tabbar" id="resultsTabbar" aria-label="Rapporten navigatie">
+                        <a href="#" class="nb-tab active" data-results-panel="viewer">
+                            <span class="nb-tab-icon">📊</span>
+                            <span class="nb-tab-label">Rapport</span>
+                            <span class="nb-tab-count" id="resultsTabCount">—</span>
+                        </a>
+                        <a href="#" class="nb-tab" data-results-panel="diff">
+                            <span class="nb-tab-icon">↔</span>
+                            <span class="nb-tab-label">Vergelijking</span>
+                        </a>
+                        <a href="#" class="nb-tab" data-results-panel="management">
+                            <span class="nb-tab-icon">⚙</span>
+                            <span class="nb-tab-label">Beheer</span>
+                        </a>
+                        <a href="#" class="nb-tab" data-results-panel="actions">
+                            <span class="nb-tab-icon">✓</span>
+                            <span class="nb-tab-label">Acties</span>
+                        </a>
+                    </nav>
+
+                    <div class="nb-content" id="resultsContent">
+
+                        <!-- RAPPORT -->
+                        <div class="nb-pane active" data-results-panel="viewer">
+                            <div class="nb-breadcrumb">
+                                <span>Rapporten</span><span class="nb-bc-sep">›</span>
+                                <span class="nb-bc-current">Rapport</span>
+                            </div>
+                            <div class="nb-page-header">
+                                <h2 class="nb-page-title">Rapport <span class="nb-page-count" id="resultsRunCount"></span></h2>
+                                <div class="nb-page-actions" id="resultsDownloadBar" style="display:none;">
+                                    <a id="btnOpenReport" href="#" target="_blank" class="nb-btn nb-btn-primary">↗ Open rapport</a>
+                                    <a id="btnDownloadCsv" href="#" class="nb-btn nb-btn-secondary">↓ CSV</a>
+                                    <button class="nb-btn nb-btn-secondary" onclick="loadResultsSection()">↺ Ververs</button>
+                                </div>
+                            </div>
+                            <p class="nb-empty" id="resultsViewerEmpty" style="display:none;">Start een assessment om resultaten te zien.</p>
+                            <div id="resultsViewerContent">
+                                <div class="results-kpi-grid">
+                                    <div class="results-kpi-card">
+                                        <div class="results-kpi-label">Totale score</div>
+                                        <div class="results-kpi-value" id="kpiScore">—</div>
+                                    </div>
+                                    <div class="results-kpi-card results-kpi-card--danger">
+                                        <div class="results-kpi-label">Kritiek</div>
+                                        <div class="results-kpi-value" id="kpiCritical">—</div>
+                                    </div>
+                                    <div class="results-kpi-card results-kpi-card--warn">
+                                        <div class="results-kpi-label">Waarschuwingen</div>
+                                        <div class="results-kpi-value" id="kpiWarning">—</div>
+                                    </div>
+                                    <div class="results-kpi-card results-kpi-card--info">
+                                        <div class="results-kpi-label">Info</div>
+                                        <div class="results-kpi-value" id="kpiInfo">—</div>
+                                    </div>
+                                </div>
+                                <div class="results-meta-grid">
+                                    <div class="results-meta-card">
+                                        <h4>Run details</h4>
+                                        <div class="results-meta-rows">
+                                            <div class="results-meta-row"><span>Run ID</span><strong id="metaRunId">—</strong></div>
+                                            <div class="results-meta-row"><span>Status</span><strong id="metaStatus">—</strong></div>
+                                            <div class="results-meta-row"><span>Gestart</span><strong id="metaStarted">—</strong></div>
+                                            <div class="results-meta-row"><span>Voltooid</span><strong id="metaCompleted">—</strong></div>
+                                            <div class="results-meta-row"><span>Run mode</span><strong id="metaRunMode">—</strong></div>
+                                            <div class="results-meta-row"><span>Fases</span><strong id="metaPhases">—</strong></div>
+                                        </div>
+                                    </div>
+                                    <div class="results-meta-card">
+                                        <h4>Tenant overzicht</h4>
+                                        <div class="results-meta-rows">
+                                            <div class="results-meta-row"><span>Tenant</span><strong id="metaTenantName">—</strong></div>
+                                            <div class="results-meta-row"><span>Klant</span><strong id="metaCustomer">—</strong></div>
+                                            <div class="results-meta-row"><span>Runs totaal</span><strong id="metaTotalRuns">—</strong></div>
+                                            <div class="results-meta-row"><span>Voltooid</span><strong id="metaCompletedRuns">—</strong></div>
+                                            <div class="results-meta-row"><span>Mislukt</span><strong id="metaFailedRuns">—</strong></div>
+                                            <div class="results-meta-row"><span>Rapport-runs</span><strong id="metaReportRuns">—</strong></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="results-runs-panel">
+                                    <div class="results-runs-head">
+                                        <h4>Recente rapport-runs</h4>
+                                        <span class="results-runs-count" id="resultsRunsCount">—</span>
+                                    </div>
+                                    <div class="results-runs-table-wrap">
+                                        <table class="results-runs-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Datum</th>
+                                                    <th>Status</th>
+                                                    <th>Mode</th>
+                                                    <th>Fases</th>
+                                                    <th>Score</th>
+                                                    <th>K/W/I</th>
+                                                    <th>Acties</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="resultsRunsTableBody">
+                                                <tr><td colspan="7" class="empty-state">Selecteer een tenant om runs te zien.</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="results-viewer-panel">
+                                    <div class="results-viewer-head">
+                                        <h3>Rapportviewer</h3>
+                                        <p>Inline weergave van het nieuwste rapport met fase-tabs.</p>
+                                    </div>
+                                    <div id="resultsViewerContainer"></div>
+                                </div>
+                            </div>
+                        </div><!-- /viewer -->
+
+                        <!-- VERGELIJKING -->
+                        <div class="nb-pane" data-results-panel="diff">
+                            <div class="nb-breadcrumb">
+                                <span>Rapporten</span><span class="nb-bc-sep">›</span>
+                                <span class="nb-bc-current">Vergelijking</span>
+                            </div>
+                            <div class="nb-page-header">
+                                <h2 class="nb-page-title">Run vergelijking</h2>
+                                <div class="nb-page-actions">
+                                    <button class="nb-btn nb-btn-secondary" onclick="loadRunDiffPanel()">↺ Herlaad</button>
+                                </div>
+                            </div>
+                            <p style="color:var(--muted);font-size:0.875rem;margin-bottom:1.5rem;">Vergelijking van de laatste twee rapport-runs voor deze tenant.</p>
+                            <div id="runDiffContainer" class="nb-empty">Selecteer een tenant om te vergelijken.</div>
+                        </div><!-- /diff -->
+
+                        <!-- BEHEER -->
+                        <div class="nb-pane" data-results-panel="management">
+                            <div class="nb-breadcrumb">
+                                <span>Rapporten</span><span class="nb-bc-sep">›</span>
+                                <span class="nb-bc-current">Beheer</span>
+                            </div>
+                            <div class="nb-page-header">
+                                <h2 class="nb-page-title">Rapportbeheer</h2>
+                                <div class="nb-page-actions">
+                                    <button class="nb-btn nb-btn-primary nb-btn-sm" onclick="exportReportsCsv()">↓ CSV Export</button>
+                                </div>
+                            </div>
+                            <div class="reports-filter-row">
+                                <input type="text" id="reportsFilterSearch" placeholder="Zoek tenant, run id of bestandsnaam">
+                                <select id="reportsFilterStatus">
+                                    <option value="">Alle statussen</option>
+                                    <option value="completed">Completed</option>
+                                    <option value="failed">Failed</option>
+                                    <option value="running">Running</option>
+                                    <option value="queued">Queued</option>
+                                </select>
+                                <select id="reportsFilterArchived">
+                                    <option value="exclude">Alleen actief</option>
+                                    <option value="include">Actief + archief</option>
+                                    <option value="only">Alleen archief</option>
+                                </select>
+                                <input type="date" id="reportsFilterFrom">
+                                <input type="date" id="reportsFilterTo">
+                                <button class="nb-btn nb-btn-secondary nb-btn-sm" onclick="loadReportsManagementPanel()">Filter</button>
+                                <button class="nb-btn nb-btn-secondary nb-btn-sm" onclick="clearReportsFilters()">Reset</button>
+                            </div>
+                            <div class="results-runs-table-wrap">
+                                <table class="results-runs-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Datum</th>
+                                            <th>Tenant</th>
+                                            <th>Status</th>
+                                            <th>Archief</th>
+                                            <th>Score</th>
+                                            <th>K/W/I</th>
+                                            <th>Bestand</th>
+                                            <th>Acties</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="reportsManagementTableBody">
+                                        <tr><td colspan="8" class="empty-state">Rapporten laden...</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="retention-row">
+                                <h5>Retentiebeleid</h5>
+                                <select id="retentionScopeSelect">
+                                    <option value="tenant">Alleen huidige tenant</option>
+                                    <option value="all">Alle tenants</option>
+                                </select>
+                                <input type="number" id="retentionKeepLatestInput" min="0" value="10" placeholder="Bewaar laatste N">
+                                <input type="number" id="retentionKeepDaysInput" min="0" value="90" placeholder="Bewaar dagen">
+                                <button class="nb-btn nb-btn-warning nb-btn-sm" onclick="applyRetentionPolicy()">Retentie toepassen</button>
+                            </div>
+                        </div><!-- /management -->
+
+                        <!-- ACTIES -->
+                        <div class="nb-pane" data-results-panel="actions">
+                            <div class="nb-breadcrumb">
+                                <span>Rapporten</span><span class="nb-bc-sep">›</span>
+                                <span class="nb-bc-current">Acties</span>
+                            </div>
+                            <div class="nb-page-header">
+                                <h2 class="nb-page-title">Actie-tracking <span style="font-size:0.85em;font-weight:500;color:var(--muted)">(findings)</span></h2>
+                                <div class="nb-page-actions">
+                                    <select id="actionsStatusFilter" onchange="loadActionsPanel()">
+                                        <option value="all">Alle</option>
+                                        <option value="open">Open</option>
+                                        <option value="in_progress">In progress</option>
+                                        <option value="done">Done</option>
+                                        <option value="accepted">Accepted</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="actions-form-grid">
+                                <input type="text" id="actionTitleInput" placeholder="Titel finding/actie">
+                                <input type="text" id="actionKeyInput" placeholder="Finding key (bv. CA-001)">
+                                <select id="actionSeverityInput">
+                                    <option value="warning">Warning</option>
+                                    <option value="critical">Critical</option>
+                                    <option value="info">Info</option>
+                                </select>
+                                <input type="text" id="actionOwnerInput" placeholder="Owner (team/naam)">
+                                <input type="date" id="actionDueDateInput">
+                                <button class="nb-btn nb-btn-primary nb-btn-sm" onclick="createFindingAction()">Actie toevoegen</button>
+                            </div>
+                            <div class="results-runs-table-wrap">
+                                <table class="results-runs-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Finding</th>
+                                            <th>Severity</th>
+                                            <th>Owner</th>
+                                            <th>Status</th>
+                                            <th>Due</th>
+                                            <th>Run</th>
+                                            <th>Acties</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="actionsTableBody">
+                                        <tr><td colspan="7" class="empty-state">Acties laden...</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div><!-- /actions -->
+
+                    </div><!-- /nb-content -->
+                </div><!-- /nb-layout -->
+            </section>
+
+            <!-- ── KB SECTION ── -->
+            <section id="kbSection" class="content-section nb-section">
+                <div class="nb-layout">
+
+                    <nav class="nb-tabbar" id="kbTabbar" aria-label="Kennisbank navigatie">
+                        <a href="#" class="nb-tab" data-kb-tab="overview">
+                            <span class="nb-tab-icon">🏠</span>
+                            <span class="nb-tab-label">Overzicht</span>
+                        </a>
+                        <a href="#" class="nb-tab active" data-kb-tab="assets">
+                            <span class="nb-tab-icon">🖥️</span>
+                            <span class="nb-tab-label">Apparaten</span>
+                            <span class="nb-tab-count" id="nbCountAssets">—</span>
+                        </a>
+                        <a href="#" class="nb-tab" data-kb-tab="vlans">
+                            <span class="nb-tab-icon">🔀</span>
+                            <span class="nb-tab-label">VLANs</span>
+                            <span class="nb-tab-count" id="nbCountVlans">—</span>
+                        </a>
+                        <a href="#" class="nb-tab" data-kb-tab="pages">
+                            <span class="nb-tab-icon">📋</span>
+                            <span class="nb-tab-label">Documenten</span>
+                            <span class="nb-tab-count" id="nbCountPages">—</span>
+                        </a>
+                        <a href="#" class="nb-tab" data-kb-tab="contacts">
+                            <span class="nb-tab-icon">👥</span>
+                            <span class="nb-tab-label">Contacten</span>
+                            <span class="nb-tab-count" id="nbCountContacts">—</span>
+                        </a>
+                        <a href="#" class="nb-tab" data-kb-tab="passwords">
+                            <span class="nb-tab-icon">🔑</span>
+                            <span class="nb-tab-label">Passwords</span>
+                            <span class="nb-tab-count" id="nbCountPasswords">—</span>
+                        </a>
+                        <a href="#" class="nb-tab" data-kb-tab="software">
+                            <span class="nb-tab-icon">📦</span>
+                            <span class="nb-tab-label">Software</span>
+                            <span class="nb-tab-count" id="nbCountSoftware">—</span>
+                        </a>
+                        <a href="#" class="nb-tab" data-kb-tab="domains">
+                            <span class="nb-tab-icon">🌍</span>
+                            <span class="nb-tab-label">Domeinen</span>
+                            <span class="nb-tab-count" id="nbCountDomains">—</span>
+                        </a>
+                        <a href="#" class="nb-tab" data-kb-tab="m365">
+                            <span class="nb-tab-icon">☁️</span>
+                            <span class="nb-tab-label">M365</span>
+                        </a>
+                        <a href="#" class="nb-tab" data-kb-tab="changelog">
+                            <span class="nb-tab-icon">📋</span>
+                            <span class="nb-tab-label">Wijzigingslog</span>
+                            <span class="nb-tab-count" id="nbCountChangelog">—</span>
+                        </a>
+                    </nav>
+
+                    <div class="nb-content" id="kbContent">
+
+                        <div class="nb-pane" data-kb-pane="overview">
+                            <div class="nb-breadcrumb">
+                                <span>Kennisbank</span><span class="nb-bc-sep">›</span>
+                                <span class="nb-bc-current">Overzicht</span>
+                            </div>
+                            <div class="nb-page-header">
+                                <h2 class="nb-page-title">NetDocs overzicht</h2>
+                            </div>
+                            <div id="kbOverviewPane" class="nb-overview-pane">
+                                <p class="nb-empty">Selecteer een tenant.</p>
+                            </div>
+                        </div>
+
+                        <!-- ASSETS -->
+                        <div class="nb-pane active" data-kb-pane="assets">
+                            <div class="nb-breadcrumb">
+                                <span>Kennisbank</span><span class="nb-bc-sep">›</span>
+                                <span class="nb-bc-current">Apparaten</span>
+                            </div>
+                            <div class="nb-page-header">
+                                <h2 class="nb-page-title">Apparaten <span class="nb-page-count" id="nbAssetListCount"></span></h2>
+                                <div class="nb-page-actions">
+                                    <button type="button" class="nb-btn nb-btn-primary" id="kbAddAssetBtn">+ Toevoegen</button>
+                                </div>
+                            </div>
+                            <div class="nb-list-layout">
+                                <aside class="nb-filter-panel">
+                                    <div class="nb-filter-title">Filteren</div>
+                                    <div class="nb-filter-group">
+                                        <label class="nb-filter-label">Zoeken</label>
+                                        <input type="text" id="kbAssetSearch" class="nb-filter-input" placeholder="Naam, IP, locatie…">
+                                    </div>
+                                    <div class="nb-filter-group">
+                                        <label class="nb-filter-label">Type</label>
+                                        <select id="kbAssetTypeFilter" class="nb-filter-select">
+                                            <option value="">Alle typen</option>
+                                        </select>
+                                    </div>
+                                    <div class="nb-filter-group">
+                                        <label class="nb-filter-label">Status</label>
+                                        <select id="kbAssetStatusFilter" class="nb-filter-select">
+                                            <option value="">Alle</option>
+                                            <option value="1">Actief</option>
+                                            <option value="0">Inactief</option>
+                                        </select>
+                                    </div>
+                                </aside>
+                                <div class="nb-table-area">
+                                    <div id="kbAssetsTable" class="nb-object-list">
+                                        <p class="nb-empty">Selecteer een tenant.</p>
+                                    </div>
+                                    <div id="kbAssetDetail" class="nb-detail-panel" style="display:none;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- VLANs -->
+                        <div class="nb-pane" data-kb-pane="vlans">
+                            <div class="nb-breadcrumb">
+                                <span>Kennisbank</span><span class="nb-bc-sep">›</span>
+                                <span class="nb-bc-current">VLANs</span>
+                            </div>
+                            <div class="nb-page-header">
+                                <h2 class="nb-page-title">VLANs <span class="nb-page-count" id="nbVlanListCount"></span></h2>
+                                <div class="nb-page-actions">
+                                    <button type="button" class="nb-btn nb-btn-primary" id="kbAddVlanBtn">+ Toevoegen</button>
+                                </div>
+                            </div>
+                            <div class="nb-list-layout">
+                                <aside class="nb-filter-panel">
+                                    <div class="nb-filter-title">Filteren</div>
+                                    <div class="nb-filter-group">
+                                        <label class="nb-filter-label">Zoeken</label>
+                                        <input type="text" id="kbVlanSearch" class="nb-filter-input" placeholder="VLAN-ID, naam, subnet…">
+                                    </div>
+                                    <div class="nb-filter-group">
+                                        <label class="nb-filter-label">Doel</label>
+                                        <select id="kbVlanPurposeFilter" class="nb-filter-select">
+                                            <option value="">Alle</option>
+                                            <option value="user">Gebruikers</option>
+                                            <option value="server">Servers</option>
+                                            <option value="mgmt">Management</option>
+                                            <option value="guest">Gasten</option>
+                                            <option value="iot">IoT</option>
+                                            <option value="dmz">DMZ</option>
+                                        </select>
+                                    </div>
+                                </aside>
+                                <div class="nb-table-area">
+                                    <div id="kbVlansTable" class="nb-object-list">
+                                        <p class="nb-empty">Selecteer een tenant.</p>
+                                    </div>
+                                    <div id="kbVlanDetail" class="nb-detail-panel" style="display:none;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PAGES -->
+                        <div class="nb-pane" data-kb-pane="pages">
+                            <div class="nb-breadcrumb">
+                                <span>Kennisbank</span><span class="nb-bc-sep">›</span>
+                                <span class="nb-bc-current">Documenten</span>
+                            </div>
+                            <div class="nb-page-header">
+                                <h2 class="nb-page-title">Documenten <span class="nb-page-count" id="nbPageListCount"></span></h2>
+                                <div class="nb-page-actions">
+                                    <button type="button" class="nb-btn nb-btn-primary" id="kbAddPageBtn">+ Nieuw document</button>
+                                </div>
+                            </div>
+                            <div class="nb-pages-layout">
+                                <div id="kbPagesList" class="nb-pages-list">
+                                    <p class="nb-empty">Geen documenten.</p>
+                                </div>
+                                <div id="kbPageEditor" class="nb-page-editor" style="display:none;">
+                                    <div class="nb-page-editor-header">
+                                        <input type="text" id="kbPageTitleInput" class="nb-page-title-input" placeholder="Paginatitel">
+                                        <select id="kbPageCategorySelect" class="nb-filter-select">
+                                            <option value="network">Netwerk</option>
+                                            <option value="security">Beveiliging</option>
+                                            <option value="procedures">Procedures</option>
+                                            <option value="contacts">Contacten</option>
+                                        </select>
+                                        <div class="nb-page-editor-actions">
+                                            <button type="button" class="nb-btn nb-btn-primary nb-btn-sm" id="kbSavePageBtn">Opslaan</button>
+                                            <button type="button" class="nb-btn nb-btn-secondary nb-btn-sm" id="kbCancelPageBtn">Annuleren</button>
+                                            <button type="button" class="nb-btn nb-btn-danger nb-btn-sm" id="kbDeletePageBtn" style="display:none;">Verwijderen</button>
+                                        </div>
+                                    </div>
+                                    <div class="nb-editor-split">
+                                        <textarea id="kbPageContent" class="nb-markdown-editor" placeholder="# Markdown inhoud&#10;&#10;Schrijf hier de documentatie…"></textarea>
+                                        <div id="kbPagePreview" class="nb-markdown-preview"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CONTACTS -->
+                        <div class="nb-pane" data-kb-pane="contacts">
+                            <div class="nb-breadcrumb">
+                                <span>Kennisbank</span><span class="nb-bc-sep">›</span>
+                                <span class="nb-bc-current">Contacten</span>
+                            </div>
+                            <div class="nb-page-header">
+                                <h2 class="nb-page-title">Contacten <span class="nb-page-count" id="nbContactListCount"></span></h2>
+                                <div class="nb-page-actions">
+                                    <select id="kbContactSourceFilter" class="nb-filter-select">
+                                        <option value="all">Alle bronnen</option>
+                                        <option value="manual">Handmatig</option>
+                                        <option value="assessment">Assessment</option>
+                                    </select>
+                                    <button type="button" class="nb-btn nb-btn-primary" id="kbAddContactBtn">+ Toevoegen</button>
+                                </div>
+                            </div>
+                            <div id="kbContactsTable" class="nb-object-list">
+                                <p class="nb-empty">Selecteer een tenant.</p>
+                            </div>
+                            <div id="kbContactDetail" class="nb-detail-panel" style="display:none;"></div>
+                        </div>
+
+                        <div class="nb-pane" data-kb-pane="passwords">
+                            <div class="nb-breadcrumb">
+                                <span>Kennisbank</span><span class="nb-bc-sep">›</span>
+                                <span class="nb-bc-current">Passwords</span>
+                            </div>
+                            <div class="nb-page-header">
+                                <h2 class="nb-page-title">Passwords <span class="nb-page-count" id="nbPasswordListCount"></span></h2>
+                                <div class="nb-page-actions">
+                                    <button type="button" class="nb-btn nb-btn-primary" id="kbAddPasswordBtn">+ Toevoegen</button>
+                                </div>
+                            </div>
+                            <div id="kbPasswordsTable" class="nb-object-list"><p class="nb-empty">Selecteer een tenant.</p></div>
+                            <div id="kbPasswordDetail" class="nb-detail-panel" style="display:none;"></div>
+                        </div>
+
+                        <div class="nb-pane" data-kb-pane="software">
+                            <div class="nb-breadcrumb">
+                                <span>Kennisbank</span><span class="nb-bc-sep">›</span>
+                                <span class="nb-bc-current">Software</span>
+                            </div>
+                            <div class="nb-page-header">
+                                <h2 class="nb-page-title">Software &amp; Licenties <span class="nb-page-count" id="nbSoftwareListCount"></span></h2>
+                                <div class="nb-page-actions">
+                                    <select id="kbSoftwareSourceFilter" class="nb-filter-select">
+                                        <option value="all">Alle bronnen</option>
+                                        <option value="manual">Handmatig</option>
+                                        <option value="assessment">Assessment</option>
+                                    </select>
+                                    <button type="button" class="nb-btn nb-btn-primary" id="kbAddSoftwareBtn">+ Toevoegen</button>
+                                </div>
+                            </div>
+                            <div id="kbSoftwareTable" class="nb-object-list"><p class="nb-empty">Selecteer een tenant.</p></div>
+                            <div id="kbSoftwareDetail" class="nb-detail-panel" style="display:none;"></div>
+                        </div>
+
+                        <div class="nb-pane" data-kb-pane="domains">
+                            <div class="nb-breadcrumb">
+                                <span>Kennisbank</span><span class="nb-bc-sep">›</span>
+                                <span class="nb-bc-current">Domeinen</span>
+                            </div>
+                            <div class="nb-page-header">
+                                <h2 class="nb-page-title">Domeinen &amp; DNS <span class="nb-page-count" id="nbDomainListCount"></span></h2>
+                                <div class="nb-page-actions">
+                                    <button type="button" class="nb-btn nb-btn-primary" id="kbAddDomainBtn">+ Toevoegen</button>
+                                </div>
+                            </div>
+                            <div id="kbDomainsTable" class="nb-object-list"><p class="nb-empty">Selecteer een tenant.</p></div>
+                            <div id="kbDomainDetail" class="nb-detail-panel" style="display:none;"></div>
+                        </div>
+
+                        <div class="nb-pane" data-kb-pane="m365">
+                            <div class="nb-breadcrumb">
+                                <span>Kennisbank</span><span class="nb-bc-sep">›</span>
+                                <span class="nb-bc-current">Microsoft 365</span>
+                            </div>
+                            <div class="nb-page-header">
+                                <h2 class="nb-page-title">Microsoft 365</h2>
+                                <div class="nb-page-actions">
+                                    <button type="button" class="nb-btn nb-btn-primary" id="kbSaveM365Btn">Opslaan</button>
+                                </div>
+                            </div>
+                            <div class="nb-detail-panel" style="display:block;max-height:none;">
+                                <div id="kbM365AssessmentInfo" class="nb-assessment-banner" style="display:none;"></div>
+                                <div class="nb-form-grid">
+                                    <label>Tenant naam<input type="text" id="kbM365TenantName" class="nb-input"></label>
+                                    <label>Tenant ID<input type="text" id="kbM365TenantId" class="nb-input"></label>
+                                    <label>Global admin<input type="text" id="kbM365GlobalAdmin" class="nb-input"></label>
+                                    <label>Licentietype<input type="text" id="kbM365LicenseType" class="nb-input"></label>
+                                    <label>Licenties totaal<input type="number" id="kbM365LicensesTotal" class="nb-input"></label>
+                                    <label>Licenties gebruikt<input type="number" id="kbM365LicensesUsed" class="nb-input"></label>
+                                    <label>MFA<input type="text" id="kbM365Mfa" class="nb-input" placeholder="Entra ID MFA"></label>
+                                    <label>MDM / Intune<input type="text" id="kbM365Mdm" class="nb-input"></label>
+                                    <label>AD Connect<input type="text" id="kbM365AdConnect" class="nb-input"></label>
+                                    <label>Shared mailboxes<input type="number" id="kbM365SharedMailboxes" class="nb-input"></label>
+                                    <label>Guest users<input type="number" id="kbM365GuestUsers" class="nb-input"></label>
+                                    <label class="nb-form-inline"><input type="checkbox" id="kbM365ConditionalAccess"> Conditional Access actief</label>
+                                    <label class="nb-form-inline"><input type="checkbox" id="kbM365Defender"> Defender actief</label>
+                                    <label class="nb-form-inline"><input type="checkbox" id="kbM365Purview"> Purview actief</label>
+                                    <label class="nb-form-inline"><input type="checkbox" id="kbM365Hybrid"> Hybrid actief</label>
+                                    <label class="nb-form-inline"><input type="checkbox" id="kbM365ExchangeHybrid"> Exchange Hybrid actief</label>
+                                    <label class="nb-form-full">Notities<textarea id="kbM365Notes" class="nb-input nb-textarea" rows="4"></textarea></label>
+                                </div>
+                                <div class="nb-m365-license-wrap">
+                                    <div class="nb-detail-header">
+                                        <h3 class="nb-detail-title">Licentie overzicht</h3>
+                                    </div>
+                                    <div id="kbM365LicenseOverview" class="nb-object-list nb-m365-license-list">
+                                        <p class="nb-empty">Nog geen licentiegegevens uit assessment beschikbaar.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="nb-pane" data-kb-pane="changelog">
+                            <div class="nb-breadcrumb">
+                                <span>Kennisbank</span><span class="nb-bc-sep">›</span>
+                                <span class="nb-bc-current">Wijzigingslog</span>
+                            </div>
+                            <div class="nb-page-header">
+                                <h2 class="nb-page-title">Wijzigingslog <span class="nb-page-count" id="nbChangelogListCount"></span></h2>
+                                <div class="nb-page-actions">
+                                    <button type="button" class="nb-btn nb-btn-primary" id="kbAddChangelogBtn">+ Toevoegen</button>
+                                </div>
+                            </div>
+                            <div id="kbChangelogTable" class="nb-object-list"><p class="nb-empty">Selecteer een tenant.</p></div>
+                            <div id="kbChangelogDetail" class="nb-detail-panel" style="display:none;"></div>
+                        </div>
+
+                        <div id="kbDynamicSwitchPanes"></div>
+
+                    </div><!-- /nb-content -->
+                </div><!-- /nb-layout -->
+
+                <!-- Modals -->
+                <div id="kbAssetModal" class="nb-modal" style="display:none;" role="dialog" aria-modal="true">
+                    <div class="nb-modal-inner">
+                        <h3 id="kbAssetModalTitle">Apparaat toevoegen</h3>
+                        <p class="nb-required-hint">Velden met <strong>*</strong> zijn verplicht.</p>
+                        <input type="hidden" id="kbAssetId">
+                        <div class="nb-form-grid">
+                            <label>Naam *<input type="text" id="kbAssetName" class="nb-input"></label>
+                            <label>Type *<select id="kbAssetType" class="nb-input"></select></label>
+                            <label>Hostname<input type="text" id="kbAssetHostname" class="nb-input"></label>
+                            <label>IP-adres<input type="text" id="kbAssetIP" class="nb-input" placeholder="192.168.1.1"></label>
+                            <label>Locatie<input type="text" id="kbAssetLocation" class="nb-input" placeholder="Serverruimte AMS"></label>
+                            <label>Vendor<input type="text" id="kbAssetVendor" class="nb-input" placeholder="Cisco"></label>
+                            <label>Model<input type="text" id="kbAssetModel" class="nb-input" placeholder="Catalyst 9300"></label>
+                            <label>Firmware<input type="text" id="kbAssetFirmware" class="nb-input"></label>
+                            <label>Serienummer<input type="text" id="kbAssetSerial" class="nb-input"></label>
+                            <div id="kbSwitchFields" class="nb-form-full nb-switch-fields" style="display:none;">
+                                <div class="nb-switch-fields-title">Switchdocumentatie</div>
+                                <div class="nb-switch-fields-grid">
+                                    <label>Poortlayout
+                                        <select id="kbAssetSwitchPortCount" class="nb-input">
+                                            <option value="24">24 poorten</option>
+                                            <option value="48">48 poorten</option>
+                                        </select>
+                                    </label>
+                                    <label>SFP uplinks
+                                        <input type="number" id="kbAssetSwitchSfpCount" class="nb-input" min="0" max="8" value="2">
+                                    </label>
+                                </div>
+                                <p class="nb-switch-fields-help">Na opslaan verschijnt een interactieve switchpagina met kleurcodering, poortdetails en inline invullen.</p>
+                            </div>
+                            <label class="nb-form-full">Notities<textarea id="kbAssetNotes" class="nb-input nb-textarea" rows="3"></textarea></label>
+                            <label class="nb-form-inline"><input type="checkbox" id="kbAssetActive" checked> Actief</label>
+                        </div>
+                        <div class="nb-modal-actions">
+                            <button type="button" class="nb-btn nb-btn-primary" id="kbSaveAssetBtn">Opslaan</button>
+                            <button type="button" class="nb-btn nb-btn-secondary" id="kbCancelAssetBtn">Annuleren</button>
+                            <button type="button" class="nb-btn nb-btn-danger" id="kbDeleteAssetBtn" style="display:none;">Verwijderen</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="kbVlanModal" class="nb-modal" style="display:none;" role="dialog" aria-modal="true">
+                    <div class="nb-modal-inner">
+                        <h3 id="kbVlanModalTitle">VLAN toevoegen</h3>
+                        <input type="hidden" id="kbVlanDbId">
+                        <div class="nb-form-grid">
+                            <label>VLAN-ID * (1-4094)<input type="number" id="kbVlanId" class="nb-input" min="1" max="4094"></label>
+                            <label>Naam *<input type="text" id="kbVlanName" class="nb-input"></label>
+                            <label>Subnet<input type="text" id="kbVlanSubnet" class="nb-input" placeholder="192.168.10.0/24"></label>
+                            <label>Gateway<input type="text" id="kbVlanGateway" class="nb-input" placeholder="192.168.10.1"></label>
+                            <label>Doel<select id="kbVlanPurpose" class="nb-input">
+                                <option value="user">Gebruikers</option>
+                                <option value="server">Servers</option>
+                                <option value="mgmt">Management</option>
+                                <option value="guest">Gasten</option>
+                                <option value="iot">IoT</option>
+                                <option value="dmz">DMZ</option>
+                            </select></label>
+                            <label class="nb-form-full">Beschrijving<input type="text" id="kbVlanDescription" class="nb-input"></label>
+                            <label class="nb-form-full">Notities<textarea id="kbVlanNotes" class="nb-input nb-textarea" rows="2"></textarea></label>
+                        </div>
+                        <div class="nb-modal-actions">
+                            <button type="button" class="nb-btn nb-btn-primary" id="kbSaveVlanBtn">Opslaan</button>
+                            <button type="button" class="nb-btn nb-btn-secondary" id="kbCancelVlanBtn">Annuleren</button>
+                            <button type="button" class="nb-btn nb-btn-danger" id="kbDeleteVlanBtn" style="display:none;">Verwijderen</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="kbContactModal" class="nb-modal" style="display:none;" role="dialog" aria-modal="true">
+                    <div class="nb-modal-inner">
+                        <h3 id="kbContactModalTitle">Contact toevoegen</h3>
+                        <input type="hidden" id="kbContactId">
+                        <div class="nb-form-grid">
+                            <label>Naam *<input type="text" id="kbContactName" class="nb-input"></label>
+                            <label>Rol<input type="text" id="kbContactRole" class="nb-input" placeholder="IT-beheerder"></label>
+                            <label>Telefoon<input type="tel" id="kbContactPhone" class="nb-input"></label>
+                            <label>E-mail<input type="email" id="kbContactEmail" class="nb-input"></label>
+                            <label class="nb-form-inline"><input type="checkbox" id="kbContactPrimary"> Primair contact</label>
+                            <label class="nb-form-full">Notities<textarea id="kbContactNotes" class="nb-input nb-textarea" rows="2"></textarea></label>
+                        </div>
+                        <div class="nb-modal-actions">
+                            <button type="button" class="nb-btn nb-btn-primary" id="kbSaveContactBtn">Opslaan</button>
+                            <button type="button" class="nb-btn nb-btn-secondary" id="kbCancelContactBtn">Annuleren</button>
+                            <button type="button" class="nb-btn nb-btn-danger" id="kbDeleteContactBtn" style="display:none;">Verwijderen</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="kbPasswordModal" class="nb-modal" style="display:none;" role="dialog" aria-modal="true">
+                    <div class="nb-modal-inner">
+                        <h3 id="kbPasswordModalTitle">Password toevoegen</h3>
+                        <input type="hidden" id="kbPasswordId">
+                        <div class="nb-form-grid">
+                            <label>Naam *<input type="text" id="kbPasswordName" class="nb-input"></label>
+                            <label>Categorie<input type="text" id="kbPasswordCategory" class="nb-input"></label>
+                            <label>Gebruikersnaam<input type="text" id="kbPasswordUsername" class="nb-input"></label>
+                            <label>Vault / referentie<input type="text" id="kbPasswordSecretRef" class="nb-input"></label>
+                            <label>Sterkte (0-5)<input type="number" id="kbPasswordStrength" class="nb-input" min="0" max="5"></label>
+                            <label>Laatst bijgewerkt<input type="date" id="kbPasswordLastUpdated" class="nb-input"></label>
+                            <label class="nb-form-full">Notities<textarea id="kbPasswordNotes" class="nb-input nb-textarea" rows="3"></textarea></label>
+                        </div>
+                        <div class="nb-modal-actions">
+                            <button type="button" class="nb-btn nb-btn-primary" id="kbSavePasswordBtn">Opslaan</button>
+                            <button type="button" class="nb-btn nb-btn-secondary" id="kbCancelPasswordBtn">Annuleren</button>
+                            <button type="button" class="nb-btn nb-btn-danger" id="kbDeletePasswordBtn" style="display:none;">Verwijderen</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="kbSoftwareModal" class="nb-modal" style="display:none;" role="dialog" aria-modal="true">
+                    <div class="nb-modal-inner">
+                        <h3 id="kbSoftwareModalTitle">Software toevoegen</h3>
+                        <p class="nb-required-hint">Velden met <strong>*</strong> zijn verplicht.</p>
+                        <input type="hidden" id="kbSoftwareId">
+                        <div class="nb-form-grid">
+                            <label>Naam *<input type="text" id="kbSoftwareName" class="nb-input"></label>
+                            <label>Vendor<input type="text" id="kbSoftwareVendor" class="nb-input"></label>
+                            <label>Type<input type="text" id="kbSoftwareType" class="nb-input"></label>
+                            <label>Aantal licenties<input type="number" id="kbSoftwareLicenses" class="nb-input" min="0"></label>
+                            <label>Bedrag per licentie<input type="number" id="kbSoftwareUnitPrice" class="nb-input" min="0" step="0.01" placeholder="12.50"></label>
+                            <label>Totaal bedrag<input type="text" id="kbSoftwareTotalPrice" class="nb-input" readonly></label>
+                            <label>Kosten / opmerking<input type="text" id="kbSoftwareCost" class="nb-input" placeholder="Optioneel, legacy veld"></label>
+                            <label>Vervaldatum<input type="date" id="kbSoftwareExpiry" class="nb-input"></label>
+                            <label>Status
+                                <select id="kbSoftwareStatus" class="nb-input">
+                                    <option value="active">Actief</option>
+                                    <option value="deprecated">Deprecated</option>
+                                    <option value="expired">Verlopen</option>
+                                </select>
+                            </label>
+                            <label>Referentie<input type="text" id="kbSoftwareRef" class="nb-input"></label>
+                            <label class="nb-form-full">Notities<textarea id="kbSoftwareNotes" class="nb-input nb-textarea" rows="3"></textarea></label>
+                        </div>
+                        <div class="nb-modal-actions">
+                            <button type="button" class="nb-btn nb-btn-primary" id="kbSaveSoftwareBtn">Opslaan</button>
+                            <button type="button" class="nb-btn nb-btn-secondary" id="kbCancelSoftwareBtn">Annuleren</button>
+                            <button type="button" class="nb-btn nb-btn-danger" id="kbDeleteSoftwareBtn" style="display:none;">Verwijderen</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="kbDomainModal" class="nb-modal" style="display:none;" role="dialog" aria-modal="true">
+                    <div class="nb-modal-inner">
+                        <h3 id="kbDomainModalTitle">Domein toevoegen</h3>
+                        <input type="hidden" id="kbDomainId">
+                        <div class="nb-form-grid">
+                            <label>Domein *<input type="text" id="kbDomainName" class="nb-input"></label>
+                            <label>Type<input type="text" id="kbDomainType" class="nb-input" placeholder="Extern / Intern AD"></label>
+                            <label>Registrar<input type="text" id="kbDomainRegistrar" class="nb-input"></label>
+                            <label>Vervaldatum<input type="date" id="kbDomainExpiry" class="nb-input"></label>
+                            <label>SSL vervaldatum<input type="date" id="kbDomainSslExpiry" class="nb-input"></label>
+                            <label>SSL issuer<input type="text" id="kbDomainSslIssuer" class="nb-input"></label>
+                            <label>Status
+                                <select id="kbDomainStatus" class="nb-input">
+                                    <option value="active">Actief</option>
+                                    <option value="warning">Waarschuwing</option>
+                                    <option value="expired">Verlopen</option>
+                                </select>
+                            </label>
+                            <label class="nb-form-inline"><input type="checkbox" id="kbDomainAutoRenew"> Automatisch verlengen</label>
+                            <label class="nb-form-full">Nameservers<input type="text" id="kbDomainNameservers" class="nb-input"></label>
+                            <label class="nb-form-full">Notities<textarea id="kbDomainNotes" class="nb-input nb-textarea" rows="3"></textarea></label>
+                        </div>
+                        <div class="nb-modal-actions">
+                            <button type="button" class="nb-btn nb-btn-primary" id="kbSaveDomainBtn">Opslaan</button>
+                            <button type="button" class="nb-btn nb-btn-secondary" id="kbCancelDomainBtn">Annuleren</button>
+                            <button type="button" class="nb-btn nb-btn-danger" id="kbDeleteDomainBtn" style="display:none;">Verwijderen</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="kbChangelogModal" class="nb-modal" style="display:none;" role="dialog" aria-modal="true">
+                    <div class="nb-modal-inner">
+                        <h3 id="kbChangelogModalTitle">Wijziging toevoegen</h3>
+                        <input type="hidden" id="kbChangelogId">
+                        <div class="nb-form-grid">
+                            <label>Datum *<input type="date" id="kbChangelogDate" class="nb-input"></label>
+                            <label>Gebruiker<input type="text" id="kbChangelogUser" class="nb-input"></label>
+                            <label>Categorie<input type="text" id="kbChangelogCategory" class="nb-input"></label>
+                            <label>Referentie<input type="text" id="kbChangelogRef" class="nb-input" placeholder="CHG-0001"></label>
+                            <label class="nb-form-full">Actie *<input type="text" id="kbChangelogAction" class="nb-input"></label>
+                            <label class="nb-form-full">Notities<textarea id="kbChangelogNotes" class="nb-input nb-textarea" rows="3"></textarea></label>
+                        </div>
+                        <div class="nb-modal-actions">
+                            <button type="button" class="nb-btn nb-btn-primary" id="kbSaveChangelogBtn">Opslaan</button>
+                            <button type="button" class="nb-btn nb-btn-secondary" id="kbCancelChangelogBtn">Annuleren</button>
+                            <button type="button" class="nb-btn nb-btn-danger" id="kbDeleteChangelogBtn" style="display:none;">Verwijderen</button>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- ── SETTINGS ── -->
+            <section id="settingsSection" class="content-section">
+                <div class="section-label">Admin</div>
+                <h2>Beheer</h2>
+
+                <div class="settings-panel">
+                    <div class="settings-tabs" role="tablist">
+                        <button type="button" class="settings-tab active" data-tab="tenant" onclick="switchSettingsTab('tenant')">Tenants</button>
+                        <button type="button" class="settings-tab" data-tab="general" onclick="switchSettingsTab('general')">Configuratie</button>
+                        <button type="button" class="settings-tab" data-tab="integrations" onclick="switchSettingsTab('integrations')">Integraties</button>
+                    </div>
+
+                    <div class="settings-pane" data-tab="general">
+                        <h3>App Registratie</h3>
+                        <div class="setting-item">
+                            <label>Client ID:</label>
+                            <input type="text" id="clientIdInput" readonly>
+                        </div>
+                        <div class="setting-item">
+                            <label>Tenant ID:</label>
+                            <input type="text" id="tenantIdInput" readonly>
+                        </div>
+
+                        <h3>Rapport Instellingen</h3>
+                        <div class="setting-item">
+                            <label class="checkbox-label" style="border:none;padding:0;">
+                                <input type="checkbox" id="autoOpenReport" checked>
+                                <span>Automatisch rapport openen na assessment</span>
+                            </label>
+                        </div>
+
+                        <h3>Lokale Webapp Config</h3>
+                        <div class="setting-item">
+                            <label for="runModeSelect">Run mode:</label>
+                            <select id="runModeSelect">
+                                <option value="demo">Demo (kopieer bestaand rapport)</option>
+                                <option value="script">Script (PowerShell assessment)</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <label for="scriptPathInput">Script pad:</label>
+                            <input type="text" id="scriptPathInput" placeholder="Pad naar Start-M365BaselineAssessment.ps1">
+                        </div>
+
+                        <h3>App-registratie Authenticatie</h3>
+                        <p class="setting-info" style="margin-bottom:0.75rem">
+                            Vul in voor automatische authenticatie vanuit de portal (script mode).
+                            Laat leeg om handmatig in te loggen via PowerShell vóór de assessment.
+                        </p>
+                        <div class="setting-item">
+                            <label for="authTenantIdInput">Tenant ID:</label>
+                            <input type="text" id="authTenantIdInput" placeholder="contoso.onmicrosoft.com of GUID">
+                        </div>
+                        <div class="setting-item">
+                            <label for="authClientIdInput">Client ID:</label>
+                            <input type="text" id="authClientIdInput" placeholder="App registratie Client ID">
+                        </div>
+                        <div class="setting-item">
+                            <label for="authCertThumbInput">Certificate Thumbprint:</label>
+                            <input type="text" id="authCertThumbInput" placeholder="Aanbevolen — thumbprint van certificaat">
+                        </div>
+                        <div class="setting-item">
+                            <label for="authClientSecretInput">Client Secret:</label>
+                            <input type="password" id="authClientSecretInput" placeholder="Of client secret (minder veilig)">
+                        </div>
+
+                        <div class="settings-actions-row">
+                            <button id="saveLocalConfigButton" class="btn btn-primary">Config Opslaan</button>
+                            <button id="regenerateAppButton" class="btn btn-secondary">Herlaad dashboard</button>
+                        </div>
+                    </div>
+
+                    <div class="settings-pane active" data-tab="tenant">
+                        <h3>Tenant Toevoegen</h3>
+                        <div class="setting-item">
+                            <label for="newCustomerNameInput">Klantnaam:</label>
+                            <input type="text" id="newCustomerNameInput" placeholder="Bijv. Stichting Meerwaarde">
+                        </div>
+                        <div class="setting-item">
+                            <label for="newTenantNameInput">Tenant naam:</label>
+                            <input type="text" id="newTenantNameInput" placeholder="Bijv. Meerwaarde">
+                        </div>
+                        <div class="setting-item">
+                            <label for="newTenantGuidInput">Tenant GUID (optioneel):</label>
+                            <input type="text" id="newTenantGuidInput" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx">
+                        </div>
+                        <button id="createTenantButton" class="btn btn-primary">Tenant Aanmaken</button>
+
+                        <h3>Tenant Governance</h3>
+                        <div class="setting-item">
+                            <label for="tenantStatusInput">Status:</label>
+                            <select id="tenantStatusInput">
+                                <option value="active">Active</option>
+                                <option value="onboarding">Onboarding</option>
+                                <option value="paused">Paused</option>
+                                <option value="offboarded">Offboarded</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <label for="tenantRiskProfileInput">Risicoprofiel:</label>
+                            <select id="tenantRiskProfileInput">
+                                <option value="low">Low</option>
+                                <option value="standard">Standard</option>
+                                <option value="high">High</option>
+                                <option value="critical">Critical</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <label for="tenantOwnerPrimaryInput">Primary owner:</label>
+                            <input type="text" id="tenantOwnerPrimaryInput" placeholder="Naam of team">
+                        </div>
+                        <div class="setting-item">
+                            <label for="tenantOwnerBackupInput">Backup owner:</label>
+                            <input type="text" id="tenantOwnerBackupInput" placeholder="Naam of team">
+                        </div>
+                        <div class="setting-item">
+                            <label for="tenantTagsInput">Tags (comma-separated):</label>
+                            <input type="text" id="tenantTagsInput" placeholder="zorg, premium, 24x7">
+                        </div>
+                        <button id="saveTenantGovernanceButton" class="btn btn-primary">Tenant Governance Opslaan</button>
+
+                        <h3>Geregistreerde Tenants</h3>
+                        <div class="results-runs-table-wrap">
+                            <table class="results-runs-table">
+                                <thead>
+                                    <tr>
+                                        <th>Klant</th>
+                                        <th>Tenant</th>
+                                        <th>GUID</th>
+                                        <th>Status</th>
+                                        <th>Acties</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tenantManagementTableBody">
+                                    <tr><td colspan="5" class="empty-state">Tenants laden...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="settings-actions-row" style="margin-top:10px;">
+                            <button id="refreshTenantManagementButton" class="btn btn-secondary">Lijst verversen</button>
+                        </div>
+                    </div>
+
+                    <div class="settings-pane" data-tab="reports">
+                        <h3>Retentie &amp; Archief</h3>
+                        <div class="setting-item">
+                            <label for="settingsRetentionScopeSelect">Scope:</label>
+                            <select id="settingsRetentionScopeSelect">
+                                <option value="tenant">Alleen huidige tenant</option>
+                                <option value="all">Alle tenants</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <label for="settingsRetentionKeepLatestInput">Bewaar laatste N rapporten:</label>
+                            <input type="text" id="settingsRetentionKeepLatestInput" value="10">
+                        </div>
+                        <div class="setting-item">
+                            <label for="settingsRetentionKeepDaysInput">Bewaar rapporten ouder dan dagen:</label>
+                            <input type="text" id="settingsRetentionKeepDaysInput" value="90">
+                        </div>
+                        <button id="applySettingsRetentionButton" class="btn btn-warning">Retentie direct toepassen</button>
+                    </div>
+
+                    <div class="settings-pane" data-tab="kb">
+                        <p class="setting-info" id="kbSettingsTenantInfo" style="margin-bottom:1rem;">Selecteer eerst een tenant in de topbar om kennisbank-instellingen te beheren.</p>
+
+                        <h3>Asset Typen</h3>
+                        <div id="kbSettingsAssetTypesList" class="kb-settings-list">—</div>
+                        <div class="kb-settings-add-row">
+                            <input type="text" id="kbNewAssetTypeName" class="kb-settings-input" placeholder="naam (bijv. printer)">
+                            <input type="text" id="kbNewAssetTypeIcon" class="kb-settings-input kb-settings-input-icon" placeholder="icoon (bijv. 🖨️)">
+                            <button class="btn btn-secondary" onclick="kbSettingsAddAssetType()">+ Toevoegen</button>
+                        </div>
+
+                        <h3 style="margin-top:1.5rem">Document Categorieën</h3>
+                        <div id="kbSettingsCategoriesList" class="kb-settings-list">—</div>
+                        <div class="kb-settings-add-row">
+                            <input type="text" id="kbNewCategory" class="kb-settings-input" placeholder="categorie (bijv. procedures)">
+                            <button class="btn btn-secondary" onclick="kbSettingsAddCategory()">+ Toevoegen</button>
+                        </div>
+
+                        <h3 style="margin-top:1.5rem">VLAN Doelen</h3>
+                        <div id="kbSettingsVlanPurposesList" class="kb-settings-list">—</div>
+                        <div class="kb-settings-add-row">
+                            <input type="text" id="kbNewVlanPurposeKey" class="kb-settings-input" placeholder="sleutel (bijv. dmz)">
+                            <input type="text" id="kbNewVlanPurposeLabel" class="kb-settings-input" placeholder="label (bijv. DMZ)">
+                            <button class="btn btn-secondary" onclick="kbSettingsAddVlanPurpose()">+ Toevoegen</button>
+                        </div>
+                    </div>
+
+                    <div class="settings-pane" data-tab="integrations">
+                        <h3>Integraties</h3>
+                        <div class="setting-item">
+                            <label for="integrationWebhookUrlInput">Webhook URL (Teams/PSA):</label>
+                            <input type="text" id="integrationWebhookUrlInput" placeholder="https://...">
+                        </div>
+                        <div class="setting-item">
+                            <label for="integrationWebhookEnabledInput">Webhook notificaties:</label>
+                            <select id="integrationWebhookEnabledInput">
+                                <option value="off">Uit</option>
+                                <option value="on">Aan</option>
+                            </select>
+                        </div>
+                        <button id="saveIntegrationSettingsButton" class="btn btn-primary">Integraties Opslaan</button>
+                    </div>
+                </div>
+            </section>
+
+        </div><!-- /dashboard-main -->
+    </main><!-- /content-area -->
+
+</div><!-- /dashboard-container -->
+</div><!-- /site-wrap -->
+
+<script src="js/dashboard.js"></script>
+<script src="js/assessment-ui.js"></script>
+<script src="js/assessment.js"></script>
+<script src="js/results-viewer.js"></script>
+<script src="js/kb.js"></script>
+
+<script>
+// ══════════════════════════════════════════════════════════
+// DENJOY PORTAL — Auth & Role-based access control
+// ══════════════════════════════════════════════════════════
+
+let _currentRole = 'klant';
+let _msalAppInstance = null;
+
+async function _initAuth() {
+  let role = 'klant';
+  let name = 'Ingelogd';
+  // localStorage zodat token bewaard blijft na page refresh
+  let token = localStorage.getItem('denjoy_token');
+
+  // ── 1. Lokale sessie (admin of klant met lokaal account) ──
+  if (token) {
+    try {
+      const res = await fetch('/api/auth/verify', {
+        headers: { 'Authorization': `Bearer ${token}` },
+        credentials: 'include'
+      });
+      if (res.ok) {
+        const data = await res.json();
+        role = data.role || 'klant';
+        name = data.display_name || data.email || 'Ingelogd';
+        _applyRole(role, name, 'local');
+        return;
+      }
+    } catch (_) {}
+    localStorage.removeItem('denjoy_token');
+  }
+
+  // ── 2. MSAL redirect afhandeling (klant via Microsoft) ──
+  const clientId = sessionStorage.getItem('denjoy_msal_client_id');
+  const tenantId = sessionStorage.getItem('denjoy_msal_tenant_id') || 'organizations';
+
+  if (clientId && typeof msal !== 'undefined') {
+    try {
+      const msalApp = new msal.PublicClientApplication({
+        auth: {
+          clientId,
+          authority: `https://login.microsoftonline.com/${tenantId}`,
+          redirectUri: window.location.origin + '/dashboard.html'
+        },
+        cache: { cacheLocation: 'sessionStorage' }
+      });
+      await msalApp.initialize();
+      _msalAppInstance = msalApp;
+
+      const response = await msalApp.handleRedirectPromise();
+      const accounts = msalApp.getAllAccounts();
+      const account  = (response && response.account) || (accounts.length > 0 ? accounts[0] : null);
+
+      if (account) {
+        name = account.name || account.username || 'Klant';
+        const email = account.username || '';
+        const msalTenantId = account.tenantId || '';
+
+        // Registreer klant in backend → krijg sessie-token
+        try {
+          const regRes = await fetch('/api/auth/microsoft', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, name, tenant_id: msalTenantId }),
+            credentials: 'include'
+          });
+          if (regRes.ok) {
+            const regData = await regRes.json();
+            localStorage.setItem('denjoy_token', regData.token);
+            role = regData.role || 'klant';
+            name = regData.display_name || name;
+          }
+        } catch (_) {}
+
+        sessionStorage.setItem('denjoy_user_name',  name);
+        sessionStorage.setItem('denjoy_user_email', email);
+        _applyRole(role, name, 'msal');
+        return;
+      }
+    } catch (err) {
+      console.warn('MSAL init:', err.message);
+    }
+  }
+
+  // ── 3. Geen sessie gevonden → terug naar login ──
+  // Alleen doorsturen als de backend bereikbaar is (niet bij offline file-open)
+  try {
+    const health = await fetch('/api/health');
+    if (health.ok) {
+      window.location.href = '/site/login.html';
+    }
+  } catch (_) {
+    // Backend niet bereikbaar — toon portaal zonder auth (lokale bestand-open)
+    _applyRole('admin', 'Lokaal', 'local');
+  }
+}
+
+function _applyRole(role, name, method) {
+  _currentRole = role;
+
+  // Naam tonen in topbar
+  const nameEl = document.getElementById('userName');
+  if (nameEl) nameEl.textContent = name;
+
+  // Role-badge onder de naam
+  const badge = document.createElement('span');
+  badge.style.cssText = 'font-family:var(--mono);font-size:0.58rem;opacity:0.45;display:block;margin-top:1px;';
+  badge.textContent = role === 'admin' ? '⚙ Beheerder' : '👁 Alleen lezen';
+  if (nameEl) nameEl.appendChild(badge);
+
+  // ── Klant: verberg beheer-functies ──
+  if (role === 'klant') {
+    // Verberg: Start Assessment, Instellingen, Ververs-knop
+    const adminSections = ['assessment', 'settings'];
+    adminSections.forEach(s => {
+      const navItem = document.querySelector(`.nav-item[data-section="${s}"]`);
+      if (navItem) navItem.style.display = 'none';
+    });
+    const refreshBtn = document.getElementById('logoutButton');
+    if (refreshBtn) refreshBtn.style.display = 'none';
+
+    // Als huidige sectie een admin-sectie is, switch naar overview
+    if (adminSections.includes(window._currentSection)) {
+      if (typeof showSection === 'function') showSection('overview');
+    }
+  }
+
+  // ── Afmeld-knop koppelen ──
+  const logoutBtn = document.querySelector('.sidebar-logout-btn');
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      // Backend sessie verwijderen
+      const t = localStorage.getItem('denjoy_token');
+      if (t) {
+        await fetch('/api/auth/logout', {
+          method: 'POST',
+          headers: { 'Authorization': `Bearer ${t}` },
+          credentials: 'include'
+        }).catch(() => {});
+      }
+      localStorage.removeItem('denjoy_token');
+      // MSAL logout indien van toepassing
+      if (method === 'msal' && _msalAppInstance) {
+        try {
+          const accounts = _msalAppInstance.getAllAccounts();
+          if (accounts.length > 0) {
+            await _msalAppInstance.logoutRedirect({
+              account: accounts[0],
+              postLogoutRedirectUri: window.location.origin + '/site/index.html'
+            });
+            return;
+          }
+        } catch (_) {}
+      }
+      sessionStorage.clear();
+      window.location.href = '/site/index.html';
+    });
+  }
+}
+
+// Start auth-controle zodra pagina geladen is
+_initAuth();
+</script>
+</body>
+</html>
