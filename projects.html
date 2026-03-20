@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'self' data:; form-action 'self'; base-uri 'self';">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Projecten — Denjoy IT</title>
 <link rel="stylesheet" href="style.css">
 <script>(function(){var t=localStorage.getItem('m365LocalTheme');if(t)document.documentElement.setAttribute('data-theme',t);}())</script>
@@ -266,11 +268,11 @@
     <div class="section-label">Portfolio</div>
     <h1>Gebouwde <em>applicaties</em><br>& tools.</h1>
     <p>Van het Denjoy Platform — een compleet M365-beheerstoolset — tot PowerShell-scripts en custom portals: een overzicht van wat ik heb gebouwd voor mezelf en mijn klanten.</p>
-    <div class="filter-bar">
-      <button class="filter-btn active" onclick="filter('all', this)">Alles</button>
-      <button class="filter-btn" onclick="filter('react', this)">React</button>
-      <button class="filter-btn" onclick="filter('powershell', this)">PowerShell</button>
-      <button class="filter-btn" onclick="filter('api', this)">API / Backend</button>
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-filter="all">Alles</button>
+      <button class="filter-btn" data-filter="react">React</button>
+      <button class="filter-btn" data-filter="powershell">PowerShell</button>
+      <button class="filter-btn" data-filter="api">API / Backend</button>
     </div>
   </div>
 </section>
@@ -533,6 +535,14 @@
       if (cat === 'all') { card.style.display = ''; return; }
       const cats = (card.dataset.cat || '').split(' ');
       card.style.display = cats.includes(cat) ? '' : 'none';
+    });
+  }
+  // Bind filter buttons via event delegation (vervangt onclick-attributen)
+  var filterBar = document.getElementById('filterBar');
+  if (filterBar) {
+    filterBar.addEventListener('click', function(e) {
+      var btn = e.target.closest('.filter-btn');
+      if (btn) filter(btn.dataset.filter, btn);
     });
   }
   // Theme toggle
