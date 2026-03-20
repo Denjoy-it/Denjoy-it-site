@@ -3,9 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://alcdn.msauth.net; style-src 'self' 'unsafe-inline'; connect-src 'self' https://login.microsoftonline.com https://graph.microsoft.com https://alcdn.msauth.net; img-src 'self' data:; form-action 'self'; base-uri 'self';">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Klantportaal — Denjoy IT</title>
 <link rel="stylesheet" href="style.css">
 <!-- MSAL.js — Microsoft Authentication Library -->
+<!-- TODO: Add integrity="sha384-<hash>" crossorigin="anonymous" after verifying hash of msal-browser.min.js -->
 <script src="https://alcdn.msauth.net/browser/2.38.3/js/msal-browser.min.js"></script>
 <style>
 /* Login page — split layout */
@@ -454,12 +457,12 @@ body { background: var(--dark); }
       <a href="#" class="form-forgot">Wachtwoord vergeten?</a>
     </div>
 
-    <button class="btn-submit" id="emailLoginBtn" onclick="emailLogin(event)">Inloggen →</button>
+    <button class="btn-submit" id="emailLoginBtn">Inloggen →</button>
     <div id="emailError" style="display:none;margin-top:0.75rem;padding:0.75rem 1rem;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:8px;font-size:0.82rem;color:#dc2626;"></div>
 
     <div class="divider">of</div>
 
-    <button type="button" class="btn-microsoft" id="msLoginBtn" onclick="msalLogin()">
+    <button type="button" class="btn-microsoft" id="msLoginBtn">
       <div class="ms-logo">
         <div class="ms-sq r"></div>
         <div class="ms-sq g"></div>
@@ -515,11 +518,11 @@ async function emailLogin(e) {
       throw new Error(data.error || 'Inloggen mislukt.');
     }
 
-    // Sla sessie op in localStorage (blijft bewaard na refresh)
-    localStorage.setItem('denjoy_token',        data.token);
-    localStorage.setItem('denjoy_role',          data.role);
-    localStorage.setItem('denjoy_user_name',     data.display_name || data.email);
-    localStorage.setItem('denjoy_user_email',    data.email);
+    // Sla sessie op in sessionStorage (wordt gewist bij sluiten browser)
+    sessionStorage.setItem('denjoy_token',        data.token);
+    sessionStorage.setItem('denjoy_role',          data.role);
+    sessionStorage.setItem('denjoy_user_name',     data.display_name || data.email);
+    sessionStorage.setItem('denjoy_user_email',    data.email);
     window.location.href = '/dashboard.html';
 
   } catch (err) {
@@ -575,7 +578,7 @@ async function msalLogin() {
 // Controleer of al ingelogd → direct naar portaal
 (async function checkExistingSession() {
   try {
-    const token = localStorage.getItem('denjoy_token');
+    const token = sessionStorage.getItem('denjoy_token');
     if (token) {
       const res = await fetch('/api/auth/verify', {
         headers: { 'Authorization': `Bearer ${token}` },
@@ -587,6 +590,14 @@ async function msalLogin() {
     }
   } catch (_) {}
 })();
+
+// Bind login button handlers via event listeners (vervangt onclick-attributen)
+(function() {
+  var emailBtn = document.getElementById('emailLoginBtn');
+  if (emailBtn) emailBtn.addEventListener('click', function(e) { emailLogin(e); });
+  var msBtn = document.getElementById('msLoginBtn');
+  if (msBtn) msBtn.addEventListener('click', function() { msalLogin(); });
+}());
 </script>
 </body>
 </html>

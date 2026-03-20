@@ -105,7 +105,9 @@ async function pollRunStatus(runId, selectedPhases) {
 
 async function pollRunLogs(runId) {
   try {
-    const data = await fetch(`/api/runs/${runId}/logs`).then((r) => r.json());
+    const authToken = sessionStorage.getItem('denjoy_token');
+    const headers = authToken ? { 'Authorization': `Bearer ${authToken}` } : {};
+    const data = await fetch(`/api/runs/${runId}/logs`, { credentials: 'include', headers }).then((r) => r.json());
     const log = document.getElementById('progressLog');
     if (!log) return;
     const text = (data.lines || []).join('\n');
@@ -182,9 +184,17 @@ async function startAssessment() {
   addProgressLog(`Fasen: ${selectedPhases.map(phaseLabel).join(', ')}`);
 
   try {
+    // Voeg auth-token en CSRF-token toe aan het verzoek
+    const authToken = sessionStorage.getItem('denjoy_token');
+    const csrfToken = typeof getCsrfToken === 'function' ? await getCsrfToken() : null;
+    const headers = { 'Content-Type': 'application/json' };
+    if (authToken) headers['Authorization'] = `Bearer ${authToken}`;
+    if (csrfToken) headers['X-CSRF-Token'] = csrfToken;
+
     const res = await fetch('/api/runs', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      headers,
       body: JSON.stringify({
         tenant_id: tenantId,
         phases: selectedPhases,

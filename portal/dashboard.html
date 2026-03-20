@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://alcdn.msauth.net; style-src 'self' 'unsafe-inline'; connect-src 'self' https://login.microsoftonline.com https://graph.microsoft.com https://alcdn.msauth.net; img-src 'self' data:; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Klantportaal — Denjoy IT</title>
     <link rel="stylesheet" href="css/portal.css">
     <link rel="stylesheet" href="css/kb.css">
     <link rel="stylesheet" href="css/assessment-ui.css">
     <!-- MSAL.js — Microsoft Authentication Library -->
+    <!-- TODO: Add integrity="sha384-<hash>" crossorigin="anonymous" after verifying hash of msal-browser.min.js -->
     <script src="https://alcdn.msauth.net/browser/2.38.3/js/msal-browser.min.js"></script>
 </head>
 <body>
@@ -88,8 +91,8 @@
                         assessmentbevindingen en live navigatie op basis van wat er echt gevonden is.
                     </p>
                     <div class="hero-actions">
-                        <button type="button" class="btn btn-primary" onclick="showSection('assessment')">Open assessment</button>
-                        <button type="button" class="btn btn-outline" onclick="showSection('kb', {kbTab:'overview'})">Bekijk kennisbank</button>
+                        <button type="button" class="btn btn-primary" id="heroAssessmentBtn">Open assessment</button>
+                        <button type="button" class="btn btn-outline" id="heroKbBtn">Bekijk kennisbank</button>
                     </div>
                 </div>
                 <div class="portal-hero-dashboard">
@@ -312,7 +315,7 @@
                                 <div class="nb-page-actions" id="resultsDownloadBar" style="display:none;">
                                     <a id="btnOpenReport" href="#" target="_blank" class="nb-btn nb-btn-primary">↗ Open rapport</a>
                                     <a id="btnDownloadCsv" href="#" class="nb-btn nb-btn-secondary">↓ CSV</a>
-                                    <button class="nb-btn nb-btn-secondary" onclick="loadResultsSection()">↺ Ververs</button>
+                                    <button class="nb-btn nb-btn-secondary" id="resultsRefreshBtn">↺ Ververs</button>
                                 </div>
                             </div>
                             <p class="nb-empty" id="resultsViewerEmpty" style="display:none;">Start een assessment om resultaten te zien.</p>
@@ -402,7 +405,7 @@
                             <div class="nb-page-header">
                                 <h2 class="nb-page-title">Run vergelijking</h2>
                                 <div class="nb-page-actions">
-                                    <button class="nb-btn nb-btn-secondary" onclick="loadRunDiffPanel()">↺ Herlaad</button>
+                                    <button class="nb-btn nb-btn-secondary" id="diffRefreshBtn">↺ Herlaad</button>
                                 </div>
                             </div>
                             <p style="color:var(--muted);font-size:0.875rem;margin-bottom:1.5rem;">Vergelijking van de laatste twee rapport-runs voor deze tenant.</p>
@@ -418,7 +421,7 @@
                             <div class="nb-page-header">
                                 <h2 class="nb-page-title">Rapportbeheer</h2>
                                 <div class="nb-page-actions">
-                                    <button class="nb-btn nb-btn-primary nb-btn-sm" onclick="exportReportsCsv()">↓ CSV Export</button>
+                                    <button class="nb-btn nb-btn-primary nb-btn-sm" id="exportCsvBtn">↓ CSV Export</button>
                                 </div>
                             </div>
                             <div class="reports-filter-row">
@@ -437,8 +440,8 @@
                                 </select>
                                 <input type="date" id="reportsFilterFrom">
                                 <input type="date" id="reportsFilterTo">
-                                <button class="nb-btn nb-btn-secondary nb-btn-sm" onclick="loadReportsManagementPanel()">Filter</button>
-                                <button class="nb-btn nb-btn-secondary nb-btn-sm" onclick="clearReportsFilters()">Reset</button>
+                                <button class="nb-btn nb-btn-secondary nb-btn-sm" id="reportsFilterBtn">Filter</button>
+                                <button class="nb-btn nb-btn-secondary nb-btn-sm" id="reportsClearBtn">Reset</button>
                             </div>
                             <div class="results-runs-table-wrap">
                                 <table class="results-runs-table">
@@ -467,7 +470,7 @@
                                 </select>
                                 <input type="number" id="retentionKeepLatestInput" min="0" value="10" placeholder="Bewaar laatste N">
                                 <input type="number" id="retentionKeepDaysInput" min="0" value="90" placeholder="Bewaar dagen">
-                                <button class="nb-btn nb-btn-warning nb-btn-sm" onclick="applyRetentionPolicy()">Retentie toepassen</button>
+                                <button class="nb-btn nb-btn-warning nb-btn-sm" id="applyRetentionBtn">Retentie toepassen</button>
                             </div>
                         </div><!-- /management -->
 
@@ -499,7 +502,7 @@
                                 </select>
                                 <input type="text" id="actionOwnerInput" placeholder="Owner (team/naam)">
                                 <input type="date" id="actionDueDateInput">
-                                <button class="nb-btn nb-btn-primary nb-btn-sm" onclick="createFindingAction()">Actie toevoegen</button>
+                                <button class="nb-btn nb-btn-primary nb-btn-sm" id="createActionBtn">Actie toevoegen</button>
                             </div>
                             <div class="results-runs-table-wrap">
                                 <table class="results-runs-table">
@@ -1056,9 +1059,9 @@
 
                 <div class="settings-panel">
                     <div class="settings-tabs" role="tablist">
-                        <button type="button" class="settings-tab active" data-tab="tenant" onclick="switchSettingsTab('tenant')">Tenants</button>
-                        <button type="button" class="settings-tab" data-tab="general" onclick="switchSettingsTab('general')">Configuratie</button>
-                        <button type="button" class="settings-tab" data-tab="integrations" onclick="switchSettingsTab('integrations')">Integraties</button>
+                        <button type="button" class="settings-tab active" data-tab="tenant">Tenants</button>
+                        <button type="button" class="settings-tab" data-tab="general">Configuratie</button>
+                        <button type="button" class="settings-tab" data-tab="integrations">Integraties</button>
                     </div>
 
                     <div class="settings-pane" data-tab="general">
@@ -1220,14 +1223,14 @@
                         <div class="kb-settings-add-row">
                             <input type="text" id="kbNewAssetTypeName" class="kb-settings-input" placeholder="naam (bijv. printer)">
                             <input type="text" id="kbNewAssetTypeIcon" class="kb-settings-input kb-settings-input-icon" placeholder="icoon (bijv. 🖨️)">
-                            <button class="btn btn-secondary" onclick="kbSettingsAddAssetType()">+ Toevoegen</button>
+                            <button class="btn btn-secondary" id="kbAddAssetTypeBtn">+ Toevoegen</button>
                         </div>
 
                         <h3 style="margin-top:1.5rem">Document Categorieën</h3>
                         <div id="kbSettingsCategoriesList" class="kb-settings-list">—</div>
                         <div class="kb-settings-add-row">
                             <input type="text" id="kbNewCategory" class="kb-settings-input" placeholder="categorie (bijv. procedures)">
-                            <button class="btn btn-secondary" onclick="kbSettingsAddCategory()">+ Toevoegen</button>
+                            <button class="btn btn-secondary" id="kbAddCategoryBtn">+ Toevoegen</button>
                         </div>
 
                         <h3 style="margin-top:1.5rem">VLAN Doelen</h3>
@@ -1235,7 +1238,7 @@
                         <div class="kb-settings-add-row">
                             <input type="text" id="kbNewVlanPurposeKey" class="kb-settings-input" placeholder="sleutel (bijv. dmz)">
                             <input type="text" id="kbNewVlanPurposeLabel" class="kb-settings-input" placeholder="label (bijv. DMZ)">
-                            <button class="btn btn-secondary" onclick="kbSettingsAddVlanPurpose()">+ Toevoegen</button>
+                            <button class="btn btn-secondary" id="kbAddVlanPurposeBtn">+ Toevoegen</button>
                         </div>
                     </div>
 
@@ -1280,8 +1283,8 @@ let _msalAppInstance = null;
 async function _initAuth() {
   let role = 'klant';
   let name = 'Ingelogd';
-  // localStorage zodat token bewaard blijft na page refresh
-  let token = localStorage.getItem('denjoy_token');
+  // sessionStorage zodat token gewist wordt na sluiten browser
+  let token = sessionStorage.getItem('denjoy_token');
 
   // ── 1. Lokale sessie (admin of klant met lokaal account) ──
   if (token) {
@@ -1298,7 +1301,7 @@ async function _initAuth() {
         return;
       }
     } catch (_) {}
-    localStorage.removeItem('denjoy_token');
+    sessionStorage.removeItem('denjoy_token');
   }
 
   // ── 2. MSAL redirect afhandeling (klant via Microsoft) ──
@@ -1337,7 +1340,7 @@ async function _initAuth() {
           });
           if (regRes.ok) {
             const regData = await regRes.json();
-            localStorage.setItem('denjoy_token', regData.token);
+            sessionStorage.setItem('denjoy_token', regData.token);
             role = regData.role || 'klant';
             name = regData.display_name || name;
           }
@@ -1402,7 +1405,7 @@ function _applyRole(role, name, method) {
     logoutBtn.addEventListener('click', async (e) => {
       e.preventDefault();
       // Backend sessie verwijderen
-      const t = localStorage.getItem('denjoy_token');
+      const t = sessionStorage.getItem('denjoy_token');
       if (t) {
         await fetch('/api/auth/logout', {
           method: 'POST',
@@ -1410,7 +1413,7 @@ function _applyRole(role, name, method) {
           credentials: 'include'
         }).catch(() => {});
       }
-      localStorage.removeItem('denjoy_token');
+      sessionStorage.removeItem('denjoy_token');
       // MSAL logout indien van toepassing
       if (method === 'msal' && _msalAppInstance) {
         try {
@@ -1429,6 +1432,27 @@ function _applyRole(role, name, method) {
     });
   }
 }
+
+// Bind inline-handlers via event listeners (vervangt onclick-attributen)
+(function bindInlineHandlers() {
+  const bind = (id, fn) => { const el = document.getElementById(id); if (el) el.addEventListener('click', fn); };
+  bind('heroAssessmentBtn',  () => showSection('assessment'));
+  bind('heroKbBtn',          () => showSection('kb', { kbTab: 'overview' }));
+  bind('resultsRefreshBtn',  () => loadResultsSection());
+  bind('diffRefreshBtn',     () => loadRunDiffPanel());
+  bind('exportCsvBtn',       () => exportReportsCsv());
+  bind('reportsFilterBtn',   () => loadReportsManagementPanel());
+  bind('reportsClearBtn',    () => clearReportsFilters());
+  bind('applyRetentionBtn',  () => applyRetentionPolicy());
+  bind('createActionBtn',    () => createFindingAction());
+  bind('kbAddAssetTypeBtn',  () => kbSettingsAddAssetType());
+  bind('kbAddCategoryBtn',   () => kbSettingsAddCategory());
+  bind('kbAddVlanPurposeBtn',() => kbSettingsAddVlanPurpose());
+  // Settings tabs via data-tab
+  document.querySelectorAll('.settings-tab[data-tab]').forEach((btn) => {
+    btn.addEventListener('click', () => switchSettingsTab(btn.dataset.tab));
+  });
+}());
 
 // Start auth-controle zodra pagina geladen is
 _initAuth();

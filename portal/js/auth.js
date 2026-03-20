@@ -112,13 +112,13 @@ function validateRedirectUris(cfg) {
 
         const mismatch = mismatches.length > 0;
 
-        localStorage.setItem('m365_redirect_expected', expectedRedirect);
-        localStorage.setItem('m365_redirect_configured', configuredRedirect || '');
-        localStorage.setItem('m365_redirect_mismatch', mismatch ? '1' : '0');
+        sessionStorage.setItem('m365_redirect_expected', expectedRedirect);
+        sessionStorage.setItem('m365_redirect_configured', configuredRedirect || '');
+        sessionStorage.setItem('m365_redirect_mismatch', mismatch ? '1' : '0');
         if (mismatch) {
-            localStorage.setItem('m365_redirect_mismatch_details', JSON.stringify(mismatches));
+            sessionStorage.setItem('m365_redirect_mismatch_details', JSON.stringify(mismatches));
         } else {
-            localStorage.removeItem('m365_redirect_mismatch_details');
+            sessionStorage.removeItem('m365_redirect_mismatch_details');
         }
 
         return { mismatch, expectedRedirect, configuredRedirect, msalRedirect, mismatches };
