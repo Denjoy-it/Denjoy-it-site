@@ -390,7 +390,18 @@
     <li><a href="login.html" class="nav-login">Login</a></li>
     <li><button id="site-theme-btn" class="nav-theme-btn" title="Thema wisselen">🌙</button></li>
   </ul>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu openen" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <a href="diensten.html">Diensten</a>
+  <a href="werkwijze.html">Werkwijze</a>
+  <a href="projects.html">Projecten</a>
+  <a href="about.html" class="active">Over</a>
+  <a href="index.html#contact" class="nav-cta">Contact</a>
+  <a href="login.html" class="nav-login">Login</a>
+</div>
 
 <!-- ABOUT HERO -->
 <section class="about-hero">
@@ -694,6 +705,26 @@
       document.documentElement.setAttribute('data-theme', next);
       localStorage.setItem('m365LocalTheme', next);
       this.textContent = next === 'dark' ? '☀️' : '🌙';
+    });
+  }());
+  // Hamburger menu
+  (function() {
+    var ham = document.getElementById('nav-hamburger');
+    var menu = document.getElementById('mobile-menu');
+    if (!ham || !menu) return;
+    ham.addEventListener('click', function() {
+      var open = menu.classList.toggle('open');
+      ham.classList.toggle('open', open);
+      ham.setAttribute('aria-expanded', String(open));
+      menu.setAttribute('aria-hidden', String(!open));
+    });
+    menu.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        menu.classList.remove('open');
+        ham.classList.remove('open');
+        ham.setAttribute('aria-expanded', 'false');
+        menu.setAttribute('aria-hidden', 'true');
+      });
     });
   }());
 </script>
