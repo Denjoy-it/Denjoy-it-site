@@ -93,6 +93,19 @@ async function pollRunStatus(runId, selectedPhases) {
       return { terminal: true, status: run.status };
     }
 
+    if (run.status === 'cancelled') {
+      addProgressLog('Assessment gestopt.', 'warning');
+      stopRunPolling();
+      activeRunId = null;
+      isRunPollingActive = false;
+      const stopBtn = document.getElementById('stopAssessmentButton');
+      if (stopBtn) { stopBtn.disabled = false; stopBtn.textContent = '⏹ Stoppen'; }
+      document.querySelector('.assessment-config').style.display = 'block';
+      document.getElementById('assessmentProgress').style.display = 'none';
+      if (typeof refreshTenantData === 'function') await refreshTenantData();
+      return { terminal: true, status: run.status };
+    }
+
     const logs = await fetch(`/api/runs/${runId}/logs`).then((r) => r.json());
     setProgress(estimateProgressFromLogs(logs.text || '', selectedPhases));
     return { terminal: false, status: run.status };
@@ -105,9 +118,7 @@ async function pollRunStatus(runId, selectedPhases) {
 
 async function pollRunLogs(runId) {
   try {
-    const authToken = sessionStorage.getItem('denjoy_token');
-    const headers = authToken ? { 'Authorization': `Bearer ${authToken}` } : {};
-    const data = await fetch(`/api/runs/${runId}/logs`, { credentials: 'include', headers }).then((r) => r.json());
+    const data = await fetch(`/api/runs/${runId}/logs`).then((r) => r.json());
     const log = document.getElementById('progressLog');
     if (!log) return;
     const text = (data.lines || []).join('\n');
@@ -184,17 +195,9 @@ async function startAssessment() {
   addProgressLog(`Fasen: ${selectedPhases.map(phaseLabel).join(', ')}`);
 
   try {
-    // Voeg auth-token en CSRF-token toe aan het verzoek
-    const authToken = sessionStorage.getItem('denjoy_token');
-    const csrfToken = typeof getCsrfToken === 'function' ? await getCsrfToken() : null;
-    const headers = { 'Content-Type': 'application/json' };
-    if (authToken) headers['Authorization'] = `Bearer ${authToken}`;
-    if (csrfToken) headers['X-CSRF-Token'] = csrfToken;
-
     const res = await fetch('/api/runs', {
       method: 'POST',
-      credentials: 'include',
-      headers,
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         tenant_id: tenantId,
         phases: selectedPhases,
@@ -223,6 +226,25 @@ async function startAssessment() {
     activeRunId = null;
     isRunPollingActive = false;
     stopRunPolling();
+  }
+}
+
+async function stopAssessment() {
+  if (!activeRunId) return;
+  const btn = document.getElementById('stopAssessmentButton');
+  if (btn) { btn.disabled = true; btn.textContent = 'Stoppen...'; }
+  try {
+    const token = localStorage.getItem('denjoy_token');
+    const authHeader = token ? { 'Authorization': `Bearer ${token}` } : {};
+    await fetch(`/api/runs/${activeRunId}/stop`, {
+      method: 'POST',
+      credentials: 'include',
+      headers: authHeader,
+    });
+    addProgressLog('⏹ Stop-verzoek verstuurd...', 'warning');
+  } catch (e) {
+    addProgressLog(`Stop mislukt: ${e.message}`, 'error');
+    if (btn) { btn.disabled = false; btn.textContent = '⏹ Stoppen'; }
   }
 }
 

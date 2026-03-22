@@ -122,7 +122,7 @@ function _hideLoadingBar() {
 async function apiFetch(path, options = {}) {
   _showLoadingBar();
   try {
-    const token = sessionStorage.getItem('denjoy_token');
+    const token = localStorage.getItem('denjoy_token');
     const authHeader = token ? { 'Authorization': `Bearer ${token}` } : {};
     const res = await fetch(`${API_BASE}${path}`, {
       credentials: 'include',
@@ -133,7 +133,7 @@ async function apiFetch(path, options = {}) {
     try { data = await res.json(); } catch (_) { data = null; }
     if (res.status === 401) {
       // Sessie verlopen of niet ingelogd — stuur terug naar login
-      sessionStorage.removeItem('denjoy_token');
+      localStorage.removeItem('denjoy_token');
       window.location.href = '/site/login.html';
       return null;
     }
@@ -152,6 +152,10 @@ const SUBNAV_CONFIG = {
   assessment: [
     { label: 'Assessment starten', section: 'assessment' },
     { label: 'Rapporten',          section: 'results' },
+  ],
+  entrafalcon: [
+    { label: 'Scan starten', section: 'entrafalcon' },
+    { label: 'Rapporten',    section: 'results', resultsPanel: 'entrafalcon' },
   ],
   results: [
     { label: 'Rapport',      resultsPanel: 'viewer' },
@@ -216,7 +220,15 @@ function updateSubnav(sectionName, activeItem) {
       } else if (type === 'results') {
         showResultsPanel(key);
       } else if (type === 'section') {
-        showSection(key);
+        // item kan ook een resultsPanel target hebben (bijv. entrafalcon subnav → rapporten tab)
+        const item = (SUBNAV_CONFIG[_currentSection] || []).find(
+          (i) => (i.kbTab || i.settingsTab || i.resultsPanel || i.section || '') === key
+        );
+        if (item && item.resultsPanel) {
+          showSection('results', { resultsPanel: item.resultsPanel });
+        } else {
+          showSection(key);
+        }
       }
     });
   });
@@ -267,9 +279,10 @@ function showResultsPanel(panelName) {
   });
   setActiveSubnavItem(panelName);
   // Laad panel-specifieke data lazy
-  if (panelName === 'diff')       loadRunDiffPanel();
-  if (panelName === 'management') loadReportsManagementPanel();
-  if (panelName === 'actions')    loadActionsPanel();
+  if (panelName === 'diff')         loadRunDiffPanel();
+  if (panelName === 'management')   loadReportsManagementPanel();
+  if (panelName === 'actions')      loadActionsPanel();
+  if (panelName === 'entrafalcon' && typeof loadEntraFalconResultsPane === 'function') loadEntraFalconResultsPane();
 }
 window.showResultsPanel = showResultsPanel;
 
@@ -292,6 +305,9 @@ function showSection(sectionName, opts = {}) {
 
   if (sectionName === 'assessment' && typeof loadAssessmentExperience === 'function') {
     loadAssessmentExperience();
+  }
+  if (sectionName === 'entrafalcon' && typeof loadEntraFalconSection === 'function') {
+    loadEntraFalconSection();
   }
   if (sectionName === 'results') {
     updateSubnav('results', opts.resultsPanel || 'viewer');
@@ -349,7 +365,7 @@ function statusBadge(status) {
     failed: '#dc2626',
     partial: '#f59e0b',
   }[status] || '#667085';
-  return `<span style="display:inline-block;padding:2px 8px;border-radius:999px;background:${color};color:#fff;font-size:12px;font-weight:600;">${escapeHtml(status || '-')}</span>`;
+  return `<span style="display:inline-block;padding:2px 8px;border-radius:999px;background:${color};color:#fff;font-size:12px;font-weight:600;">${status || '-'}</span>`;
 }
 
 function formatPhaseList(phases) {
@@ -582,8 +598,8 @@ async function loadOverview() {
   }
   list.innerHTML = items.map((r) => `
     <div class="assessment-item">
-      <div><strong>${escapeHtml(formatDate(r.completed_at || r.started_at))}</strong> - ${statusBadge(r.status)}</div>
-      <div style="margin-top:6px;font-size:0.9em;color:#666;">${escapeHtml((r.phases || []).join(', ') || 'alle fases')}</div>
+      <div><strong>${formatDate(r.completed_at || r.started_at)}</strong> - ${statusBadge(r.status)}</div>
+      <div style="margin-top:6px;font-size:0.9em;color:#666;">${(r.phases || []).join(', ') || 'alle fases'}</div>
       <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;">
         <button class="btn btn-secondary btn-sm" data-action="viewRun" data-id="${escapeHtml(r.id)}">Details</button>
         ${r.report_path ? `<button class="btn btn-secondary btn-sm" data-action="openUrl" data-id="${escapeHtml(r.report_path)}">Rapport</button>` : ''}
@@ -607,9 +623,9 @@ async function loadHistorySection() {
   }
   tbody.innerHTML = runs.map((r) => `
     <tr>
-      <td>${escapeHtml(formatDate(r.completed_at || r.started_at))}</td>
-      <td>${escapeHtml(r.tenant_name || '-')}</td>
-      <td>${escapeHtml((r.phases || []).join(', ') || '-')}</td>
+      <td>${formatDate(r.completed_at || r.started_at)}</td>
+      <td>${r.tenant_name || '-'}</td>
+      <td>${(r.phases || []).join(', ') || '-'}</td>
       <td>${statusBadge(r.status)}</td>
       <td>
         <button class="btn btn-secondary btn-sm" data-action="viewRun" data-id="${escapeHtml(r.id)}">Details</button>
@@ -682,12 +698,12 @@ async function loadResultsSection() {
   if (tbody) {
     tbody.innerHTML = reportRuns.map((r) => `
       <tr>
-        <td>${escapeHtml(formatDate(r.completed_at || r.started_at))}</td>
+        <td>${formatDate(r.completed_at || r.started_at)}</td>
         <td>${statusBadge(r.status)}</td>
-        <td>${escapeHtml(r.run_mode || '—')}</td>
-        <td>${escapeHtml(formatPhaseList(r.phases))}</td>
-        <td>${escapeHtml(String(r.score_overall ?? '—'))}</td>
-        <td>${escapeHtml(String(r.critical_count ?? 0))} / ${escapeHtml(String(r.warning_count ?? 0))} / ${escapeHtml(String(r.info_count ?? 0))}</td>
+        <td>${r.run_mode || '—'}</td>
+        <td>${formatPhaseList(r.phases)}</td>
+        <td>${r.score_overall ?? '—'}</td>
+        <td>${r.critical_count ?? 0} / ${r.warning_count ?? 0} / ${r.info_count ?? 0}</td>
         <td>
           <div class="results-row-actions">
             <button class="btn btn-secondary btn-sm" data-action="viewRun" data-id="${escapeHtml(r.id)}">Details</button>
@@ -771,7 +787,7 @@ async function loadReportsManagementPanel() {
     }
     tbody.innerHTML = items.map((r) => `
       <tr>
-        <td>${escapeHtml(formatDate(r.completed_at || r.started_at))}</td>
+        <td>${formatDate(r.completed_at || r.started_at)}</td>
         <td>${escapeHtml(r.tenant_name || '-')}</td>
         <td>${statusBadge(r.status)}</td>
         <td>${r.is_archived ? '<span class="diff-neutral">Gearchiveerd</span>' : '<span class="diff-good">Actief</span>'}</td>
@@ -1085,6 +1101,9 @@ async function refreshTenantData() {
   await Promise.allSettled([loadOverview(), loadResultsSection()]);
   if (document.getElementById('assessmentSection')?.classList.contains('active') && typeof loadAssessmentExperience === 'function') {
     await loadAssessmentExperience({ force: true });
+  }
+  if (document.getElementById('entrafalconSection')?.classList.contains('active') && typeof loadEntraFalconSection === 'function') {
+    loadEntraFalconSection();
   }
 }
 window.refreshTenantData = refreshTenantData;
