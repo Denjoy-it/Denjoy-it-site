@@ -1,0 +1,4558 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M365 Baseline Assessment - Zorg en Vrij</title>
+    <!-- Google Fonts: Plus Jakarta Sans (body/headings) & DM Mono (technical labels) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+/*
+ * M365 Baseline Assessment - Report Styles v3.1
+ * Denjoy IT | Huisstijl: Outfit font, #ff6b2b oranje, donkere nav
+ * Fonts: Outfit (headings + body) - loaded via Google Fonts in HTML head
+ */
+
+/* ===================================================================
+   CSS VARIABLES — Denjoy huisstijl
+   =================================================================== */
+:root {
+  /* Denjoy brand colors */
+  --denjoy-orange:      #ff6b2b;
+  --denjoy-orange-soft: rgba(255,107,43,0.13);
+  --denjoy-dark:        #0f1117;
+  --denjoy-dark2:       #14181f;
+  --denjoy-dark3:       #1c2130;
+  --denjoy-grey:        #6b7280;
+  --denjoy-muted:       #6b7280;
+  --denjoy-light:       #f6f5f3;
+
+  /* Risk levels */
+  --risk-high:   #ef4444;
+  --risk-medium: #f59e0b;
+  --risk-low:    #22c55e;
+
+  /* Legacy aliases */
+  --brand-orange: var(--denjoy-orange);
+  --brand-deep:   var(--denjoy-dark);
+  --muted:        var(--denjoy-grey);
+  --page-bg:      var(--denjoy-light);
+  --card-bg:      #ffffff;
+  --text-color:   #111827;
+  --accent:       #ff6b2b;
+  --success:      var(--risk-low);
+  --warning:      var(--risk-medium);
+  --danger:       var(--risk-high);
+  --soft-orange:  var(--denjoy-orange-soft);
+
+  /* Header height */
+  --header-height: 62px;
+}
+
+/* ===================================================================
+   RESET / BASE
+   =================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Outfit', 'Segoe UI', Arial, sans-serif;
+  background: var(--page-bg);
+  color: var(--text-color);
+  margin: 0;
+  padding-top: calc(var(--header-height) + 8px);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===================================================================
+   FIXED HEADER
+   =================================================================== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  background: var(--denjoy-dark);
+  border-bottom: 3px solid var(--denjoy-orange);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  height: 100%;
+  padding: 0 2rem;
+}
+
+/* Logo in header */
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.header-logo-mark {
+  width: 28px; height: 28px;
+  background: var(--denjoy-dark2);
+  border-radius: 7px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.header-logo-mark::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 2px solid var(--denjoy-orange);
+  border-radius: 3px;
+  transform: rotate(12deg);
+}
+.header-logo-mark::after {
+  content: '';
+  position: absolute;
+  width: 4px; height: 4px;
+  background: var(--denjoy-orange);
+  border-radius: 50%;
+  top: 4px; right: 4px;
+}
+.header-logo-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+.header-logo-text span { color: var(--denjoy-orange); }
+
+.header-nav {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.header-nav a {
+  background: transparent;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: color 0.18s, background 0.18s;
+  white-space: nowrap;
+}
+
+.header-nav a:hover {
+  color: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.07);
+}
+
+.header-nav a:active {
+  background: var(--denjoy-orange-soft);
+  color: var(--denjoy-orange);
+}
+
+/* Anchor target offset so fixed header does not obscure headings */
+.phase-content,
+.section-title {
+  scroll-margin-top: calc(var(--header-height) + 16px);
+}
+
+/* ===================================================================
+   MAIN CONTAINER
+   =================================================================== */
+.container {
+  max-width: 1200px;
+  margin: 28px auto;
+  background: var(--card-bg);
+  padding: 28px 28px 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(33, 33, 33, 0.06);
+}
+
+/* ===================================================================
+   INTRO / COVER SECTION
+   =================================================================== */
+.intro-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 16px;
+  margin-bottom: 18px;
+  background: linear-gradient(135deg, rgba(247,148,29,0.04) 0%, rgba(250,215,160,0.02) 100%);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.intro-meta {
+  flex: 1 1 auto;
+}
+
+.intro-meta h1,
+.intro-meta .report-title {
+  font-family: 'Outfit', 'Segoe UI', sans-serif;
+  font-size: clamp(20px, 2.6vw, 30px);
+  color: var(--denjoy-dark);
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.intro-meta .title-main {
+  white-space: nowrap;
+  font-weight: 800;
+}
+
+.intro-meta .tenant-name {
+  white-space: nowrap;
+  font-weight: 700;
+  color: #333;
+}
+
+.intro-meta p {
+  color: var(--denjoy-grey);
+  margin: 6px 0 0 0;
+  font-size: 14px;
+}
+
+.intro-logo {
+  flex: 0 0 160px;
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-logo img {
+  height: clamp(48px, 8vw, 120px);
+  max-height: 120px;
+  width: auto;
+  display: block;
+}
+
+/* ===================================================================
+   TABLE OF CONTENTS
+   =================================================================== */
+.toc-title {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.toc-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 6px;
+}
+
+.toc-item {
+  margin: 8px 0;
+}
+
+.toc-item a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* ===================================================================
+   STATS GRID & CARDS
+   =================================================================== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 15px 0 25px;
+}
+
+.stat-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+  border: 1px solid #edf2f7;
+  border-left: 4px solid var(--accent);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.stat-number {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1a202c;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #718096;
+  font-weight: 600;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.stat-card--warning {
+  background: linear-gradient(180deg, #fff8e6, #fff6ea);
+  border-left-color: var(--warning);
+}
+
+.stat-card--danger {
+  background: linear-gradient(180deg, #fff0f0, #fff6f6);
+  border-left-color: var(--danger);
+}
+
+.stat-small {
+  color: #666;
+  font-size: 0.85em;
+  display: block;
+  margin-top: 5px;
+}
+
+/* ===================================================================
+   PHASE BLOCKS
+   =================================================================== */
+.phase-content {
+  background: #ffffff;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  position: relative;
+  scroll-margin-top: calc(var(--header-height) + 20px);
+}
+
+.phase-content > h1 {
+  font-family: 'Outfit', 'Segoe UI', sans-serif;
+  font-size: 1.8em;
+  color: #444;
+  margin: 0;
+  padding: 20px;
+  background: #F9F9F9;
+  border-left: 5px solid var(--accent);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.phase-body {
+  padding: 24px;
+}
+
+.phase-body.collapsed {
+  display: none;
+}
+
+/* ===================================================================
+   PHASE TOGGLE BUTTON
+   =================================================================== */
+.phase-toggle {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #ffffff;
+  cursor: pointer;
+  background: var(--denjoy-orange);
+  border: none;
+  padding: 7px 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  font-weight: 700;
+  z-index: 10;
+  text-decoration: none;
+  font-family: inherit;
+  transition: background 0.2s ease;
+}
+
+.phase-toggle:hover {
+  background: var(--denjoy-orange-soft);
+  color: var(--denjoy-dark);
+}
+
+.phase-toggle .chev {
+  display: inline-block;
+  transition: transform 0.18s ease;
+}
+
+.phase-toggle.open .chev {
+  transform: rotate(180deg);
+}
+
+/* ===================================================================
+   SECTION TITLES
+   =================================================================== */
+.section {
+  position: relative;
+  margin-top: 18px;
+  padding-top: 8px;
+}
+
+.phase-content > .section {
+  margin-top: 12px;
+  padding-top: 0;
+}
+
+.section-title {
+  display: block;
+  font-family: 'Outfit', 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+  padding: 12px 0;
+  padding-right: 140px;
+  border-bottom: 3px solid var(--brand-orange);
+  margin-bottom: 12px;
+}
+
+/* ===================================================================
+   COLLAPSIBLE SECTION TOGGLE
+   =================================================================== */
+.toggle-btn {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #ffffff;
+  cursor: pointer;
+  background: var(--denjoy-orange);
+  border: none;
+  padding: 7px 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  font-weight: 700;
+  font-family: inherit;
+  transition: background 0.2s ease;
+}
+
+.toggle-btn:hover {
+  background: var(--denjoy-orange-soft);
+  color: var(--denjoy-dark);
+}
+
+.toggle-btn .chev {
+  display: inline-block;
+  transition: transform 0.18s ease;
+}
+
+.toggle-btn.open .chev {
+  transform: rotate(90deg);
+}
+
+.section-body.collapsed {
+  display: none;
+}
+
+.section-body {
+  transition: max-height 0.25s ease;
+}
+
+/* ===================================================================
+   TABLES
+   =================================================================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+}
+
+.table-container {
+  width: 100%;
+  overflow: auto;
+  max-height: 520px;
+  margin: 15px 0;
+  border: 1px solid #eef2f6;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.table-container table {
+  font-size: 13px;
+  table-layout: fixed;
+}
+
+.table-container thead th {
+  background: #f8f9fa;
+  color: #2c3e50;
+  padding: 14px 16px;
+  font-weight: 700;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 2px solid #edf2f7;
+  white-space: nowrap;
+}
+
+.table-container tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f1f3f5;
+  color: #4a5568;
+  vertical-align: middle;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.table-container tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table-container tbody tr:hover {
+  background: #f7fafc;
+}
+
+/* Fallback: bare table outside .table-container */
+table th {
+  background: #f8f9fa;
+  color: #333;
+  padding: 12px;
+  font-weight: 700;
+  position: sticky;
+  top: 0;
+  border-bottom: 2px solid #e1e4e8;
+}
+
+table td {
+  padding: 12px;
+  border-bottom: 1px solid #f1f3f5;
+  color: #333;
+}
+
+/* ===================================================================
+   ALERTS
+   =================================================================== */
+.alert {
+  padding: 12px 14px;
+  border-radius: 6px;
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.alert-info {
+  background: #eef7ff;
+  border-left: 4px solid #3498db;
+  color: #1f4f6b;
+}
+
+.alert-success {
+  background: #eaf7ee;
+  border-left: 4px solid var(--success);
+  color: #1b5e20;
+}
+
+.alert-warning {
+  background: #fffbef;
+  border-left: 5px solid #ffcc00;
+  color: #856404;
+  font-weight: 500;
+}
+
+.alert-critical {
+  background: #fff2f2;
+  border-left: 4px solid var(--danger);
+  color: #5b1a17;
+}
+
+/* ===================================================================
+   RECOMMENDATION BLOCK
+   =================================================================== */
+.recommendation {
+  padding: 14px;
+  border-radius: 6px;
+  background: #fffaf6;
+  border-left: 6px solid var(--brand-orange);
+  margin: 12px 0;
+}
+
+/* ===================================================================
+   MISC HELPERS
+   =================================================================== */
+.back-to-toc {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.scroll-container {
+  max-height: 500px;
+  overflow-y: auto;
+  border: 1px solid #e5e9f0;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.progress-container {
+  background: #ecf0f1;
+  border-radius: 10px;
+  height: 30px;
+  position: relative;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* ===================================================================
+   FOOTER
+   =================================================================== */
+.footer {
+  background: linear-gradient(90deg, var(--denjoy-dark), #333333);
+  color: var(--denjoy-light);
+  border-top: 4px solid var(--denjoy-orange);
+  padding: 12px 20px;
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.footer a {
+  color: var(--denjoy-light);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+}
+
+/* ===================================================================
+   RESPONSIVE BREAKPOINTS
+   =================================================================== */
+@media (max-width: 900px) {
+  .container {
+    margin: 18px;
+    padding: 18px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .phase-content > h1 {
+    font-size: 1.6em;
+    padding: 14px;
+  }
+
+  .phase-toggle {
+    right: 12px;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 700px) {
+  .intro-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .intro-logo {
+    width: 96px;
+    flex: 0 0 96px;
+  }
+
+  .intro-logo img {
+    height: clamp(48px, 8vw, 96px);
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .phase-content > h1 {
+    font-size: 1.4em;
+    padding: 12px;
+  }
+
+  .phase-toggle {
+    padding: 6px 9px;
+    font-size: 12px;
+  }
+
+  .header-nav {
+    display: none;
+  }
+}
+
+/* ===================================================================
+   FASE A MODERNISERING — badges, score dashboard, progress bars,
+   sortable tables, search, print, back-to-top
+   =================================================================== */
+
+/* ===================================================================
+   BADGES / STATUS PILLS
+   =================================================================== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+.badge-ok     { background: #dcfce7; color: #166534; }
+.badge-warn   { background: #fef9c3; color: #854d0e; }
+.badge-danger { background: #fee2e2; color: #991b1b; }
+.badge-info   { background: #dbeafe; color: #1e40af; }
+.badge-muted  { background: #f1f5f9; color: #64748b; }
+
+/* ===================================================================
+   SCORE DASHBOARD (executive summary bovenaan rapport)
+   =================================================================== */
+.score-dashboard {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 28px;
+  background: linear-gradient(135deg, #1e293b 0%, #2d3748 100%);
+  border-radius: 12px;
+  padding: 24px 32px;
+  margin-bottom: 28px;
+  color: #f8fafc;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.14);
+}
+
+.score-gauge-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.score-gauge {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+
+.score-kpis {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.score-kpi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  padding: 16px 18px;
+  min-width: 84px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.kpi-num {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1;
+  font-family: 'Outfit', sans-serif;
+}
+
+.kpi-label {
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.65;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 5px;
+}
+
+.score-kpi--ok     .kpi-num { color: #86efac; }
+.score-kpi--warn   .kpi-num { color: #fde68a; }
+.score-kpi--danger .kpi-num { color: #fca5a5; }
+
+.score-checks {
+  flex: 1;
+  min-width: 200px;
+}
+
+.score-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  opacity: 0.9;
+}
+
+.score-note {
+  font-size: 13px;
+  opacity: 0.65;
+  margin: 6px 0 0 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .score-dashboard { flex-direction: column; align-items: flex-start; padding: 20px; }
+  .score-kpis { flex-wrap: wrap; }
+}
+
+/* ===================================================================
+   PROGRESS BARS (MFA-dekking, licenties, etc.)
+   =================================================================== */
+.progress-wrap {
+  margin: 12px 0;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.progress-pct {
+  font-size: 15px;
+  font-weight: 800;
+  font-family: 'Outfit', sans-serif;
+}
+
+.progress-track {
+  background: #e5e7eb;
+  border-radius: 999px;
+  height: 12px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 1s ease;
+}
+
+.progress-sub {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* ===================================================================
+   EMPTY STATE (geen data in tabel)
+   =================================================================== */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 36px;
+  color: #9ca3af;
+  gap: 10px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1.5px dashed #e5e7eb;
+  margin: 15px 0;
+}
+
+.empty-icon {
+  font-size: 30px;
+}
+
+/* ===================================================================
+   TABLE SEARCH BOX
+   =================================================================== */
+.table-search-wrap {
+  margin-bottom: 10px;
+}
+
+.table-search {
+  width: 100%;
+  max-width: 380px;
+  padding: 8px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: inherit;
+  color: #374151;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.table-search:focus {
+  border-color: var(--denjoy-orange);
+  box-shadow: 0 0 0 3px rgba(247, 148, 29, 0.12);
+}
+
+/* ===================================================================
+   SORTABLE TABLE HEADERS
+   =================================================================== */
+table.sortable thead th {
+  cursor: pointer;
+  user-select: none;
+}
+
+table.sortable thead th:hover {
+  background: #eef2f7;
+}
+
+.sort-icon {
+  font-size: 10px;
+  opacity: 0.35;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+table.sortable thead th.sort-asc .sort-icon,
+table.sortable thead th.sort-desc .sort-icon {
+  opacity: 1;
+  color: var(--denjoy-orange);
+}
+
+/* ===================================================================
+   EXECUTIVE SUMMARY PANEL + QUICK NAV
+   =================================================================== */
+.executive-summary-panel {
+  margin: 18px 0 24px;
+  background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+  border: 1px solid #e6eef7;
+  border-radius: 12px;
+  padding: 18px 18px 14px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+}
+
+.executive-summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.executive-summary-title {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  color: #1f2937;
+  font-size: 20px;
+}
+
+.executive-summary-subtitle {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.report-toolbar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.toolbar-btn {
+  border: 1px solid #d8e2ee;
+  background: #fff;
+  color: #334155;
+  padding: 7px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.toolbar-btn:hover {
+  border-color: var(--denjoy-orange);
+  color: #111827;
+  box-shadow: 0 0 0 3px rgba(247,148,29,.10);
+}
+
+.executive-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.executive-card {
+  background: #fff;
+  border: 1px solid #edf2f7;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.executive-card h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.executive-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.executive-list li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px;
+  align-items: start;
+  color: #374151;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.executive-item-badge {
+  margin-top: 1px;
+}
+
+.phase-jump-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.phase-jump-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: #f8fafc;
+  border: 1px solid #e7edf5;
+  border-radius: 10px;
+  padding: 10px 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.phase-jump-card:hover {
+  transform: translateY(-1px);
+  border-color: #d4dee9;
+  box-shadow: 0 4px 10px rgba(15,23,42,.05);
+}
+
+.phase-jump-label {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.phase-jump-meta {
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* ===================================================================
+   COLLAPSIBLE SUBSECTIONS
+   =================================================================== */
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.section-toggle {
+  margin-left: auto;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #475569;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.section-toggle:hover {
+  border-color: var(--denjoy-orange);
+  color: #111827;
+}
+
+.section-body {
+  overflow: hidden;
+  transition: max-height .22s ease, opacity .18s ease, margin-top .18s ease;
+  max-height: 20000px;
+  opacity: 1;
+}
+
+.section-body.collapsed {
+  max-height: 0 !important;
+  opacity: 0;
+  margin-top: 0 !important;
+}
+
+.section-collapsible-ready {
+  position: relative;
+}
+
+@media (max-width: 900px) {
+  .executive-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .executive-summary-header {
+    flex-direction: column;
+  }
+  .phase-jump-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===================================================================
+   LIGHTWEIGHT UTILITIES (reduce inline styles in phase modules)
+   =================================================================== */
+.mt-0 { margin-top: 0 !important; }
+.mt-6 { margin-top: 6px !important; }
+.mt-10 { margin-top: 10px !important; }
+.mt-15 { margin-top: 15px !important; }
+.mt-20 { margin-top: 20px !important; }
+.mt-25 { margin-top: 25px !important; }
+.mt-30 { margin-top: 30px !important; }
+.mt-40 { margin-top: 40px !important; }
+.mb-10 { margin-bottom: 10px !important; }
+.mb-15 { margin-bottom: 15px !important; }
+.mb-20 { margin-bottom: 20px !important; }
+
+.text-muted { color: #666 !important; }
+.text-soft { color: #555 !important; }
+.text-muted-sm { color: #666 !important; font-size: 0.9em !important; }
+.italic { font-style: italic !important; }
+
+.stat-number-sm {
+  font-size: 1rem !important;
+}
+
+.section-advice-panel {
+  background: #f8f9fa;
+  border-left: 4px solid #0066b3;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.advice-inner-card {
+  margin-top: 25px;
+  padding: 15px;
+  background: white;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+}
+
+.list-soft {
+  margin: 10px 0 0 20px;
+  color: #555;
+  line-height: 1.8;
+}
+
+.scroll-box-sm {
+  max-height: 100px;
+  overflow-y: auto;
+  font-size: 0.85em;
+  margin-top: 5px;
+}
+
+.row-divider {
+  border-bottom: 1px solid #e5e9f0;
+}
+
+.cell-pad { padding: 12px; }
+.cell-pad-strong { padding: 12px; font-weight: 500; }
+.cell-pad-muted { padding: 12px; color: #666; }
+.text-muted-xs { color: #999; font-size: 0.8em; }
+.text-muted-sm2 { color: #666; font-size: 0.85em; }
+.perm-resource-title { color: #0066b3; font-size: 0.9em; }
+.perm-line { margin-bottom: 5px; }
+.stat-number-ok { color: #27ae60 !important; }
+.stat-number-warn { color: #ff6600 !important; }
+.text-muted-italic { color: #888 !important; font-style: italic !important; }
+.section-note { color: #555; margin-top: 8px; }
+.section-note-sm { color: #555; margin-top: 6px; }
+.subheading-12 { margin-top: 12px; }
+.heading-25 { margin-top: 25px; color: #333; }
+.list-basic { margin: 10px 0 0 20px; }
+.list-soft-tight { margin: 10px 0 0 20px; color: #555; line-height: 1.6; }
+.license-card-sub { font-size: 0.8em; font-weight: normal; opacity: 0.8; }
+.alert-info-soft {
+  margin-bottom: 15px;
+  background: #eef7ff;
+  border-left: 5px solid #0066b3;
+  font-weight: 500;
+}
+.appreg-row { border-bottom: 1px solid #e5e9f0; }
+.appreg-row-expired { background: #fee; }
+.appreg-row-warning { background: #fffbf0; }
+.perm-scroll-box { max-height: 100px; overflow-y: auto; font-size: 0.85em; margin-top: 5px; }
+.perm-resource-block { margin-bottom: 5px; }
+.perm-type { font-size: 0.8em; margin-left: 8px; }
+.perm-type-app { color: #ff6600; }
+.perm-type-del { color: #3498db; }
+.perm-name { color: #555; font-size: 0.85em; }
+.perm-more { color: #999; font-size: 0.8em; margin-left: 8px; }
+.appreg-info-card {
+  background: #f0f8ff;
+  border-left: 4px solid #3498db;
+  border-color: #3498db;
+}
+
+/* ===================================================================
+   PHASE RISK OVERVIEW (management summary per phase)
+   =================================================================== */
+.phase-health-panel {
+  margin: 8px 0 24px;
+  background: #fff;
+  border: 1px solid #e6edf5;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(15,23,42,.04);
+}
+
+.phase-health-head h2 {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  color: #111827;
+}
+
+.phase-health-head p {
+  margin: 6px 0 12px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.phase-health-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 12px;
+}
+
+.phase-health-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: #f8fafc;
+  border: 1px solid #e7edf5;
+  border-radius: 10px;
+  padding: 12px;
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+
+.phase-health-card:hover {
+  transform: translateY(-1px);
+  border-color: #d3dce7;
+  box-shadow: 0 6px 12px rgba(15,23,42,.05);
+}
+
+.phase-health-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.phase-health-title {
+  font-weight: 800;
+  color: #0f172a;
+  font-size: 14px;
+}
+
+.phase-health-summary {
+  margin: 9px 0 8px;
+  color: #334155;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.phase-health-metrics {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.phase-health-sevrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.sev-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.sev-chip--danger { background: #fee2e2; color: #991b1b; }
+.sev-chip--warn   { background: #fef3c7; color: #92400e; }
+.sev-chip--info   { background: #dbeafe; color: #1e3a8a; }
+
+.sev-score {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 700;
+  color: #475569;
+}
+
+.sev-stack {
+  height: 7px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  overflow: hidden;
+  display: flex;
+}
+
+.sev-stack span { display: block; height: 100%; }
+.sev-stack__critical { background: #ef4444; }
+.sev-stack__warning { background: #f59e0b; }
+.sev-stack__info { background: #3b82f6; }
+
+/* ===================================================================
+   SEVERITY DASHBOARD + TREND DELTA
+   =================================================================== */
+.severity-chart-panel,
+.trend-panel {
+  margin: 8px 0 24px;
+  background: #fff;
+  border: 1px solid #e6edf5;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(15,23,42,.04);
+}
+
+.severity-chart-head,
+.trend-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.severity-chart-head h2,
+.trend-head h2 {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  color: #111827;
+}
+
+.severity-chart-head p,
+.trend-head p {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.severity-chart-total {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.severity-overall-bar {
+  height: 10px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.severity-overall-bar > span {
+  display: block;
+  height: 100%;
+}
+
+.severity-rows {
+  display: grid;
+  gap: 10px;
+}
+
+.severity-row {
+  display: grid;
+  grid-template-columns: minmax(180px, 1.1fr) minmax(220px, 2fr) auto;
+  gap: 10px;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #e7edf5;
+  border-radius: 10px;
+  background: #f8fafc;
+  padding: 10px 12px;
+}
+
+.severity-row:hover {
+  border-color: #d3dce7;
+  box-shadow: 0 4px 10px rgba(15,23,42,.04);
+}
+
+.severity-row__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.severity-row__label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.severity-row__bar {
+  height: 8px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  overflow: hidden;
+  display: flex;
+}
+
+.severity-row__bar > span {
+  display: block;
+  height: 100%;
+}
+
+.severity-row__counts {
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+}
+
+.trend-panel--empty .trend-head { margin-bottom: 0; }
+
+.trend-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.trend-card {
+  border: 1px solid #e7edf5;
+  border-radius: 10px;
+  background: #f8fafc;
+  padding: 10px 12px;
+  display: grid;
+  gap: 4px;
+}
+
+.trend-label {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.trend-value {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.trend-delta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  border-radius: 999px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.trend-delta--good {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.trend-delta--bad {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.trend-delta--neutral {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.trend-kpi-block {
+  border: 1px solid #e7edf5;
+  border-radius: 10px;
+  background: #fbfdff;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.trend-kpi-block h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.trend-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 10px;
+}
+
+.trend-kpi-card {
+  border: 1px solid #e7edf5;
+  border-radius: 8px;
+  background: #fff;
+  padding: 10px;
+  display: grid;
+  gap: 6px;
+}
+
+.trend-kpi-values {
+  display: grid;
+  gap: 2px;
+  font-size: 12px;
+  color: #475569;
+}
+
+.toolbar-btn--mode.active {
+  background: #e8f1fb;
+  border-color: #cfe0f4;
+  color: #0f172a;
+}
+
+body.view-mode-management .phase-content .section h3 {
+  margin-bottom: 6px;
+}
+
+body.view-mode-management .phase-content .section-body.collapsed {
+  display: none;
+}
+
+body.view-mode-management .technical-only {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .phase-health-grid { grid-template-columns: 1fr; }
+  .severity-chart-head,
+  .trend-head { flex-direction: column; }
+  .trend-cards { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .trend-kpi-grid { grid-template-columns: 1fr; }
+  .severity-row { grid-template-columns: 1fr; }
+  .severity-row__meta { align-items: flex-start; }
+}
+
+@media (max-width: 640px) {
+  .trend-cards { grid-template-columns: 1fr; }
+}
+
+/* ===================================================================
+   COMPACTE PRESENTATIE TUNING (minder lijnen / minder visuele ruis)
+   =================================================================== */
+.container {
+  margin: 20px auto;
+  padding: 20px 22px 14px;
+  box-shadow: 0 1px 5px rgba(33, 33, 33, 0.05);
+}
+
+.header {
+  border-bottom-width: 2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.score-dashboard {
+  gap: 18px;
+  padding: 16px 20px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+.score-kpis { gap: 8px; }
+
+.score-kpi {
+  padding: 10px 12px;
+  min-width: 72px;
+}
+
+.executive-summary-panel,
+.phase-health-panel,
+.severity-chart-panel,
+.trend-panel {
+  margin: 8px 0 18px;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(15, 23, 42, 0.035);
+  border-color: #e9eef4;
+}
+
+.executive-summary-header,
+.severity-chart-head,
+.trend-head {
+  margin-bottom: 8px;
+  gap: 10px;
+}
+
+.executive-summary-title,
+.phase-health-head h2,
+.severity-chart-head h2,
+.trend-head h2 {
+  font-size: 17px;
+}
+
+.executive-summary-subtitle,
+.phase-health-head p,
+.severity-chart-head p,
+.trend-head p {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.report-toolbar {
+  gap: 6px;
+}
+
+.toolbar-btn {
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+}
+
+.toolbar-btn:hover {
+  box-shadow: none;
+}
+
+.stats-grid {
+  gap: 12px;
+  margin: 10px 0 16px;
+}
+
+.stat-card {
+  padding: 12px 14px;
+  gap: 4px;
+  border-left-width: 3px;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.stat-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.stat-number {
+  font-size: 20px;
+}
+
+.stat-label {
+  font-size: 12px;
+}
+
+.phase-content {
+  margin-bottom: 22px;
+  border-radius: 8px;
+  border-color: #e8edf3;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.035);
+}
+
+.phase-content > h1 {
+  padding: 14px 16px;
+  font-size: 1.45em;
+  background: #fbfbfc;
+  border-left-width: 3px;
+  gap: 10px;
+}
+
+.phase-body {
+  padding: 14px 16px;
+}
+
+.phase-toggle,
+.toggle-btn {
+  padding: 5px 9px;
+  font-size: 11px;
+  border-radius: 999px;
+  box-shadow: none;
+}
+
+.section {
+  margin-top: 10px;
+  padding-top: 2px;
+}
+
+.phase-content > .section {
+  margin-top: 8px;
+}
+
+.section-title {
+  font-size: 16px;
+  padding: 8px 0;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(247, 148, 29, 0.45);
+}
+
+.section-toggle {
+  padding: 3px 8px;
+  font-size: 10px;
+}
+
+.executive-layout {
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.executive-card {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border-color: #eef2f7;
+}
+
+.executive-card h3 {
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.executive-list {
+  gap: 6px;
+}
+
+.executive-list li {
+  gap: 6px;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.phase-jump-grid {
+  gap: 8px;
+}
+
+.phase-jump-card {
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #fafbfd;
+  transition: border-color .15s ease;
+}
+
+.phase-jump-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.phase-health-grid,
+.severity-rows,
+.trend-cards,
+.trend-kpi-grid {
+  gap: 8px;
+}
+
+.phase-health-card,
+.severity-row,
+.trend-card,
+.trend-kpi-card {
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.phase-health-card:hover,
+.severity-row:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.phase-health-card {
+  padding: 10px;
+  background: #fbfcfd;
+}
+
+.phase-health-summary {
+  margin: 6px 0 6px;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.phase-health-metrics,
+.severity-row__counts,
+.trend-label,
+.trend-kpi-values {
+  font-size: 11px;
+}
+
+.sev-stack,
+.severity-overall-bar {
+  height: 6px;
+}
+
+.severity-row {
+  grid-template-columns: minmax(160px, 1fr) minmax(200px, 1.8fr) auto;
+  padding: 8px 10px;
+}
+
+.severity-row__label {
+  font-size: 12px;
+}
+
+.trend-card {
+  padding: 8px 10px;
+  gap: 2px;
+  background: #fbfcfd;
+}
+
+.trend-value {
+  font-size: 17px;
+}
+
+.trend-delta {
+  padding: 2px 7px;
+  font-size: 10px;
+}
+
+.trend-kpi-block {
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.trend-kpi-block h3 {
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.table-search-wrap {
+  margin: 6px 0 4px;
+}
+
+.table-search {
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 999px;
+}
+
+.table-container {
+  margin: 8px 0;
+  max-height: 420px;
+  border-radius: 8px;
+  border-color: #eef2f6;
+  box-shadow: none;
+}
+
+.table-container thead th {
+  padding: 9px 10px;
+  font-size: 12px;
+  border-bottom: 1px solid #e9edf2;
+}
+
+.table-container tbody td {
+  padding: 8px 10px;
+  font-size: 12px;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.55);
+}
+
+.table-container tbody tr:nth-child(even) {
+  background: rgba(248, 250, 252, 0.55);
+}
+
+.table-container tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* Minder zware lijnaccenten in meldingen en adviezen */
+.alert {
+  padding: 9px 11px;
+  margin: 6px 0;
+  font-size: 13px;
+  border-radius: 5px;
+}
+
+.alert-info,
+.alert-success,
+.alert-critical {
+  border-left-width: 3px;
+}
+
+.alert-warning {
+  border-left-width: 3px;
+}
+
+.recommendation {
+  padding: 10px 12px;
+  margin: 8px 0;
+  border-left-width: 4px;
+}
+
+.footer {
+  border-top-width: 2px;
+  padding: 10px 16px;
+  margin-top: 18px;
+  box-shadow: none;
+}
+
+.footer-inner {
+  font-size: 11px;
+  gap: 8px;
+}
+
+/* ===================================================================
+   ENTRA PORTAL DESIGN BRIDGE (tokens + look & feel)
+   Houdt rapportstructuur intact, vervangt vooral visuele taal.
+   =================================================================== */
+:root {
+  --p50:  #FFF7ED;
+  --p100: #FFEDD5;
+  --p200: #FED7AA;
+  --p400: #FB923C;
+  --p500: #F97316;
+  --p600: #EA6C0B;
+  --p700: #C2570A;
+
+  --s50:  #F5F7FA;
+  --s100: #EEF2F6;
+  --s200: #E3E9F0;
+  --s300: #D2DCE7;
+  --s500: #91A7BD;
+
+  --font: 'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif;
+  --mono: 'DM Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --page-bg: #F3F6FA;
+  --card-bg: #FFFFFF;
+  --text-color: #101828;
+  --denjoy-dark: #101828;
+  --denjoy-grey: #667085;
+  --denjoy-muted: #98A2B3;
+  --denjoy-orange: var(--p600);
+  --denjoy-orange-soft: var(--p100);
+  --brand-orange: var(--p600);
+  --accent: var(--p600);
+  --success: #12B76A;
+  --warning: #F79009;
+  --danger: #F04438;
+}
+
+body {
+  font-family: var(--font);
+  background:
+    linear-gradient(135deg, #FDEBD0 0%, #F3F6FA 45%, #FFF7ED 100%);
+  color: var(--text-color);
+}
+
+.header {
+  background:
+    radial-gradient(900px 180px at 10% -30%, rgba(234,108,11,0.22) 0%, rgba(234,108,11,0) 55%),
+    rgba(243,246,250,0.78);
+  border-bottom: 0;
+  backdrop-filter: blur(12px);
+  box-shadow: none;
+}
+
+.header-inner {
+  max-width: 1320px;
+  background: rgba(16, 24, 40, 0.94);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px;
+  box-shadow: 0 16px 38px rgba(16,24,40,0.22), inset 0 1px 0 rgba(255,255,255,0.03);
+  padding: 8px 12px;
+  justify-content: space-between;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 220px;
+  background: linear-gradient(90deg, rgba(234,108,11,0.18), rgba(234,108,11,0.04) 65%, transparent);
+  pointer-events: none;
+}
+
+.header-nav {
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.header-nav a {
+  color: #DDE6F2;
+  border: 1px solid rgba(255,255,255,0.04);
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 8px 13px;
+  background: rgba(255,255,255,0.01);
+}
+
+.header-nav a:hover {
+  background: rgba(234,108,11,0.14);
+  color: #fff;
+  border-color: rgba(234,108,11,0.30);
+  transform: none;
+  box-shadow: inset 0 0 0 1px rgba(234,108,11,0.08);
+}
+
+.container {
+  max-width: 1320px;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid #E8EEF5;
+  border-radius: 22px;
+  box-shadow: 0 20px 58px rgba(16,24,40,0.10), inset 0 1px 0 rgba(255,255,255,0.75);
+}
+
+.intro-header {
+  background:
+    radial-gradient(460px 180px at 0% 0%, rgba(234,108,11,0.11) 0%, rgba(234,108,11,0) 65%),
+    linear-gradient(180deg, rgba(255,255,255,0.98), rgba(247,250,253,0.94));
+  border: 1px solid #E8EEF5;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(16,24,40,0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-header::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(234,108,11,0.28), rgba(232,238,245,0.7), transparent);
+  pointer-events: none;
+}
+
+.intro-meta h1,
+.intro-meta .report-title,
+.phase-content > h1,
+.section-title,
+.executive-summary-title,
+.phase-health-head h2,
+.severity-chart-head h2,
+.trend-head h2 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.intro-meta p,
+.executive-summary-subtitle,
+.phase-health-head p,
+.severity-chart-head p,
+.trend-head p {
+  color: #667085;
+}
+
+.score-dashboard {
+  background:
+    radial-gradient(600px 220px at 0% 0%, rgba(234,108,11,0.12) 0%, rgba(234,108,11,0) 60%),
+    linear-gradient(135deg, #0F172A 0%, #101828 55%, #172033 100%);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.score-kpi {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.08);
+}
+
+.executive-summary-panel,
+.phase-health-panel,
+.severity-chart-panel,
+.trend-panel,
+.phase-content {
+  border-color: #E8EEF5;
+  box-shadow: 0 10px 28px rgba(16,24,40,0.05);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.phase-content > h1 {
+  background: linear-gradient(180deg, #FCFDFE, #F8FAFD);
+  color: #101828;
+  border-left-color: var(--p600);
+}
+
+.phase-toggle,
+.toggle-btn,
+.toolbar-btn--mode.active {
+  background: var(--p600);
+  border-color: transparent;
+  color: #fff;
+}
+
+.phase-toggle:hover,
+.toggle-btn:hover {
+  background: var(--p700);
+  color: #fff;
+}
+
+.toolbar-btn {
+  border-color: #E8EEF5;
+  color: #475467;
+  background: rgba(255,255,255,0.9);
+  border-radius: 999px;
+}
+
+.toolbar-btn:hover {
+  border-color: rgba(234,108,11,0.34);
+  color: #101828;
+  background: #fff;
+}
+
+.stat-card,
+.executive-card,
+.phase-health-card,
+.severity-row,
+.trend-card,
+.trend-kpi-card {
+  border-color: #E8EEF5;
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(16,24,40,0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card {
+  border-left-color: transparent;
+}
+
+.stat-card::before,
+.executive-card::before,
+.phase-health-card::before,
+.trend-card::before,
+.trend-kpi-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--p500), var(--p600), rgba(234,108,11,0.12));
+}
+
+.severity-row::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(234,108,11,0.35), rgba(234,108,11,0.10), transparent);
+}
+
+.phase-jump-card {
+  background: linear-gradient(180deg, #FCFDFE, #F7FAFD);
+  border-color: #E8EEF5;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(16,24,40,0.03);
+}
+
+.phase-jump-label,
+.phase-health-title,
+.severity-row__label {
+  color: #101828;
+}
+
+.phase-jump-meta,
+.phase-health-metrics,
+.severity-row__counts,
+.trend-label,
+.trend-kpi-values {
+  color: #667085;
+}
+
+.badge-info,
+.sev-chip--info {
+  background: #EEF4FF;
+  color: #3B7EFF;
+}
+
+.badge-warn,
+.sev-chip--warn {
+  background: #FFF4E5;
+  color: #B54708;
+}
+
+.badge-danger,
+.sev-chip--danger {
+  background: #FFE9E7;
+  color: #B42318;
+}
+
+.table-search {
+  border: 1px solid #E8EEF5;
+  background: #fff;
+  color: #101828;
+}
+
+.table-search:focus {
+  outline: none;
+  border-color: rgba(234,108,11,0.34);
+  box-shadow: 0 0 0 3px rgba(234,108,11,0.10);
+}
+
+.table-container {
+  border-color: #E8EEF5;
+  background: #fff;
+}
+
+.table-container table {
+  font-variant-numeric: tabular-nums;
+}
+
+.table-container thead th {
+  background: #F7FAFD;
+  color: #344054;
+  border-bottom-color: #E8EEF5;
+}
+
+.table-container tbody td {
+  color: #344054;
+  border-bottom-color: rgba(232, 238, 245, 0.85);
+}
+
+.table-container tbody tr:nth-child(even) {
+  background: rgba(247,250,253,0.9);
+}
+
+.alert {
+  border: 1px solid #E8EEF5;
+}
+
+.alert-info {
+  background: #F7FAFD;
+  border-left-color: #3B7EFF;
+  color: #344054;
+}
+
+.alert-success {
+  background: #EEFDF3;
+  border-left-color: #12B76A;
+  color: #065F46;
+}
+
+.alert-warning {
+  background: #FFF7ED;
+  border-left-color: #F79009;
+  color: #9A3412;
+}
+
+.alert-critical {
+  background: #FEF3F2;
+  border-left-color: #F04438;
+  color: #912018;
+}
+
+.recommendation {
+  background: #FFF7ED;
+  border-left-color: var(--p600);
+  border-top: 1px solid rgba(234,108,11,0.12);
+  border-right: 1px solid rgba(234,108,11,0.12);
+  border-bottom: 1px solid rgba(234,108,11,0.12);
+}
+
+.section-advice-panel {
+  background: #FFFFFF;
+  border: 1px solid #E8EEF5;
+  border-left: 0;
+  border-radius: 16px;
+  padding: 12px;
+  margin-top: 14px;
+  box-shadow: 0 10px 24px rgba(16,24,40,0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-advice-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--p500), var(--p700));
+}
+
+.section-advice-panel .section-title {
+  border-bottom-color: rgba(234,108,11,0.28);
+}
+
+.advice-inner-card {
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: linear-gradient(180deg, #FAFCFF, #F7FAFD);
+  border-radius: 12px;
+  border: 1px solid #E8EEF5;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.75);
+}
+
+.advice-inner-card h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+  color: #101828;
+}
+
+.list-soft {
+  margin: 8px 0 0 16px;
+  color: #475467;
+  line-height: 1.55;
+}
+
+.list-soft li + li {
+  margin-top: 4px;
+}
+
+.footer {
+  background: rgba(16, 24, 40, 0.96);
+  border-top-color: var(--p600);
+}
+
+.footer-inner {
+  color: #D0D5DD;
+}
+
+.footer a {
+  color: #F2F4F7;
+}
+
+/* ===================================================================
+   PRINT BUTTON (in header nav)
+   =================================================================== */
+.print-btn {
+  background: rgba(255,255,255,0.03);
+  color: #F2F4F7;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.print-btn:hover {
+  background: rgba(234,108,11,0.14);
+  border-color: rgba(234,108,11,0.32);
+  color: #fff;
+}
+
+.intro-header .intro-logo > div {
+  border: 1px solid #E8EEF5;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.06) !important;
+}
+
+@media (max-width: 900px) {
+  .header-inner {
+    border-radius: 14px;
+    padding: 8px 10px;
+  }
+
+  .header-nav {
+    gap: 6px;
+  }
+
+  .header-nav a {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .print-btn {
+    padding: 7px 11px;
+  }
+}
+
+/* ===================================================================
+   SIDEBAR LAYOUT (Entra-portal style nav for report)
+   =================================================================== */
+:root {
+  --report-sidebar-w: 280px;
+  --report-shell-gap: 20px;
+}
+
+body {
+  padding-top: 0;
+  padding-left: calc(var(--report-sidebar-w) + var(--report-shell-gap));
+  min-height: 100vh;
+}
+
+.header {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  right: auto;
+  width: var(--report-sidebar-w);
+  height: calc(100vh - 40px);
+  z-index: 10000;
+  background: transparent;
+  border: 0;
+  display: block;
+  box-shadow: none;
+}
+
+.header-inner {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.90);
+  border: 1px solid #E8EEF5;
+  box-shadow: 0 18px 50px rgba(16,24,40,0.14);
+  backdrop-filter: blur(10px);
+}
+
+.header-inner::before {
+  width: 100%;
+  height: 80px;
+  inset: 0 0 auto 0;
+  background: radial-gradient(240px 90px at 12% 0%, rgba(234,108,11,0.16), rgba(234,108,11,0));
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 4px 12px;
+  border-bottom: 1px solid #EEF2F6;
+}
+
+.sidebar-brand-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--p500), var(--p700));
+  color: #fff;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 14px rgba(234,108,11,0.28);
+  flex-shrink: 0;
+}
+
+.sidebar-brand-text {
+  min-width: 0;
+}
+
+.sidebar-brand-title {
+  font-weight: 800;
+  color: #101828;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.sidebar-brand-sub {
+  margin-top: 2px;
+  color: #667085;
+  font-size: 11px;
+  line-height: 1.25;
+  word-break: break-word;
+}
+
+.header-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 6px;
+  flex: 1;
+  overflow-y: auto;
+  padding: 2px;
+}
+
+.header-nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 40px;
+  padding: 9px 12px;
+  border-radius: 999px;
+  color: #475467;
+  background: transparent;
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.nav-topic-icon {
+  width: 18px;
+  flex: 0 0 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.nav-topic-initial {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: #F2F4F7;
+  color: #344054;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.nav-topic-text {
+  min-width: 0;
+}
+
+.header-nav a:hover {
+  background: #F7FAFD;
+  color: #101828;
+  border-color: #E8EEF5;
+  box-shadow: none;
+}
+
+.header-nav a.active,
+.header-nav a[aria-current="page"] {
+  background: var(--p600);
+  color: #fff;
+  border-color: rgba(234,108,11,0.22);
+  box-shadow: 0 4px 14px rgba(234,108,11,0.28);
+}
+
+.sidebar-actions {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid #EEF2F6;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.theme-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  background: #F7FAFD;
+  border: 1px solid #E8EEF5;
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.theme-btn {
+  border: 0;
+  background: transparent;
+  color: #667085;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 10px;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.theme-btn:hover {
+  color: #101828;
+  background: rgba(255,255,255,0.6);
+}
+
+.theme-btn.active {
+  background: #fff;
+  color: #101828;
+  box-shadow: 0 3px 10px rgba(16,24,40,0.08);
+}
+
+.sidebar-print-btn {
+  width: 100%;
+  justify-content: center;
+  background: var(--p600);
+  color: #fff;
+  border-color: rgba(234,108,11,0.22);
+  box-shadow: 0 6px 16px rgba(234,108,11,0.24);
+}
+
+.sidebar-print-btn:hover {
+  background: var(--p700);
+  border-color: rgba(234,108,11,0.28);
+}
+
+.container,
+.footer {
+  width: min(1320px, calc(100vw - var(--report-sidebar-w) - var(--report-shell-gap) - 48px));
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  margin-top: 20px;
+  margin-bottom: 16px;
+}
+
+.footer {
+  border-radius: 16px;
+}
+
+.phase-content,
+.section-title {
+  scroll-margin-top: 24px;
+}
+
+/* Optional dark theme for report */
+html[data-theme="dark"] body {
+  background:
+    radial-gradient(1000px 600px at 10% 0%, rgba(234,108,11,0.12) 0%, rgba(11,18,32,0) 55%),
+    linear-gradient(180deg, #0B1220 0%, #08101E 100%);
+  color: #E6EEF9;
+}
+
+html[data-theme="dark"] .header-inner {
+  background: rgba(15, 26, 43, 0.92);
+  border-color: #1A2A41;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+}
+
+html[data-theme="dark"] .sidebar-brand {
+  border-bottom-color: #16253B;
+}
+
+html[data-theme="dark"] .sidebar-brand-title { color: #E6EEF9; }
+html[data-theme="dark"] .sidebar-brand-sub { color: #A9B7C9; }
+
+html[data-theme="dark"] .header-nav a {
+  color: #BFD0E4;
+}
+
+html[data-theme="dark"] .header-nav a:hover {
+  background: #101F33;
+  color: #E6EEF9;
+  border-color: #1A2A41;
+}
+
+html[data-theme="dark"] .nav-topic-initial {
+  background: #101F33;
+  color: #BFD0E4;
+}
+
+html[data-theme="dark"] .theme-toggle {
+  background: #101F33;
+  border-color: #1A2A41;
+}
+
+html[data-theme="dark"] .theme-btn {
+  color: #A9B7C9;
+}
+
+html[data-theme="dark"] .theme-btn:hover {
+  color: #E6EEF9;
+  background: rgba(255,255,255,0.03);
+}
+
+html[data-theme="dark"] .theme-btn.active {
+  background: #0F1A2B;
+  color: #fff;
+  box-shadow: inset 0 0 0 1px #1A2A41;
+}
+
+html[data-theme="dark"] .sidebar-actions {
+  border-top-color: #16253B;
+}
+
+html[data-theme="dark"] .container {
+  background: rgba(15, 26, 43, 0.94);
+  border-color: #1A2A41;
+  box-shadow: 0 20px 58px rgba(0,0,0,0.32);
+}
+
+html[data-theme="dark"] .intro-header {
+  border-color: #1A2A41;
+  background:
+    radial-gradient(420px 180px at 0% 0%, rgba(234,108,11,0.12) 0%, rgba(234,108,11,0) 65%),
+    linear-gradient(180deg, rgba(16,31,51,0.96), rgba(15,26,43,0.96));
+}
+
+html[data-theme="dark"] .intro-meta h1,
+html[data-theme="dark"] .intro-meta .report-title,
+html[data-theme="dark"] .phase-content > h1,
+html[data-theme="dark"] .section-title,
+html[data-theme="dark"] .executive-summary-title,
+html[data-theme="dark"] .phase-health-head h2 {
+  color: #E6EEF9 !important;
+}
+
+html[data-theme="dark"] .intro-meta .tenant-name,
+html[data-theme="dark"] .intro-meta .title-main {
+  color: #E6EEF9 !important;
+}
+
+html[data-theme="dark"] .intro-meta p,
+html[data-theme="dark"] .executive-summary-subtitle,
+html[data-theme="dark"] .phase-health-head p,
+html[data-theme="dark"] .severity-chart-head p,
+html[data-theme="dark"] .trend-head p {
+  color: #A9B7C9 !important;
+}
+
+html[data-theme="dark"] .executive-summary-panel,
+html[data-theme="dark"] .phase-health-panel,
+html[data-theme="dark"] .trend-panel,
+html[data-theme="dark"] .phase-content,
+html[data-theme="dark"] .stat-card,
+html[data-theme="dark"] .executive-card,
+html[data-theme="dark"] .phase-health-card,
+html[data-theme="dark"] .severity-row,
+html[data-theme="dark"] .trend-card,
+html[data-theme="dark"] .trend-kpi-card,
+html[data-theme="dark"] .section-advice-panel,
+html[data-theme="dark"] .advice-inner-card,
+html[data-theme="dark"] .phase-jump-card {
+  background: #0F1A2B;
+  border-color: #1A2A41;
+  color: #E6EEF9;
+}
+
+html[data-theme="dark"] .phase-content > h1 {
+  background: linear-gradient(180deg, #101F33, #0F1A2B);
+  color: #E6EEF9;
+}
+
+html[data-theme="dark"] .phase-toggle,
+html[data-theme="dark"] .section-toggle,
+html[data-theme="dark"] .toggle-btn {
+  background: #101F33;
+  border-color: #1A2A41;
+  color: #E6EEF9;
+}
+
+html[data-theme="dark"] .phase-toggle:hover,
+html[data-theme="dark"] .section-toggle:hover,
+html[data-theme="dark"] .toggle-btn:hover {
+  background: #16253B;
+  color: #fff;
+  border-color: rgba(234,108,11,0.35);
+}
+
+html[data-theme="dark"] .toolbar-btn--mode.active {
+  background: var(--p600);
+  border-color: rgba(234,108,11,0.28);
+  color: #fff;
+}
+
+html[data-theme="dark"] .phase-jump-label,
+html[data-theme="dark"] .phase-health-title,
+html[data-theme="dark"] .severity-row__label,
+html[data-theme="dark"] .table-container tbody td,
+html[data-theme="dark"] .advice-inner-card h4,
+html[data-theme="dark"] .executive-card h3,
+html[data-theme="dark"] .stat-number,
+html[data-theme="dark"] .kpi-num,
+html[data-theme="dark"] .score-title {
+  color: #E6EEF9;
+}
+
+html[data-theme="dark"] .phase-jump-meta,
+html[data-theme="dark"] .phase-health-metrics,
+html[data-theme="dark"] .severity-row__counts,
+html[data-theme="dark"] .trend-label,
+html[data-theme="dark"] .trend-kpi-values,
+html[data-theme="dark"] .list-soft,
+html[data-theme="dark"] .stat-label,
+html[data-theme="dark"] .stat-small,
+html[data-theme="dark"] .text-muted,
+html[data-theme="dark"] .text-soft,
+html[data-theme="dark"] .text-muted-sm,
+html[data-theme="dark"] .text-muted-xs,
+html[data-theme="dark"] .text-muted-sm2,
+html[data-theme="dark"] .text-muted-italic,
+html[data-theme="dark"] .section-note,
+html[data-theme="dark"] .section-note-sm,
+html[data-theme="dark"] .perm-name,
+html[data-theme="dark"] .perm-more,
+html[data-theme="dark"] .license-card-sub,
+html[data-theme="dark"] .executive-list li {
+  color: #A9B7C9;
+}
+
+html[data-theme="dark"] .heading-25 {
+  color: #E6EEF9;
+}
+
+html[data-theme="dark"] .perm-resource-title {
+  color: #60A5FA;
+}
+
+html[data-theme="dark"] .perm-type-app { color: #F59E0B; }
+html[data-theme="dark"] .perm-type-del { color: #60A5FA; }
+
+html[data-theme="dark"] .table-container,
+html[data-theme="dark"] .table-search {
+  background: #101F33;
+  border-color: #1A2A41;
+  color: #E6EEF9;
+}
+
+html[data-theme="dark"] .table-container thead th {
+  background: #101F33;
+  color: #C7D3E3;
+  border-bottom-color: #1A2A41;
+}
+
+html[data-theme="dark"] .table-container tbody td {
+  border-bottom-color: rgba(26,42,65,0.9);
+}
+
+html[data-theme="dark"] .table-container tbody tr:nth-child(even) {
+  background: rgba(16,31,51,0.55);
+}
+
+html[data-theme="dark"] .table-container tbody tr:hover {
+  background: rgba(26,42,65,0.55);
+}
+
+html[data-theme="dark"] .toolbar-btn {
+  background: #101F33;
+  border-color: #1A2A41;
+  color: #C7D3E3;
+}
+
+html[data-theme="dark"] .toolbar-btn:hover {
+  background: #0F1A2B;
+  color: #fff;
+}
+
+html[data-theme="dark"] .alert {
+  border-color: #1A2A41;
+  color: #E6EEF9;
+}
+
+html[data-theme="dark"] .alert-info {
+  background: rgba(59,126,255,0.10);
+  border-left-color: #3B82F6;
+  color: #DBEAFE;
+}
+
+html[data-theme="dark"] .alert-success {
+  background: rgba(18,183,106,0.10);
+  border-left-color: #12B76A;
+  color: #D1FAE5;
+}
+
+html[data-theme="dark"] .alert-warning {
+  background: rgba(247,144,9,0.10);
+  border-left-color: #F59E0B;
+  color: #FEF3C7;
+}
+
+html[data-theme="dark"] .alert-critical {
+  background: rgba(240,68,56,0.10);
+  border-left-color: #F04438;
+  color: #FEE2E2;
+}
+
+html[data-theme="dark"] .alert-info-soft {
+  background: rgba(59,126,255,0.08);
+  border-left-color: #3B82F6;
+  color: #DBEAFE;
+}
+
+html[data-theme="dark"] .recommendation {
+  background: rgba(234,108,11,0.08);
+  border-color: rgba(234,108,11,0.22);
+  color: #FDEAD7;
+}
+
+html[data-theme="dark"] .badge-ok {
+  background: rgba(18,183,106,0.16);
+  color: #86EFAC;
+}
+
+html[data-theme="dark"] .badge-muted {
+  background: rgba(145,167,189,0.12);
+  color: #C7D3E3;
+}
+
+html[data-theme="dark"] .badge-info {
+  background: rgba(59,126,255,0.14);
+  color: #BFDBFE;
+}
+
+html[data-theme="dark"] .badge-warn {
+  background: rgba(247,144,9,0.14);
+  color: #FDE68A;
+}
+
+html[data-theme="dark"] .badge-danger {
+  background: rgba(240,68,56,0.16);
+  color: #FCA5A5;
+}
+
+html[data-theme="dark"] .score-kpi {
+  background: rgba(255,255,255,0.03);
+  border-color: #1A2A41;
+}
+
+html[data-theme="dark"] .score-kpi .kpi-label,
+html[data-theme="dark"] .score-kpi .kpi-sub {
+  color: #A9B7C9;
+}
+
+html[data-theme="dark"] .intro-header .intro-logo > div {
+  background: #0F1A2B !important;
+  border-color: #1A2A41 !important;
+}
+
+html[data-theme="dark"] .row-divider,
+html[data-theme="dark"] .appreg-row {
+  border-bottom-color: #1A2A41;
+}
+
+html[data-theme="dark"] .appreg-row-expired { background: rgba(240,68,56,0.10); }
+html[data-theme="dark"] .appreg-row-warning { background: rgba(247,144,9,0.08); }
+html[data-theme="dark"] .appreg-info-card {
+  background: rgba(59,126,255,0.08);
+  border-color: #3B82F6;
+}
+
+html[data-theme="dark"] a {
+  color: inherit;
+}
+
+html[data-theme="dark"] .footer {
+  background: rgba(15,26,43,0.95);
+  border-top-color: var(--p600);
+}
+
+@media (max-width: 1080px) {
+  :root {
+    --report-sidebar-w: 232px;
+    --report-shell-gap: 14px;
+  }
+
+  body {
+    padding-left: calc(var(--report-sidebar-w) + var(--report-shell-gap));
+    padding-top: 14px;
+  }
+
+  .header {
+    position: fixed;
+    top: 14px;
+    left: 14px;
+    width: var(--report-sidebar-w);
+    height: calc(100vh - 28px);
+    margin: 0;
+  }
+
+  .header-inner {
+    height: 100%;
+    border-radius: 18px;
+  }
+
+  .header-nav {
+    max-height: none;
+  }
+
+  .container,
+  .footer {
+    margin-right: 14px;
+    margin-left: 14px;
+  }
+}
+
+@media (max-width: 820px) {
+  :root {
+    --report-sidebar-w: 92px;
+    --report-shell-gap: 10px;
+  }
+
+  body {
+    padding-top: 10px;
+  }
+
+  .header {
+    top: 10px;
+    left: 10px;
+    height: calc(100vh - 20px);
+  }
+
+  .header-inner {
+    gap: 8px;
+    padding: 10px 8px;
+    border-radius: 16px;
+  }
+
+  .sidebar-brand {
+    justify-content: center;
+    padding: 2px 0 8px;
+  }
+
+  .sidebar-brand-text {
+    display: none;
+  }
+
+  .sidebar-brand-mark {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+  }
+
+  .header-nav {
+    gap: 8px;
+    padding: 0;
+  }
+
+  .header-nav a {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    min-height: 72px;
+    padding: 8px 6px;
+    border-radius: 16px;
+    text-align: center;
+  }
+
+  .nav-topic-icon {
+    width: auto;
+    flex: 0 0 auto;
+    font-size: 16px;
+  }
+
+  .nav-topic-initial {
+    display: inline-flex;
+  }
+
+  .header-nav a.active .nav-topic-initial,
+  .header-nav a[aria-current="page"] .nav-topic-initial {
+    background: rgba(255,255,255,0.18);
+    color: #fff;
+  }
+
+  .nav-topic-text {
+    display: block;
+    width: 100%;
+    font-size: 9px;
+    line-height: 1.15;
+    font-weight: 700;
+    word-break: break-word;
+  }
+
+  .sidebar-actions {
+    display: none;
+  }
+
+  .container,
+  .footer {
+    margin-right: 10px;
+    margin-left: 10px;
+    width: auto;
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --report-sidebar-w: 84px;
+    --report-shell-gap: 8px;
+  }
+
+  .header {
+    top: 8px;
+    left: 8px;
+    height: calc(100vh - 16px);
+  }
+
+  .header-inner {
+    padding: 8px 6px;
+    border-radius: 14px;
+  }
+
+  .header-nav a {
+    min-height: 68px;
+    padding: 7px 4px;
+    border-radius: 14px;
+  }
+
+  .nav-topic-text {
+    font-size: 8px;
+  }
+
+  .container,
+  .footer {
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+}
+
+@media print {
+  .header,
+  .sidebar-actions,
+  .theme-toggle {
+    display: none !important;
+  }
+
+  body {
+    padding-left: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .container,
+  .footer {
+    margin: 0 !important;
+    max-width: none !important;
+  }
+}
+
+/* ===================================================================
+   BACK-TO-TOP BUTTON (floating)
+   =================================================================== */
+#back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 44px;
+  height: 44px;
+  background: var(--denjoy-orange);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease;
+  z-index: 9998;
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#back-to-top:hover {
+  background: var(--denjoy-dark);
+}
+
+/* ===================================================================
+   PRINT STYLES
+   =================================================================== */
+@media print {
+  .header { position: static !important; height: auto !important; }
+  .header-nav, .print-btn, #back-to-top { display: none !important; }
+  body { padding-top: 0 !important; }
+  .container { box-shadow: none; margin: 0; max-width: none; padding: 12px; }
+  .phase-body.collapsed { display: block !important; }
+  .phase-toggle, .toggle-btn { display: none !important; }
+  .table-container { max-height: none !important; overflow: visible !important; }
+  .phase-content { box-shadow: none; break-inside: avoid; }
+  .score-dashboard {
+    background: #1e293b !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .badge {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  a { color: inherit; text-decoration: none; }
+  @page { margin: 1.5cm; }
+}
+
+    </style>
+</head>
+<body>
+    <a id="top"></a>
+
+    <!-- Sticky sidebar navigation (Entra-portal stijl) -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="sidebar-brand">
+                <div class="sidebar-brand-mark">M</div>
+                <div class="sidebar-brand-text">
+                    <div class="sidebar-brand-title">M365 Baseline</div>
+                    <div class="sidebar-brand-sub">Zorg en Vrij</div>
+                </div>
+            </div>
+            <nav class="header-nav" aria-label="Rapportnavigatie">
+                <a href='#phase1'><span class='nav-topic-icon' aria-hidden='true'>&#128101;</span><span class='nav-topic-initial' aria-hidden='true'>G</span><span class='nav-topic-text'>Gebruikers</span></a><a href='#phase2'><span class='nav-topic-icon' aria-hidden='true'>&#129309;</span><span class='nav-topic-initial' aria-hidden='true'>S</span><span class='nav-topic-text'>Samenwerking</span></a><a href='#phase3'><span class='nav-topic-icon' aria-hidden='true'>&#128737;️</span><span class='nav-topic-initial' aria-hidden='true'>N</span><span class='nav-topic-text'>Naleving</span></a><a href='#phase4'><span class='nav-topic-icon' aria-hidden='true'>&#128272;</span><span class='nav-topic-initial' aria-hidden='true'>B</span><span class='nav-topic-text'>Beveiliging</span></a><a href='#phase5'><span class='nav-topic-icon' aria-hidden='true'>&#128187;</span><span class='nav-topic-initial' aria-hidden='true'>I</span><span class='nav-topic-text'>Intune</span></a><a href='#phase6'><span class='nav-topic-icon' aria-hidden='true'>☁️</span><span class='nav-topic-initial' aria-hidden='true'>A</span><span class='nav-topic-text'>Azure</span></a><a href='#hybrid'><span class='nav-topic-icon' aria-hidden='true'>&#128279;</span><span class='nav-topic-initial' aria-hidden='true'>H</span><span class='nav-topic-text'>Hybrid</span></a><a href='#compliance'><span class='nav-topic-icon' aria-hidden='true'>✅</span><span class='nav-topic-initial' aria-hidden='true'>C</span><span class='nav-topic-text'>CIS</span></a><a href='#frameworks'><span class='nav-topic-icon' aria-hidden='true'>&#128203;</span><span class='nav-topic-initial' aria-hidden='true'>F</span><span class='nav-topic-text'>Frameworks</span></a>
+            </nav>
+            <div class="sidebar-actions">
+                <div class="theme-toggle" role="group" aria-label="Thema kiezen">
+                    <button type="button" class="theme-btn" id="theme-light-btn" onclick="window.setReportTheme('light')">Licht</button>
+                    <button type="button" class="theme-btn" id="theme-dark-btn" onclick="window.setReportTheme('dark')">Donker</button>
+                </div>
+                <button class="print-btn sidebar-print-btn" type="button" onclick="window.print()">Afdrukken</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Back-to-top button -->
+    <button id="back-to-top" title="Terug naar boven" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Report Intro / Meta with logo in a narrow right-aligned block next to the title -->
+            <div class="content-block intro-header" style="margin-bottom: 18px; padding: 12px 28px;">
+                <div style="display:flex; align-items:center; gap:16px; justify-content:space-between; width:100%;">
+                    <div class="intro-meta" style="text-align:left;">
+                        <h1 class="report-title" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 28px; color: #2E2E2E; margin: 0;">
+                            <span class="title-main">M365 Baseline Assessment <span class="sep" style="color:#F7941D">›</span></span>
+                            <span class="tenant-name">Zorg en Vrij</span>
+                        </h1>
+                        <p style="font-size: 14px; color: #6E6E6E; margin-top:6px;">
+                            Gegenereerd op: <strong>08-03-2026 23:38</strong> | Door: <strong>Denjoy - IT</strong>
+                        </p>
+                    </div>
+                    <div class="intro-logo" style="flex:0 0 120px; display:flex; justify-content:center; align-items:center;">
+                        <div style="background:#fff; padding:6px 8px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.04);">
+                            <img src="../Templates/Denjoy-tp1.png" alt="Denjoy Logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+<section class='executive-summary-panel'>
+  <div class='executive-summary-header'>
+    <div>
+      <h2 class='executive-summary-title'>Managementsamenvatting</h2>
+      <p class='executive-summary-subtitle'>Kerninzichten en snelle navigatie voor management en technische reviewers.</p>
+    </div>
+    <div class='report-toolbar'>
+      <button type='button' class='toolbar-btn toolbar-btn--mode' onclick='window.setReportViewMode("management")'>Managementweergave</button>
+      <button type='button' class='toolbar-btn toolbar-btn--mode' onclick='window.setReportViewMode("technical")'>Technische weergave</button>
+      <button type='button' class='toolbar-btn' onclick='window.setAllSectionsCollapsed(false)'>Alles uitklappen</button>
+      <button type='button' class='toolbar-btn' onclick='window.setAllSectionsCollapsed(true)'>Details inklappen</button>
+    </div>
+  </div><div class='stats-grid'><div class='stat-card'><div class='stat-number'>0</div><div class='stat-label'>Kritieke signalen</div></div><div class='stat-card'><div class='stat-number'>3</div><div class='stat-label'>Waarschuwingen / Aandacht</div></div><div class='stat-card'><div class='stat-number'>6</div><div class='stat-label'>Actieve Fasen in Rapport</div></div></div><div class='executive-layout'><div class='executive-card'><h3>Belangrijkste aandachtspunten</h3><ul class='executive-list'><li><span class='executive-item-badge badge badge-warn'>Waarschuwing</span><span>3 gebruiker(s) zonder geregistreerde MFA-methodes.</span></li></ul></div><div class='executive-card'><h3>Snelle Navigatie</h3><div class='phase-jump-grid'><a class='phase-jump-card' href='#phase1'><span class='phase-jump-label'>Gebruikers</span><span class='phase-jump-meta'>13 users</span></a><a class='phase-jump-card' href='#phase2'><span class='phase-jump-label'>Samenwerking</span><span class='phase-jump-meta'>4 sites</span></a><a class='phase-jump-card' href='#phase3'><span class='phase-jump-label'>Naleving</span><span class='phase-jump-meta'>5 CA-beleidsregels</span></a><a class='phase-jump-card' href='#phase4'><span class='phase-jump-label'>Beveiliging</span><span class='phase-jump-meta'>0 waarschuwingen</span></a><a class='phase-jump-card' href='#phase5'><span class='phase-jump-label'>Intune</span><span class='phase-jump-meta'>Endpointbeheer</span></a><a class='phase-jump-card' href='#phase6'><span class='phase-jump-label'>Azure</span><span class='phase-jump-meta'>Azure-infra</span></a></div></div></div></section><section class='phase-health-panel'><div class='phase-health-head'><h2>Overzicht per fase</h2><p>Per fase zie je hier in één oogopslag waar aandacht nodig is.</p></div><div class='phase-health-grid'><a class='phase-health-card' href='#phase1'>
+  <div class='phase-health-card-top'>
+    <span class='phase-health-title'>Gebruikers en licenties</span>
+    <span class='badge badge-danger'>Kritiek</span>
+  </div>
+  <p class='phase-health-summary'>3 zonder MFA van 13 actieve member users</p>
+  <div class='phase-health-metrics'>
+    <span>Users: 13</span>
+    <span>Global Admins: 1</span>
+  </div>
+  <div class='phase-health-sevrow'>
+    <span class='sev-chip sev-chip--danger'>C 2</span>
+    <span class='sev-chip sev-chip--warn'>W 0</span>
+    <span class='sev-chip sev-chip--info'>I 1</span>
+    <span class='sev-score'>Score 7</span>
+  </div>
+  <div class='sev-stack' aria-hidden='true'>
+    <span class='sev-stack__critical' style='width:67%'></span>
+    <span class='sev-stack__warning' style='width:0%'></span>
+    <span class='sev-stack__info' style='width:33%'></span>
+  </div>
+</a><a class='phase-health-card' href='#phase2'>
+  <div class='phase-health-card-top'>
+    <span class='phase-health-title'>Samenwerking en opslag</span>
+    <span class='badge badge-ok'>OK</span>
+  </div>
+  <p class='phase-health-summary'>4 SharePoint sites, 0 inactief</p>
+  <div class='phase-health-metrics'>
+    <span>Sites: 4</span>
+    <span>OneDrives: 9</span>
+  </div>
+  <div class='phase-health-sevrow'>
+    <span class='sev-chip sev-chip--danger'>C 0</span>
+    <span class='sev-chip sev-chip--warn'>W 0</span>
+    <span class='sev-chip sev-chip--info'>I 0</span>
+    <span class='sev-score'>Score 0</span>
+  </div>
+  <div class='sev-stack' aria-hidden='true'>
+    <span class='sev-stack__critical' style='width:0%'></span>
+    <span class='sev-stack__warning' style='width:0%'></span>
+    <span class='sev-stack__info' style='width:0%'></span>
+  </div>
+</a><a class='phase-health-card' href='#phase3'>
+  <div class='phase-health-card-top'>
+    <span class='phase-health-title'>Compliance en beveiliging</span>
+    <span class='badge badge-info'>Info</span>
+  </div>
+  <p class='phase-health-summary'>5 CA policies actief; 0 retentiebeleid</p>
+  <div class='phase-health-metrics'>
+    <span>CA policies: 5</span>
+    <span>App regs: 6</span>
+  </div>
+  <div class='phase-health-sevrow'>
+    <span class='sev-chip sev-chip--danger'>C 0</span>
+    <span class='sev-chip sev-chip--warn'>W 0</span>
+    <span class='sev-chip sev-chip--info'>I 2</span>
+    <span class='sev-score'>Score 2</span>
+  </div>
+  <div class='sev-stack' aria-hidden='true'>
+    <span class='sev-stack__critical' style='width:0%'></span>
+    <span class='sev-stack__warning' style='width:0%'></span>
+    <span class='sev-stack__info' style='width:100%'></span>
+  </div>
+</a><a class='phase-health-card' href='#phase4'>
+  <div class='phase-health-card-top'>
+    <span class='phase-health-title'>Geavanceerde beveiliging</span>
+    <span class='badge badge-warn'>Aandacht</span>
+  </div>
+  <p class='phase-health-summary'>Secure Score 37%</p>
+  <div class='phase-health-metrics'>
+    <span>Hoge meldingen: 0</span>
+    <span>Secure Score: 37%</span>
+  </div>
+  <div class='phase-health-sevrow'>
+    <span class='sev-chip sev-chip--danger'>C 0</span>
+    <span class='sev-chip sev-chip--warn'>W 1</span>
+    <span class='sev-chip sev-chip--info'>I 0</span>
+    <span class='sev-score'>Score 2</span>
+  </div>
+  <div class='sev-stack' aria-hidden='true'>
+    <span class='sev-stack__critical' style='width:0%'></span>
+    <span class='sev-stack__warning' style='width:100%'></span>
+    <span class='sev-stack__info' style='width:0%'></span>
+  </div>
+</a><a class='phase-health-card' href='#phase5'>
+  <div class='phase-health-card-top'>
+    <span class='phase-health-title'>Intune</span>
+    <span class='badge badge-ok'>OK</span>
+  </div>
+  <p class='phase-health-summary'>Intune device/compliance configuratie</p>
+  <div class='phase-health-metrics'>
+    <span>Devices: 0</span>
+    <span>CA zonder Intune: 0</span>
+  </div>
+  <div class='phase-health-sevrow'>
+    <span class='sev-chip sev-chip--danger'>C 0</span>
+    <span class='sev-chip sev-chip--warn'>W 0</span>
+    <span class='sev-chip sev-chip--info'>I 0</span>
+    <span class='sev-score'>Score 0</span>
+  </div>
+  <div class='sev-stack' aria-hidden='true'>
+    <span class='sev-stack__critical' style='width:0%'></span>
+    <span class='sev-stack__warning' style='width:0%'></span>
+    <span class='sev-stack__info' style='width:0%'></span>
+  </div>
+</a><a class='phase-health-card' href='#phase6'>
+  <div class='phase-health-card-top'>
+    <span class='phase-health-title'>Azure</span>
+    <span class='badge badge-ok'>OK</span>
+  </div>
+  <p class='phase-health-summary'>Azure infrastructuur best practices</p>
+  <div class='phase-health-metrics'>
+    <span>RGs: 0</span>
+    <span>Resources: 0</span>
+  </div>
+  <div class='phase-health-sevrow'>
+    <span class='sev-chip sev-chip--danger'>C 0</span>
+    <span class='sev-chip sev-chip--warn'>W 0</span>
+    <span class='sev-chip sev-chip--info'>I 0</span>
+    <span class='sev-score'>Score 0</span>
+  </div>
+  <div class='sev-stack' aria-hidden='true'>
+    <span class='sev-stack__critical' style='width:0%'></span>
+    <span class='sev-stack__warning' style='width:0%'></span>
+    <span class='sev-stack__info' style='width:0%'></span>
+  </div>
+</a></div></section>        <div id="phase1" class="phase-content">
+            <h1>👥 Gebruikers</h1>
+            <div class="phase-body">
+            <div class="section">
+                <h2 class="section-title">👥 Gebruikers Overzicht</h2><div class='stats-grid'><div class='stat-card'><div class='stat-number'>13</div><div class='stat-label'>Totaal Gebruikers</div></div><div class='stat-card'><div class='stat-number'>13</div><div class='stat-label'>Actieve Gebruikers</div></div><div class='stat-card'><div class='stat-number'>0</div><div class='stat-label'>Uitgeschakelde Gebruikers</div></div><div class='stat-card'><div class='stat-number'>1</div><div class='stat-label'>Guest Gebruikers</div></div></div><h3>👤 Global Administrators (1)</h3><div class='table-container'><table id='tbl-4c2984ec' class=' sortable'><thead><tr><th>User Principal Name <span class='sort-icon'>&#8693;</span></th><th>Display Name <span class='sort-icon'>&#8693;</span></th><th>Status <span class='sort-icon'>&#8693;</span></th></tr></thead><tbody><tr><td>cloudadmin@wijzijnzorgenvrij.nl</td><td>cloudadmin</td><td><span class='badge badge-ok'>Actief</span></td></tr></tbody></table></div><div class="alert alert-warning"><b>Aanbeveling:</b> Beperk het aantal Global Admins, gebruik rolgerichte admin-accounts en beheer verhoogde rechten via PIM.</div><h3>👥 Actieve gebruikers (13)</h3><div class='table-search-wrap'><input type='search' class='table-search' placeholder='&#128269; Zoek gebruiker...' oninput='reportSearch(this,"tbl-b3909ca8")'></div><div class='table-container'><table id='tbl-b3909ca8' class=' sortable'><thead><tr><th>User Principal Name <span class='sort-icon'>&#8693;</span></th><th>Display Name <span class='sort-icon'>&#8693;</span></th><th>Status <span class='sort-icon'>&#8693;</span></th></tr></thead><tbody><tr><td>Afspraakplannen@wijzijnzorgenvrij.nl</td><td>Ronald van Adrichem</td><td><span class='badge badge-ok'>Actief</span></td></tr><tr><td>cloudadmin@wijzijnzorgenvrij.nl</td><td>cloudadmin</td><td><span class='badge badge-ok'>Actief</span></td></tr><tr><td>Froukje@wijzijnzorgenvrij.nl</td><td>Froukje Sierksma</td><td><span class='badge badge-ok'>Actief</span></td></tr><tr><td>gerard@wijzijnzorgenvrij.nl</td><td>Gerard Lether</td><td><span class='badge badge-ok'>Actief</span></td></tr><tr><td>info@wijzijnzorgenvrij.nl</td><td>info | Wijzijnzorgenvrij.nl</td><td><span class='badge badge-ok'>Actief</span></td></tr><tr><td>Kaan@wijzijnzorgenvrij.nl</td><td>Kaan Kaya</td><td><span class='badge badge-ok'>Actief</span></td></tr><tr><td>kath@wijzijnzorgenvrij.nl</td><td>Kath Brink</td><td><span class='badge badge-ok'>Actief</span></td></tr><tr><td>Michelle@wijzijnzorgenvrij.nl</td><td>Michelle Hubers</td><td><span class='badge badge-ok'>Actief</span></td></tr><tr><td>printer@wijzijnzorgenvrij.nl</td><td>printer | Wijzijnzorgenvrij.nl</td><td><span class='badge badge-ok'>Actief</span></td></tr><tr><td>ron@wijzijnzorgenvrij.nl</td><td>Ron van Loenen</td><td><span class='badge badge-ok'>Actief</span></td></tr><tr><td>ronald@wijzijnzorgenvrij.nl</td><td>Ronald van Adrichem</td><td><span class='badge badge-ok'>Actief</span></td></tr><tr><td>stephanie@wijzijnzorgenvrij.nl</td><td>Stephanie Proost</td><td><span class='badge badge-ok'>Actief</span></td></tr><tr><td>Tess@wijzijnzorgenvrij.nl</td><td>Tess Oude Hendrikman</td><td><span class='badge badge-ok'>Actief</span></td></tr></tbody></table></div><h3>🚫 Uitgeschakelde gebruikers (0)</h3><div class='empty-state'><span class='empty-icon'>--</span><span>Geen data beschikbaar</span></div>        </div> <!-- End Overview Section -->
+
+        <!-- MFA Section - Included in phase-content -->
+        <div class="section">
+            <h2 class="section-title">🔐 Multi-Factor Authentication (MFA)</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">13</div>
+                    <div class="stat-label">Totaal Member Users</div>
+                </div>
+                <div class="stat-card stat-card--warning">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Zonder MFA</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">76.9%</div>
+                    <div class="stat-label">MFA Coverage</div>
+                </div>
+            </div>
+
+            <div class="alert alert-warning">
+                <strong>ℹ️ Belangrijke Opmerking over MFA Data</strong><br>
+                Dit rapport toont <strong>MFA REGISTRATIE</strong> (welke users hebben MFA methods geregistreerd zoals Authenticator app, phone, etc).<br>
+                <br>
+                <strong>Dit is NIET hetzelfde als "Per-user MFA Enforcement"!</strong><br>
+                <ul class="list-basic">
+                    <li><strong>Disabled:</strong> MFA niet afgedwongen (zelfs als methods geregistreerd zijn)</li>
+                    <li><strong>Enabled:</strong> MFA afgedwongen, user moet registreren bij volgende login</li>
+                    <li><strong>Enforced:</strong> MFA geregistreerd en actief afgedwongen</li>
+                </ul>
+                <br>
+                <strong>➡️ Check per-user MFA enforcement status in:</strong><br>
+                Azure AD Portal → Users → Per-user MFA (of gebruik Conditional Access policies)
+            </div>
+
+            <p class="text-muted mb-20">
+                <strong>Scope:</strong> Actieve users (geen guest users)
+            </p><div class='progress-wrap'>
+  <div class='progress-label'><span>MFA Dekking</span><span class='progress-pct' style='color:var(--risk-medium)'>76.9%</span></div>
+  <div class='progress-track'>
+    <div class='progress-fill' style='width:77%; background:var(--risk-medium);'></div>
+  </div>
+  <div class='progress-sub'>10 van 13 gebruikers hebben MFA geregistreerd</div>
+</div><h3>⚠️ Gebruikers zonder geregistreerde MFA (3)</h3><div class='alert alert-critical'><strong>Actie vereist:</strong> Deze gebruikers hebben geen MFA methods geregistreerd (zoals Authenticator app, phone number, etc).</div><div class='table-search-wrap'><input type='search' class='table-search' placeholder='&#128269; Zoek gebruiker...' oninput='reportSearch(this,"tbl-bc411d06")'></div><div class='table-container'><table id='tbl-bc411d06' class=' sortable'><thead><tr><th>User Principal Name <span class='sort-icon'>&#8693;</span></th><th>Display Name <span class='sort-icon'>&#8693;</span></th><th>Account Status <span class='sort-icon'>&#8693;</span></th></tr></thead><tbody><tr><td>Afspraakplannen@wijzijnzorgenvrij.nl</td><td>Ronald van Adrichem</td><td><span class='badge badge-ok'>Actief</span></td></tr><tr><td>info@wijzijnzorgenvrij.nl</td><td>info | Wijzijnzorgenvrij.nl</td><td><span class='badge badge-ok'>Actief</span></td></tr><tr><td>printer@wijzijnzorgenvrij.nl</td><td>printer | Wijzijnzorgenvrij.nl</td><td><span class='badge badge-ok'>Actief</span></td></tr></tbody></table></div></div> <!-- End MFA Section --><div class="section">
+    <h2 class="section-title">🔁 Cross-check: Conditional Access ↔ MFA</h2>
+    <p class="section-note">Deze cross-check vergelijkt Conditional Access-policies die MFA vereisen met per-user MFA-registratiegegevens om te identificeren welke gebruikers niet geregistreerd zijn voor MFA.</p>
+</div><div class='stats-grid'><div class='stat-card'><div class='stat-number'>3</div><div class='stat-label'>Users targeted by CA requiring MFA</div></div><div class='stat-card'><div class='stat-number'>9</div><div class='stat-label'>Targeted but unregistered</div></div></div><div class='alert alert-critical'><strong>⚠️ 3 gebruikers vallen binnen CA policies die MFA vereisen maar hebben geen geregistreerde MFA-methodes.</strong></div><h3 class='subheading-12'>CA↔MFA Overzicht (per gebruiker)</h3><div class='table-search-wrap'><input type='search' class='table-search' placeholder='&#128269; Zoek gebruiker...' oninput='reportSearch(this,"tbl-3dd332cd")'></div><div class='table-container'><table id='tbl-3dd332cd' class=' sortable'><thead><tr><th>User <span class='sort-icon'>&#8693;</span></th><th>CA Policies <span class='sort-icon'>&#8693;</span></th><th>MFA Geregistreerd <span class='sort-icon'>&#8693;</span></th><th>Enforcement <span class='sort-icon'>&#8693;</span></th></tr></thead><tbody><tr><td>Afspraakplannen@wijzijnzorgenvrij.nl</td><td>Meervoudige verificatie vereisen voor alle gebruikers; Meervoudige verificatie vereisen voor Azure-beheer; MFA exclusions</td><td><span class='badge badge-danger'>Nee</span></td><td>Unknown</td></tr><tr><td>info@wijzijnzorgenvrij.nl</td><td>Meervoudige verificatie vereisen voor alle gebruikers; Meervoudige verificatie vereisen voor Azure-beheer; MFA exclusions</td><td><span class='badge badge-danger'>Nee</span></td><td>Unknown</td></tr><tr><td>printer@wijzijnzorgenvrij.nl</td><td>Meervoudige verificatie vereisen voor alle gebruikers; Meervoudige verificatie vereisen voor Azure-beheer; MFA exclusions</td><td><span class='badge badge-danger'>Nee</span></td><td>Unknown</td></tr></tbody></table></div><h3 class='subheading-12'>Per-policy uitsluitingen (niet geregistreerde MFA / Gebruikers)</h3><div class='stats-grid'><div class='stat-card'><div class='stat-number'>0 / 0</div><div class='stat-label'>Meervoudige verificatie vereisen voor beheerders</div></div><div class='stat-card'><div class='stat-number'>3 / 13</div><div class='stat-label'>Meervoudige verificatie vereisen voor alle gebruikers</div></div><div class='stat-card'><div class='stat-number'>3 / 13</div><div class='stat-label'>Meervoudige verificatie vereisen voor Azure-beheer</div></div><div class='stat-card'><div class='stat-number'>3 / 13</div><div class='stat-label'>MFA exclusions</div></div></div><h3>⚠️ Gebruikers zonder geregistreerde MFA (uniek: 3)</h3><div class='table-container'><table id='tbl-059e071b' class=''><thead><tr><th>User</th><th>Display Name</th><th>CA Policies</th></tr></thead><tbody><tr><td>Afspraakplannen@wijzijnzorgenvrij.nl</td><td>Ronald van Adrichem</td><td>Meervoudige verificatie vereisen voor alle gebruikers; Meervoudige verificatie vereisen voor Azure-beheer; MFA exclusions</td></tr><tr><td>info@wijzijnzorgenvrij.nl</td><td>info | Wijzijnzorgenvrij.nl</td><td>Meervoudige verificatie vereisen voor alle gebruikers; Meervoudige verificatie vereisen voor Azure-beheer; MFA exclusions</td></tr><tr><td>printer@wijzijnzorgenvrij.nl</td><td>printer | Wijzijnzorgenvrij.nl</td><td>Meervoudige verificatie vereisen voor alle gebruikers; Meervoudige verificatie vereisen voor Azure-beheer; MFA exclusions</td></tr></tbody></table></div>        <div class="section">
+            <h2 class="section-title">💳 Licentie Overzicht</h2>
+            <p class='section-note-sm'><b>Aanbeveling:</b> Gebruik group-based licensing en maak een maandelijkse review voor low-utilization licenties.</p><div class='stats-grid'><div class='stat-card'><div class='stat-number'>1</div><div class='stat-label'>AAD_PREMIUM_P2&lt;br&gt;&lt;span class=&#39;license-card-sub&#39;&gt;1 in gebruik&lt;/span&gt;</div></div><div class='stat-card'><div class='stat-number'>13</div><div class='stat-label'>O365_BUSINESS_PREMIUM&lt;br&gt;&lt;span class=&#39;license-card-sub&#39;&gt;13 in gebruik&lt;/span&gt;</div></div></div><br>        <h3 class="heading-25">AAD_PREMIUM_P2</h3>
+        <div class="alert alert-info alert-info-soft">
+        <strong>Totaal:</strong> 1 &nbsp; | &nbsp;
+        <strong>Gebruikt:</strong> 1 &nbsp; | &nbsp;
+        <strong>Beschikbaar:</strong> 0 &nbsp; | &nbsp;
+        <strong>Benutting:</strong> 100%
+        </div>        <div class="table-container">
+        <table>
+        <thead>
+        <tr>
+        <th>User Principal Name</th>
+        <th>Display Name</th>
+        </tr>
+        </thead>
+        <tbody><tr><td>cloudadmin@wijzijnzorgenvrij.nl</td><td>cloudadmin</td></tr>        </tbody>
+        </table></div><br>        <h3 class="heading-25">O365_BUSINESS_PREMIUM</h3>
+        <div class="alert alert-info alert-info-soft">
+        <strong>Totaal:</strong> 13 &nbsp; | &nbsp;
+        <strong>Gebruikt:</strong> 13 &nbsp; | &nbsp;
+        <strong>Beschikbaar:</strong> 0 &nbsp; | &nbsp;
+        <strong>Benutting:</strong> 100%
+        </div>        <div class="table-container">
+        <table>
+        <thead>
+        <tr>
+        <th>User Principal Name</th>
+        <th>Display Name</th>
+        </tr>
+        </thead>
+        <tbody><tr><td>Afspraakplannen@wijzijnzorgenvrij.nl</td><td>Ronald van Adrichem</td></tr><tr><td>cloudadmin@wijzijnzorgenvrij.nl</td><td>cloudadmin</td></tr><tr><td>Froukje@wijzijnzorgenvrij.nl</td><td>Froukje Sierksma</td></tr><tr><td>gerard@wijzijnzorgenvrij.nl</td><td>Gerard Lether</td></tr><tr><td>info@wijzijnzorgenvrij.nl</td><td>info | Wijzijnzorgenvrij.nl</td></tr><tr><td>Kaan@wijzijnzorgenvrij.nl</td><td>Kaan Kaya</td></tr><tr><td>kath@wijzijnzorgenvrij.nl</td><td>Kath Brink</td></tr><tr><td>Michelle@wijzijnzorgenvrij.nl</td><td>Michelle Hubers</td></tr><tr><td>printer@wijzijnzorgenvrij.nl</td><td>printer | Wijzijnzorgenvrij.nl</td></tr><tr><td>ron@wijzijnzorgenvrij.nl</td><td>Ron van Loenen</td></tr><tr><td>ronald@wijzijnzorgenvrij.nl</td><td>Ronald van Adrichem</td></tr><tr><td>stephanie@wijzijnzorgenvrij.nl</td><td>Stephanie Proost</td></tr><tr><td>Tess@wijzijnzorgenvrij.nl</td><td>Tess Oude Hendrikman</td></tr>        </tbody>
+        </table></div><br>            </div>        <div class="section section-advice-panel">
+        <h2 class="section-title">Aanbevelingen - Fase 1: Gebruikers, licenties en basisbeveiliging</h2>
+        <p class="text-muted mb-20">Microsoft best practices voor gebruikersbeheer, licenties en basisbeveiliging:</p>        <div class="mt-15">                    <div class='alert alert-critical'><strong>⚠️ MFA-afdwinging (kritiek):</strong> 3 gebruiker(s) hebben geen MFA geregistreerd. <br><strong>Microsoft best practice:</strong> Implementeer MFA voor alle gebruikers via Conditional Access-beleid. Gebruik waar mogelijk wachtwoordloze authenticatie (Windows Hello, FIDO2, Authenticator-app).</div>                    <div class='alert alert-info'><strong>👥 Gastgebruikers (1):</strong> <br><strong>Microsoft best practice:</strong> Implementeer een gasttoegangsbeleid: (1) beoordeel gastgebruikers elke 3-6 maanden, (2) gebruik toegangsbeoordelingen voor automatische verificatie, (3) beperk gastrechten via Azure AD External Identities-instellingen, (4) monitor gastactiviteit via auditlogs.</div>                    <div class='alert alert-critical'><strong>⚠️ CA↔MFA-mismatch (kritiek):</strong> 9 gebruiker(s) vallen binnen Conditional Access-beleid dat MFA vereist, maar hebben geen geregistreerde MFA-methoden. <br><strong>Microsoft best practice:</strong> Corrigeer deze gebruikers: forceer MFA via Conditional Access (GrantControls: Require multifactor authentication) in plaats van per-user uitzonderingen. Gebruik phishing-resistente methoden (FIDO2) voor kritieke accounts en monitor aanmeldlogs.</div>        </div>
+
+        <div class="advice-inner-card">
+        <h4 class="mt-0">Algemene best practices - Fase 1</h4>
+        <ul class="list-soft">
+        <li><strong>Identiteitsbescherming:</strong> Schakel Azure AD Identity Protection in voor risicogebaseerde Conditional Access</li>
+        <li><strong>Wachtwoordbeleid:</strong> Gebruik Azure AD Password Protection om zwakke wachtwoorden te blokkeren</li>
+        <li><strong>Beheeraccounts:</strong> Gebruik aparte beheeraccounts (gescheiden van reguliere accounts)</li>
+        <li><strong>Monitoring:</strong> Configureer waarschuwingen voor beheerrolwijzigingen en risicovolle aanmeldingen</li>
+        <li><strong>Lifecyclemanagement:</strong> Implementeer in-, door- en uitstroomprocessen voor gebruikersbeheer</li>
+        <li><strong>Licentiebeheer:</strong> Gebruik waar mogelijk automatische licentietoewijzing via groepen</li>
+        </ul>
+        </div>
+        </div>        </div> <!-- End Phase Body -->
+        </div> <!-- End Phase 1 Content -->        <div id="phase2" class="phase-content">
+        <h1>Samenwerking</h1>
+        <div class="phase-body">
+
+        <!-- Overview Stats -->
+        <div class="section">
+        <h2 class="section-title">Overzicht</h2>
+        <div class="stats-grid">
+        <div class="stat-card">
+        <div class="stat-number">2</div>
+        <div class="stat-label">Microsoft Teams</div>
+        </div>
+        <div class="stat-card">
+        <div class="stat-number">5</div>
+        <div class="stat-label">M365 Groups</div>
+        </div>
+        <div class="stat-card">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Distribution Lists</div>
+        </div>
+        <div class="stat-card">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Security Groups</div>
+        </div>
+        </div>
+        <!-- SMTP AUTH summary (per-mailbox) -->
+        <div class="section">
+        <h3 class="section-title">SMTP AUTH (mailbox-level)</h3>
+        <div class="text-soft mt-6"><p>Mailboxes with SMTP AUTH enabled: 0</p>        </div>
+        </div>
+        </div>
+
+        <!-- M365 Groups & Teams Section -->
+        <div class="section">
+        <h2 class="section-title">Microsoft 365 Groups & Teams</h2>
+        <p class="text-muted mb-20">
+        Microsoft 365 Groups zijn moderne collaboration groepen met geintegreerde mailbox, SharePoint site, en optioneel een Microsoft Team.
+        </p><div class='section'><h3 class='section-title'>Exchange Modern Auth / Legacy Auth</h3><div class='text-soft mt-6'><p>Tenant Modern Authentication enabled: <strong>Onbekend</strong></p><p>Mailboxes allowing legacy auth: <strong>0</strong></p><p><em>Note: Exchange cmdlets missing</em></p></div></div><h3>Microsoft Teams (2)</h3><div class='table-search-wrap'><input type='search' class='table-search' placeholder='Zoek team...' oninput='reportSearch(this,"tbl-c33f6491")'></div><div class='table-container'><table id='tbl-c33f6491' class=' sortable'><thead><tr><th>Email <span class='sort-icon'>&#8693;</span></th><th>Team Name <span class='sort-icon'>&#8693;</span></th><th>Members <span class='sort-icon'>&#8693;</span></th><th>Created <span class='sort-icon'>&#8693;</span></th></tr></thead><tbody><tr><td>zorgenvrij@zorgenvrij075.onmicrosoft.com</td><td>Wijzijnzorgenvrij</td><td>5</td><td>08-02-2022</td></tr><tr><td>sales@wijzijnzorgenvrij.nl</td><td>Sales</td><td>0</td><td>31-05-2023</td></tr></tbody></table></div><h4 class='mt-10'>Teams Meeting Policies (7)</h4><div class='table-container'><table id='tbl-0b6d02e0' class=' sortable'><thead><tr><th>Policy <span class='sort-icon'>&#8693;</span></th><th>Allow Anonymous <span class='sort-icon'>&#8693;</span></th></tr></thead><tbody><tr><td>Global</td><td>N/A</td></tr><tr><td>Tag:AllOn</td><td>N/A</td></tr><tr><td>Tag:RestrictedAnonymousAccess</td><td>N/A</td></tr><tr><td>Tag:AllOff</td><td>N/A</td></tr><tr><td>Tag:RestrictedAnonymousNoRecording</td><td>N/A</td></tr><tr><td>Tag:Default</td><td>N/A</td></tr><tr><td>Tag:Kiosk</td><td>N/A</td></tr></tbody></table></div><h4 class='mt-10'>SharePoint: Default Link Type per Site</h4><div class='table-search-wrap'><input type='search' class='table-search' placeholder='Zoek site...' oninput='reportSearch(this,"tbl-e8833fb8")'></div><div class='table-container'><table id='tbl-e8833fb8' class=' sortable'><thead><tr><th>Site <span class='sort-icon'>&#8693;</span></th><th>Default Link Type <span class='sort-icon'>&#8693;</span></th></tr></thead><tbody><tr><td>Communicatiesite</td><td>Unknown/NotAccessible</td></tr><tr><td>Wijzijnzorgenvrij</td><td>Unknown/NotAccessible</td></tr><tr><td>All_users365</td><td>Unknown/NotAccessible</td></tr><tr><td>All Company</td><td>Unknown/NotAccessible</td></tr></tbody></table></div><h4 class='mt-10'>Teams Guest Access</h4><div class='table-container'><table id='tbl-d56dd37a' class=''><thead><tr><th>Setting</th><th>Value</th></tr></thead><tbody><tr><td>Allow Invites From Guests</td><td><span class='badge badge-muted'>Nee</span></td></tr><tr><td>Allow Invites From Members</td><td><span class='badge badge-muted'>Nee</span></td></tr></tbody></table></div>            <div class="section">
+                <h2 class="section-title">Teams Externe Toegang</h2>
+                <p class="text-muted mb-20">
+                    Instellingen voor externe federatie en communicatie buiten de organisatie via Microsoft Teams.
+                </p><div class='table-container'><table id='tbl-1c60c642' class=' sortable'><thead><tr><th>Instelling <span class='sort-icon'>&#8693;</span></th><th>Waarde <span class='sort-icon'>&#8693;</span></th></tr></thead><tbody><tr><td>AllowFederatedUsers</td><td><span class='badge badge-warn'>Ja</span></td></tr><tr><td>AllowPublicUsers</td><td>N/A</td></tr><tr><td>AllowTeamsConsumer</td><td><span class='badge badge-info'>Ja</span></td></tr></tbody></table></div><div class='alert alert-warning'>Federatie staat open voor alle domeinen. Overweeg een lijst met toegestane domeinen te configureren.</div></div>            <div class="section">
+                <h2 class="section-title">Teams Meeting Policies</h2>
+                <p class="text-muted mb-20">
+                    Overzicht van Teams meeting policies en beveiligingsinstellingen voor vergaderingen.
+                </p><div class='table-search-wrap'><input type='search' class='table-search' placeholder='Zoek policy...' oninput='reportSearch(this,"tbl-e5ae3369")'></div><div class='table-container'><table id='tbl-e5ae3369' class=' sortable'><thead><tr><th>Identity <span class='sort-icon'>&#8693;</span></th><th>Anonieme Deelname <span class='sort-icon'>&#8693;</span></th><th>Cloud Recording <span class='sort-icon'>&#8693;</span></th><th>Auto Admitted Users <span class='sort-icon'>&#8693;</span></th></tr></thead><tbody><tr><td>Global</td><td><span class='badge badge-warn'>Ja</span></td><td><span class='badge badge-info'>Ja</span></td><td>EveryoneInCompany</td></tr><tr><td>Tag:AllOn</td><td><span class='badge badge-warn'>Ja</span></td><td><span class='badge badge-info'>Ja</span></td><td>EveryoneInCompany</td></tr><tr><td>Tag:RestrictedAnonymousAccess</td><td><span class='badge badge-warn'>Ja</span></td><td><span class='badge badge-info'>Ja</span></td><td>EveryoneInCompany</td></tr><tr><td>Tag:AllOff</td><td><span class='badge badge-warn'>Ja</span></td><td><span class='badge badge-muted'>Nee</span></td><td>EveryoneInCompany</td></tr><tr><td>Tag:RestrictedAnonymousNoRecording</td><td><span class='badge badge-warn'>Ja</span></td><td><span class='badge badge-muted'>Nee</span></td><td>EveryoneInCompany</td></tr><tr><td>Tag:Default</td><td><span class='badge badge-warn'>Ja</span></td><td><span class='badge badge-info'>Ja</span></td><td>EveryoneInCompany</td></tr><tr><td>Tag:Kiosk</td><td><span class='badge badge-warn'>Ja</span></td><td><span class='badge badge-muted'>Nee</span></td><td>EveryoneInCompany</td></tr></tbody></table></div><div class='alert alert-warning'>Anonieme deelname aan meetings is toegestaan in 7 policy/policies. Overweeg dit te beperken om ongeautoriseerde deelname te voorkomen.</div></div>            <div class="section">
+                <h2 class="section-title">Teams Naamgevingsbeleid</h2>
+                <p class="text-muted mb-20">
+                    Naamgevingsbeleid voor Microsoft 365 Groups en Teams zorgt voor consistente namen en makkelijker beheer.
+                </p><div class='alert alert-info'>Geen naamgevingsbeleid geconfigureerd. Overweeg een naamgevingsbeleid in te stellen voor consistente team- en groepsnamen.</div></div>            <div class="section">
+                <h2 class="section-title">SharePoint Standaard Deellinks</h2>
+                <p class="text-muted mb-20">
+                    Het standaard linktype dat wordt gebruikt wanneer inhoud wordt gedeeld in SharePoint. Anonieme links geven toegang zonder authenticatie.
+                </p>                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Anonieme link sites</div>
+                    </div>
+                </div></div>        <h3>Alle M365 Groups (5)</h3>
+        <p class="text-muted-sm mb-15">
+        <em>Inclusief Teams (elke Team heeft een onderliggende M365 Group)</em>
+        </p><div class='table-search-wrap'><input type='search' class='table-search' placeholder='Zoek groep...' oninput='reportSearch(this,"tbl-de914db7")'></div><div class='table-container'><table id='tbl-de914db7' class=' sortable'><thead><tr><th>Email <span class='sort-icon'>&#8693;</span></th><th>Group Name <span class='sort-icon'>&#8693;</span></th><th>Members <span class='sort-icon'>&#8693;</span></th><th>Created <span class='sort-icon'>&#8693;</span></th></tr></thead><tbody><tr><td>zorgenvrij@zorgenvrij075.onmicrosoft.com</td><td>Wijzijnzorgenvrij</td><td>5</td><td>08-02-2022</td></tr><tr><td>sales@wijzijnzorgenvrij.nl</td><td>Sales</td><td>0</td><td>31-05-2023</td></tr><tr><td>ZorgVrijcommunicatie@wijzijnzorgenvrij.nl</td><td>Zorg&Vrij communicatie</td><td>2</td><td>23-05-2022</td></tr><tr><td>All_users365@wijzijnzorgenvrij.nl</td><td>All_users365</td><td>8</td><td>14-08-2024</td></tr><tr><td>allcompany@zorgenvrij075.onmicrosoft.com</td><td>All Company</td><td>2</td><td>08-02-2022</td></tr></tbody></table></div></div>        <div class="section">
+        <h2 class="section-title">Security Groups</h2>
+        <p class="text-muted mb-20">
+        Pure security groups gebruikt voor toegangscontrole en permissies (geen email functionaliteit).
+        </p>
+        <h3>Security Groups (4)</h3><div class='table-search-wrap'><input type='search' class='table-search' placeholder='Zoek groep...' oninput='reportSearch(this,"tbl-eb107034")'></div><div class='table-container'><table id='tbl-eb107034' class=' sortable'><thead><tr><th>Group Name <span class='sort-icon'>&#8693;</span></th><th>Members <span class='sort-icon'>&#8693;</span></th><th>Created <span class='sort-icon'>&#8693;</span></th></tr></thead><tbody><tr><td>M365-STD-Base</td><td>0</td><td>09-11-2025</td></tr><tr><td>M365-BP-Base</td><td>0</td><td>09-11-2025</td></tr><tr><td>mfa_exclusion</td><td>6</td><td>15-08-2024</td></tr><tr><td>All_Users</td><td>13</td><td>14-08-2024</td></tr></tbody></table></div></div>        <div class="section">
+        <h2 class="section-title">SharePoint Storage & Sites</h2>
+        <p class="text-soft mt-6"><b>Aanbeveling:</b> Beperk anonieme sharing en implementeer lifecycle policies en sensitivity labels voor zakelijke data.</p>        <h3>SharePoint Sites Overzicht</h3>
+        <div class="stats-grid">
+        <div class="stat-card">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Totaal Sites</div>
+        </div>
+        <div class="stat-card">
+        <div class="stat-number">18.77 GB</div>
+        <div class="stat-label">Totaal Storage</div>
+        </div>
+        <div class="stat-card">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Inactieve Sites (&gt;90d)</div>
+        </div>
+        <div class="stat-card">
+        <div class="stat-number">1</div>
+        <div class="stat-label">Sites met Data</div>
+        </div>
+        </div><h4>SharePoint Tenant Sharing Settings</h4><div class='table-container'><table id='tbl-3f6e28a8' class=''><thead><tr><th>Setting</th><th>Value</th></tr></thead><tbody><tr><td>External Sharing Capability</td><td>externalUserAndGuestSharing</td></tr><tr><td>Default Link Permission</td><td></td></tr><tr><td>Loop Default Sharing Scope</td><td></td></tr></tbody></table></div>                <h4>SharePoint Storage Capacity & License Analysis</h4>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">1164 GB</div>
+                        <div class="stat-label">Totaal Capaciteit</div>
+                        <span class="stat-small">1024 GB base + 14 licenses x 10 GB</span>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">18.77 GB</div>
+                        <div class="stat-label">Gebruikt</div>
+                        <span class="stat-small">1.6% van capaciteit</span>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">1145.23 GB</div>
+                        <div class="stat-label">Beschikbaar</div>
+                        <span class="stat-small">98.4% vrij</span>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">18.77 GB</div>
+                        <div class="stat-label">Gemiddeld/Site</div>
+                        <span class="stat-small">1 sites met data</span>
+                    </div>
+                </div><div class='progress-wrap'>
+  <div class='progress-label'><span>SharePoint Storage Gebruik</span><span class='progress-pct' style='color:var(--risk-high)'>1.6%</span></div>
+  <div class='progress-track'>
+    <div class='progress-fill' style='width:2%; background:var(--risk-high);'></div>
+  </div>
+  <div class='progress-sub'>18.77 GB gebruikt van 1164 GB totaal</div>
+</div><div class='alert alert-success'><strong>Voldoende Storage Capaciteit</strong><br>Storage gebruik is 1.6% - ruim voldoende capaciteit beschikbaar. Huidige storage beheer is gezond.</div><div class='alert alert-info'><strong>Note:</strong> Deze berekening gebruikt de vereenvoudigde formule: <code>1 TB + (licenses x 10 GB)</code>. Exacte quota kan verschillen per tenant type en licentie mix. Controleer <a href='https://zorgenvrij075-admin.sharepoint.com' target='_blank'>SharePoint Admin Center</a> voor exacte quota.</div><h4>Top 10 Grootste Sites</h4><div class='table-container'><table id='tbl-15c94549' class=' sortable'><thead><tr><th>Site Naam <span class='sort-icon'>&#8693;</span></th><th>Storage (GB) <span class='sort-icon'>&#8693;</span></th><th>Status <span class='sort-icon'>&#8693;</span></th><th>Gewijzigd <span class='sort-icon'>&#8693;</span></th></tr></thead><tbody><tr><td><a href='https://zorgenvrij075.sharepoint.com/sites/zorgenvrij' target='_blank'>Wijzijnzorgenvrij</a></td><td>18.77</td><td><span class='badge badge-ok'>Actief</span></td><td>08-03-2026</td></tr><tr><td><a href='https://zorgenvrij075.sharepoint.com' target='_blank'>Communicatiesite</a></td><td>0</td><td><span class='badge badge-ok'>Actief</span></td><td>07-03-2026</td></tr><tr><td><a href='https://zorgenvrij075.sharepoint.com/sites/All_users365' target='_blank'>All_users365</a></td><td>0</td><td><span class='badge badge-ok'>Actief</span></td><td>07-03-2026</td></tr><tr><td><a href='https://zorgenvrij075.sharepoint.com/sites/allcompany' target='_blank'>All Company</a></td><td>0</td><td><span class='badge badge-ok'>Actief</span></td><td>07-03-2026</td></tr></tbody></table></div><h4>Top 5 Grootste OneDrive Sites</h4><p class='text-muted mb-10'>Totaal: 9 OneDrives | Storage: 48.26 GB</p><div class='table-container'><table id='tbl-74626d8c' class=' sortable'><thead><tr><th>Owner <span class='sort-icon'>&#8693;</span></th><th>Storage (GB) <span class='sort-icon'>&#8693;</span></th><th>Gewijzigd <span class='sort-icon'>&#8693;</span></th></tr></thead><tbody><tr><td>Ronald van Adrichem</td><td>36.87</td><td>06-03-2026</td></tr><tr><td>Stephanie Proost</td><td>11.35</td><td>04-03-2026</td></tr><tr><td>Kaan Kaya</td><td>0.03</td><td>03-03-2026</td></tr><tr><td>Michelle Hubers</td><td>0.01</td><td>18-02-2026</td></tr><tr><td>printer | Wijzijnzorgenvrij.nl</td><td>0</td><td>N/A</td></tr></tbody></table></div>                <div class="recommendation">
+                    <h4>Aanbevelingen SharePoint Sites</h4>
+                    <ul><li>SharePoint sites zien er goed uit. Geen directe aanbevelingen.</li>                    </ul>
+                </div>
+            </div>            <div class="section">
+                <h2 class="section-title">Exchange Online Mailboxen</h2>
+                <p class="text-muted mb-20">
+                    User mailboxen, shared mailboxen en resource mailboxen (vergaderruimtes en apparatuur).
+                </p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">13</div>
+                        <div class="stat-label">User Mailboxes</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Shared Mailboxes</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Room Mailboxes</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Equipment Mailboxes</div>
+                    </div>
+                </div><h3>User Mailboxes (13)</h3><div class='table-search-wrap'><input type='search' class='table-search' placeholder='Zoek mailbox...' oninput='reportSearch(this,"tbl-eb9f6282")'></div><div class='table-container'><table id='tbl-eb9f6282' class=' sortable'><thead><tr><th>Email Address <span class='sort-icon'>&#8693;</span></th><th>Display Name <span class='sort-icon'>&#8693;</span></th><th>Created <span class='sort-icon'>&#8693;</span></th></tr></thead><tbody><tr><td>Afspraakplannen@wijzijnzorgenvrij.nl</td><td>Ronald van Adrichem</td><td>22-03-2023</td></tr><tr><td>cloudadmin@wijzijnzorgenvrij.nl</td><td>cloudadmin</td><td>08-02-2022</td></tr><tr><td>Froukje@wijzijnzorgenvrij.nl</td><td>Froukje Sierksma</td><td>28-01-2026</td></tr><tr><td>gerard@wijzijnzorgenvrij.nl</td><td>Gerard Lether</td><td>30-05-2022</td></tr><tr><td>info@wijzijnzorgenvrij.nl</td><td>info | Wijzijnzorgenvrij.nl</td><td>24-02-2022</td></tr><tr><td>Kaan@wijzijnzorgenvrij.nl</td><td>Kaan Kaya</td><td>01-12-2024</td></tr><tr><td>kath@wijzijnzorgenvrij.nl</td><td>Kath Brink</td><td>07-03-2022</td></tr><tr><td>Michelle@wijzijnzorgenvrij.nl</td><td>Michelle Hubers</td><td>01-06-2025</td></tr><tr><td>printer@wijzijnzorgenvrij.nl</td><td>printer | Wijzijnzorgenvrij.nl</td><td>01-08-2022</td></tr><tr><td>ron@wijzijnzorgenvrij.nl</td><td>Ron van Loenen</td><td>11-03-2022</td></tr><tr><td>ronald@wijzijnzorgenvrij.nl</td><td>Ronald van Adrichem</td><td>09-02-2022</td></tr><tr><td>stephanie@wijzijnzorgenvrij.nl</td><td>Stephanie Proost</td><td>09-02-2022</td></tr><tr><td>Tess@wijzijnzorgenvrij.nl</td><td>Tess Oude Hendrikman</td><td>28-01-2026</td></tr></tbody></table></div><h3>Shared Mailboxes (5)</h3><div class='table-search-wrap'><input type='search' class='table-search' placeholder='Zoek mailbox...' oninput='reportSearch(this,"tbl-0b688abd")'></div><div class='table-container'><table id='tbl-0b688abd' class=''><thead><tr><th>Email Address</th><th>Display Name</th><th>Full Access</th><th>Send As</th><th>Send On Behalf</th><th>Created</th></tr></thead><tbody><tr><td>admin@wijzijnzorgenvrij.nl</td><td>Admin | wijzijnzorgenvrij.nl</td><td>1</td><td>1</td><td>1</td><td>11-03-2022</td></tr><tr><td>communicatie@wijzijnzorgenvrij.nl</td><td>Communicatie | Wijzijnzorgenvrij.nl</td><td>1</td><td>1</td><td>1</td><td>02-03-2022</td></tr><tr><td>finance@wijzijnzorgenvrij.nl</td><td>Finance | Wijzijnzorgenvrij.nl</td><td>1</td><td>1</td><td>1</td><td>07-03-2022</td></tr><tr><td>salarisstrook@wijzijnzorgenvrij.nl</td><td>Salarisstrook | Wijzijnzorgenvrij.nl</td><td>1</td><td>1</td><td>1</td><td>07-03-2022</td></tr><tr><td>ZorgVrij@wijzijnzorgenvrij.nl</td><td>Stephanie Proost</td><td>1</td><td>1</td><td>1</td><td>22-03-2023</td></tr></tbody></table></div></div>            <div class="section">
+                <h2 class="section-title">SMTP AUTH Status</h2>
+                <p class="text-muted mb-20">
+                    Per-mailbox SMTP AUTH configuratie. SMTP AUTH maakt het mogelijk voor clients om e-mail te versturen via SMTP met authenticatie. Dit protocol is kwetsbaar voor brute-force aanvallen en moet expliciet worden beheerd.
+                </p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Expliciet Ingeschakeld</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Uitgeschakeld</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Niet Geconfigureerd</div>
+                    </div>
+                </div><div class='alert alert-success'>Geen mailboxen met SMTP AUTH ingeschakeld. SMTP AUTH is goed geconfigureerd.</div></div>            <div class="section">
+                <h2 class="section-title">Exchange Security & DNS</h2>
+                <p class='text-soft mt-6'><b>Aanbeveling:</b> Schakel tenant-brede moderne authenticatie in, blokkeer legacy protocols (SMTP/IMAP/POP) waar mogelijk en activeer DKIM/DMARC voor alle geclaimde domeinen.</p><h3>Authentication & Protocols</h3><h3>DNS Records (SPF/DKIM/DMARC)</h3><div class='table-container'><table id='tbl-486c84d6' class=' sortable'><thead><tr><th>Domain <span class='sort-icon'>&#8693;</span></th><th>SPF <span class='sort-icon'>&#8693;</span></th><th>DMARC <span class='sort-icon'>&#8693;</span></th><th>DKIM <span class='sort-icon'>&#8693;</span></th></tr></thead><tbody><tr><td>zorgenvrij075.onmicrosoft.com</td><td>Missing</td><td>Missing</td><td>Unknown</td></tr><tr><td>wijzijnzorgenvrij.com</td><td>Missing</td><td>Missing</td><td>Unknown</td></tr><tr><td>zorgenvrij.nu</td><td>Missing</td><td>Missing</td><td>Unknown</td></tr><tr><td>wijzijnzorgenvrij.nl</td><td>Missing</td><td>Missing</td><td>Unknown</td></tr><tr><td>zorgenvrijleren.nl</td><td>Missing</td><td>Missing</td><td>Unknown</td></tr></tbody></table></div></div>            <div class="section">
+                <h2 class="section-title">Directory Roles & Permissions</h2><h3>Billing Administrator (2 gebruikers)</h3><div class='table-container'><table id='tbl-6a3a5ec8' class=' sortable'><thead><tr><th>User Principal Name <span class='sort-icon'>&#8693;</span></th><th>Display Name <span class='sort-icon'>&#8693;</span></th></tr></thead><tbody><tr><td>stephanie@wijzijnzorgenvrij.nl</td><td>Stephanie Proost</td></tr><tr><td>ronald@wijzijnzorgenvrij.nl</td><td>Ronald van Adrichem</td></tr></tbody></table></div><h3>Global Administrator (1 gebruiker)</h3><div class='table-container'><table id='tbl-2e4f1640' class=' sortable'><thead><tr><th>User Principal Name <span class='sort-icon'>&#8693;</span></th><th>Display Name <span class='sort-icon'>&#8693;</span></th></tr></thead><tbody><tr><td>cloudadmin@wijzijnzorgenvrij.nl</td><td>cloudadmin</td></tr></tbody></table></div><h3>Security Administrator (1 gebruiker)</h3><div class='table-container'><table id='tbl-601230e2' class=' sortable'><thead><tr><th>User Principal Name <span class='sort-icon'>&#8693;</span></th><th>Display Name <span class='sort-icon'>&#8693;</span></th></tr></thead><tbody><tr><td>cloudadmin@wijzijnzorgenvrij.nl</td><td>cloudadmin</td></tr></tbody></table></div></div>            <div class="section section-advice-panel">
+                <h2 class="section-title">Aanbevelingen - Fase 2: Samenwerking en opslag</h2>
+                <p class="text-muted mb-20">Microsoft best practices voor Teams, SharePoint, OneDrive en Exchange-samenwerking:</p>                <div class="mt-15">                    <div class='alert alert-info'><strong>Team-lifecyclebeheer:</strong> 2 team(s) zijn ouder dan 1 jaar. <br><strong>Microsoft best practice:</strong> Implementeer een vervalbeleid voor Microsoft 365 Groups (aanbevolen: 365 dagen). Gebruik toegangsbeoordelingen om inactieve teams automatisch te detecteren en op te schonen.</div>                    <div class='alert alert-warning'><strong>Lege groepen:</strong> 3 groep(en) zonder leden gedetecteerd. <br><strong>Microsoft best practice:</strong> Configureer automatische opschoning van lege groepen na 30 dagen.</div>                </div>
+
+                <div class="advice-inner-card">
+                    <h4 class="mt-0">Algemene best practices - Fase 2</h4>
+                    <ul class="list-soft">
+                        <li><strong>Teams-governance:</strong> Implementeer naamconventies, classificatielabels en vervalbeleid voor Teams</li>
+                        <li><strong>SharePoint-opslag:</strong> Gebruik opslagquota per site. Implementeer retentiebeleid voor automatische archivering</li>
+                        <li><strong>Externe deling:</strong> Beperk externe deling tot goedgekeurde domeinen. Gebruik gevoeligheidslabels voor classificatie</li>
+                        <li><strong>OneDrive-sync:</strong> Configureer Known Folder Move (KFM) voor back-up van Bureaublad/Documenten/Afbeeldingen</li>
+                        <li><strong>Exchange-regels:</strong> Monitor doorstuurregels voor preventie van datalekken. Schakel automatisch doorsturen naar externe domeinen uit</li>
+                        <li><strong>Toegangsbeoordelingen:</strong> Implementeer kwartaalreviews voor teams en groepslidmaatschappen</li>
+                        <li><strong>Retentiebeleid:</strong> Configureer retentielabels voor compliance en datalevenscyclusbeheer</li>
+                    </ul>
+                </div>
+            </div>    </div> <!-- End Phase Body -->    </div>        <div id="phase3" class="phase-content">
+            <h1>Compliance</h1>
+            <div class="section">
+                <h2 class="section-title">Security & Compliance Status</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">CA Policies Actief</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">CA Policies Uitgeschakeld</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number stat-number-sm"><span class='badge badge-danger'>Uitgeschakeld</span></div>
+                        <div class="stat-label">Security Defaults</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number stat-number-sm"><span class='badge badge-ok'>Actief</span></div>
+                        <div class="stat-label">Audit Logging</div>
+                    </div>
+                </div><h3>Conditional Access Policies (9)</h3><div class='table-search-wrap'><input type='search' class='table-search' placeholder='Zoek policy...' oninput='reportSearch(this,"tbl-4463ee4e")'></div><div class='table-container'><table id='tbl-4463ee4e' class=' sortable'><thead><tr><th>Policy Naam <span class='sort-icon'>&#8693;</span></th><th>Status <span class='sort-icon'>&#8693;</span></th><th>Aangemaakt <span class='sort-icon'>&#8693;</span></th></tr></thead><tbody><tr><td>Meervoudige verificatie vereisen voor beheerders</td><td><span class='badge badge-ok'>Actief</span></td><td>29-08-2024</td></tr><tr><td>Verouderde verificatie blokkeren</td><td><span class='badge badge-ok'>Actief</span></td><td>29-08-2024</td></tr><tr><td>Meervoudige verificatie vereisen voor alle gebruikers</td><td><span class='badge badge-ok'>Actief</span></td><td>29-08-2024</td></tr><tr><td>Meervoudige verificatie vereisen voor Azure-beheer</td><td><span class='badge badge-ok'>Actief</span></td><td>29-08-2024</td></tr><tr><td>MFA exclusions</td><td><span class='badge badge-ok'>Actief</span></td><td>29-08-2024</td></tr><tr><td>Verouderde verificatie blokkeren</td><td><span class='badge badge-warn'>Report Only</span></td><td>13-10-2025</td></tr><tr><td>Blokkeer toegang vanuit risicolanden</td><td><span class='badge badge-warn'>Report Only</span></td><td>13-10-2025</td></tr><tr><td>Microsoft-managed: Require phishing-resistant multifactor authentication for admins</td><td><span class='badge badge-muted'>Uitgeschakeld</span></td><td>28-01-2026</td></tr><tr><td>Microsoft-managed: Block legacy authentication</td><td><span class='badge badge-muted'>Uitgeschakeld</span></td><td>28-01-2026</td></tr></tbody></table></div>            </div>
+            <div id="appregs" class="section">
+                <h2 class="section-title mt-40">App Registrations</h2>
+                <h3 class="mt-20">Overzicht</h3>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Totaal Apps</div>
+                    </div>
+                    <div class="stat-card stat-card--danger">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Verlopen Credentials</div>
+                    </div>
+                    <div class="stat-card stat-card--warning">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Verlopen Binnenkort</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Met Enterprise App</div>
+                    </div>
+                </div>                <h3 class="mt-30 mb-15">App Registrations Details</h3>
+
+                <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>App Naam</th>
+                            <th>Aangemaakt</th>
+                            <th>Secrets</th>
+                            <th>Certificates</th>
+                            <th>Permissions</th>
+                        </tr>
+                    </thead>
+                    <tbody><tr class='appreg-row'><td class='cell-pad-strong'>Baseline rapport</td><td class='cell-pad-muted'>17-12-2025</td><td class='cell-pad'><strong>1 secret(s)</strong><br><span class='perm-resource-title'>🟢 Valid (668 days)</span><br><span class='text-muted-sm2'>06-01-2028</span></td><td class='cell-pad'><strong>0 cert(s)</strong><br><span class='perm-resource-title'>No certificates</span></td><td class='cell-pad'><strong>45 permissions</strong><br><div class='perm-scroll-box'><div class='perm-resource-block'><strong class='perm-resource-title'>7101e921-d91a-4bca-a6b6-1d0b98970483:</strong><br><span class='perm-type perm-type-del'>[Del]</span> <span class='perm-name'>Directory.Read.All</span><br><span class='perm-type perm-type-del'>[Del]</span> <span class='perm-name'>Organization.Read.All</span><br><span class='perm-type perm-type-del'>[Del]</span> <span class='perm-name'>Policy.Read.All</span><br><span class='perm-more'>... +10 more</span><br></div><div class='perm-resource-block'><strong class='perm-resource-title'>Microsoft Graph:</strong><br><span class='perm-type perm-type-app'>[App]</span> <span class='perm-name'>User.ReadBasic.All</span><br><span class='perm-type perm-type-app'>[App]</span> <span class='perm-name'>Policy.Read.ConditionalAccess</span><br><span class='perm-type perm-type-app'>[App]</span> <span class='perm-name'>Policy.Read.DeviceConfiguration</span><br><span class='perm-more'>... +29 more</span><br></div></div></td><tr class='appreg-row'><td class='cell-pad-strong'>M365-Baseline-Assessment-Bootstrap</td><td class='cell-pad-muted'>20-02-2026</td><td class='cell-pad'><strong>0 secret(s)</strong><br><span class='perm-resource-title'>No secrets</span></td><td class='cell-pad'><strong>0 cert(s)</strong><br><span class='perm-resource-title'>No certificates</span></td><td class='cell-pad'><strong>35 permissions</strong><br><div class='perm-scroll-box'><div class='perm-resource-block'><strong class='perm-resource-title'>7101e921-d91a-4bca-a6b6-1d0b98970483:</strong><br><span class='perm-type perm-type-del'>[Del]</span> <span class='perm-name'></span><br><span class='perm-type perm-type-del'>[Del]</span> <span class='perm-name'>User.Read.All</span><br><span class='perm-type perm-type-del'>[Del]</span> <span class='perm-name'>Group.Read.All</span><br><span class='perm-more'>... +17 more</span><br></div><div class='perm-resource-block'><strong class='perm-resource-title'>Microsoft Graph:</strong><br><span class='perm-type perm-type-app'>[App]</span> <span class='perm-name'>TeamMember.Read.All</span><br><span class='perm-type perm-type-app'>[App]</span> <span class='perm-name'>DeviceManagementManagedDevices.Read.All</span><br><span class='perm-type perm-type-app'>[App]</span> <span class='perm-name'>UserAuthenticationMethod.Read.All</span><br><span class='perm-more'>... +12 more</span><br></div></div></td><tr class='appreg-row'><td class='cell-pad-strong'>M365-Baseline-Assessment-Bootstrap</td><td class='cell-pad-muted'>06-02-2026</td><td class='cell-pad'><strong>0 secret(s)</strong><br><span class='perm-resource-title'>No secrets</span></td><td class='cell-pad'><strong>0 cert(s)</strong><br><span class='perm-resource-title'>No certificates</span></td><td class='cell-pad'><strong>36 permissions</strong><br><div class='perm-scroll-box'><div class='perm-resource-block'><strong class='perm-resource-title'>7101e921-d91a-4bca-a6b6-1d0b98970483:</strong><br><span class='perm-type perm-type-del'>[Del]</span> <span class='perm-name'></span><br><span class='perm-type perm-type-del'>[Del]</span> <span class='perm-name'>User.Read.All</span><br><span class='perm-type perm-type-del'>[Del]</span> <span class='perm-name'>Group.Read.All</span><br><span class='perm-more'>... +18 more</span><br></div><div class='perm-resource-block'><strong class='perm-resource-title'>Microsoft Graph:</strong><br><span class='perm-type perm-type-app'>[App]</span> <span class='perm-name'>TeamMember.Read.All</span><br><span class='perm-type perm-type-app'>[App]</span> <span class='perm-name'>DeviceManagementManagedDevices.Read.All</span><br><span class='perm-type perm-type-app'>[App]</span> <span class='perm-name'>UserAuthenticationMethod.Read.All</span><br><span class='perm-more'>... +12 more</span><br></div></div></td><tr class='appreg-row'><td class='cell-pad-strong'>M365-Baseline-Assessment-Bootstrap</td><td class='cell-pad-muted'>05-01-2026</td><td class='cell-pad'><strong>0 secret(s)</strong><br><span class='perm-resource-title'>No secrets</span></td><td class='cell-pad'><strong>0 cert(s)</strong><br><span class='perm-resource-title'>No certificates</span></td><td class='cell-pad'><strong>36 permissions</strong><br><div class='perm-scroll-box'><div class='perm-resource-block'><strong class='perm-resource-title'>7101e921-d91a-4bca-a6b6-1d0b98970483:</strong><br><span class='perm-type perm-type-del'>[Del]</span> <span class='perm-name'></span><br><span class='perm-type perm-type-del'>[Del]</span> <span class='perm-name'>User.Read.All</span><br><span class='perm-type perm-type-del'>[Del]</span> <span class='perm-name'>Group.Read.All</span><br><span class='perm-more'>... +18 more</span><br></div><div class='perm-resource-block'><strong class='perm-resource-title'>Microsoft Graph:</strong><br><span class='perm-type perm-type-app'>[App]</span> <span class='perm-name'>TeamMember.Read.All</span><br><span class='perm-type perm-type-app'>[App]</span> <span class='perm-name'>DeviceManagementManagedDevices.Read.All</span><br><span class='perm-type perm-type-app'>[App]</span> <span class='perm-name'>UserAuthenticationMethod.Read.All</span><br><span class='perm-more'>... +12 more</span><br></div></div></td><tr class='appreg-row'><td class='cell-pad-strong'>M365-Baseline-Assessment-Bootstrap</td><td class='cell-pad-muted'>05-01-2026</td><td class='cell-pad'><strong>0 secret(s)</strong><br><span class='perm-resource-title'>No secrets</span></td><td class='cell-pad'><strong>0 cert(s)</strong><br><span class='perm-resource-title'>No certificates</span></td><td class='cell-pad'><strong>36 permissions</strong><br><div class='perm-scroll-box'><div class='perm-resource-block'><strong class='perm-resource-title'>7101e921-d91a-4bca-a6b6-1d0b98970483:</strong><br><span class='perm-type perm-type-del'>[Del]</span> <span class='perm-name'></span><br><span class='perm-type perm-type-del'>[Del]</span> <span class='perm-name'>User.Read.All</span><br><span class='perm-type perm-type-del'>[Del]</span> <span class='perm-name'>Group.Read.All</span><br><span class='perm-more'>... +18 more</span><br></div><div class='perm-resource-block'><strong class='perm-resource-title'>Microsoft Graph:</strong><br><span class='perm-type perm-type-app'>[App]</span> <span class='perm-name'>TeamMember.Read.All</span><br><span class='perm-type perm-type-app'>[App]</span> <span class='perm-name'>DeviceManagementManagedDevices.Read.All</span><br><span class='perm-type perm-type-app'>[App]</span> <span class='perm-name'>UserAuthenticationMethod.Read.All</span><br><span class='perm-more'>... +12 more</span><br></div></div></td><tr class='appreg-row'><td class='cell-pad-strong'>P2P Server</td><td class='cell-pad-muted'>06-06-2022</td><td class='cell-pad'><strong>0 secret(s)</strong><br><span class='perm-resource-title'>No secrets</span></td><td class='cell-pad'><strong>0 cert(s)</strong><br><span class='perm-resource-title'>No certificates</span></td><td class='cell-pad'><span class='text-muted-xs'>Geen permissions</span></td>                </tbody>
+            </table>
+            </div>
+
+            <div class="advice-inner-card mt-30 appreg-info-card">
+                <h5 class="mt-0">Over App Registrations</h5>
+                <ul class="list-soft-tight">
+                    <li><strong>App Registrations:</strong> Jouw eigen apps geregistreerd in deze tenant</li>
+                    <li><strong>Secrets vs Certificates:</strong> Gebruik bij voorkeur certificates (hogere security)</li>
+                    <li><strong>Enterprise App:</strong> Als deze bestaat kan de app permissions krijgen en gebruikt worden</li>
+                    <li><strong>Credential Monitoring:</strong> Monitor expiratie van secrets en certificates</li>
+                    <li><strong>Best Practice:</strong> Roteer secrets minimaal elke 6 maanden, certificates elk jaar</li>
+                </ul>
+            </div>
+            </div>
+            <div class="section">
+                <h2 class="section-title">Legacy Authenticatie</h2><div class='alert alert-success'>Geen recente legacy auth sign-ins gevonden</div><h3>Legacy Auth Beleidsinstellingen</h3><div class='table-container'><table id='tbl-2c26793e' class=''><thead><tr><th>Instelling</th><th>Waarde</th></tr></thead><tbody><tr><td>GuestUserRoleId</td><td>10dae51f-b6af-4016-8d66-8c2a99b929b3</td></tr><tr><td>AllowEmailVerifiedUsersToJoinOrganization</td><td>False</td></tr><tr><td>AllowedToSignUpEmailBasedSubscriptions</td><td>True</td></tr><tr><td>DefaultUserRolePermissions</td><td>Microsoft.Graph.PowerShell.Models.MicrosoftGraphDefaultUserRolePermissions</td></tr><tr><td>BlockMsolPowerShell</td><td>False</td></tr><tr><td>Note</td><td>Retrieved successfully</td></tr></tbody></table></div>            </div>
+            <div class="section">
+                <h2 class="section-title">Retentiebeleid</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Totaal Beleidsregels</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number stat-number-sm"><span class='badge badge-danger'>Nee</span></div>
+                        <div class="stat-label">Exchange</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number stat-number-sm"><span class='badge badge-danger'>Nee</span></div>
+                        <div class="stat-label">SharePoint</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number stat-number-sm"><span class='badge badge-danger'>Nee</span></div>
+                        <div class="stat-label">OneDrive</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number stat-number-sm"><span class='badge badge-danger'>Nee</span></div>
+                        <div class="stat-label">Teams</div>
+                    </div>
+                </div><div class='alert alert-warning'><strong>WAARSCHUWING:</strong> Niet alle workloads hebben retentiebeleid</div><p>Geen retentiebeleid gevonden</p>            </div>
+            <div class="section">
+                <h2 class="section-title">Gevoeligheidslabels</h2><div class='alert alert-warning'><strong>WAARSCHUWING:</strong> Geen gevoeligheidslabels geconfigureerd - overweeg Microsoft Purview</div><p>Geen gevoeligheidslabels gevonden</p>            </div>            <div class="section section-advice-panel">
+                <h2 class="section-title">Aanbevelingen - Fase 3: Compliance- en beveiligingsbeleid</h2>
+                <p class="text-muted mb-20">Microsoft best practices voor Conditional Access, DLP, retentie en audit logging:</p>                <div class="mt-15">                    <div class='alert alert-info'><strong>Uitgeschakeld CA-beleid:</strong> 2 CA-beleidsregel(s) zijn uitgeschakeld. <br><strong>Microsoft best practice:</strong> Beoordeel uitgeschakeld beleid elk kwartaal. Verwijder beleid dat niet meer nodig is.</div>                </div>
+
+                <div class="advice-inner-card">
+                    <h4 class="mt-0">Algemene best practices - Fase 3</h4>
+                    <ul class="list-soft">
+                        <li><strong>Conditional Access:</strong> Gebruik report-only-modus om nieuw beleid te testen. Implementeer een gefaseerde uitrol via gebruikersgroepen</li>
+                        <li><strong>Zero Trust:</strong> Implementeer "never trust, always verify" en gebruik apparaatcompliance, locaties en risicogebaseerd beleid</li>
+                        <li><strong>DLP-beleid:</strong> Start met gevoelige informatietypen (creditcards, BSN/SSN). Gebruik testmodus vóór handhaving</li>
+                        <li><strong>Retentiebeleid:</strong> Configureer tenant-breed retentiebeleid voor Teams/Exchange/SharePoint (aanbevolen: 7 jaar bij legal hold)</li>
+                        <li><strong>Verouderde authenticatie:</strong> Blokkeer legacy-authenticatieprotocollen (IMAP, POP, SMTP) via CA-beleid</li>
+                        <li><strong>Beveiliging app-registraties:</strong> Monitor het verlopen van secrets. Gebruik certificaten in plaats van secrets. Pas least-privilege permissies toe</li>
+                        <li><strong>Auditmonitoring:</strong> Configureer waarschuwingen voor verdachte activiteiten (impossible travel, massale downloads, privilege-escalatie)</li>
+                        <li><strong>Compliance Manager:</strong> Gebruik Microsoft Purview Compliance Manager voor compliancescore en verbeteracties</li>
+                    </ul>
+                </div>
+            </div>
+        </div>        <div id="phase4" class="phase-content">
+            <h1>Beveiliging</h1>
+
+            <div class="section">
+                <h2 class="section-title">Microsoft Secure Score</h2>                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">36.63%</div>
+                        <div class="stat-label">Secure Score</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100</div>
+                        <div class="stat-label">Huidige Score</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">273</div>
+                        <div class="stat-label">Max Score</div>
+                    </div>
+                </div><div class='progress-wrap'>
+  <div class='progress-label'><span>Microsoft Secure Score</span><span class='progress-pct' style='color:var(--risk-high)'>36.6%</span></div>
+  <div class='progress-track'>
+    <div class='progress-fill' style='width:37%; background:var(--risk-high);'></div>
+  </div>
+  <div class='progress-sub'>100 van 273 punten</div>
+</div><h3>Top 5 Aanbevelingen</h3><div class='table-container'><table id='tbl-0ea1fdb1' class=' sortable'><thead><tr><th>Aanbeveling <span class='sort-icon'>&#8693;</span></th><th>Impact <span class='sort-icon'>&#8693;</span></th><th>Status <span class='sort-icon'>&#8693;</span></th></tr></thead><tbody><tr><td>Ensure multifactor authentication is enabled for all users in administrative roles</td><td>10</td><td></td></tr><tr><td> Identify Entra ID privileged accounts that are also privileged in Active Directory</td><td>9</td><td></td></tr><tr><td>Remove unsafe permissions on sensitive Entra Connect accounts</td><td>9</td><td></td></tr><tr><td>Remove discoverable passwords in Active Directory account attributes</td><td>8</td><td></td></tr><tr><td>Unsafe permissions on the DnsAdmins group</td><td>8</td><td></td></tr></tbody></table></div>            </div>
+
+            <div class="section">
+                <h2 class="section-title">Admin Password Ages</h2>                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Admins</div>
+                    </div>
+                    <div class="stat-card stat-card--danger">
+                        <div class="stat-number">1</div>
+                        <div class="stat-label">&gt;180 dagen oud</div>
+                    </div>
+                </div><h3>Admin Wachtwoord Details</h3><div class='table-search-wrap'><input type='search' class='table-search' placeholder='Zoek admin...' oninput='reportSearch(this,"tbl-6d2af1f7")'></div><div class='table-container'><table id='tbl-6d2af1f7' class=' sortable'><thead><tr><th>Display Name <span class='sort-icon'>&#8693;</span></th><th>UPN <span class='sort-icon'>&#8693;</span></th><th>Laatste Wijziging <span class='sort-icon'>&#8693;</span></th><th>Dagen Oud <span class='sort-icon'>&#8693;</span></th><th>Status <span class='sort-icon'>&#8693;</span></th></tr></thead><tbody><tr><td>cloudadmin</td><td>cloudadmin@wijzijnzorgenvrij.nl</td><td>08-02-2022</td><td>1489</td><td>🔴 >180 dagen</td></tr><tr><td>Ronald van Adrichem</td><td>ronald@wijzijnzorgenvrij.nl</td><td>13-10-2025</td><td>146</td><td>🟡 >90 dagen</td></tr><tr><td>Stephanie Proost</td><td>stephanie@wijzijnzorgenvrij.nl</td><td>27-11-2025</td><td>101</td><td>🟡 >90 dagen</td></tr></tbody></table></div>            </div>
+
+            <div class="section">
+                <h2 class="section-title">Break Glass Accounts</h2><p>Geen potentiele break glass accounts gedetecteerd</p>            </div>
+
+            <div class="section">
+                <h2 class="section-title">GDAP/GSAP Relationships</h2><p>Geen GDAP/GSAP relationships gevonden - ga naar: https://admin.microsoft.com/adminportal/home#/partners om deze informatie in te zien</p>            </div>            <div class="section">
+                <h2 class="section-title">Password Policies</h2>
+                <h3>Domain Password Settings</h3><div class='table-container'><table id='tbl-a2c16c97' class=' sortable'><thead><tr><th>Domain <span class='sort-icon'>&#8693;</span></th><th>Default <span class='sort-icon'>&#8693;</span></th><th>Geldigheid (Dagen) <span class='sort-icon'>&#8693;</span></th><th>Notificatie (Dagen) <span class='sort-icon'>&#8693;</span></th></tr></thead><tbody><tr><td>zorgenvrij075.onmicrosoft.com</td><td></td><td>2147483647</td><td>14</td></tr><tr><td>wijzijnzorgenvrij.com</td><td></td><td>2147483647</td><td>14</td></tr><tr><td>zorgenvrij.nu</td><td></td><td>2147483647</td><td>14</td></tr><tr><td>wijzijnzorgenvrij.nl</td><td><span class='badge badge-info'>Ja</span></td><td>2147483647</td><td>14</td></tr><tr><td>zorgenvrijleren.nl</td><td></td><td>2147483647</td><td>14</td></tr></tbody></table></div></div>            <div class="section">
+                <h2 class="section-title">Guest Invite Settings</h2><p>Guest invite settings niet beschikbaar</p>            </div>
+
+            <div class="section">
+                <h2 class="section-title">Device Registration Policy</h2><div class='table-container'><table id='tbl-17b270ad' class=''><thead><tr><th>Setting</th><th>Value</th></tr></thead><tbody><tr><td>User Device Quota</td><td>50</td></tr><tr><td>MFA Configuration</td><td>notRequired</td></tr><tr><td>Azure AD Join Allowed</td><td><span class='badge badge-ok'>Ja</span></td></tr><tr><td>Azure AD Registration Allowed</td><td><span class='badge badge-muted'>Nee</span></td></tr></tbody></table></div>            </div>
+
+            <div class="section">
+                <h2 class="section-title">Location-Based CA Policies</h2><p>Geen location-based CA policies gevonden</p>            </div>
+
+            <div class="section">
+                <h2 class="section-title">Device-Based CA Policies</h2><p>Geen device-based CA policies gevonden</p>            </div>
+
+            <div class="section">
+                <h2 class="section-title">Beveiligingswaarschuwingen</h2>
+                <div class="stats-grid">
+                    <div class="stat-card stat-card--danger">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Hoog risico</div>
+                    </div>
+                    <div class="stat-card stat-card--warning">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Medium</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Laag</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Totaal</div>
+                    </div>
+                </div><p>Geen beveiligingswaarschuwingen gevonden</p>            </div>
+            <div class="section">
+                <h2 class="section-title">Identity Protection</h2>                <div class="stats-grid">
+                    <div class="stat-card stat-card--warning">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Risicovolle Gebruikers</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Risicodetecties</div>
+                    </div>
+                </div><p>Geen risicovolle gebruikers gevonden</p>            </div>            <div class="section section-advice-panel">
+                <h2 class="section-title">Aanbevelingen - Fase 4: Geavanceerde beveiliging en compliance</h2>
+                <p class="text-muted mb-20">Microsoft best practices voor geavanceerde beveiliging, GDAP, wachtwoordbeleid en apparaatbeheer:</p>
+
+                <div class="mt-15">                    <div class='alert alert-critical'><strong>Secure Score te laag (36.63%):</strong> <br><strong>Microsoft best practice:</strong> Streef naar minimaal 70% Secure Score. Implementeer de top 5 aanbevelingen met de meeste impact. Focus eerst op identiteitsbescherming, MFA-afdwinging en databescherming.</div>                    <div class='alert alert-critical'><strong>Wachtwoordhygiëne beheerders (kritiek):</strong> 1 beheerder(s) hebben wachtwoorden ouder dan 180 dagen. <br><strong>Microsoft best practice:</strong> Forceer een wachtwoordreset voor beheerders elke 90 dagen of gebruik wachtwoordloze authenticatie (FIDO2, Windows Hello for Business).</div>
+                <div class="advice-inner-card">
+                    <h4 class="mt-0">Algemene best practices - Fase 4</h4>
+                    <ul class="list-soft">
+                        <li><strong>Secure Score-monitoring:</strong> Beoordeel de Secure Score maandelijks. Prioriteer verbeteringen met hoge impact en lage inspanning</li>
+                        <li><strong>Bevoorrechte toegang:</strong> Implementeer Privileged Identity Management (PIM) voor just-in-time beheerderstoegang</li>
+                        <li><strong>Wachtwoordbescherming:</strong> Schakel Azure AD Password Protection in (verboden wachtwoorden, smart lockout)</li>
+                        <li><strong>Break-glass procedures:</strong> Documenteer noodtoegangsprocedures. Test jaarlijks. Monitor gebruik via waarschuwingen</li>
+                        <li><strong>GDAP best practices:</strong> Voor MSP's: gebruik GDAP in plaats van DAP. Pas least privilege toe en voer periodieke toegangsreviews uit</li>
+                        <li><strong>Named locations:</strong> Definieer vertrouwde IP-adressen en gebruik deze in CA-beleid voor locatiebewuste toegang</li>
+                        <li><strong>Apparaatbeheer:</strong> Registreer alle bedrijfsapparaten in Intune en handhaaf een compliance-baseline</li>
+                        <li><strong>Gasttoegang-governance:</strong> Implementeer kwartaalreviews en gebruik gevoeligheidslabels voor classificatie</li>
+                    </ul>
+                </div>
+            </div>
+        </div>        </div>        <div id="phase5" class="phase-content">
+            <h1>Intune</h1>
+            <div class="section">
+                <p class="text-muted italic">Intune is niet geconfigureerd of niet toegankelijk voor deze tenant.</p>
+            </div>
+
+            <div class="section section-advice-panel">
+                <h2 class="section-title">Aanbevelingen - Fase 5: Intune-configuratie</h2>
+                <p class="text-muted mb-20">Intune is momenteel niet geconfigureerd. Overweeg Intune te activeren voor apparaatbeheer.</p>
+
+                <div class="mt-15"><div class='alert alert-info'><strong>Intune niet actief:</strong> <br><strong>Microsoft best practice:</strong> Overweeg Microsoft Intune voor: (1) Mobile Device Management (MDM), (2) Mobile Application Management (MAM), (3) apparaatcompliancebeleid, (4) app-beveiliging. Vereist minimaal Microsoft 365 Business Premium of Enterprise Mobility + Security E3-licentie.</div>                </div>
+
+                <div class="advice-inner-card">
+                    <h4 class="mt-0">Voordelen van Intune</h4>
+                    <ul class="list-soft">
+                        <li><strong>Apparaatbeheer:</strong> Centraal beheer van Windows-, iOS-, Android- en macOS-apparaten</li>
+                        <li><strong>Beveiligingshandhaving:</strong> Apparaatcompliancebeleid, versleutelingseisen en security baselines</li>
+                        <li><strong>Appbeheer:</strong> Bedrijfsapps uitrollen en beheren. App-beveiliging voor BYOD</li>
+                        <li><strong>Conditional Access:</strong> Apparaatcompliance afdwingen voor toegang tot bedrijfsresources</li>
+                        <li><strong>Acties op afstand:</strong> Apparaten op afstand wissen, intrekken en vergrendelen bij verlies/diefstal</li>
+                    </ul>
+                </div>
+            </div>
+        </div>        <div id="phase6" class="phase-content">
+            <h1>Azure</h1>
+
+        <div class="section">
+        <h2 class="section-title">Azure Subscription Overview</h2>
+            <p><strong>Subscription:</strong> Azure Subscription 2436775</p>
+            <p><strong>Subscription ID:</strong> 7f615f1d-bae4-4985-a043-168a37bbb6fe</p>
+        </div>        <div class="section">
+        <h2 class="section-title">Azure-beveiliging en compliance</h2></div>        <div class="section">
+        <h2 class="section-title">Governance en compliance</h2><div class='alert alert-info'><strong>Geen resource groups gevonden in huidige Azure context.</strong> Controleer de actieve subscription met <code>Get-AzContext</code> en schakel indien nodig naar de juiste subscription met <code>Set-AzContext</code>.</div></div>        <div class="section section-advice-panel">
+                    <h2 class="section-title">Aanbevelingen - Fase 6: Azure-infrastructuur</h2>
+            <div class="mt-15"><div class='alert alert-info'><strong>Azure-assessment voltooid:</strong> <br><strong>Microsoft best practice:</strong> Zorg dat subscriptions worden gemonitord via Microsoft Defender for Cloud en dat RBAC least-privilege (Reader/Security Reader) wordt toegepast voor auditing.</div>            </div>
+            <div class="advice-inner-card">
+                <h4 class="mt-0">Azure-best practices</h4>
+                <ul class="list-soft">
+                    <li><strong>RBAC:</strong> Gebruik Reader rol voor rapportage en auditing.</li>
+                    <li><strong>Governance:</strong> Implementeer Azure Policy voor resource compliance.</li>
+                    <li><strong>Security:</strong> Schakel Defender for Cloud in voor alle subscriptions.</li>
+                </ul>
+            </div>
+        </div>        </div><div class='phase-content' id='hybrid'>
+  <h1>Hybrid Identity &amp; AD Connect</h1>
+
+  <div class='stats-grid'>
+    <div class='stat-card'>
+      <div class='stat-label'>Tenanttype</div>
+      <div class='stat-value' style='font-size:1rem'><span class='badge-info'>Pure Cloud</span></div>
+    </div>
+    <div class='stat-card'>
+      <div class='stat-label'>Authenticatietype</div>
+      <div class='stat-value' style='font-size:1.1rem'>Cloud Only</div>
+    </div>
+    <div class='stat-card'>
+      <div class='stat-label'>Gesynchroniseerde gebruikers</div>
+      <div class='stat-value'>0</div>
+    </div>
+    <div class='stat-card'>
+      <div class='stat-label'>Cloud-only gebruikers</div>
+      <div class='stat-value'>18</div>
+    </div>
+  </div>
+
+  <div class='section'>
+    <div class='section-header'><h2>Synchronisatiestatus</h2></div>
+    <div class='section-body'>
+      <table class='data-table'>
+        <thead><tr><th>Eigenschap</th><th>Waarde</th></tr></thead>
+        <tbody>
+          <tr><td>Directory sync ingeschakeld</td><td>Nee</td></tr>
+          <tr><td>Laatste sync tijdstip</td><td>—</td></tr>
+          <tr><td>Sync leeftijd</td><td>—</td></tr>
+          <tr><td>Sync status</td><td><span class='badge-muted'>— Onbekend</span></td></tr>
+          <tr><td>Sync client versie</td><td>Niet beschikbaar</td></tr>
+          <tr><td>Totaal gebruikers</td><td>18</td></tr>
+          <tr><td>Gesynchroniseerd (%)</td><td>0%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>  <div class='section'>
+    <div class='section-header'><h2>Domeinen &amp; Authenticatie</h2></div>
+    <div class='section-body'>
+      <table class='data-table'>
+        <thead><tr><th>Domein</th><th>Auth Type</th><th>Geverifieerd</th></tr></thead>
+        <tbody><tr><td>zorgenvrij075.onmicrosoft.com</td><td>Managed</td><td>✓</td></tr><tr><td>wijzijnzorgenvrij.com</td><td>Managed</td><td>✓</td></tr><tr><td>zorgenvrij.nu</td><td>Managed</td><td>✓</td></tr><tr><td>wijzijnzorgenvrij.nl <span class="badge-info">Default</span></td><td>Managed</td><td>✓</td></tr><tr><td>zorgenvrijleren.nl</td><td>Managed</td><td>✓</td></tr></tbody>
+      </table>
+    </div>
+  </div></div><div class="phase-content" id="compliance">
+  <h1>CIS M365 Foundations Benchmark</h1>
+
+  <div class="stats-grid" style="margin-bottom:1.5rem">
+    <div class="stat-card stat-ok">
+      <div class="stat-label">Pass</div>
+      <div class="stat-value" style="color:var(--ok)">6</div>
+    </div>
+    <div class="stat-card stat-warn">
+      <div class="stat-label">Warning</div>
+      <div class="stat-value" style="color:var(--warn)">0</div>
+    </div>
+    <div class="stat-card stat-danger">
+      <div class="stat-label">Fail</div>
+      <div class="stat-value" style="color:var(--danger)">6</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Score</div>
+      <div class="stat-value">50%</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><h2>Controls overzicht</h2></div>
+    <div class="table-container">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Control</th>
+            <th>Level</th>
+            <th>Categorie</th>
+            <th>Titel</th>
+            <th>Detail</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+                  <tr>
+            <td class="cis-id">1.1.1</td>
+            <td><span class="badge-info">L1</span></td>
+            <td class="cis-cat">Identity & Toegang</td>
+            <td>MFA ingeschakeld voor alle gebruikers</td>
+            <td class="cis-detail">MFA geregistreerd:  / 13</td>
+            <td><span class="badge-danger">✗ Fail</span></td>
+        </tr>
+        <tr>
+            <td class="cis-id">1.1.2</td>
+            <td><span class="badge-info">L1</span></td>
+            <td class="cis-cat">Identity & Toegang</td>
+            <td>Security Defaults of Conditional Access actief</td>
+            <td class="cis-detail">Security Defaults: False | CA policies: </td>
+            <td><span class="badge-danger">✗ Fail</span></td>
+        </tr>
+        <tr>
+            <td class="cis-id">1.1.3</td>
+            <td><span class="badge-info">L1</span></td>
+            <td class="cis-cat">Identity & Toegang</td>
+            <td>Legacy authenticatie geblokkeerd</td>
+            <td class="cis-detail">Mailboxen met legacy auth ingeschakeld: </td>
+            <td><span class="badge-ok">✓ Pass</span></td>
+        </tr>
+        <tr>
+            <td class="cis-id">1.2.1</td>
+            <td><span class="badge-info">L1</span></td>
+            <td class="cis-cat">Identity & Toegang</td>
+            <td>CA-beleid vereist MFA voor admins</td>
+            <td class="cis-detail">CA policies met MFA-eis: </td>
+            <td><span class="badge-danger">✗ Fail</span></td>
+        </tr>
+        <tr>
+            <td class="cis-id">1.3.1</td>
+            <td><span class="badge-info">L1</span></td>
+            <td class="cis-cat">Identity & Toegang</td>
+            <td>Break Glass accounts aanwezig</td>
+            <td class="cis-detail">Break glass accounts gedetecteerd: </td>
+            <td><span class="badge-danger">✗ Fail</span></td>
+        </tr>
+        <tr>
+            <td class="cis-id">1.3.2</td>
+            <td><span class="badge-muted">L2</span></td>
+            <td class="cis-cat">Identity & Toegang</td>
+            <td>Admin wachtwoorden niet verouderd (>180 dagen)</td>
+            <td class="cis-detail">Admins met wachtwoord >180 dagen: </td>
+            <td><span class="badge-ok">✓ Pass</span></td>
+        </tr>
+        <tr>
+            <td class="cis-id">2.1.1</td>
+            <td><span class="badge-info">L1</span></td>
+            <td class="cis-cat">Applicaties</td>
+            <td>Geen verlopen app-secrets</td>
+            <td class="cis-detail">Verlopen app secrets: </td>
+            <td><span class="badge-ok">✓ Pass</span></td>
+        </tr>
+        <tr>
+            <td class="cis-id">3.1.1</td>
+            <td><span class="badge-info">L1</span></td>
+            <td class="cis-cat">E-mail beveiliging</td>
+            <td>SPF records geconfigureerd</td>
+            <td class="cis-detail">Domeinen zonder SPF: </td>
+            <td><span class="badge-ok">✓ Pass</span></td>
+        </tr>
+        <tr>
+            <td class="cis-id">3.1.2</td>
+            <td><span class="badge-info">L1</span></td>
+            <td class="cis-cat">E-mail beveiliging</td>
+            <td>DKIM ingeschakeld</td>
+            <td class="cis-detail">Domeinen zonder DKIM: </td>
+            <td><span class="badge-ok">✓ Pass</span></td>
+        </tr>
+        <tr>
+            <td class="cis-id">3.1.3</td>
+            <td><span class="badge-info">L1</span></td>
+            <td class="cis-cat">E-mail beveiliging</td>
+            <td>DMARC policy ingesteld</td>
+            <td class="cis-detail">Domeinen zonder DMARC: </td>
+            <td><span class="badge-ok">✓ Pass</span></td>
+        </tr>
+        <tr>
+            <td class="cis-id">4.1.1</td>
+            <td><span class="badge-info">L1</span></td>
+            <td class="cis-cat">Audit & Monitoring</td>
+            <td>Audit logging ingeschakeld</td>
+            <td class="cis-detail">Audit logging: UITGESCHAKELD</td>
+            <td><span class="badge-danger">✗ Fail</span></td>
+        </tr>
+        <tr>
+            <td class="cis-id">5.1.1</td>
+            <td><span class="badge-muted">L2</span></td>
+            <td class="cis-cat">Security Score</td>
+            <td>Microsoft Secure Score ≥ 50%</td>
+            <td class="cis-detail">Secure Score: %</td>
+            <td><span class="badge-danger">✗ Fail</span></td>
+        </tr>
+        <tr>
+            <td class="cis-id">6.1.1</td>
+            <td><span class="badge-muted">L2</span></td>
+            <td class="cis-cat">Hybrid Identity</td>
+            <td>AD Connect sync recent (<3 uur)</td>
+            <td class="cis-detail">Tenant is pure cloud (niet van toepassing)</td>
+            <td><span class="badge-muted">— N/A</span></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div><div class="phase-content" id="frameworks">
+  <h1>Multi-Framework Compliance Matrix</h1>
+
+  <div class="alert alert-info" style="margin-bottom:1.5rem">
+    <strong>Referentiekader:</strong> Elke check is gemapt op de relevante controls van CIS M365 Foundations v3.0,
+    NIST SP 800-53 Rev5, ISO/IEC 27001:2022, PCI DSS 4.0 en HIPAA Security Rule.
+    Dit overzicht kan worden gebruikt als basis voor compliance-rapportages aan klanten of auditors.
+  </div>
+
+  <div class="section">
+    <div class="section-header"><h2>Framework mapping</h2></div>
+    <div class="table-container">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Control &amp; Titel</th>
+            <th>CIS</th>
+            <th>NIST 800-53</th>
+            <th>ISO 27001</th>
+            <th>PCI DSS 4.0</th>
+            <th>HIPAA</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+                  <tr>
+            <td class="cis-id">1.1.1 — MFA ingeschakeld voor alle gebruikers</td>
+            <td><span class="badge-info">CIS 1.1.1</span></td>
+            <td>IA-2, IA-5</td>
+            <td>A.9.4.2</td>
+            <td>8.4</td>
+            <td>164.312(d)</td>
+            <td><span class="badge-danger">Fail</span></td>
+        </tr>
+        <tr>
+            <td class="cis-id">1.1.2 — Security Defaults of Conditional Access actief</td>
+            <td><span class="badge-info">CIS 1.1.2</span></td>
+            <td>AC-2, IA-2</td>
+            <td>A.9.1.1</td>
+            <td>8.3</td>
+            <td>164.312(a)(2)(i)</td>
+            <td><span class="badge-danger">Fail</span></td>
+        </tr>
+        <tr>
+            <td class="cis-id">1.1.3 — Legacy authenticatie geblokkeerd</td>
+            <td><span class="badge-info">CIS 1.1.3</span></td>
+            <td>IA-3, SC-8</td>
+            <td>A.9.4.3</td>
+            <td>8.2.1</td>
+            <td>164.312(d)</td>
+            <td><span class="badge-ok">Pass</span></td>
+        </tr>
+        <tr>
+            <td class="cis-id">1.2.1 — CA-beleid vereist MFA voor admins</td>
+            <td><span class="badge-info">CIS 1.2.1</span></td>
+            <td>AC-6, IA-2</td>
+            <td>A.9.2.3</td>
+            <td>8.4.2</td>
+            <td>164.312(a)(1)</td>
+            <td><span class="badge-danger">Fail</span></td>
+        </tr>
+        <tr>
+            <td class="cis-id">1.3.1 — Break Glass accounts aanwezig</td>
+            <td><span class="badge-info">CIS 1.3.1</span></td>
+            <td>AC-2, CP-6</td>
+            <td>A.9.2.1</td>
+            <td>7.1</td>
+            <td>164.308(a)(3)</td>
+            <td><span class="badge-danger">Fail</span></td>
+        </tr>
+        <tr>
+            <td class="cis-id">1.3.2 — Admin wachtwoorden niet verouderd (>180 dagen)</td>
+            <td><span class="badge-info">CIS 1.3.2</span></td>
+            <td>IA-5</td>
+            <td>A.9.4.3</td>
+            <td>8.3.9</td>
+            <td>164.308(a)(5)</td>
+            <td><span class="badge-ok">Pass</span></td>
+        </tr>
+        <tr>
+            <td class="cis-id">2.1.1 — Geen verlopen app-secrets</td>
+            <td><span class="badge-info">CIS 2.1.1</span></td>
+            <td>IA-5, CM-6</td>
+            <td>A.9.2.5</td>
+            <td>8.3.2</td>
+            <td>164.308(a)(4)</td>
+            <td><span class="badge-ok">Pass</span></td>
+        </tr>
+        <tr>
+            <td class="cis-id">3.1.1 — SPF records geconfigureerd</td>
+            <td><span class="badge-info">CIS 3.1.1</span></td>
+            <td>SC-5, SI-8</td>
+            <td>A.13.2.1</td>
+            <td>6.3.3</td>
+            <td>164.312(e)(1)</td>
+            <td><span class="badge-ok">Pass</span></td>
+        </tr>
+        <tr>
+            <td class="cis-id">3.1.2 — DKIM ingeschakeld</td>
+            <td><span class="badge-info">CIS 3.1.2</span></td>
+            <td>SC-5, SI-8</td>
+            <td>A.13.2.3</td>
+            <td>6.3.3</td>
+            <td>164.312(e)(2)(ii)</td>
+            <td><span class="badge-ok">Pass</span></td>
+        </tr>
+        <tr>
+            <td class="cis-id">3.1.3 — DMARC policy ingesteld</td>
+            <td><span class="badge-info">CIS 3.1.3</span></td>
+            <td>SC-5, SI-8</td>
+            <td>A.13.2.3</td>
+            <td>6.3.3</td>
+            <td>164.312(e)(2)(ii)</td>
+            <td><span class="badge-ok">Pass</span></td>
+        </tr>
+        <tr>
+            <td class="cis-id">4.1.1 — Audit logging ingeschakeld</td>
+            <td><span class="badge-info">CIS 4.1.1</span></td>
+            <td>AU-2, AU-3</td>
+            <td>A.12.4.1</td>
+            <td>10.2</td>
+            <td>164.312(b)</td>
+            <td><span class="badge-danger">Fail</span></td>
+        </tr>
+        <tr>
+            <td class="cis-id">5.1.1 — Microsoft Secure Score ≥ 50%</td>
+            <td><span class="badge-info">CIS 5.1.1</span></td>
+            <td>SI-2, PM-6</td>
+            <td>A.18.2.3</td>
+            <td>6.3</td>
+            <td>164.308(a)(8)</td>
+            <td><span class="badge-danger">Fail</span></td>
+        </tr>
+        <tr>
+            <td class="cis-id">6.1.1 — AD Connect sync recent (<3 uur)</td>
+            <td><span class="badge-info">CIS 6.1.1</span></td>
+            <td>IA-2, SC-8</td>
+            <td>A.9.1.2</td>
+            <td>8.1</td>
+            <td>164.308(a)(3)</td>
+            <td><span class="badge-muted">NA</span></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>        </div>
+
+        <footer class="footer">
+            <div class="footer-inner">
+                <span>Report gegenereerd door <strong>Denjoy - IT</strong> | M365 Baseline Assessment Tool v3.1.0</span>
+                <span>© 2026 Denjoy - IT | Assessment ID: 20260308-233835 | <a href="https://www.denjoy.nl">www.denjoy.nl</a></span>
+            </div>
+        </footer>
+
+        <script>
+        // ── Phase toggle (global helper for onclick attributes) ──────────────
+        window.togglePhase = function(phaseId) {
+            var phase = document.getElementById(phaseId);
+            if (!phase) return;
+            var btn = phase.querySelector('.phase-toggle');
+            if (btn) btn.click();
+        };
+
+        // ── Table search ─────────────────────────────────────────────────────
+        window.reportSearch = function(input, tableId) {
+            var val = input.value.toLowerCase();
+            var rows = document.querySelectorAll('#' + tableId + ' tbody tr');
+            rows.forEach(function(row) {
+                row.style.display = row.textContent.toLowerCase().includes(val) ? '' : 'none';
+            });
+        };
+
+        // ── Sortable tables ──────────────────────────────────────────────────
+        function initSortable(table) {
+            var ths = table.querySelectorAll('thead th');
+            ths.forEach(function(th, idx) {
+                th.addEventListener('click', function() {
+                    var dir = th.dataset.dir === 'asc' ? -1 : 1;
+                    th.dataset.dir = dir === 1 ? 'asc' : 'desc';
+                    ths.forEach(function(h) { h.classList.remove('sort-asc','sort-desc'); });
+                    th.classList.add(dir === 1 ? 'sort-asc' : 'sort-desc');
+                    var tbody = table.querySelector('tbody');
+                    var rows = Array.from(tbody.querySelectorAll('tr'));
+                    rows.sort(function(a, b) {
+                        var aT = (a.cells[idx] ? a.cells[idx].textContent : '').trim();
+                        var bT = (b.cells[idx] ? b.cells[idx].textContent : '').trim();
+                        var aNum = parseFloat(aT.replace(/[^0-9.-]/g,''));
+                        var bNum = parseFloat(bT.replace(/[^0-9.-]/g,''));
+                        if (!isNaN(aNum) && !isNaN(bNum)) return dir * (aNum - bNum);
+                        return dir * aT.localeCompare(bT, 'nl');
+                    });
+                    rows.forEach(function(r) { tbody.appendChild(r); });
+                });
+            });
+        }
+
+        window.setAllSectionsCollapsed = function(collapsed) {
+            document.querySelectorAll('.section-body').forEach(function(body) {
+                body.classList.toggle('collapsed', !!collapsed);
+            });
+            document.querySelectorAll('.section-toggle').forEach(function(btn) {
+                btn.classList.toggle('open', !collapsed);
+                btn.innerHTML = collapsed
+                    ? '<span class=\"btn-label\">Bekijk</span> <span class=\"chev\">▼</span>'
+                    : '<span class=\"btn-label\">Verberg</span> <span class=\"chev\">▲</span>';
+                btn.setAttribute('aria-expanded', (!collapsed).toString());
+            });
+        };
+
+        window.setReportViewMode = function(mode) {
+            var body = document.body;
+            body.classList.remove('view-mode-management', 'view-mode-technical');
+            if (mode === 'management') {
+                body.classList.add('view-mode-management');
+                window.setAllSectionsCollapsed(true);
+            } else {
+                body.classList.add('view-mode-technical');
+            }
+            document.querySelectorAll('.toolbar-btn--mode').forEach(function(btn) {
+                btn.classList.toggle('active', (btn.textContent || '').toLowerCase().indexOf(mode === 'management' ? 'management' : 'technical') !== -1);
+            });
+            try { localStorage.setItem('m365ReportViewMode', mode); } catch (e) {}
+        };
+
+        // ── Theme toggle (light/dark) ───────────────────────────────────────
+        window.setReportTheme = function(theme) {
+            var root = document.documentElement;
+            var effective = (theme === 'dark') ? 'dark' : 'light';
+            root.setAttribute('data-theme', effective);
+            try { localStorage.setItem('m365ReportTheme', effective); } catch (e) {}
+
+            var lightBtn = document.getElementById('theme-light-btn');
+            var darkBtn = document.getElementById('theme-dark-btn');
+            if (lightBtn) lightBtn.classList.toggle('active', effective === 'light');
+            if (darkBtn) darkBtn.classList.toggle('active', effective === 'dark');
+        };
+
+        window.updateSidebarActiveNav = function() {
+            var hash = window.location.hash || '';
+            var links = document.querySelectorAll('.header-nav a[href^="#"]');
+            links.forEach(function(link) {
+                var href = link.getAttribute('href') || '';
+                link.classList.toggle('active', !!hash && href === hash);
+                if (hash && href === hash) {
+                    link.setAttribute('aria-current', 'page');
+                } else {
+                    link.removeAttribute('aria-current');
+                }
+            });
+        };
+
+        // ── Back-to-top button ───────────────────────────────────────────────
+        var btt = document.getElementById('back-to-top');
+        if (btt) {
+            window.addEventListener('scroll', function() {
+                btt.classList.toggle('visible', window.scrollY > 320);
+            }, { passive: true });
+        }
+
+        // ── Collapsible phase sections ───────────────────────────────────────
+        document.addEventListener('DOMContentLoaded', function () {
+            try {
+                var savedTheme = localStorage.getItem('m365ReportTheme');
+                window.setReportTheme(savedTheme === 'dark' ? 'dark' : 'light');
+            } catch (e) {
+                window.setReportTheme('light');
+            }
+
+            try {
+                var savedMode = localStorage.getItem('m365ReportViewMode');
+                window.setReportViewMode(savedMode === 'management' ? 'management' : 'technical');
+            } catch (e) {
+                window.setReportViewMode('technical');
+            }
+
+            window.updateSidebarActiveNav();
+            window.addEventListener('hashchange', window.updateSidebarActiveNav);
+            document.querySelectorAll('.header-nav a[href^="#"]').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    setTimeout(window.updateSidebarActiveNav, 0);
+                });
+            });
+
+            // Mark heavy/detail blocks so Management View hides only noisy content
+            document.querySelectorAll('.phase-content .section').forEach(function(section) {
+                var tables = Array.from(section.querySelectorAll(':scope > .table-container'));
+                tables.forEach(function(tbl, idx) {
+                    var rowCount = tbl.querySelectorAll('tbody tr').length;
+                    var isHeavy = idx > 0 || rowCount > 12;
+                    if (isHeavy) {
+                        tbl.classList.add('technical-only');
+                        var prev = tbl.previousElementSibling;
+                        if (prev && prev.classList.contains('table-search-wrap')) {
+                            prev.classList.add('technical-only');
+                        }
+                    }
+                });
+
+                var longLists = Array.from(section.querySelectorAll(':scope .perm-scroll-box'));
+                longLists.forEach(function(el) { el.classList.add('technical-only'); });
+            });
+
+            // Init phase collapsibles
+            document.querySelectorAll('.phase-content').forEach(function (phase) {
+                var header = phase.querySelector('h1');
+                if (!header) return;
+
+                var body = phase.querySelector('.phase-body');
+                if (!body) {
+                    body = document.createElement('div');
+                    body.className = 'phase-body';
+                    var node = header.nextElementSibling;
+                    while (node) {
+                        if (node.classList.contains('phase-content')) break;
+                        var next = node.nextElementSibling;
+                        body.appendChild(node);
+                        node = next;
+                    }
+                    phase.appendChild(body);
+                }
+
+                if (!header.querySelector('.phase-toggle')) {
+                    var btn = document.createElement('button');
+                    btn.className = 'phase-toggle open';
+                    btn.innerHTML = '<span class="btn-label">Verberg</span> <span class="chev">▲</span>';
+                    btn.onclick = function(e) {
+                        e.stopPropagation();
+                        var collapsed = body.classList.toggle('collapsed');
+                        btn.classList.toggle('open', !collapsed);
+                        btn.innerHTML = collapsed
+                            ? '<span class="btn-label">Bekijk</span> <span class="chev">▼</span>'
+                            : '<span class="btn-label">Verberg</span> <span class="chev">▲</span>';
+                    };
+                    header.style.cursor = 'pointer';
+                    header.onclick = function() { btn.click(); };
+                    header.appendChild(btn);
+                }
+            });
+
+            // Init all sortable tables
+            document.querySelectorAll('table.sortable').forEach(initSortable);
+
+            // Init collapsible subsections inside phases (reduces scroll length)
+            document.querySelectorAll('.phase-content .section').forEach(function(section, idx) {
+                if (section.classList.contains('section-collapsible-ready')) return;
+                var title = section.querySelector('.section-title');
+                if (!title) return;
+                if (title.querySelector('.section-toggle')) return;
+
+                var body = document.createElement('div');
+                body.className = 'section-body';
+
+                var children = Array.from(section.children);
+                var titleSeen = false;
+                children.forEach(function(child) {
+                    if (child === title) {
+                        titleSeen = true;
+                        return;
+                    }
+                    if (titleSeen) body.appendChild(child);
+                });
+                section.appendChild(body);
+
+                var btn = document.createElement('button');
+                btn.className = 'section-toggle open';
+                btn.type = 'button';
+                btn.setAttribute('aria-expanded', 'true');
+                btn.innerHTML = '<span class=\"btn-label\">Verberg</span> <span class=\"chev\">▲</span>';
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    var collapsed = body.classList.toggle('collapsed');
+                    btn.classList.toggle('open', !collapsed);
+                    btn.setAttribute('aria-expanded', (!collapsed).toString());
+                    btn.innerHTML = collapsed
+                        ? '<span class=\"btn-label\">Bekijk</span> <span class=\"chev\">▼</span>'
+                        : '<span class=\"btn-label\">Verberg</span> <span class=\"chev\">▲</span>';
+                });
+
+                title.appendChild(btn);
+                section.classList.add('section-collapsible-ready');
+
+                var titleText = (title.textContent || '').toLowerCase();
+                var shouldCollapseByDefault =
+                    idx > 0 &&
+                    titleText.indexOf('aanbevelingen') === -1 &&
+                    (body.querySelector('table') || (body.textContent || '').length > 900);
+
+                if (shouldCollapseByDefault) {
+                    btn.click();
+                }
+            });
+        });
+        </script>
+        </body>
+        </html>

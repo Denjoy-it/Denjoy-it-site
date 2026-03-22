@@ -1,0 +1,25 @@
+[23:09:30] Run queued.
+[23:09:30] Run mode: script
+[23:09:30] Scan type: entrafalcon
+[23:09:30] Phases: entrafalcon
+[23:09:30] Starting EntraFalcon Entra ID security assessment.
+[23:09:30] AuthFlow: BroCiManualCode
+[23:09:30] ⚠ INTERACTIEF: Volg de authenticatie-instructies in de PowerShell console.
+[23:09:31]     ______      __                ______      __
+[23:09:31]    / ____/___  / /__________ _   / ____/___ _/ /________  ____
+[23:09:31]   / __/ / __ \/ __/ ___/ __ `/  / /_  / __ `/ / ___/ __ \/ __ \
+[23:09:31]  / /___/ / / / /_/ /  / /_/ /  / __/ / /_/ / / /__/ /_/ / / / /
+[23:09:31] /_____/_/ /_/\__/_/   \__,_/  /_/    \__,_/_/\___/\____/_/ /_/
+[23:09:31] V20260316
+[23:09:31] ********************************** Main Authentication **********************************
+[23:09:31] [*] Checking session MS Graph
+[23:09:31] [i] Not yet authenticated
+[23:09:31] [*] Authenticating for MainAuth using BroCiManualCode
+[23:09:31] [i] The authentication URL has been copied to your clipboard:
+[23:09:31] https://login.microsoftonline.com/organizations/oauth2/v2.0/authorize?response_type=code&client_id=c44b4083-3bb0-49c1-b47d-974e53cbdf3c&redirect_uri=https://startups.portal.azure.com/auth/login/&state=Cn2zm66ekJRJzGIn&scope=https://graph.microsoft.com/.default offline_access&client_info=1&prompt=select_account&code_challenge=ShV5IG4CApDCRr_7AKKoVto-DjQiHbgO11BVCVIyv3Q&code_challenge_method=S256&claims={%22access_token%22:%20{%22xms_cc%22:%20{%22values%22:%20[%22CP1%22]}}}
+[23:09:31] [i] Open the URL in your browser, authenticate, and copy the full redirected URL (it contains the authorization code) to your clipboard.
+[23:09:31] [i] Press Enter when done, or press CTRL + C to abort.
+[23:09:31] [!] Authentication flow failed for MainAuth
+[23:09:31] [31;1mException: [31;1m[!] Authentication failed for MainAuth[0m
+[23:09:31] EntraFalcon process exited with code 1
+[23:09:31] Run failed: EntraFalcon exited with code 1

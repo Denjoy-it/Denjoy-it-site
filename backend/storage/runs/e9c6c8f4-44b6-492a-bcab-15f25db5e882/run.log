@@ -1,0 +1,16 @@
+[11:36:41] Run queued.
+[11:36:41] Run mode: script
+[11:36:41] Scan type: entrafalcon
+[11:36:41] Phases: entrafalcon
+[11:36:41] Starting EntraFalcon Entra ID security assessment.
+[11:36:41] AuthFlow: BroCi
+[11:36:41] [!] The current auth flow is not supported on macOS.
+[11:36:41] [!] Selected flow: BroCi (-AuthFlow BroCi)
+[11:36:41] [i] Supported non-Windows alternatives (Linux/macOS) are:
+[11:36:41]     - Auth Code + Manual Code Flow: -AuthFlow ManualCode
+[11:36:41]     - BroCi + Manual Code Flow: -AuthFlow BroCiManualCode
+[11:36:41]     - BroCi with Token: -AuthFlow BroCiToken -BroCiToken "<refresh_token>"
+[11:36:41]     - Device Code Flow: -AuthFlow DeviceCode
+[11:36:41] [i] See '/Users/demac/Downloads/De-Scripts1/denjoy-platform/assessment/EntraFalcon/README.md' for more details.
+[11:36:41] EntraFalcon process exited with code 0
+[11:36:41] Run completed.

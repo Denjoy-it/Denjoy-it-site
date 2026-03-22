@@ -1,0 +1,13 @@
+[23:08:09] Run queued.
+[23:08:09] Run mode: script
+[23:08:09] Scan type: entrafalcon
+[23:08:09] Phases: entrafalcon
+[23:08:09] Starting EntraFalcon Entra ID security assessment.
+[23:08:09] AuthFlow: BroCiToken
+[23:08:09] [31;1mWrite-Error: [0m/Users/demac/Downloads/De-Scripts1/denjoy-platform/assessment/EntraFalcon/run_EntraFalcon.ps1:148:5[0m
+[23:08:09] [31;1m[0m[36;1mLine |[0m
+[23:08:09] [31;1m[0m[36;1m[36;1m 148 | [0m     [36;1mWrite-Error "Invalid parameter combination: -AuthFlow BroCiToken [0m …[0m
+[23:08:09] [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[23:08:09] [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mInvalid parameter combination: -AuthFlow BroCiToken requires -BroCiToken.[0m
+[23:08:09] EntraFalcon process exited with code 1
+[23:08:09] Run failed: EntraFalcon exited with code 1

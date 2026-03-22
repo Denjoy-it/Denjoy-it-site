@@ -1,0 +1,15 @@
+{
+  "default_run_mode": "script",
+  "assessment_ui_v1": true,
+  "script_path": "/Users/demac/Downloads/De-Scripts1/denjoy-platform/assessment/Start-M365BaselineAssessment.ps1",
+  "auth_tenant_id": "",
+  "auth_client_id": "",
+  "auth_cert_thumbprint": "",
+  "auth_client_secret": "",
+  "entrafalcon_script_path": "/Users/demac/Downloads/De-Scripts1/denjoy-platform/assessment/EntraFalcon/run_EntraFalcon.ps1",
+  "entrafalcon_auth_flow": "DeviceCode",
+  "entrafalcon_tenant": "",
+  "entrafalcon_brocit_oken": "",
+  "entrafalcon_include_ms_apps": true,
+  "entrafalcon_csv": true
+}
