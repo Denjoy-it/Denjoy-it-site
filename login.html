@@ -506,39 +506,36 @@ async function emailLogin(e) {
   btn.textContent = 'Inloggen...';
 
   try {
-   <!-- login.html (in <script>, binnen emailLogin) -->
-const res = await fetch('/api/auth/login', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ email, password: pwd }),
-  credentials: 'include'
-});
+    const res = await fetch('/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password: pwd }),
+      credentials: 'include'
+    });
 
-// robuust: backend kan HTML teruggeven (bv. 404/502), dus eerst text lezen
-const text = await res.text();
-let data = null;
-try { data = JSON.parse(text); } catch (_) { data = null; }
+    // robuust: backend kan soms geen JSON teruggeven (bv. proxy error HTML)
+    const text = await res.text();
+    let data = null;
+    try { data = JSON.parse(text); } catch (_) { data = null; }
 
-if (!res.ok || !data || !data.ok) {
-  const msg = (data && data.error) ? data.error : `HTTP ${res.status} — ${text.slice(0, 120)}`;
-  throw new Error(msg);
-}
+    if (!res.ok || !data || !data.ok) {
+      const msg = (data && data.error) ? data.error : `HTTP ${res.status} — ${text.slice(0, 200)}`;
+      throw new Error(msg);
+    }
 
-// Sla token op in sessionStorage én localStorage (dashboard gebruikt localStorage)
-sessionStorage.setItem('denjoy_token',      data.token);
-localStorage.setItem('denjoy_token',        data.token);
+    // token consistent: dashboard gebruikt localStorage, maar we bewaren ook in sessionStorage
+    sessionStorage.setItem('denjoy_token',      data.token);
+    localStorage.setItem('denjoy_token',        data.token);
 
-sessionStorage.setItem('denjoy_role',       data.role);
-sessionStorage.setItem('denjoy_user_name',  data.display_name || data.email);
-sessionStorage.setItem('denjoy_user_email', data.email);
+    sessionStorage.setItem('denjoy_role',       data.role);
+    sessionStorage.setItem('denjoy_user_name',  data.display_name || data.email);
+    sessionStorage.setItem('denjoy_user_email', data.email);
 
-// keuze A: dashboard staat in /portal/
-window.location.href = '/portal/dashboard.html';
-
+    window.location.href = '/portal/dashboard.html';
   } catch (err) {
     btn.disabled = false;
     btn.textContent = 'Inloggen →';
-    errDiv.textContent = err.message || 'Inloggen mislukt.';
+    errDiv.textContent = (err && err.message) ? err.message : 'Inloggen mislukt.';
     errDiv.style.display = 'block';
   }
 }
@@ -566,7 +563,7 @@ async function msalLogin() {
       auth: {
         clientId,
         authority: `https://login.microsoftonline.com/${tenantId}`,
-        redirectUri: window.location.origin + '/dashboard.html'
+        redirectUri: window.location.origin + '/portal/dashboard.html'
       },
       cache: { cacheLocation: 'sessionStorage' }
     });
@@ -576,11 +573,10 @@ async function msalLogin() {
     sessionStorage.setItem('denjoy_msal_tenant_id', tenantId);
 
     await msalApp.loginRedirect({ scopes: ['User.Read', 'openid', 'profile'] });
-
   } catch (err) {
     btn.disabled = false;
     label.textContent = 'Inloggen met Microsoft';
-    errDiv.textContent = err.message || 'Login mislukt.';
+    errDiv.textContent = (err && err.message) ? err.message : 'Login mislukt.';
     errDiv.style.display = 'block';
   }
 }
@@ -588,15 +584,20 @@ async function msalLogin() {
 // Controleer of al ingelogd → direct naar portaal
 (async function checkExistingSession() {
   try {
-    const token = sessionStorage.getItem('denjoy_token');
-    if (token) {
-      const res = await fetch('/api/auth/verify', {
-        headers: { 'Authorization': `Bearer ${token}` },
-        credentials: 'include'
-      });
-      if (res.ok) {
-        window.location.href = '/dashboard.html';
-      }
+    const token = localStorage.getItem('denjoy_token') || sessionStorage.getItem('denjoy_token');
+    if (!token) return;
+
+    const res = await fetch('/api/auth/verify', {
+      headers: { 'Authorization': `Bearer ${token}` },
+      credentials: 'include'
+    });
+
+    if (res.ok) {
+      window.location.href = '/portal/dashboard.html';
+    } else {
+      // token ongeldig/verlopen → opruimen
+      localStorage.removeItem('denjoy_token');
+      sessionStorage.removeItem('denjoy_token');
     }
   } catch (_) {}
 })();
@@ -605,6 +606,7 @@ async function msalLogin() {
 (function() {
   var emailBtn = document.getElementById('emailLoginBtn');
   if (emailBtn) emailBtn.addEventListener('click', function(e) { emailLogin(e); });
+
   var msBtn = document.getElementById('msLoginBtn');
   if (msBtn) msBtn.addEventListener('click', function() { msalLogin(); });
 }());
