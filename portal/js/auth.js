@@ -5,7 +5,7 @@ const msalConfig = {
     auth: {
         clientId: localStorage.getItem('m365_clientId') || '', // Wordt ingesteld na app-registratie via bootstrap-config.json
         authority: 'https://login.microsoftonline.com/organizations', // Multi-tenant
-        redirectUri: window.location.origin + '/dashboard.html'
+        redirectUri: window.location.origin + '/portal/dashboard.html'
     },
     cache: {
         cacheLocation: 'sessionStorage',
@@ -98,7 +98,7 @@ function validateRedirectUris(cfg) {
     try {
         const configuredRedirect = cfg && cfg.redirectUri ? cfg.redirectUri : null;
         const msalRedirect = msalConfig.auth && msalConfig.auth.redirectUri ? msalConfig.auth.redirectUri : null;
-        const expectedRedirect = window.location.origin + '/dashboard.html';
+        const expectedRedirect = window.location.origin + '/portal/dashboard.html';
 
         const mismatches = [];
 
@@ -242,7 +242,7 @@ async function createAppRegistration(accessToken) {
                 signInAudience: 'AzureADMultipleOrgs',
                 web: {
                     redirectUris: [
-                        window.location.origin + '/dashboard.html',
+                        window.location.origin + '/portal/dashboard.html',
                         window.location.origin + '/web/index.html'
                     ]
                 },
