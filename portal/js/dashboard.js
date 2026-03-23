@@ -1235,7 +1235,7 @@ function setupHeaderActions() {
     signoutBtn.addEventListener('click', async () => {
       localStorage.removeItem('local_m365_current_tenant');
       try { await apiFetch('/api/auth/logout', { method: 'POST' }); } catch (_) {}
-      window.location.href = '/site/login.html';
+      window.location.href = '/login.html';
     });
   }
 
