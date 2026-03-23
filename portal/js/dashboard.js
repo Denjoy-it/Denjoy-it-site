@@ -134,7 +134,7 @@ async function apiFetch(path, options = {}) {
     if (res.status === 401) {
       // Sessie verlopen of niet ingelogd — stuur terug naar login
       localStorage.removeItem('denjoy_token');
-      window.location.href = '/site/login.html';
+      window.location.href = '/login.html';
       return null;
     }
     if (!res.ok) {
