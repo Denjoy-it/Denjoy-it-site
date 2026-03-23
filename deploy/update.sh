@@ -5,7 +5,7 @@
 # =============================================================================
 set -euo pipefail
 
-PLATFORM_DIR="/opt/denjoy-platform"
+PLATFORM_DIR="/var/www/mijn-website"
 APP_USER="denjoy"
 
 RED='\033[0;31m'; GREEN='\033[0;32m'; YELLOW='\033[1;33m'; NC='\033[0m'

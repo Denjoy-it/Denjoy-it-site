@@ -7,7 +7,7 @@
 set -euo pipefail
 
 # ------------- Configuratie --------------------------------------------------
-PLATFORM_DIR="/opt/denjoy-platform"   # Installatiemap op de LXC
+PLATFORM_DIR="/var/www/mijn-website"   # Installatiemap op de server
 APP_USER="denjoy"                      # Systeemgebruiker voor de services
 MAIN_PORT="8787"                       # app.py (hoofdbackend)
 UPLOAD_PORT="8080"                     # upload_server.py (rapport-upload + KB)

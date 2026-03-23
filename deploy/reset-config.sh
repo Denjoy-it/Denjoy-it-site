@@ -3,7 +3,7 @@
 # Denjoy Platform — Reset config.json naar Linux defaults
 # Gebruik: sudo bash reset-config.sh [--tenant-id ID] [--client-id ID] [--secret SECRET]
 # =============================================================================
-PLATFORM_DIR="/opt/denjoy-platform"
+PLATFORM_DIR="/var/www/mijn-website"
 CONFIG="${PLATFORM_DIR}/backend/storage/config.json"
 APP_USER="denjoy"
 
