@@ -1446,7 +1446,7 @@ async function _initAuth() {
   try {
     const health = await fetch('/api/health');
     if (health.ok) {
-      window.location.href = '/site/login.html';
+      window.location.href = '/login.html';
     }
   } catch (_) {
     // Backend niet bereikbaar — toon portaal zonder auth (lokale bestand-open)
@@ -1513,7 +1513,7 @@ function _applyRole(role, name, method) {
         } catch (_) {}
       }
       sessionStorage.clear();
-      window.location.href = '/site/index.html';
+      window.location.href = '/index.html';
     });
   }
 }
