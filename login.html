@@ -506,25 +506,34 @@ async function emailLogin(e) {
   btn.textContent = 'Inloggen...';
 
   try {
-    const res = await fetch('/api/auth/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password: pwd }),
-      credentials: 'include'
-    });
-    const data = await res.json();
+   <!-- login.html (in <script>, binnen emailLogin) -->
+const res = await fetch('/api/auth/login', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ email, password: pwd }),
+  credentials: 'include'
+});
 
-    if (!res.ok || !data.ok) {
-      throw new Error(data.error || 'Inloggen mislukt.');
-    }
+// robuust: backend kan HTML teruggeven (bv. 404/502), dus eerst text lezen
+const text = await res.text();
+let data = null;
+try { data = JSON.parse(text); } catch (_) { data = null; }
 
-    // Sla sessie op in sessionStorage (wordt gewist bij sluiten browser)
-    sessionStorage.setItem('denjoy_token',        data.token);
-    localStorage.setItem('denjoy_token',          data.token);
-    sessionStorage.setItem('denjoy_role',          data.role);
-    sessionStorage.setItem('denjoy_user_name',     data.display_name || data.email);
-    sessionStorage.setItem('denjoy_user_email',    data.email);
-    window.location.href = '/portal/dashboard.html';
+if (!res.ok || !data || !data.ok) {
+  const msg = (data && data.error) ? data.error : `HTTP ${res.status} — ${text.slice(0, 120)}`;
+  throw new Error(msg);
+}
+
+// Sla token op in sessionStorage én localStorage (dashboard gebruikt localStorage)
+sessionStorage.setItem('denjoy_token',      data.token);
+localStorage.setItem('denjoy_token',        data.token);
+
+sessionStorage.setItem('denjoy_role',       data.role);
+sessionStorage.setItem('denjoy_user_name',  data.display_name || data.email);
+sessionStorage.setItem('denjoy_user_email', data.email);
+
+// keuze A: dashboard staat in /portal/
+window.location.href = '/portal/dashboard.html';
 
   } catch (err) {
     btn.disabled = false;
