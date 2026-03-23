@@ -520,10 +520,11 @@ async function emailLogin(e) {
 
     // Sla sessie op in sessionStorage (wordt gewist bij sluiten browser)
     sessionStorage.setItem('denjoy_token',        data.token);
+    localStorage.setItem('denjoy_token',          data.token);
     sessionStorage.setItem('denjoy_role',          data.role);
     sessionStorage.setItem('denjoy_user_name',     data.display_name || data.email);
     sessionStorage.setItem('denjoy_user_email',    data.email);
-    window.location.href = '/dashboard.html';
+    window.location.href = '/portal/dashboard.html';
 
   } catch (err) {
     btn.disabled = false;
