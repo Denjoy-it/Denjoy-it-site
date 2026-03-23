@@ -551,7 +551,7 @@ async function msalLogin() {
   label.textContent = 'Verbinden...';
 
   try {
-    const cfg      = await fetch('/api/config').then(r => r.json()).catch(() => ({}));
+    const cfg      = await fetch('/api/auth/msal-config').then(r => r.json()).catch(() => ({}));
     const clientId = cfg.auth_client_id || '';
     const tenantId = cfg.auth_tenant_id || 'organizations';
 
