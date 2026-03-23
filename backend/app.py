@@ -392,6 +392,7 @@ _OPEN_API_PATHS = frozenset({
     "/api/auth/microsoft",
     "/api/auth/verify",
     "/api/auth/csrf-token",
+    "/api/auth/msal-config",
     "/api/health",
 })
 
@@ -1824,6 +1825,11 @@ class RunManager:
         cert_thumb  = (cfg.get("auth_cert_thumbprint") or "").strip()
         client_sec  = (cfg.get("auth_client_secret")   or "").strip()
 
+        # env aanmaken vóór gebruik (fix: was na de client_sec blok)
+        env = os.environ.copy()
+        env["M365_BASELINE_NONINTERACTIVE"] = "1"
+        env["CI"] = env.get("CI", "1")
+
         if tenant_id:
             cmd += ["-TenantId", tenant_id]
         if client_id:
@@ -1831,16 +1837,12 @@ class RunManager:
         if cert_thumb:
             cmd += ["-CertThumbprint", cert_thumb]
         elif client_sec:
-            # Client secret als beveiligde string meegeven via omgevingsvariabele
+            # Client secret via omgevingsvariabele (nooit als plaintext in cmd)
             env["M365_CLIENT_SECRET"] = client_sec
             cmd += ["-ClientSecret",
                     "(ConvertTo-SecureString $env:M365_CLIENT_SECRET -AsPlainText -Force)"]
         append_run_log(run_id, "Starting PowerShell assessment.")
         append_run_log(run_id, "Command: " + " ".join(cmd))
-
-        env = os.environ.copy()
-        env["M365_BASELINE_NONINTERACTIVE"] = "1"
-        env["CI"] = env.get("CI", "1")
         proc = subprocess.Popen(
             cmd,
             cwd=str(PLATFORM_DIR / "assessment"),
@@ -1945,6 +1947,121 @@ class RunManager:
 
 
 RUN_MANAGER = RunManager()
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# USER MANAGEMENT
+# ══════════════════════════════════════════════════════════════════════════════
+
+_GOD_ADMIN_EMAIL = os.environ.get("DENJOY_ADMIN_EMAIL", "schiphorst.d@gmail.com").strip().lower()
+
+
+def list_users() -> List[Dict[str, Any]]:
+    rows = db_fetchall(
+        "SELECT id, email, role, display_name, linked_tenant_id, is_active, created_at "
+        "FROM users ORDER BY role DESC, created_at ASC"
+    )
+    result = []
+    for r in rows:
+        d = dict(r)
+        d["is_god_admin"] = (d["email"].lower() == _GOD_ADMIN_EMAIL)
+        result.append(d)
+    return result
+
+
+def get_user(user_id: str) -> Optional[Dict[str, Any]]:
+    row = db_fetchone(
+        "SELECT id, email, role, display_name, linked_tenant_id, is_active, created_at "
+        "FROM users WHERE id=?", (user_id,)
+    )
+    if not row:
+        return None
+    d = dict(row)
+    d["is_god_admin"] = (d["email"].lower() == _GOD_ADMIN_EMAIL)
+    return d
+
+
+def create_user_account(payload: Dict[str, Any]) -> Dict[str, Any]:
+    email = (payload.get("email") or "").strip().lower()
+    password = (payload.get("password") or "").strip()
+    role = (payload.get("role") or "klant").strip()
+    display_name = (payload.get("display_name") or "").strip()
+    linked_tenant_id = payload.get("linked_tenant_id") or None
+
+    if not email:
+        raise ValueError("E-mailadres is verplicht.")
+    if not password:
+        raise ValueError("Wachtwoord is verplicht.")
+    if len(password) < 8:
+        raise ValueError("Wachtwoord moet minimaal 8 tekens zijn.")
+    if role not in ("admin", "klant"):
+        raise ValueError("Ongeldige rol — kies 'admin' of 'klant'.")
+    if db_fetchone("SELECT id FROM users WHERE lower(email)=?", (email,)):
+        raise ValueError(f"E-mailadres '{email}' bestaat al.")
+
+    pw_hash, salt = _hash_pw(password)
+    uid = str(uuid.uuid4())
+    db_execute(
+        "INSERT INTO users (id, email, password_hash, salt, role, display_name, "
+        "linked_tenant_id, is_active, created_at) VALUES (?,?,?,?,?,?,?,1,?)",
+        (uid, email, pw_hash, salt, role, display_name, linked_tenant_id, now_iso())
+    )
+    return get_user(uid)
+
+
+def update_user_account(user_id: str, payload: Dict[str, Any], requesting_email: str) -> Dict[str, Any]:
+    user = get_user(user_id)
+    if not user:
+        raise ValueError("Gebruiker niet gevonden.")
+
+    is_god = user["email"].lower() == _GOD_ADMIN_EMAIL
+    updates: Dict[str, Any] = {}
+
+    if "display_name" in payload:
+        updates["display_name"] = (payload["display_name"] or "").strip()
+    if "role" in payload:
+        if is_god:
+            raise ValueError("De rol van het God-Admin account kan niet worden gewijzigd.")
+        if payload["role"] not in ("admin", "klant"):
+            raise ValueError("Ongeldige rol.")
+        updates["role"] = payload["role"]
+    if "linked_tenant_id" in payload:
+        updates["linked_tenant_id"] = payload["linked_tenant_id"] or None
+    if "is_active" in payload:
+        if is_god and not payload["is_active"]:
+            raise ValueError("Het God-Admin account kan niet worden gedeactiveerd.")
+        updates["is_active"] = 1 if payload["is_active"] else 0
+    if "password" in payload and payload["password"]:
+        pw = payload["password"].strip()
+        if len(pw) < 8:
+            raise ValueError("Wachtwoord moet minimaal 8 tekens zijn.")
+        pw_hash, salt = _hash_pw(pw)
+        updates["password_hash"] = pw_hash
+        updates["salt"] = salt
+
+    if not updates:
+        return user
+
+    set_clause = ", ".join(f"{k}=?" for k in updates)
+    db_execute(f"UPDATE users SET {set_clause} WHERE id=?", list(updates.values()) + [user_id])
+    return get_user(user_id)
+
+
+def delete_user_account(user_id: str, requesting_email: str) -> Dict[str, Any]:
+    user = get_user(user_id)
+    if not user:
+        raise ValueError("Gebruiker niet gevonden.")
+    if user["email"].lower() == _GOD_ADMIN_EMAIL:
+        raise ValueError("Het God-Admin account kan niet worden verwijderd.")
+    if user["email"].lower() == requesting_email.lower():
+        raise ValueError("Je kunt je eigen account niet verwijderen.")
+    # Verwijder actieve sessies van deze gebruiker
+    db_execute("DELETE FROM sessions WHERE user_id=?", (user_id,))
+    db_execute("DELETE FROM users WHERE id=?", (user_id,))
+    return {"ok": True, "deleted_id": user_id}
+
+
+# ══════════════════════════════════════════════════════════════════════════════
 
 
 def list_tenants() -> List[Dict[str, Any]]:
@@ -2530,6 +2647,13 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(401, {"ok": False, "error": "Niet ingelogd"})
             if path == "/api/health":
                 return self._json(200, {"ok": True, "projectDir": str(PLATFORM_DIR)})
+            if path == "/api/auth/msal-config":
+                # Publiek endpoint — geeft alleen de niet-geheime MSAL-instellingen terug
+                cfg = load_config()
+                return self._json(200, {
+                    "auth_client_id": cfg.get("auth_client_id", ""),
+                    "auth_tenant_id": cfg.get("auth_tenant_id", ""),
+                })
             if path == "/api/auth/csrf-token":
                 # Geeft een sessie-gebonden CSRF-token terug (voor toekomstige header-validatie)
                 sess = _get_session_from_request(self)
@@ -2537,6 +2661,14 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(200, {"csrf_token": token})
             if path == "/api/config":
                 return self._json(200, load_config())
+            # ── Gebruikersbeheer ──
+            if path == "/api/users":
+                return self._json(200, {"items": list_users()})
+            if re.fullmatch(r"/api/users/[^/]+", path):
+                u = get_user(path.split("/")[3])
+                if not u:
+                    return self._json(404, {"error": "Gebruiker niet gevonden"})
+                return self._json(200, u)
             if path == "/api/tenants":
                 return self._json(200, {"items": list_tenants()})
             if re.fullmatch(r"/api/tenants/[^/]+", path):
@@ -2804,6 +2936,13 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(200, apply_retention_policy(tenant_id, keep_latest, keep_days))
             if path == "/api/runs":
                 return self._json(201, create_run(self._read_json()))
+            # ── Gebruikersbeheer ──
+            if path == "/api/users":
+                return self._json(201, create_user_account(self._read_json()))
+            if re.fullmatch(r"/api/users/[^/]+/reset-password", path):
+                uid = path.split("/")[3]
+                pwd = (self._read_json().get("password") or "").strip()
+                return self._json(200, update_user_account(uid, {"password": pwd}, _sess.get("email", "")))
             if path == "/api/config":
                 payload = self._read_json()
                 cfg = load_config()
@@ -2858,6 +2997,10 @@ class Handler(BaseHTTPRequestHandler):
                 tenant_id = path.split("/")[3]
                 mode = parse_qs(parsed.query).get("mode", ["soft"])[0]
                 return self._json(200, delete_tenant(tenant_id, mode))
+            # ── Gebruikersbeheer ──
+            if re.fullmatch(r"/api/users/[^/]+", path):
+                uid = path.split("/")[3]
+                return self._json(200, delete_user_account(uid, _sess.get("email", "")))
             if re.fullmatch(r"/api/runs/[^/]+", path):
                 run_id = path.split("/")[3]
                 return self._json(200, delete_run(run_id))
@@ -2908,6 +3051,10 @@ class Handler(BaseHTTPRequestHandler):
             if re.fullmatch(r"/api/tenants/[^/]+", path):
                 tenant_id = path.split("/")[3]
                 return self._json(200, update_tenant(tenant_id, self._read_json()))
+            # ── Gebruikersbeheer ──
+            if re.fullmatch(r"/api/users/[^/]+", path):
+                uid = path.split("/")[3]
+                return self._json(200, update_user_account(uid, self._read_json(), _sess.get("email", "")))
             if re.fullmatch(r"/api/actions/[^/]+", path):
                 action_id = path.split("/")[3]
                 return self._json(200, update_action(action_id, self._read_json()))
@@ -2956,16 +3103,30 @@ class Handler(BaseHTTPRequestHandler):
             return self._json(500, {"error": "Interne serverfout."})
 
     def _serve_web(self, path: str) -> None:
-        if path in ("", "/"):
-            fp = WEB_DIR / "dashboard.html"
+        # /portal/... → portalbestanden (WEB_DIR)
+        if path.startswith("/portal/") or path in ("/portal", "/portal/"):
+            if path in ("/portal", "/portal/"):
+                fp = WEB_DIR / "index.html"
+            else:
+                rel = unquote(path[len("/portal/"):])
+                if ".." in Path(rel).parts:
+                    self.send_error(403)
+                    return
+                fp = WEB_DIR / rel
+                if fp.is_dir():
+                    fp = fp / "index.html"
         else:
-            rel = unquote(path.lstrip("/"))
-            if ".." in Path(rel).parts:
-                self.send_error(403)
-                return
-            fp = WEB_DIR / rel
-            if fp.is_dir():
-                fp = fp / "index.html"
+            # / en overige statische bestanden → hoofdwebsite (PLATFORM_DIR)
+            if path in ("", "/"):
+                fp = PLATFORM_DIR / "index.html"
+            else:
+                rel = unquote(path.lstrip("/"))
+                if ".." in Path(rel).parts:
+                    self.send_error(403)
+                    return
+                fp = PLATFORM_DIR / rel
+                if fp.is_dir():
+                    fp = fp / "index.html"
         if not fp.exists() or not fp.is_file():
             self.send_error(404)
             return

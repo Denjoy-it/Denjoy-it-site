@@ -60,6 +60,14 @@ const API = {
     changelogItem: (tid, id) => `/api/kb/${tid}/changelog/${id}`,
     meta:       (tid) => `/api/kb/${tid}/meta`,
   },
+  users: {
+    list:          () => '/api/users',
+    get:           (id) => `/api/users/${id}`,
+    create:        () => '/api/users',
+    update:        (id) => `/api/users/${id}`,
+    delete:        (id) => `/api/users/${id}`,
+    resetPassword: (id) => `/api/users/${id}/reset-password`,
+  },
 };
 
 let currentTenantId = null;
@@ -347,6 +355,8 @@ function switchSettingsTab(tabName) {
   panes.forEach((pane) => pane.classList.toggle('active', pane.dataset.tab === tabName));
   // Sync subnav actief item
   if (_currentSection === 'settings') setActiveSubnavItem(tabName);
+  // Laad gebruikerstabel als de tab actief wordt
+  if (tabName === 'users') loadUsersTab();
 }
 window.switchSettingsTab = switchSettingsTab;
 
@@ -1235,7 +1245,7 @@ function setupHeaderActions() {
     signoutBtn.addEventListener('click', async () => {
       localStorage.removeItem('local_m365_current_tenant');
       try { await apiFetch('/api/auth/logout', { method: 'POST' }); } catch (_) {}
-      window.location.href = '/login.html';
+      window.location.href = '/';
     });
   }
 
@@ -1313,5 +1323,204 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       showResultsPanel(tab.dataset.resultsPanel);
     });
+  });
+});
+
+// ══════════════════════════════════════════════════════════════════════════════
+// GEBRUIKERSBEHEER
+// ══════════════════════════════════════════════════════════════════════════════
+
+let _umAllTenants = [];   // cache van tenants voor de dropdown
+let _umEditUserId = null; // null = nieuw, string = bewerken
+
+// ── Tabel laden ───────────────────────────────────────────────────────────────
+
+async function loadUsersTab() {
+  const tbody = document.getElementById('usersTableBody');
+  if (!tbody) return;
+  tbody.innerHTML = '<tr><td colspan="7" class="empty-state">Laden...</td></tr>';
+  try {
+    const data = await apiFetch(API.users.list());
+    const users = data.items || [];
+    if (!users.length) {
+      tbody.innerHTML = '<tr><td colspan="7" class="empty-state">Geen accounts gevonden.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = users.map(u => {
+      const isGod    = u.is_god_admin;
+      const roleBadge = u.role === 'admin'
+        ? `<span style="padding:2px 8px;border-radius:999px;background:#ff6b2b;color:#fff;font-size:11px;font-weight:700;">${isGod ? '👑 God-Admin' : 'Admin'}</span>`
+        : `<span style="padding:2px 8px;border-radius:999px;background:#64748b;color:#fff;font-size:11px;font-weight:600;">Klant</span>`;
+      const statusBadgeHtml = u.is_active
+        ? `<span style="padding:2px 8px;border-radius:999px;background:#16a34a;color:#fff;font-size:11px;">Actief</span>`
+        : `<span style="padding:2px 8px;border-radius:999px;background:#dc2626;color:#fff;font-size:11px;">Inactief</span>`;
+      const tenantName = _umAllTenants.find(t => t.id === u.linked_tenant_id)?.customer_name || (u.linked_tenant_id ? u.linked_tenant_id.slice(0,8)+'…' : '—');
+      const editBtn   = `<button type="button" class="btn btn-secondary" style="font-size:12px;padding:3px 10px;" onclick="openUserModal('${escapeHtml(u.id)}')">Bewerken</button>`;
+      const deleteBtn = isGod ? '' : `<button type="button" class="btn btn-warning" style="font-size:12px;padding:3px 10px;margin-left:4px;" onclick="confirmDeleteUser('${escapeHtml(u.id)}','${escapeHtml(u.email)}')">Verwijderen</button>`;
+      return `<tr>
+        <td>${escapeHtml(u.display_name || '—')}</td>
+        <td>${escapeHtml(u.email)}</td>
+        <td>${roleBadge}</td>
+        <td>${escapeHtml(tenantName)}</td>
+        <td>${statusBadgeHtml}</td>
+        <td style="font-size:12px;">${u.created_at ? new Date(u.created_at).toLocaleDateString('nl-NL') : '—'}</td>
+        <td>${editBtn}${deleteBtn}</td>
+      </tr>`;
+    }).join('');
+  } catch (err) {
+    tbody.innerHTML = `<tr><td colspan="7" class="empty-state" style="color:#dc2626;">${escapeHtml(String(err))}</td></tr>`;
+  }
+}
+
+// ── Modal: openen ─────────────────────────────────────────────────────────────
+
+async function openUserModal(userId) {
+  _umEditUserId = userId || null;
+  const modal  = document.getElementById('userModal');
+  const title  = document.getElementById('userModalTitle');
+  const errDiv = document.getElementById('userModalError');
+  const pwGroup     = document.getElementById('userModalPasswordGroup');
+  const pwHintGroup = document.getElementById('userModalPasswordHint');
+  const activeGroup = document.getElementById('userModalActiveGroup');
+
+  errDiv.style.display = 'none';
+
+  // Tenant dropdown vullen
+  await _umFillTenantDropdown();
+
+  if (!_umEditUserId) {
+    // Nieuw account
+    title.textContent = 'Nieuw account';
+    document.getElementById('userModalId').value       = '';
+    document.getElementById('userModalName').value     = '';
+    document.getElementById('userModalEmail').value    = '';
+    document.getElementById('userModalEmail').disabled = false;
+    document.getElementById('userModalRole').value     = 'klant';
+    document.getElementById('userModalTenant').value   = '';
+    document.getElementById('userModalPassword').value = '';
+    document.getElementById('userModalActive').checked = true;
+    pwGroup.style.display      = '';
+    pwHintGroup.style.display  = 'none';
+    activeGroup.style.display  = '';
+  } else {
+    // Bestaande gebruiker laden
+    title.textContent = 'Account bewerken';
+    try {
+      const u = await apiFetch(API.users.get(_umEditUserId));
+      document.getElementById('userModalId').value       = u.id;
+      document.getElementById('userModalName').value     = u.display_name || '';
+      document.getElementById('userModalEmail').value    = u.email;
+      document.getElementById('userModalEmail').disabled = true; // e-mail niet wijzigbaar
+      document.getElementById('userModalRole').value     = u.role;
+      document.getElementById('userModalTenant').value   = u.linked_tenant_id || '';
+      document.getElementById('userModalPasswordEdit').value = '';
+      document.getElementById('userModalActive').checked = !!u.is_active;
+      pwGroup.style.display     = 'none';
+      pwHintGroup.style.display = '';
+      activeGroup.style.display = '';
+      // God-admin: rol & actief vergrendelen
+      if (u.is_god_admin) {
+        document.getElementById('userModalRole').disabled   = true;
+        document.getElementById('userModalActive').disabled = true;
+      } else {
+        document.getElementById('userModalRole').disabled   = false;
+        document.getElementById('userModalActive').disabled = false;
+      }
+    } catch (err) {
+      alert('Kan gebruiker niet laden: ' + err.message);
+      return;
+    }
+  }
+
+  modal.style.display = 'flex';
+}
+window.openUserModal = openUserModal;
+
+async function _umFillTenantDropdown() {
+  try {
+    const data = await apiFetch(API.tenants.list());
+    _umAllTenants = data.items || [];
+  } catch (_) {
+    _umAllTenants = allTenants || [];
+  }
+  const sel = document.getElementById('userModalTenant');
+  const cur = sel.value;
+  sel.innerHTML = '<option value="">— Geen —</option>' +
+    _umAllTenants.map(t => `<option value="${escapeHtml(t.id)}">${escapeHtml(t.customer_name)} (${escapeHtml(t.tenant_name)})</option>`).join('');
+  sel.value = cur;
+}
+
+// ── Modal: opslaan ────────────────────────────────────────────────────────────
+
+async function saveUserModal() {
+  const errDiv   = document.getElementById('userModalError');
+  const saveBtn  = document.getElementById('userModalSaveBtn');
+  errDiv.style.display = 'none';
+  saveBtn.disabled = true;
+  saveBtn.textContent = 'Opslaan...';
+
+  try {
+    const name     = document.getElementById('userModalName').value.trim();
+    const email    = document.getElementById('userModalEmail').value.trim().toLowerCase();
+    const role     = document.getElementById('userModalRole').value;
+    const tenantId = document.getElementById('userModalTenant').value || null;
+    const isActive = document.getElementById('userModalActive').checked;
+
+    if (_umEditUserId) {
+      // Bewerken
+      const pwEdit = document.getElementById('userModalPasswordEdit').value.trim();
+      const payload = { display_name: name, role, linked_tenant_id: tenantId, is_active: isActive };
+      if (pwEdit) payload.password = pwEdit;
+      await apiFetch(API.users.update(_umEditUserId), { method: 'PATCH', body: JSON.stringify(payload) });
+    } else {
+      // Nieuw
+      const pw = document.getElementById('userModalPassword').value.trim();
+      if (!email) throw new Error('E-mailadres is verplicht.');
+      if (!pw)    throw new Error('Wachtwoord is verplicht.');
+      await apiFetch(API.users.create(), { method: 'POST', body: JSON.stringify({
+        email, display_name: name, role, linked_tenant_id: tenantId, password: pw, is_active: true,
+      })});
+    }
+
+    closeUserModal();
+    loadUsersTab();
+  } catch (err) {
+    errDiv.textContent = err.message || String(err);
+    errDiv.style.display = 'block';
+  } finally {
+    saveBtn.disabled = false;
+    saveBtn.textContent = 'Opslaan';
+  }
+}
+
+function closeUserModal() {
+  const modal = document.getElementById('userModal');
+  if (modal) modal.style.display = 'none';
+  _umEditUserId = null;
+}
+
+// ── Verwijderen ───────────────────────────────────────────────────────────────
+
+async function confirmDeleteUser(userId, email) {
+  if (!confirm(`Weet je zeker dat je het account '${email}' permanent wilt verwijderen?\nActieve sessies worden direct beëindigd.`)) return;
+  try {
+    await apiFetch(API.users.delete(userId), { method: 'DELETE' });
+    loadUsersTab();
+  } catch (err) {
+    alert('Verwijderen mislukt: ' + (err.message || err));
+  }
+}
+window.confirmDeleteUser = confirmDeleteUser;
+
+// ── Event listeners ───────────────────────────────────────────────────────────
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('openCreateUserModalBtn')?.addEventListener('click', () => openUserModal(null));
+  document.getElementById('refreshUsersBtn')?.addEventListener('click', loadUsersTab);
+  document.getElementById('userModalSaveBtn')?.addEventListener('click', saveUserModal);
+  document.getElementById('userModalCancelBtn')?.addEventListener('click', closeUserModal);
+  // Klik buiten modal = sluiten
+  document.getElementById('userModal')?.addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) closeUserModal();
   });
 });

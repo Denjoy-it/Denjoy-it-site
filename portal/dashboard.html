@@ -1144,6 +1144,7 @@
                 <div class="settings-panel">
                     <div class="settings-tabs" role="tablist">
                         <button type="button" class="settings-tab active" data-tab="tenant" onclick="switchSettingsTab('tenant')">Tenants</button>
+                        <button type="button" class="settings-tab" data-tab="users" onclick="switchSettingsTab('users')">Gebruikers</button>
                         <button type="button" class="settings-tab" data-tab="general" onclick="switchSettingsTab('general')">Configuratie</button>
                         <button type="button" class="settings-tab" data-tab="integrations" onclick="switchSettingsTab('integrations')">Integraties</button>
                     </div>
@@ -1276,6 +1277,74 @@
                         </div>
                         <div class="settings-actions-row" style="margin-top:10px;">
                             <button id="refreshTenantManagementButton" class="btn btn-secondary">Lijst verversen</button>
+                        </div>
+                    </div>
+
+                    <!-- ── GEBRUIKERSBEHEER TAB ── -->
+                    <div class="settings-pane" data-tab="users">
+                        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;">
+                            <h3 style="margin:0;">Accounts</h3>
+                            <button type="button" class="btn btn-primary" id="openCreateUserModalBtn">+ Nieuw account</button>
+                        </div>
+                        <p class="setting-info" style="margin-bottom:1rem;">
+                            Beheer lokale accounts. Het <strong>God-Admin</strong> account is vergrendeld en kan niet worden verwijderd of gewijzigd in rol.
+                        </p>
+                        <div class="results-runs-table-wrap">
+                            <table class="results-runs-table" id="usersTable">
+                                <thead>
+                                    <tr>
+                                        <th>Naam</th>
+                                        <th>E-mail</th>
+                                        <th>Rol</th>
+                                        <th>Tenant</th>
+                                        <th>Status</th>
+                                        <th>Aangemaakt</th>
+                                        <th>Acties</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="usersTableBody">
+                                    <tr><td colspan="7" class="empty-state">Gebruikers laden...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="settings-actions-row" style="margin-top:10px;">
+                            <button type="button" class="btn btn-secondary" id="refreshUsersBtn">Lijst verversen</button>
+                        </div>
+                    </div>
+
+                    <!-- ── MODAL: Gebruiker aanmaken / bewerken ── -->
+                    <div id="userModal" class="nb-modal" style="display:none;" role="dialog" aria-modal="true">
+                        <div class="nb-modal-inner" style="max-width:480px;">
+                            <h3 id="userModalTitle">Nieuw account</h3>
+                            <input type="hidden" id="userModalId">
+                            <div class="nb-form-grid">
+                                <label class="nb-form-full">Naam<input type="text" id="userModalName" class="nb-input" placeholder="Volledige naam"></label>
+                                <label class="nb-form-full">E-mailadres *<input type="email" id="userModalEmail" class="nb-input" placeholder="naam@bedrijf.nl"></label>
+                                <label>Rol *
+                                    <select id="userModalRole" class="nb-input">
+                                        <option value="klant">Klant (alleen lezen)</option>
+                                        <option value="admin">Admin (volledig beheer)</option>
+                                    </select>
+                                </label>
+                                <label>Gekoppelde Tenant
+                                    <select id="userModalTenant" class="nb-input">
+                                        <option value="">— Geen —</option>
+                                    </select>
+                                </label>
+                                <label class="nb-form-full" id="userModalPasswordGroup">Wachtwoord *<input type="password" id="userModalPassword" class="nb-input" placeholder="Minimaal 8 tekens" autocomplete="new-password"></label>
+                                <label class="nb-form-full" id="userModalPasswordHint" style="display:none;">Nieuw wachtwoord<input type="password" id="userModalPasswordEdit" class="nb-input" placeholder="Leeglaten om ongewijzigd te laten" autocomplete="new-password"></label>
+                                <label class="nb-form-full" id="userModalActiveGroup">
+                                    <span style="display:flex;align-items:center;gap:.5rem;margin-top:.4rem;">
+                                        <input type="checkbox" id="userModalActive" checked style="width:15px;height:15px;accent-color:var(--orange);">
+                                        <span>Account actief</span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div id="userModalError" style="display:none;margin-top:.75rem;padding:.65rem 1rem;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:8px;font-size:.82rem;color:#dc2626;"></div>
+                            <div class="nb-modal-actions">
+                                <button type="button" class="nb-btn nb-btn-primary" id="userModalSaveBtn">Opslaan</button>
+                                <button type="button" class="nb-btn nb-btn-secondary" id="userModalCancelBtn">Annuleren</button>
+                            </div>
                         </div>
                     </div>
 
