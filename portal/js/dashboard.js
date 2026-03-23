@@ -184,9 +184,10 @@ const SUBNAV_CONFIG = {
     { label: 'Wijzigingslog',  kbTab: 'changelog', countId: 'nbCountChangelog' },
   ],
   settings: [
-    { label: 'Tenants',      settingsTab: 'tenant' },
-    { label: 'Configuratie', settingsTab: 'general' },
-    { label: 'Integraties',  settingsTab: 'integrations' },
+    { label: 'Tenants',       settingsTab: 'tenant' },
+    { label: 'Gebruikers',    settingsTab: 'users' },
+    { label: 'Configuratie',  settingsTab: 'general' },
+    { label: 'Integraties',   settingsTab: 'integrations' },
   ],
 };
 
@@ -1291,15 +1292,48 @@ function setupSettingsActions() {
   }
 }
 
+// Actieve sessierol — wordt ingesteld door bootstrap()
+let _currentRole = 'klant';
+
 async function bootstrap() {
   try {
-    const displayName = 'Lokaal';
+    // ── Sessie ophalen en rol bepalen ────────────────────────────────────────
+    let displayName = 'Gebruiker';
+    try {
+      const token = localStorage.getItem('denjoy_token') || sessionStorage.getItem('denjoy_token');
+      const headers = token ? { 'Authorization': `Bearer ${token}` } : {};
+      const sessRes = await fetch('/api/auth/verify', { headers, credentials: 'include' });
+      if (sessRes.status === 401) {
+        localStorage.removeItem('denjoy_token');
+        window.location.href = '/login.html';
+        return;
+      }
+      if (sessRes.ok) {
+        const sess = await sessRes.json();
+        _currentRole   = sess.role || 'klant';
+        displayName    = sess.display_name || sess.email || 'Gebruiker';
+        // Sla rol op zodat andere onderdelen hem kunnen lezen
+        sessionStorage.setItem('denjoy_role',       _currentRole);
+        sessionStorage.setItem('denjoy_user_name',  displayName);
+        sessionStorage.setItem('denjoy_user_email', sess.email || '');
+      }
+    } catch (_) { /* netwerk fout — toon toch de pagina */ }
+
+    // ── Gebruikersnaam in header tonen ───────────────────────────────────────
     const userNameEl = document.getElementById('userName');
     if (userNameEl) userNameEl.textContent = displayName;
     const initialsEl = document.getElementById('userInitials');
     if (initialsEl) initialsEl.textContent = getInitials(displayName);
     const avatarBtn = document.getElementById('userAvatarBtn');
     if (avatarBtn) avatarBtn.title = displayName;
+
+    // ── Rol-gebaseerde UI: verberg Admin nav voor niet-admins ─────────────────
+    if (_currentRole !== 'admin') {
+      document.querySelectorAll('.portal-nav-link[data-section="settings"]').forEach((el) => {
+        el.closest('li')?.remove();
+      });
+    }
+
     initThemeControls();
     setupNavigation();
     setupHeaderActions();
