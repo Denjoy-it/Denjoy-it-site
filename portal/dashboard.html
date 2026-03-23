@@ -1358,18 +1358,12 @@
 <script src="js/kb.js"></script>
 
 <script>
-// ══════════════════════════════════════════════════════════
-// DENJOY PORTAL — Auth & Role-based access control
-// ══════════════════════════════════════════════════════════
-
-let _currentRole = 'klant';
-let _msalAppInstance = null;
-
 async function _initAuth() {
   let role = 'klant';
   let name = 'Ingelogd';
-  // localStorage zodat token bewaard blijft na page refresh
-  let token = localStorage.getItem('denjoy_token');
+
+  // Token kan in localStorage OF sessionStorage staan (we ondersteunen beide)
+  let token = localStorage.getItem('denjoy_token') || sessionStorage.getItem('denjoy_token');
 
   // ── 1. Lokale sessie (admin of klant met lokaal account) ──
   if (token) {
@@ -1386,7 +1380,11 @@ async function _initAuth() {
         return;
       }
     } catch (_) {}
+
+    // Token ongeldig/verlopen → opruimen
     localStorage.removeItem('denjoy_token');
+    sessionStorage.removeItem('denjoy_token');
+    token = null;
   }
 
   // ── 2. MSAL redirect afhandeling (klant via Microsoft) ──
@@ -1399,10 +1397,12 @@ async function _initAuth() {
         auth: {
           clientId,
           authority: `https://login.microsoftonline.com/${tenantId}`,
-          redirectUri: window.location.origin + '/dashboard.html'
+          // FIX: dashboard staat in /portal/
+          redirectUri: window.location.origin + '/portal/dashboard.html'
         },
         cache: { cacheLocation: 'sessionStorage' }
       });
+
       await msalApp.initialize();
       _msalAppInstance = msalApp;
 
@@ -1423,9 +1423,14 @@ async function _initAuth() {
             body: JSON.stringify({ email, name, tenant_id: msalTenantId }),
             credentials: 'include'
           });
+
           if (regRes.ok) {
             const regData = await regRes.json();
+
+            // FIX: token opslaan in localStorage én sessionStorage
             localStorage.setItem('denjoy_token', regData.token);
+            sessionStorage.setItem('denjoy_token', regData.token);
+
             role = regData.role || 'klant';
             name = regData.display_name || name;
           }
@@ -1433,11 +1438,12 @@ async function _initAuth() {
 
         sessionStorage.setItem('denjoy_user_name',  name);
         sessionStorage.setItem('denjoy_user_email', email);
+
         _applyRole(role, name, 'msal');
         return;
       }
     } catch (err) {
-      console.warn('MSAL init:', err.message);
+      console.warn('MSAL init:', err && err.message ? err.message : err);
     }
   }
 
@@ -1446,6 +1452,7 @@ async function _initAuth() {
   try {
     const health = await fetch('/api/health');
     if (health.ok) {
+      // FIX: login staat op /login.html (niet /site/login.html)
       window.location.href = '/login.html';
     }
   } catch (_) {
@@ -1453,73 +1460,6 @@ async function _initAuth() {
     _applyRole('admin', 'Lokaal', 'local');
   }
 }
-
-function _applyRole(role, name, method) {
-  _currentRole = role;
-
-  // Naam tonen in topbar
-  const nameEl = document.getElementById('userName');
-  if (nameEl) nameEl.textContent = name;
-
-  // Role-badge onder de naam
-  const badge = document.createElement('span');
-  badge.style.cssText = 'font-family:var(--mono);font-size:0.58rem;opacity:0.45;display:block;margin-top:1px;';
-  badge.textContent = role === 'admin' ? '⚙ Beheerder' : '👁 Alleen lezen';
-  if (nameEl) nameEl.appendChild(badge);
-
-  // ── Klant: verberg beheer-functies ──
-  if (role === 'klant') {
-    // Verberg: Start Assessment, Instellingen, Ververs-knop
-    const adminSections = ['assessment', 'settings'];
-    adminSections.forEach(s => {
-      const navItem = document.querySelector(`.nav-item[data-section="${s}"]`);
-      if (navItem) navItem.style.display = 'none';
-    });
-    const refreshBtn = document.getElementById('logoutButton');
-    if (refreshBtn) refreshBtn.style.display = 'none';
-
-    // Als huidige sectie een admin-sectie is, switch naar overview
-    if (adminSections.includes(window._currentSection)) {
-      if (typeof showSection === 'function') showSection('overview');
-    }
-  }
-
-  // ── Afmeld-knop koppelen ──
-  const logoutBtn = document.querySelector('.sidebar-logout-btn');
-  if (logoutBtn) {
-    logoutBtn.addEventListener('click', async (e) => {
-      e.preventDefault();
-      // Backend sessie verwijderen
-      const t = localStorage.getItem('denjoy_token');
-      if (t) {
-        await fetch('/api/auth/logout', {
-          method: 'POST',
-          headers: { 'Authorization': `Bearer ${t}` },
-          credentials: 'include'
-        }).catch(() => {});
-      }
-      localStorage.removeItem('denjoy_token');
-      // MSAL logout indien van toepassing
-      if (method === 'msal' && _msalAppInstance) {
-        try {
-          const accounts = _msalAppInstance.getAllAccounts();
-          if (accounts.length > 0) {
-            await _msalAppInstance.logoutRedirect({
-              account: accounts[0],
-              postLogoutRedirectUri: window.location.origin + '/site/index.html'
-            });
-            return;
-          }
-        } catch (_) {}
-      }
-      sessionStorage.clear();
-      window.location.href = '/index.html';
-    });
-  }
-}
-
-// Start auth-controle zodra pagina geladen is
-_initAuth();
 </script>
 </body>
 </html>
