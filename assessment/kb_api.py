@@ -1,7 +1,14 @@
 """
-Tenant Knowledge Base API — Flask Blueprint
-Provides CRUD for: assets, VLANs, KB-pages (Markdown) and contacts.
-Data is stored in SQLite per tenant: data/tenants/{tenant_id}/kb.sqlite
+VEROUDERD — Niet meer in gebruik.
+
+Deze Flask Blueprint is vervangen door de ingebouwde KB-implementatie in backend/app.py.
+backend/app.py bevat een volledigere versie met extra tabellen (kb_passwords, kb_software,
+kb_domains, kb_changelog, kb_m365_profile, kb_meta) en is de enige actieve KB-server.
+
+Datapad in backend/app.py: backend/storage/kb/{tenant_id}/kb.sqlite
+Datapad van dit bestand:   assessment/data/tenants/{tenant_id}/kb.sqlite  ← NIET ACTIEF
+
+Zie ook: assessment/upload_server.py — eveneens vervangen door backend/app.py.
 """
 import os
 import sqlite3

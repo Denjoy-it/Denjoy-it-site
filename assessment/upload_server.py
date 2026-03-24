@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 """
-Lightweight Flask server that serves the web UI and provides an upload endpoint
-to persist generated HTML reports to web/html. Run this from the project root.
+VEROUDERD — Niet meer in gebruik.
 
-Usage:
-  pip install flask flask-cors
-  python3 upload_server.py
+Functionaliteit is overgenomen door backend/app.py:
+  - POST /api/upload-report  → backend/app.py (opslaan in backend/storage/html/)
+  - /api/kb/...              → backend/app.py (volledige KB implementatie)
 
-This will start a server on http://0.0.0.0:8080 that serves the static web/ folder
-and accepts POST /upload-report JSON payloads: { filename, content }
+De denjoy-upload systemd service en de bijbehorende Nginx routing zijn verwijderd
+uit deploy/install.sh. Alle verkeer gaat nu naar app.py op poort 8787.
 """
 import os
 from flask import Flask, request, jsonify, send_from_directory, abort

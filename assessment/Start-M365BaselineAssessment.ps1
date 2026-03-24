@@ -174,21 +174,21 @@ Set-StrictMode -Version Latest
 
 # Keep script alive for reporting, but never crash on non-critical errors
 $ErrorActionPreference = "Continue"
-$WarningPreference     = "SilentlyContinue"
-$ProgressPreference    = "SilentlyContinue"
+$WarningPreference = "SilentlyContinue"
+$ProgressPreference = "SilentlyContinue"
 
 # ============================================================================
 # ENTERPRISE HARDENING - GLOBAL FLAGS & HELPERS
 # ============================================================================
 
-$global:ExitCode        = 0
+$global:ExitCode = 0
 $global:ReportGenerated = $false
 $global:ReportFallbackUsed = $false
 
-$global:ExoConnected    = $false
-$global:TeamsConnected  = $false
-$global:GraphConnected  = $false
-$global:AzConnected     = $false
+$global:ExoConnected = $false
+$global:TeamsConnected = $false
+$global:GraphConnected = $false
+$global:AzConnected = $false
 
 function Test-NonInteractiveHost {
     # Best-effort: detect if Read-Host prompts will hang (pipeline/server host)
@@ -232,7 +232,7 @@ function Write-LogSafe {
     param(
         [Parameter(Mandatory)]
         [string]$Message,
-        [ValidateSet('Info','Success','Warning','Error')]
+        [ValidateSet('Info', 'Success', 'Warning', 'Error')]
         [string]$Level = 'Info'
     )
 
@@ -243,8 +243,8 @@ function Write-LogSafe {
             $color = switch ($Level) {
                 'Success' { 'Green' }
                 'Warning' { 'Yellow' }
-                'Error'   { 'Red' }
-                default   { 'Cyan' }
+                'Error' { 'Red' }
+                default { 'Cyan' }
             }
             Write-Host "[$Level] $Message" -ForegroundColor $color
         }
@@ -257,60 +257,105 @@ function Write-LogSafe {
 function Get-ConnectionStateSummary {
     # A compact object to optionally include in HTML header or logs
     [pscustomobject]@{
-        Graph  = if ($global:GraphConnected) { "Connected" } else { "NotConnected" }
-        EXO    = if ($global:ExoConnected)   { "Connected" } else { "NotConnected" }
-        Teams  = if ($global:TeamsConnected) { "Connected" } else { "NotConnected" }
-        Azure  = if ($global:AzConnected)    { "Connected" } else { "NotConnected" }
+        Graph = if ($global:GraphConnected) { "Connected" } else { "NotConnected" }
+        EXO   = if ($global:ExoConnected) { "Connected" } else { "NotConnected" }
+        Teams = if ($global:TeamsConnected) { "Connected" } else { "NotConnected" }
+        Azure = if ($global:AzConnected) { "Connected" } else { "NotConnected" }
     }
 }
 
 function Close-M365AssessmentConnections {
     Write-LogSafe "Closing connections..." "Info"
 
+    function Invoke-SafeDisconnect {
+        param(
+            [Parameter(Mandatory)][string]$Name,
+            [Parameter(Mandatory)][scriptblock]$Action
+        )
+        try {
+            & $Action
+            Write-LogSafe "✓ Disconnected via $Name" "Success"
+        } catch {
+            Write-LogSafe "$Name disconnect failed: $($_.Exception.Message)" "Warning"
+        }
+    }
+
     # Microsoft Graph
-    try {
-        if (Get-Command -Name Get-MgContext -ErrorAction SilentlyContinue) {
+    if (Get-Command -Name Get-MgContext -ErrorAction SilentlyContinue) {
+        try {
             $ctx = Get-MgContext
             if ($ctx) {
-                Disconnect-MgGraph -ErrorAction SilentlyContinue | Out-Null
-                Write-LogSafe "✓ Disconnected from Microsoft Graph" "Success"
+                Invoke-SafeDisconnect -Name 'Disconnect-MgGraph' -Action { Disconnect-MgGraph -ErrorAction SilentlyContinue | Out-Null }
             }
-        }
-    } catch {
-        Write-LogSafe "Graph disconnect failed: $($_.Exception.Message)" "Warning"
+        } catch {}
     }
 
     # Exchange Online
-    try {
-        if (Get-Command -Name Disconnect-ExchangeOnline -ErrorAction SilentlyContinue) {
-            Disconnect-ExchangeOnline -Confirm:$false -ErrorAction SilentlyContinue | Out-Null
-            Write-LogSafe "✓ Disconnected from Exchange Online" "Success"
-        }
-    } catch {
-        Write-LogSafe "Exchange disconnect failed: $($_.Exception.Message)" "Warning"
+    if (Get-Command -Name Disconnect-ExchangeOnline -ErrorAction SilentlyContinue) {
+        Invoke-SafeDisconnect -Name 'Disconnect-ExchangeOnline' -Action { Disconnect-ExchangeOnline -Confirm:$false -ErrorAction SilentlyContinue | Out-Null }
     }
 
     # Microsoft Teams
-    try {
-        if (Get-Command -Name Disconnect-MicrosoftTeams -ErrorAction SilentlyContinue) {
-            Disconnect-MicrosoftTeams -ErrorAction SilentlyContinue | Out-Null
-            Write-LogSafe "✓ Disconnected from Microsoft Teams" "Success"
-        }
-    } catch {
-        Write-LogSafe "Teams disconnect failed: $($_.Exception.Message)" "Warning"
+    if (Get-Command -Name Disconnect-MicrosoftTeams -ErrorAction SilentlyContinue) {
+        Invoke-SafeDisconnect -Name 'Disconnect-MicrosoftTeams' -Action { Disconnect-MicrosoftTeams -ErrorAction SilentlyContinue | Out-Null }
     }
 
     # Azure (Az)
-    try {
-        if (Get-Command -Name Disconnect-AzAccount -ErrorAction SilentlyContinue) {
-            Disconnect-AzAccount -Scope Process -ErrorAction SilentlyContinue | Out-Null
-            Write-LogSafe "✓ Disconnected from Azure (Az)" "Success"
-        }
-    } catch {
-        Write-LogSafe "Azure disconnect failed: $($_.Exception.Message)" "Warning"
+    if (Get-Command -Name Disconnect-AzAccount -ErrorAction SilentlyContinue) {
+        Invoke-SafeDisconnect -Name 'Disconnect-AzAccount(Process)' -Action { Disconnect-AzAccount -Scope Process -ErrorAction SilentlyContinue | Out-Null }
+        # Also clear any context in current user scope if module keeps it cached.
+        Invoke-SafeDisconnect -Name 'Disconnect-AzAccount(CurrentUser)' -Action { Disconnect-AzAccount -Scope CurrentUser -ErrorAction SilentlyContinue | Out-Null }
     }
 
-    Write-LogSafe "All sessions closed." "Info"
+    # Legacy/other modules sometimes used by fallback paths
+    if (Get-Command -Name Disconnect-PnPOnline -ErrorAction SilentlyContinue) {
+        Invoke-SafeDisconnect -Name 'Disconnect-PnPOnline' -Action { Disconnect-PnPOnline -ErrorAction SilentlyContinue | Out-Null }
+    }
+    if (Get-Command -Name Disconnect-SPOService -ErrorAction SilentlyContinue) {
+        Invoke-SafeDisconnect -Name 'Disconnect-SPOService' -Action { Disconnect-SPOService -ErrorAction SilentlyContinue | Out-Null }
+    }
+    if (Get-Command -Name Disconnect-AzureAD -ErrorAction SilentlyContinue) {
+        Invoke-SafeDisconnect -Name 'Disconnect-AzureAD' -Action { Disconnect-AzureAD -ErrorAction SilentlyContinue | Out-Null }
+    }
+    if (Get-Command -Name Disconnect-MsolService -ErrorAction SilentlyContinue) {
+        Invoke-SafeDisconnect -Name 'Disconnect-MsolService' -Action { Disconnect-MsolService -ErrorAction SilentlyContinue | Out-Null }
+    }
+
+    # Final safety-net: run remaining Disconnect-* cmdlets best-effort once.
+    try {
+        $already = @(
+            'Disconnect-MgGraph', 'Disconnect-ExchangeOnline', 'Disconnect-MicrosoftTeams', 'Disconnect-AzAccount',
+            'Disconnect-PnPOnline', 'Disconnect-SPOService', 'Disconnect-AzureAD', 'Disconnect-MsolService'
+        )
+        $others = Get-Command -Name 'Disconnect-*' -ErrorAction SilentlyContinue |
+        Select-Object -Unique Name |
+        Where-Object { $already -notcontains $_.Name }
+        foreach ($cmd in $others) {
+            try {
+                & $cmd.Name -ErrorAction SilentlyContinue | Out-Null
+            } catch {}
+        }
+    } catch {}
+
+    # Reset in-memory connection state flags for consistent follow-up runs.
+    $global:GraphConnected = $false
+    $global:ExoConnected = $false
+    $global:TeamsConnected = $false
+    $global:AzConnected = $false
+
+    try { [System.GC]::Collect() } catch {}
+    try { [System.GC]::WaitForPendingFinalizers() } catch {}
+
+    try {
+        $state = Get-ConnectionStateSummary
+        Write-LogSafe ("Post-cleanup state: Graph={0}, EXO={1}, Teams={2}, Azure={3}" -f $state.Graph, $state.EXO, $state.Teams, $state.Azure) "Info"
+    } catch {}
+
+    try {
+        Write-LogSafe "All sessions closed." "Info"
+    } catch {
+        Write-Host "All sessions closed."
+    }
 }
 
 # Best-effort cleanup on PowerShell exit (window close, etc.)
@@ -354,19 +399,36 @@ if (-not (Test-Path $OutputPath -PathType Container)) {
 $global:ReportFullPath = Join-Path $OutputPath $global:ReportFileName
 
 # Data containers - using global scope for cross-module access
-$global:Phase1Data   = @{}
-$global:Phase2Data   = @{}
-$global:Phase3Data   = @{}
-$global:Phase4Data   = @{}
-$global:Phase5Data   = @{}
-$global:Phase6Data   = @{}
-$global:TenantInfo   = @{}
+$global:Phase1Data = @{}
+$global:Phase2Data = @{}
+$global:Phase3Data = @{}
+$global:Phase4Data = @{}
+$global:Phase5Data = @{}
+$global:Phase6Data = @{}
+$global:TenantInfo = @{}
+
+# Als backend het secret via env var doorgeeft, zet het hier om naar SecureString.
+if (-not $ClientSecret -and -not [string]::IsNullOrWhiteSpace($env:M365_CLIENT_SECRET)) {
+    try {
+        $ClientSecret = ConvertTo-SecureString $env:M365_CLIENT_SECRET -AsPlainText -Force
+    } catch {
+        Write-Host "[Warning] Kon M365_CLIENT_SECRET niet converteren naar SecureString: $($_.Exception.Message)" -ForegroundColor Yellow
+    }
+}
 
 # Store authentication parameters in script scope for module access
-$script:ClientId        = $ClientId
-$script:ClientSecret    = $ClientSecret
-$script:CertThumbprint  = $CertThumbprint
-$script:ParamTenantId   = $TenantId
+$script:ClientId = $ClientId
+$script:ClientSecret = $ClientSecret
+$script:CertThumbprint = $CertThumbprint
+$script:ParamTenantId = $TenantId
+
+# Expose auth context for modules that need non-interactive app auth (e.g. Phase6 Azure).
+$global:M365AuthContext = [pscustomobject]@{
+    TenantId       = $TenantId
+    ClientId       = $ClientId
+    ClientSecret   = $ClientSecret
+    CertThumbprint = $CertThumbprint
+}
 
 # ============================================================================
 # IMPORT MODULES
