@@ -31,9 +31,10 @@
 #>
 function Invoke-Phase6Assessment {
     Write-AssessmentLog "`n=== PHASE 6: Azure Infrastructure Best Practices ===" -Level Info
+
+    $isNonInteractive = ($env:M365_BASELINE_NONINTERACTIVE -eq '1' -or $env:CI -eq '1')
     
     # Check if Az modules are available
-    $azAvailable = $false
     try {
         if (Get-Module -ListAvailable -Name Az.Accounts) {
             Import-Module Az.Accounts -ErrorAction Stop
@@ -42,29 +43,76 @@ function Invoke-Phase6Assessment {
             # AUTOMATIC AZURE CONNECTION - If no context exists, attempt to connect
             if (-not $azContext) {
                 Write-AssessmentLog "No Azure context found. Attempting automatic connection..." -Level Info
-                Write-AssessmentLog "Browser window will open for Azure authentication." -Level Info
-                
+
+                # First try non-interactive service principal auth using known assessment credentials.
+                $authTenant = $null
+                $authClient = $null
+                $authSecret = $null
+                $authThumb  = $null
+
                 try {
-                    # Attempt interactive Azure connection
-                    Connect-AzAccount -ErrorAction Stop | Out-Null
-                    $azContext = Get-AzContext -ErrorAction SilentlyContinue
-                    
-                    if ($azContext) {
-                        Write-AssessmentLog "✓ Successfully connected to Azure: $($azContext.Subscription.Name)" -Level Success
-                        $azAvailable = $true
-                    } else {
-                        Write-AssessmentLog "Azure connection failed. Phase 6 will be skipped." -Level Warning
-                        $global:Phase6Data.AzureAvailable = $false
-                        return
+                    if ($global:M365AuthContext) {
+                        $authTenant = $global:M365AuthContext.TenantId
+                        $authClient = $global:M365AuthContext.ClientId
+                        $authSecret = $global:M365AuthContext.ClientSecret
+                        $authThumb  = $global:M365AuthContext.CertThumbprint
                     }
-                } catch {
-                    Write-AssessmentLog "Failed to connect to Azure: $($_.Exception.Message)" -Level Warning
-                    Write-AssessmentLog "You can manually run 'Connect-AzAccount' and re-run the assessment." -Level Info
+                } catch {}
+
+                if (-not $authTenant) { $authTenant = $env:M365_TENANT_ID }
+                if (-not $authClient) { $authClient = $env:M365_CLIENT_ID }
+                if (-not $authThumb)  { $authThumb  = $env:M365_CERT_THUMBPRINT }
+
+                $hasSpAuth = (-not [string]::IsNullOrWhiteSpace($authTenant)) -and (-not [string]::IsNullOrWhiteSpace($authClient))
+
+                if ($hasSpAuth) {
+                    try {
+                        if ($authThumb) {
+                            Write-AssessmentLog "Trying non-interactive Azure login with service principal certificate..." -Level Info
+                            Connect-AzAccount -ServicePrincipal -Tenant $authTenant -ApplicationId $authClient -CertificateThumbprint $authThumb -ErrorAction Stop | Out-Null
+                        }
+                        elseif ($authSecret) {
+                            Write-AssessmentLog "Trying non-interactive Azure login with service principal secret..." -Level Info
+                            $spCred = [System.Management.Automation.PSCredential]::new($authClient, $authSecret)
+                            Connect-AzAccount -ServicePrincipal -Tenant $authTenant -Credential $spCred -ErrorAction Stop | Out-Null
+                        }
+                        $azContext = Get-AzContext -ErrorAction SilentlyContinue
+                    } catch {
+                        Write-AssessmentLog "Non-interactive Azure login failed: $($_.Exception.Message)" -Level Warning
+                    }
+                }
+
+                if ($azContext) {
+                    Write-AssessmentLog "✓ Successfully connected to Azure: $($azContext.Subscription.Name)" -Level Success
+                }
+                elseif ($isNonInteractive) {
+                    Write-AssessmentLog "Azure context ontbreekt en non-interactive mode staat aan. Phase 6 wordt overgeslagen (geen browser login)." -Level Warning
                     $global:Phase6Data.AzureAvailable = $false
                     return
                 }
+                else {
+                    Write-AssessmentLog "Browser window will open for Azure authentication." -Level Info
+                
+                    try {
+                        # Interactive fallback for local/manual runs only
+                        Connect-AzAccount -ErrorAction Stop | Out-Null
+                        $azContext = Get-AzContext -ErrorAction SilentlyContinue
+                        
+                        if ($azContext) {
+                            Write-AssessmentLog "✓ Successfully connected to Azure: $($azContext.Subscription.Name)" -Level Success
+                        } else {
+                            Write-AssessmentLog "Azure connection failed. Phase 6 will be skipped." -Level Warning
+                            $global:Phase6Data.AzureAvailable = $false
+                            return
+                        }
+                    } catch {
+                        Write-AssessmentLog "Failed to connect to Azure: $($_.Exception.Message)" -Level Warning
+                        Write-AssessmentLog "You can manually run 'Connect-AzAccount' and re-run the assessment." -Level Info
+                        $global:Phase6Data.AzureAvailable = $false
+                        return
+                    }
+                }
             } else {
-                $azAvailable = $true
                 Write-AssessmentLog "Azure PowerShell context detected: $($azContext.Subscription.Name)" -Level Info
             }
         } else {
@@ -191,7 +239,7 @@ function Invoke-Phase6Assessment {
                         }
 
                         # Fallback: if we couldn't detect status from the VM object, try Resource Graph's extended.instanceView
-                        if (-not $vmIsRunning -and ($vmStatus -eq 'Unknown' -or $vmStatus -eq $null)) {
+                        if (-not $vmIsRunning -and ('Unknown' -eq $vmStatus -or $null -eq $vmStatus)) {
                             try {
                                 if (Get-Command Search-AzGraph -ErrorAction SilentlyContinue) {
                                     $rgQuery = "Resources | where type =~ 'microsoft.compute/virtualmachines' and name =~ '$($vm.Name)' and resourceGroup =~ '$($vm.ResourceGroupName)' | project powerState = properties.extended.instanceView.powerState.code, display = properties.extended.instanceView.powerState.displayStatus"

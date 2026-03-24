@@ -242,7 +242,6 @@ Dan in de nginx config `listen 80` vervangen door `listen 443 ssl` en de cert pa
 ├── portal/                       ← Frontend HTML/CSS/JS
 ├── assessment/
 │   ├── Start-M365BaselineAssessment.ps1
-│   ├── EntraFalcon/
 │   ├── Modules/                  ← PS modules (Phase 1-7)
 │   ├── Templates/                ← HTML rapport templates
 │   ├── upload_server.py          ← Flask server

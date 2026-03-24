@@ -27,12 +27,7 @@ cat > "${CONFIG}" <<EOF
   "auth_tenant_id": "${TENANT_ID}",
   "auth_client_id": "${CLIENT_ID}",
   "auth_cert_thumbprint": "${CERT_THUMB}",
-  "auth_client_secret": "${CLIENT_SECRET}",
-  "entrafalcon_script_path": "${PLATFORM_DIR}/assessment/EntraFalcon/run_EntraFalcon.ps1",
-  "entrafalcon_auth_flow": "DeviceCode",
-  "entrafalcon_tenant": "${TENANT_ID}",
-  "entrafalcon_include_ms_apps": false,
-  "entrafalcon_csv": false
+  "auth_client_secret": "${CLIENT_SECRET}"
 }
 EOF
 

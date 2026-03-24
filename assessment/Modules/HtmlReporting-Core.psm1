@@ -41,8 +41,7 @@ function ConvertTo-HtmlEncoded {
     if ($null -eq $Value) { return '' }
     try {
         return [System.Net.WebUtility]::HtmlEncode([string]$Value)
-    }
-    catch {
+    } catch {
         return [string]$Value
     }
 }
@@ -145,8 +144,7 @@ function Get-SkuDisplayName {
         $result = $ti.ToTitleCase($text)
         if ([string]::IsNullOrWhiteSpace($result)) { return $Sku }
         return $result
-    }
-    catch {
+    } catch {
         return $Sku  # Fallback to original SKU on error
     }
 }
@@ -156,8 +154,7 @@ function SafeCount {
     if ($null -eq $obj) { return 0 }
     try {
         return @($obj).Count
-    }
-    catch {
+    } catch {
         return 0
     }
 }
@@ -177,7 +174,7 @@ function New-HtmlBadge {
     #>
     param(
         [string]$Text,
-        [ValidateSet('ok','warn','danger','info','muted')]
+        [ValidateSet('ok', 'warn', 'danger', 'info', 'muted')]
         [string]$Type = 'info'
     )
     return "<span class='badge badge-$Type'>$Text</span>"
@@ -199,13 +196,13 @@ function New-HtmlProgressBar {
         [string]$Label = '',
         [string]$Sublabel = ''
     )
-    $pct    = [math]::Round([math]::Min([math]::Max($Percentage, 0), 100), 1)
+    $pct = [math]::Round([math]::Min([math]::Max($Percentage, 0), 100), 1)
     $pctInt = [math]::Round($pct)
-    $color  = if ($pct -ge 90) { 'var(--risk-low)' } elseif ($pct -ge 70) { 'var(--risk-medium)' } else { 'var(--risk-high)' }
+    $color = if ($pct -ge 90) { 'var(--risk-low)' } elseif ($pct -ge 70) { 'var(--risk-medium)' } else { 'var(--risk-high)' }
     $labelSafe = ConvertTo-HtmlEncoded $Label
-    $subSafe   = ConvertTo-HtmlEncoded $Sublabel
+    $subSafe = ConvertTo-HtmlEncoded $Sublabel
     $labelHtml = if ($Label) { "<div class='progress-label'><span>$labelSafe</span><span class='progress-pct' style='color:$color'>$pct%</span></div>" } else { "" }
-    $subHtml   = if ($Sublabel) { "<div class='progress-sub'>$subSafe</div>" } else { "" }
+    $subHtml = if ($Sublabel) { "<div class='progress-sub'>$subSafe</div>" } else { "" }
     return @"
 <div class='progress-wrap'>
   $labelHtml
@@ -225,7 +222,7 @@ function New-HtmlScoreDashboard {
     #>
     param([string]$ReportDate = '')
 
-    $passed   = 0
+    $passed = 0
     $warnings = 0
     $critical = 0
 
@@ -233,18 +230,18 @@ function New-HtmlScoreDashboard {
     if ($global:Phase1Data) {
         # MFA coverage
         $enabledMembers = if ($global:Phase1Data.EnabledMemberUsers) { [int]$global:Phase1Data.EnabledMemberUsers } else { 0 }
-        $withoutMfa     = SafeCount $global:Phase1Data.UsersWithoutMFA
+        $withoutMfa = SafeCount $global:Phase1Data.UsersWithoutMFA
         if ($enabledMembers -gt 0) {
             $mfaPct = [math]::Round((($enabledMembers - $withoutMfa) / $enabledMembers) * 100, 1)
-            if ($mfaPct -ge 95)     { $passed++ }
+            if ($mfaPct -ge 95) { $passed++ }
             elseif ($mfaPct -ge 75) { $warnings++ }
-            else                    { $critical++ }
+            else { $critical++ }
         }
         # Global admin count
         $adminCount = SafeCount $global:Phase1Data.GlobalAdmins
         if ($adminCount -le 3 -and $adminCount -gt 0) { $passed++ }
-        elseif ($adminCount -le 5)                    { $warnings++ }
-        else                                           { $critical++ }
+        elseif ($adminCount -le 5) { $warnings++ }
+        else { $critical++ }
     }
 
     # --- Phase 3 checks ---
@@ -261,7 +258,7 @@ function New-HtmlScoreDashboard {
         $dnsChecks = @($global:Phase3Data.DomainDnsChecks)
         if ($dnsChecks.Count -gt 0) {
             $firstDomain = $dnsChecks[0]
-            if ($firstDomain.SPF -and $firstDomain.SPF -notmatch 'Unknown|Fail')   { $passed++ } else { $warnings++ }
+            if ($firstDomain.SPF -and $firstDomain.SPF -notmatch 'Unknown|Fail') { $passed++ } else { $warnings++ }
             if ($firstDomain.DKIM -and $firstDomain.DKIM -notmatch 'Unknown|Fail') { $passed++ } else { $warnings++ }
             if ($firstDomain.DMARC -and $firstDomain.DMARC -notmatch 'Unknown|Fail') { $passed++ } else { $warnings++ }
         }
@@ -269,11 +266,11 @@ function New-HtmlScoreDashboard {
 
     # --- Phase 4 checks ---
     if ($global:Phase4Data) {
-        $alertsHigh = if ($global:Phase4Data.HighAlerts)   { [int]$global:Phase4Data.HighAlerts }   else { 0 }
-        $alertsMed  = if ($global:Phase4Data.MediumAlerts) { [int]$global:Phase4Data.MediumAlerts } else { 0 }
+        $alertsHigh = if ($global:Phase4Data.HighAlerts) { [int]$global:Phase4Data.HighAlerts }   else { 0 }
+        $alertsMed = if ($global:Phase4Data.MediumAlerts) { [int]$global:Phase4Data.MediumAlerts } else { 0 }
         if ($alertsHigh -eq 0 -and $alertsMed -eq 0) { $passed++ }
-        elseif ($alertsHigh -eq 0)                   { $warnings++ }
-        else                                          { $critical++ }
+        elseif ($alertsHigh -eq 0) { $warnings++ }
+        else { $critical++ }
     }
 
     $total = $passed + $warnings + $critical
@@ -282,14 +279,14 @@ function New-HtmlScoreDashboard {
         return "<div class='score-dashboard'><p style='opacity:0.7; margin:0;'>Score dashboard beschikbaar na volledige assessment.</p></div>"
     }
 
-    $score       = [math]::Round(($passed / $total) * 100)
-    $scoreColor  = if ($score -ge 80) { '#4ade80' } elseif ($score -ge 60) { '#fbbf24' } else { '#f87171' }
-    $scoreLabel  = if ($score -ge 80) { 'Goed' }   elseif ($score -ge 60) { 'Aandacht vereist' } else { 'Kritiek' }
+    $score = [math]::Round(($passed / $total) * 100)
+    $scoreColor = if ($score -ge 80) { '#4ade80' } elseif ($score -ge 60) { '#fbbf24' } else { '#f87171' }
+    $scoreLabel = if ($score -ge 80) { 'Goed' }   elseif ($score -ge 60) { 'Aandacht vereist' } else { 'Kritiek' }
     $scoreBgType = if ($score -ge 80) { 'ok' }     elseif ($score -ge 60) { 'warn' } else { 'danger' }
 
     # SVG donut (circumference = 2 * pi * 45 ≈ 283)
     $circumference = 283
-    $dashOffset    = [math]::Round($circumference - ($score / 100) * $circumference)
+    $dashOffset = [math]::Round($circumference - ($score / 100) * $circumference)
 
     $dateNote = if ($ReportDate) { "Rapport gegenereerd op: <strong>$ReportDate</strong> | " } else { "" }
 
@@ -355,7 +352,7 @@ function New-HtmlExecutiveSummary {
         $totalUsers = if ($null -ne $global:Phase1Data.TotalUsers) { [int]$global:Phase1Data.TotalUsers } else { SafeCount $global:Phase1Data.AllUsers }
         $withoutMfa = SafeCount $global:Phase1Data.UsersWithoutMFA
         $adminCount = SafeCount $global:Phase1Data.GlobalAdmins
-        $phaseLinks += [PSCustomObject]@{ Id='phase1'; Label='Gebruikers'; Meta=if ($totalUsers) { "$totalUsers users" } else { 'Geen data' } }
+        $phaseLinks += [PSCustomObject]@{ Id = 'phase1'; Label = 'Gebruikers'; Meta = if ($totalUsers) { "$totalUsers users" } else { 'Geen data' } }
         if ($withoutMfa -gt 0) {
             if ($withoutMfa -ge 10) { $critical += $withoutMfa } else { $warnings += $withoutMfa }
             Add-Highlight -Severity $(if ($withoutMfa -ge 10) { 'critical' } else { 'warning' }) -Text "$withoutMfa gebruiker(s) zonder geregistreerde MFA-methodes."
@@ -370,13 +367,13 @@ function New-HtmlExecutiveSummary {
         $sites = if ($null -ne $global:Phase2Data.TotalSites) { [int]$global:Phase2Data.TotalSites } else { 0 }
         $mailboxes = if ($null -ne $global:Phase2Data.TotalMailboxes) { [int]$global:Phase2Data.TotalMailboxes } else { 0 }
         $phaseMeta = if ($sites -gt 0) { "$sites sites" } elseif ($mailboxes -gt 0) { "$mailboxes mailboxen" } else { 'Samenwerking & mail' }
-        $phaseLinks += [PSCustomObject]@{ Id='phase2'; Label='Samenwerking'; Meta=$phaseMeta }
+        $phaseLinks += [PSCustomObject]@{ Id = 'phase2'; Label = 'Samenwerking'; Meta = $phaseMeta }
     }
 
     if (-not $SkipPhase3) {
         $caEnabled = if ($null -ne $global:Phase3Data.CAEnabled) { [int]$global:Phase3Data.CAEnabled } else { 0 }
         $apps = SafeCount $global:Phase3Data.AppRegistrations
-        $phaseLinks += [PSCustomObject]@{ Id='phase3'; Label='Naleving'; Meta=if ($caEnabled -gt 0) { "$caEnabled CA-beleidsregels" } elseif ($apps -gt 0) { "$apps app-registraties" } else { 'Beleid' } }
+        $phaseLinks += [PSCustomObject]@{ Id = 'phase3'; Label = 'Naleving'; Meta = if ($caEnabled -gt 0) { "$caEnabled CA-beleidsregels" } elseif ($apps -gt 0) { "$apps app-registraties" } else { 'Beleid' } }
         if ($caEnabled -eq 0) {
             $warnings++
             Add-Highlight -Severity 'warning' -Text "Geen ingeschakelde Conditional Access policies gevonden."
@@ -385,9 +382,9 @@ function New-HtmlExecutiveSummary {
 
     if (-not $SkipPhase4) {
         $high = if ($null -ne $global:Phase4Data.HighAlerts) { [int]$global:Phase4Data.HighAlerts } else { 0 }
-        $med  = if ($null -ne $global:Phase4Data.MediumAlerts) { [int]$global:Phase4Data.MediumAlerts } else { 0 }
+        $med = if ($null -ne $global:Phase4Data.MediumAlerts) { [int]$global:Phase4Data.MediumAlerts } else { 0 }
         $secureScoreCurrent = if ($null -ne $global:Phase4Data.SecureScoreCurrent) { [int]$global:Phase4Data.SecureScoreCurrent } else { $null }
-        $phaseLinks += [PSCustomObject]@{ Id='phase4'; Label='Beveiliging'; Meta=if ($secureScoreCurrent) { "Secure Score $secureScoreCurrent" } else { "$($high + $med) waarschuwingen" } }
+        $phaseLinks += [PSCustomObject]@{ Id = 'phase4'; Label = 'Beveiliging'; Meta = if ($secureScoreCurrent) { "Secure Score $secureScoreCurrent" } else { "$($high + $med) waarschuwingen" } }
         $critical += $high
         $warnings += $med
         if ($high -gt 0) { Add-Highlight -Severity 'critical' -Text "$high hoge security alert(s) actief." }
@@ -399,13 +396,13 @@ function New-HtmlExecutiveSummary {
         if ($null -ne $global:Phase5Data.ManagedDevicesTotal) { $managedDevices = [int]$global:Phase5Data.ManagedDevicesTotal }
         elseif ($null -ne $global:Phase5Data.TotalManagedDevices) { $managedDevices = [int]$global:Phase5Data.TotalManagedDevices }
         elseif ($global:Phase5Data.ManagedDevicesSummary -and $null -ne $global:Phase5Data.ManagedDevicesSummary.TotalDevices) { $managedDevices = [int]$global:Phase5Data.ManagedDevicesSummary.TotalDevices }
-        $phaseLinks += [PSCustomObject]@{ Id='phase5'; Label='Intune'; Meta=if ($managedDevices) { "$managedDevices apparaten" } else { 'Endpointbeheer' } }
+        $phaseLinks += [PSCustomObject]@{ Id = 'phase5'; Label = 'Intune'; Meta = if ($managedDevices) { "$managedDevices apparaten" } else { 'Endpointbeheer' } }
     }
 
     if (-not $SkipPhase6) {
         $rgCount = if ($global:Phase6Data.Governance -and $null -ne $global:Phase6Data.Governance.TotalResourceGroups) { [int]$global:Phase6Data.Governance.TotalResourceGroups } else { 0 }
         $resCount = if ($global:Phase6Data.Governance -and $null -ne $global:Phase6Data.Governance.TotalResources) { [int]$global:Phase6Data.Governance.TotalResources } else { 0 }
-        $phaseLinks += [PSCustomObject]@{ Id='phase6'; Label='Azure'; Meta=if ($rgCount -gt 0 -or $resCount -gt 0) { "$rgCount RG / $resCount resources" } else { 'Azure-infra' } }
+        $phaseLinks += [PSCustomObject]@{ Id = 'phase6'; Label = 'Azure'; Meta = if ($rgCount -gt 0 -or $resCount -gt 0) { "$rgCount RG / $resCount resources" } else { 'Azure-infra' } }
         if ($global:Phase6Data.Governance -and $global:Phase6Data.Governance.UntaggedResourceGroups -gt 0) {
             $warnings += [int]$global:Phase6Data.Governance.UntaggedResourceGroups
             Add-Highlight -Severity 'warning' -Text "$($global:Phase6Data.Governance.UntaggedResourceGroups) Azure resource group(s) zonder tags."
@@ -500,8 +497,8 @@ function Get-M365PhaseSeveritySummaries {
         }
 
         $items += [PSCustomObject]@{
-            Id='phase1'; Label='Gebruikers en licenties'; Critical=$p1Critical; Warning=$p1Warning; Info=$p1Info;
-            Summary=$p1Summary; Metric1Label='Users'; Metric1Value=($global:Phase1Data.TotalUsers); Metric2Label='Global Admins'; Metric2Value=$adminCount
+            Id = 'phase1'; Label = 'Gebruikers en licenties'; Critical = $p1Critical; Warning = $p1Warning; Info = $p1Info;
+            Summary = $p1Summary; Metric1Label = 'Users'; Metric1Value = ($global:Phase1Data.TotalUsers); Metric2Label = 'Global Admins'; Metric2Value = $adminCount
         }
     }
 
@@ -527,8 +524,8 @@ function Get-M365PhaseSeveritySummaries {
         }
 
         $items += [PSCustomObject]@{
-            Id='phase2'; Label='Samenwerking en opslag'; Critical=$p2Critical; Warning=$p2Warning; Info=$p2Info;
-            Summary=$p2Summary; Metric1Label='Sites'; Metric1Value=$sites; Metric2Label='OneDrives'; Metric2Value=$oneDrives
+            Id = 'phase2'; Label = 'Samenwerking en opslag'; Critical = $p2Critical; Warning = $p2Warning; Info = $p2Info;
+            Summary = $p2Summary; Metric1Label = 'Sites'; Metric1Value = $sites; Metric2Label = 'OneDrives'; Metric2Value = $oneDrives
         }
     }
 
@@ -550,8 +547,8 @@ function Get-M365PhaseSeveritySummaries {
         }
 
         $items += [PSCustomObject]@{
-            Id='phase3'; Label='Compliance en beveiliging'; Critical=$p3Critical; Warning=$p3Warning; Info=$p3Info;
-            Summary=$p3Summary; Metric1Label='CA policies'; Metric1Value=$caEnabled; Metric2Label='App regs'; Metric2Value=(SafeCount $global:Phase3Data.AppRegistrations)
+            Id = 'phase3'; Label = 'Compliance en beveiliging'; Critical = $p3Critical; Warning = $p3Warning; Info = $p3Info;
+            Summary = $p3Summary; Metric1Label = 'CA policies'; Metric1Value = $caEnabled; Metric2Label = 'App regs'; Metric2Value = (SafeCount $global:Phase3Data.AppRegistrations)
         }
     }
 
@@ -577,8 +574,8 @@ function Get-M365PhaseSeveritySummaries {
         }
 
         $items += [PSCustomObject]@{
-            Id='phase4'; Label='Geavanceerde beveiliging'; Critical=$p4Critical; Warning=$p4Warning; Info=$p4Info;
-            Summary=$p4Summary; Metric1Label='Hoge meldingen'; Metric1Value=$alertsHigh; Metric2Label='Secure Score'; Metric2Value=$(if ($secureScorePct -ne $null) { "$secureScorePct%" } else { '-' })
+            Id = 'phase4'; Label = 'Geavanceerde beveiliging'; Critical = $p4Critical; Warning = $p4Warning; Info = $p4Info;
+            Summary = $p4Summary; Metric1Label = 'Hoge meldingen'; Metric1Value = $alertsHigh; Metric2Label = 'Secure Score'; Metric2Value = $(if ($secureScorePct -ne $null) { "$secureScorePct%" } else { '-' })
         }
     }
 
@@ -602,8 +599,8 @@ function Get-M365PhaseSeveritySummaries {
         }
 
         $items += [PSCustomObject]@{
-            Id='phase5'; Label='Intune'; Critical=$p5Critical; Warning=$p5Warning; Info=$p5Info;
-            Summary=$p5Summary; Metric1Label='Devices'; Metric1Value=$mdTotal; Metric2Label='CA zonder Intune'; Metric2Value=$caNoIntune
+            Id = 'phase5'; Label = 'Intune'; Critical = $p5Critical; Warning = $p5Warning; Info = $p5Info;
+            Summary = $p5Summary; Metric1Label = 'Devices'; Metric1Value = $mdTotal; Metric2Label = 'CA zonder Intune'; Metric2Value = $caNoIntune
         }
     }
 
@@ -628,8 +625,8 @@ function Get-M365PhaseSeveritySummaries {
         }
 
         $items += [PSCustomObject]@{
-            Id='phase6'; Label='Azure'; Critical=$p6Critical; Warning=$p6Warning; Info=$p6Info;
-            Summary=$p6Summary; Metric1Label='RGs'; Metric1Value=$rgCount; Metric2Label='Resources'; Metric2Value=$resCount
+            Id = 'phase6'; Label = 'Azure'; Critical = $p6Critical; Warning = $p6Warning; Info = $p6Info;
+            Summary = $p6Summary; Metric1Label = 'RGs'; Metric1Value = $rgCount; Metric2Label = 'Resources'; Metric2Value = $resCount
         }
     }
 
@@ -699,9 +696,9 @@ function New-HtmlSeverityCharts {
     if (-not $PhaseSummaries -or @($PhaseSummaries).Count -eq 0) { return '' }
 
     $totalCritical = [int](($PhaseSummaries | Measure-Object -Property Critical -Sum).Sum)
-    $totalWarning  = [int](($PhaseSummaries | Measure-Object -Property Warning -Sum).Sum)
-    $totalInfo     = [int](($PhaseSummaries | Measure-Object -Property Info -Sum).Sum)
-    $totalSignals  = [math]::Max(($totalCritical + $totalWarning + $totalInfo), 1)
+    $totalWarning = [int](($PhaseSummaries | Measure-Object -Property Warning -Sum).Sum)
+    $totalInfo = [int](($PhaseSummaries | Measure-Object -Property Info -Sum).Sum)
+    $totalSignals = [math]::Max(($totalCritical + $totalWarning + $totalInfo), 1)
 
     $critPct = [math]::Round(($totalCritical / $totalSignals) * 100)
     $warnPct = [math]::Round(($totalWarning / $totalSignals) * 100)
@@ -781,8 +778,8 @@ function New-M365ReportSnapshot {
     }
 
     $totalCritical = [int](($phaseRows | Measure-Object -Property Critical -Sum).Sum)
-    $totalWarning  = [int](($phaseRows | Measure-Object -Property Warning -Sum).Sum)
-    $totalInfo     = [int](($phaseRows | Measure-Object -Property Info -Sum).Sum)
+    $totalWarning = [int](($phaseRows | Measure-Object -Property Warning -Sum).Sum)
+    $totalInfo = [int](($phaseRows | Measure-Object -Property Info -Sum).Sum)
 
     $mfaMissing = 0
     $mfaCoveragePct = $null
@@ -833,19 +830,19 @@ function New-M365ReportSnapshot {
     } catch { $secureScorePct = $null }
 
     return [PSCustomObject]@{
-        SchemaVersion = 1
-        GeneratedAt   = (Get-Date).ToString('o')
-        ReportFile    = $global:ReportFileName
-        AssessmentId  = $global:AssessmentId
-        TenantName    = $global:TenantInfo.DisplayName
-        TenantId      = $tenantId
-        Totals        = [PSCustomObject]@{
+        SchemaVersion    = 1
+        GeneratedAt      = (Get-Date).ToString('o')
+        ReportFile       = $global:ReportFileName
+        AssessmentId     = $global:AssessmentId
+        TenantName       = $global:TenantInfo.DisplayName
+        TenantId         = $tenantId
+        Totals           = [PSCustomObject]@{
             Critical = $totalCritical
             Warning  = $totalWarning
             Info     = $totalInfo
             Score    = [int]($totalCritical * 3 + $totalWarning * 2 + $totalInfo)
         }
-        Metrics       = [PSCustomObject]@{
+        Metrics          = [PSCustomObject]@{
             MfaMissing          = $mfaMissing
             MfaCoveragePct      = $mfaCoveragePct
             CAEnabled           = $caEnabled
@@ -856,7 +853,7 @@ function New-M365ReportSnapshot {
             AzureResourceGroups = $azureResourceGroups
             AzureResources      = $azureResources
         }
-        Licenses      = @(
+        Licenses         = @(
             @($global:Phase1Data.Licenses) | ForEach-Object {
                 [PSCustomObject]@{
                     SkuPartNumber = $_.SkuPartNumber
@@ -883,7 +880,7 @@ function New-M365ReportSnapshot {
                 }
             }
         )
-        DomainDnsChecks = @(
+        DomainDnsChecks  = @(
             @($global:Phase3Data.DomainDnsChecks) | ForEach-Object {
                 [PSCustomObject]@{
                     Domain = $_.Domain
@@ -893,7 +890,7 @@ function New-M365ReportSnapshot {
                 }
             }
         )
-        UserMailboxes = @(
+        UserMailboxes    = @(
             @($global:Phase2Data.UserMailboxes) | ForEach-Object {
                 [PSCustomObject]@{
                     DisplayName        = $_.DisplayName
@@ -902,7 +899,7 @@ function New-M365ReportSnapshot {
                 }
             }
         )
-        Phases        = @($phaseRows)
+        Phases           = @($phaseRows)
     }
 }
 
@@ -915,7 +912,7 @@ function Get-M365PreviousReportSnapshot {
     if (-not (Test-Path $SnapshotDirectory)) { return $null }
 
     $files = Get-ChildItem -Path $SnapshotDirectory -Filter '*.summary.json' -File -ErrorAction SilentlyContinue |
-        Sort-Object LastWriteTime -Descending
+    Sort-Object LastWriteTime -Descending
 
     foreach ($file in @($files)) {
         if ($CurrentReportFile -and $file.Name -like "*$($CurrentReportFile -replace '\.html$','')*") { continue }
@@ -924,8 +921,7 @@ function Get-M365PreviousReportSnapshot {
             if ([string]::IsNullOrWhiteSpace($raw)) { continue }
             $obj = $raw | ConvertFrom-Json -ErrorAction Stop
             if ($obj) { return $obj }
-        }
-        catch {
+        } catch {
             continue
         }
     }
@@ -969,8 +965,8 @@ function New-HtmlTrendDeltaPanel {
     $previousGenerated = $PreviousSnapshot.GeneratedAt
 
     $deltaCritical = [int]$CurrentSnapshot.Totals.Critical - [int]$PreviousSnapshot.Totals.Critical
-    $deltaWarning  = [int]$CurrentSnapshot.Totals.Warning  - [int]$PreviousSnapshot.Totals.Warning
-    $deltaScore    = [int]$CurrentSnapshot.Totals.Score    - [int]$PreviousSnapshot.Totals.Score
+    $deltaWarning = [int]$CurrentSnapshot.Totals.Warning - [int]$PreviousSnapshot.Totals.Warning
+    $deltaScore = [int]$CurrentSnapshot.Totals.Score - [int]$PreviousSnapshot.Totals.Score
     $deltaAzureResources = [int]$CurrentSnapshot.Metrics.AzureResources - [int]$PreviousSnapshot.Metrics.AzureResources
 
     $fmtDelta = {
@@ -984,7 +980,7 @@ function New-HtmlTrendDeltaPanel {
         return "$([math]::Round($n,1))"
     }
     $deltaClass = {
-        param([int]$n,[switch]$InverseGood)
+        param([int]$n, [switch]$InverseGood)
         if ($n -eq 0) { return 'neutral' }
         if ($InverseGood) {
             return $(if ($n -lt 0) { 'good' } else { 'bad' })
@@ -1018,8 +1014,8 @@ function New-HtmlTrendDeltaPanel {
             $displayPrev = if ($Percentage) { "$([math]::Round($prev,1))%" } else { "$([math]::Round($prev,1))" }
             $displayDelta = if ($Percentage) { "$(& $fmtDeltaDecimal $delta) pp" } else { & $fmtDeltaDecimal $delta }
             $null = $kpiRows.Add([PSCustomObject]@{
-                Label = $Label; Current = $displayCur; Previous = $displayPrev; Delta = $displayDelta; DeltaClass = $class
-            })
+                    Label = $Label; Current = $displayCur; Previous = $displayPrev; Delta = $displayDelta; DeltaClass = $class
+                })
         } catch { return }
     }
 
@@ -1131,22 +1127,22 @@ function Get-M365PhaseRegistry {
     )
 
     $phases = @()
-    if (-not $SkipPhase1) { $phases += [PSCustomObject]@{ Id='phase1'; NavLabel='Gebruikers';  NavInitial='G'; NavIcon='👥'; RenderLabel='Gebruikers en licenties';   RenderBlock={ New-Phase1HtmlContent } } }
-    if (-not $SkipPhase2) { $phases += [PSCustomObject]@{ Id='phase2'; NavLabel='Samenwerking'; NavInitial='S'; NavIcon='🤝'; RenderLabel='Samenwerking en opslag';    RenderBlock={ New-Phase2HtmlContent } } }
-    if (-not $SkipPhase3) { $phases += [PSCustomObject]@{ Id='phase3'; NavLabel='Naleving';     NavInitial='N'; NavIcon='🛡️'; RenderLabel='Compliance en beveiliging'; RenderBlock={ New-Phase3HtmlContent } } }
-    if (-not $SkipPhase4) { $phases += [PSCustomObject]@{ Id='phase4'; NavLabel='Beveiliging';  NavInitial='B'; NavIcon='🔐'; RenderLabel='Geavanceerde beveiliging';  RenderBlock={ New-Phase4HtmlContent } } }
-    if (-not $SkipPhase5) { $phases += [PSCustomObject]@{ Id='phase5'; NavLabel='Intune';       NavInitial='I'; NavIcon='💻'; RenderLabel='Intune';                    RenderBlock={ New-Phase5HtmlContent } } }
-    if (-not $SkipPhase6) { $phases += [PSCustomObject]@{ Id='phase6'; NavLabel='Azure';        NavInitial='A'; NavIcon='☁️'; RenderLabel='Azure';                     RenderBlock={ New-Phase6HtmlContent } } }
+    if (-not $SkipPhase1) { $phases += [PSCustomObject]@{ Id = 'phase1'; NavLabel = 'Gebruikers'; NavInitial = 'G'; NavIcon = '👥'; RenderLabel = 'Gebruikers en licenties'; RenderBlock = { New-Phase1HtmlContent } } }
+    if (-not $SkipPhase2) { $phases += [PSCustomObject]@{ Id = 'phase2'; NavLabel = 'Samenwerking'; NavInitial = 'S'; NavIcon = '🤝'; RenderLabel = 'Samenwerking en opslag'; RenderBlock = { New-Phase2HtmlContent } } }
+    if (-not $SkipPhase3) { $phases += [PSCustomObject]@{ Id = 'phase3'; NavLabel = 'Naleving'; NavInitial = 'N'; NavIcon = '🛡️'; RenderLabel = 'Compliance en beveiliging'; RenderBlock = { New-Phase3HtmlContent } } }
+    if (-not $SkipPhase4) { $phases += [PSCustomObject]@{ Id = 'phase4'; NavLabel = 'Beveiliging'; NavInitial = 'B'; NavIcon = '🔐'; RenderLabel = 'Geavanceerde beveiliging'; RenderBlock = { New-Phase4HtmlContent } } }
+    if (-not $SkipPhase5) { $phases += [PSCustomObject]@{ Id = 'phase5'; NavLabel = 'Intune'; NavInitial = 'I'; NavIcon = '💻'; RenderLabel = 'Intune'; RenderBlock = { New-Phase5HtmlContent } } }
+    if (-not $SkipPhase6) { $phases += [PSCustomObject]@{ Id = 'phase6'; NavLabel = 'Azure'; NavInitial = 'A'; NavIcon = '☁️'; RenderLabel = 'Azure'; RenderBlock = { New-Phase6HtmlContent } } }
 
     # ── v3.2: Hybrid Identity (alleen als data beschikbaar is) ──
     if ($global:HybridData -and (Get-Command -Name New-HybridHtmlContent -ErrorAction SilentlyContinue)) {
-        $phases += [PSCustomObject]@{ Id='hybrid'; NavLabel='Hybrid'; NavInitial='H'; NavIcon='🔗'; RenderLabel='Hybrid Identity'; RenderBlock={ New-HybridHtmlContent } }
+        $phases += [PSCustomObject]@{ Id = 'hybrid'; NavLabel = 'Hybrid'; NavInitial = 'H'; NavIcon = '🔗'; RenderLabel = 'Hybrid Identity'; RenderBlock = { New-HybridHtmlContent } }
     }
 
     # ── v3.2: CIS Compliance & Multi-framework ──
     if (Get-Command -Name New-CisComplianceSection -ErrorAction SilentlyContinue) {
-        $phases += [PSCustomObject]@{ Id='compliance'; NavLabel='CIS'; NavInitial='C'; NavIcon='✅'; RenderLabel='CIS Compliance'; RenderBlock={ New-CisComplianceSection } }
-        $phases += [PSCustomObject]@{ Id='frameworks'; NavLabel='Frameworks'; NavInitial='F'; NavIcon='📋'; RenderLabel='Multi-framework Matrix'; RenderBlock={ New-ComplianceFrameworkMatrix } }
+        $phases += [PSCustomObject]@{ Id = 'compliance'; NavLabel = 'CIS'; NavInitial = 'C'; NavIcon = '✅'; RenderLabel = 'CIS Compliance'; RenderBlock = { New-CisComplianceSection } }
+        $phases += [PSCustomObject]@{ Id = 'frameworks'; NavLabel = 'Frameworks'; NavInitial = 'F'; NavIcon = '📋'; RenderLabel = 'Multi-framework Matrix'; RenderBlock = { New-ComplianceFrameworkMatrix } }
     }
 
     return @($phases)
@@ -1205,8 +1201,7 @@ function New-M365AssessmentReport {
     $cssPath = Join-Path $PSScriptRoot "..\Templates\ReportStyles.css"
     if (Test-Path $cssPath) {
         $cssContent = Get-Content -Path $cssPath -Raw
-    }
-    else {
+    } else {
         Write-AssessmentLog "⚠️ CSS file not found at $cssPath, using minimal styles" -Level Warning
         $cssContent = "body { font-family: Arial, sans-serif; padding: 20px; }"
     }
@@ -1216,10 +1211,9 @@ function New-M365AssessmentReport {
     $preferredLogo = Join-Path $PSScriptRoot "..\Templates\Denjoy-tp1.png"
     if (Test-Path $preferredLogo) {
         # Embed as base64 so the report is self-contained and portable
-        $logoBytes  = [System.IO.File]::ReadAllBytes($preferredLogo)
-        $logoSrc    = "data:image/png;base64," + [System.Convert]::ToBase64String($logoBytes)
-    }
-    else {
+        $logoBytes = [System.IO.File]::ReadAllBytes($preferredLogo)
+        $logoSrc = "data:image/png;base64," + [System.Convert]::ToBase64String($logoBytes)
+    } else {
         $logoSrc = ""
     }
 
@@ -1248,6 +1242,35 @@ function New-M365AssessmentReport {
     $snapshotDir = Join-Path $OutputPath "_snapshots"
     $previousSnapshot = Get-M365PreviousReportSnapshot -SnapshotDirectory $snapshotDir -CurrentReportFile $global:ReportFileName
 
+    # Build embedded JSON metadata so the portal can read phase data without DOM scraping
+    $phaseMetaItems = @()
+    for ($i = 0; $i -lt @($phaseSummaries).Count; $i++) {
+        $ps = @($phaseSummaries)[$i]
+        $pr = if ($i -lt @($phaseRegistry).Count) { @($phaseRegistry)[$i] } else { $null }
+        $navLbl = if ($pr) { [string]$pr.NavLabel } else { [string]$ps.Label }
+        $navIconV = if ($pr -and $pr.PSObject.Properties.Name -contains 'NavIcon') { [string]$pr.NavIcon } else { '' }
+        $phaseMetaItems += [PSCustomObject][ordered]@{
+            id          = [string]$ps.Id
+            number      = $i + 1
+            navLabel    = $navLbl
+            renderLabel = [string]$ps.Label
+            icon        = $navIconV
+            critical    = [int]$ps.Critical
+            warning     = [int]$ps.Warning
+            info        = [int]$ps.Info
+            summary     = [string]$ps.Summary
+        }
+    }
+    $reportMetadataObj = [ordered]@{
+        schemaVersion  = 1
+        tenantName     = [string]$tenantName
+        tenantId       = if ($global:TenantInfo -and $global:TenantInfo.Id) { [string]$global:TenantInfo.Id } else { '' }
+        assessmentDate = [string]$reportDate
+        assessmentId   = [string]$global:AssessmentId
+        phases         = $phaseMetaItems
+    }
+    $reportMetadataJson = $reportMetadataObj | ConvertTo-Json -Depth 5 -Compress
+
     $html = @"
 <!DOCTYPE html>
 <html lang="nl">
@@ -1262,6 +1285,7 @@ function New-M365AssessmentReport {
     <style>
 $cssContent
     </style>
+    <script type="application/json" id="report-metadata">$reportMetadataJson</script>
 </head>
 <body>
     <a id="top"></a>
@@ -1641,6 +1665,15 @@ $cssContent
         Write-AssessmentLog "! Warning: Snapshot save failed: $_" -Level Warning
     }
 
+    # Save report metadata as sidecar JSON for portal JSON-first rendering.
+    $reportMetadataPath = [System.IO.Path]::ChangeExtension($global:ReportFullPath, '.metadata.json')
+    try {
+        $reportMetadataJson | Out-File -FilePath $reportMetadataPath -Encoding UTF8 -ErrorAction Stop
+        Write-AssessmentLog "✓ Report metadata saved: $reportMetadataPath" -Level Success
+    } catch {
+        Write-AssessmentLog "! Warning: Metadata save failed: $_" -Level Warning
+    }
+
     # Create/update "latest" symlink or copy for easy access
     $latestPath = Join-Path $effectiveOutputPath "M365-Complete-Baseline-latest.html"
     try {
@@ -1671,6 +1704,15 @@ $cssContent
         } catch {
             Write-AssessmentLog "! Warning: Could not create latest report reference: $_" -Level Warning
         }
+    }
+
+    # Keep metadata for latest report in a stable file path as well.
+    $latestMetadataPath = Join-Path $effectiveOutputPath "M365-Complete-Baseline-latest.metadata.json"
+    try {
+        Copy-Item -Path $reportMetadataPath -Destination $latestMetadataPath -Force -ErrorAction Stop
+        Write-AssessmentLog "✓ Latest metadata updated: $latestMetadataPath" -Level Success
+    } catch {
+        Write-AssessmentLog "! Warning: Could not update latest metadata: $_" -Level Warning
     }
 }
 

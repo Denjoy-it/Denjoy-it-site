@@ -36,9 +36,22 @@ function Invoke-Phase1Assessment {
     
     # Global Admins
     Write-AssessmentLog "Collecting Global Administrators..." -Level Info
-    $globalAdminRole = Get-MgDirectoryRole -Filter "displayName eq 'Global Administrator'"
-    $globalAdmins = Get-MgDirectoryRoleMember -DirectoryRoleId $globalAdminRole.Id | ForEach-Object {
-        Get-MgUser -UserId $_.Id -Property DisplayName, UserPrincipalName, AccountEnabled
+    $globalAdmins = @()
+    try {
+        $globalAdminRole = Get-MgDirectoryRole -Filter "displayName eq 'Global Administrator'" -ErrorAction Stop
+
+        if ($null -eq $globalAdminRole -or [string]::IsNullOrWhiteSpace($globalAdminRole.Id)) {
+            Write-AssessmentLog "⚠️ Global Administrator role kon niet worden opgehaald of heeft geen ID." -Level Warning
+        }
+        else {
+            $globalAdmins = @(Get-MgDirectoryRoleMember -DirectoryRoleId $globalAdminRole.Id -ErrorAction Stop | ForEach-Object {
+                Get-MgUser -UserId $_.Id -Property DisplayName, UserPrincipalName, AccountEnabled
+            })
+        }
+    }
+    catch {
+        Write-AssessmentLog "⚠️ Global Administrators ophalen mislukt (mogelijk ontbrekende Directory.Read.All / RoleManagement.Read.Directory rechten): $($_.Exception.Message)" -Level Warning
+        $globalAdmins = @()
     }
     $global:Phase1Data.GlobalAdmins = $globalAdmins
     

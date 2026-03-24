@@ -101,36 +101,57 @@ function Connect-M365Services {
         #'SharePointTenant.Read.All'
     )
     
+    $hasTenant = -not [string]::IsNullOrWhiteSpace($TenantId)
+    $hasClient = -not [string]::IsNullOrWhiteSpace($ClientId)
+    $hasCert = -not [string]::IsNullOrWhiteSpace($CertThumbprint)
+    $hasSecret = ($null -ne $ClientSecret)
+    $useAppAuth = ($hasTenant -and $hasClient -and ($hasCert -or $hasSecret))
+
     try {
-        # Check if already connected
-        $context = Get-MgContext
-        
-        if ($context) {
-            Write-AssessmentLog "Already connected to Microsoft Graph" -Level Info
-            Write-AssessmentLog "Using existing connection..." -Level Info
-            
-            # If TenantId is specified, verify it matches
-            if ($TenantId -and $context.TenantId -ne $TenantId) {
-                Write-AssessmentLog "⚠️ Connected to different tenant, reconnecting..." -Level Warning
-                Disconnect-MgGraph
+        if ($useAppAuth) {
+            Write-AssessmentLog "Using app-only Graph authentication (non-interactive)." -Level Info
+
+            try { Disconnect-MgGraph -ErrorAction SilentlyContinue | Out-Null } catch {}
+
+            if ($hasCert) {
+                Connect-MgGraph -TenantId $TenantId -ClientId $ClientId -CertificateThumbprint $CertThumbprint -NoWelcome
+            } else {
+                $clientSecretCredential = [System.Management.Automation.PSCredential]::new($ClientId, $ClientSecret)
+                Connect-MgGraph -TenantId $TenantId -ClientSecretCredential $clientSecretCredential -NoWelcome
+            }
+        } else {
+            if ($env:M365_BASELINE_NONINTERACTIVE -eq '1' -or $env:CI -eq '1') {
+                Write-AssessmentLog "✗ Non-interactive run zonder volledige app-auth configuratie. Vul TenantId + ClientId + (ClientSecret of CertThumbprint) in." -Level Error
+                return $false
+            }
+
+            # Check if already connected
+            $context = Get-MgContext
+
+            if ($context) {
+                Write-AssessmentLog "Already connected to Microsoft Graph" -Level Info
+                Write-AssessmentLog "Using existing connection..." -Level Info
+
+                # If TenantId is specified, verify it matches
+                if ($TenantId -and $context.TenantId -ne $TenantId) {
+                    Write-AssessmentLog "⚠️ Connected to different tenant, reconnecting..." -Level Warning
+                    Disconnect-MgGraph
+                    if ($TenantId) {
+                        Connect-MgGraph -Scopes $requiredScopes -TenantId $TenantId -NoWelcome
+                    } else {
+                        Connect-MgGraph -Scopes $requiredScopes -NoWelcome
+                    }
+                    $context = Get-MgContext
+                }
+            } else {
+                # Not connected, make new connection
                 if ($TenantId) {
                     Connect-MgGraph -Scopes $requiredScopes -TenantId $TenantId -NoWelcome
-                }
-                else {
+                } else {
                     Connect-MgGraph -Scopes $requiredScopes -NoWelcome
                 }
                 $context = Get-MgContext
             }
-        }
-        else {
-            # Not connected, make new connection
-            if ($TenantId) {
-                Connect-MgGraph -Scopes $requiredScopes -TenantId $TenantId -NoWelcome
-            }
-            else {
-                Connect-MgGraph -Scopes $requiredScopes -NoWelcome
-            }
-            $context = Get-MgContext
         }
         
         # Get the context after connection
@@ -146,8 +167,7 @@ function Connect-M365Services {
         try {
             $global:TenantInfo.TenantId = $context.TenantId
             $global:TenantInfo.Account = $context.Account
-        }
-        catch {
+        } catch {
             Write-AssessmentLog "⚠️ Could not read context properties: $_" -Level Warning
             # Try alternative property access
             if ($context.PSObject.Properties['TenantId']) {
@@ -165,8 +185,7 @@ function Connect-M365Services {
         
         Write-AssessmentLog "✓ Connected to tenant: $($org.DisplayName) ($($global:TenantInfo.TenantId))" -Level Success
         return $true
-    }
-    catch {
+    } catch {
         Write-AssessmentLog "✗ Failed to connect: $_" -Level Error
         return $false
     }
@@ -199,13 +218,11 @@ function Invoke-GraphWithRetry {
     while ($attempt -le $MaxRetries) {
         try {
             return & $ScriptBlock
-        }
-        catch {
+        } catch {
             $statusCode = $null
             if ($_.Exception.Response) {
                 $statusCode = [int]$_.Exception.Response.StatusCode
-            }
-            elseif ($_.Exception.Message -match '429|503|504|502') {
+            } elseif ($_.Exception.Message -match '429|503|504|502') {
                 $statusCode = [int]($_.Exception.Message -replace '.*?(\d{3}).*', '$1')
             }
 
@@ -216,8 +233,7 @@ function Invoke-GraphWithRetry {
                 Write-AssessmentLog "⏳ $OperationName HTTP $statusCode - wacht $waitSeconds seconden (poging $attempt/$MaxRetries)" -Level Warning
                 Start-Sleep -Seconds $waitSeconds
                 $waitSeconds *= 2
-            }
-            else {
+            } else {
                 throw
             }
         }

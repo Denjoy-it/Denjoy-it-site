@@ -9,8 +9,7 @@ set -euo pipefail
 # ------------- Configuratie --------------------------------------------------
 PLATFORM_DIR="/var/www/mijn-website"   # Installatiemap op de server
 APP_USER="denjoy"                      # Systeemgebruiker voor de services
-MAIN_PORT="8787"                       # app.py (hoofdbackend)
-UPLOAD_PORT="8080"                     # upload_server.py (rapport-upload + KB)
+MAIN_PORT="8787"                       # app.py (hoofdbackend — inclusief KB + upload)
 NGINX_PORT="80"                        # Publieke poort (Nginx frontend)
 # -----------------------------------------------------------------------------
 
@@ -68,8 +67,7 @@ fi
 log "Python virtual environment aanmaken in ${PLATFORM_DIR}..."
 python3 -m venv "${PLATFORM_DIR}/.venv"
 "${PLATFORM_DIR}/.venv/bin/pip" install --quiet --upgrade pip
-"${PLATFORM_DIR}/.venv/bin/pip" install --quiet flask flask-cors
-log "Python dependencies geïnstalleerd (flask, flask-cors)."
+log "Python dependencies geïnstalleerd (stdlib only — geen extra pakketten vereist)."
 
 # =============================================================================
 # STAP 4 — Systeemgebruiker aanmaken
@@ -94,13 +92,10 @@ log "Mappen en rechten instellen..."
 mkdir -p \
     "${PLATFORM_DIR}/backend/storage/html" \
     "${PLATFORM_DIR}/backend/storage/runs" \
-    "${PLATFORM_DIR}/assessment/data" \
-    "${PLATFORM_DIR}/assessment/web/html"
+    "${PLATFORM_DIR}/backend/storage/kb"
 
 chown -R "${APP_USER}:${APP_USER}" \
-    "${PLATFORM_DIR}/backend/storage" \
-    "${PLATFORM_DIR}/assessment/data" \
-    "${PLATFORM_DIR}/assessment/web"
+    "${PLATFORM_DIR}/backend/storage"
 
 # Temp-map voor PowerShell subprocessen
 mkdir -p /tmp/denjoy
@@ -130,12 +125,7 @@ cat > "${CONFIG_FILE}" <<EOF
   "auth_tenant_id": "",
   "auth_client_id": "",
   "auth_cert_thumbprint": "",
-  "auth_client_secret": "",
-  "entrafalcon_script_path": "${PLATFORM_DIR}/assessment/EntraFalcon/run_EntraFalcon.ps1",
-  "entrafalcon_auth_flow": "DeviceCode",
-  "entrafalcon_tenant": "",
-  "entrafalcon_include_ms_apps": false,
-  "entrafalcon_csv": false
+    "auth_client_secret": ""
 }
 EOF
 chown "${APP_USER}:${APP_USER}" "${CONFIG_FILE}"
@@ -183,44 +173,9 @@ ReadWritePaths=${PLATFORM_DIR}/backend/storage ${PLATFORM_DIR}/assessment
 WantedBy=multi-user.target
 EOF
 
-# --- Service 2: Upload/KB server (upload_server.py via Flask) ---
-cat > /etc/systemd/system/denjoy-upload.service <<EOF
-[Unit]
-Description=Denjoy Platform — Upload & KB server (upload_server.py)
-After=network.target
-Wants=network.target
-
-[Service]
-Type=simple
-User=${APP_USER}
-Group=${APP_USER}
-WorkingDirectory=${PLATFORM_DIR}/assessment
-ExecStart=${PLATFORM_DIR}/.venv/bin/python3 ${PLATFORM_DIR}/assessment/upload_server.py --host 127.0.0.1 --port ${UPLOAD_PORT}
-# kb_api.py staat in dezelfde map als upload_server.py — PYTHONPATH zet dit goed
-Environment=PYTHONPATH=${PLATFORM_DIR}/assessment
-Environment=M365_DATA_DIR=${PLATFORM_DIR}/assessment/data
-Environment=UPLOAD_MAX_BYTES=20971520
-# Sta alle origins toe — interne tool achter Nginx, geen publiek internet
-Environment=UPLOAD_ALLOWED_ORIGINS=*
-Environment=HOME=/var/lib/${APP_USER}
-Restart=always
-RestartSec=5
-StandardOutput=journal
-StandardError=journal
-SyslogIdentifier=denjoy-upload
-
-NoNewPrivileges=true
-PrivateTmp=true
-ProtectSystem=full
-ReadWritePaths=${PLATFORM_DIR}/assessment
-
-[Install]
-WantedBy=multi-user.target
-EOF
-
 systemctl daemon-reload
-systemctl enable denjoy-platform denjoy-upload
-log "Systemd services geregistreerd en enabled."
+systemctl enable denjoy-platform
+log "Systemd service geregistreerd en enabled."
 
 # =============================================================================
 # STAP 8 — Nginx reverse proxy
@@ -236,11 +191,6 @@ upstream denjoy_main {
     keepalive 4;
 }
 
-upstream denjoy_upload {
-    server 127.0.0.1:${UPLOAD_PORT};
-    keepalive 4;
-}
-
 server {
     listen ${NGINX_PORT};
     server_name _;
@@ -253,33 +203,7 @@ server {
     gzip_types text/plain text/css application/javascript application/json text/html;
     gzip_min_length 2048;
 
-    # --- Upload server routes (Flask) ---
-    location /upload-report {
-        proxy_pass         http://denjoy_upload;
-        proxy_http_version 1.1;
-        proxy_set_header   Host \$host;
-        proxy_set_header   X-Real-IP \$remote_addr;
-        proxy_set_header   X-Forwarded-For \$proxy_add_x_forwarded_for;
-        proxy_read_timeout 120s;
-    }
-
-    location /web/ {
-        proxy_pass         http://denjoy_upload;
-        proxy_http_version 1.1;
-        proxy_set_header   Host \$host;
-        proxy_set_header   X-Real-IP \$remote_addr;
-    }
-
-    # KB API routes die de Flask blueprint serveert
-    location ~ ^/api/kb/[^/]+/(assets|vlans|pages|contacts) {
-        proxy_pass         http://denjoy_upload;
-        proxy_http_version 1.1;
-        proxy_set_header   Host \$host;
-        proxy_set_header   X-Real-IP \$remote_addr;
-        proxy_set_header   Origin http://\$host;
-    }
-
-    # --- Alles overige → hoofdbackend (app.py) ---
+    # --- Alles → app.py (hoofdbackend met KB + upload geïntegreerd) ---
     location / {
         proxy_pass         http://denjoy_main;
         proxy_http_version 1.1;
@@ -358,8 +282,6 @@ PSMOD_PID=$!
 log "Services starten..."
 systemctl start denjoy-platform
 sleep 2
-systemctl start denjoy-upload
-sleep 1
 
 # =============================================================================
 # SAMENVATTING
@@ -372,11 +294,9 @@ echo "║              Denjoy Platform — Installatie voltooid             ║"
 echo "╠══════════════════════════════════════════════════════════════════╣"
 printf "║  Platform URL  : %-48s║\n" "http://${LXC_IP}"
 printf "║  Hoofdbackend  : %-48s║\n" "http://127.0.0.1:${MAIN_PORT} (app.py)"
-printf "║  Upload/KB     : %-48s║\n" "http://127.0.0.1:${UPLOAD_PORT} (Flask)"
 echo "╠══════════════════════════════════════════════════════════════════╣"
 echo "║  Logs volgen:                                                    ║"
 echo "║    journalctl -u denjoy-platform -f                             ║"
-echo "║    journalctl -u denjoy-upload -f                               ║"
 echo "║    journalctl -u denjoy-psmodules -f  (PS modules install)      ║"
 echo "╠══════════════════════════════════════════════════════════════════╣"
 echo "║  Config bewerken:                                                ║"
