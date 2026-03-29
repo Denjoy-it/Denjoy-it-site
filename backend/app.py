@@ -2871,8 +2871,8 @@ def _run_zerotrust_ps(tenant_id: str, action: str, output_folder: str = "") -> D
 
 
 def _zt_output_folder(tenant_id: str) -> str:
-    """Standaard outputpad voor ZT-rapporten per tenant."""
-    base = PLATFORM_DIR / "portal" / "zerotrust_reports" / tenant_id
+    """Standaard outputpad voor ZT-rapporten per tenant (binnen storage — schrijfbaar door service)."""
+    base = PLATFORM_DIR / "backend" / "storage" / "zerotrust_reports" / tenant_id
     base.mkdir(parents=True, exist_ok=True)
     return str(base)
 
