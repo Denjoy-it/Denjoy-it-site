@@ -1,0 +1,63 @@
+[17:55:03] [cleanup] Stopping M365 Baseline Assessment sessions...
+[17:55:03] [cleanup] 
+[17:55:03] [cleanup] [32;1mId                    : [0mcloudadmin@wijzijnzorgenvrij.nl
+[17:55:03] [cleanup] [32;1mType                  : [0mUser
+[17:55:03] [cleanup] [32;1mTenants               : [0m{5949c95e-86e7-4c31-ae4e-ba49d0477959}
+[17:55:03] [cleanup] [32;1mCredential            : [0m
+[17:55:03] [cleanup] [32;1mTenantMap             : [0m{}
+[17:55:03] [cleanup] [32;1mCertificateThumbprint : [0m
+[17:55:03] [cleanup] [32;1mExtendedProperties    : [0m{[Tenants, 5949c95e-86e7-4c31-ae4e-ba49d0477959], [HomeAccountId, 697bde20-bd75-435f-bf8d-d8fd4c01ba12.5949c95e-86e7-4c31-ae4e-ba49d0477959]}
+[17:55:03] [cleanup] 
+[17:55:03] [cleanup] ✔ Disconnect-AzAccount executed.
+[17:55:03] [cleanup] [33;1mWARNING: Failed to execute Disconnect-MgGraph No application to sign out from.[0m
+[17:55:03] [cleanup] ✔ Disconnect-ExchangeOnline executed.
+[17:55:03] [cleanup] ○ Disconnect-AzureAD not available — skipping.
+[17:55:03] [cleanup] ○ Disconnect-MsolService not available — skipping.
+[17:55:03] [cleanup] ✔ Disconnect-MicrosoftTeams executed.
+[17:55:03] [cleanup] [33;1mWARNING: Failed to execute Disconnect-PnPOnline No connection to disconnect[0m
+[17:55:03] [cleanup] ○ Disconnect-SPOService not available — skipping.
+[17:55:03] [cleanup] ○ Disconnect-AzureRmAccount not available — skipping.
+[17:55:03] [cleanup] ○ Remove-AzureRmAccount not available — skipping.
+[17:55:03] [cleanup] Attempting @{Name=Disconnect-Graph}...
+[17:55:03] [cleanup] [33;1mWARNING: Failed to execute @{Name=Disconnect-Graph} The term '@{Name=Disconnect-Graph}' is not recognized as a name of a cmdlet, function, script file, or executable program.
+[17:55:03] [cleanup] Check the spelling of the name, or if a path was included, verify that the path is correct and try again.[0m
+[17:55:03] [cleanup] Attempting @{Name=Disconnect-MtGraph}...
+[17:55:03] [cleanup] [33;1mWARNING: Failed to execute @{Name=Disconnect-MtGraph} The term '@{Name=Disconnect-MtGraph}' is not recognized as a name of a cmdlet, function, script file, or executable program.
+[17:55:03] [cleanup] Check the spelling of the name, or if a path was included, verify that the path is correct and try again.[0m
+[17:55:03] [cleanup] Attempting @{Name=Disconnect-MtMaester}...
+[17:55:03] [cleanup] [33;1mWARNING: Failed to execute @{Name=Disconnect-MtMaester} The term '@{Name=Disconnect-MtMaester}' is not recognized as a name of a cmdlet, function, script file, or executable program.
+[17:55:03] [cleanup] Check the spelling of the name, or if a path was included, verify that the path is correct and try again.[0m
+[17:55:03] [cleanup] Attempting @{Name=Disconnect-AzWvdUserSession}...
+[17:55:03] [cleanup] [33;1mWARNING: Failed to execute @{Name=Disconnect-AzWvdUserSession} The term '@{Name=Disconnect-AzWvdUserSession}' is not recognized as a name of a cmdlet, function, script file, or executable program.
+[17:55:03] [cleanup] Check the spelling of the name, or if a path was included, verify that the path is correct and try again.[0m
+[17:55:03] [cleanup] Attempting @{Name=Disconnect-ExchangeOnline}...
+[17:55:03] [cleanup] [33;1mWARNING: Failed to execute @{Name=Disconnect-ExchangeOnline} The term '@{Name=Disconnect-ExchangeOnline}' is not recognized as a name of a cmdlet, function, script file, or executable program.
+[17:55:03] [cleanup] Check the spelling of the name, or if a path was included, verify that the path is correct and try again.[0m
+[17:55:03] [cleanup] Attempting @{Name=Disconnect-Maester}...
+[17:55:03] [cleanup] [33;1mWARNING: Failed to execute @{Name=Disconnect-Maester} The term '@{Name=Disconnect-Maester}' is not recognized as a name of a cmdlet, function, script file, or executable program.
+[17:55:03] [cleanup] Check the spelling of the name, or if a path was included, verify that the path is correct and try again.[0m
+[17:55:03] [cleanup] Attempting @{Name=Disconnect-MgDeviceManagementRemoteAssistancePartner}...
+[17:55:03] [cleanup] [33;1mWARNING: Failed to execute @{Name=Disconnect-MgDeviceManagementRemoteAssistancePartner} The term '@{Name=Disconnect-MgDeviceManagementRemoteAssistancePartner}' is not recognized as a name of a cmdlet, function, script file, or executable program.
+[17:55:03] [cleanup] Check the spelling of the name, or if a path was included, verify that the path is correct and try again.[0m
+[17:55:03] [cleanup] Attempting @{Name=Disconnect-AzAccount}...
+[17:55:03] [cleanup] [33;1mWARNING: Failed to execute @{Name=Disconnect-AzAccount} The term '@{Name=Disconnect-AzAccount}' is not recognized as a name of a cmdlet, function, script file, or executable program.
+[17:55:03] [cleanup] Check the spelling of the name, or if a path was included, verify that the path is correct and try again.[0m
+[17:55:03] [cleanup] Attempting @{Name=Disconnect-AzP2SVpnGatewayVpnConnection}...
+[17:55:03] [cleanup] [33;1mWARNING: Failed to execute @{Name=Disconnect-AzP2SVpnGatewayVpnConnection} The term '@{Name=Disconnect-AzP2SVpnGatewayVpnConnection}' is not recognized as a name of a cmdlet, function, script file, or executable program.
+[17:55:03] [cleanup] Check the spelling of the name, or if a path was included, verify that the path is correct and try again.[0m
+[17:55:03] [cleanup] Attempting @{Name=Disconnect-AzVirtualNetworkGatewayVpnConnection}...
+[17:55:03] [cleanup] [33;1mWARNING: Failed to execute @{Name=Disconnect-AzVirtualNetworkGatewayVpnConnection} The term '@{Name=Disconnect-AzVirtualNetworkGatewayVpnConnection}' is not recognized as a name of a cmdlet, function, script file, or executable program.
+[17:55:03] [cleanup] Check the spelling of the name, or if a path was included, verify that the path is correct and try again.[0m
+[17:55:03] [cleanup] Attempting @{Name=Disconnect-MgGraph}...
+[17:55:03] [cleanup] [33;1mWARNING: Failed to execute @{Name=Disconnect-MgGraph} The term '@{Name=Disconnect-MgGraph}' is not recognized as a name of a cmdlet, function, script file, or executable program.
+[17:55:03] [cleanup] Check the spelling of the name, or if a path was included, verify that the path is correct and try again.[0m
+[17:55:03] [cleanup] Attempting @{Name=Disconnect-MicrosoftTeams}...
+[17:55:03] [cleanup] [33;1mWARNING: Failed to execute @{Name=Disconnect-MicrosoftTeams} The term '@{Name=Disconnect-MicrosoftTeams}' is not recognized as a name of a cmdlet, function, script file, or executable program.
+[17:55:03] [cleanup] Check the spelling of the name, or if a path was included, verify that the path is correct and try again.[0m
+[17:55:03] [cleanup] Attempting @{Name=Disconnect-PnPOnline}...
+[17:55:03] [cleanup] [33;1mWARNING: Failed to execute @{Name=Disconnect-PnPOnline} The term '@{Name=Disconnect-PnPOnline}' is not recognized as a name of a cmdlet, function, script file, or executable program.
+[17:55:03] [cleanup] Check the spelling of the name, or if a path was included, verify that the path is correct and try again.[0m
+[17:55:03] [cleanup] All requested disconnect attempts finished.
+[17:55:03] [cleanup] 0
+[17:55:03] Forced disconnect cleanup exit code: 0
+[17:55:03] ⏹ Stop-verzoek ontvangen via API.
