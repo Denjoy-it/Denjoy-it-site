@@ -1359,8 +1359,8 @@ Invoke-ZtAssessment</pre>
     const overallColor = ztScoreColor(score);
 
     return `
-      <div class="live-insight-strip" style="margin-bottom:1.25rem">
-        <div style="display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap">
+      <div class="live-insight-strip" style="margin-bottom:1.25rem;display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap">
+        <div style="display:contents">
           <div>
             <div style="font-size:.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em">Overall score</div>
             <div style="font-size:2rem;font-weight:700;color:${overallColor}">${score}%</div>

@@ -515,7 +515,14 @@ const SUBNAV_CONFIG = {
   ],
   compliance: [
     { label: 'CIS Benchmark',  liveTab: 'cis' },
-    { label: 'Zero Trust',     liveTab: 'zerotrust' },
+  ],
+  zerotrust: [
+    { label: 'Overzicht', ztTab: 'overview' },
+    { label: 'Identity',  ztTab: 'identity' },
+    { label: 'Devices',   ztTab: 'devices' },
+    { label: 'Network',   ztTab: 'network' },
+    { label: 'Data',      ztTab: 'data' },
+    { label: 'JSON',      ztTab: 'json' },
   ],
   hybrid: [
     { label: 'AD Connect', liveTab: 'sync' },
@@ -645,6 +652,11 @@ const SECTION_META = {
     title: 'Compliance & Benchmarks',
     meta: 'CIS Benchmark-score en afwijkingen t.o.v. het geharde referentiemodel per controledomein.',
   },
+  zerotrust: {
+    eyebrow: 'Security',
+    title: 'Zero Trust Workspace',
+    meta: 'Microsoft Zero Trust Assessment met hoofdstukken, controlstatus en brondata in een eigen portaalweergave.',
+  },
   hybrid: {
     eyebrow: 'Infrastructuur',
     title: 'Hybrid & AD Connect',
@@ -662,6 +674,7 @@ const NAV_GROUP_MAP = {
   hybrid:     'Gebruikers & Identiteit',
   alerts:     'Security & Compliance',
   compliance: 'Security & Compliance',
+  zerotrust:  'Security & Compliance',
   bevindingen:'Security & Compliance',
   teams:      'Samenwerking & Email',
   sharepoint: 'Samenwerking & Email',
@@ -754,6 +767,11 @@ const QUICK_ACTIONS = {
     { id: 'goAlertsAudit', label: 'Audit Log', kind: 'primary' },
     { id: 'goAlertsScore', label: 'Secure Score', kind: 'ghost' },
   ],
+  zerotrust: [
+    { id: 'refreshWorkspace', label: 'Ververs workspace', kind: 'secondary' },
+    { id: 'goZeroTrust', label: 'Zero Trust', kind: 'primary' },
+    { id: 'goResults', label: 'Rapporten', kind: 'ghost' },
+  ],
   exchange: [
     { id: 'refreshWorkspace', label: 'Ververs workspace', kind: 'secondary' },
     { id: 'goExchangeMail', label: 'Mailboxen', kind: 'primary' },
@@ -783,6 +801,7 @@ const NAV_GROUP_SECTIONS = {
     'apps',
     'bevindingen',
     'compliance',
+    'zerotrust',
     { section: 'identity', subItems: ['legacy-auth'] },
   ],
   collab: ['exchange', 'teams', 'sharepoint', 'domains', 'backup'],
@@ -1040,6 +1059,7 @@ function getQuickActionHandlers() {
     goDomains: () => showSection('domains', { liveTab: 'domains-list' }),
     goAlertsAudit: () => showSection('alerts', { liveTab: 'auditlog' }),
     goAlertsScore: () => showSection('alerts', { liveTab: 'securescr' }),
+    goZeroTrust: () => showSection('zerotrust', { ztTab: 'overview' }),
     goExchangeMail: () => showSection('exchange', { liveTab: 'mailboxen' }),
     goExchangeRules: () => showSection('exchange', { liveTab: 'regels' }),
     goKbAssets: () => showSection('kb', { kbTab: 'assets' }),
@@ -1284,6 +1304,7 @@ function getSectionOptionsFromDataset(dataset) {
   if (dataset.caTab) opts.caTab = dataset.caTab;
   if (dataset.alTab) opts.alTab = dataset.alTab;
   if (dataset.exTab) opts.exTab = dataset.exTab;
+  if (dataset.ztTab) opts.ztTab = dataset.ztTab;
   if (dataset.liveTab) opts.liveTab = dataset.liveTab;
   return opts;
 }
@@ -1324,6 +1345,7 @@ function getSubnavItemMeta(item) {
     ['caTab', 'ca'],
     ['alTab', 'alerts'],
     ['exTab', 'exchange'],
+    ['ztTab', 'zerotrust'],
     ['liveTab', 'live'],
     ['section', 'section'],
   ];
@@ -1391,6 +1413,9 @@ function updateSubnav(sectionName, activeItem) {
         activateSectionSubtab(_currentSection, key);
       } else if (type === 'live') {
         if (typeof switchLiveModuleTab === 'function') switchLiveModuleTab(_currentSection, key);
+        setActiveSubnavItem(key);
+      } else if (type === 'zerotrust') {
+        if (typeof switchZeroTrustChapter === 'function') switchZeroTrustChapter(key);
         setActiveSubnavItem(key);
       } else if (type === 'section') {
         // item kan ook een resultsPanel target hebben (bijv. subnav → rapporten tab)
@@ -1526,6 +1551,7 @@ function showSection(sectionName, opts = {}) {
     || opts.settingsTab
     || opts.remTab
     || opts.gbTab
+    || opts.ztTab
     || opts.liveTab
     || opts.baselineTab
     || opts.itTab
@@ -1545,6 +1571,13 @@ function showSection(sectionName, opts = {}) {
 
   if (sectionName === 'assessment' && typeof loadAssessmentExperience === 'function') {
     loadAssessmentExperience();
+  }
+  if (sectionName === 'zerotrust') {
+    const activeTab = opts.ztTab || 'overview';
+    updateSubnav('zerotrust', activeTab);
+    _currentSubItem = activeTab;
+    if (typeof loadZeroTrustSection === 'function') loadZeroTrustSection(activeTab);
+    return;
   }
   if (sectionName === 'results') {
     updateSubnav('results', opts.resultsPanel || 'viewer');
@@ -2504,6 +2537,9 @@ async function refreshTenantData() {
   }
   if (['teams', 'sharepoint', 'identity', 'apps', 'domains', 'exchange', 'intune', 'backup', 'alerts'].includes(_currentSection) && typeof loadLiveModuleSection === 'function') {
     await loadLiveModuleSection(_currentSection, _currentSubItem || null);
+  }
+  if (_currentSection === 'zerotrust' && typeof loadZeroTrustSection === 'function') {
+    await loadZeroTrustSection(_currentSubItem || 'overview');
   }
   updateWorkspaceHeader(_currentSection);
   renderContextRail(_currentSection);

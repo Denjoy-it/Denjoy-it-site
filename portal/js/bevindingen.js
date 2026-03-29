@@ -194,6 +194,45 @@
       refreshBtn.addEventListener('click', () => { _loaded = false; loadBevindingenSection(); });
       refreshBtn._bevWired = true;
     }
+    const importBtn = document.getElementById('bevImportBtn');
+    if (importBtn && !importBtn._bevWired) {
+      importBtn.addEventListener('click', importFromSnapshot);
+      importBtn._bevWired = true;
+    }
+  }
+
+  async function importFromSnapshot() {
+    const tid = getTid();
+    if (!tid) {
+      if (typeof showToast === 'function') showToast('Selecteer eerst een tenant.', 'warning');
+      return;
+    }
+    const importBtn = document.getElementById('bevImportBtn');
+    if (importBtn) { importBtn.disabled = true; importBtn.textContent = '⟳ Bezig…'; }
+    try {
+      const res = await fetch(`/api/findings/${tid}/import-snapshot`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${getToken()}`,
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': document.cookie.match(/denjoy_csrf=([^;]+)/)?.[1] || '',
+        },
+        credentials: 'include',
+        body: '{}',
+      });
+      const data = await res.json();
+      if (data.ok) {
+        if (typeof showToast === 'function') showToast(`${data.findings_written} bevindingen geïmporteerd uit assessment-snapshot.`, 'success');
+        _loaded = false;
+        await loadBevindingenSection();
+      } else {
+        if (typeof showToast === 'function') showToast(data.error || 'Import mislukt.', 'error');
+      }
+    } catch (err) {
+      if (typeof showToast === 'function') showToast('Import mislukt: ' + String(err.message || err), 'error');
+    } finally {
+      if (importBtn) { importBtn.disabled = false; importBtn.textContent = '⬇ Importeer uit assessment'; }
+    }
   }
 
   // ── Public API ────────────────────────────────────────────────────────────

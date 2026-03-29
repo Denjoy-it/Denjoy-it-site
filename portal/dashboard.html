@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="css/alerts.css">
     <link rel="stylesheet" href="css/exchange.css">
     <link rel="stylesheet" href="css/bevindingen.css">
+    <link rel="stylesheet" href="css/zerotrust.css">
     <!-- MSAL.js — Microsoft Authentication Library -->
     <script src="https://alcdn.msauth.net/browser/2.38.3/js/msal-browser.min.js"></script>
 </head>
@@ -111,6 +112,10 @@
             <button type="button" class="nav-dropdown-link" data-section="compliance" data-live-tab="cis">
                 <span class="nav-dropdown-icon"><img src="images/m365/alerts.svg" alt="CIS Benchmark"></span>
                 <span class="ddl-content"><strong>CIS Benchmark</strong><small>M365 Foundations v3.0 compliance</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="zerotrust">
+                <span class="nav-dropdown-icon"><img src="images/m365/conditional-access.svg" alt="Zero Trust"></span>
+                <span class="ddl-content"><strong>Zero Trust</strong><small>Microsoft assessment in hoofdstukken</small></span>
             </button>
             <button type="button" class="nav-dropdown-link" data-section="identity" data-live-tab="legacy-auth">
                 <span class="nav-dropdown-icon"><img src="images/m365/identity.svg" alt="Legacy Auth"></span>
@@ -1733,8 +1738,9 @@
                     <div class="bev-domain-pills" id="bevDomainPills">
                         <!-- gevuld door JS -->
                     </div>
-                    <div class="bev-health-actions">
+                    <div class="bev-health-actions" style="display:flex;gap:.5rem;flex-wrap:wrap;">
                         <button type="button" class="btn btn-outline bev-refresh-btn" id="bevRefreshBtn" style="font-size:.82rem;padding:.4rem .9rem;">↻ Vernieuwen</button>
+                        <button type="button" class="btn btn-secondary" id="bevImportBtn" style="font-size:.82rem;padding:.4rem .9rem;" title="Importeer bevindingen uit de laatste assessment-snapshot">⬇ Importeer uit assessment</button>
                     </div>
                 </div>
 
@@ -2237,6 +2243,17 @@
                 </div>
             </section>
 
+            <section id="zerotrustSection" class="content-section">
+                <div class="section-label">Security — Zero Trust Assessment</div>
+                <h2>Zero Trust Workspace</h2>
+                <p class="section-intro">
+                    Microsoft Zero Trust Assessment als apart portaalhoofdstuk, opgebouwd rondom overzicht, pilaren, controls en ruwe JSON-brondata.
+                </p>
+                <div id="zerotrustModuleRoot" class="zerotrust-root">
+                    <p class="live-module-empty">Selecteer een tenant om Zero Trust-resultaten op te halen.</p>
+                </div>
+            </section>
+
             <!-- ── HYBRID IDENTITY & AD CONNECT ── -->
             <section id="hybridSection" class="content-section">
                 <div class="section-label">Identiteit — Hybrid Identity</div>
@@ -2452,6 +2469,7 @@
 
 <script src="js/dashboard.js"></script>
 <script src="js/live-modules.js"></script>
+<script src="js/zerotrust.js"></script>
 <script src="js/assessment-ui.js"></script>
 <script src="js/assessment.js"></script>
 <script src="js/results-viewer.js"></script>
