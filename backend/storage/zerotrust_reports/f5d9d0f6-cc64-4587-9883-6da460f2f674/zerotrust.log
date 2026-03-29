@@ -1,0 +1,21 @@
+[22:32:49] Actie gestart: run
+[22:32:49] Command: /usr/local/microsoft/powershell/7/pwsh -NonInteractive -NoProfile -File /Users/demac/Downloads/Denjoy-it-site-main-2/assessment/Invoke-ZeroTrustAssessment.ps1 -Action run -TenantId 229f88d7-1d50-48ed-821e-76d45d2aa4d8 -ClientId 599793e6-e507-46d3-95a0-c0597251bd84 -OutputFolder /Users/demac/Downloads/Denjoy-it-site-main-2/backend/storage/zerotrust_reports/f5d9d0f6-cc64-4587-9883-6da460f2f674
+[22:32:49] [INFO] ZeroTrustAssessment module al aanwezig (v2.2.0)
+[22:32:49] ⚠️ Warning: For the most complete Zero Trust Assessment results, run this tool on Windows.
+[22:32:49] Some assessment tests rely on modules (SPO, AIP) that only work with Windows PowerShell (5.1).
+[22:32:49] If you run the tool on macOS or Linux, a few tests may be skipped.
+[22:32:49] Resolving 5 dependencies...
+[22:32:50]     ✅ Module PSFramework found (v1.13.426).
+[22:32:50]     ✅ Module Microsoft.Graph.Authentication found (v2.36.1).
+[22:32:50]     ✅ Module Microsoft.Graph.Beta.Teams found (v2.36.1).
+[22:32:50]     ✅ Module Az.Accounts found (v5.3.2).
+[22:32:50]     ✅ Module ExchangeOnlineManagement found (v3.9.0).
+[22:32:50] Asserting MSAL loading order for dependencies...
+[22:32:50]     ✅ Loading MSAL v4.82.1.0 for dependency Microsoft.Graph.Authentication version 2.36.1
+[22:32:50]     ✅ Loaded Microsoft.Identity.Client.Extensions.Msal.dll
+[22:32:50]     ✅ Loaded Microsoft.Identity.Client.Broker.dll
+[22:32:50]     ✅ Loaded Microsoft.Identity.Client.NativeInterop.dll
+[22:32:50]     ✅ Loaded Microsoft.IdentityModel.Abstractions.dll
+[22:32:50]     ✅ Loaded Microsoft.Identity.Client.NativeInterop.dll
+[22:32:51] [31;1mNew-Item: [31;1mAccess to the path '/usr/local/microsoft/powershell/7/Scripts' is denied.[0m
+[22:32:51] Proces voltooid met exit code 1

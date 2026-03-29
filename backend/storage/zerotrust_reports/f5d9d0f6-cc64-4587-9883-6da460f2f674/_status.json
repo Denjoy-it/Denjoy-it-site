@@ -1,0 +1,15 @@
+{
+  "state": "failed",
+  "action": "run",
+  "message": "Geen output van PS script",
+  "started_at": "2026-03-29T22:32:49.074109+02:00",
+  "completed_at": "2026-03-29T22:32:51.235893+02:00",
+  "result": {
+    "ok": false,
+    "error": "Geen output van PS script",
+    "returncode": 1,
+    "output_tail": "\u26a0\ufe0f Warning: For the most complete Zero Trust Assessment results, run this tool on Windows.\nSome assessment tests rely on modules (SPO, AIP) that only work with Windows PowerShell (5.1).\nIf you run the tool on macOS or Linux, a few tests may be skipped.\n\nResolving 5 dependencies...\n    \u2705 Module PSFramework found (v1.13.426).\n    \u2705 Module Microsoft.Graph.Authentication found (v2.36.1).\n    \u2705 Module Microsoft.Graph.Beta.Teams found (v2.36.1).\n    \u2705 Module Az.Accounts found (v5.3.2).\n    \u2705 Module ExchangeOnlineManagement found (v3.9.0).\n\n\nAsserting MSAL loading order for dependencies...\n    \u2705 Loading MSAL v4.82.1.0 for dependency Microsoft.Graph.Authentication version 2.36.1\n    \u2705 Loaded Microsoft.Identity.Client.Extensions.Msal.dll\n    \u2705 Loaded Microsoft.Identity.Client.Broker.dll\n    \u2705 Loaded Microsoft.Identity.Client.NativeInterop.dll\n    \u2705 Loaded Microsoft.IdentityModel.Abstractions.dll\n    \u2705 Loaded Microsoft.Identity.Client.NativeInterop.dll\n\u001b[31;1mNew-Item: \u001b[31;1mAccess to the path '/usr/local/microsoft/powershell/7/Scripts' is denied.\u001b[0m"
+  },
+  "auth_mode": "app",
+  "updated_at": "2026-03-29T22:32:51.235915+02:00"
+}
