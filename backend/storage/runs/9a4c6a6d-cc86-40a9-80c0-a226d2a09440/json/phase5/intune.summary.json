@@ -1,0 +1,33 @@
+{
+  "section": "intune",
+  "subsection": "summary",
+  "label": "Intune Overzicht",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:59:43.1572550+01:00",
+  "assessmentId": "20260328-230422",
+  "summary": {
+    "compliantDevices": 100,
+    "totalDevices": 256,
+    "intuneAvailable": true,
+    "compliancePercentage": 39.06
+  },
+  "items": [
+    {
+      "Name": "Android",
+      "Count": 129
+    },
+    {
+      "Name": "Windows",
+      "Count": 127
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Intune snapshot uit Phase 5."
+    ],
+    "permissions": [
+      "DeviceManagementManagedDevices.Read.All",
+      "DeviceManagementConfiguration.Read.All"
+    ]
+  }
+}

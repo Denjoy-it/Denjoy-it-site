@@ -1,0 +1,22 @@
+{
+  "section": "intune",
+  "subsection": "enrollment",
+  "label": "Inschrijvingsrestricties",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:59:43.2091560+01:00",
+  "assessmentId": "20260328-230422",
+  "summary": {
+    "blockedPlatforms": "",
+    "allowedPlatforms": "",
+    "totalRestrictions": 0
+  },
+  "items": [],
+  "meta": {
+    "notes": [
+      "Enrollment platform restricties uit Phase 5."
+    ],
+    "permissions": [
+      "DeviceManagementConfiguration.Read.All"
+    ]
+  }
+}

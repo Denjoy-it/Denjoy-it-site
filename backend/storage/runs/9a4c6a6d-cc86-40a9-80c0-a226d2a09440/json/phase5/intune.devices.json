@@ -1,0 +1,2069 @@
+{
+  "section": "intune",
+  "subsection": "devices",
+  "label": "Intune Apparaten",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:59:43.2071480+01:00",
+  "assessmentId": "20260328-230422",
+  "summary": {
+    "total": 256
+  },
+  "items": [
+    {
+      "DeviceName": "Staging_3e187c8246af5859_AndroidEnterprise_10/23/2025_1:10 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-11-03T10:18:12Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2111A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-26T08:25:35Z"
+    },
+    {
+      "DeviceName": "Staging_3f60569c5be12a9f_AndroidEnterprise_3/3/2026_3:11 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-27T11:08:54Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2411C",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7985",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "noa.janssen@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T15:02:45Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412AN",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "devi.vanwoudenberg@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T11:51:40Z"
+    },
+    {
+      "DeviceName": "lotte.verhofstad_AndroidEnterprise_12/4/2024_10:59 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "lotte.verhofstad@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T13:14:47Z"
+    },
+    {
+      "DeviceName": "natasja.lie_AndroidEnterprise_5/6/2025_12:14 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "natasja.lie@meerwaarde.nl",
+      "LastSyncDateTime": "2026-02-19T05:34:15Z"
+    },
+    {
+      "DeviceName": "ineke.koersvelt_AndroidEnterprise_12/4/2024_1:33 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-10-30T13:06:37Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412AF",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "magne.dekreek@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-17T14:32:58Z"
+    },
+    {
+      "DeviceName": "Staging_35190fa1d8659c5a_AndroidEnterprise_11/13/2025_3:16 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-28T15:26:10Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412W",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "lisa.debest@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T12:24:56Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412I",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "sandy.frederiks@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T15:44:51Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2101A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.4946",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-02-02T08:22:10Z"
+    },
+    {
+      "DeviceName": "lisa.debest_AndroidEnterprise_12/4/2024_2:30 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "lisa.debest@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T20:21:24Z"
+    },
+    {
+      "DeviceName": "Staging_30a1094185b3efc1_AndroidEnterprise_9/1/2025_9:03 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-28T21:21:00Z"
+    },
+    {
+      "DeviceName": "DT-MEE-2412G",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "balie@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T11:57:37Z"
+    },
+    {
+      "DeviceName": "norman.kortekaas_AndroidEnterprise_12/4/2024_2:02 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "norman.kortekaas@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T16:54:27Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2506A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "Maryam.Aourag@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T14:02:32Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2411A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "maud.tromp@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T10:55:19Z"
+    },
+    {
+      "DeviceName": "erik.schoe_AndroidEnterprise_12/4/2024_2:30 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "erik.schoe@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T20:01:29Z"
+    },
+    {
+      "DeviceName": "Staging_3337a97e58ded897_AndroidEnterprise_11/6/2025_9:46 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-11-06T14:39:25Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412AK",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "mustapha.elmoumene@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T22:17:22Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2501E",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "maira.wouter@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T13:21:19Z"
+    },
+    {
+      "DeviceName": "SMWLT5CD309D2TK",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "natasja.lie@meerwaarde.nl",
+      "LastSyncDateTime": "2026-02-18T02:56:48Z"
+    },
+    {
+      "DeviceName": "Staging_380af0a65e637189_AndroidEnterprise_1/27/2026_12:44 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-02-26T07:32:07Z"
+    },
+    {
+      "DeviceName": "maryam.shaham_AndroidEnterprise_12/4/2024_11:23 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-06-23T12:45:45Z"
+    },
+    {
+      "DeviceName": "betul.manisa_AndroidEnterprise_12/4/2024_1:07 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "betul.manisa@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T17:52:29Z"
+    },
+    {
+      "DeviceName": "linda.steeman_AndroidEnterprise_12/4/2024_2:27 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "linda.steeman@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T18:40:23Z"
+    },
+    {
+      "DeviceName": "lisette.piepers_AndroidEnterprise_12/4/2024_1:32 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "lisette.piepers@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T15:38:52Z"
+    },
+    {
+      "DeviceName": "Staging_376a4f65ae6950b9_AndroidEnterprise_6/30/2025_7:57 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-01-29T09:42:05Z"
+    },
+    {
+      "DeviceName": "SMWLT5CD2434NFC",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "sandra.spoelstra@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-12T14:22:25Z"
+    },
+    {
+      "DeviceName": "cherish.hellings_AndroidEnterprise_12/4/2024_2:30 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "cherish.hellings@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T15:55:50Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2507B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.4349",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-07-16T09:28:55Z"
+    },
+    {
+      "DeviceName": "somaya.essannouni_AndroidEnterprise_12/4/2024_1:35 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "somaya.essannouni@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T19:41:12Z"
+    },
+    {
+      "DeviceName": "tim.sebel_AndroidEnterprise_12/4/2024_10:30 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "tim.sebel@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T22:30:10Z"
+    },
+    {
+      "DeviceName": "SMWLT5CD3112G3N",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "eveline.vandam@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T19:49:08Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2101B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7628",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-26T09:09:47Z"
+    },
+    {
+      "DeviceName": "aukje.jonkhout_AndroidEnterprise_12/4/2024_2:02 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "aukje.jonkhout@meerwaarde.nl",
+      "LastSyncDateTime": "2026-02-26T16:35:50Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2507E",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.4351",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-07-15T23:10:01Z"
+    },
+    {
+      "DeviceName": "SMWLT5CD3112G4B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "simone.duin@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T15:54:47Z"
+    },
+    {
+      "DeviceName": "SMWLT5CD2457MK8",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "baudien.ekkel@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T13:51:29Z"
+    },
+    {
+      "DeviceName": "Staging_33975bcd67941471_AndroidEnterprise_4/29/2025_1:05 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-05-19T12:14:29Z"
+    },
+    {
+      "DeviceName": "DT-MEE-2412D",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-27T15:16:08Z"
+    },
+    {
+      "DeviceName": "josefine.scheepmaker_AndroidEnterprise_12/4/2024_10:31 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "josefine.scheepmaker@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T19:19:51Z"
+    },
+    {
+      "DeviceName": "magne.dekreek_AndroidEnterprise_12/4/2024_2:02 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "magne.dekreek@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-13T15:12:59Z"
+    },
+    {
+      "DeviceName": "sophie.hirs_AndroidEnterprise_12/4/2024_2:02 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "sophie.hirs@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T16:21:01Z"
+    },
+    {
+      "DeviceName": "bidi.stam_AndroidEnterprise_12/4/2024_11:11 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "bidi.stam@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T15:54:52Z"
+    },
+    {
+      "DeviceName": "hyan.taleb_AndroidEnterprise_12/4/2024_10:31 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "hyan.taleb@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T16:17:46Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2501F",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "Gaby.Stoop@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T10:52:13Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2302A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26200.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "claudia.boelee@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T08:01:58Z"
+    },
+    {
+      "DeviceName": "roxanna.booms_AndroidEnterprise_12/4/2024_11:24 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "roxanna.booms@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T20:47:05Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2501C",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "els.vanderjagt@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T18:00:38Z"
+    },
+    {
+      "DeviceName": "suzanne.vanvarik_AndroidEnterprise_12/4/2024_1:07 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "suzanne.vanvarik@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T12:58:34Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412D",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26200.7922",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-09T16:04:55Z"
+    },
+    {
+      "DeviceName": "Staging_3bac8155a61cc2fc_AndroidEnterprise_10/2/2025_10:44 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-10-30T14:17:10Z"
+    },
+    {
+      "DeviceName": "sieben.vanmaarseveen_AndroidEnterprise_12/4/2024_2:27 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "sieben.vanmaarseveen@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T18:05:30Z"
+    },
+    {
+      "DeviceName": "SMWLT5CD3112G5J",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "mariette.bouterse@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-24T13:18:33Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412K",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "merel.jansen@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T13:30:57Z"
+    },
+    {
+      "DeviceName": "merel.jansen_AndroidEnterprise_12/4/2024_2:02 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "merel.jansen@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T13:44:29Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2603B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26200.7840",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "lia.duivenvoorden@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-23T12:58:12Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412M",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "aysun.aydemir@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T09:07:05Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412AH",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "Nelleke.vanWonderen@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-25T13:30:06Z"
+    },
+    {
+      "DeviceName": "fabian.vantol_AndroidEnterprise_12/10/2024_9:39 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "fabian.vantol@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T17:58:17Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412N",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "inge.janssen@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T15:15:39Z"
+    },
+    {
+      "DeviceName": "yvonne.vandenberg_AndroidEnterprise_12/4/2024_9:59 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "yvonne.vandenberg@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T18:34:41Z"
+    },
+    {
+      "DeviceName": "laila.elhafidi_AndroidEnterprise_12/4/2024_2:53 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "laila.elhafidi@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T21:22:04Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "frank.groot@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T12:01:01Z"
+    },
+    {
+      "DeviceName": "Staging_3a15d21db42e19e6_AndroidEnterprise_12/2/2025_1:19 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-28T10:59:54Z"
+    },
+    {
+      "DeviceName": "ilona.vanes_AndroidEnterprise_12/4/2024_1:31 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "ilona.vanes@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-25T10:57:06Z"
+    },
+    {
+      "DeviceName": "Staging_30bc5c3fa124e129_AndroidEnterprise_10/23/2025_1:25 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-11-27T11:10:12Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412Q",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7628",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "Guido.Dankerlui@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T19:44:26Z"
+    },
+    {
+      "DeviceName": "SMWLT5CD351490B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26200.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "lara.holst@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T13:47:47Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412T",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "sophie.hirs@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T15:05:40Z"
+    },
+    {
+      "DeviceName": "Staging_376733ffcc212e5b_AndroidEnterprise_1/29/2026_3:17 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-01-29T16:22:23Z"
+    },
+    {
+      "DeviceName": "SMWLT5CD3112G5H",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "betul.manisa@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T13:32:43Z"
+    },
+    {
+      "DeviceName": "jinan.raissouni_AndroidEnterprise_12/4/2024_10:59 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "jinan.raissouni@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-19T00:26:08Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2603C",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7392",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-09T10:47:14Z"
+    },
+    {
+      "DeviceName": "sawinah.voortman_AndroidEnterprise_12/4/2024_11:07 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "sawinah.voortman@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T23:57:57Z"
+    },
+    {
+      "DeviceName": "nina.liang_AndroidEnterprise_12/4/2024_1:08 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "nina.liang@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T18:44:52Z"
+    },
+    {
+      "DeviceName": "NB-TEST-QUBE",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.2033",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "test.qubemdm@meerwaarde.nl",
+      "LastSyncDateTime": "2025-06-26T14:17:03Z"
+    },
+    {
+      "DeviceName": "Caroline.vandemerwe_AndroidEnterprise_12/4/2024_11:24 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "Caroline.vandemerwe@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T15:09:18Z"
+    },
+    {
+      "DeviceName": "Staging_38d9b7253a35a9c3_AndroidEnterprise_6/3/2025_9:31 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-10-10T18:54:19Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2601A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "erik.schoe@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T10:19:14Z"
+    },
+    {
+      "DeviceName": "annette.vangroen_AndroidEnterprise_12/4/2024_10:34 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "annette.vangroen@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T18:29:53Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2603D",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26200.7462",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-02T15:38:54Z"
+    },
+    {
+      "DeviceName": "riguillo.terhaar_AndroidEnterprise_12/4/2024_1:34 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "riguillo.terhaar@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T19:26:12Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2507D",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.4351",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-07-16T07:04:38Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412AJ",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "marjorie.mesman@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T07:38:22Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412AM",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26200.7922",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-03T13:46:22Z"
+    },
+    {
+      "DeviceName": "Nelleke.vanWonderen_AndroidEnterprise_12/4/2024_2:31 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "Nelleke.vanWonderen@meerwaarde.nl",
+      "LastSyncDateTime": "2026-02-03T10:15:06Z"
+    },
+    {
+      "DeviceName": "Laila.Ameziane_AndroidEnterprise_12/4/2024_1:31 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "Laila.Ameziane@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-17T14:05:21Z"
+    },
+    {
+      "DeviceName": "Staging_35c97693f6ea23ce_AndroidEnterprise_1/13/2026_9:09 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-01-29T14:54:19Z"
+    },
+    {
+      "DeviceName": "mariette.bouterse_AndroidEnterprise_12/4/2024_2:02 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "mariette.bouterse@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T17:35:30Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412E",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "lotte.verhofstad@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T12:06:06Z"
+    },
+    {
+      "DeviceName": "hannelore.devries_AndroidEnterprise_12/4/2024_2:38 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "hannelore.devries@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T14:40:40Z"
+    },
+    {
+      "DeviceName": "angelique.koenders_AndroidEnterprise_12/4/2024_8:56 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "angelique.koenders@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T21:35:29Z"
+    },
+    {
+      "DeviceName": "DT-MEE-2412A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "hans.louter@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T15:29:59Z"
+    },
+    {
+      "DeviceName": "maud.tromp_AndroidEnterprise_11/26/2024_10:28 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "maud.tromp@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-14T08:24:25Z"
+    },
+    {
+      "DeviceName": "angela.nicolai_AndroidEnterprise_12/4/2024_11:00 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "angela.nicolai@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T22:13:58Z"
+    },
+    {
+      "DeviceName": "kavindra.richards_AndroidEnterprise_12/4/2024_2:30 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "kavindra.richards@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T20:45:26Z"
+    },
+    {
+      "DeviceName": "fatima.eloche_AndroidEnterprise_12/4/2024_2:53 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "fatima.eloche@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T11:12:24Z"
+    },
+    {
+      "DeviceName": "charlotte.mosk_AndroidEnterprise_12/4/2024_2:30 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-10-29T17:40:08Z"
+    },
+    {
+      "DeviceName": "marnix.zuidema_AndroidEnterprise_11/29/2024_9:09 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-07-17T12:28:16Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2501I",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "norman.kortekaas@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T12:04:18Z"
+    },
+    {
+      "DeviceName": "frank.groot_AndroidEnterprise_12/4/2024_10:30 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "frank.groot@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T13:52:10Z"
+    },
+    {
+      "DeviceName": "SMWLT5CD3112G63",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "nancy.vandenburg@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-23T06:59:33Z"
+    },
+    {
+      "DeviceName": "ellen.kieftenbeld_AndroidEnterprise_11/26/2024_8:46 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "ellen.kieftenbeld@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T18:58:03Z"
+    },
+    {
+      "DeviceName": "wendy.amsing_AndroidEnterprise_12/4/2024_2:53 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "wendy.amsing@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T22:45:25Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412L",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "hannelore.devries@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T12:37:03Z"
+    },
+    {
+      "DeviceName": "Staging_321b53c287dc58fe_AndroidEnterprise_6/3/2025_1:51 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-06-12T15:32:34Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2501H",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "mirjam.gans@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T10:58:39Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412AC",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "joyce.vanbemmelen@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T11:46:32Z"
+    },
+    {
+      "DeviceName": "DESKTOP-PA51KIP",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7171",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "c84ee30cf8eb40b5bfa75dc6d23179ddKim.vanhilten@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-03T09:41:35Z"
+    },
+    {
+      "DeviceName": "Staging_337d7fb318856003_AndroidEnterprise_3/2/2026_9:27 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-28T18:35:23Z"
+    },
+    {
+      "DeviceName": "mustapha.elmoumene_AndroidEnterprise_12/4/2024_2:53 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "mustapha.elmoumene@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T23:50:58Z"
+    },
+    {
+      "DeviceName": "david.oldenburg_AndroidEnterprise_12/4/2024_3:07 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "david.oldenburg@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T14:54:51Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2506B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "Nissrin.Zafzafi@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T14:29:57Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412J",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26200.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "jorien.reinderink@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T08:49:45Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2411D",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "juliette.jansen@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T13:57:56Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412S",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "chantal.slotemaker@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T12:24:44Z"
+    },
+    {
+      "DeviceName": "hiljan.hoek_AndroidEnterprise_12/4/2024_10:59 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "hiljan.hoek@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T18:26:46Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412AQ",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "judy.deleeuw@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T15:06:34Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412Z",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "sieben.vanmaarseveen@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T12:39:37Z"
+    },
+    {
+      "DeviceName": "Staging_3d6b5196e372b2a2_AndroidEnterprise_8/26/2025_8:13 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-28T11:28:30Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2101E",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-27T08:22:45Z"
+    },
+    {
+      "DeviceName": "Kim.aukema_AndroidEnterprise_7/3/2025_8:43 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-09-09T11:37:55Z"
+    },
+    {
+      "DeviceName": "Staging_361c08b9193c56f2_AndroidEnterprise_7/24/2025_8:42 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-28T22:16:53Z"
+    },
+    {
+      "DeviceName": "Staging_3d858f61f9b183e4_AndroidEnterprise_4/28/2025_1:16 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-04-29T12:51:02Z"
+    },
+    {
+      "DeviceName": "Staging_3f1e2c14104d3ac8_AndroidEnterprise_2/12/2026_10:37 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-05T09:51:02Z"
+    },
+    {
+      "DeviceName": "marjorie.mesman_AndroidEnterprise_12/4/2024_10:59 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "marjorie.mesman@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T15:07:37Z"
+    },
+    {
+      "DeviceName": "SMW-0F027ZG23093BF",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "bidi.stam@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T11:17:27Z"
+    },
+    {
+      "DeviceName": "SMWLT5CD3112G4C",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "Friso.springintveld@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T12:59:40Z"
+    },
+    {
+      "DeviceName": "SMWLT5CD3112G1G",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "mark.ostendorf@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T16:03:23Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412C",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "david.oldenburg@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T10:26:08Z"
+    },
+    {
+      "DeviceName": "SMWLT5CD3112G3B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7628",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "fatima.eloche@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T08:58:42Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2503E",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "mariska.spikmans@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T07:27:24Z"
+    },
+    {
+      "DeviceName": "simone.duin_AndroidEnterprise_12/4/2024_2:27 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "simone.duin@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T17:17:17Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412AO",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "daniel.siwpersad@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T12:14:44Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2511A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "martine.heeremans@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T15:56:58Z"
+    },
+    {
+      "DeviceName": "SMWLT5CD2457N09",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "aukje.jonkhout@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T08:35:57Z"
+    },
+    {
+      "DeviceName": "SWHLT5CD9364FQQ",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.22631.4890",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-07-10T23:06:08Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2312A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.3476",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-25T19:21:47Z"
+    },
+    {
+      "DeviceName": "Larissa.Wladimiroff_AndroidEnterprise_1/29/2026_4:31 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "Larissa.Wladimiroff@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T18:21:50Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412AP",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "somaya.essannouni@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T23:21:40Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2312B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26200.7922",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-03T13:46:27Z"
+    },
+    {
+      "DeviceName": "DT-MEE-2412C",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.1150",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-28T16:31:22Z"
+    },
+    {
+      "DeviceName": "serena.blank_AndroidEnterprise_11/26/2024_9:32 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "serena.blank@meerwaarde.nl",
+      "LastSyncDateTime": "2025-10-05T08:52:35Z"
+    },
+    {
+      "DeviceName": "claudia.boelee_AndroidEnterprise_12/4/2024_2:27 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "claudia.boelee@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-07T16:46:10Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412AA",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "linda.steeman@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T11:35:46Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2501G",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "angela.nicolai@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T12:19:42Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2411E",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "serena.blank@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-25T16:21:10Z"
+    },
+    {
+      "DeviceName": "Staging_326174a82f189977_AndroidEnterprise_4/28/2025_12:45 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-05-01T13:18:01Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412AI",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "wendy.amsing@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T18:27:14Z"
+    },
+    {
+      "DeviceName": "daniel.siwpersad_AndroidEnterprise_12/4/2024_2:53 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "daniel.siwpersad@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T21:45:30Z"
+    },
+    {
+      "DeviceName": "Staging_38597a3ac02a2236_AndroidEnterprise_12/1/2025_1:49 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-28T12:22:19Z"
+    },
+    {
+      "DeviceName": "SMWLT5CD3173Y6P",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "roxanna.booms@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T17:26:11Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2501J",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7628",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "chamira.breslau@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T14:44:40Z"
+    },
+    {
+      "DeviceName": "Staging_3f2c5e46775ef931_AndroidEnterprise_3/11/2025_10:32 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-05-08T10:06:04Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412AE",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "kavindra.richards@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-25T10:57:32Z"
+    },
+    {
+      "DeviceName": "DT-MEE-2412B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-26T09:58:38Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2503C",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "sandra.spoelstra@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T09:04:11Z"
+    },
+    {
+      "DeviceName": "jorien.reinderink_AndroidEnterprise_12/4/2024_1:32 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "jorien.reinderink@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T18:35:35Z"
+    },
+    {
+      "DeviceName": "Staging_34b7e55141323933_AndroidEnterprise_9/4/2025_12:35 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-09-04T12:44:29Z"
+    },
+    {
+      "DeviceName": "SMW-WI0012",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "fatima.elidrissi@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T12:34:06Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412R",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "josefine.scheepmaker@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T09:09:48Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2503D",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "fabian.vantol@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T15:39:54Z"
+    },
+    {
+      "DeviceName": "khadija.mallouk_AndroidEnterprise_12/11/2024_8:49 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "khadija.mallouk@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T19:46:58Z"
+    },
+    {
+      "DeviceName": "desiree.vanderterp_AndroidEnterprise_12/4/2024_2:53 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-04-24T01:09:31Z"
+    },
+    {
+      "DeviceName": "Staging_30e8a5ea73e19cc0_AndroidEnterprise_4/28/2025_1:01 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-04-28T13:05:41Z"
+    },
+    {
+      "DeviceName": "mirjam.gans_AndroidEnterprise_12/4/2024_11:23 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "mirjam.gans@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T10:04:43Z"
+    },
+    {
+      "DeviceName": "DT-MEE-2412F",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-04T10:55:26Z"
+    },
+    {
+      "DeviceName": "serena.blank_AndroidEnterprise_10/20/2025_10:15 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "serena.blank@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-12T23:18:10Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2603A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26200.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "Bianca.vanwalbeek@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T15:45:39Z"
+    },
+    {
+      "DeviceName": "chantal.slotemaker_AndroidEnterprise_12/4/2024_1:40 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "chantal.slotemaker@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T15:16:18Z"
+    },
+    {
+      "DeviceName": "nynke.wijbenga_AndroidEnterprise_12/4/2024_1:31 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "nynke.wijbenga@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T13:45:16Z"
+    },
+    {
+      "DeviceName": "mary.vanderdrift_AndroidEnterprise_12/4/2024_2:30 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "mary.vanderdrift@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T20:29:47Z"
+    },
+    {
+      "DeviceName": "Friso.springintveld_AndroidEnterprise_12/4/2024_1:35 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "Friso.springintveld@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T09:41:01Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412X",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.4946",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "riguillo.terhaar@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-24T18:42:00Z"
+    },
+    {
+      "DeviceName": "devi.vanwoudenberg_AndroidEnterprise_12/4/2024_10:30 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "devi.vanwoudenberg@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T16:41:25Z"
+    },
+    {
+      "DeviceName": "SMWLT5CD309D2D6",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "cherish.hellings@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T13:57:45Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2507C",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.4351",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-07-16T07:06:17Z"
+    },
+    {
+      "DeviceName": "eveline.vandam_AndroidEnterprise_12/4/2024_2:02 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "eveline.vandam@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T20:14:38Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2503A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "Jareth.westerman@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T14:17:26Z"
+    },
+    {
+      "DeviceName": "mark.ostendorf_AndroidEnterprise_12/4/2024_2:02 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "mark.ostendorf@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T22:26:55Z"
+    },
+    {
+      "DeviceName": "peter.wortel_AndroidEnterprise_12/4/2024_2:02 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-12-29T13:31:09Z"
+    },
+    {
+      "DeviceName": "Staging_3a91331dfc91e2aa_AndroidEnterprise_3/9/2026_8:48 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-16T12:29:04Z"
+    },
+    {
+      "DeviceName": "SMWLT5CD3112G6F",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "ilona.vanes@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T10:07:48Z"
+    },
+    {
+      "DeviceName": "bart.roest_AndroidEnterprise_11/6/2025_3:19 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "3b8b5b57debd42d3a19627025bbaf4d1bart.roest@meerwaarde.nl",
+      "LastSyncDateTime": "2026-01-23T12:19:28Z"
+    },
+    {
+      "DeviceName": "baudien.ekkel_AndroidEnterprise_7/3/2025_9:18 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "baudien.ekkel@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T14:56:33Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412AG",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "nina.liang@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T14:49:34Z"
+    },
+    {
+      "DeviceName": "aysun.aydemir_AndroidEnterprise_12/4/2024_11:04 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "aysun.aydemir@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T14:15:45Z"
+    },
+    {
+      "DeviceName": "rachelle.paalvast_AndroidEnterprise_12/4/2024_1:35 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "rachelle.paalvast@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T20:34:36Z"
+    },
+    {
+      "DeviceName": "Jareth.westerman_AndroidEnterprise_5/1/2025_9:27 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "Jareth.westerman@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T21:27:35Z"
+    },
+    {
+      "DeviceName": "Guido.Dankerlui_AndroidEnterprise_12/2/2024_1:50 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "Guido.Dankerlui@meerwaarde.nl",
+      "LastSyncDateTime": "2025-07-26T18:54:12Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2101D",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26200.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-27T08:27:23Z"
+    },
+    {
+      "DeviceName": "SMWLT5CD2457N3N",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "annemieke.gerrits@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-25T13:42:08Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412U",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "yvonne.vandenberg@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T16:24:13Z"
+    },
+    {
+      "DeviceName": "juliette.jansen_AndroidEnterprise_11/27/2024_9:10 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "juliette.jansen@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T18:59:35Z"
+    },
+    {
+      "DeviceName": "nancy.vandenburg_AndroidEnterprise_12/4/2024_2:30 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "nancy.vandenburg@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T18:40:37Z"
+    },
+    {
+      "DeviceName": "SMWLT5CD3112G5Z",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "annette.vangroen@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T14:06:46Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412H",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "lisette.piepers@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T11:38:58Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412G",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "nynke.wijbenga@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T09:23:49Z"
+    },
+    {
+      "DeviceName": "SMWLT5CD2457MLQ",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.22621.3155",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "fatiha.ayyad@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-04T23:13:18Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2101F",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.6584",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-26T09:30:13Z"
+    },
+    {
+      "DeviceName": "SMWLT5CD2457N4G",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "hiljan.hoek@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T12:48:54Z"
+    },
+    {
+      "DeviceName": "Staging_3bc8b01212c16cd4_AndroidEnterprise_5/1/2025_1:40 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-05-06T13:04:19Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2501D",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "angelique.koenders@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T19:35:37Z"
+    },
+    {
+      "DeviceName": "maira.wouter_AndroidEnterprise_12/4/2024_1:08 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "maira.wouter@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T16:13:41Z"
+    },
+    {
+      "DeviceName": "fatima.elidrissi_AndroidEnterprise_12/4/2024_10:59 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "fatima.elidrissi@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T11:49:25Z"
+    },
+    {
+      "DeviceName": "SMWLT5CD3112G4R",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "mary.vanderdrift@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T15:12:49Z"
+    },
+    {
+      "DeviceName": "stien.derooij_AndroidEnterprise_12/4/2024_1:08 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "stien.derooij@meerwaarde.nl",
+      "LastSyncDateTime": "2025-07-24T08:45:22Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "laila.elhafidi@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T10:37:33Z"
+    },
+    {
+      "DeviceName": "joyce.vanbemmelen_AndroidEnterprise_12/4/2024_2:02 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "joyce.vanbemmelen@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T13:36:38Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412V",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7628",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "hyan.taleb@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-25T16:02:16Z"
+    },
+    {
+      "DeviceName": "Staging_3fdfd1844ff57d18_AndroidEnterprise_3/3/2026_3:20 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-03T15:24:23Z"
+    },
+    {
+      "DeviceName": "DT-MEE-2412E",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-26T09:06:05Z"
+    },
+    {
+      "DeviceName": "sandy.frederiks_AndroidEnterprise_12/4/2024_1:32 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "sandy.frederiks@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T15:51:39Z"
+    },
+    {
+      "DeviceName": "fleur.neeskens_AndroidEnterprise_12/4/2024_2:02 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "fleur.neeskens@meerwaarde.nl",
+      "LastSyncDateTime": "2025-10-20T11:28:29Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412AL",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7628",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "rachelle.paalvast@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-25T14:32:02Z"
+    },
+    {
+      "DeviceName": "Staging_3d97ad7336d90f49_AndroidEnterprise_10/23/2025_2:08 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-28T18:19:47Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412AB",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7985",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "sjoerd.mercera@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T12:35:27Z"
+    },
+    {
+      "DeviceName": "sabiet.balwantgir_AndroidEnterprise_12/4/2024_10:31 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-08-11T08:16:13Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2507A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.4351",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-07-16T07:05:48Z"
+    },
+    {
+      "DeviceName": "NB-MEE-PROBE",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "aazmee@meerwaarde.onmicrosoft.com",
+      "LastSyncDateTime": "2026-03-28T19:41:01Z"
+    },
+    {
+      "DeviceName": "judy.deleeuw_AndroidEnterprise_12/4/2024_1:35 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "judy.deleeuw@meerwaarde.nl",
+      "LastSyncDateTime": "2025-10-01T13:35:25Z"
+    },
+    {
+      "DeviceName": "SMWLT5CD2457MJW",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "khadija.mallouk@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-25T15:30:19Z"
+    },
+    {
+      "DeviceName": "tamira.meeues_AndroidEnterprise_12/4/2024_2:53 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "tamira.meeues@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T05:33:15Z"
+    },
+    {
+      "DeviceName": "mariska.spikmans_AndroidEnterprise_12/4/2024_1:08 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "mariska.spikmans@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T18:37:44Z"
+    },
+    {
+      "DeviceName": "Staging_3c5c9f080d798e58_AndroidEnterprise_7/15/2025_12:22 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-08-14T13:14:03Z"
+    },
+    {
+      "DeviceName": "DT-MEE-2412H",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.4652",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-11-24T23:52:17Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2603B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.3775",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "test.qubemdm@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-13T11:21:13Z"
+    },
+    {
+      "DeviceName": "noa.janssen_AndroidEnterprise_12/4/2024_9:15 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "noa.janssen@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T14:27:46Z"
+    },
+    {
+      "DeviceName": "martijn.kool_AndroidEnterprise_12/4/2024_2:02 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "martijn.kool@meerwaarde.nl",
+      "LastSyncDateTime": "2026-01-02T19:11:06Z"
+    },
+    {
+      "DeviceName": "Staging_305c1596a69d3435_AndroidEnterprise_11/11/2025_3:42 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2025-12-05T16:45:09Z"
+    },
+    {
+      "DeviceName": "annemieke.gerrits_AndroidEnterprise_4/28/2025_11:51 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "annemieke.gerrits@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T18:34:52Z"
+    },
+    {
+      "DeviceName": "sjoerd.mercera_AndroidEnterprise_7/24/2025_11:48 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "sjoerd.mercera@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T13:40:00Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2411B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "ellen.kieftenbeld@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T11:36:57Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2307A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7628",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "Miriam.Naluzinda@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T19:44:27Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412P",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.6901",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "jinan.raissouni@meerwaarde.nl",
+      "LastSyncDateTime": "2025-12-18T08:09:32Z"
+    },
+    {
+      "DeviceName": "mariejose.keijman_AndroidEnterprise_12/4/2024_2:53 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "mariejose.keijman@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T16:46:22Z"
+    },
+    {
+      "DeviceName": "SMWLT5CD2457MJQ",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.6901",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "tim.sebel@meerwaarde.nl",
+      "LastSyncDateTime": "2025-12-15T12:14:53Z"
+    },
+    {
+      "DeviceName": "karin.babeliowsky_AndroidEnterprise_12/4/2024_2:53 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "karin.babeliowsky@meerwaarde.nl",
+      "LastSyncDateTime": "2025-12-13T05:09:27Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2501B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "suzanne.vanvarik@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T16:13:42Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412F",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "claudia.boelee@meerwaarde.nl",
+      "LastSyncDateTime": "2026-02-24T09:17:18Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2101G",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7462",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-12T08:14:51Z"
+    },
+    {
+      "DeviceName": "SMW-WI0001",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "wendy.amsing@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T16:05:04Z"
+    },
+    {
+      "DeviceName": "els.vanderjagt_AndroidEnterprise_12/4/2024_2:54 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "els.vanderjagt@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T20:21:45Z"
+    },
+    {
+      "DeviceName": "sandra.spoelstra_AndroidEnterprise_12/4/2024_2:53 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "sandra.spoelstra@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-28T18:48:08Z"
+    },
+    {
+      "DeviceName": "SMWLTD5CD247MLK",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "Larissa.Wladimiroff@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T07:34:13Z"
+    },
+    {
+      "DeviceName": "inge.janssen_AndroidEnterprise_12/4/2024_2:30 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "inge.janssen@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T15:57:54Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2101C",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7628",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-23T09:06:19Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2302B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26200.7922",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-03T12:47:02Z"
+    },
+    {
+      "DeviceName": "SMWLT5CD2434NPG",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "sawinah.voortman@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T12:10:21Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2412AD",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.4946",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "mariejose.keijman@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-26T02:39:59Z"
+    },
+    {
+      "DeviceName": "Staging_339aa295c85477ee_AndroidEnterprise_3/6/2025_12:06 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "LastSyncDateTime": "2026-03-28T17:42:48Z"
+    },
+    {
+      "DeviceName": "NB-MEE-2501A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "tamira.meeues@meerwaarde.nl",
+      "LastSyncDateTime": "2026-03-27T11:48:43Z"
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Managed devices snapshot uit Phase 5."
+    ],
+    "permissions": [
+      "DeviceManagementManagedDevices.Read.All"
+    ]
+  }
+}

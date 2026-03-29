@@ -1,0 +1,20 @@
+{
+  "section": "identity",
+  "subsection": "guest-access",
+  "label": "Gastgebruiker Instellingen",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:59:42.9059280+01:00",
+  "assessmentId": "20260328-230422",
+  "summary": {
+    "guestInvitePolicy": ""
+  },
+  "items": [],
+  "meta": {
+    "notes": [
+      "Gasttoegangsinstellingen en cross-tenant policies uit Phase 2."
+    ],
+    "permissions": [
+      "Policy.Read.All"
+    ]
+  }
+}

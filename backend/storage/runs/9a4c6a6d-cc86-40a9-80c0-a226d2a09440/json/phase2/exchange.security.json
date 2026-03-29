@@ -1,0 +1,20 @@
+{
+  "section": "exchange",
+  "subsection": "security",
+  "label": "Exchange Beveiliging",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:59:42.9054100+01:00",
+  "assessmentId": "20260328-230422",
+  "summary": {
+    "modernAuthEnabled": null
+  },
+  "items": [],
+  "meta": {
+    "notes": [
+      "Exchange beveiligingsconfiguratie uit Phase 2."
+    ],
+    "permissions": [
+      "Exchange admin"
+    ]
+  }
+}

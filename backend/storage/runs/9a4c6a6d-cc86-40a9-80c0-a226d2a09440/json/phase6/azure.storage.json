@@ -1,0 +1,23 @@
+{
+  "section": "azure",
+  "subsection": "storage",
+  "label": "Storage Accounts",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:59:43.2198260+01:00",
+  "assessmentId": "20260328-230422",
+  "summary": {
+    "issues": 0,
+    "publicAccessEnabled": 0,
+    "totalAccounts": 0
+  },
+  "items": [],
+  "meta": {
+    "notes": [
+      "Azure Storage Account beveiligingsstatus uit Phase 6."
+    ],
+    "permissions": [
+      "Reader (Azure)",
+      "Microsoft.Storage/*/read"
+    ]
+  }
+}

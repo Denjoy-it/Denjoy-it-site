@@ -1,0 +1,27 @@
+{
+  "section": "azure",
+  "subsection": "subscriptions",
+  "label": "Subscriptions",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:59:43.2156690+01:00",
+  "assessmentId": "20260328-230422",
+  "summary": {
+    "subscriptionName": "Azure Subscription 2436775",
+    "subscriptionCount": 1,
+    "azureAvailable": true
+  },
+  "items": [
+    {
+      "SubscriptionName": "Azure Subscription 2436775",
+      "SubscriptionId": "7f615f1d-bae4-4985-a043-168a37bbb6fe"
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Azure snapshot uit Phase 6."
+    ],
+    "permissions": [
+      "Azure Reader / Lighthouse delegated access"
+    ]
+  }
+}

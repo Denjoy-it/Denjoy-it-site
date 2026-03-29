@@ -1,0 +1,21 @@
+{
+  "section": "compliance",
+  "subsection": "sensitivity",
+  "label": "Gevoeligheidslabels",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:59:43.0921180+01:00",
+  "assessmentId": "20260328-230422",
+  "summary": {
+    "hasLabels": false,
+    "totalLabels": 0
+  },
+  "items": [],
+  "meta": {
+    "notes": [
+      "Microsoft Purview gevoeligheidslabels snapshot uit Phase 3."
+    ],
+    "permissions": [
+      "InformationProtectionPolicy.Read.All"
+    ]
+  }
+}

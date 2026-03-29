@@ -1,0 +1,22 @@
+{
+  "section": "identity",
+  "subsection": "risky-users",
+  "label": "Risico Gebruikers",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:59:43.1500290+01:00",
+  "assessmentId": "20260328-230422",
+  "summary": {
+    "identityProtectionAvailable": false,
+    "riskDetectionsCount": 0,
+    "riskyUsersCount": 0
+  },
+  "items": [],
+  "meta": {
+    "notes": [
+      "Azure AD P2 licentie vereist voor Identity Protection data"
+    ],
+    "permissions": [
+      "IdentityRiskyUser.Read.All"
+    ]
+  }
+}

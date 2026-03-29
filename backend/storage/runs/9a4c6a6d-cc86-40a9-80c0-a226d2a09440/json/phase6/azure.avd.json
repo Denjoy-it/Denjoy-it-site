@@ -1,0 +1,23 @@
+{
+  "section": "azure",
+  "subsection": "avd",
+  "label": "Azure Virtual Desktop",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:59:43.2204280+01:00",
+  "assessmentId": "20260328-230422",
+  "summary": {
+    "issues": 0,
+    "totalSessionHosts": 0,
+    "totalHostPools": 0
+  },
+  "items": [],
+  "meta": {
+    "notes": [
+      "Azure Virtual Desktop host pools en sessieoverzicht uit Phase 6."
+    ],
+    "permissions": [
+      "Reader (Azure)",
+      "Microsoft.DesktopVirtualization/*/read"
+    ]
+  }
+}

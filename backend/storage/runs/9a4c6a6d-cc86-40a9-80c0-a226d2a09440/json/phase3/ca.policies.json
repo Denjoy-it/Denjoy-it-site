@@ -1,0 +1,73 @@
+{
+  "section": "ca",
+  "subsection": "policies",
+  "label": "Conditional Access Policies",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:59:43.0879980+01:00",
+  "assessmentId": "20260328-230422",
+  "summary": {
+    "enabled": 3,
+    "securityDefaultsEnabled": false,
+    "disabled": 3,
+    "total": 7
+  },
+  "items": [
+    {
+      "Id": "c97b1554-6f69-4798-a454-2f459ae61722",
+      "DisplayName": "CA001: Meervoudige verificatie vereisen voor beheerders",
+      "State": "enabled",
+      "CreatedDateTime": "2021-11-16T13:26:54.3468584Z",
+      "ModifiedDateTime": "2025-11-27T15:34:39.1782395Z"
+    },
+    {
+      "Id": "490f36da-3afb-40f1-b8e0-6fd6e060d7b1",
+      "DisplayName": "CA003: verouderde verificatie blokkeren",
+      "State": "enabled",
+      "CreatedDateTime": "2021-11-16T13:27:39.1004394Z",
+      "ModifiedDateTime": "2025-12-22T08:35:58.4220023Z"
+    },
+    {
+      "Id": "96a88a64-3e59-4b75-8299-f316fb66b0a7",
+      "DisplayName": "CA004: Meervoudige verificatie vereisen voor alle gebruikers",
+      "State": "disabled",
+      "CreatedDateTime": "2021-11-30T09:59:14.1691661Z",
+      "ModifiedDateTime": "2025-12-16T13:20:56.1323807Z"
+    },
+    {
+      "Id": "bd7e43a2-746e-42ee-8b97-6edec141d1ad",
+      "DisplayName": "Microsoft-managed: Multifactor authentication for admins accessing Microsoft Admin Portals",
+      "State": "enabledForReportingButNotEnforced",
+      "CreatedDateTime": "2023-11-15T19:39:39.1145852Z",
+      "ModifiedDateTime": null
+    },
+    {
+      "Id": "2e6b1567-08ed-4db1-84fe-1b6f2a8a0d37",
+      "DisplayName": "Allowed Countries",
+      "State": "enabled",
+      "CreatedDateTime": "2024-10-30T14:56:25.0338553Z",
+      "ModifiedDateTime": "2024-10-30T14:57:26.8385031Z"
+    },
+    {
+      "Id": "734d62fb-ce5c-4bdf-9ec6-a39ad14541d9",
+      "DisplayName": "Microsoft-managed: Require phishing-resistant multifactor authentication for admins",
+      "State": "disabled",
+      "CreatedDateTime": "2026-01-12T09:24:51.2924546Z",
+      "ModifiedDateTime": null
+    },
+    {
+      "Id": "699dbf4d-049f-45bc-8c5a-b26ac4879ebf",
+      "DisplayName": "Microsoft-managed: Block legacy authentication",
+      "State": "disabled",
+      "CreatedDateTime": "2026-01-12T09:24:51.5194829Z",
+      "ModifiedDateTime": null
+    }
+  ],
+  "meta": {
+    "notes": [
+      "CA snapshot uit Phase 3."
+    ],
+    "permissions": [
+      "Policy.Read.All"
+    ]
+  }
+}

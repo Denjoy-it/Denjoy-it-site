@@ -1,0 +1,75 @@
+{
+  "section": "hybrid",
+  "subsection": "sync",
+  "label": "Hybrid Identity & AD Connect",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:59:43.2776800+01:00",
+  "assessmentId": "20260328-230422",
+  "summary": {
+    "isHybrid": true,
+    "totalUsers": 371,
+    "lastSyncAgeHours": 1.5,
+    "syncEnabled": true,
+    "lastSyncStatus": "OK",
+    "syncedUsersPercent": 67.7,
+    "seamlessSsoEnabled": false,
+    "lastSyncDateTime": "2026-03-28T22:30:05.0000000Z",
+    "cloudOnlyUsers": 120,
+    "syncClientVersion": "",
+    "authType": "PHS/PTA",
+    "syncedUsers": 251
+  },
+  "items": [
+    {
+      "Domain": "meerwaarde.nl",
+      "AuthType": "Managed",
+      "IsVerified": true,
+      "IsDefault": false
+    },
+    {
+      "Domain": "smwnet.nl",
+      "AuthType": "Managed",
+      "IsVerified": true,
+      "IsDefault": false
+    },
+    {
+      "Domain": "meerwaarde.mail.onmicrosoft.com",
+      "AuthType": "Managed",
+      "IsVerified": true,
+      "IsDefault": false
+    },
+    {
+      "Domain": "meerwaarde.onmicrosoft.com",
+      "AuthType": "Managed",
+      "IsVerified": true,
+      "IsDefault": true
+    },
+    {
+      "Domain": "zelfsamensterker.nl",
+      "AuthType": "Managed",
+      "IsVerified": true,
+      "IsDefault": false
+    },
+    {
+      "Domain": "meerwaarde.pri.msft.voipitworld.com",
+      "AuthType": "Managed",
+      "IsVerified": true,
+      "IsDefault": false
+    },
+    {
+      "Domain": "meerwaarde.sec.msft.voipitworld.com",
+      "AuthType": "Managed",
+      "IsVerified": true,
+      "IsDefault": false
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Hybrid Identity & AD Connect snapshot."
+    ],
+    "permissions": [
+      "Directory.Read.All",
+      "Domain.Read.All"
+    ]
+  }
+}

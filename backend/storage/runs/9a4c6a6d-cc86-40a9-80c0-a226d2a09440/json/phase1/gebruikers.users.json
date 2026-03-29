@@ -1,0 +1,4216 @@
+{
+  "section": "gebruikers",
+  "subsection": "users",
+  "label": "Gebruikers",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:59:42.6487770+01:00",
+  "assessmentId": "20260328-230422",
+  "summary": {
+    "enabled": 305,
+    "guests": 41,
+    "disabled": 48,
+    "total": 419
+  },
+  "items": [
+    {
+      "id": "e59afc54-535a-424d-8803-256fefd8d704",
+      "displayName": "SystemMailbox{009459E7-268D-4ACC-9750-C7851FCDD1A7}",
+      "userPrincipalName": "009459E7-268D-4ACC-9@meerwaarde.onmicrosoft.com",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 0
+    },
+    {
+      "id": "7b865103-6ff4-4a74-88c1-aa53ace00c34",
+      "displayName": "Hasnaoui, Siham",
+      "userPrincipalName": "shasnaoui498_student.novacollege.nl#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "shasnaoui498@student.novacollege.nl",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-01-15T10:18:14Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "1ee1c817-2f9d-4b23-9219-cc08e8e9070e",
+      "displayName": "Dumont, Savannah",
+      "userPrincipalName": "sdumont475_student.novacollege.nl#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "sdumont475@student.novacollege.nl",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-01-15T10:40:10Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "cf6ddf68-d329-4a99-b2fc-1cd9c0eb29a3",
+      "displayName": "Mesbahi, Mohamed el",
+      "userPrincipalName": "161477_novacollege.nl#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "161477@novacollege.nl",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-01-15T10:25:46Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "1aa5c058-43ef-4345-bf4f-d1d37d2e9c95",
+      "displayName": "Pansrikeaw, Athicha",
+      "userPrincipalName": "171574_novacollege.nl#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "171574@novacollege.nl",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-01-15T10:26:38Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "d5c9b4dd-fd5f-458c-8d5e-f8941033c046",
+      "displayName": "Beelen, Mayra van",
+      "userPrincipalName": "178212_novacollege.nl#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "178212@novacollege.nl",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-10-08T09:00:24Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "3c7bf40d-37f6-4cab-865c-62053034e6cb",
+      "displayName": "Schuurman, Indy",
+      "userPrincipalName": "178962_novacollege.nl#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "178962@novacollege.nl",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-01-15T10:27:36Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "b674b51f-997e-407e-9a8c-22fa355d1758",
+      "displayName": "Tiber, Jesley",
+      "userPrincipalName": "jtiber275_student.novacollege.nl#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "jtiber275@student.novacollege.nl",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-01-15T10:37:20Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "1110639e-86b1-45ff-a1d2-1e9a66ff93b1",
+      "displayName": "183399",
+      "userPrincipalName": "183399_novacollege.nl#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "183399@novacollege.nl",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-09-03T08:59:28Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "818be932-91bd-433c-a494-a131a9e85ea5",
+      "displayName": "Khanchouch, Beya",
+      "userPrincipalName": "bkhanchouch503_student.novacollege.nl#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "bkhanchouch503@student.novacollege.nl",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-01-15T10:19:29Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "c275fc22-e847-446b-8094-b1a25c405e0f",
+      "displayName": "Mazurel, Roxy",
+      "userPrincipalName": "183750_novacollege.nl#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "183750@novacollege.nl",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-10-08T09:03:12Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "e321e68b-98d2-4eb9-92e6-39891ff413c5",
+      "displayName": "Bay, Yassine el",
+      "userPrincipalName": "187838_novacollege.nl#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "187838@novacollege.nl",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-08-28T14:17:42Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "c88b1772-45ec-408a-bcf7-0a72fc58bcd0",
+      "displayName": "Hassan, Abdirahman",
+      "userPrincipalName": "189373_novacollege.nl#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "189373@novacollege.nl",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-09-03T08:42:11Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "f8b835cd-78f8-4514-9c48-7d97fb3de325",
+      "displayName": "Lassiri, Ayoub",
+      "userPrincipalName": "alassiri459_student.novacollege.nl#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "alassiri459@student.novacollege.nl",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-09-02T07:58:11Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "c0740d48-d4ae-4127-962c-c0d7b39436dc",
+      "displayName": "Kökcü, Firdevs",
+      "userPrincipalName": "191292_novacollege.nl#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "191292@novacollege.nl",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-08-28T14:18:22Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "5c2fb0df-018e-45fb-ae9c-0ed574a15580",
+      "displayName": "Jaouhari, Sanae el",
+      "userPrincipalName": "192740_novacollege.nl#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "192740@novacollege.nl",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-09-25T08:13:56Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "9b1bd22f-8747-4f2c-9ef6-9350e4c7313a",
+      "displayName": "Ait Ali, Romaissa",
+      "userPrincipalName": "193670_novacollege.nl#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "193670@novacollege.nl",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-12-10T10:03:55Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "10c5ff29-94e8-4a6c-b74c-37b0d9b6c61d",
+      "displayName": "Chopra, Noah",
+      "userPrincipalName": "195507_novacollege.nl#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "195507@novacollege.nl",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-08-28T14:21:41Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "c25594b9-8eb6-4e9f-bd9a-d02897def1e0",
+      "displayName": "Lamia Bousnin (23124180)",
+      "userPrincipalName": "23124180_student.hhs.nl#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "23124180@student.hhs.nl",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-11-24T09:28:27Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "4504c9bf-5614-4527-bde9-2441ac5f9e3b",
+      "displayName": "Amine Marfouk",
+      "userPrincipalName": "4078305_student.zadkine.nl#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "4078305@student.zadkine.nl",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-10-02T08:34:48Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "3f19cc49-f9cb-44ac-9575-12ae28ab3834",
+      "displayName": "QUBE  Beheer",
+      "userPrincipalName": "aazmee@meerwaarde.onmicrosoft.com",
+      "mail": "aazmee@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-09-03T09:36:33Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "b0edab95-dd36-4ade-830f-02877328be0e",
+      "displayName": "Abdelwahid Agzennay",
+      "userPrincipalName": "Abdelwahid.Agzennay@meerwaarde.nl",
+      "mail": "Abdelwahid.Agzennay@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-10-21T10:26:57Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "088b7871-9863-467f-99a0-1b7e4d9ffcb6",
+      "displayName": "Admin.Michiel",
+      "userPrincipalName": "Admin.Michiel@smwnet.nl",
+      "mail": null,
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-09-18T14:25:39Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "e6ac4776-2054-42ff-b6cc-0a2cdd47f03c",
+      "displayName": "Admin Qube ICT",
+      "userPrincipalName": "admin.qubeict@smwnet.nl",
+      "mail": "admin.qubeict@smwnet.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-09-02T14:06:04Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "04717c1f-7b94-4516-bac8-0869a9fd5bea",
+      "displayName": "admin",
+      "userPrincipalName": "admin@meerwaarde.nl",
+      "mail": "admin@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-03-19T08:47:59Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "45d304cd-6497-4951-9e12-60028423e060",
+      "displayName": "Administrator Meerwaarde",
+      "userPrincipalName": "administrator@meerwaarde.onmicrosoft.com",
+      "mail": "fa@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 2
+    },
+    {
+      "id": "d3a55e8c-0383-47ca-ba30-0adbea855ca6",
+      "displayName": "aminemarfouk",
+      "userPrincipalName": "aminemarfouk_icloud.com#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "aminemarfouk@icloud.com",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-10-02T08:24:28Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "8128c542-dc51-4777-8f0d-50a42185b50d",
+      "displayName": "Anass Azouag",
+      "userPrincipalName": "anass.azouag@meerwaarde.nl",
+      "mail": "anass.azouag@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-09-12T13:03:02Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "146b5870-82fb-4d75-9707-664f7818a794",
+      "displayName": "Andre Pijnaker",
+      "userPrincipalName": "andre.pijnaker@meerwaarde.nl",
+      "mail": "andre.pijnaker@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 2
+    },
+    {
+      "id": "e3a5ee15-3fd0-460b-871b-a20520f604fb",
+      "displayName": "Angela Nicolai",
+      "userPrincipalName": "angela.nicolai@meerwaarde.nl",
+      "mail": "angela.nicolai@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2018-07-26T06:21:55Z",
+      "licenseCount": 5
+    },
+    {
+      "id": "a2fdd4f2-f0ad-4dd4-b8e2-58fd7bd08974",
+      "displayName": "Angelique Koenders",
+      "userPrincipalName": "angelique.koenders@meerwaarde.nl",
+      "mail": "angelique.koenders@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-01-24T09:00:08Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "490f09d9-f423-4c52-8b49-f439921f699e",
+      "displayName": "angeliquekoenders",
+      "userPrincipalName": "angeliquekoenders_gmail.com#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "angeliquekoenders@gmail.com",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-06-19T12:47:13Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "c24e8b68-6897-48f9-8f51-3ffcbe1077c5",
+      "displayName": "Anja Maars",
+      "userPrincipalName": "anja.maars@meerwaarde.nl",
+      "mail": "anja.maars@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-09-05T13:30:11Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "ecc47210-3525-4b7d-a133-a36d098dd164",
+      "displayName": "Anne-Mieke Gerrits",
+      "userPrincipalName": "annemieke.gerrits@meerwaarde.nl",
+      "mail": "annemieke.gerrits@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-03-26T14:17:14Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "af9ca388-7c2c-4d23-b086-ad952efa8fdb",
+      "displayName": "Annette van Groen",
+      "userPrincipalName": "annette.vangroen@meerwaarde.nl",
+      "mail": "annette.vangroen@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 2
+    },
+    {
+      "id": "4d5e7c58-fd1c-4a29-9349-48a18948d6ff",
+      "displayName": "Anouar.02977",
+      "userPrincipalName": "Anouar.02977_gmail.com#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "Anouar.02977@gmail.com",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-01-15T10:23:48Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "4a99342d-2002-4fc4-8caa-230b70cc5fdf",
+      "displayName": "August Lagadeau",
+      "userPrincipalName": "August.lagadeau@meerwaarde.nl",
+      "mail": "August.lagadeau@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2026-01-23T11:17:15Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "6ceefba4-aa66-4bd7-aa40-b01e8b77a2d7",
+      "displayName": "Aukje Jonkhout",
+      "userPrincipalName": "aukje.jonkhout@meerwaarde.nl",
+      "mail": "aukje.jonkhout@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2020-12-10T12:17:23Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "7413dba2-2fc5-4d98-b020-a7a1860bc06b",
+      "displayName": "Aya Youssef",
+      "userPrincipalName": "aya.youssef@meerwaarde.nl",
+      "mail": "aya.youssef@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-11-12T08:04:12Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "c755e505-1776-40f2-90e2-68cd34d53b9f",
+      "displayName": "Aysun Aydemir",
+      "userPrincipalName": "aysun.aydemir@meerwaarde.nl",
+      "mail": "aysun.aydemir@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 2
+    },
+    {
+      "id": "fb9729db-bb07-4164-9606-dde8fbfaa509",
+      "displayName": "Balie",
+      "userPrincipalName": "balie@meerwaarde.nl",
+      "mail": "balie@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 3
+    },
+    {
+      "id": "2a8bab76-7b1b-4eed-91e2-4b5363c86f90",
+      "displayName": "bandje - Balie gesloten",
+      "userPrincipalName": "bandje_-_Balie_gesloten@meerwaarde.nl",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-04-24T12:16:05Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "9f1d602a-021a-4072-baef-411acec03083",
+      "displayName": "Baudien Ekkel",
+      "userPrincipalName": "baudien.ekkel@meerwaarde.nl",
+      "mail": "baudien.ekkel@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-08-24T14:31:30Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "927b8cd4-1b9a-42cd-8d71-e9ebf594ee2d",
+      "displayName": "BBM Afke",
+      "userPrincipalName": "bbm.afke@meerwaarde.nl",
+      "mail": "afkebuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-03-15T09:31:13Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "7ef50154-2d10-46b2-b3ca-158e4d0a462e",
+      "displayName": "BBM Alexandra",
+      "userPrincipalName": "bbm.alexandra@meerwaarde.nl",
+      "mail": "alexandrabuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2019-12-12T10:37:58Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "efa61f99-5981-4997-b8a6-5e91d551121f",
+      "displayName": "BBM Anneke",
+      "userPrincipalName": "bbm.anneke@meerwaarde.nl",
+      "mail": "bbm.anneke@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-03-13T10:12:04Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "bf75b0e3-c280-43a2-b8e9-8067d072912a",
+      "displayName": "BBM Anne Marie",
+      "userPrincipalName": "bbm.annemarie@meerwaarde.nl",
+      "mail": "annemariebuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 1
+    },
+    {
+      "id": "c887d38d-04b4-41d0-8120-a21f94d3b6e6",
+      "displayName": "BBM Annemarie",
+      "userPrincipalName": "bbm.annemarieb@meerwaarde.nl",
+      "mail": "annemariebbuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-05-28T14:15:19Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "73da41f3-caaf-410e-a45f-e2f2f8459efa",
+      "displayName": "BBM Annemarieke",
+      "userPrincipalName": "bbm.annemarieke@meerwaarde.nl",
+      "mail": "annemariekebuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2021-07-27T13:03:57Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "9e52e4b5-300e-4cb0-9222-28278b2c95b0",
+      "displayName": "BBM Annemieke",
+      "userPrincipalName": "bbm.annemieke@meerwaarde.nl",
+      "mail": "annemiekebuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 1
+    },
+    {
+      "id": "2487ac3c-1dd2-4947-8d4e-44f41716b415",
+      "displayName": "BBM Annette",
+      "userPrincipalName": "bbm.annette@meerwaarde.nl",
+      "mail": "annettebuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2019-09-12T07:29:47Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "33bacba5-fe58-4254-8a81-0fe01df8d356",
+      "displayName": "BBM Barbara",
+      "userPrincipalName": "bbm.barbara@meerwaarde.nl",
+      "mail": "barbarabuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-09-20T13:13:56Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "5fe75239-96a7-4ee8-9636-8aa8a9c23704",
+      "displayName": "BBM Belinda",
+      "userPrincipalName": "bbm.belinda@meerwaarde.nl",
+      "mail": "belindabuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-07-11T10:00:26Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "6e8687d8-40b2-4c4d-af31-c48c909b8c41",
+      "displayName": "BBM Brenda",
+      "userPrincipalName": "bbm.brenda@meerwaarde.nl",
+      "mail": "brendabuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2019-10-08T12:15:55Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "b4e8755b-e280-4a44-962d-5c0f929970cc",
+      "displayName": "BBM Carine",
+      "userPrincipalName": "bbm.carine@meerwaarde.nl",
+      "mail": "carinebuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-05-18T16:28:41Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "576b3157-6cfc-41b9-bda7-c9a7c92eae02",
+      "displayName": "BBM Cees",
+      "userPrincipalName": "bbm.cees@meerwaarde.nl",
+      "mail": "bbm.cees@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-03-13T10:12:04Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "2b658eb0-1815-40b7-a788-236e8265a1b0",
+      "displayName": "BBM Clemens",
+      "userPrincipalName": "bbm.clemens@meerwaarde.nl",
+      "mail": "clemenesbuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2020-09-18T06:40:04Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "af6e6318-fd28-45d6-83bc-9578bd062744",
+      "displayName": "BBM Ella",
+      "userPrincipalName": "bbm.ella@meerwaarde.nl",
+      "mail": "ellabuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2020-01-20T10:42:17Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "96e9d216-b244-442a-9103-15be1ecab100",
+      "displayName": "BBM Eloise",
+      "userPrincipalName": "bbm.eloise@meerwaarde.nl",
+      "mail": "bbm.eloise@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-07-11T09:00:27Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "ba7119e0-597c-4905-b08b-156da9247c1a",
+      "displayName": "BBM Els",
+      "userPrincipalName": "bbm.els@meerwaarde.nl",
+      "mail": "elsbuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-09-20T11:57:58Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "b6cf9a07-dcb6-4ee7-b57a-5f2e1ee35b10",
+      "displayName": "BBM Elvira",
+      "userPrincipalName": "bbm.elvira@meerwaarde.nl",
+      "mail": "bbm.elvira@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-01-22T15:12:58Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "2d9d3d3b-7013-4ef0-a74c-7aaaabdf2dad",
+      "displayName": "BBM Emilie",
+      "userPrincipalName": "bbm.emilie@meerwaarde.nl",
+      "mail": "emiliebuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2021-09-16T07:34:15Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "6e4c1a6f-103c-4a3d-b9bf-3c202178046a",
+      "displayName": "BBM Emilie",
+      "userPrincipalName": "bbm.emiliex@meerwaarde.nl",
+      "mail": "bbm.emiliex@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-12-05T13:25:39Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "25b005ce-e0e8-4064-ac35-70395eb98403",
+      "displayName": "BBM Esther",
+      "userPrincipalName": "bbm.esther@meerwaarde.nl",
+      "mail": "bbm.esther@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-02-04T14:06:25Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "fb23bfca-655b-49d8-a097-e68f7b2da66c",
+      "displayName": "BBM Fahrida",
+      "userPrincipalName": "bbm.fahrida@meerwaarde.nl",
+      "mail": "bbm.fahrida@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-05-09T12:41:39Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "fa1e45e8-ad3c-4dc5-b420-8ecc1751b9cd",
+      "displayName": "BBM Floor",
+      "userPrincipalName": "bbm.floor@meerwaarde.nl",
+      "mail": "bbm.floor@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-12-08T13:55:41Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "b570cc73-78b6-4768-9c23-d53eab649c84",
+      "displayName": "BBM Florentyna",
+      "userPrincipalName": "bbm.florentyna@meerwaarde.nl",
+      "mail": "florentynabuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-08-09T12:05:00Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "e5f2c199-ce53-46a6-b1ac-c9f876762dd1",
+      "displayName": "BBM Fran",
+      "userPrincipalName": "bbm.fran@meerwaarde.nl",
+      "mail": "franbuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-06-12T07:36:28Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "996e7dd0-7c28-4185-9559-f6869acc847b",
+      "displayName": "BBM Francien",
+      "userPrincipalName": "bbm.francien@meerwaarde.nl",
+      "mail": "bbm.francien@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-11-24T13:51:00Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "c87dfedf-d346-45c2-8d1c-c8cf839b86fc",
+      "displayName": "BBM Gaby",
+      "userPrincipalName": "bbm.gaby@meerwaarde.nl",
+      "mail": "gabybuurtbemiddeling@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-03-13T10:12:04Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "5f33f837-2933-416c-a121-bab2b051a19f",
+      "displayName": "BBM Nederbragt",
+      "userPrincipalName": "bbm.gertjan@meerwaarde.nl",
+      "mail": "bbm.gertjan@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-01-15T11:07:27Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "526c4853-3f2e-4d71-9085-397430cc8012",
+      "displayName": "BBM Greetje",
+      "userPrincipalName": "bbm.greetje@meerwaarde.nl",
+      "mail": "greetjebuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2021-04-09T09:38:04Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "628baeb3-f833-40c7-8293-217ba76b8de7",
+      "displayName": "BBM Guido",
+      "userPrincipalName": "bbm.guido@meerwaarde.nl",
+      "mail": "guidobuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 1
+    },
+    {
+      "id": "2a25d3dd-43be-4ee0-b769-629b58dfc933",
+      "displayName": "BBM Hans Peter",
+      "userPrincipalName": "bbm.hanspeter@meerwaarde.nl",
+      "mail": "hanspeterbuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 1
+    },
+    {
+      "id": "3fe6d819-3559-4c42-a760-8f935c3a2460",
+      "displayName": "BBM Harald",
+      "userPrincipalName": "bbm.harald@meerwaarde.nl",
+      "mail": "haraldbuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-11-16T12:41:10Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "6bed9ee2-b5d9-4713-b31a-d3b0a69975de",
+      "displayName": "BBM Heleen",
+      "userPrincipalName": "bbm.heleen@meerwaarde.nl",
+      "mail": "heleenbuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-05-28T14:15:19Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "7e0ca94d-2516-4b07-aa9e-423788f27a5f",
+      "displayName": "BBM Hella",
+      "userPrincipalName": "bbm.hella@meerwaarde.nl",
+      "mail": "bbm.hella@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-07-07T07:59:24Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "844cd8f4-43ec-4db2-9597-a2d7dfdbbc5f",
+      "displayName": "BBM Henriette",
+      "userPrincipalName": "bbm.henriette@meerwaarde.nl",
+      "mail": "henriettebuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-03-15T09:31:13Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "7061d54e-16b9-4fcb-a1a6-a9a643812774",
+      "displayName": "BBM Hiltje",
+      "userPrincipalName": "bbm.hiltje@meerwaarde.nl",
+      "mail": "bbm.hiltje@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-01-15T11:07:27Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "36607616-4233-4544-ab04-b16752ac7505",
+      "displayName": "BBM Ineke",
+      "userPrincipalName": "bbm.ineke@meerwaarde.nl",
+      "mail": "inekebuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 1
+    },
+    {
+      "id": "ecb1d78b-494e-4650-b4ed-d9d2140c73ae",
+      "displayName": "BBM Ingeborg",
+      "userPrincipalName": "bbm.ingeborg@meerwaarde.nl",
+      "mail": "ingeborgbuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2020-09-18T06:40:04Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "d6858bf0-c57f-4519-83b0-78154b64c56e",
+      "displayName": "BBM Ingrid",
+      "userPrincipalName": "bbm.ingrid@meerwaarde.nl",
+      "mail": "ingridbuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2020-07-15T06:33:40Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "d63f8072-9066-4e4c-b5c6-f817bc874cc5",
+      "displayName": "BBM Ivo",
+      "userPrincipalName": "bbm.ivo@meerwaarde.nl",
+      "mail": "bbm.ivo@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-10-30T09:42:24Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "729bf855-a452-4642-806e-12f2d0ffac9b",
+      "displayName": "BBM Jantine",
+      "userPrincipalName": "bbm.jantine@meerwaarde.nl",
+      "mail": "jantinebuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 1
+    },
+    {
+      "id": "0687aa82-d66d-4b8b-9a44-54b41feecc1b",
+      "displayName": "BBM Jos",
+      "userPrincipalName": "bbm.jos@meerwaarde.nl",
+      "mail": "josbuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2020-05-12T11:07:51Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "e7fc1c04-ed0e-4af8-829f-b6f47299b535",
+      "displayName": "BBM Judith",
+      "userPrincipalName": "bbm.judith@meerwaarde.nl",
+      "mail": "judithbuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-07-11T10:00:26Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "b90dba11-e0e4-4f17-a681-38cfbbcc0a78",
+      "displayName": "BBM Kees",
+      "userPrincipalName": "bbm.kees@meerwaarde.nl",
+      "mail": "keesbuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2020-04-21T13:17:41Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "94960772-d023-4f2a-8f9d-093ba45c32b1",
+      "displayName": "BBM Kim",
+      "userPrincipalName": "bbm.kim@meerwaarde.nl",
+      "mail": "kimbuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-11-16T12:41:10Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "63c950fe-c148-42c9-a99e-dc02e4cdc09b",
+      "displayName": "BBM Laura",
+      "userPrincipalName": "bbm.laura@meerwaarde.nl",
+      "mail": "laurabuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-05-28T14:15:19Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "d3178c51-0fcf-4006-8e23-538345157b31",
+      "displayName": "BBM Leonie",
+      "userPrincipalName": "bbm.leonie@meerwaarde.nl",
+      "mail": "leoniebuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-11-16T12:41:10Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "878d3d44-720a-45a0-8542-48059b0aa0aa",
+      "displayName": "BBM Leonoor",
+      "userPrincipalName": "bbm.leonoor@meerwaarde.nl",
+      "mail": "leonoorbuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-05-19T09:57:33Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "b96fcdce-a278-42fd-9262-9b019783bff9",
+      "displayName": "BBM Marja",
+      "userPrincipalName": "bbm.marja@meerwaarde.nl",
+      "mail": "marjabuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2021-04-20T07:25:58Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "bae0cf21-e934-4efe-938a-29c34c467b20",
+      "displayName": "BBM Marjolein",
+      "userPrincipalName": "bbm.marjolein@meerwaarde.nl",
+      "mail": "bbm.marjolein@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-03-13T10:12:04Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "be2a99f8-ccae-42d5-b870-a0b2dd7b1437",
+      "displayName": "BBM Marjolijn",
+      "userPrincipalName": "bbm.marjolijn@meerwaarde.nl",
+      "mail": "marjolijnbuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 1
+    },
+    {
+      "id": "52266261-498c-4ae0-b81d-de297c632e48",
+      "displayName": "BBM Martie",
+      "userPrincipalName": "bbm.martie@meerwaarde.nl",
+      "mail": "martiebuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2019-02-05T10:16:53Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "2a4451d2-9bdd-4076-8d66-ab8ee42f048c",
+      "displayName": "BBM Martine",
+      "userPrincipalName": "bbm.martine@meerwaarde.nl",
+      "mail": "bbm.martine@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-11-28T14:13:05Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "36fec3d3-f195-4376-b66e-6297d784bedf",
+      "displayName": "BBM Melda",
+      "userPrincipalName": "bbm.melda@meerwaarde.nl",
+      "mail": "meldabuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2021-07-13T09:21:12Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "9617d32d-cc12-4a3c-ab72-72a52c9b7f27",
+      "displayName": "BBM Micha",
+      "userPrincipalName": "bbm.micha@meerwaarde.nl",
+      "mail": "michabuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2021-04-09T09:38:05Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "70568f5d-9dc7-491b-b159-8d9220bd42bd",
+      "displayName": "BBM Miriam",
+      "userPrincipalName": "bbm.miriam@meerwaarde.nl",
+      "mail": "miriambuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2021-07-13T09:21:12Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "c528a397-b423-49e0-a436-e090d69bbaed",
+      "displayName": "BBM Monique",
+      "userPrincipalName": "bbm.monique@meerwaarde.nl",
+      "mail": "bbm.monique@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-12-08T13:55:41Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "ab15fdc4-2c9a-48fc-a281-9ce80a5e23fa",
+      "displayName": "BBM Patricia",
+      "userPrincipalName": "bbm.patricia@meerwaarde.nl",
+      "mail": "bbm.patricia@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-12-01T15:34:26Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "3a82f6f2-0bb3-4ad8-b221-c0c9623a1101",
+      "displayName": "BBM Peter",
+      "userPrincipalName": "bbm.peter@meerwaarde.nl",
+      "mail": "bbm.peter@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2026-01-05T09:58:41Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "6a282b48-f533-43e5-9e95-4dd038f20731",
+      "displayName": "BBM Petra",
+      "userPrincipalName": "bbm.petra@meerwaarde.nl",
+      "mail": "bbm.petra@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-10-17T13:57:44Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "e46405df-c344-44dc-a983-034a45e00826",
+      "displayName": "BBM Pien",
+      "userPrincipalName": "bbm.pien@meerwaarde.nl",
+      "mail": "bbm.pien@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-12-08T13:55:41Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "9a274c2b-c1fb-411f-9026-0dc1b900a133",
+      "displayName": "BBM Rob",
+      "userPrincipalName": "bbm.rob@meerwaarde.nl",
+      "mail": "robbuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2019-10-18T07:16:08Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "14c3d33b-891a-439f-9bb2-c71e54ed4e89",
+      "displayName": "BBM Roger",
+      "userPrincipalName": "bbm.roger@meerwaarde.nl",
+      "mail": "rogerbuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-05-28T14:15:19Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "6766b75f-0641-4489-a532-c361a492aefd",
+      "displayName": "BBM Sabine",
+      "userPrincipalName": "bbm.sabine@meerwaarde.nl",
+      "mail": "bbm.sabine@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-03-13T10:12:04Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "7e2aaefd-1bd6-409d-aebe-46c5cf36774e",
+      "displayName": "BBM Sacha",
+      "userPrincipalName": "bbm.sacha@meerwaarde.nl",
+      "mail": "sachabuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 1
+    },
+    {
+      "id": "f6ef5dc2-8a5c-4307-b91b-36332c375cfc",
+      "displayName": "BBM Sander Haarlemmermeer",
+      "userPrincipalName": "bbm.sandervanrijn@meerwaarde.nl",
+      "mail": "sanderbuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2020-04-28T08:23:44Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "02d8af4e-b848-4e2c-be99-4e74583affc1",
+      "displayName": "BBM Saskia",
+      "userPrincipalName": "bbm.saskia@meerwaarde.nl",
+      "mail": "bbm.saskia@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-03-24T09:25:56Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "3f46543b-a3b4-42b5-8528-e9edaefefcdd",
+      "displayName": "BBM Serge",
+      "userPrincipalName": "bbm.serge@meerwaarde.nl",
+      "mail": "bbm.serge@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-03-24T09:25:56Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "2e6ab51c-53b3-4b13-b01c-9b6343f5e484",
+      "displayName": "BBM Sheila",
+      "userPrincipalName": "bbm.sheila@meerwaarde.nl",
+      "mail": "bbm.sheila@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-12-05T07:55:18Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "93c4773a-6c70-4336-a2e2-e62b9d014114",
+      "displayName": "BBM Sigrid",
+      "userPrincipalName": "bbm.sigrid@meerwaarde.nl",
+      "mail": "bbm.sigrid@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-12-08T13:55:41Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "8238c9e5-2c1e-4d65-809f-27c973166106",
+      "displayName": "BBM Simone",
+      "userPrincipalName": "bbm.simone@meerwaarde.nl",
+      "mail": "simonebuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2020-09-22T09:40:13Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "2c722d5e-98db-4338-98bd-eb884fbf264f",
+      "displayName": "BBM Suzanne",
+      "userPrincipalName": "bbm.suzanne@meerwaarde.nl",
+      "mail": "suzannebuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2021-09-16T07:34:15Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "0b51b411-0b7d-41cd-8076-079688bd1f7d",
+      "displayName": "BBM Sylvia",
+      "userPrincipalName": "bbm.sylvia@meerwaarde.nl",
+      "mail": "sylviabuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 1
+    },
+    {
+      "id": "cebfabef-738e-4c09-941b-e3c9d27b1846",
+      "displayName": "BBM Tanja",
+      "userPrincipalName": "bbm.tanja@meerwaarde.nl",
+      "mail": "tanjabuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 1
+    },
+    {
+      "id": "4a61921a-4f46-4c60-bbf6-0105217c96a3",
+      "displayName": "BBM Tessa",
+      "userPrincipalName": "bbm.tessa@meerwaarde.nl",
+      "mail": "tessabuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-03-15T09:31:13Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "a52d9506-90aa-406d-be16-9842b2717eda",
+      "displayName": "BBM Tijl",
+      "userPrincipalName": "bbm.tijl@meerwaarde.nl",
+      "mail": "bbm.tijl@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-01-15T11:07:27Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "6bace960-616a-4c14-b5db-f605da1a88cf",
+      "displayName": "BBM Ton",
+      "userPrincipalName": "bbm.ton@meerwaarde.nl",
+      "mail": "tonbuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 1
+    },
+    {
+      "id": "e701656e-78de-48d9-95cd-69e8d08eaa97",
+      "displayName": "BBM Wendy",
+      "userPrincipalName": "bbm.wendy@meerwaarde.nl",
+      "mail": "wendybuurtbemiddeling@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-05-19T09:57:33Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "69f5cb1d-3270-47f2-a1de-1d22c516cee3",
+      "displayName": "BBM Wilfred",
+      "userPrincipalName": "bbm.wilfred@meerwaarde.nl",
+      "mail": "bbm.wilfred@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2021-07-05T08:22:07Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "02b897e6-236a-4372-8918-e4c70a6459f9",
+      "displayName": "Bestuurskamer",
+      "userPrincipalName": "bestuurskamer.dovd@meerwaarde.onmicrosoft.com",
+      "mail": "bestuurskamer.dovd@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2021-01-06T13:41:19Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "e885a0de-aea8-4f2a-a942-a40c90da52f9",
+      "displayName": "Betrokken - NV 1",
+      "userPrincipalName": "Betrokken.NV1@meerwaarde.onmicrosoft.com",
+      "mail": "Betrokken.NV1@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-12-13T09:35:55Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "3046e4de-0055-48ee-af1c-e5a7886ce6c4",
+      "displayName": "Betrokken - SKAG 1",
+      "userPrincipalName": "Betrokken.SKAG1@meerwaarde.onmicrosoft.com",
+      "mail": "Betrokken.SKAG1@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-12-13T09:32:38Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "5974a383-1dbb-4446-b1bb-ff5e9cba830d",
+      "displayName": "Betrouwbaar - NV 2",
+      "userPrincipalName": "Betrouwbaar.NV2@meerwaarde.onmicrosoft.com",
+      "mail": "Betrouwbaar.NV2@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-12-13T09:37:21Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "52f28d96-9d60-4b52-bc97-fe5512d29139",
+      "displayName": "Betrouwbaar - SKAG 2",
+      "userPrincipalName": "Betrouwbaar.SKAG2@meerwaarde.onmicrosoft.com",
+      "mail": "Betrouwbaar.SKAG2@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-12-13T09:34:20Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "9dc72e6b-729b-41d2-a05f-5bbd386b3654",
+      "displayName": "Betul Manisa",
+      "userPrincipalName": "betul.manisa@meerwaarde.nl",
+      "mail": "betul.manisa@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2019-03-07T15:19:23Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "3f7f3f92-a3f3-49e5-8860-4b66235c5f6b",
+      "displayName": "beyaakhanchouch",
+      "userPrincipalName": "beyaakhanchouch_icloud.com#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "beyaakhanchouch@icloud.com",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-11-12T09:30:41Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "57b480d1-c466-4383-a9cc-3401d8017743",
+      "displayName": "Postbus BHV",
+      "userPrincipalName": "bhvmeerwaarde@meerwaarde.onmicrosoft.com",
+      "mail": "bhvmeerwaarde@meerwaarde.nl",
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2026-02-04T10:33:44Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "533f417e-f0dd-4a8e-9a73-89fb7318f637",
+      "displayName": "Bianca Van Walbeek",
+      "userPrincipalName": "Bianca.vanwalbeek@meerwaarde.nl",
+      "mail": "Bianca.vanwalbeek@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2026-03-09T09:34:22Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "14e181b5-fb65-4e58-9565-1d1d1226809f",
+      "displayName": "Bidi Stam",
+      "userPrincipalName": "bidi.stam@meerwaarde.nl",
+      "mail": "bidi.stam@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 3
+    },
+    {
+      "id": "189a5001-d610-4e86-b8d3-3176c3e82905",
+      "displayName": "Brahim Raissouni",
+      "userPrincipalName": "brahim.raissouni@meerwaarde.nl",
+      "mail": "brahim.raissouni@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-04-18T12:35:12Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "29beda8c-8e43-40a1-8d88-5f8cd505c198",
+      "displayName": "brahimraissouni",
+      "userPrincipalName": "brahimraissouni_hotmail.com#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "brahimraissouni@hotmail.com",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-09-10T08:43:13Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "50d52fed-5f56-4897-aab6-9978f15153ca",
+      "displayName": "Buitenhuis, Laila",
+      "userPrincipalName": "lbuitenhuis_novacollege.nl#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "lbuitenhuis@novacollege.nl",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-10-29T09:38:51Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "a224c9db-89dc-4332-87fe-d65147edf4fa",
+      "displayName": "Caroline Roelfs",
+      "userPrincipalName": "caroline.roelfs@meerwaarde.nl",
+      "mail": "caroline.roelfs@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-09-13T07:57:23Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "f174a278-b915-45b9-a3a2-6bb676df96f1",
+      "displayName": "Caroline van de Merwe",
+      "userPrincipalName": "Caroline.vandemerwe@meerwaarde.nl",
+      "mail": "Caroline.vandemerwe@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-04-04T09:29:25Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "0fd0fe1f-a54c-4587-ba5a-ac9b06156a9f",
+      "displayName": "Celeste Koster",
+      "userPrincipalName": "celeste.koster@meerwaarde.nl",
+      "mail": "celeste.koster@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2026-01-23T12:56:55Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "6fd84cdc-8af4-472b-935a-12f434b58fec",
+      "displayName": "Chaib Saber",
+      "userPrincipalName": "chaib.saber@meerwaarde.nl",
+      "mail": "chaib.saber@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-10-27T08:27:34Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "a16088ce-25f8-4220-a006-90daad220db0",
+      "displayName": "Chamira Breslau",
+      "userPrincipalName": "chamira.breslau@meerwaarde.nl",
+      "mail": "Chamira.breslau@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-11-11T15:57:13Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "aa62a80f-82a0-4a1f-929a-495c78a8c2b9",
+      "displayName": "Chantal Slotemaker",
+      "userPrincipalName": "chantal.slotemaker@meerwaarde.nl",
+      "mail": "chantal.slotemaker@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-09-23T08:03:19Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "6a707e58-2f1d-4f33-b102-2c1c2153e246",
+      "displayName": "Chayenne.24",
+      "userPrincipalName": "Chayenne.24_outlook.com#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "Chayenne.24@outlook.com",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-11-16T17:01:17Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "87c4dbea-e4cc-43e3-8aee-bc55cef8acaa",
+      "displayName": "Cherish Hellings",
+      "userPrincipalName": "cherish.hellings@meerwaarde.nl",
+      "mail": "cherish.hellings@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-04-20T12:49:44Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "e026cb72-8a84-47a4-886b-8ccb664c6306",
+      "displayName": "Claudia Boelee",
+      "userPrincipalName": "claudia.boelee@meerwaarde.nl",
+      "mail": "claudia.boelee@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 3
+    },
+    {
+      "id": "2466468a-8ac0-4e1a-adbb-d145c4cc9012",
+      "displayName": "CV Hulp",
+      "userPrincipalName": "cvhulp@meerwaarde.nl",
+      "mail": "cvhulp@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-03-05T08:34:20Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "11137b65-3335-4168-82f9-a6f125d1fa06",
+      "displayName": "Cynthia de Vries",
+      "userPrincipalName": "cynthia.devries@meerwaarde.nl",
+      "mail": "cynthia.devries@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 1
+    },
+    {
+      "id": "f2f501a5-6cd2-4491-9a32-699523cff509",
+      "displayName": "Dachar Wills",
+      "userPrincipalName": "dachar.wills@meerwaarde.nl",
+      "mail": "dachar.wills@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-05-31T13:09:55Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "b7ff4bc0-0934-47d4-89c0-d6b30f733291",
+      "displayName": "dalila.elmesbahi",
+      "userPrincipalName": "dalila.elmesbahi_hotmail.com#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "dalila.elmesbahi@hotmail.com",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-08-28T14:21:41Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "6e9df993-1c63-48fc-866c-72bbd01da5a2",
+      "displayName": "Daniel Siwpersad",
+      "userPrincipalName": "daniel.siwpersad@meerwaarde.nl",
+      "mail": "daniel.siwpersad@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2020-10-20T12:11:57Z",
+      "licenseCount": 4
+    },
+    {
+      "id": "8e64a38b-3b8f-4f60-b880-2bd6476c6ece",
+      "displayName": "David Oldenburg",
+      "userPrincipalName": "david.oldenburg@meerwaarde.nl",
+      "mail": "david.oldenburg@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-02-17T15:55:07Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "011f5e93-1ffa-42bc-85ab-b337b7d689fc",
+      "displayName": "De Verbinder",
+      "userPrincipalName": "De.Verbinder@meerwaarde.onmicrosoft.com",
+      "mail": "De.Verbinder@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-02-28T09:12:17Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "df9779a8-d4ab-4014-ba31-376d85dd27a7",
+      "displayName": "Meerwaarde | Debiteuren",
+      "userPrincipalName": "debiteuren@meerwaarde.onmicrosoft.com",
+      "mail": "debiteuren@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-02-20T14:42:50Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "d06b4de1-ee4a-4fcb-bbaf-3d95b15b837f",
+      "displayName": "Destinyy.hartss",
+      "userPrincipalName": "Destinyy.hartss_gmail.com#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "Destinyy.hartss@gmail.com",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2026-02-03T16:08:59Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "6aa37a0a-cc6d-4737-9c3a-eb80c70046d4",
+      "displayName": "Devi van Woudenberg",
+      "userPrincipalName": "devi.vanwoudenberg@meerwaarde.nl",
+      "mail": "devi.vanwoudenberg@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-06-30T07:26:57Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "e28d1623-9a1c-4813-864a-d9e389aee323",
+      "displayName": "Postbus Directiesecretariaat",
+      "userPrincipalName": "directiesecretariaat@meerwaarde.onmicrosoft.com",
+      "mail": "directiesecretariaat@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-12-29T15:03:31Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "b781c849-cdb3-4350-8b99-38286b71fe01",
+      "displayName": "Postbus Eenzaamheid",
+      "userPrincipalName": "eenzaamheid@meerwaarde.onmicrosoft.com",
+      "mail": "eenzaamheid@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-03-05T13:52:22Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "51d8e666-07fa-4d33-bd50-cbbcd9cbeefa",
+      "displayName": "Ellen Kieftenbeld",
+      "userPrincipalName": "ellen.kieftenbeld@meerwaarde.nl",
+      "mail": "ellen.kieftenbeld@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-12-13T08:01:19Z",
+      "licenseCount": 5
+    },
+    {
+      "id": "97925e2e-22fa-4498-b697-c63fae688745",
+      "displayName": "Els van der Jagt",
+      "userPrincipalName": "els.vanderjagt@meerwaarde.nl",
+      "mail": "els.vanderjagt@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-01-19T11:59:26Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "9725c3e0-0466-4d8f-b207-d43b3b525aec",
+      "displayName": "els",
+      "userPrincipalName": "els_familiezeilstra.nl#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "els@familiezeilstra.nl",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-06-19T12:47:15Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "767bd432-a11b-479c-bf0f-d0379e876003",
+      "displayName": "Erik Schoe",
+      "userPrincipalName": "erik.schoe@meerwaarde.nl",
+      "mail": "erik.schoe@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 3
+    },
+    {
+      "id": "cacd3ea5-1307-4350-bac4-df0a8af67d92",
+      "displayName": "Eveline van Dam",
+      "userPrincipalName": "eveline.vandam@meerwaarde.nl",
+      "mail": "eveline.vandam@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 3
+    },
+    {
+      "id": "07b8bc25-5e80-4619-801e-3c4172a90475",
+      "displayName": "F",
+      "userPrincipalName": "F@meerwaarde.onmicrosoft.com",
+      "mail": "F@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-09-24T14:00:39Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "33538bb3-2548-4d97-b0b6-d6a345847e88",
+      "displayName": "FA",
+      "userPrincipalName": "FA@meerwaarde.onmicrosoft.com",
+      "mail": "FA@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-09-24T16:25:53Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "f1610f29-c657-4c5b-b0e0-7b9b83c508e7",
+      "displayName": "Fabian van Tol",
+      "userPrincipalName": "fabian.vantol@meerwaarde.nl",
+      "mail": "fabian.vantol@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-01-26T11:13:16Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "90c39c19-1237-4190-993d-c60b70ea97a8",
+      "displayName": "Fatiha Ayyad",
+      "userPrincipalName": "fatiha.ayyad@meerwaarde.nl",
+      "mail": "fatiha.ayyad@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 2
+    },
+    {
+      "id": "11a89a4c-e7a9-47e4-934c-8ee78340915e",
+      "displayName": "Fatima El Idrissi",
+      "userPrincipalName": "fatima.elidrissi@meerwaarde.nl",
+      "mail": "fatima.elidrissi@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-11-22T09:15:15Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "2f787a7c-9c80-4ee4-b02b-2741c0b42fbf",
+      "displayName": "Fatima Eloche",
+      "userPrincipalName": "fatima.eloche@meerwaarde.nl",
+      "mail": "fatima.eloche@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 2
+    },
+    {
+      "id": "c2afa053-614a-4973-b168-b4a1461fe678",
+      "displayName": "Fleur Neeskens",
+      "userPrincipalName": "fleur.neeskens@meerwaarde.nl",
+      "mail": "fleur.neeskens@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-08-30T09:21:21Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "e7a220d4-32f5-480b-8d83-e08eb79d211d",
+      "displayName": "Florentyna Kerkmeer",
+      "userPrincipalName": "florentyna.kerkmeer@meerwaarde.nl",
+      "mail": "florentyna.kerkmeer@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-09-11T10:55:48Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "8f16f691-5d5f-46a5-9fc1-f2c116d96962",
+      "displayName": "Frank Groot",
+      "userPrincipalName": "frank.groot@meerwaarde.nl",
+      "mail": "frank.groot@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2021-08-02T15:04:36Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "06744764-c3f1-425a-9e65-e45bb71daf00",
+      "displayName": "Friso Spring in 't veld",
+      "userPrincipalName": "Friso.springintveld@meerwaarde.nl",
+      "mail": "Friso.springintveld@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2020-09-15T08:40:02Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "6e93c52d-da0d-40b3-b37e-254ba135ba51",
+      "displayName": "Gaby Stoop",
+      "userPrincipalName": "Gaby.Stoop@meerwaarde.nl",
+      "mail": "Gaby.Stoop@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-09-29T11:44:58Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "7261d58c-d1cb-4419-96d7-c01e0985e726",
+      "displayName": "Guido Dankerlui",
+      "userPrincipalName": "Guido.Dankerlui@meerwaarde.nl",
+      "mail": "Guido.Dankerlui@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-12-02T10:07:30Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "1f9faa19-0e1f-48d6-abd1-89f3456e8ff9",
+      "displayName": "Hannelore de Vries",
+      "userPrincipalName": "hannelore.devries@meerwaarde.nl",
+      "mail": "hannelore.devries@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 3
+    },
+    {
+      "id": "92749f8d-64cd-4d41-a009-877af100a5ed",
+      "displayName": "Hans Louter",
+      "userPrincipalName": "hans.louter@meerwaarde.nl",
+      "mail": "hans.louter@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 2
+    },
+    {
+      "id": "bb650419-7151-4b72-bb83-05d708be8cbe",
+      "displayName": "Het Hart",
+      "userPrincipalName": "Het.Hart@meerwaarde.onmicrosoft.com",
+      "mail": "Het.Hart@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-02-28T09:13:32Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "1174cbaa-0ac6-4cf3-a420-cdf3ebe30e6f",
+      "displayName": "Hiljan Hoek",
+      "userPrincipalName": "hiljan.hoek@meerwaarde.nl",
+      "mail": "hiljan.hoek@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-08-03T13:27:52Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "c2fdf114-ac52-41d2-983e-b2b02fe343b1",
+      "displayName": "Annet van de Plas",
+      "userPrincipalName": "Hmve_annet.vdplas@meerwaarde.nl",
+      "mail": "Hmve_annet.vdplas@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-10-31T08:22:56Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "c480acff-13d3-4678-93dc-a23df74a9549",
+      "displayName": "Caroline Blommers",
+      "userPrincipalName": "Hmve_caroline.blommers@meerwaarde.nl",
+      "mail": "Hmve_caroline.blommers@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-12-22T14:28:53Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "625f76bd-f60c-41d8-b167-1184ea84f020",
+      "displayName": "Erik Romijn",
+      "userPrincipalName": "hmve_Erik.Romijn@meerwaarde.nl",
+      "mail": "hmve_Erik.Romijn@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-12-13T08:03:45Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "95cce38e-3522-4881-b63d-3a65ecfbe85e",
+      "displayName": "HMVE Jessica Talaa",
+      "userPrincipalName": "hmve_Jessica.Talaa@meerwaarde.nl",
+      "mail": "hmve_Jessica.Talaa@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-12-13T08:03:45Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "67317dca-e6af-460e-9adf-0e0454a920d7",
+      "displayName": "Mallory Roo van der Haagen",
+      "userPrincipalName": "Hmve_mallory.roovanderhaagen@meerwaarde.nl",
+      "mail": "Hmve_mallory.roovanderhaagen@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-04-04T08:43:20Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "cfec8f28-cb0c-43f1-be49-8ef9cd365dd0",
+      "displayName": "HMVE Monique Worm",
+      "userPrincipalName": "hmve_monique.worm@meerwaarde.nl",
+      "mail": "hmve_monique.worm@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2026-01-30T15:23:06Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "7fdb3332-3df3-4ce6-a5b7-dbc79effbb0d",
+      "displayName": "Hyan Taleb",
+      "userPrincipalName": "hyan.taleb@meerwaarde.nl",
+      "mail": "hyan.taleb@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-11-10T07:51:19Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "489b8429-d518-4afc-a607-1fc19d207ab7",
+      "displayName": "ICT - Meerwaarde",
+      "userPrincipalName": "ict@meerwaarde.onmicrosoft.com",
+      "mail": "ict@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-04-16T08:03:55Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "1f0cfb4d-e3f6-4c30-ae36-8878c872cf48",
+      "displayName": "Ilona van Es",
+      "userPrincipalName": "ilona.vanes@meerwaarde.nl",
+      "mail": "ilona.vanes@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 2
+    },
+    {
+      "id": "cd3471fb-4e6a-47df-a1d6-0e6966625a5e",
+      "displayName": "Imad Talhaoui",
+      "userPrincipalName": "imad.talhaoui@meerwaarde.nl",
+      "mail": "imad.talhaoui@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-11-07T11:08:31Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "c982734e-d021-40f5-8072-fbdef8ba6ed4",
+      "displayName": "Info",
+      "userPrincipalName": "info@smwnet.nl",
+      "mail": "info@meerwaarde.nl",
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 0
+    },
+    {
+      "id": "da1ce44b-ac02-45ba-b4d8-32499f3a25c7",
+      "displayName": "Inge Janssen",
+      "userPrincipalName": "inge.janssen@meerwaarde.nl",
+      "mail": "inge.janssen@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2019-11-13T09:55:51Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "6e565d4d-9083-4f91-9b60-eccd93a5df8e",
+      "displayName": "Inspiratiehoek",
+      "userPrincipalName": "Inspiratiehoek@meerwaarde.onmicrosoft.com",
+      "mail": "Inspiratiehoek@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-02-28T09:14:13Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "4a851430-fa5d-4443-b4e1-76002d8fd5d2",
+      "displayName": "Jamal Bouraajaj",
+      "userPrincipalName": "jamal.bouraajaj@meerwaarde.nl",
+      "mail": "jamal.bouraajaj@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-12-07T08:43:11Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "912a4142-b6c7-42f0-8ead-4e8da4bd16fd",
+      "displayName": "Jareth Westerman",
+      "userPrincipalName": "Jareth.westerman@meerwaarde.nl",
+      "mail": "Jareth.westerman@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-03-14T15:06:33Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "22e08a31-b96b-461d-89a3-be5bb66cf555",
+      "displayName": "Jinan Raissouni",
+      "userPrincipalName": "jinan.raissouni@meerwaarde.nl",
+      "mail": "jinan.raissouni@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-09-29T08:35:05Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "2180ec18-b831-43eb-b948-33685438eef3",
+      "displayName": "postbus jongerenactiviteiten",
+      "userPrincipalName": "jongerenactiviteiten@meerwaarde.onmicrosoft.com",
+      "mail": "jongerenactiviteiten@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-05-08T06:50:05Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "f52d1e92-b6c9-4301-8ecc-adc31aad4a98",
+      "displayName": "Jorien Reinderink",
+      "userPrincipalName": "jorien.reinderink@meerwaarde.nl",
+      "mail": "jorien.reinderink@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 2
+    },
+    {
+      "id": "2c401d9b-e9d8-480a-8c0c-85393f9f7157",
+      "displayName": "Josefine Scheepmaker",
+      "userPrincipalName": "josefine.scheepmaker@meerwaarde.nl",
+      "mail": "josefine.scheepmaker@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-05-17T11:57:10Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "fc6973e4-e075-4146-9553-fe9c6df02590",
+      "displayName": "Joyce van Bemmelen",
+      "userPrincipalName": "joyce.vanbemmelen@meerwaarde.nl",
+      "mail": "joyce.vanbemmelen@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-08-24T12:59:18Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "2e7e8121-b679-4f50-9c6d-0d3ef675db31",
+      "displayName": "Judy de Leeuw",
+      "userPrincipalName": "judy.deleeuw@meerwaarde.nl",
+      "mail": "judy.deleeuw@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-01-25T09:00:14Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "00b30b23-d120-48e2-a1ab-fffa4d5b7ae7",
+      "displayName": "Juliette Jansen",
+      "userPrincipalName": "juliette.jansen@meerwaarde.nl",
+      "mail": "juliette.jansen@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-11-07T14:38:53Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "f8c07f11-6611-4634-9041-c0c5eaf17ec0",
+      "displayName": "Kantine DOVD",
+      "userPrincipalName": "Kantine@meerwaarde.onmicrosoft.com",
+      "mail": "Kantine@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-01-11T09:02:19Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "0097cbda-da73-479e-9c89-16995c08a0c0",
+      "displayName": "Karin Babeliowsky-v.d. Woord",
+      "userPrincipalName": "karin.babeliowsky@meerwaarde.nl",
+      "mail": "karin.babeliowsky@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-03-14T09:13:29Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "eb15d7ff-cbd2-4ded-b66a-21715407a086",
+      "displayName": "Kavindra Richards",
+      "userPrincipalName": "kavindra.richards@meerwaarde.nl",
+      "mail": "kavindra.richards@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2021-01-21T13:56:57Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "06d4d587-f27b-44aa-bbf6-7e4b447be729",
+      "displayName": "Kreuning, Samantha",
+      "userPrincipalName": "skreuning_novacollege.nl#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "skreuning@novacollege.nl",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-09-03T12:05:06Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "0c3ad18d-120f-49f1-a874-3f03f5a00384",
+      "displayName": "Khadija Mallouk",
+      "userPrincipalName": "khadija.mallouk@meerwaarde.nl",
+      "mail": "khadija.mallouk@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 2
+    },
+    {
+      "id": "d8153284-8c09-45cd-a2d8-e78e357b1efe",
+      "displayName": "Postbus Klachten",
+      "userPrincipalName": "klacht@meerwaarde.onmicrosoft.com",
+      "mail": "klacht@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2019-01-11T09:03:16Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "c2c1d9c2-8f0c-402a-904e-14f19b6529a1",
+      "displayName": "Kracht",
+      "userPrincipalName": "Kracht@meerwaarde.onmicrosoft.com",
+      "mail": "Kracht@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-12-13T09:39:11Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "1d744550-4f43-49dd-a62e-4e66050a6448",
+      "displayName": "Laila Ameziane",
+      "userPrincipalName": "Laila.Ameziane@meerwaarde.nl",
+      "mail": "Laila.Ameziane@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-10-23T08:30:45Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "5fdd8d95-2219-4199-8d98-fec6752a2b51",
+      "displayName": "Laila el Hafidi",
+      "userPrincipalName": "laila.elhafidi@meerwaarde.nl",
+      "mail": "laila.elhafidi@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2021-09-13T09:33:42Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "23f9ee51-6921-4618-902d-18b5244d9807",
+      "displayName": "Lara Holst",
+      "userPrincipalName": "lara.holst@meerwaarde.nl",
+      "mail": "lara.holst@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2026-01-14T07:34:31Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "4df682ee-f653-41a1-9a05-a4a72733d3b0",
+      "displayName": "Larissa Wladimiroff",
+      "userPrincipalName": "Larissa.Wladimiroff@meerwaarde.nl",
+      "mail": "Larissa.Wladimiroff@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2026-01-07T13:19:06Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "94dc3d28-3139-4e25-8283-3ba2921b2daa",
+      "displayName": "Leena Scheffer - Manapong",
+      "userPrincipalName": "leena.scheffer@meerwaarde.nl",
+      "mail": "leena.scheffer@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-09-01T09:53:52Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "7c29844b-d687-4aed-8422-819e8d2494b4",
+      "displayName": "Lia Duivenvoorden",
+      "userPrincipalName": "lia.duivenvoorden@meerwaarde.nl",
+      "mail": "lia.duivenvoorden@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 2
+    },
+    {
+      "id": "5564c3b7-bec4-478a-8ea7-807cb6ff260a",
+      "displayName": "Liesbeth Kila",
+      "userPrincipalName": "liesbeth.Kila@meerwaarde.nl",
+      "mail": "liesbeth.Kila@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-04-29T12:47:55Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "21866af8-fca9-4ee3-a17b-8cc0789d2072",
+      "displayName": "Linda Steeman",
+      "userPrincipalName": "linda.steeman@meerwaarde.nl",
+      "mail": "linda.steeman@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-07-25T13:01:12Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "90f1214a-54ca-4fe8-a3f2-7783e7276542",
+      "displayName": "Lisa de Best",
+      "userPrincipalName": "lisa.debest@meerwaarde.nl",
+      "mail": "lisa.debest@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-09-10T07:54:55Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "966361f3-0694-4474-a8ad-cf83c9e3c2cf",
+      "displayName": "Lisette Piepers",
+      "userPrincipalName": "lisette.piepers@meerwaarde.nl",
+      "mail": "lisette.piepers@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-05-23T08:58:02Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "f8af2543-06e4-4e7e-b97a-4f271e70f74b",
+      "displayName": "Lotte Verhofstad",
+      "userPrincipalName": "lotte.verhofstad@meerwaarde.nl",
+      "mail": "lotte.verhofstad@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 3
+    },
+    {
+      "id": "42779829-7dd9-4808-8c47-e0bff4afb735",
+      "displayName": "m.a.hubert04",
+      "userPrincipalName": "m.a.hubert04_gmail.com#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "m.a.hubert04@gmail.com",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-09-23T07:24:26Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "19541e26-8ae6-4f50-bba3-892b93b780c9",
+      "displayName": "Postbus Maatschappelijk Betrokken HLMR",
+      "userPrincipalName": "maatschappelijkbetrokkenHLMR@meerwaarde.onmicrosoft.com",
+      "mail": "maatschappelijkbetrokkenHLMR@meerwaarde.nl",
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-09-01T13:45:09Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "9d5efae2-07f2-4f43-bec0-824064a69fd0",
+      "displayName": "Magne de Kreek",
+      "userPrincipalName": "magne.dekreek@meerwaarde.nl",
+      "mail": "magne.dekreek@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 2
+    },
+    {
+      "id": "9f9f1887-3e33-4157-85f7-9711da5439c1",
+      "displayName": "Maira Wouter",
+      "userPrincipalName": "maira.wouter@meerwaarde.nl",
+      "mail": "maira.wouter@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-12-24T13:04:13Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "49fef692-34b3-4b9f-813e-77e9664acec0",
+      "displayName": "Marie-Jose Keijman",
+      "userPrincipalName": "mariejose.keijman@meerwaarde.nl",
+      "mail": "mariejose.keijman@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-07-04T12:31:48Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "843beb67-d392-4eef-bc2f-1a617d76af73",
+      "displayName": "Mariëtte Bouterse",
+      "userPrincipalName": "mariette.bouterse@meerwaarde.nl",
+      "mail": "mariette.bouterse@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 3
+    },
+    {
+      "id": "832f80cf-1ff0-44e0-811c-c8f0f8a62b6b",
+      "displayName": "Mariska Spikmans",
+      "userPrincipalName": "mariska.spikmans@meerwaarde.nl",
+      "mail": "mariska.spikmans@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 3
+    },
+    {
+      "id": "cc296d92-6c61-44f7-8e53-af04381403d2",
+      "displayName": "Marith Elfering",
+      "userPrincipalName": "marith.elfering@meerwaarde.nl",
+      "mail": "marith.elfering@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-01-28T14:41:03Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "119f0de0-bd09-4428-bfcb-b149acc94661",
+      "displayName": "Marjorie Mesman",
+      "userPrincipalName": "marjorie.mesman@meerwaarde.nl",
+      "mail": "marjorie.mesman@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-05-14T13:22:52Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "36300d7e-6195-43d5-ae29-ae1c6076c9de",
+      "displayName": "Mark Ostendorf",
+      "userPrincipalName": "mark.ostendorf@meerwaarde.nl",
+      "mail": "mark.ostendorf@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 3
+    },
+    {
+      "id": "662fb0fd-cc8f-4f7b-8ccb-2085a684a095",
+      "displayName": "Marnix Zuidema",
+      "userPrincipalName": "marnix.zuidema@meerwaarde.nl",
+      "mail": "marnix.zuidema@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-12-08T10:16:56Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "575a3a1d-1260-47bd-8fde-346d74cf6fda",
+      "displayName": "marnix.zuidema",
+      "userPrincipalName": "marnix.zuidema_outlook.com#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "marnix.zuidema@outlook.com",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-04-15T13:52:18Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "cb8a8720-fb62-41b3-9a16-22cf1f65c4a8",
+      "displayName": "Martijn Kool",
+      "userPrincipalName": "martijn.kool@meerwaarde.nl",
+      "mail": "martijn.kool@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-11-29T11:01:00Z",
+      "licenseCount": 4
+    },
+    {
+      "id": "55dfa172-e4cc-411b-91dc-7a2374a59160",
+      "displayName": "Martine Heeremans",
+      "userPrincipalName": "martine.heeremans@meerwaarde.nl",
+      "mail": "martine.heeremans@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-11-14T06:50:42Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "0f26b662-6b52-4d51-9c80-2b0269cadc0c",
+      "displayName": "Mary van der Drift",
+      "userPrincipalName": "mary.vanderdrift@meerwaarde.nl",
+      "mail": "mary.vanderdrift@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 3
+    },
+    {
+      "id": "a9b91800-0ecd-48e3-b16f-bc36854a8acf",
+      "displayName": "Maryam Aourag",
+      "userPrincipalName": "Maryam.Aourag@meerwaarde.nl",
+      "mail": "Maryam.Aourag@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-12-09T13:48:09Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "4dc847e2-b0cd-4cf5-abe2-ffdca33d011a",
+      "displayName": "Maud Tromp",
+      "userPrincipalName": "maud.tromp@meerwaarde.nl",
+      "mail": "maud.tromp@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 3
+    },
+    {
+      "id": "0419fabe-638d-428d-bf78-1411bc813a03",
+      "displayName": "Merel Jansen",
+      "userPrincipalName": "merel.jansen@meerwaarde.nl",
+      "mail": "merel.jansen@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 2
+    },
+    {
+      "id": "a9505338-5c76-4687-a69d-02bba78eac29",
+      "displayName": "Michael Wouters | QUBE",
+      "userPrincipalName": "michael.wouters_qube.nl#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "michael.wouters@qube.nl",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-01-10T14:22:12Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "4c1fbb93-19e5-4afb-91fc-8a4b55f30f1f",
+      "displayName": "Michiel Poorter",
+      "userPrincipalName": "Michiel.poorter@meerwaarde.nl",
+      "mail": "michiel.poorter@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-09-10T12:41:27Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "b8276966-eb58-47b5-9b74-c1f9e368f9dd",
+      "displayName": "Mireille Paardenkooper",
+      "userPrincipalName": "mireille.paardenkooper@meerwaarde.nl",
+      "mail": "mireille.paardenkooper@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-09-11T11:39:21Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "deee2aff-cc6c-45bc-813b-1db757ec2b62",
+      "displayName": "Miriam Naluzinda",
+      "userPrincipalName": "Miriam.Naluzinda@meerwaarde.nl",
+      "mail": "Miriam.Naluzinda@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-08-29T11:24:03Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "9e1ffba3-766d-4e37-8ef5-1dd127e2201f",
+      "displayName": "Mirjam Gans",
+      "userPrincipalName": "mirjam.gans@meerwaarde.nl",
+      "mail": "mirjam.gans@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-12-24T13:04:13Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "09518094-6919-4494-9c2b-d0029debed86",
+      "displayName": "Mohammed Abraimi",
+      "userPrincipalName": "mohammed.abraimi@meerwaarde.nl",
+      "mail": "mohammed.abraimi@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-05-10T09:52:56Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "c61ac01f-bf60-4b91-8c4f-e46c8759a790",
+      "displayName": "Mustapha El Moumene",
+      "userPrincipalName": "mustapha.elmoumene@meerwaarde.nl",
+      "mail": "mustapha.elmoumene@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 3
+    },
+    {
+      "id": "fbab2cf8-bb14-4a4b-9360-3161cbcbeb10",
+      "displayName": "Team Haarlemmermeervoorelkaar",
+      "userPrincipalName": "mvac@smwnet.nl",
+      "mail": "haarlemmermeervoorelkaar@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 1
+    },
+    {
+      "id": "6699c50b-a0c0-44a4-9fa1-e22c6afac4ca",
+      "displayName": "Nancy van den Burg",
+      "userPrincipalName": "nancy.vandenburg@meerwaarde.nl",
+      "mail": "nancy.vandenburg@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2019-03-26T13:49:13Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "2fcc090b-4652-4c4c-89c2-9e24f1d6ccd2",
+      "displayName": "Natasja Lie",
+      "userPrincipalName": "natasja.lie@meerwaarde.nl",
+      "mail": "natasja.lie@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-03-26T14:17:14Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "c6c0765c-9a51-402c-a5be-f5f433071762",
+      "displayName": "Nelleke van Wonderen",
+      "userPrincipalName": "Nelleke.vanWonderen@meerwaarde.nl",
+      "mail": "Nelleke.vanWonderen@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 3
+    },
+    {
+      "id": "d7477512-66b5-4cd0-af4c-ff42a4641d90",
+      "displayName": "nhwstoffels",
+      "userPrincipalName": "nhwstoffels_gmail.com#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "nhwstoffels@gmail.com",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-01-15T10:42:30Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "b464ad17-dd91-4a17-bcf3-c2079c9a7d02",
+      "displayName": "Locatie Nieuw-Vennep",
+      "userPrincipalName": "Nieuw-Vennep@meerwaarde.onmicrosoft.com",
+      "mail": "Nieuw-Vennep@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-09-26T09:38:37Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "baf7cbf2-a45a-49f1-8989-26a65e59cac4",
+      "displayName": "Nina Liang",
+      "userPrincipalName": "nina.liang@meerwaarde.nl",
+      "mail": "nina.liang@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-05-17T08:27:07Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "e0267950-460b-4d8b-9248-d4e8c9c12336",
+      "displayName": "Nissrin Zafzafi",
+      "userPrincipalName": "Nissrin.Zafzafi@meerwaarde.nl",
+      "mail": "Nissrin.Zafzafi@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-08-22T06:28:39Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "6b7f6339-4519-4e2e-87d4-d32092b90f2a",
+      "displayName": "no-reply Meerwaarde",
+      "userPrincipalName": "no-reply@smwnet.nl",
+      "mail": "noreply@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 1
+    },
+    {
+      "id": "81ef0cbf-3b45-4895-a6e1-343ab7118274",
+      "displayName": "Noa Janssen",
+      "userPrincipalName": "noa.janssen@meerwaarde.nl",
+      "mail": "noa.janssen@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-09-23T08:03:19Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "632585ba-f419-4244-90a1-ae80f90faf89",
+      "displayName": "Norhan Ali",
+      "userPrincipalName": "Norhan.Ali@meerwaarde.nl",
+      "mail": "Norhan.Ali@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-09-26T08:47:37Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "e3bee2bd-3bb7-492a-9a22-9f39cfdc3bd5",
+      "displayName": "Norman Kortekaas",
+      "userPrincipalName": "norman.kortekaas@meerwaarde.nl",
+      "mail": "norman.kortekaas@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 2
+    },
+    {
+      "id": "31c4f3e5-aa29-46de-aa2d-ae564ff03561",
+      "displayName": "normankortekaas",
+      "userPrincipalName": "normankortekaas_hotmail.com#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "normankortekaas@hotmail.com",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-06-19T12:47:17Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "bde01c1e-6c41-4693-89cd-7bc08bf5c86a",
+      "displayName": "Nynke Wijbenga",
+      "userPrincipalName": "nynke.wijbenga@meerwaarde.nl",
+      "mail": "nynke.wijbenga@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 2
+    },
+    {
+      "id": "1a2ed466-57e6-47c8-a12d-df9cdd7a7462",
+      "displayName": "O365 Facturen",
+      "userPrincipalName": "o365.facturen@meerwaarde.onmicrosoft.com",
+      "mail": "o365.facturen@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2019-04-09T08:30:47Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "15991d89-3717-4264-a80f-fb037a0b3591",
+      "displayName": "O365 FacturenControle",
+      "userPrincipalName": "o365.facturencontrole@meerwaarde.onmicrosoft.com",
+      "mail": "o365.facturencontrole@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-01-05T16:08:16Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "c94847da-0753-4dc4-b086-ef013d27c54a",
+      "displayName": "Postbus OKI",
+      "userPrincipalName": "OKI@meerwaarde.onmicrosoft.com",
+      "mail": "OKI@meerwaarde.nl",
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-08-11T08:35:20Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "f2bec013-c627-4b69-ab40-d3ecd65e6264",
+      "displayName": "Postbus Ouderenadviseurs",
+      "userPrincipalName": "ouderenadviseurs@meerwaarde.onmicrosoft.com",
+      "mail": "ouderenadviseurs@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-12-12T15:53:28Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "1eab7d4a-71ca-49d9-bb2a-e79526bc0949",
+      "displayName": "package_9e96be29-88b2-4b7b-a323-8824829e1776",
+      "userPrincipalName": "package_146022e1-0144-4f66-8c4a-7b0594b63ebe@smwnet.nl",
+      "mail": null,
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-01-05T09:49:18Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "05f2f365-94e6-47d7-a636-dd0cc5d343e7",
+      "displayName": "package_ca27c009-8d93-4de9-818a-d656d9d32927",
+      "userPrincipalName": "package_282d7d09-aff0-43c6-a2fa-86307665dcb6@smwnet.nl",
+      "mail": null,
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-07-05T09:55:50Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "8f84c0d6-d222-403f-b23a-f612c045f71e",
+      "displayName": "package_9e96be29-88b2-4b7b-a323-8824829e1776",
+      "userPrincipalName": "package_6249615b-d741-4693-89e8-46df529ed73a@smwnet.nl",
+      "mail": null,
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-01-05T09:44:15Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "3f562cc8-4c74-40aa-b723-93cb90314579",
+      "displayName": "package_796fa160-9845-4afe-8211-50f1e5a25855",
+      "userPrincipalName": "package_80f983ad-8710-42b0-9a63-af2b659ac9d1@smwnet.nl",
+      "mail": null,
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-07-05T09:47:17Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "b15fc3a6-d1ea-4ef7-b319-2f5367231675",
+      "displayName": "package_1462ab18-4e6d-4851-ab68-85cc98ba594b",
+      "userPrincipalName": "package_cd9917f1-b468-43c1-b61e-6a5e9c7cd26d@smwnet.nl",
+      "mail": null,
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2021-12-29T14:01:26Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "1fcecb0c-7cea-40c9-aa36-4268401ea053",
+      "displayName": "package_e1d9d728-6d4d-4f00-8101-f1309dd137bc",
+      "userPrincipalName": "package_f006c0c9-a571-4ade-bce3-9aad990570f4@smwnet.nl",
+      "mail": null,
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-08-29T11:55:47Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "ab8bc72a-7306-42fd-a684-9f3e17a01482",
+      "displayName": "package_e0f826a9-6c41-41a5-b9a6-e0ff877c4da3",
+      "userPrincipalName": "package_f2889274-019c-4a81-bdd5-5464508edd59@smwnet.nl",
+      "mail": null,
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-06-30T15:50:58Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "6819aabf-7c3f-428e-8d40-f3e880f9df41",
+      "displayName": "Postbus Buurtnetwerken",
+      "userPrincipalName": "pb.buurtnetwerken@meerwaarde.onmicrosoft.com",
+      "mail": "buurtnetwerken@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-09-18T06:25:22Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "074280d4-f7f0-4d0b-9d2a-bd72e9cc3da8",
+      "displayName": "Postbus Cursus Creatief Leven",
+      "userPrincipalName": "pb.creatiefleven@meerwaarde.onmicrosoft.com",
+      "mail": "cursuscreatiefleven@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-08-25T07:58:27Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "b2bb89f0-5eb6-4480-91f4-adc14d1ff4f8",
+      "displayName": "Postbus Daywizemutaties",
+      "userPrincipalName": "pb.daywizemutaties@meerwaarde.onmicrosoft.com",
+      "mail": "daywizemutaties@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-06-21T07:18:50Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "bb21d628-5004-47d8-82d2-9bbff1ed9dc3",
+      "displayName": "Postbus FF Doen Met MDT",
+      "userPrincipalName": "pb.doenmetmdt@meerwaarde.onmicrosoft.com",
+      "mail": "ffdoenmetmdt@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-03-07T13:19:18Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "abbf8fbc-80c0-4617-be93-0b54176cbd82",
+      "displayName": "Postbus Dorine",
+      "userPrincipalName": "pb.dorine@meerwaarde.onmicrosoft.com",
+      "mail": "d.taverne@meerwaarde.nl",
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 0
+    },
+    {
+      "id": "7da487e6-5b09-428f-830d-28f8aaa15ad2",
+      "displayName": "Postbus Event",
+      "userPrincipalName": "pb.event@meerwaarde.onmicrosoft.com",
+      "mail": "event@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-09-07T12:20:16Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "faeaa0b1-35d4-4ddf-9ca2-3317cbabe381",
+      "displayName": "Postbus Facilitair",
+      "userPrincipalName": "pb.facilitair@meerwaarde.onmicrosoft.com",
+      "mail": "facilitair@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2019-07-23T12:51:54Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "27630a0c-3fd0-4b92-98dd-d5c5e1c3cd7e",
+      "displayName": "Postbus Facturen",
+      "userPrincipalName": "pb.facturen@meerwaarde.onmicrosoft.com",
+      "mail": "facturen@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2021-08-12T08:21:53Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "a521966f-9c21-4c56-ae0d-bc07d5a305e9",
+      "displayName": "Postbus Familiemaatjes",
+      "userPrincipalName": "pb.familiemaatjes@meerwaarde.onmicrosoft.com",
+      "mail": "familiemaatjes@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-10-10T08:54:13Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "85af2fca-00fc-4100-ba59-b7f2e5205f3f",
+      "displayName": "Postbus Home Start",
+      "userPrincipalName": "pb.homestart@meerwaarde.onmicrosoft.com",
+      "mail": "Home-Start@meerwaarde.nl",
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 0
+    },
+    {
+      "id": "29fb0b5f-1cb2-48ff-a9b2-be0fcf0a076f",
+      "displayName": "Postbus HR",
+      "userPrincipalName": "pb.hr@smwnet.nl",
+      "mail": "hr@meerwaarde.nl",
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 0
+    },
+    {
+      "id": "afe661c4-4cd4-494c-a402-2a400809dd8c",
+      "displayName": "Postbus HuiselijkGeweld",
+      "userPrincipalName": "pb.huiselijkgeweld@meerwaarde.onmicrosoft.com",
+      "mail": "huiselijkgeweld@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2021-02-04T16:40:24Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "f648befb-ccd6-4100-b35d-24b8d645a6d5",
+      "displayName": "Postbus MatchMentor Pro",
+      "userPrincipalName": "pb.matchmentor.pro@meerwaarde.onmicrosoft.com",
+      "mail": "matchmentorpro@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-05-13T11:55:24Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "1da03e55-25f0-4544-b5f2-59731e4e9745",
+      "displayName": "Postbus Matchmentor",
+      "userPrincipalName": "pb.matchmentor@meerwaarde.onmicrosoft.com",
+      "mail": "matchmentor@meerwaarde.nl",
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 0
+    },
+    {
+      "id": "7401a328-6101-4d2e-9c88-f61dd6c20a00",
+      "displayName": "Postbus MeerBabbels",
+      "userPrincipalName": "pb.meerbabbels@meerwaarde.onmicrosoft.com",
+      "mail": "meerbabbels@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2021-09-07T07:15:58Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "c2f275a8-77ca-4b5f-b683-58a3d8cec621",
+      "displayName": "MeerWaarde Meetweken",
+      "userPrincipalName": "pb.meetweken@meerwaarde.onmicrosoft.com",
+      "mail": "meetweken@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2018-11-15T13:33:17Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "f518652e-4201-4b14-9357-10e55102d737",
+      "displayName": "Postbus OR",
+      "userPrincipalName": "pb.or@smwnet.nl",
+      "mail": "OR@meerwaarde.nl",
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 0
+    },
+    {
+      "id": "c2ab3030-0ba9-4fea-a36f-3f81893ea275",
+      "displayName": "Postbus Participatie",
+      "userPrincipalName": "pb.participatie@meerwaarde.onmicrosoft.com",
+      "mail": "participatie@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2018-10-01T07:45:43Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "cc43c7ea-313e-4e45-8b3d-c08a1bf8cb14",
+      "displayName": "Postbus Pluspunt",
+      "userPrincipalName": "pb.pluspunt@meerwaarde.onmicrosoft.com",
+      "mail": "pluspunt@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-08-28T12:11:21Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "b3a5548d-1a15-44b6-b9b3-f12157564906",
+      "displayName": "Postbus Preventiemedewerker",
+      "userPrincipalName": "pb.prev.medewerker@meerwaarde.onmicrosoft.com",
+      "mail": "preventiemedewerker@meerwaarde.nl",
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 0
+    },
+    {
+      "id": "0e93d897-6344-4472-892a-e67b25de2a28",
+      "displayName": "Postbus Salarisadministratie",
+      "userPrincipalName": "pb.salarisadmin@meerwaarde.onmicrosoft.com",
+      "mail": "salarisadministratie@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2019-07-23T12:55:43Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "cba645b2-ddc4-4d39-9b47-ed8816d24e52",
+      "displayName": "Postbus Sollicitatie",
+      "userPrincipalName": "pb.sollicitatie@smwnet.nl",
+      "mail": "sollicitatie@meerwaarde.nl",
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 0
+    },
+    {
+      "id": "63d8aa6d-832d-4803-bc68-bc97581d364e",
+      "displayName": "Postbus Stap",
+      "userPrincipalName": "pb.stap@meerwaarde.onmicrosoft.com",
+      "mail": "stap@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2021-11-23T08:23:42Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "0a07147d-caf5-4480-804c-04a94202fa84",
+      "displayName": "Postbus Teamopaallaan",
+      "userPrincipalName": "pb.teamopaallaan@meerwaarde.onmicrosoft.com",
+      "mail": "teamopaallaan@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2019-02-21T07:25:50Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "18801071-6d21-4d8f-986d-de04ac3dcbda",
+      "displayName": "Postbus TestDJ",
+      "userPrincipalName": "pb.testdj@meerwaarde.onmicrosoft.com",
+      "mail": "testdj@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2018-10-01T09:04:28Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "4a5b0d58-b4a9-45bf-8423-347ee6e545c5",
+      "displayName": "Postbus Thuisadministratie",
+      "userPrincipalName": "pb.thuisadmin@meerwaarde.onmicrosoft.com",
+      "mail": "EHBA@meerwaarde.nl",
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 0
+    },
+    {
+      "id": "9e979d7c-065f-4678-92f3-6bdf1b447546",
+      "displayName": "Postbus Voorleesexpress",
+      "userPrincipalName": "pb.voorleesexpress@meerwaarde.onmicrosoft.com",
+      "mail": "voorleesexpress@meerwaarde.nl",
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 0
+    },
+    {
+      "id": "a8046e6e-4b85-4547-a9e6-0c841c953e0f",
+      "displayName": "Postbus Vrijwilligerscentrale",
+      "userPrincipalName": "pb.vrij.centrale@meerwaarde.onmicrosoft.com",
+      "mail": "vrijwilligerscentrale@meerwaarde.nl",
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 0
+    },
+    {
+      "id": "6800484f-a115-4c39-82bb-9d92e42bdf32",
+      "displayName": "Postbus Vrijwillig Traineeship",
+      "userPrincipalName": "pb.vrijw.traineeship@meerwaarde.onmicrosoft.com",
+      "mail": "vrijwilligtraineeship@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2020-09-15T13:11:20Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "6b54fe45-e9e2-4403-91c0-b1c222453abc",
+      "displayName": "Postbus Vrijwilligers",
+      "userPrincipalName": "pb.vrijwilligers@meerwaarde.onmicrosoft.com",
+      "mail": "vrijwilligers@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-01-22T15:21:11Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "a0316734-23f0-4bfc-bea6-613e1e4076c5",
+      "displayName": "Postbus Vroegeropaf",
+      "userPrincipalName": "pb.vroeg.eropaf@meerwaarde.onmicrosoft.com",
+      "mail": "vroegeropaf@meerwaarde.nl",
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 0
+    },
+    {
+      "id": "c87f4c13-1cea-48f8-ae9f-9036a3895868",
+      "displayName": "Postbus Woordvriend",
+      "userPrincipalName": "pb.woordvriend@meerwaarde.onmicrosoft.com",
+      "mail": "woordvriend@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2020-08-04T06:40:46Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "8786d741-dedd-4564-9f6e-904d5dfea8ba",
+      "displayName": "Postbus Zilveren Connectie",
+      "userPrincipalName": "pb.zilverconnect@meerwaarde.onmicrosoft.com",
+      "mail": "zilverenconnectie@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-11-07T14:59:15Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "e4864dd3-4978-428d-af37-48361ee2f152",
+      "displayName": "Postbus Zroute",
+      "userPrincipalName": "pb.zroute@meerwaarde.onmicrosoft.com",
+      "mail": "zroute@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-07-03T09:41:23Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "59cd0b03-3da9-4096-8d40-5cab2521bfdf",
+      "displayName": "Qube Beheer2",
+      "userPrincipalName": "pormee@meerwaarde.onmicrosoft.com",
+      "mail": null,
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-06-10T13:16:54Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "4bd9bb35-4151-45a9-950a-2c7b426c03e3",
+      "displayName": "QUBE_breakglass@meerwaarde.onmicrosoft.com",
+      "userPrincipalName": "QUBE_breakglass@meerwaarde.onmicrosoft.com",
+      "mail": null,
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-08-03T09:11:30Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "508e32b6-c94a-4a17-9766-229f800194a9",
+      "displayName": "Raad van Toezicht",
+      "userPrincipalName": "raadvantoezicht@meerwaarde.nl",
+      "mail": "raadvantoezicht@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2026-02-18T08:26:48Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "f6302f58-5f7a-487b-a9e6-61c770103db4",
+      "displayName": "Rachelle Paalvast",
+      "userPrincipalName": "rachelle.paalvast@meerwaarde.nl",
+      "mail": "rachelle.paalvast@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 3
+    },
+    {
+      "id": "0a53d503-c249-4581-bac8-cdae0024648c",
+      "displayName": "RFP",
+      "userPrincipalName": "RFP@meerwaarde.onmicrosoft.com",
+      "mail": "RFP@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-01-06T10:06:30Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "17406af9-1fe8-49a7-a9c5-3ca34652af7e",
+      "displayName": "rgamazurel",
+      "userPrincipalName": "rgamazurel_gmail.com#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "rgamazurel@gmail.com",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-10-01T09:42:12Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "ee3d03bd-4d6f-46ff-97ed-1d7932f1806d",
+      "displayName": "rgamazurel",
+      "userPrincipalName": "rgamazurel_gamil.com#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "rgamazurel@gamil.com",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-10-01T08:54:09Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "f4c093a2-d3e1-41ca-96d6-d43f2f0810f9",
+      "displayName": "Riguillo Terhaar",
+      "userPrincipalName": "riguillo.terhaar@meerwaarde.nl",
+      "mail": "riguillo.terhaar@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-12-22T11:25:18Z",
+      "licenseCount": 4
+    },
+    {
+      "id": "72bc8b15-f846-44bb-b947-76b304abc016",
+      "displayName": "Rijnaldo Wilson",
+      "userPrincipalName": "rijnaldo.wilson@meerwaarde.nl",
+      "mail": "rijnaldo.wilson@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-05-29T09:15:35Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "3185d1c8-c59d-47d9-9e2b-02277f2d0c60",
+      "displayName": "Rijsenhout",
+      "userPrincipalName": "Rijsenhout@meerwaarde.onmicrosoft.com",
+      "mail": "Rijsenhout@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-05-03T10:03:27Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "55634a71-3f5a-4914-8878-cc77dc929793",
+      "displayName": "Roxanna Booms",
+      "userPrincipalName": "roxanna.booms@meerwaarde.nl",
+      "mail": "roxanna.booms@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2020-03-11T10:54:41Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "27ab3092-70fe-411e-86a4-8b975d919c34",
+      "displayName": "Sebastiaan Timmermans",
+      "userPrincipalName": "s.timmermans@meerwaarde.nl",
+      "mail": "sebastiaan.timmermans@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-06-27T12:12:56Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "a19de61a-89d9-4332-9376-728a2bd41594",
+      "displayName": "Sandra Spoelstra",
+      "userPrincipalName": "sandra.spoelstra@meerwaarde.nl",
+      "mail": "sandra.aartse-spoelstra@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-08-01T08:21:44Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "c0fa3ada-a0f3-4c42-958a-ae0319eb9778",
+      "displayName": "Sandy Frederiks",
+      "userPrincipalName": "sandy.frederiks@meerwaarde.nl",
+      "mail": "sandy.frederiks@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 2
+    },
+    {
+      "id": "3092085b-1002-4cfe-8fa8-dddf16915ad6",
+      "displayName": "Sawinah Voortman",
+      "userPrincipalName": "sawinah.voortman@meerwaarde.nl",
+      "mail": "sawinah.voortman@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-04-06T14:04:08Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "c739deba-0a47-44be-972d-632e3290856c",
+      "displayName": "sawinah.voortman",
+      "userPrincipalName": "sawinah.voortman_gmail.com#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "sawinah.voortman@gmail.com",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2026-03-16T08:49:24Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "d083ad8b-2850-4801-9edd-552ee3f01be7",
+      "displayName": "Secretariaat",
+      "userPrincipalName": "secretariaat@meerwaarde.onmicrosoft.com",
+      "mail": "secretariaat@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-01-10T12:04:28Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "ebdf1aa3-0fb6-49f3-9163-7a2d92da5658",
+      "displayName": "Selina Veerman",
+      "userPrincipalName": "selina.veerman@meerwaarde.nl",
+      "mail": "selina.veerman@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2026-02-02T14:51:46Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "8fc56896-b282-4a40-aef1-b18c1aa34dc4",
+      "displayName": "Serena Blank",
+      "userPrincipalName": "serena.blank@meerwaarde.nl",
+      "mail": "serena.blank@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-01-27T12:35:01Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "24178f3d-fe18-4592-bb62-6ffc44fc1162",
+      "displayName": "Sieben van Maarseveen",
+      "userPrincipalName": "sieben.vanmaarseveen@meerwaarde.nl",
+      "mail": "sieben.vanmaarseveen@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-03-01T12:26:43Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "3fbfea59-42f1-45f1-8149-a21ecec45c2c",
+      "displayName": "sihemah_",
+      "userPrincipalName": "sihemah__hotmail.com#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "sihemah_@hotmail.com",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-09-15T07:26:31Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "96badde6-55f1-4c10-a8f1-a7a0c6852783",
+      "displayName": "sihemeh_",
+      "userPrincipalName": "sihemeh__hotmail.com#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "sihemeh_@hotmail.com",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2025-09-15T07:28:13Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "18433b5b-fc35-4fee-9779-66b77e555c46",
+      "displayName": "Simone Duin",
+      "userPrincipalName": "simone.duin@meerwaarde.nl",
+      "mail": "simone.duin@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 3
+    },
+    {
+      "id": "7114c0ca-56ee-4819-81f6-b94f8de5a9b8",
+      "displayName": "Site DOVD",
+      "userPrincipalName": "site.DOVD@meerwaarde.onmicrosoft.com",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2022-03-14T12:11:03Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "d6c5da65-f081-4905-a8a5-63ed239fff15",
+      "displayName": "Site GCOB",
+      "userPrincipalName": "site.GCOB@meerwaarde.onmicrosoft.com",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2022-03-14T12:11:04Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "a8d6ce71-b6b0-4378-8c00-42aa1cf004e5",
+      "displayName": "Site PPNT",
+      "userPrincipalName": "site.PPNT@meerwaarde.onmicrosoft.com",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2022-03-14T12:11:04Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "43c9a0d6-a18d-4f55-86b1-8bcd6f7dd8f4",
+      "displayName": "Site RIET",
+      "userPrincipalName": "site.RIET@meerwaarde.onmicrosoft.com",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2022-03-14T12:11:04Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "77f57c49-ac03-4d69-8e6d-efbf6c10c09d",
+      "displayName": "Site SKAG",
+      "userPrincipalName": "site.SKAG@meerwaarde.onmicrosoft.com",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2022-03-14T12:11:04Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "3a7ab22b-182c-4a02-9146-a7b60a22554d",
+      "displayName": "Site TC1",
+      "userPrincipalName": "site.TC1@meerwaarde.onmicrosoft.com",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2022-03-14T12:11:04Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "deb3354b-aa32-4194-a8bb-b50ac4f8472d",
+      "displayName": "Site VENN",
+      "userPrincipalName": "site.VENN@meerwaarde.onmicrosoft.com",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2022-03-14T12:11:04Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "233ffc7f-1b32-4a5e-b3cc-a43c6cf6c3c8",
+      "displayName": "Sjoerd Mercera",
+      "userPrincipalName": "sjoerd.mercera@meerwaarde.nl",
+      "mail": "sjoerd.mercera@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 3
+    },
+    {
+      "id": "ba5b4840-f0d4-4c91-8558-7e473dc42167",
+      "displayName": "Locatie Skagerak",
+      "userPrincipalName": "Skagerak@meerwaarde.onmicrosoft.com",
+      "mail": "Skagerak@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-09-26T09:38:02Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "1c91c03f-0c46-4708-821e-3d990f2363a4",
+      "displayName": "Postbus Sociaal Makelen",
+      "userPrincipalName": "sociaalmakelaar@meerwaarde.onmicrosoft.com",
+      "mail": "sociaalmakelaar@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-10-10T09:37:23Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "772bedd3-3a6f-4099-82d6-cfb1c3765198",
+      "displayName": "Postbus Sociaal Raadslieden",
+      "userPrincipalName": "sociaalraadslieden@meerwaarde.onmicrosoft.com",
+      "mail": "sociaalraadslieden@meerwaarde.nl",
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-07-14T06:40:05Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "53fa5999-8c8c-4ef2-823e-610b87d8f2fd",
+      "displayName": "Team Social Impact",
+      "userPrincipalName": "social.impact@meerwaarde.nl",
+      "mail": "socialimpact@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-09-12T12:21:35Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "0e1916fe-1014-46e1-ac10-9d6a0376515f",
+      "displayName": "Somaya Es Sannouni",
+      "userPrincipalName": "somaya.essannouni@meerwaarde.nl",
+      "mail": "somaya.essannouni@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-06-24T12:26:05Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "1e706053-6fad-436d-8c48-4d8420d0d229",
+      "displayName": "Sophie Hirs",
+      "userPrincipalName": "sophie.hirs@meerwaarde.nl",
+      "mail": "sophie.hirs@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-03-01T12:26:43Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "529d8de8-3c24-4851-8de5-232ab12c1958",
+      "displayName": "Betrouwbaar (131)",
+      "userPrincipalName": "Spreekkamer.131@meerwaarde.onmicrosoft.com",
+      "mail": "Spreekkamer.131@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-11-16T09:05:55Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "dccf9396-d8c5-44dc-bc11-ca41c4c0b1bf",
+      "displayName": "Nieuwsgierig (132)",
+      "userPrincipalName": "Spreekkamer.132@meerwaarde.onmicrosoft.com",
+      "mail": "Spreekkamer.132@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-11-16T09:06:56Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "8669cc6f-e853-49f0-a01d-71d825eba87e",
+      "displayName": "Toegankelijk (133)",
+      "userPrincipalName": "Spreekkamer.133@meerwaarde.onmicrosoft.com",
+      "mail": "Spreekkamer.133@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-11-16T09:08:12Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "d6751977-e0e2-4191-b5c4-bfb429d7c200",
+      "displayName": "Lef (134)",
+      "userPrincipalName": "Spreekkamer.134@meerwaarde.onmicrosoft.com",
+      "mail": "Spreekkamer.134@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-11-16T09:09:11Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "b3db6c5f-3795-421e-8d74-bc1a3364737f",
+      "displayName": "Betrokken (130)",
+      "userPrincipalName": "spreekkamer.dovd@meerwaarde.onmicrosoft.com",
+      "mail": "spreekkamer.dovd@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2021-01-06T13:46:10Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "45f59944-d614-4ba3-84ce-0c765aaa75c2",
+      "displayName": "Stien de Rooij",
+      "userPrincipalName": "stien.derooij@meerwaarde.nl",
+      "mail": "stien.derooij@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-12-23T08:17:40Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "b9de799f-13f0-4263-9f36-03543c5c97b6",
+      "displayName": "Suzanne van Varik",
+      "userPrincipalName": "suzanne.vanvarik@meerwaarde.nl",
+      "mail": "suzanne.vanvarik@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-12-23T08:17:40Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "4c91472a-f8b3-435b-880e-b50ba537187e",
+      "displayName": "ServiceAccount - Orbis",
+      "userPrincipalName": "svc_orbis@meerwaarde.nl",
+      "mail": "svc_orbis@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-12-19T12:01:17Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "71ab5b5d-3e7f-49cb-b795-05dad690c545",
+      "displayName": "On-Premises Directory Synchronization Service Account",
+      "userPrincipalName": "Sync_SMW-SD301_14b7791c1437@meerwaarde.onmicrosoft.com",
+      "mail": null,
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2018-07-18T19:01:56Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "e340bfd7-0c72-4a63-8ef7-fb936f31bace",
+      "displayName": "On-Premises Directory Synchronization Service Account",
+      "userPrincipalName": "Sync_SMW-SM205_bbe9bcf1cc76@meerwaarde.onmicrosoft.com",
+      "mail": null,
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 0
+    },
+    {
+      "id": "68d9aed3-43f9-4dc5-8012-7ccac3df710f",
+      "displayName": "TAH Ben",
+      "userPrincipalName": "tah.ben@meerwaarde.nl",
+      "mail": "tah.ben@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-01-25T13:42:05Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "db81b125-00fa-4432-a247-2de66f4a0349",
+      "displayName": "TAH Bob",
+      "userPrincipalName": "tah.bob@meerwaarde.nl",
+      "mail": "tah.bob@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-02-01T13:48:11Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "8d665c0d-9204-4fdb-8784-a7dd88874d4e",
+      "displayName": "TAH CynthiaW",
+      "userPrincipalName": "TAH.cynthiaw@meerwaarde.nl",
+      "mail": "TAH.cynthiaw@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2019-05-31T09:38:15Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "ea1fbd72-cd3a-47eb-81e5-160394139ae9",
+      "displayName": "TAH Ed",
+      "userPrincipalName": "tah.ed@meerwaarde.nl",
+      "mail": "tah.ed@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-02-01T13:48:11Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "7a975bab-5717-4a24-881e-d58ec415df3f",
+      "displayName": "TAH Ferhat",
+      "userPrincipalName": "tah.ferhat@meerwaarde.nl",
+      "mail": "tah.ferhat@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-11-07T08:07:14Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "4922407f-efb9-4b15-9b27-2b7ff3961ce8",
+      "displayName": "TAH Hans",
+      "userPrincipalName": "TAH.hans@meerwaarde.nl",
+      "mail": "TAH.hans@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2019-05-31T09:38:15Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "dcbdd7a8-a93a-43f2-9625-103460edf32f",
+      "displayName": "TAH Jan",
+      "userPrincipalName": "tah.jan@meerwaarde.nl",
+      "mail": "tah.jan@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2020-12-29T09:19:27Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "0e168e18-1c33-4b30-8ee3-447da7ead8cb",
+      "displayName": "TAH Jeanette",
+      "userPrincipalName": "tah.jeanette@meerwaarde.nl",
+      "mail": "tah.jeanette@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2020-12-29T09:19:27Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "8b32ea82-ce38-4176-91ad-df7982f8c41f",
+      "displayName": "TAH Jolanda",
+      "userPrincipalName": "tah.jolanda@meerwaarde.nl",
+      "mail": "tah.jolanda@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-11-29T11:29:59Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "d1c0f819-dd13-4dde-8a12-7dc94ae6fe40",
+      "displayName": "TAH Leen",
+      "userPrincipalName": "TAH.leen@meerwaarde.nl",
+      "mail": "TAH.leen@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2019-05-31T09:38:15Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "79b44820-469a-4da2-9bc7-c231be0f40fc",
+      "displayName": "TAH Lilian",
+      "userPrincipalName": "tah.lilian@meerwaarde.nl",
+      "mail": "tah.lilian@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-04-05T08:27:40Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "c5b82670-539f-4239-a45d-456bd40a6169",
+      "displayName": "TAH Marcella",
+      "userPrincipalName": "tah.marcella@meerwaarde.nl",
+      "mail": "tah.marcella@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2021-08-10T06:35:50Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "371d93c3-182f-4d34-b22e-7b6a84154b73",
+      "displayName": "TAH Michiel",
+      "userPrincipalName": "TAH.michiel@meerwaarde.nl",
+      "mail": "TAH.michiel@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2019-05-31T09:38:15Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "ff8d909f-0545-4250-baa5-d32c719f1e94",
+      "displayName": "TAH Paul",
+      "userPrincipalName": "tah.paul@meerwaarde.nl",
+      "mail": "tah.paul@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2020-10-01T11:41:40Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "97d1aa36-2181-47fe-ace8-79991c5bf725",
+      "displayName": "TAH Piet",
+      "userPrincipalName": "tah.piet@meerwaarde.nl",
+      "mail": "tah.piet@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-07-19T08:45:20Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "b6d27913-c9a1-4474-a380-ddb9477fdfde",
+      "displayName": "TAH Ria",
+      "userPrincipalName": "TAH.ria@meerwaarde.nl",
+      "mail": "TAH.ria@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2019-05-31T09:38:15Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "51cf5a44-b1a8-47d9-b680-bd6fcd4efa69",
+      "displayName": "TAH Sander",
+      "userPrincipalName": "TAH.sander@meerwaarde.nl",
+      "mail": "TAH.sander@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2020-01-23T09:42:24Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "a35145e3-2ceb-47c4-9192-498c3746caa4",
+      "displayName": "Frank Veenman",
+      "userPrincipalName": "TAH_Frank@meerwaarde.nl",
+      "mail": "TAH_Frank@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2019-08-29T12:59:46Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "1d0b7953-a9da-4e31-92f8-42763f347726",
+      "displayName": "Tamira Meeues",
+      "userPrincipalName": "tamira.meeues@meerwaarde.nl",
+      "mail": "tamira.meeues@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-04-22T14:12:01Z",
+      "licenseCount": 4
+    },
+    {
+      "id": "74a30d5e-48a6-4746-b5e9-bbe965edebab",
+      "displayName": "teams-attandant-BGH",
+      "userPrincipalName": "teams-attandant-BGH@meerwaarde.nl",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-02-10T10:53:18Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "924d483f-39b6-4b18-ad10-b5fb069c5e30",
+      "displayName": "teams-attandant-buurtbemiddeling",
+      "userPrincipalName": "teams-attandant-buurtbemiddeling@meerwaarde.nl",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-02-10T10:55:38Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "df138bfa-8a42-4e95-badd-2b67b90cb5e1",
+      "displayName": "teams-attandant-HHME",
+      "userPrincipalName": "teams-attandant-HHME@meerwaarde.nl",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-02-10T10:52:29Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "ab012a56-c14e-475d-ab4f-a179455ea4d5",
+      "displayName": "teams-attandant-Hoofdnummer",
+      "userPrincipalName": "teams-attandant-Hoofdnummer@meerwaarde.nl",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-02-10T10:53:30Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "13ec25b1-e2a8-4143-9f80-2a2e3a34b264",
+      "displayName": "teams-attandant-PART",
+      "userPrincipalName": "teams-attandant-PART@meerwaarde.nl",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-02-10T10:53:08Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "ff5211c2-c7ce-4a8b-b599-13f28578c881",
+      "displayName": "teams-attandant-pluspunt-dovd",
+      "userPrincipalName": "teams-attandant-pluspunt-dovd@meerwaarde.nl",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-02-06T08:11:23Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "bafb5c30-53b1-42e5-8b34-ba82d91e5c80",
+      "displayName": "teams-attandant-pluspunt-nieuwvennep",
+      "userPrincipalName": "teams-attandant-pluspunt-nieuwvennep@meerwaarde.nl",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-02-06T08:11:35Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "421af2af-4898-41cc-8ab9-ccbea61c0498",
+      "displayName": "teams-attandant-skagerak",
+      "userPrincipalName": "teams-attandant-skagerak@meerwaarde.nl",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-02-06T08:11:11Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "a79a0fa7-e579-47c6-a32b-8e052d3a94ee",
+      "displayName": "teams-attandant-TOE",
+      "userPrincipalName": "teams-attandant-TOE@meerwaarde.nl",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-02-10T10:52:13Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "2c618592-ed15-4642-8b1a-7ceef5e63f09",
+      "displayName": "teams-attandant-VCH",
+      "userPrincipalName": "teams-attandant-VCH@meerwaarde.nl",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-02-10T10:52:43Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "d814aa65-6252-4fa1-9024-288d0a1a17a7",
+      "displayName": "teams-attandant-ZONDAG",
+      "userPrincipalName": "teams-attandant-ZONDAG@meerwaarde.nl",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-02-10T10:52:58Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "46bae9a8-d038-483a-8730-0e21c3bc3ad8",
+      "displayName": "Feestdagen",
+      "userPrincipalName": "teams-attendant-feestdagen@meerwaarde.nl",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-03-26T12:23:19Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "2576cf97-6bb6-447c-94e8-117676f8da6c",
+      "displayName": "BGH",
+      "userPrincipalName": "teams-callque-BGH@meerwaarde.nl",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-02-05T13:39:02Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "6ebdb379-63c6-45c5-944e-870cc7317494",
+      "displayName": "Buurtbemiddeling",
+      "userPrincipalName": "teams-callque-buurtbemiddeling@meerwaarde.nl",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-02-10T10:55:46Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "714a80c8-ffb3-4079-a3f0-24bd965bff57",
+      "displayName": "HHME Voor Elkaar",
+      "userPrincipalName": "teams-callque-HHME@meerwaarde.nl",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-02-05T13:38:06Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "949f32da-450e-49b8-81a7-c10839baccf0",
+      "displayName": "teams-callque-Hoofdnummer",
+      "userPrincipalName": "teams-callque-Hoofdnummer@meerwaarde.nl",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-02-06T09:26:19Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "10a94713-e103-4d2d-b132-638ebe577519",
+      "displayName": "ParticipatiePunt",
+      "userPrincipalName": "teams-callque-PART@meerwaarde.nl",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-02-05T13:38:53Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "0dec7467-1482-47b6-bf19-c44c56efdbd8",
+      "displayName": "teams-callque-testnummer01",
+      "userPrincipalName": "teams-callque-testnummer01@meerwaarde.nl",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-02-07T09:58:50Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "45fb3cfa-82a8-4196-b22f-60841855b7b9",
+      "displayName": "VG Toegang",
+      "userPrincipalName": "teams-callque-toe-gastvrouwen@meerwaarde.nl",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-02-10T09:03:55Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "f7842136-4858-4ac9-9be6-198ac757fdf9",
+      "displayName": "VG Toegang - Achtervang",
+      "userPrincipalName": "teams-callque-TOE@meerwaarde.nl",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-02-05T13:40:19Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "a8050eb4-6020-4f76-966b-7d7d7a15d6d4",
+      "displayName": "VCH",
+      "userPrincipalName": "teams-callque-VCH@meerwaarde.nl",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-02-05T13:38:22Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "3569853f-948f-4340-959a-0ba65fd20b7e",
+      "displayName": "Zondagpodium",
+      "userPrincipalName": "teams-callque-ZONDAG@meerwaarde.nl",
+      "mail": null,
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": "2025-02-05T13:38:32Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "4c0fef26-7892-461f-a710-03b5d23f5c00",
+      "displayName": "Teamsbellen",
+      "userPrincipalName": "Teamsbellen@meerwaarde.pri.msft.voipitworld.com",
+      "mail": "Teamsbellen@meerwaarde.pri.msft.voipitworld.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-02-05T08:48:55Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "a1d1f9ce-e6f0-40dc-88b3-2ba77a40947d",
+      "displayName": "Teamsbellen",
+      "userPrincipalName": "Teamsbellen@meerwaarde.sec.msft.voipitworld.com",
+      "mail": "Teamsbellen@meerwaarde.sec.msft.voipitworld.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-02-05T08:49:17Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "8fe42db1-278e-4116-8cca-b5488273ac7b",
+      "displayName": "Test QUBEMDM",
+      "userPrincipalName": "test.qubemdm@meerwaarde.nl",
+      "mail": "test.qubemdm@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-10-10T11:09:37Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "6f665492-cc96-4af3-9eea-b617b2d4d692",
+      "displayName": "Tim Sebel",
+      "userPrincipalName": "tim.sebel@meerwaarde.nl",
+      "mail": "tim.sebel@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-08-24T14:31:30Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "5e0b036c-7b68-40eb-9262-5ba9493cd6ef",
+      "displayName": "Track the Talent",
+      "userPrincipalName": "trackthetalent@meerwaarde.nl",
+      "mail": "trackthetalent@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 1
+    },
+    {
+      "id": "2e9196d5-12b7-412e-92c6-005aa315ea8e",
+      "displayName": "Umaimah El Abddellaoui",
+      "userPrincipalName": "Umaimah.elabddellaoui@meerwaarde.nl",
+      "mail": "Umaimah.elabddellaoui@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-11-27T14:40:04Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "9a1ddda2-056c-484d-b4ce-1e738dd14921",
+      "displayName": "uService Daywize",
+      "userPrincipalName": "uservice.daywize@meerwaarde.onmicrosoft.com",
+      "mail": "sa-daywize@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-04-12T10:45:53Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "1e813fe9-94f3-488d-b423-99a097db71b3",
+      "displayName": "Vrijwilliger PlusPunt Zuid",
+      "userPrincipalName": "v.pluspuntzuid@smwnet.nl",
+      "mail": "v.pluspuntzuid@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 1
+    },
+    {
+      "id": "6b0124af-9dbe-4eb5-aaee-39f38e336aa1",
+      "displayName": "Verbinding",
+      "userPrincipalName": "Verbinding@meerwaarde.onmicrosoft.com",
+      "mail": "Verbinding@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-12-13T09:38:18Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "5eede752-78d5-4113-b4e6-21b2c4d14832",
+      "displayName": "Vervoer Fiat bestel VGT-01-G",
+      "userPrincipalName": "Vervoer.Fiatbestel.VGT-01-G@meerwaarde.onmicrosoft.com",
+      "mail": "Vervoer.Fiatbestel.VGT-01-G@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-02-28T09:26:48Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "6c9cfd76-433f-4439-95d5-b3e5ed35e7ee",
+      "displayName": "Vervoer Mazda J-332-SP",
+      "userPrincipalName": "Vervoer.Mazda.J-332-SP@meerwaarde.onmicrosoft.com",
+      "mail": "Vervoer.Mazda.J-332-SP@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-02-28T09:29:01Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "13110f7d-4a48-4527-82ef-98be6a8f3e24",
+      "displayName": "Vervoer Rocks FTL-41-V",
+      "userPrincipalName": "Vervoer.Rocks.2@meerwaarde.onmicrosoft.com",
+      "mail": "Vervoer.Rocks.FTL-41-V@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-02-28T09:28:10Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "5bc5f08d-742a-4e3f-967f-8cc56dc1c602",
+      "displayName": "Vervoer Rocks FTK-03-Z",
+      "userPrincipalName": "Vervoer.Rocks.FTK-03-Z@meerwaarde.onmicrosoft.com",
+      "mail": "Vervoer.Rocks.FTK-03-Z@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-02-28T09:27:36Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "3b719cf2-efae-4be5-9cb4-77c9fa381795",
+      "displayName": "Caroline Roelfs VGT",
+      "userPrincipalName": "vgt.Caroline@meerwaarde.nl",
+      "mail": "vgt.Caroline@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-11-22T14:57:03Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "331ffd4f-2161-4e26-a627-244aa17ea7b3",
+      "displayName": "Chadia Boulgalag",
+      "userPrincipalName": "vgt.Chadia@meerwaarde.nl",
+      "mail": "vgt.Chadia@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-11-22T14:57:44Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "f59b279d-6a64-485e-8028-362f776859d0",
+      "displayName": "Debby de Heus - de Vos",
+      "userPrincipalName": "vgt.Debby@meerwaarde.nl",
+      "mail": "vgt.Debby@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-11-22T14:58:54Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "572d21bc-4a86-4850-a5de-da93076eef2f",
+      "displayName": "Elly van Dyck",
+      "userPrincipalName": "vgt.Elly@meerwaarde.nl",
+      "mail": "vgt.Elly@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-11-22T14:59:29Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "62a38b15-23fc-4b89-8e09-b5be111efd4e",
+      "displayName": "Erik Romijn",
+      "userPrincipalName": "vgt.erik@meerwaarde.nl",
+      "mail": "vgt.erik@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2026-01-30T08:37:16Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "062ef3cd-f828-418a-8c63-6384edbd46e3",
+      "displayName": "Femmy Klootwijk",
+      "userPrincipalName": "vgt.femmy@meerwaarde.nl",
+      "mail": "vgt.femmy@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 2
+    },
+    {
+      "id": "8fb15cb4-0b70-4ee9-ba5b-3b9bc8a6831a",
+      "displayName": "Fiona Van den Acker",
+      "userPrincipalName": "vgt.fiona@meerwaarde.nl",
+      "mail": "vgt.fiona@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-02-05T14:03:24Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "f37d7ab9-0730-4311-988d-cbfd9e695acd",
+      "displayName": "Marianne Uitendaal",
+      "userPrincipalName": "vgt.marianne@meerwaarde.nl",
+      "mail": "vgt.marianne@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-09-05T13:00:12Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "aa9091c3-5b6e-4ead-9ea2-1d4de0024858",
+      "displayName": "Vilma Sedaria",
+      "userPrincipalName": "vgt.vilma@meerwaarde.nl",
+      "mail": "vgt.vilma@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-02-05T14:03:24Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "7742cea0-cc36-4711-9783-6d2288bf1b61",
+      "displayName": "Professioneel VK",
+      "userPrincipalName": "vissenkom.dovd@meerwaarde.onmicrosoft.com",
+      "mail": "vissenkom.dovd@meerwaarde.onmicrosoft.com",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2021-01-06T13:46:28Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "54fbd1a6-4158-4309-ab20-d0e4098c3b62",
+      "displayName": "Vrijwilligersacademie",
+      "userPrincipalName": "vrij.academie@smwnet.nl",
+      "mail": "vrijwilligersacademie@meerwaarde.nl",
+      "accountEnabled": false,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 0
+    },
+    {
+      "id": "ca8154fe-ca91-4ffd-9f37-0e10f3aea0a4",
+      "displayName": "Vrijwilliger",
+      "userPrincipalName": "vrijwilliger@meerwaarde.nl",
+      "mail": "vrijwilliger@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-07-23T07:34:30Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "091160fa-9ee4-4789-b466-8ca7b2e98fe6",
+      "displayName": "Wendy Amsing",
+      "userPrincipalName": "wendy.amsing@meerwaarde.nl",
+      "mail": "wendy.amsing@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 3
+    },
+    {
+      "id": "83a06bbb-3785-468a-9617-8214a856ccbc",
+      "displayName": "william.verlooij",
+      "userPrincipalName": "william.verlooij_gmail.com#EXT#@meerwaarde.onmicrosoft.com",
+      "mail": "william.verlooij@gmail.com",
+      "accountEnabled": true,
+      "userType": "Guest",
+      "createdDateTime": "2026-02-09T21:53:34Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "7655a1ec-67ee-429a-b015-5adc44788188",
+      "displayName": "Yvonne van den Berg",
+      "userPrincipalName": "yvonne.vandenberg@meerwaarde.nl",
+      "mail": "yvonne.vandenberg@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 3
+    },
+    {
+      "id": "e042cfe8-8c36-4c82-94ea-79f90c440b83",
+      "displayName": "ZMP-Contracten",
+      "userPrincipalName": "ZMP-Contracten@smwnet.nl",
+      "mail": "ZMP-Contracten@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 1
+    },
+    {
+      "id": "8926664c-0420-426e-8d76-9dafd9ae670e",
+      "displayName": "Zondagmiddagpodium",
+      "userPrincipalName": "zondagmiddagpodium@meerwaarde.nl",
+      "mail": "zondagmiddagpodium@meerwaarde.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": null,
+      "licenseCount": 3
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Assessment snapshot gebaseerd op Phase 1 gebruikersanalyse.",
+      "Gebruikerslijst komt uit AllUsersRaw zodat disabled users en guests behouden blijven."
+    ],
+    "permissions": [
+      "User.Read.All",
+      "Directory.Read.All"
+    ]
+  }
+}

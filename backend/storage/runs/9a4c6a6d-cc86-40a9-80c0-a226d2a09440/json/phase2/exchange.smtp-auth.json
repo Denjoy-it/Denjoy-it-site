@@ -1,0 +1,23 @@
+{
+  "section": "exchange",
+  "subsection": "smtp-auth",
+  "label": "SMTP Authenticatie",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:59:42.9050120+01:00",
+  "assessmentId": "20260328-230422",
+  "summary": {
+    "modernAuthEnabled": null,
+    "smtpAuthEnabled": 0,
+    "smtpAuthUnset": 0,
+    "smtpAuthDisabled": 0
+  },
+  "items": [],
+  "meta": {
+    "notes": [
+      "SMTP authenticatiestatus per mailbox uit Phase 2."
+    ],
+    "permissions": [
+      "Exchange reader"
+    ]
+  }
+}

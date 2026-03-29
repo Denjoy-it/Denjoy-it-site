@@ -1,0 +1,23 @@
+{
+  "section": "identity",
+  "subsection": "legacy-signins",
+  "label": "Legacy Sign-ins",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:59:43.2815660+01:00",
+  "assessmentId": "20260328-230422",
+  "summary": {
+    "affectedUsers": 0,
+    "legacySignIns": 0,
+    "daysChecked": 0,
+    "totalSignInsChecked": 0
+  },
+  "items": [],
+  "meta": {
+    "notes": [
+      "Legacy protocol sign-in analyse over de afgelopen 0 dagen. Uit Phase 7."
+    ],
+    "permissions": [
+      "AuditLog.Read.All"
+    ]
+  }
+}

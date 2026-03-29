@@ -1,0 +1,21 @@
+{
+  "section": "identity",
+  "subsection": "guest-policy",
+  "label": "Gastbeleid Check",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:59:43.2816420+01:00",
+  "assessmentId": "20260328-230422",
+  "summary": {
+    "status": "Unknown",
+    "currentSetting": ""
+  },
+  "items": [],
+  "meta": {
+    "notes": [
+      "Gastbeleid conform aanbevelingen."
+    ],
+    "permissions": [
+      "Policy.Read.All"
+    ]
+  }
+}

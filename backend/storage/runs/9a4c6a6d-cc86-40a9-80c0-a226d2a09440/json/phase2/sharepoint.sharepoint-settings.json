@@ -1,0 +1,1618 @@
+{
+  "section": "sharepoint",
+  "subsection": "sharepoint-settings",
+  "label": "SharePoint Instellingen",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:59:42.8628140+01:00",
+  "assessmentId": "20260328-230422",
+  "summary": {
+    "anonymousLinkSites": 0,
+    "tenantSettingsAvailable": true,
+    "defaultLinkTypeEntries": 319
+  },
+  "items": [
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Error: GET https://graph.microsoft.com/beta/admin/sharepoint/settings\r\nHTTP/2.0 403 Forbidden\r\nCache-Control: no-store, no-cache\r\nVary: Accept-Encoding\r\nStrict-Transport-Security: max-age=31536000\r\nrequest-id: 5686d2f6-de2d-44a2-80ec-76bc4e259b70\r\nclient-request-id: 587b8b76-6a9b-4e39-b835-f534b2dc98e7\r\nx-ms-ags-diagnostic: {\"ServerInfo\":{\"DataCenter\":\"West Europe\",\"Slice\":\"E\",\"Ring\":\"5\",\"ScaleUnit\":\"008\",\"RoleInstance\":\"AM2PEPF0001F04D\"}}\r\nsplogid: 458d04a2-70e9-0001-22f7-a4a55ce53bf9\r\nsprequestduration: 25\r\nDate: Sat, 28 Mar 2026 22:54:01 GMT\r\nContent-Type: application/json\r\n\r\n{\"error\":{\"code\":\"accessDenied\",\"message\":\"Caller does not have required permissions for this API\",\"innerError\":{\"date\":\"2026-03-28T22:54:01\",\"request-id\":\"5686d2f6-de2d-44a2-80ec-76bc4e259b70\",\"client-request-id\":\"587b8b76-6a9b-4e39-b835-f534b2dc98e7\"}}}"
+    ],
+    "permissions": [
+      "Sites.Read.All"
+    ]
+  }
+}

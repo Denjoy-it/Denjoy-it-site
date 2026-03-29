@@ -1,0 +1,22 @@
+{
+  "section": "identity",
+  "subsection": "legacy-auth",
+  "label": "Legacy Authenticatie",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:59:43.0904110+01:00",
+  "assessmentId": "20260328-230422",
+  "summary": {
+    "affectedUsers": 0,
+    "legacySignInCount": 0
+  },
+  "items": [],
+  "meta": {
+    "notes": [
+      "Legacy authenticatiesignalen op basis van sign-in log analyse uit Phase 3."
+    ],
+    "permissions": [
+      "AuditLog.Read.All",
+      "Reports.Read.All"
+    ]
+  }
+}
