@@ -1,0 +1,60 @@
+{
+  "section": "alerts",
+  "subsection": "secure-score",
+  "label": "Secure Score",
+  "source": "assessment",
+  "generated_at": "2026-03-28T18:26:54.2946620+01:00",
+  "assessmentId": "20260328-173224",
+  "summary": {
+    "recommendations": 5,
+    "maxScore": 1132.0,
+    "percentage": 56.83,
+    "currentScore": 643.3
+  },
+  "items": [
+    {
+      "title": "Ensure multifactor authentication is enabled for all users in administrative roles",
+      "maxScore": 10.0,
+      "implementationStatus": null,
+      "tier": "Core",
+      "actionUrl": "https://go.microsoft.com/fwlink/?linkid=2095010"
+    },
+    {
+      "title": " Identify Entra ID privileged accounts that are also privileged in Active Directory",
+      "maxScore": 9.0,
+      "implementationStatus": null,
+      "tier": "Core",
+      "actionUrl": "https://go.microsoft.com/fwlink/?linkid=2326797"
+    },
+    {
+      "title": "Remove unsafe permissions on sensitive Entra Connect accounts",
+      "maxScore": 9.0,
+      "implementationStatus": null,
+      "tier": "Core",
+      "actionUrl": "https://go.microsoft.com/fwlink/?linkid=2293705"
+    },
+    {
+      "title": "Remove discoverable passwords in Active Directory account attributes",
+      "maxScore": 8.0,
+      "implementationStatus": null,
+      "tier": "Core",
+      "actionUrl": "https://go.microsoft.com/fwlink/?linkid=2325854"
+    },
+    {
+      "title": "Unsafe permissions on the DnsAdmins group",
+      "maxScore": 8.0,
+      "implementationStatus": null,
+      "tier": "Core",
+      "actionUrl": "https://aka.ms/IspmUnsafePermissionsDnsAdminsGroup"
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Secure Score snapshot uit Phase 4."
+    ],
+    "permissions": [
+      "SecurityEvents.Read.All",
+      "Policy.Read.All"
+    ]
+  }
+}

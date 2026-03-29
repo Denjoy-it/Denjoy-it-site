@@ -1,0 +1,1666 @@
+{
+  "section": "gebruikers",
+  "subsection": "licenses",
+  "label": "Licenties",
+  "source": "assessment",
+  "generated_at": "2026-03-28T18:26:53.9113180+01:00",
+  "assessmentId": "20260328-173224",
+  "summary": {
+    "totalLicenses": 8,
+    "friendlyNameCount": 8,
+    "lowUtilization": 2,
+    "assignedUsers": 327
+  },
+  "items": [
+    {
+      "skuPartNumber": "Microsoft_365_Copilot",
+      "displayName": "Microsoft 365 Copilot",
+      "total": 3,
+      "consumed": 3,
+      "available": 0,
+      "utilization": 100.0,
+      "assignedUsers": [
+        {
+          "displayName": "Angela Nicolai",
+          "userPrincipalName": "angela.nicolai@meerwaarde.nl"
+        },
+        {
+          "displayName": "Bianca Van Walbeek",
+          "userPrincipalName": "Bianca.vanwalbeek@meerwaarde.nl"
+        },
+        {
+          "displayName": "Tamira Meeues",
+          "userPrincipalName": "tamira.meeues@meerwaarde.nl"
+        }
+      ]
+    },
+    {
+      "skuPartNumber": "POWER_BI_PRO_CE",
+      "displayName": "Power BI Pro",
+      "total": 1,
+      "consumed": 1,
+      "available": 0,
+      "utilization": 100.0,
+      "assignedUsers": [
+        {
+          "displayName": "Ellen Kieftenbeld",
+          "userPrincipalName": "ellen.kieftenbeld@meerwaarde.nl"
+        }
+      ]
+    },
+    {
+      "skuPartNumber": "MCOEV",
+      "displayName": "Microsoft Teams Phone Standard",
+      "total": 106,
+      "consumed": 98,
+      "available": 8,
+      "utilization": 92.45,
+      "assignedUsers": [
+        {
+          "displayName": "Andre Pijnaker",
+          "userPrincipalName": "andre.pijnaker@meerwaarde.nl"
+        },
+        {
+          "displayName": "Angela Nicolai",
+          "userPrincipalName": "angela.nicolai@meerwaarde.nl"
+        },
+        {
+          "displayName": "Angelique Koenders",
+          "userPrincipalName": "angelique.koenders@meerwaarde.nl"
+        },
+        {
+          "displayName": "Anne-Mieke Gerrits",
+          "userPrincipalName": "annemieke.gerrits@meerwaarde.nl"
+        },
+        {
+          "displayName": "Annette van Groen",
+          "userPrincipalName": "annette.vangroen@meerwaarde.nl"
+        },
+        {
+          "displayName": "Aukje Jonkhout",
+          "userPrincipalName": "aukje.jonkhout@meerwaarde.nl"
+        },
+        {
+          "displayName": "Aysun Aydemir",
+          "userPrincipalName": "aysun.aydemir@meerwaarde.nl"
+        },
+        {
+          "displayName": "Balie",
+          "userPrincipalName": "balie@meerwaarde.nl"
+        },
+        {
+          "displayName": "Betul Manisa",
+          "userPrincipalName": "betul.manisa@meerwaarde.nl"
+        },
+        {
+          "displayName": "Bianca Van Walbeek",
+          "userPrincipalName": "Bianca.vanwalbeek@meerwaarde.nl"
+        },
+        {
+          "displayName": "Bidi Stam",
+          "userPrincipalName": "bidi.stam@meerwaarde.nl"
+        },
+        {
+          "displayName": "Chamira Breslau",
+          "userPrincipalName": "chamira.breslau@meerwaarde.nl"
+        },
+        {
+          "displayName": "Chantal Slotemaker",
+          "userPrincipalName": "chantal.slotemaker@meerwaarde.nl"
+        },
+        {
+          "displayName": "Cherish Hellings",
+          "userPrincipalName": "cherish.hellings@meerwaarde.nl"
+        },
+        {
+          "displayName": "Claudia Boelee",
+          "userPrincipalName": "claudia.boelee@meerwaarde.nl"
+        },
+        {
+          "displayName": "Daniel Siwpersad",
+          "userPrincipalName": "daniel.siwpersad@meerwaarde.nl"
+        },
+        {
+          "displayName": "David Oldenburg",
+          "userPrincipalName": "david.oldenburg@meerwaarde.nl"
+        },
+        {
+          "displayName": "Devi van Woudenberg",
+          "userPrincipalName": "devi.vanwoudenberg@meerwaarde.nl"
+        },
+        {
+          "displayName": "Ellen Kieftenbeld",
+          "userPrincipalName": "ellen.kieftenbeld@meerwaarde.nl"
+        },
+        {
+          "displayName": "Els van der Jagt",
+          "userPrincipalName": "els.vanderjagt@meerwaarde.nl"
+        },
+        {
+          "displayName": "Erik Schoe",
+          "userPrincipalName": "erik.schoe@meerwaarde.nl"
+        },
+        {
+          "displayName": "Eveline van Dam",
+          "userPrincipalName": "eveline.vandam@meerwaarde.nl"
+        },
+        {
+          "displayName": "Fabian van Tol",
+          "userPrincipalName": "fabian.vantol@meerwaarde.nl"
+        },
+        {
+          "displayName": "Fatiha Ayyad",
+          "userPrincipalName": "fatiha.ayyad@meerwaarde.nl"
+        },
+        {
+          "displayName": "Fatima El Idrissi",
+          "userPrincipalName": "fatima.elidrissi@meerwaarde.nl"
+        },
+        {
+          "displayName": "Fatima Eloche",
+          "userPrincipalName": "fatima.eloche@meerwaarde.nl"
+        },
+        {
+          "displayName": "Fleur Neeskens",
+          "userPrincipalName": "fleur.neeskens@meerwaarde.nl"
+        },
+        {
+          "displayName": "Frank Groot",
+          "userPrincipalName": "frank.groot@meerwaarde.nl"
+        },
+        {
+          "displayName": "Friso Spring in 't veld",
+          "userPrincipalName": "Friso.springintveld@meerwaarde.nl"
+        },
+        {
+          "displayName": "Guido Dankerlui",
+          "userPrincipalName": "Guido.Dankerlui@meerwaarde.nl"
+        },
+        {
+          "displayName": "Hannelore de Vries",
+          "userPrincipalName": "hannelore.devries@meerwaarde.nl"
+        },
+        {
+          "displayName": "Hiljan Hoek",
+          "userPrincipalName": "hiljan.hoek@meerwaarde.nl"
+        },
+        {
+          "displayName": "Caroline Blommers",
+          "userPrincipalName": "Hmve_caroline.blommers@meerwaarde.nl"
+        },
+        {
+          "displayName": "Erik Romijn",
+          "userPrincipalName": "hmve_Erik.Romijn@meerwaarde.nl"
+        },
+        {
+          "displayName": "HMVE Jessica Talaa",
+          "userPrincipalName": "hmve_Jessica.Talaa@meerwaarde.nl"
+        },
+        {
+          "displayName": "HMVE Monique Worm",
+          "userPrincipalName": "hmve_monique.worm@meerwaarde.nl"
+        },
+        {
+          "displayName": "Hyan Taleb",
+          "userPrincipalName": "hyan.taleb@meerwaarde.nl"
+        },
+        {
+          "displayName": "Ilona van Es",
+          "userPrincipalName": "ilona.vanes@meerwaarde.nl"
+        },
+        {
+          "displayName": "Inge Janssen",
+          "userPrincipalName": "inge.janssen@meerwaarde.nl"
+        },
+        {
+          "displayName": "Jinan Raissouni",
+          "userPrincipalName": "jinan.raissouni@meerwaarde.nl"
+        },
+        {
+          "displayName": "Jorien Reinderink",
+          "userPrincipalName": "jorien.reinderink@meerwaarde.nl"
+        },
+        {
+          "displayName": "Josefine Scheepmaker",
+          "userPrincipalName": "josefine.scheepmaker@meerwaarde.nl"
+        },
+        {
+          "displayName": "Joyce van Bemmelen",
+          "userPrincipalName": "joyce.vanbemmelen@meerwaarde.nl"
+        },
+        {
+          "displayName": "Judy de Leeuw",
+          "userPrincipalName": "judy.deleeuw@meerwaarde.nl"
+        },
+        {
+          "displayName": "Juliette Jansen",
+          "userPrincipalName": "juliette.jansen@meerwaarde.nl"
+        },
+        {
+          "displayName": "Karin Babeliowsky-v.d. Woord",
+          "userPrincipalName": "karin.babeliowsky@meerwaarde.nl"
+        },
+        {
+          "displayName": "Kavindra Richards",
+          "userPrincipalName": "kavindra.richards@meerwaarde.nl"
+        },
+        {
+          "displayName": "Khadija Mallouk",
+          "userPrincipalName": "khadija.mallouk@meerwaarde.nl"
+        },
+        {
+          "displayName": "Laila Ameziane",
+          "userPrincipalName": "Laila.Ameziane@meerwaarde.nl"
+        },
+        {
+          "displayName": "Laila el Hafidi",
+          "userPrincipalName": "laila.elhafidi@meerwaarde.nl"
+        },
+        {
+          "displayName": "Linda Steeman",
+          "userPrincipalName": "linda.steeman@meerwaarde.nl"
+        },
+        {
+          "displayName": "Lisa de Best",
+          "userPrincipalName": "lisa.debest@meerwaarde.nl"
+        },
+        {
+          "displayName": "Lisette Piepers",
+          "userPrincipalName": "lisette.piepers@meerwaarde.nl"
+        },
+        {
+          "displayName": "Lotte Verhofstad",
+          "userPrincipalName": "lotte.verhofstad@meerwaarde.nl"
+        },
+        {
+          "displayName": "Magne de Kreek",
+          "userPrincipalName": "magne.dekreek@meerwaarde.nl"
+        },
+        {
+          "displayName": "Maira Wouter",
+          "userPrincipalName": "maira.wouter@meerwaarde.nl"
+        },
+        {
+          "displayName": "Marie-Jose Keijman",
+          "userPrincipalName": "mariejose.keijman@meerwaarde.nl"
+        },
+        {
+          "displayName": "Mariëtte Bouterse",
+          "userPrincipalName": "mariette.bouterse@meerwaarde.nl"
+        },
+        {
+          "displayName": "Mariska Spikmans",
+          "userPrincipalName": "mariska.spikmans@meerwaarde.nl"
+        },
+        {
+          "displayName": "Marjorie Mesman",
+          "userPrincipalName": "marjorie.mesman@meerwaarde.nl"
+        },
+        {
+          "displayName": "Mark Ostendorf",
+          "userPrincipalName": "mark.ostendorf@meerwaarde.nl"
+        },
+        {
+          "displayName": "Martijn Kool",
+          "userPrincipalName": "martijn.kool@meerwaarde.nl"
+        },
+        {
+          "displayName": "Martine Heeremans",
+          "userPrincipalName": "martine.heeremans@meerwaarde.nl"
+        },
+        {
+          "displayName": "Mary van der Drift",
+          "userPrincipalName": "mary.vanderdrift@meerwaarde.nl"
+        },
+        {
+          "displayName": "Maud Tromp",
+          "userPrincipalName": "maud.tromp@meerwaarde.nl"
+        },
+        {
+          "displayName": "Merel Jansen",
+          "userPrincipalName": "merel.jansen@meerwaarde.nl"
+        },
+        {
+          "displayName": "Mustapha El Moumene",
+          "userPrincipalName": "mustapha.elmoumene@meerwaarde.nl"
+        },
+        {
+          "displayName": "Nancy van den Burg",
+          "userPrincipalName": "nancy.vandenburg@meerwaarde.nl"
+        },
+        {
+          "displayName": "Nelleke van Wonderen",
+          "userPrincipalName": "Nelleke.vanWonderen@meerwaarde.nl"
+        },
+        {
+          "displayName": "Nina Liang",
+          "userPrincipalName": "nina.liang@meerwaarde.nl"
+        },
+        {
+          "displayName": "Noa Janssen",
+          "userPrincipalName": "noa.janssen@meerwaarde.nl"
+        },
+        {
+          "displayName": "Norman Kortekaas",
+          "userPrincipalName": "norman.kortekaas@meerwaarde.nl"
+        },
+        {
+          "displayName": "Nynke Wijbenga",
+          "userPrincipalName": "nynke.wijbenga@meerwaarde.nl"
+        },
+        {
+          "displayName": "Rachelle Paalvast",
+          "userPrincipalName": "rachelle.paalvast@meerwaarde.nl"
+        },
+        {
+          "displayName": "Riguillo Terhaar",
+          "userPrincipalName": "riguillo.terhaar@meerwaarde.nl"
+        },
+        {
+          "displayName": "Roxanna Booms",
+          "userPrincipalName": "roxanna.booms@meerwaarde.nl"
+        },
+        {
+          "displayName": "Sandra Spoelstra",
+          "userPrincipalName": "sandra.spoelstra@meerwaarde.nl"
+        },
+        {
+          "displayName": "Sandy Frederiks",
+          "userPrincipalName": "sandy.frederiks@meerwaarde.nl"
+        },
+        {
+          "displayName": "Sawinah Voortman",
+          "userPrincipalName": "sawinah.voortman@meerwaarde.nl"
+        },
+        {
+          "displayName": "Serena Blank",
+          "userPrincipalName": "serena.blank@meerwaarde.nl"
+        },
+        {
+          "displayName": "Sieben van Maarseveen",
+          "userPrincipalName": "sieben.vanmaarseveen@meerwaarde.nl"
+        },
+        {
+          "displayName": "Simone Duin",
+          "userPrincipalName": "simone.duin@meerwaarde.nl"
+        },
+        {
+          "displayName": "Sjoerd Mercera",
+          "userPrincipalName": "sjoerd.mercera@meerwaarde.nl"
+        },
+        {
+          "displayName": "Somaya Es Sannouni",
+          "userPrincipalName": "somaya.essannouni@meerwaarde.nl"
+        },
+        {
+          "displayName": "Sophie Hirs",
+          "userPrincipalName": "sophie.hirs@meerwaarde.nl"
+        },
+        {
+          "displayName": "Stien de Rooij",
+          "userPrincipalName": "stien.derooij@meerwaarde.nl"
+        },
+        {
+          "displayName": "Suzanne van Varik",
+          "userPrincipalName": "suzanne.vanvarik@meerwaarde.nl"
+        },
+        {
+          "displayName": "Tamira Meeues",
+          "userPrincipalName": "tamira.meeues@meerwaarde.nl"
+        },
+        {
+          "displayName": "Tim Sebel",
+          "userPrincipalName": "tim.sebel@meerwaarde.nl"
+        },
+        {
+          "displayName": "Caroline Roelfs VGT",
+          "userPrincipalName": "vgt.Caroline@meerwaarde.nl"
+        },
+        {
+          "displayName": "Debby de Heus - de Vos",
+          "userPrincipalName": "vgt.Debby@meerwaarde.nl"
+        },
+        {
+          "displayName": "Femmy Klootwijk",
+          "userPrincipalName": "vgt.femmy@meerwaarde.nl"
+        },
+        {
+          "displayName": "Fiona Van den Acker",
+          "userPrincipalName": "vgt.fiona@meerwaarde.nl"
+        },
+        {
+          "displayName": "Marianne Uitendaal",
+          "userPrincipalName": "vgt.marianne@meerwaarde.nl"
+        },
+        {
+          "displayName": "Vilma Sedaria",
+          "userPrincipalName": "vgt.vilma@meerwaarde.nl"
+        },
+        {
+          "displayName": "Wendy Amsing",
+          "userPrincipalName": "wendy.amsing@meerwaarde.nl"
+        },
+        {
+          "displayName": "Yvonne van den Berg",
+          "userPrincipalName": "yvonne.vandenberg@meerwaarde.nl"
+        },
+        {
+          "displayName": "Zondagmiddagpodium",
+          "userPrincipalName": "zondagmiddagpodium@meerwaarde.nl"
+        }
+      ]
+    },
+    {
+      "skuPartNumber": "PHONESYSTEM_VIRTUALUSER",
+      "displayName": "Teams Phone Resource Account",
+      "total": 40,
+      "consumed": 22,
+      "available": 18,
+      "utilization": 55.0,
+      "assignedUsers": [
+        {
+          "displayName": "teams-attandant-BGH",
+          "userPrincipalName": "teams-attandant-BGH@meerwaarde.nl"
+        },
+        {
+          "displayName": "teams-attandant-buurtbemiddeling",
+          "userPrincipalName": "teams-attandant-buurtbemiddeling@meerwaarde.nl"
+        },
+        {
+          "displayName": "teams-attandant-HHME",
+          "userPrincipalName": "teams-attandant-HHME@meerwaarde.nl"
+        },
+        {
+          "displayName": "teams-attandant-Hoofdnummer",
+          "userPrincipalName": "teams-attandant-Hoofdnummer@meerwaarde.nl"
+        },
+        {
+          "displayName": "teams-attandant-PART",
+          "userPrincipalName": "teams-attandant-PART@meerwaarde.nl"
+        },
+        {
+          "displayName": "teams-attandant-pluspunt-dovd",
+          "userPrincipalName": "teams-attandant-pluspunt-dovd@meerwaarde.nl"
+        },
+        {
+          "displayName": "teams-attandant-pluspunt-nieuwvennep",
+          "userPrincipalName": "teams-attandant-pluspunt-nieuwvennep@meerwaarde.nl"
+        },
+        {
+          "displayName": "teams-attandant-skagerak",
+          "userPrincipalName": "teams-attandant-skagerak@meerwaarde.nl"
+        },
+        {
+          "displayName": "teams-attandant-TOE",
+          "userPrincipalName": "teams-attandant-TOE@meerwaarde.nl"
+        },
+        {
+          "displayName": "teams-attandant-VCH",
+          "userPrincipalName": "teams-attandant-VCH@meerwaarde.nl"
+        },
+        {
+          "displayName": "teams-attandant-ZONDAG",
+          "userPrincipalName": "teams-attandant-ZONDAG@meerwaarde.nl"
+        },
+        {
+          "displayName": "Feestdagen",
+          "userPrincipalName": "teams-attendant-feestdagen@meerwaarde.nl"
+        },
+        {
+          "displayName": "BGH",
+          "userPrincipalName": "teams-callque-BGH@meerwaarde.nl"
+        },
+        {
+          "displayName": "Buurtbemiddeling",
+          "userPrincipalName": "teams-callque-buurtbemiddeling@meerwaarde.nl"
+        },
+        {
+          "displayName": "HHME Voor Elkaar",
+          "userPrincipalName": "teams-callque-HHME@meerwaarde.nl"
+        },
+        {
+          "displayName": "teams-callque-Hoofdnummer",
+          "userPrincipalName": "teams-callque-Hoofdnummer@meerwaarde.nl"
+        },
+        {
+          "displayName": "ParticipatiePunt",
+          "userPrincipalName": "teams-callque-PART@meerwaarde.nl"
+        },
+        {
+          "displayName": "teams-callque-testnummer01",
+          "userPrincipalName": "teams-callque-testnummer01@meerwaarde.nl"
+        },
+        {
+          "displayName": "VG Toegang",
+          "userPrincipalName": "teams-callque-toe-gastvrouwen@meerwaarde.nl"
+        },
+        {
+          "displayName": "VG Toegang - Achtervang",
+          "userPrincipalName": "teams-callque-TOE@meerwaarde.nl"
+        },
+        {
+          "displayName": "VCH",
+          "userPrincipalName": "teams-callque-VCH@meerwaarde.nl"
+        },
+        {
+          "displayName": "Zondagpodium",
+          "userPrincipalName": "teams-callque-ZONDAG@meerwaarde.nl"
+        }
+      ]
+    },
+    {
+      "skuPartNumber": "SPB",
+      "displayName": "Microsoft 365 Business Premium",
+      "total": 157,
+      "consumed": 144,
+      "available": 13,
+      "utilization": 91.72,
+      "assignedUsers": [
+        {
+          "displayName": "QUBE  Beheer",
+          "userPrincipalName": "aazmee@meerwaarde.onmicrosoft.com"
+        },
+        {
+          "displayName": "Abdelwahid Agzennay",
+          "userPrincipalName": "Abdelwahid.Agzennay@meerwaarde.nl"
+        },
+        {
+          "displayName": "admin",
+          "userPrincipalName": "admin@meerwaarde.nl"
+        },
+        {
+          "displayName": "Anass Azouag",
+          "userPrincipalName": "anass.azouag@meerwaarde.nl"
+        },
+        {
+          "displayName": "Andre Pijnaker",
+          "userPrincipalName": "andre.pijnaker@meerwaarde.nl"
+        },
+        {
+          "displayName": "Angela Nicolai",
+          "userPrincipalName": "angela.nicolai@meerwaarde.nl"
+        },
+        {
+          "displayName": "Angelique Koenders",
+          "userPrincipalName": "angelique.koenders@meerwaarde.nl"
+        },
+        {
+          "displayName": "Anja Maars",
+          "userPrincipalName": "anja.maars@meerwaarde.nl"
+        },
+        {
+          "displayName": "Anne-Mieke Gerrits",
+          "userPrincipalName": "annemieke.gerrits@meerwaarde.nl"
+        },
+        {
+          "displayName": "Annette van Groen",
+          "userPrincipalName": "annette.vangroen@meerwaarde.nl"
+        },
+        {
+          "displayName": "August Lagadeau",
+          "userPrincipalName": "August.lagadeau@meerwaarde.nl"
+        },
+        {
+          "displayName": "Aukje Jonkhout",
+          "userPrincipalName": "aukje.jonkhout@meerwaarde.nl"
+        },
+        {
+          "displayName": "Aya Youssef",
+          "userPrincipalName": "aya.youssef@meerwaarde.nl"
+        },
+        {
+          "displayName": "Aysun Aydemir",
+          "userPrincipalName": "aysun.aydemir@meerwaarde.nl"
+        },
+        {
+          "displayName": "Balie",
+          "userPrincipalName": "balie@meerwaarde.nl"
+        },
+        {
+          "displayName": "Baudien Ekkel",
+          "userPrincipalName": "baudien.ekkel@meerwaarde.nl"
+        },
+        {
+          "displayName": "Betul Manisa",
+          "userPrincipalName": "betul.manisa@meerwaarde.nl"
+        },
+        {
+          "displayName": "Bianca Van Walbeek",
+          "userPrincipalName": "Bianca.vanwalbeek@meerwaarde.nl"
+        },
+        {
+          "displayName": "Bidi Stam",
+          "userPrincipalName": "bidi.stam@meerwaarde.nl"
+        },
+        {
+          "displayName": "Brahim Raissouni",
+          "userPrincipalName": "brahim.raissouni@meerwaarde.nl"
+        },
+        {
+          "displayName": "Caroline Roelfs",
+          "userPrincipalName": "caroline.roelfs@meerwaarde.nl"
+        },
+        {
+          "displayName": "Caroline van de Merwe",
+          "userPrincipalName": "Caroline.vandemerwe@meerwaarde.nl"
+        },
+        {
+          "displayName": "Celeste Koster",
+          "userPrincipalName": "celeste.koster@meerwaarde.nl"
+        },
+        {
+          "displayName": "Chaib Saber",
+          "userPrincipalName": "chaib.saber@meerwaarde.nl"
+        },
+        {
+          "displayName": "Chamira Breslau",
+          "userPrincipalName": "chamira.breslau@meerwaarde.nl"
+        },
+        {
+          "displayName": "Chantal Slotemaker",
+          "userPrincipalName": "chantal.slotemaker@meerwaarde.nl"
+        },
+        {
+          "displayName": "Cherish Hellings",
+          "userPrincipalName": "cherish.hellings@meerwaarde.nl"
+        },
+        {
+          "displayName": "Claudia Boelee",
+          "userPrincipalName": "claudia.boelee@meerwaarde.nl"
+        },
+        {
+          "displayName": "CV Hulp",
+          "userPrincipalName": "cvhulp@meerwaarde.nl"
+        },
+        {
+          "displayName": "Cynthia de Vries",
+          "userPrincipalName": "cynthia.devries@meerwaarde.nl"
+        },
+        {
+          "displayName": "Daniel Siwpersad",
+          "userPrincipalName": "daniel.siwpersad@meerwaarde.nl"
+        },
+        {
+          "displayName": "David Oldenburg",
+          "userPrincipalName": "david.oldenburg@meerwaarde.nl"
+        },
+        {
+          "displayName": "Devi van Woudenberg",
+          "userPrincipalName": "devi.vanwoudenberg@meerwaarde.nl"
+        },
+        {
+          "displayName": "Ellen Kieftenbeld",
+          "userPrincipalName": "ellen.kieftenbeld@meerwaarde.nl"
+        },
+        {
+          "displayName": "Els van der Jagt",
+          "userPrincipalName": "els.vanderjagt@meerwaarde.nl"
+        },
+        {
+          "displayName": "Erik Schoe",
+          "userPrincipalName": "erik.schoe@meerwaarde.nl"
+        },
+        {
+          "displayName": "Eveline van Dam",
+          "userPrincipalName": "eveline.vandam@meerwaarde.nl"
+        },
+        {
+          "displayName": "Fabian van Tol",
+          "userPrincipalName": "fabian.vantol@meerwaarde.nl"
+        },
+        {
+          "displayName": "Fatiha Ayyad",
+          "userPrincipalName": "fatiha.ayyad@meerwaarde.nl"
+        },
+        {
+          "displayName": "Fatima El Idrissi",
+          "userPrincipalName": "fatima.elidrissi@meerwaarde.nl"
+        },
+        {
+          "displayName": "Fatima Eloche",
+          "userPrincipalName": "fatima.eloche@meerwaarde.nl"
+        },
+        {
+          "displayName": "Fleur Neeskens",
+          "userPrincipalName": "fleur.neeskens@meerwaarde.nl"
+        },
+        {
+          "displayName": "Florentyna Kerkmeer",
+          "userPrincipalName": "florentyna.kerkmeer@meerwaarde.nl"
+        },
+        {
+          "displayName": "Frank Groot",
+          "userPrincipalName": "frank.groot@meerwaarde.nl"
+        },
+        {
+          "displayName": "Friso Spring in 't veld",
+          "userPrincipalName": "Friso.springintveld@meerwaarde.nl"
+        },
+        {
+          "displayName": "Gaby Stoop",
+          "userPrincipalName": "Gaby.Stoop@meerwaarde.nl"
+        },
+        {
+          "displayName": "Guido Dankerlui",
+          "userPrincipalName": "Guido.Dankerlui@meerwaarde.nl"
+        },
+        {
+          "displayName": "Hannelore de Vries",
+          "userPrincipalName": "hannelore.devries@meerwaarde.nl"
+        },
+        {
+          "displayName": "Hans Louter",
+          "userPrincipalName": "hans.louter@meerwaarde.nl"
+        },
+        {
+          "displayName": "Hiljan Hoek",
+          "userPrincipalName": "hiljan.hoek@meerwaarde.nl"
+        },
+        {
+          "displayName": "Annet van de Plas",
+          "userPrincipalName": "Hmve_annet.vdplas@meerwaarde.nl"
+        },
+        {
+          "displayName": "Caroline Blommers",
+          "userPrincipalName": "Hmve_caroline.blommers@meerwaarde.nl"
+        },
+        {
+          "displayName": "Erik Romijn",
+          "userPrincipalName": "hmve_Erik.Romijn@meerwaarde.nl"
+        },
+        {
+          "displayName": "HMVE Jessica Talaa",
+          "userPrincipalName": "hmve_Jessica.Talaa@meerwaarde.nl"
+        },
+        {
+          "displayName": "Mallory Roo van der Haagen",
+          "userPrincipalName": "Hmve_mallory.roovanderhaagen@meerwaarde.nl"
+        },
+        {
+          "displayName": "Hyan Taleb",
+          "userPrincipalName": "hyan.taleb@meerwaarde.nl"
+        },
+        {
+          "displayName": "Ilona van Es",
+          "userPrincipalName": "ilona.vanes@meerwaarde.nl"
+        },
+        {
+          "displayName": "Imad Talhaoui",
+          "userPrincipalName": "imad.talhaoui@meerwaarde.nl"
+        },
+        {
+          "displayName": "Inge Janssen",
+          "userPrincipalName": "inge.janssen@meerwaarde.nl"
+        },
+        {
+          "displayName": "Jamal Bouraajaj",
+          "userPrincipalName": "jamal.bouraajaj@meerwaarde.nl"
+        },
+        {
+          "displayName": "Jareth Westerman",
+          "userPrincipalName": "Jareth.westerman@meerwaarde.nl"
+        },
+        {
+          "displayName": "Jinan Raissouni",
+          "userPrincipalName": "jinan.raissouni@meerwaarde.nl"
+        },
+        {
+          "displayName": "Jorien Reinderink",
+          "userPrincipalName": "jorien.reinderink@meerwaarde.nl"
+        },
+        {
+          "displayName": "Josefine Scheepmaker",
+          "userPrincipalName": "josefine.scheepmaker@meerwaarde.nl"
+        },
+        {
+          "displayName": "Joyce van Bemmelen",
+          "userPrincipalName": "joyce.vanbemmelen@meerwaarde.nl"
+        },
+        {
+          "displayName": "Judy de Leeuw",
+          "userPrincipalName": "judy.deleeuw@meerwaarde.nl"
+        },
+        {
+          "displayName": "Juliette Jansen",
+          "userPrincipalName": "juliette.jansen@meerwaarde.nl"
+        },
+        {
+          "displayName": "Karin Babeliowsky-v.d. Woord",
+          "userPrincipalName": "karin.babeliowsky@meerwaarde.nl"
+        },
+        {
+          "displayName": "Kavindra Richards",
+          "userPrincipalName": "kavindra.richards@meerwaarde.nl"
+        },
+        {
+          "displayName": "Khadija Mallouk",
+          "userPrincipalName": "khadija.mallouk@meerwaarde.nl"
+        },
+        {
+          "displayName": "Laila Ameziane",
+          "userPrincipalName": "Laila.Ameziane@meerwaarde.nl"
+        },
+        {
+          "displayName": "Laila el Hafidi",
+          "userPrincipalName": "laila.elhafidi@meerwaarde.nl"
+        },
+        {
+          "displayName": "Lara Holst",
+          "userPrincipalName": "lara.holst@meerwaarde.nl"
+        },
+        {
+          "displayName": "Larissa Wladimiroff",
+          "userPrincipalName": "Larissa.Wladimiroff@meerwaarde.nl"
+        },
+        {
+          "displayName": "Leena Scheffer - Manapong",
+          "userPrincipalName": "leena.scheffer@meerwaarde.nl"
+        },
+        {
+          "displayName": "Lia Duivenvoorden",
+          "userPrincipalName": "lia.duivenvoorden@meerwaarde.nl"
+        },
+        {
+          "displayName": "Linda Steeman",
+          "userPrincipalName": "linda.steeman@meerwaarde.nl"
+        },
+        {
+          "displayName": "Lisa de Best",
+          "userPrincipalName": "lisa.debest@meerwaarde.nl"
+        },
+        {
+          "displayName": "Lisette Piepers",
+          "userPrincipalName": "lisette.piepers@meerwaarde.nl"
+        },
+        {
+          "displayName": "Lotte Verhofstad",
+          "userPrincipalName": "lotte.verhofstad@meerwaarde.nl"
+        },
+        {
+          "displayName": "Magne de Kreek",
+          "userPrincipalName": "magne.dekreek@meerwaarde.nl"
+        },
+        {
+          "displayName": "Maira Wouter",
+          "userPrincipalName": "maira.wouter@meerwaarde.nl"
+        },
+        {
+          "displayName": "Marie-Jose Keijman",
+          "userPrincipalName": "mariejose.keijman@meerwaarde.nl"
+        },
+        {
+          "displayName": "Mariëtte Bouterse",
+          "userPrincipalName": "mariette.bouterse@meerwaarde.nl"
+        },
+        {
+          "displayName": "Mariska Spikmans",
+          "userPrincipalName": "mariska.spikmans@meerwaarde.nl"
+        },
+        {
+          "displayName": "Marith Elfering",
+          "userPrincipalName": "marith.elfering@meerwaarde.nl"
+        },
+        {
+          "displayName": "Marjorie Mesman",
+          "userPrincipalName": "marjorie.mesman@meerwaarde.nl"
+        },
+        {
+          "displayName": "Mark Ostendorf",
+          "userPrincipalName": "mark.ostendorf@meerwaarde.nl"
+        },
+        {
+          "displayName": "Martijn Kool",
+          "userPrincipalName": "martijn.kool@meerwaarde.nl"
+        },
+        {
+          "displayName": "Martine Heeremans",
+          "userPrincipalName": "martine.heeremans@meerwaarde.nl"
+        },
+        {
+          "displayName": "Mary van der Drift",
+          "userPrincipalName": "mary.vanderdrift@meerwaarde.nl"
+        },
+        {
+          "displayName": "Maryam Aourag",
+          "userPrincipalName": "Maryam.Aourag@meerwaarde.nl"
+        },
+        {
+          "displayName": "Maud Tromp",
+          "userPrincipalName": "maud.tromp@meerwaarde.nl"
+        },
+        {
+          "displayName": "Merel Jansen",
+          "userPrincipalName": "merel.jansen@meerwaarde.nl"
+        },
+        {
+          "displayName": "Michiel Poorter",
+          "userPrincipalName": "Michiel.poorter@meerwaarde.nl"
+        },
+        {
+          "displayName": "Mireille Paardenkooper",
+          "userPrincipalName": "mireille.paardenkooper@meerwaarde.nl"
+        },
+        {
+          "displayName": "Miriam Naluzinda",
+          "userPrincipalName": "Miriam.Naluzinda@meerwaarde.nl"
+        },
+        {
+          "displayName": "Mirjam Gans",
+          "userPrincipalName": "mirjam.gans@meerwaarde.nl"
+        },
+        {
+          "displayName": "Mohammed Abraimi",
+          "userPrincipalName": "mohammed.abraimi@meerwaarde.nl"
+        },
+        {
+          "displayName": "Mustapha El Moumene",
+          "userPrincipalName": "mustapha.elmoumene@meerwaarde.nl"
+        },
+        {
+          "displayName": "Team Haarlemmermeervoorelkaar",
+          "userPrincipalName": "mvac@smwnet.nl"
+        },
+        {
+          "displayName": "Nancy van den Burg",
+          "userPrincipalName": "nancy.vandenburg@meerwaarde.nl"
+        },
+        {
+          "displayName": "Natasja Lie",
+          "userPrincipalName": "natasja.lie@meerwaarde.nl"
+        },
+        {
+          "displayName": "Nelleke van Wonderen",
+          "userPrincipalName": "Nelleke.vanWonderen@meerwaarde.nl"
+        },
+        {
+          "displayName": "Nina Liang",
+          "userPrincipalName": "nina.liang@meerwaarde.nl"
+        },
+        {
+          "displayName": "Nissrin Zafzafi",
+          "userPrincipalName": "Nissrin.Zafzafi@meerwaarde.nl"
+        },
+        {
+          "displayName": "no-reply Meerwaarde",
+          "userPrincipalName": "no-reply@smwnet.nl"
+        },
+        {
+          "displayName": "Noa Janssen",
+          "userPrincipalName": "noa.janssen@meerwaarde.nl"
+        },
+        {
+          "displayName": "Norhan Ali",
+          "userPrincipalName": "Norhan.Ali@meerwaarde.nl"
+        },
+        {
+          "displayName": "Norman Kortekaas",
+          "userPrincipalName": "norman.kortekaas@meerwaarde.nl"
+        },
+        {
+          "displayName": "Nynke Wijbenga",
+          "userPrincipalName": "nynke.wijbenga@meerwaarde.nl"
+        },
+        {
+          "displayName": "Rachelle Paalvast",
+          "userPrincipalName": "rachelle.paalvast@meerwaarde.nl"
+        },
+        {
+          "displayName": "Riguillo Terhaar",
+          "userPrincipalName": "riguillo.terhaar@meerwaarde.nl"
+        },
+        {
+          "displayName": "Rijnaldo Wilson",
+          "userPrincipalName": "rijnaldo.wilson@meerwaarde.nl"
+        },
+        {
+          "displayName": "Roxanna Booms",
+          "userPrincipalName": "roxanna.booms@meerwaarde.nl"
+        },
+        {
+          "displayName": "Sandra Spoelstra",
+          "userPrincipalName": "sandra.spoelstra@meerwaarde.nl"
+        },
+        {
+          "displayName": "Sandy Frederiks",
+          "userPrincipalName": "sandy.frederiks@meerwaarde.nl"
+        },
+        {
+          "displayName": "Sawinah Voortman",
+          "userPrincipalName": "sawinah.voortman@meerwaarde.nl"
+        },
+        {
+          "displayName": "Selina Veerman",
+          "userPrincipalName": "selina.veerman@meerwaarde.nl"
+        },
+        {
+          "displayName": "Serena Blank",
+          "userPrincipalName": "serena.blank@meerwaarde.nl"
+        },
+        {
+          "displayName": "Sieben van Maarseveen",
+          "userPrincipalName": "sieben.vanmaarseveen@meerwaarde.nl"
+        },
+        {
+          "displayName": "Simone Duin",
+          "userPrincipalName": "simone.duin@meerwaarde.nl"
+        },
+        {
+          "displayName": "Sjoerd Mercera",
+          "userPrincipalName": "sjoerd.mercera@meerwaarde.nl"
+        },
+        {
+          "displayName": "Team Social Impact",
+          "userPrincipalName": "social.impact@meerwaarde.nl"
+        },
+        {
+          "displayName": "Somaya Es Sannouni",
+          "userPrincipalName": "somaya.essannouni@meerwaarde.nl"
+        },
+        {
+          "displayName": "Sophie Hirs",
+          "userPrincipalName": "sophie.hirs@meerwaarde.nl"
+        },
+        {
+          "displayName": "Stien de Rooij",
+          "userPrincipalName": "stien.derooij@meerwaarde.nl"
+        },
+        {
+          "displayName": "Suzanne van Varik",
+          "userPrincipalName": "suzanne.vanvarik@meerwaarde.nl"
+        },
+        {
+          "displayName": "ServiceAccount - Orbis",
+          "userPrincipalName": "svc_orbis@meerwaarde.nl"
+        },
+        {
+          "displayName": "Tamira Meeues",
+          "userPrincipalName": "tamira.meeues@meerwaarde.nl"
+        },
+        {
+          "displayName": "Test QUBEMDM",
+          "userPrincipalName": "test.qubemdm@meerwaarde.nl"
+        },
+        {
+          "displayName": "Tim Sebel",
+          "userPrincipalName": "tim.sebel@meerwaarde.nl"
+        },
+        {
+          "displayName": "Umaimah El Abddellaoui",
+          "userPrincipalName": "Umaimah.elabddellaoui@meerwaarde.nl"
+        },
+        {
+          "displayName": "Vrijwilliger PlusPunt Zuid",
+          "userPrincipalName": "v.pluspuntzuid@smwnet.nl"
+        },
+        {
+          "displayName": "Caroline Roelfs VGT",
+          "userPrincipalName": "vgt.Caroline@meerwaarde.nl"
+        },
+        {
+          "displayName": "Debby de Heus - de Vos",
+          "userPrincipalName": "vgt.Debby@meerwaarde.nl"
+        },
+        {
+          "displayName": "Erik Romijn",
+          "userPrincipalName": "vgt.erik@meerwaarde.nl"
+        },
+        {
+          "displayName": "Femmy Klootwijk",
+          "userPrincipalName": "vgt.femmy@meerwaarde.nl"
+        },
+        {
+          "displayName": "Marianne Uitendaal",
+          "userPrincipalName": "vgt.marianne@meerwaarde.nl"
+        },
+        {
+          "displayName": "Vrijwilliger",
+          "userPrincipalName": "vrijwilliger@meerwaarde.nl"
+        },
+        {
+          "displayName": "Wendy Amsing",
+          "userPrincipalName": "wendy.amsing@meerwaarde.nl"
+        },
+        {
+          "displayName": "Yvonne van den Berg",
+          "userPrincipalName": "yvonne.vandenberg@meerwaarde.nl"
+        },
+        {
+          "displayName": "ZMP-Contracten",
+          "userPrincipalName": "ZMP-Contracten@smwnet.nl"
+        },
+        {
+          "displayName": "Zondagmiddagpodium",
+          "userPrincipalName": "zondagmiddagpodium@meerwaarde.nl"
+        }
+      ]
+    },
+    {
+      "skuPartNumber": "EXCHANGESTANDARD",
+      "displayName": "Exchange Online Plan 1",
+      "total": 1,
+      "consumed": 1,
+      "available": 0,
+      "utilization": 100.0,
+      "assignedUsers": [
+        {
+          "displayName": "Raad van Toezicht",
+          "userPrincipalName": "raadvantoezicht@meerwaarde.nl"
+        }
+      ]
+    },
+    {
+      "skuPartNumber": "Microsoft_Teams_Rooms_Basic",
+      "displayName": "Microsoft Teams Rooms Basic",
+      "total": 5,
+      "consumed": 4,
+      "available": 1,
+      "utilization": 80.0,
+      "assignedUsers": [
+        {
+          "displayName": "Bestuurskamer",
+          "userPrincipalName": "bestuurskamer.dovd@meerwaarde.onmicrosoft.com"
+        },
+        {
+          "displayName": "Kantine DOVD",
+          "userPrincipalName": "Kantine@meerwaarde.onmicrosoft.com"
+        },
+        {
+          "displayName": "Betrokken (130)",
+          "userPrincipalName": "spreekkamer.dovd@meerwaarde.onmicrosoft.com"
+        },
+        {
+          "displayName": "Professioneel VK",
+          "userPrincipalName": "vissenkom.dovd@meerwaarde.onmicrosoft.com"
+        }
+      ]
+    },
+    {
+      "skuPartNumber": "O365_BUSINESS_ESSENTIALS",
+      "displayName": "Microsoft 365 Business Basic",
+      "total": 154,
+      "consumed": 117,
+      "available": 37,
+      "utilization": 75.97,
+      "assignedUsers": [
+        {
+          "displayName": "Admin Qube ICT",
+          "userPrincipalName": "admin.qubeict@smwnet.nl"
+        },
+        {
+          "displayName": "Administrator Meerwaarde",
+          "userPrincipalName": "administrator@meerwaarde.onmicrosoft.com"
+        },
+        {
+          "displayName": "BBM Afke",
+          "userPrincipalName": "bbm.afke@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Alexandra",
+          "userPrincipalName": "bbm.alexandra@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Anneke",
+          "userPrincipalName": "bbm.anneke@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Anne Marie",
+          "userPrincipalName": "bbm.annemarie@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Annemarie",
+          "userPrincipalName": "bbm.annemarieb@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Annemarieke",
+          "userPrincipalName": "bbm.annemarieke@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Annemieke",
+          "userPrincipalName": "bbm.annemieke@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Annette",
+          "userPrincipalName": "bbm.annette@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Barbara",
+          "userPrincipalName": "bbm.barbara@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Belinda",
+          "userPrincipalName": "bbm.belinda@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Brenda",
+          "userPrincipalName": "bbm.brenda@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Carine",
+          "userPrincipalName": "bbm.carine@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Cees",
+          "userPrincipalName": "bbm.cees@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Clemens",
+          "userPrincipalName": "bbm.clemens@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Ella",
+          "userPrincipalName": "bbm.ella@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Eloise",
+          "userPrincipalName": "bbm.eloise@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Els",
+          "userPrincipalName": "bbm.els@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Elvira",
+          "userPrincipalName": "bbm.elvira@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Emilie",
+          "userPrincipalName": "bbm.emilie@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Emilie",
+          "userPrincipalName": "bbm.emiliex@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Esther",
+          "userPrincipalName": "bbm.esther@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Fahrida",
+          "userPrincipalName": "bbm.fahrida@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Floor",
+          "userPrincipalName": "bbm.floor@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Florentyna",
+          "userPrincipalName": "bbm.florentyna@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Fran",
+          "userPrincipalName": "bbm.fran@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Francien",
+          "userPrincipalName": "bbm.francien@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Gaby",
+          "userPrincipalName": "bbm.gaby@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Nederbragt",
+          "userPrincipalName": "bbm.gertjan@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Greetje",
+          "userPrincipalName": "bbm.greetje@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Guido",
+          "userPrincipalName": "bbm.guido@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Hans Peter",
+          "userPrincipalName": "bbm.hanspeter@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Harald",
+          "userPrincipalName": "bbm.harald@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Heleen",
+          "userPrincipalName": "bbm.heleen@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Hella",
+          "userPrincipalName": "bbm.hella@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Henriette",
+          "userPrincipalName": "bbm.henriette@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Hiltje",
+          "userPrincipalName": "bbm.hiltje@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Ineke",
+          "userPrincipalName": "bbm.ineke@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Ingeborg",
+          "userPrincipalName": "bbm.ingeborg@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Ingrid",
+          "userPrincipalName": "bbm.ingrid@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Ivo",
+          "userPrincipalName": "bbm.ivo@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Jantine",
+          "userPrincipalName": "bbm.jantine@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Jos",
+          "userPrincipalName": "bbm.jos@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Judith",
+          "userPrincipalName": "bbm.judith@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Kees",
+          "userPrincipalName": "bbm.kees@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Kim",
+          "userPrincipalName": "bbm.kim@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Laura",
+          "userPrincipalName": "bbm.laura@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Leonie",
+          "userPrincipalName": "bbm.leonie@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Leonoor",
+          "userPrincipalName": "bbm.leonoor@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Marja",
+          "userPrincipalName": "bbm.marja@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Marjolein",
+          "userPrincipalName": "bbm.marjolein@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Marjolijn",
+          "userPrincipalName": "bbm.marjolijn@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Martie",
+          "userPrincipalName": "bbm.martie@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Martine",
+          "userPrincipalName": "bbm.martine@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Melda",
+          "userPrincipalName": "bbm.melda@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Micha",
+          "userPrincipalName": "bbm.micha@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Miriam",
+          "userPrincipalName": "bbm.miriam@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Monique",
+          "userPrincipalName": "bbm.monique@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Patricia",
+          "userPrincipalName": "bbm.patricia@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Peter",
+          "userPrincipalName": "bbm.peter@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Petra",
+          "userPrincipalName": "bbm.petra@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Pien",
+          "userPrincipalName": "bbm.pien@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Rob",
+          "userPrincipalName": "bbm.rob@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Roger",
+          "userPrincipalName": "bbm.roger@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Sabine",
+          "userPrincipalName": "bbm.sabine@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Sacha",
+          "userPrincipalName": "bbm.sacha@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Sander Haarlemmermeer",
+          "userPrincipalName": "bbm.sandervanrijn@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Saskia",
+          "userPrincipalName": "bbm.saskia@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Serge",
+          "userPrincipalName": "bbm.serge@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Sheila",
+          "userPrincipalName": "bbm.sheila@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Sigrid",
+          "userPrincipalName": "bbm.sigrid@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Simone",
+          "userPrincipalName": "bbm.simone@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Suzanne",
+          "userPrincipalName": "bbm.suzanne@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Sylvia",
+          "userPrincipalName": "bbm.sylvia@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Tanja",
+          "userPrincipalName": "bbm.tanja@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Tessa",
+          "userPrincipalName": "bbm.tessa@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Tijl",
+          "userPrincipalName": "bbm.tijl@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Ton",
+          "userPrincipalName": "bbm.ton@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Wendy",
+          "userPrincipalName": "bbm.wendy@meerwaarde.nl"
+        },
+        {
+          "displayName": "BBM Wilfred",
+          "userPrincipalName": "bbm.wilfred@meerwaarde.nl"
+        },
+        {
+          "displayName": "Dachar Wills",
+          "userPrincipalName": "dachar.wills@meerwaarde.nl"
+        },
+        {
+          "displayName": "HMVE Monique Worm",
+          "userPrincipalName": "hmve_monique.worm@meerwaarde.nl"
+        },
+        {
+          "displayName": "Kracht",
+          "userPrincipalName": "Kracht@meerwaarde.onmicrosoft.com"
+        },
+        {
+          "displayName": "Liesbeth Kila",
+          "userPrincipalName": "liesbeth.Kila@meerwaarde.nl"
+        },
+        {
+          "displayName": "O365 Facturen",
+          "userPrincipalName": "o365.facturen@meerwaarde.onmicrosoft.com"
+        },
+        {
+          "displayName": "O365 FacturenControle",
+          "userPrincipalName": "o365.facturencontrole@meerwaarde.onmicrosoft.com"
+        },
+        {
+          "displayName": "Postbus Facturen",
+          "userPrincipalName": "pb.facturen@meerwaarde.onmicrosoft.com"
+        },
+        {
+          "displayName": "Sebastiaan Timmermans",
+          "userPrincipalName": "s.timmermans@meerwaarde.nl"
+        },
+        {
+          "displayName": "TAH Ben",
+          "userPrincipalName": "tah.ben@meerwaarde.nl"
+        },
+        {
+          "displayName": "TAH Bob",
+          "userPrincipalName": "tah.bob@meerwaarde.nl"
+        },
+        {
+          "displayName": "TAH CynthiaW",
+          "userPrincipalName": "TAH.cynthiaw@meerwaarde.nl"
+        },
+        {
+          "displayName": "TAH Ed",
+          "userPrincipalName": "tah.ed@meerwaarde.nl"
+        },
+        {
+          "displayName": "TAH Ferhat",
+          "userPrincipalName": "tah.ferhat@meerwaarde.nl"
+        },
+        {
+          "displayName": "TAH Hans",
+          "userPrincipalName": "TAH.hans@meerwaarde.nl"
+        },
+        {
+          "displayName": "TAH Jan",
+          "userPrincipalName": "tah.jan@meerwaarde.nl"
+        },
+        {
+          "displayName": "TAH Jeanette",
+          "userPrincipalName": "tah.jeanette@meerwaarde.nl"
+        },
+        {
+          "displayName": "TAH Jolanda",
+          "userPrincipalName": "tah.jolanda@meerwaarde.nl"
+        },
+        {
+          "displayName": "TAH Leen",
+          "userPrincipalName": "TAH.leen@meerwaarde.nl"
+        },
+        {
+          "displayName": "TAH Lilian",
+          "userPrincipalName": "tah.lilian@meerwaarde.nl"
+        },
+        {
+          "displayName": "TAH Marcella",
+          "userPrincipalName": "tah.marcella@meerwaarde.nl"
+        },
+        {
+          "displayName": "TAH Michiel",
+          "userPrincipalName": "TAH.michiel@meerwaarde.nl"
+        },
+        {
+          "displayName": "TAH Paul",
+          "userPrincipalName": "tah.paul@meerwaarde.nl"
+        },
+        {
+          "displayName": "TAH Piet",
+          "userPrincipalName": "tah.piet@meerwaarde.nl"
+        },
+        {
+          "displayName": "TAH Ria",
+          "userPrincipalName": "TAH.ria@meerwaarde.nl"
+        },
+        {
+          "displayName": "TAH Sander",
+          "userPrincipalName": "TAH.sander@meerwaarde.nl"
+        },
+        {
+          "displayName": "Frank Veenman",
+          "userPrincipalName": "TAH_Frank@meerwaarde.nl"
+        },
+        {
+          "displayName": "Teamsbellen",
+          "userPrincipalName": "Teamsbellen@meerwaarde.pri.msft.voipitworld.com"
+        },
+        {
+          "displayName": "Teamsbellen",
+          "userPrincipalName": "Teamsbellen@meerwaarde.sec.msft.voipitworld.com"
+        },
+        {
+          "displayName": "Track the Talent",
+          "userPrincipalName": "trackthetalent@meerwaarde.nl"
+        },
+        {
+          "displayName": "uService Daywize",
+          "userPrincipalName": "uservice.daywize@meerwaarde.onmicrosoft.com"
+        },
+        {
+          "displayName": "Chadia Boulgalag",
+          "userPrincipalName": "vgt.Chadia@meerwaarde.nl"
+        },
+        {
+          "displayName": "Debby de Heus - de Vos",
+          "userPrincipalName": "vgt.Debby@meerwaarde.nl"
+        },
+        {
+          "displayName": "Elly van Dyck",
+          "userPrincipalName": "vgt.Elly@meerwaarde.nl"
+        },
+        {
+          "displayName": "Erik Romijn",
+          "userPrincipalName": "vgt.erik@meerwaarde.nl"
+        },
+        {
+          "displayName": "Fiona Van den Acker",
+          "userPrincipalName": "vgt.fiona@meerwaarde.nl"
+        },
+        {
+          "displayName": "Vilma Sedaria",
+          "userPrincipalName": "vgt.vilma@meerwaarde.nl"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Alleen betaalde licenties met toegewezen gebruikers zijn opgenomen.",
+      "Friendly SKU namen worden uit shared mapping geladen."
+    ],
+    "permissions": [
+      "Organization.Read.All",
+      "Directory.Read.All"
+    ]
+  }
+}

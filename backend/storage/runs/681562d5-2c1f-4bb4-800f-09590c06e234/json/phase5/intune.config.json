@@ -1,0 +1,47 @@
+{
+  "section": "intune",
+  "subsection": "config",
+  "label": "Configuratie",
+  "source": "assessment",
+  "generated_at": "2026-03-28T18:26:54.3481310+01:00",
+  "assessmentId": "20260328-173224",
+  "summary": {
+    "configProfiles": 4,
+    "appProtectionPolicies": 0,
+    "endpointSecurityPolicies": 0
+  },
+  "items": [
+    {
+      "DisplayName": "CFG_INTUNE_DEVICE_DISABLEUSERESP",
+      "Platform": "windows10Custom",
+      "CreatedDateTime": "15-09-2023",
+      "LastModifiedDateTime": "15-09-2023"
+    },
+    {
+      "DisplayName": "WIndows -  EndPoint Protection",
+      "Platform": "windows10EndpointProtection",
+      "CreatedDateTime": "29-12-2021",
+      "LastModifiedDateTime": "24-10-2024"
+    },
+    {
+      "DisplayName": "Windows - Multi User device Configuration- part 1/2",
+      "Platform": "sharedPC",
+      "CreatedDateTime": "29-12-2021",
+      "LastModifiedDateTime": "16-12-2024"
+    },
+    {
+      "DisplayName": "Windows - Multi User device Configuration- part 2/2",
+      "Platform": "windows10Custom",
+      "CreatedDateTime": "12-12-2024",
+      "LastModifiedDateTime": "12-12-2024"
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Configuratieprofielen uit Phase 5."
+    ],
+    "permissions": [
+      "DeviceManagementConfiguration.Read.All"
+    ]
+  }
+}

@@ -1,0 +1,656 @@
+{
+  "section": "apps",
+  "subsection": "registrations",
+  "label": "App Registrations",
+  "source": "assessment",
+  "generated_at": "2026-03-28T18:26:54.2918530+01:00",
+  "assessmentId": "20260328-173224",
+  "summary": {
+    "total": 16,
+    "expiredSecrets": 0,
+    "expiredCerts": 0,
+    "expiringSecrets": 0
+  },
+  "items": [
+    {
+      "DisplayName": "Exact_OAuth",
+      "AppId": "e0267fd9-caad-4fbc-82fe-a4778bf69305",
+      "ObjectId": "0662bfc9-43ee-4073-a62c-41f10fd89c02",
+      "CreatedDateTime": "2025-01-28T09:32:54Z",
+      "SecretCount": 1,
+      "SecretExpiration": "2027-01-28T09:41:45.244Z",
+      "SecretExpirationStatus": "🟢 Valid (305 days)",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 7,
+      "HasEnterpriseApp": true,
+      "Permissions": [
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "email"
+        },
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "offline_access"
+        },
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "openid"
+        },
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "profile"
+        },
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "User.Read"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "AccessReview.Read.All"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "Mail.Send"
+        }
+      ]
+    },
+    {
+      "DisplayName": "P2P Server",
+      "AppId": "4123aeb1-c225-4930-b278-6c20169d9057",
+      "ObjectId": "06d3d1c8-105d-4ea7-b873-e6c46918e33f",
+      "CreatedDateTime": "2022-02-04T12:54:10Z",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 0,
+      "HasEnterpriseApp": true,
+      "Permissions": []
+    },
+    {
+      "DisplayName": "Exact Synergy Globe  MFA",
+      "AppId": "6f95942d-d2c8-419e-8478-c2a77ea2f51a",
+      "ObjectId": "0910a0ea-7171-4901-99ce-c8795f26f033",
+      "CreatedDateTime": "2025-11-10T11:56:57Z",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 0,
+      "HasEnterpriseApp": true,
+      "Permissions": []
+    },
+    {
+      "DisplayName": "Scansys_OAuth",
+      "AppId": "f9f3da9f-17e8-4c2d-ab03-807b04327583",
+      "ObjectId": "0a9a9a56-9934-4d7b-8183-9bc36e53f738",
+      "CreatedDateTime": "2025-01-28T10:32:37Z",
+      "SecretCount": 1,
+      "SecretExpiration": "2027-01-28T10:33:44.736Z",
+      "SecretExpirationStatus": "🟢 Valid (305 days)",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 4,
+      "HasEnterpriseApp": true,
+      "Permissions": [
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": ""
+        },
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "offline_access"
+        },
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "Mail.ReadWrite.Shared"
+        },
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "Mail.Send.Shared"
+        }
+      ]
+    },
+    {
+      "DisplayName": "Zivver",
+      "AppId": "7159dd5e-5076-40fd-8d6e-daf75b863372",
+      "ObjectId": "1336d615-2d95-4277-9fea-ba256941a2bb",
+      "CreatedDateTime": "2025-03-19T14:31:34Z",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 0,
+      "HasEnterpriseApp": true,
+      "Permissions": []
+    },
+    {
+      "DisplayName": "Exact MFA - WEBAPP",
+      "AppId": "2a54233e-3ccf-4eb8-8190-8a361479f86b",
+      "ObjectId": "29a28dc0-a50a-4a5b-bae8-61f20d3f1358",
+      "CreatedDateTime": "2025-11-10T12:01:57Z",
+      "SecretCount": 2,
+      "SecretExpiration": "2027-11-10T12:14:03.026Z",
+      "SecretExpirationStatus": "🟢 Valid (591 days)",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 1,
+      "HasEnterpriseApp": true,
+      "Permissions": [
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "User.Read"
+        }
+      ]
+    },
+    {
+      "DisplayName": "Scansys-SSO-OPENID",
+      "AppId": "aeec9a97-6e6f-4c11-848f-c07651a865ea",
+      "ObjectId": "40f34ae3-67c6-4343-989e-5c66f639f607",
+      "CreatedDateTime": "2025-02-07T13:57:00Z",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 4,
+      "HasEnterpriseApp": true,
+      "Permissions": [
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": ""
+        },
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "openid"
+        },
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "offline_access"
+        },
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "profile"
+        }
+      ]
+    },
+    {
+      "DisplayName": "resources-check",
+      "AppId": "0b059013-cb88-4189-b0ba-16280d286e42",
+      "ObjectId": "5676de96-f762-413c-9317-0d77ca8e853a",
+      "CreatedDateTime": "2026-02-11T09:50:27Z",
+      "SecretCount": 1,
+      "SecretExpiration": "2028-02-11T09:54:00.185Z",
+      "SecretExpirationStatus": "🟢 Valid (684 days)",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 3,
+      "HasEnterpriseApp": true,
+      "Permissions": [
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "User.Read"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "Calendars.Read"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "User.Read.All"
+        }
+      ]
+    },
+    {
+      "DisplayName": "Regicare",
+      "AppId": "d1ca5455-ee5d-425e-ae07-b49c528a7fc9",
+      "ObjectId": "5b85d42f-9889-4d5d-86ad-18509aad1284",
+      "CreatedDateTime": "2024-12-04T09:31:11Z",
+      "SecretCount": 1,
+      "SecretExpiration": "2026-12-04T09:35:05.002Z",
+      "SecretExpirationStatus": "🟢 Valid (250 days)",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 1,
+      "HasEnterpriseApp": true,
+      "Permissions": [
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "User.Read"
+        }
+      ]
+    },
+    {
+      "DisplayName": "Baseline-scan",
+      "AppId": "599793e6-e507-46d3-95a0-c0597251bd84",
+      "ObjectId": "5c1b81fc-b832-475f-9377-679f1c74249a",
+      "CreatedDateTime": "2026-03-24T10:54:55Z",
+      "SecretCount": 1,
+      "SecretExpiration": "2027-03-24T15:07:03.022Z",
+      "SecretExpirationStatus": "🟢 Valid (360 days)",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 41,
+      "HasEnterpriseApp": true,
+      "Permissions": [
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "Mail.Read"
+        },
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "Mail.Read.Shared"
+        },
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "Mail.ReadBasic"
+        },
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "Mail.ReadBasic.Shared"
+        },
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "MailboxConfigItem.Read"
+        },
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "MailboxFolder.Read"
+        },
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "MailboxSettings.Read"
+        },
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "User.Read"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "Policy.Read.ConditionalAccess"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "Policy.Read.DeviceConfiguration"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "Policy.Read.AuthenticationMethod"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "DeviceManagementManagedDevices.Read.All"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "MailboxFolder.Read.All"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "DelegatedAdminRelationship.Read.All"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "UserAuthenticationMethod.Read.All"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "Policy.Read.PermissionGrant"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "MailboxItem.Read.All"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "SecurityEvents.Read.All"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "Mail.ReadBasic.All"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "RoleManagement.Read.Directory"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "Group.Read.All"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "RoleManagement.Read.Exchange"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "MailboxSettings.Read"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "Sites.Read.All"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "MailboxConfigItem.Read"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "Directory.Read.All"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "ReportSettings.Read.All"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "RoleManagement.Read.All"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "User.Read.All"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "DeviceManagementConfiguration.Read.All"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "Team.ReadBasic.All"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "Mail.Read"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "Organization.Read.All"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "RoleManagement.Read.Defender"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "Mail.ReadBasic"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "AuditLog.Read.All"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "Policy.Read.All"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "Application.Read.All"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "Reports.Read.All"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "Policy.Read.IdentityProtection"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "Policy.Read.B2BManagementPolicy"
+        }
+      ]
+    },
+    {
+      "DisplayName": "Synergy Email Service",
+      "AppId": "8bbd9246-3cbf-45e4-a32b-2f460cc1aa92",
+      "ObjectId": "607961c2-193c-4f47-90ea-9a24a445b158",
+      "CreatedDateTime": "2025-11-07T13:59:08Z",
+      "SecretCount": 1,
+      "SecretExpiration": "2026-05-06T13:29:58.96Z",
+      "SecretExpirationStatus": "🟠 Expires in 38 days",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 2,
+      "HasEnterpriseApp": true,
+      "Permissions": [
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "Mail.Send"
+        },
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "User.Read"
+        }
+      ]
+    },
+    {
+      "DisplayName": "EXACT MFA - PUBLIC APP",
+      "AppId": "815820a1-6ad3-49db-8ad9-63e61dfdf45b",
+      "ObjectId": "b7763cbb-1377-4f62-8f7e-9695cf2c06a2",
+      "CreatedDateTime": "2025-11-10T12:22:02Z",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 2,
+      "HasEnterpriseApp": true,
+      "Permissions": [
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "User.Read"
+        },
+        {
+          "Resource": "7d25f2f5-4978-4b18-9a1d-2ea09031dbdf",
+          "Type": "Delegated",
+          "Permission": "user_impersonation"
+        }
+      ]
+    },
+    {
+      "DisplayName": "Arda Online",
+      "AppId": "0e00d923-edee-4390-8f8c-d4dad2646f72",
+      "ObjectId": "be57cfa8-341b-4468-a494-0ad12a1bb79b",
+      "CreatedDateTime": "2024-06-06T08:38:24Z",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 0,
+      "HasEnterpriseApp": true,
+      "Permissions": []
+    },
+    {
+      "DisplayName": "ConnectSyncProvisioning_SRV-MEE-DC01_8d9ae538c4bd",
+      "AppId": "711dcc3b-c9e8-4586-84d6-b082dbe6bb56",
+      "ObjectId": "d2c2a3e8-aa0e-40d7-80b7-712fb6707a70",
+      "CreatedDateTime": "2025-09-15T17:56:48Z",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 1,
+      "CertificateExpiration": "2026-09-22T19:22:59Z",
+      "CertificateExpirationStatus": "🟢 Valid (178 days)",
+      "PermissionCount": 4,
+      "HasEnterpriseApp": true,
+      "Permissions": [
+        {
+          "Resource": "Microsoft password reset service",
+          "Type": "Application",
+          "Permission": "PasswordWriteback.RegisterClientVersion.All"
+        },
+        {
+          "Resource": "Microsoft password reset service",
+          "Type": "Application",
+          "Permission": "PasswordWriteback.OffboardClient.All"
+        },
+        {
+          "Resource": "Microsoft password reset service",
+          "Type": "Application",
+          "Permission": "PasswordWriteback.RefreshClient.All"
+        },
+        {
+          "Resource": "Microsoft Entra AD Synchronization Service",
+          "Type": "Application",
+          "Permission": "ADSynchronization.ReadWrite.All"
+        }
+      ]
+    },
+    {
+      "DisplayName": "Zivver",
+      "AppId": "7367fce5-f910-4bc6-9f12-7cd49dee346f",
+      "ObjectId": "d47ffe47-881f-4612-8908-bb3c9969a977",
+      "CreatedDateTime": "2025-03-19T19:25:58Z",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 0,
+      "HasEnterpriseApp": true,
+      "Permissions": []
+    },
+    {
+      "DisplayName": "Orbis SMTP",
+      "AppId": "54509e72-665d-4752-a818-aa9314ad3511",
+      "ObjectId": "f69f95e2-be05-4fbb-aa3b-6bfdf1a3b187",
+      "CreatedDateTime": "2025-11-07T14:11:40Z",
+      "SecretCount": 1,
+      "SecretExpiration": "2026-05-06T13:31:11.792Z",
+      "SecretExpirationStatus": "🟠 Expires in 38 days",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 7,
+      "HasEnterpriseApp": true,
+      "Permissions": [
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "SMTP.Send"
+        },
+        {
+          "Resource": "1b2dbb71-e184-4c2c-8db5-1302cc2894bd",
+          "Type": "Delegated",
+          "Permission": "User.Read"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "Policy.ReadWrite.ConditionalAccess"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "User.Read.All"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "Mail.Send"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "AuditLog.Read.All"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Type": "Application",
+          "Permission": "Policy.Read.All"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Application snapshot uit Phase 3."
+    ],
+    "permissions": [
+      "Application.Read.All",
+      "Directory.Read.All"
+    ]
+  }
+}
