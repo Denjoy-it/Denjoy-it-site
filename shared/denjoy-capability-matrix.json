@@ -1,0 +1,602 @@
+{
+  "version": 1,
+  "generated_strategy": "manual-blueprint",
+  "defaults": {
+    "supports_snapshot": true,
+    "backend_only": true,
+    "assessment_fallback": true
+  },
+  "modules": [
+    {
+      "section": "gebruikers",
+      "label": "Gebruikers",
+      "engine": "m365",
+      "live_source": "graph",
+      "access_method": "gdap_plus_graph",
+      "overview_supported": true,
+      "subsections": [
+        {
+          "key": "users",
+          "label": "Gebruikers",
+          "gdap_required": true,
+          "gdap_sufficient": true,
+          "extra_roles": ["User administrator", "Directory readers"],
+          "extra_consent": ["User.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 5,
+          "write_supported": true
+        },
+        {
+          "key": "licenses",
+          "label": "Licenties",
+          "gdap_required": true,
+          "gdap_sufficient": true,
+          "extra_roles": ["License administrator", "Directory readers"],
+          "extra_consent": ["Organization.Read.All", "Directory.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 10,
+          "write_supported": true
+        },
+        {
+          "key": "history",
+          "label": "Geschiedenis",
+          "gdap_required": false,
+          "gdap_sufficient": false,
+          "extra_roles": [],
+          "extra_consent": [],
+          "supports_live": false,
+          "cache_minutes": 0,
+          "write_supported": false
+        }
+      ]
+    },
+    {
+      "section": "identity",
+      "label": "Identity",
+      "engine": "m365",
+      "live_source": "graph",
+      "access_method": "gdap_plus_graph",
+      "overview_supported": true,
+      "subsections": [
+        {
+          "key": "mfa",
+          "label": "MFA",
+          "gdap_required": true,
+          "gdap_sufficient": true,
+          "extra_roles": ["Authentication administrator", "Reports reader"],
+          "extra_consent": ["UserAuthenticationMethod.Read.All", "Reports.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 10,
+          "write_supported": false
+        },
+        {
+          "key": "guests",
+          "label": "Guests",
+          "gdap_required": true,
+          "gdap_sufficient": true,
+          "extra_roles": ["User administrator", "Guest inviter"],
+          "extra_consent": ["User.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 5,
+          "write_supported": false
+        },
+        {
+          "key": "admin-roles",
+          "label": "Admin Roles",
+          "gdap_required": true,
+          "gdap_sufficient": true,
+          "extra_roles": ["Global reader", "Directory readers"],
+          "extra_consent": ["RoleManagement.Read.Directory", "Directory.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 10,
+          "write_supported": false
+        },
+        {
+          "key": "security-defaults",
+          "label": "Security Defaults",
+          "gdap_required": true,
+          "gdap_sufficient": true,
+          "extra_roles": ["Security reader"],
+          "extra_consent": ["Policy.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 10,
+          "write_supported": false
+        },
+        {
+          "key": "legacy-auth",
+          "label": "Legacy Auth",
+          "gdap_required": true,
+          "gdap_sufficient": true,
+          "extra_roles": ["Security reader", "Reports reader"],
+          "extra_consent": ["AuditLog.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 15,
+          "write_supported": false
+        }
+      ]
+    },
+    {
+      "section": "apps",
+      "label": "App Registrations",
+      "engine": "m365",
+      "live_source": "graph",
+      "access_method": "hybrid_gdap_or_customer_app",
+      "overview_supported": true,
+      "subsections": [
+        {
+          "key": "registrations",
+          "label": "Registrations",
+          "gdap_required": true,
+          "gdap_sufficient": false,
+          "extra_roles": ["Application administrator", "Cloud application administrator", "Directory readers"],
+          "extra_consent": ["Application.Read.All", "Directory.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 15,
+          "write_supported": false
+        }
+      ]
+    },
+    {
+      "section": "ca",
+      "label": "Conditional Access",
+      "engine": "m365",
+      "live_source": "graph",
+      "access_method": "hybrid_gdap_or_customer_app",
+      "overview_supported": true,
+      "subsections": [
+        {
+          "key": "policies",
+          "label": "Policies",
+          "gdap_required": true,
+          "gdap_sufficient": false,
+          "extra_roles": ["Conditional access administrator", "Security reader"],
+          "extra_consent": ["Policy.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 10,
+          "write_supported": true
+        },
+        {
+          "key": "named-locations",
+          "label": "Named Locations",
+          "gdap_required": true,
+          "gdap_sufficient": false,
+          "extra_roles": ["Conditional access administrator"],
+          "extra_consent": ["Policy.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 10,
+          "write_supported": true
+        },
+        {
+          "key": "history",
+          "label": "Geschiedenis",
+          "gdap_required": false,
+          "gdap_sufficient": false,
+          "extra_roles": [],
+          "extra_consent": [],
+          "supports_live": false,
+          "cache_minutes": 0,
+          "write_supported": false
+        }
+      ]
+    },
+    {
+      "section": "alerts",
+      "label": "Alerts",
+      "engine": "m365",
+      "live_source": "graph_security",
+      "access_method": "hybrid_gdap_or_customer_app",
+      "overview_supported": true,
+      "subsections": [
+        {
+          "key": "audit-logs",
+          "label": "Audit Log",
+          "gdap_required": true,
+          "gdap_sufficient": false,
+          "extra_roles": ["Security reader", "Reports reader"],
+          "extra_consent": ["AuditLog.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 15,
+          "write_supported": false
+        },
+        {
+          "key": "secure-score",
+          "label": "Secure Score",
+          "gdap_required": true,
+          "gdap_sufficient": false,
+          "extra_roles": ["Security reader"],
+          "extra_consent": ["SecurityEvents.Read.All", "Policy.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 30,
+          "write_supported": false
+        },
+        {
+          "key": "sign-ins",
+          "label": "Aanmeldingen",
+          "gdap_required": true,
+          "gdap_sufficient": false,
+          "extra_roles": ["Security reader", "Reports reader"],
+          "extra_consent": ["AuditLog.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 15,
+          "write_supported": false
+        },
+        {
+          "key": "notifications",
+          "label": "Notificaties",
+          "gdap_required": false,
+          "gdap_sufficient": false,
+          "extra_roles": [],
+          "extra_consent": [],
+          "supports_live": false,
+          "cache_minutes": 0,
+          "write_supported": true
+        }
+      ]
+    },
+    {
+      "section": "intune",
+      "label": "Intune",
+      "engine": "m365",
+      "live_source": "graph_intune",
+      "access_method": "gdap_plus_graph",
+      "overview_supported": true,
+      "subsections": [
+        {
+          "key": "summary",
+          "label": "Overzicht",
+          "gdap_required": true,
+          "gdap_sufficient": true,
+          "extra_roles": ["Intune administrator", "Reports reader"],
+          "extra_consent": ["DeviceManagementManagedDevices.Read.All", "DeviceManagementConfiguration.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 10,
+          "write_supported": false
+        },
+        {
+          "key": "devices",
+          "label": "Apparaten",
+          "gdap_required": true,
+          "gdap_sufficient": true,
+          "extra_roles": ["Intune administrator"],
+          "extra_consent": ["DeviceManagementManagedDevices.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 10,
+          "write_supported": false
+        },
+        {
+          "key": "compliance",
+          "label": "Compliance",
+          "gdap_required": true,
+          "gdap_sufficient": true,
+          "extra_roles": ["Intune administrator"],
+          "extra_consent": ["DeviceManagementConfiguration.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 10,
+          "write_supported": false
+        },
+        {
+          "key": "config",
+          "label": "Configuratie",
+          "gdap_required": true,
+          "gdap_sufficient": true,
+          "extra_roles": ["Intune administrator"],
+          "extra_consent": ["DeviceManagementConfiguration.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 10,
+          "write_supported": true
+        },
+        {
+          "key": "history",
+          "label": "Geschiedenis",
+          "gdap_required": false,
+          "gdap_sufficient": false,
+          "extra_roles": [],
+          "extra_consent": [],
+          "supports_live": false,
+          "cache_minutes": 0,
+          "write_supported": false
+        }
+      ]
+    },
+    {
+      "section": "exchange",
+      "label": "Exchange",
+      "engine": "m365",
+      "live_source": "graph_or_exchange_online",
+      "access_method": "customer_app_consent_first",
+      "overview_supported": true,
+      "subsections": [
+        {
+          "key": "mailboxes",
+          "label": "Mailboxen",
+          "gdap_required": false,
+          "gdap_sufficient": false,
+          "extra_roles": ["Exchange administrator"],
+          "extra_consent": ["User.Read.All", "Mail.ReadBasic.All", "MailboxSettings.Read"],
+          "supports_live": true,
+          "cache_minutes": 10,
+          "write_supported": false
+        },
+        {
+          "key": "forwarding",
+          "label": "Forwarding",
+          "gdap_required": false,
+          "gdap_sufficient": false,
+          "extra_roles": ["Exchange administrator"],
+          "extra_consent": ["MailboxSettings.Read"],
+          "supports_live": true,
+          "cache_minutes": 10,
+          "write_supported": false
+        },
+        {
+          "key": "mailbox-rules",
+          "label": "Inbox Regels",
+          "gdap_required": false,
+          "gdap_sufficient": false,
+          "extra_roles": ["Exchange administrator"],
+          "extra_consent": ["MailboxSettings.Read"],
+          "supports_live": true,
+          "cache_minutes": 10,
+          "write_supported": false
+        }
+      ]
+    },
+    {
+      "section": "teams",
+      "label": "Teams",
+      "engine": "m365",
+      "live_source": "graph_teams",
+      "access_method": "customer_app_consent_first",
+      "overview_supported": true,
+      "subsections": [
+        {
+          "key": "teams",
+          "label": "Teams",
+          "gdap_required": false,
+          "gdap_sufficient": false,
+          "extra_roles": ["Teams administrator", "Teams communications support specialist"],
+          "extra_consent": ["Team.ReadBasic.All", "TeamMember.Read.All", "Reports.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 10,
+          "write_supported": false
+        }
+      ]
+    },
+    {
+      "section": "sharepoint",
+      "label": "SharePoint",
+      "engine": "m365",
+      "live_source": "graph_sharepoint",
+      "access_method": "customer_app_consent_first",
+      "overview_supported": true,
+      "subsections": [
+        {
+          "key": "sharepoint-sites",
+          "label": "Sites",
+          "gdap_required": false,
+          "gdap_sufficient": false,
+          "extra_roles": ["SharePoint administrator"],
+          "extra_consent": ["Sites.Read.All", "Reports.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 10,
+          "write_supported": false
+        },
+        {
+          "key": "sharepoint-settings",
+          "label": "Instellingen",
+          "gdap_required": false,
+          "gdap_sufficient": false,
+          "extra_roles": ["SharePoint administrator"],
+          "extra_consent": ["Sites.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 15,
+          "write_supported": false
+        },
+        {
+          "key": "sharepoint-backup",
+          "label": "Backup",
+          "gdap_required": false,
+          "gdap_sufficient": false,
+          "extra_roles": ["SharePoint administrator"],
+          "extra_consent": ["BackupRestore-Configuration.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 15,
+          "write_supported": false
+        }
+      ]
+    },
+    {
+      "section": "backup",
+      "label": "Backup",
+      "engine": "m365",
+      "live_source": "m365_backup",
+      "access_method": "customer_app_consent_first",
+      "overview_supported": true,
+      "subsections": [
+        {
+          "key": "summary",
+          "label": "Overzicht",
+          "gdap_required": false,
+          "gdap_sufficient": false,
+          "extra_roles": ["Global reader"],
+          "extra_consent": ["BackupRestore-Configuration.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 15,
+          "write_supported": false
+        },
+        {
+          "key": "onedrive",
+          "label": "OneDrive",
+          "gdap_required": false,
+          "gdap_sufficient": false,
+          "extra_roles": ["SharePoint administrator"],
+          "extra_consent": ["BackupRestore-Configuration.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 15,
+          "write_supported": false
+        },
+        {
+          "key": "exchange",
+          "label": "Exchange",
+          "gdap_required": false,
+          "gdap_sufficient": false,
+          "extra_roles": ["Exchange administrator"],
+          "extra_consent": ["BackupRestore-Configuration.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 15,
+          "write_supported": false
+        },
+        {
+          "key": "history",
+          "label": "Geschiedenis",
+          "gdap_required": false,
+          "gdap_sufficient": false,
+          "extra_roles": [],
+          "extra_consent": [],
+          "supports_live": false,
+          "cache_minutes": 0,
+          "write_supported": false
+        }
+      ]
+    },
+    {
+      "section": "domains",
+      "label": "Domeinen",
+      "engine": "hybrid",
+      "live_source": "graph_plus_public_dns",
+      "access_method": "hybrid_gdap_or_customer_app",
+      "overview_supported": true,
+      "subsections": [
+        {
+          "key": "domains-list",
+          "label": "Domeinen",
+          "gdap_required": true,
+          "gdap_sufficient": true,
+          "extra_roles": ["Directory readers"],
+          "extra_consent": ["Domain.Read.All"],
+          "supports_live": true,
+          "cache_minutes": 30,
+          "write_supported": false
+        },
+        {
+          "key": "domains-analyse",
+          "label": "Analyse",
+          "gdap_required": false,
+          "gdap_sufficient": false,
+          "extra_roles": [],
+          "extra_consent": [],
+          "supports_live": true,
+          "cache_minutes": 30,
+          "write_supported": false
+        }
+      ]
+    },
+    {
+      "section": "azure",
+      "label": "Azure",
+      "engine": "azure",
+      "live_source": "lighthouse_arm_monitor_cost_arg",
+      "access_method": "azure_lighthouse",
+      "overview_supported": true,
+      "subsections": [
+        {
+          "key": "subscriptions",
+          "label": "Subscriptions",
+          "gdap_required": false,
+          "gdap_sufficient": false,
+          "extra_roles": ["Reader"],
+          "extra_consent": ["Azure Lighthouse delegated access"],
+          "supports_live": true,
+          "cache_minutes": 10,
+          "write_supported": false
+        },
+        {
+          "key": "resources",
+          "label": "Resources",
+          "gdap_required": false,
+          "gdap_sufficient": false,
+          "extra_roles": ["Reader"],
+          "extra_consent": ["Azure Lighthouse delegated access"],
+          "supports_live": true,
+          "cache_minutes": 10,
+          "write_supported": false
+        },
+        {
+          "key": "alerts",
+          "label": "Alerts",
+          "gdap_required": false,
+          "gdap_sufficient": false,
+          "extra_roles": ["Monitoring Reader"],
+          "extra_consent": ["Azure Lighthouse delegated access"],
+          "supports_live": true,
+          "cache_minutes": 5,
+          "write_supported": false
+        },
+        {
+          "key": "costs",
+          "label": "Costs",
+          "gdap_required": false,
+          "gdap_sufficient": false,
+          "extra_roles": ["Cost Management Reader"],
+          "extra_consent": ["Azure Lighthouse delegated access"],
+          "supports_live": true,
+          "cache_minutes": 60,
+          "write_supported": false
+        },
+        {
+          "key": "vm-actions",
+          "label": "VM acties",
+          "gdap_required": false,
+          "gdap_sufficient": false,
+          "extra_roles": ["Virtual Machine Contributor"],
+          "extra_consent": ["Azure Lighthouse delegated access"],
+          "supports_live": true,
+          "cache_minutes": 0,
+          "write_supported": true
+        }
+      ]
+    },
+    {
+      "section": "compliance",
+      "label": "Compliance",
+      "engine": "m365",
+      "live_source": "assessment_snapshot",
+      "access_method": "assessment_only",
+      "overview_supported": false,
+      "subsections": [
+        {
+          "key": "cis",
+          "label": "CIS Benchmark",
+          "gdap_required": false,
+          "gdap_sufficient": false,
+          "extra_roles": [],
+          "extra_consent": [],
+          "supports_live": false,
+          "cache_minutes": 0,
+          "write_supported": false
+        }
+      ]
+    },
+    {
+      "section": "hybrid",
+      "label": "Hybrid Identity",
+      "engine": "m365",
+      "live_source": "assessment_snapshot",
+      "access_method": "assessment_only",
+      "overview_supported": false,
+      "subsections": [
+        {
+          "key": "sync",
+          "label": "AD Connect Sync",
+          "gdap_required": false,
+          "gdap_sufficient": false,
+          "extra_roles": [],
+          "extra_consent": [],
+          "supports_live": false,
+          "cache_minutes": 0,
+          "write_supported": false
+        }
+      ]
+    }
+  ]
+}

@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Klantportaal — Denjoy IT</title>
+    <link rel="icon" type="image/svg+xml" href="images/web.svg">
+    <link rel="shortcut icon" type="image/svg+xml" href="images/web.svg">
+    <!-- Preconnect — versnelt fonts en MSAL laden -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://alcdn.msauth.net">
     <link rel="stylesheet" href="css/portal.css">
     <link rel="stylesheet" href="css/kb.css">
     <link rel="stylesheet" href="css/assessment-ui.css">
+    <link rel="stylesheet" href="css/remediate.css">
+    <link rel="stylesheet" href="css/gebruikers.css">
+    <link rel="stylesheet" href="css/baseline.css">
+    <link rel="stylesheet" href="css/intune.css">
+    <link rel="stylesheet" href="css/backup.css">
+    <link rel="stylesheet" href="css/ca.css">
+    <link rel="stylesheet" href="css/domains.css">
+    <link rel="stylesheet" href="css/alerts.css">
+    <link rel="stylesheet" href="css/exchange.css">
+    <link rel="stylesheet" href="css/bevindingen.css">
     <!-- MSAL.js — Microsoft Authentication Library -->
     <script src="https://alcdn.msauth.net/browser/2.38.3/js/msal-browser.min.js"></script>
 </head>
@@ -23,17 +39,244 @@
             </a>
 
             <!-- Nav links -->
-            <ul class="portal-nav-links">
-                <li><a href="#" class="portal-nav-link active" data-section="overview">Overzicht</a></li>
-                <li><a href="#" class="portal-nav-link" data-section="assessment">M365 Assessment</a></li>
-                <li><a href="#" class="portal-nav-link" data-section="entrafalcon">Entra Security</a></li>
-                <li><a href="#" class="portal-nav-link" data-section="results">Rapporten</a></li>
-                <li><a href="#" class="portal-nav-link" data-section="kb">Kennisbank</a></li>
-                <li><a href="#" class="portal-nav-link" data-section="settings">Admin</a></li>
-            </ul>
+            <ul class="portal-nav-links" id="portalNavLinks">
+    <!-- Overzicht -->
+    <li><a href="#" class="portal-nav-link active" data-section="overview">Overzicht</a></li>
+
+    <!-- GROEP 1: Gebruikers & Identiteit -->
+    <li class="nav-dropdown" data-nav-group="gbid">
+        <button type="button" class="portal-nav-link nav-dropdown-toggle" data-section="gbidHub" aria-expanded="false">
+            Gebruikers &amp; Identiteit
+            <span class="nav-chevron">▾</span>
+        </button>
+        <div class="nav-dropdown-menu">
+            <button type="button" class="nav-dropdown-link" data-section="gebruikers" data-gb-tab="gebruikers">
+                <span class="nav-dropdown-icon"><img src="images/m365/users.svg" alt="Gebruikers"></span>
+                <span class="ddl-content"><strong>Gebruikers</strong><small>Accounts en lifecycle</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="gebruikers" data-gb-tab="licenties">
+                <span class="nav-dropdown-icon"><img src="images/m365/licenses.svg" alt="Licenties"></span>
+                <span class="ddl-content"><strong>Licenties</strong><small>Toewijzingen en gebruik</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="identity" data-live-tab="mfa">
+                <span class="nav-dropdown-icon"><img src="images/m365/identity.svg" alt="MFA"></span>
+                <span class="ddl-content"><strong>MFA</strong><small>Registratiestatus en dekking</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="identity" data-live-tab="guests">
+                <span class="nav-dropdown-icon"><img src="images/m365/identity.svg" alt="Gasten"></span>
+                <span class="ddl-content"><strong>Gasten</strong><small>Gastaccounts en gebruik</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="identity" data-live-tab="admin-roles">
+                <span class="nav-dropdown-icon"><img src="images/m365/identity.svg" alt="Admin Rollen"></span>
+                <span class="ddl-content"><strong>Admin Rollen</strong><small>Rollen en leden</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="ca" data-ca-tab="policies">
+                <span class="nav-dropdown-icon"><img src="images/m365/conditional-access.svg" alt="Conditional Access"></span>
+                <span class="ddl-content"><strong>Conditional Access</strong><small>Policies en locaties</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="apps" data-live-tab="registrations">
+                <span class="nav-dropdown-icon"><img src="images/m365/apps.svg" alt="App Registraties"></span>
+                <span class="ddl-content"><strong>App Registraties</strong><small>Secrets, certs en permissies</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="hybrid" data-live-tab="sync">
+                <span class="nav-dropdown-icon"><img src="images/m365/identity.svg" alt="Hybrid Identity"></span>
+                <span class="ddl-content"><strong>Hybrid Identity</strong><small>AD Connect sync en domeinen</small></span>
+            </button>
+        </div>
+    </li>
+
+    <!-- GROEP 2: Security & Compliance -->
+    <li class="nav-dropdown" data-nav-group="security">
+        <button type="button" class="portal-nav-link nav-dropdown-toggle" data-section="securityHub" aria-expanded="false">
+            Security &amp; Compliance
+            <span class="nav-chevron">▾</span>
+        </button>
+        <div class="nav-dropdown-menu">
+            <button type="button" class="nav-dropdown-link" data-section="alerts" data-live-tab="securescr">
+                <span class="nav-dropdown-icon"><img src="images/m365/alerts.svg" alt="Secure Score"></span>
+                <span class="ddl-content"><strong>Secure Score</strong><small>Score en aanbevelingen</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="alerts" data-live-tab="auditlog">
+                <span class="nav-dropdown-icon"><img src="images/m365/alerts.svg" alt="Audit Log"></span>
+                <span class="ddl-content"><strong>Audit Log</strong><small>Events en tenantwijzigingen</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="alerts" data-live-tab="signins">
+                <span class="nav-dropdown-icon"><img src="images/m365/alerts.svg" alt="Aanmeldingen"></span>
+                <span class="ddl-content"><strong>Aanmeldingen</strong><small>Sign-ins en risico-indicatoren</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="bevindingen">
+                <span class="nav-dropdown-icon"><img src="images/m365/alerts.svg" alt="Bevindingen"></span>
+                <span class="ddl-content"><strong>Bevindingen</strong><small>Openstaande findings en health</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="compliance" data-live-tab="cis">
+                <span class="nav-dropdown-icon"><img src="images/m365/alerts.svg" alt="CIS Benchmark"></span>
+                <span class="ddl-content"><strong>CIS Benchmark</strong><small>M365 Foundations v3.0 compliance</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="identity" data-live-tab="legacy-auth">
+                <span class="nav-dropdown-icon"><img src="images/m365/identity.svg" alt="Legacy Auth"></span>
+                <span class="ddl-content"><strong>Legacy Auth</strong><small>Activiteit en risico</small></span>
+            </button>
+        </div>
+    </li>
+
+    <!-- GROEP 3: Samenwerking & Email -->
+    <li class="nav-dropdown" data-nav-group="collab">
+        <button type="button" class="portal-nav-link nav-dropdown-toggle" data-section="collabHub" aria-expanded="false">
+            Samenwerking &amp; Email
+            <span class="nav-chevron">▾</span>
+        </button>
+        <div class="nav-dropdown-menu">
+            <button type="button" class="nav-dropdown-link" data-section="exchange" data-live-tab="mailboxen">
+                <span class="nav-dropdown-icon"><img src="images/m365/exchange.svg" alt="Exchange"></span>
+                <span class="ddl-content"><strong>Exchange</strong><small>Mailboxen, forwarding en regels</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="teams" data-live-tab="teams">
+                <span class="nav-dropdown-icon"><img src="images/m365/teams.svg" alt="Teams"></span>
+                <span class="ddl-content"><strong>Teams</strong><small>Teams en leden</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="sharepoint" data-live-tab="sharepoint-sites">
+                <span class="nav-dropdown-icon"><img src="images/m365/sharepoint.svg" alt="SharePoint"></span>
+                <span class="ddl-content"><strong>SharePoint</strong><small>Sites en instellingen</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="domains" data-live-tab="domains-list">
+                <span class="nav-dropdown-icon"><img src="images/m365/domains.svg" alt="Domeinen"></span>
+                <span class="ddl-content"><strong>Domeinen</strong><small>DNS, SPF, DKIM en DMARC</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="backup" data-live-tab="overzicht">
+                <span class="nav-dropdown-icon"><img src="images/m365/microsoft365.svg" alt="Backup"></span>
+                <span class="ddl-content"><strong>Backup</strong><small>M365 Backup en policies</small></span>
+            </button>
+        </div>
+    </li>
+
+    <!-- GROEP 4: Devices & Intune -->
+    <li class="nav-dropdown" data-nav-group="devices">
+        <button type="button" class="portal-nav-link nav-dropdown-toggle" data-section="devicesHub" aria-expanded="false">
+            Devices &amp; Intune
+            <span class="nav-chevron">▾</span>
+        </button>
+        <div class="nav-dropdown-menu">
+            <button type="button" class="nav-dropdown-link" data-section="intune" data-live-tab="overzicht">
+                <span class="nav-dropdown-icon"><img src="images/m365/intune.svg" alt="Intune Overzicht"></span>
+                <span class="ddl-content"><strong>Overzicht</strong><small>Device posture en compliance</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="intune" data-live-tab="apparaten">
+                <span class="nav-dropdown-icon"><img src="images/m365/intune.svg" alt="Apparaten"></span>
+                <span class="ddl-content"><strong>Apparaten</strong><small>Managed devices en details</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="intune" data-live-tab="compliance">
+                <span class="nav-dropdown-icon"><img src="images/m365/intune.svg" alt="Compliance"></span>
+                <span class="ddl-content"><strong>Compliance</strong><small>Policies en status</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="intune" data-live-tab="configuratie">
+                <span class="nav-dropdown-icon"><img src="images/m365/intune.svg" alt="Configuratie"></span>
+                <span class="ddl-content"><strong>Configuratie</strong><small>Profielen en instellingen</small></span>
+            </button>
+        </div>
+    </li>
+
+    <!-- GROEP 5: Assessment & Opvolging -->
+    <li class="nav-dropdown" data-nav-group="followup">
+        <button type="button" class="portal-nav-link nav-dropdown-toggle" data-section="assessmentHub" aria-expanded="false">
+            Assessment &amp; Opvolging
+            <span class="nav-chevron">▾</span>
+        </button>
+        <div class="nav-dropdown-menu">
+            <button type="button" class="nav-dropdown-link" data-section="assessment">
+                <span class="nav-dropdown-icon">▶</span>
+                <span class="ddl-content"><strong>Assessment starten</strong><small>Nieuwe scan uitvoeren</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="results" data-results-panel="viewer">
+                <span class="nav-dropdown-icon">◫</span>
+                <span class="ddl-content"><strong>Rapporten</strong><small>Scores en rapport viewer</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="results" data-results-panel="actions">
+                <span class="nav-dropdown-icon">✓</span>
+                <span class="ddl-content"><strong>Acties</strong><small>Findings en opvolging</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="herstel">
+                <span class="nav-dropdown-icon">✦</span>
+                <span class="ddl-content"><strong>Herstel</strong><small>Remediations uitvoeren</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="baseline">
+                <span class="nav-dropdown-icon">▣</span>
+                <span class="ddl-content"><strong>Baseline</strong><small>Gold tenant-profielen</small></span>
+            </button>
+        </div>
+    </li>
+
+    <!-- GROEP 6: Kennisbank -->
+    <li class="nav-dropdown" data-nav-group="kb">
+        <button type="button" class="portal-nav-link nav-dropdown-toggle" data-section="kb" data-kb-tab="overview" aria-expanded="false">
+            Kennisbank
+            <span class="nav-chevron">▾</span>
+        </button>
+        <div class="nav-dropdown-menu nav-dropdown-menu--wide">
+            <button type="button" class="nav-dropdown-link" data-section="kb" data-kb-tab="overview"><span class="nav-dropdown-icon">⌂</span><span class="ddl-content"><strong>Overzicht</strong><small>Startpunt documentatie</small></span></button>
+            <button type="button" class="nav-dropdown-link" data-section="kb" data-kb-tab="assets"><span class="nav-dropdown-icon">🖥</span><span class="ddl-content"><strong>Apparaten</strong><small>Hardware en inventaris</small></span></button>
+            <button type="button" class="nav-dropdown-link" data-section="kb" data-kb-tab="vlans"><span class="nav-dropdown-icon">⇆</span><span class="ddl-content"><strong>VLANs</strong><small>Netwerksegmenten</small></span></button>
+            <button type="button" class="nav-dropdown-link" data-section="kb" data-kb-tab="pages"><span class="nav-dropdown-icon">☰</span><span class="ddl-content"><strong>Documenten</strong><small>Pagina’s en procedures</small></span></button>
+            <button type="button" class="nav-dropdown-link" data-section="kb" data-kb-tab="contacts"><span class="nav-dropdown-icon">☏</span><span class="ddl-content"><strong>Contacten</strong><small>Leveranciers en beheerders</small></span></button>
+            <button type="button" class="nav-dropdown-link" data-section="kb" data-kb-tab="passwords"><span class="nav-dropdown-icon">🔑</span><span class="ddl-content"><strong>Wachtwoorden</strong><small>Referenties en vaults</small></span></button>
+            <button type="button" class="nav-dropdown-link" data-section="kb" data-kb-tab="software"><span class="nav-dropdown-icon">◈</span><span class="ddl-content"><strong>Software</strong><small>Licenties en vervaldata</small></span></button>
+            <button type="button" class="nav-dropdown-link" data-section="kb" data-kb-tab="domains"><span class="nav-dropdown-icon">◎</span><span class="ddl-content"><strong>Domeinen</strong><small>Registrars en SSL</small></span></button>
+            <button type="button" class="nav-dropdown-link" data-section="kb" data-kb-tab="appregs"><span class="nav-dropdown-icon">⬡</span><span class="ddl-content"><strong>App Registraties</strong><small>API-rechten en credentials</small></span></button>
+            <button type="button" class="nav-dropdown-link" data-section="kb" data-kb-tab="m365"><span class="nav-dropdown-icon">☁</span><span class="ddl-content"><strong>Microsoft 365</strong><small>Tenant M365-kennis</small></span></button>
+            <button type="button" class="nav-dropdown-link" data-section="kb" data-kb-tab="changelog"><span class="nav-dropdown-icon">⎇</span><span class="ddl-content"><strong>Wijzigingslog</strong><small>Uitgevoerde acties</small></span></button>
+        </div>
+    </li>
+
+    <!-- GROEP 7: Admin (admin only) -->
+    <li class="nav-dropdown admin-only-nav" data-nav-group="admin">
+        <button type="button" class="portal-nav-link nav-dropdown-toggle" data-section="tenantoverzicht" aria-expanded="false">
+            MSP Admin
+            <span class="nav-chevron">▾</span>
+        </button>
+        <div class="nav-dropdown-menu">
+            <button type="button" class="nav-dropdown-link" data-section="tenantoverzicht">
+                <span class="nav-dropdown-icon">◈</span>
+                <span class="ddl-content"><strong>Tenant Overzicht</strong><small>Health van alle tenants</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="klantenbeheer">
+                <span class="nav-dropdown-icon">⊞</span>
+                <span class="ddl-content"><strong>Klantenbeheer</strong><small>MSP klanten en onboarding</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="goedkeuringen">
+                <span class="nav-dropdown-icon">✓</span>
+                <span class="ddl-content"><strong>Goedkeuringen</strong><small>Openstaande verzoeken</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="kosten">
+                <span class="nav-dropdown-icon">€</span>
+                <span class="ddl-content"><strong>Kosten</strong><small>Azure-kosten per tenant</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="jobmonitor">
+                <span class="nav-dropdown-icon">⟳</span>
+                <span class="ddl-content"><strong>Job Monitor</strong><small>Achtergrondtaken</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="settings" data-settings-tab="roles">
+                <span class="nav-dropdown-icon">◎</span>
+                <span class="ddl-content"><strong>Gebruikers &amp; Rollen</strong><small>Toegangsbeheer</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="settings" data-settings-tab="tenant">
+                <span class="nav-dropdown-icon">◌</span>
+                <span class="ddl-content"><strong>Tenants</strong><small>Beheer en governance</small></span>
+            </button>
+            <button type="button" class="nav-dropdown-link" data-section="settings" data-settings-tab="general">
+                <span class="nav-dropdown-icon">⚙</span>
+                <span class="ddl-content"><strong>Configuratie</strong><small>Scripts en instellingen</small></span>
+            </button>
+        </div>
+    </li>
+</ul>
 
             <!-- Rechts: tenant pill, thema, refresh, avatar -->
             <div class="portal-nav-right">
+                <!-- Hamburger — alleen zichtbaar op mobiel (<700px) -->
+                <button type="button" class="portal-nav-hamburger" id="mobileMenuToggle" aria-label="Menu openen" aria-expanded="false" aria-controls="portalNavLinks">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </button>
 
                 <!-- Tenant pill (compact badge + dropdown) -->
                 <div class="portal-tenant-pill" id="tenantPill" role="button" tabindex="0" title="Wissel van tenant">
@@ -76,6 +319,22 @@
     <div id="topLoadingBar" class="top-loading-bar" aria-hidden="true"></div>
 
     <main class="content-area">
+        <header class="portal-workspace-header">
+            <div class="portal-workspace-copy">
+                <span class="portal-workspace-eyebrow" id="workspaceEyebrow">Workspace</span>
+                <div class="portal-workspace-headline">
+                    <h1 class="portal-workspace-title" id="workspaceTitle">Tenant Command Center</h1>
+                    <p class="portal-workspace-meta" id="workspaceMeta">Een beheerportaal in CIPP-opbouw met tenantcontext, acties en aanbevelingen per module.</p>
+                </div>
+            </div>
+            <div class="portal-workspace-actions">
+                <div id="workspaceQuickActions" class="workspace-quick-actions"></div>
+                <button type="button" id="portalContextToggle" class="portal-context-toggle" aria-expanded="false">
+                    Inzichten
+                </button>
+            </div>
+        </header>
+
         <section class="portal-hero" id="portalHero" style="display:none;">
             <div class="portal-hero-grid">
                 <div class="portal-hero-copy">
@@ -151,6 +410,77 @@
                 <div class="section-label">Dashboard</div>
                 <h2>Tenant Overzicht</h2>
 
+                <section class="ov-m365-panel">
+                    <div class="ov-m365-head">
+                        <div class="ov-m365-title">
+                            <span class="ov-m365-badge">
+                                <img src="images/m365/microsoft365.svg" alt="" class="ov-m365-badge-icon">
+                                Microsoft 365
+                            </span>
+                            <h3>Service Overzicht</h3>
+                            <p>Snelle tenantcockpit voor Exchange, Teams, SharePoint, OneDrive en Licenties.</p>
+                        </div>
+                        <button type="button" class="btn btn-outline ov-refresh-btn" id="overviewRefreshButton">↻ Vernieuwen</button>
+                    </div>
+
+                    <div class="ov-service-grid">
+                        <button type="button" class="ov-service-card" data-overview-nav="exchange" data-live-tab="mailboxen">
+                            <div class="ov-service-top">
+                                <span class="ov-service-icon"><img src="images/m365/exchange.svg" alt="Exchange"></span>
+                                <span class="ov-service-tag">Exchange</span>
+                            </div>
+                            <strong class="ov-service-value" id="overviewExchangePrimary">—</strong>
+                            <span class="ov-service-sub" id="overviewExchangeSecondary">Mailboxen</span>
+                            <span class="ov-service-source" id="overviewExchangeSource">Bron onbekend</span>
+                            <span class="ov-service-meta" id="overviewExchangeMeta">Open module</span>
+                        </button>
+
+                        <button type="button" class="ov-service-card" data-overview-nav="teams" data-live-tab="teams">
+                            <div class="ov-service-top">
+                                <span class="ov-service-icon"><img src="images/m365/teams.svg" alt="Teams"></span>
+                                <span class="ov-service-tag">Teams</span>
+                            </div>
+                            <strong class="ov-service-value" id="overviewTeamsPrimary">—</strong>
+                            <span class="ov-service-sub" id="overviewTeamsSecondary">Teams</span>
+                            <span class="ov-service-source" id="overviewTeamsSource">Bron onbekend</span>
+                            <span class="ov-service-meta" id="overviewTeamsMeta">Open module</span>
+                        </button>
+
+                        <button type="button" class="ov-service-card" data-overview-nav="sharepoint" data-live-tab="sharepoint-sites">
+                            <div class="ov-service-top">
+                                <span class="ov-service-icon"><img src="images/m365/sharepoint.svg" alt="SharePoint"></span>
+                                <span class="ov-service-tag">SharePoint</span>
+                            </div>
+                            <strong class="ov-service-value" id="overviewSharePointPrimary">—</strong>
+                            <span class="ov-service-sub" id="overviewSharePointSecondary">Sites</span>
+                            <span class="ov-service-source" id="overviewSharePointSource">Bron onbekend</span>
+                            <span class="ov-service-meta" id="overviewSharePointMeta">Open module</span>
+                        </button>
+
+                        <button type="button" class="ov-service-card" data-overview-nav="backup" data-live-tab="onedrive">
+                            <div class="ov-service-top">
+                                <span class="ov-service-icon"><img src="images/m365/onedrive.svg" alt="OneDrive"></span>
+                                <span class="ov-service-tag">OneDrive</span>
+                            </div>
+                            <strong class="ov-service-value" id="overviewOneDrivePrimary">—</strong>
+                            <span class="ov-service-sub" id="overviewOneDriveSecondary">Accounts</span>
+                            <span class="ov-service-source" id="overviewOneDriveSource">Bron onbekend</span>
+                            <span class="ov-service-meta" id="overviewOneDriveMeta">Open module</span>
+                        </button>
+
+                        <button type="button" class="ov-service-card" data-overview-nav="gebruikers" data-gb-tab="licenties">
+                            <div class="ov-service-top">
+                                <span class="ov-service-icon"><img src="images/m365/licenses.svg" alt="Licenties"></span>
+                                <span class="ov-service-tag">Licenties</span>
+                            </div>
+                            <strong class="ov-service-value" id="overviewLicensesPrimary">—</strong>
+                            <span class="ov-service-sub" id="overviewLicensesSecondary">Toegewezen</span>
+                            <span class="ov-service-source" id="overviewLicensesSource">Bron onbekend</span>
+                            <span class="ov-service-meta" id="overviewLicensesMeta">Open module</span>
+                        </button>
+                    </div>
+                </section>
+
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-icon">👥</div>
@@ -182,44 +512,44 @@
                     </div>
                 </div>
 
+                <section class="ov-launch-panel">
+                    <div class="ov-launch-head">
+                        <h3>Snelle Routes</h3>
+                        <p>Ga direct naar de tenantmodules waar nu het meeste werk zit.</p>
+                    </div>
+                    <div class="ov-launch-grid">
+                        <button type="button" class="ov-launch-card" data-overview-nav="gebruikers" data-gb-tab="gebruikers">
+                            <strong>Gebruikers & Licenties</strong>
+                            <span>Accounts, licenties, provisioning en gerichte live scan.</span>
+                        </button>
+                        <button type="button" class="ov-launch-card" data-overview-nav="identity" data-live-tab="mfa">
+                            <strong>Identity & Access</strong>
+                            <span>MFA, guests, adminrollen en authenticatie-inzichten.</span>
+                        </button>
+                        <button type="button" class="ov-launch-card" data-overview-nav="apps" data-live-tab="registrations">
+                            <strong>App Registrations</strong>
+                            <span>Secrets, certificaten en permissies per appregistratie.</span>
+                        </button>
+                        <button type="button" class="ov-launch-card" data-overview-nav="alerts" data-live-tab="securescr">
+                            <strong>Alerts & Secure Score</strong>
+                            <span>Auditlog, sign-ins, score en notificaties in één flow.</span>
+                        </button>
+                        <button type="button" class="ov-launch-card" data-overview-nav="exchange" data-live-tab="mailboxen">
+                            <strong>Exchange</strong>
+                            <span>Mailboxen, forwarding en inboxregels met detailweergave.</span>
+                        </button>
+                        <button type="button" class="ov-launch-card" data-overview-nav="intune" data-live-tab="overzicht">
+                            <strong>Intune</strong>
+                            <span>Devices, compliance en configuratie in dezelfde portalstijl.</span>
+                        </button>
+                    </div>
+                </section>
+
                 <div class="recent-assessments">
                     <h3>Recente Assessments</h3>
                     <div id="recentAssessmentsList" class="assessment-list">
                         <p class="empty-state">Nog geen assessments uitgevoerd</p>
                     </div>
-                </div>
-
-                <div class="portal-feature-grid">
-                    <article class="portal-feature-card">
-                        <div class="portal-feature-icon">🛡️</div>
-                        <h3>Security &amp; Zero Trust</h3>
-                        <p>Conditional Access, MFA-dekking en tenantbevindingen vanuit de assessment direct in beeld.</p>
-                        <div class="portal-feature-tags">
-                            <span class="tag-muted">Entra ID</span>
-                            <span class="tag-muted">Defender</span>
-                            <span class="tag-muted">Purview</span>
-                        </div>
-                    </article>
-                    <article class="portal-feature-card">
-                        <div class="portal-feature-icon">☁️</div>
-                        <h3>Portals &amp; Dashboards</h3>
-                        <p>Live tenantinzichten, rapportvergelijking en een kennisbank in dezelfde Denjoy-huisstijl.</p>
-                        <div class="portal-feature-tags">
-                            <span class="tag-muted">Reactie snel</span>
-                            <span class="tag-muted">FastAPI</span>
-                            <span class="tag-muted">Graph API</span>
-                        </div>
-                    </article>
-                    <article class="portal-feature-card">
-                        <div class="portal-feature-icon">📚</div>
-                        <h3>Documentatie &amp; NetDocs</h3>
-                        <p>Apparaten, switches, licenties, contacten en documentatie centraal per tenant vastgelegd.</p>
-                        <div class="portal-feature-tags">
-                            <span class="tag-muted">Kennisbank</span>
-                            <span class="tag-muted">Switch docs</span>
-                            <span class="tag-muted">Assessment</span>
-                        </div>
-                    </article>
                 </div>
             </section>
 
@@ -276,49 +606,23 @@
                             <button id="stopAssessmentButton" class="btn btn-danger" onclick="stopAssessment()">⏹ Stoppen</button>
                         </div>
                     </div>
-                </div>
-            </section>
 
-            <!-- ── ENTRA SECURITY (EntraFalcon) ── -->
-            <section id="entrafalconSection" class="content-section">
-                <div id="entrafalconLegacyRunner" class="assessment-legacy-runner">
-                    <div class="section-label">Uitvoeren</div>
-                    <h2>Entra ID Security Scan</h2>
-
-                    <div class="assessment-config" id="entrafalconConfig">
-                        <h3>Scan opties</h3>
-                        <div class="phase-selector">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="efIncludeMsApps">
-                                <span>Microsoft-eigen enterprise apps meenemen</span>
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="efCsvExport">
-                                <span>CSV-bestanden exporteren naast HTML</span>
-                            </label>
+                    <!-- ── Ingeplande assessments ── -->
+                    <div id="scheduledRunsPanel" style="margin-top:2rem;">
+                        <h3 style="margin-bottom:0.5rem;">Assessment inplannen</h3>
+                        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">Plan een assessment op een later tijdstip. De job wordt automatisch opgepakt door de achtergrondqueue.</p>
+                        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;align-items:flex-end;margin-bottom:1.25rem;">
+                            <div>
+                                <label style="display:block;font-size:0.8rem;font-weight:600;margin-bottom:0.3rem;">Datum &amp; tijd</label>
+                                <input type="datetime-local" id="scheduleDateTime" style="padding:0.5rem 0.75rem;border:1.5px solid var(--border);border-radius:8px;font-size:0.85rem;background:var(--card);color:var(--text);">
+                            </div>
+                            <div>
+                                <label style="display:block;font-size:0.8rem;font-weight:600;margin-bottom:0.3rem;">Notitie (optioneel)</label>
+                                <input type="text" id="scheduleNote" placeholder="bijv. maandelijkse check" style="padding:0.5rem 0.75rem;border:1.5px solid var(--border);border-radius:8px;font-size:0.85rem;width:220px;background:var(--card);color:var(--text);">
+                            </div>
+                            <button id="scheduleRunBtn" onclick="scheduleAssessmentRun()" style="padding:0.5rem 1.1rem;background:var(--orange);color:#fff;border:none;border-radius:8px;font-size:0.85rem;font-weight:600;cursor:pointer;">Inplannen →</button>
                         </div>
-                        <div style="margin-top:1.5rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
-                            <button id="startEntraFalconButton" class="btn btn-primary btn-large">
-                                Start Entra Security Scan →
-                            </button>
-                            <button id="efViewLatestButton" class="btn btn-secondary" style="display:none;">
-                                Bekijk laatste rapport
-                            </button>
-                        </div>
-                        <div id="entrafalconLatestInfo" style="margin-top:1rem;font-size:0.85rem;color:var(--muted,#64748b);"></div>
-                    </div>
-
-                    <div id="entrafalconProgress" class="assessment-progress" style="display:none;">
-                        <h3>Entra Security scan wordt uitgevoerd...</h3>
-                        <div class="progress-bar">
-                            <div class="progress-fill" id="efProgressFill"></div>
-                        </div>
-                        <div class="progress-log" id="efProgressLog">
-                            <p>Initialiseren...</p>
-                        </div>
-                        <div style="margin-top:1rem;">
-                            <button id="efStopButton" class="btn btn-danger" onclick="efStopScan()">⏹ Stoppen</button>
-                        </div>
+                        <div id="scheduledRunsList" style="font-size:0.83rem;"></div>
                     </div>
                 </div>
             </section>
@@ -345,10 +649,6 @@
                             <span class="nb-tab-icon">✓</span>
                             <span class="nb-tab-label">Acties</span>
                         </a>
-                        <a href="#" class="nb-tab" data-results-panel="entrafalcon">
-                            <span class="nb-tab-icon">🦅</span>
-                            <span class="nb-tab-label">Entra Security</span>
-                        </a>
                     </nav>
 
                     <div class="nb-content" id="resultsContent">
@@ -360,86 +660,35 @@
                                 <span class="nb-bc-current">Rapport</span>
                             </div>
                             <div class="nb-page-header">
-                                <h2 class="nb-page-title">Rapport <span class="nb-page-count" id="resultsRunCount"></span></h2>
-                                <div class="nb-page-actions" id="resultsDownloadBar" style="display:none;">
-                                    <a id="btnOpenReport" href="#" target="_blank" class="nb-btn nb-btn-primary">↗ Open rapport</a>
-                                    <a id="btnDownloadCsv" href="#" class="nb-btn nb-btn-secondary">↓ CSV</a>
+                                <h2 class="nb-page-title">Rapportviewer</h2>
+                                <div class="nb-page-actions">
                                     <button class="nb-btn nb-btn-secondary" onclick="loadResultsSection()">↺ Ververs</button>
                                 </div>
                             </div>
                             <p class="nb-empty" id="resultsViewerEmpty" style="display:none;">Start een assessment om resultaten te zien.</p>
+                            <div id="resultsViewerMetrics" style="display:none;">
+                                <span id="kpiScore">—</span>
+                                <span id="kpiCritical">—</span>
+                                <span id="kpiWarning">—</span>
+                                <span id="kpiInfo">—</span>
+                                <span id="metaRunId">—</span>
+                                <span id="metaStatus">—</span>
+                                <span id="metaStarted">—</span>
+                                <span id="metaCompleted">—</span>
+                                <span id="metaRunMode">—</span>
+                                <span id="metaPhases">—</span>
+                                <span id="metaTenantName">—</span>
+                                <span id="metaCustomer">—</span>
+                                <span id="metaTotalRuns">—</span>
+                                <span id="metaCompletedRuns">—</span>
+                                <span id="metaFailedRuns">—</span>
+                                <span id="metaReportRuns">—</span>
+                                <span id="resultsRunCount">—</span>
+                                <span id="resultsRunsCount">—</span>
+                                <span id="resultsTabCount">—</span>
+                            </div>
                             <div id="resultsViewerContent">
-                                <div class="results-kpi-grid">
-                                    <div class="results-kpi-card">
-                                        <div class="results-kpi-label">Totale score</div>
-                                        <div class="results-kpi-value" id="kpiScore">—</div>
-                                    </div>
-                                    <div class="results-kpi-card results-kpi-card--danger">
-                                        <div class="results-kpi-label">Kritiek</div>
-                                        <div class="results-kpi-value" id="kpiCritical">—</div>
-                                    </div>
-                                    <div class="results-kpi-card results-kpi-card--warn">
-                                        <div class="results-kpi-label">Waarschuwingen</div>
-                                        <div class="results-kpi-value" id="kpiWarning">—</div>
-                                    </div>
-                                    <div class="results-kpi-card results-kpi-card--info">
-                                        <div class="results-kpi-label">Info</div>
-                                        <div class="results-kpi-value" id="kpiInfo">—</div>
-                                    </div>
-                                </div>
-                                <div class="results-meta-grid">
-                                    <div class="results-meta-card">
-                                        <h4>Run details</h4>
-                                        <div class="results-meta-rows">
-                                            <div class="results-meta-row"><span>Run ID</span><strong id="metaRunId">—</strong></div>
-                                            <div class="results-meta-row"><span>Status</span><strong id="metaStatus">—</strong></div>
-                                            <div class="results-meta-row"><span>Gestart</span><strong id="metaStarted">—</strong></div>
-                                            <div class="results-meta-row"><span>Voltooid</span><strong id="metaCompleted">—</strong></div>
-                                            <div class="results-meta-row"><span>Run mode</span><strong id="metaRunMode">—</strong></div>
-                                            <div class="results-meta-row"><span>Fases</span><strong id="metaPhases">—</strong></div>
-                                        </div>
-                                    </div>
-                                    <div class="results-meta-card">
-                                        <h4>Tenant overzicht</h4>
-                                        <div class="results-meta-rows">
-                                            <div class="results-meta-row"><span>Tenant</span><strong id="metaTenantName">—</strong></div>
-                                            <div class="results-meta-row"><span>Klant</span><strong id="metaCustomer">—</strong></div>
-                                            <div class="results-meta-row"><span>Runs totaal</span><strong id="metaTotalRuns">—</strong></div>
-                                            <div class="results-meta-row"><span>Voltooid</span><strong id="metaCompletedRuns">—</strong></div>
-                                            <div class="results-meta-row"><span>Mislukt</span><strong id="metaFailedRuns">—</strong></div>
-                                            <div class="results-meta-row"><span>Rapport-runs</span><strong id="metaReportRuns">—</strong></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="results-runs-panel">
-                                    <div class="results-runs-head">
-                                        <h4>Recente rapport-runs</h4>
-                                        <span class="results-runs-count" id="resultsRunsCount">—</span>
-                                    </div>
-                                    <div class="results-runs-table-wrap">
-                                        <table class="results-runs-table">
-                                            <thead>
-                                                <tr>
-                                                    <th>Datum</th>
-                                                    <th>Status</th>
-                                                    <th>Mode</th>
-                                                    <th>Fases</th>
-                                                    <th>Score</th>
-                                                    <th>K/W/I</th>
-                                                    <th>Acties</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="resultsRunsTableBody">
-                                                <tr><td colspan="7" class="empty-state">Selecteer een tenant om runs te zien.</td></tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
                                 <div class="results-viewer-panel">
-                                    <div class="results-viewer-head">
-                                        <h3>Rapportviewer</h3>
-                                        <p>Inline weergave van het nieuwste rapport met fase-tabs.</p>
-                                    </div>
                                     <div id="resultsViewerContainer"></div>
                                 </div>
                             </div>
@@ -573,41 +822,6 @@
                             </div>
                         </div><!-- /actions -->
 
-                        <!-- ENTRA SECURITY VIEWER -->
-                        <div class="nb-pane" data-results-panel="entrafalcon">
-                            <div class="nb-breadcrumb">
-                                <span>Rapporten</span><span class="nb-bc-sep">›</span>
-                                <span class="nb-bc-current">Entra Security</span>
-                            </div>
-                            <div class="nb-page-header">
-                                <h2 class="nb-page-title">Entra Security Rapporten</h2>
-                                <div class="nb-page-actions">
-                                    <button class="nb-btn nb-btn-secondary" onclick="loadEntraFalconResultsPane()">↺ Ververs</button>
-                                </div>
-                            </div>
-                            <p class="nb-empty" id="efResultsEmpty" style="display:none;">Start een Entra Security scan om resultaten te zien.</p>
-                            <div id="efResultsContent" style="display:none;">
-                                <!-- Run selector -->
-                                <div style="margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
-                                    <label style="font-size:0.85rem;font-weight:600;">Scan:</label>
-                                    <select id="efRunSelect" style="padding:5px 10px;border:1px solid var(--border,#e4e4e8);border-radius:6px;background:var(--surface,#fff);color:inherit;font-size:0.85rem;"></select>
-                                    <a id="efOpenReportLink" href="#" target="_blank" class="nb-btn nb-btn-primary" style="font-size:0.82rem;">↗ Open in nieuw tabblad</a>
-                                </div>
-                                <!-- Rapport tabs (per EntraFalcon output HTML) -->
-                                <div id="efReportTabsBar" style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.75rem;"></div>
-                                <!-- Iframe voor rapport -->
-                                <div style="border:1px solid var(--border,#e4e4e8);border-radius:10px;overflow:hidden;">
-                                    <div id="efIframeLoader" style="padding:14px 18px;font-size:0.85rem;color:var(--muted,#64748b);">Rapport laden...</div>
-                                    <iframe id="efReportFrame"
-                                        title="EntraFalcon rapport"
-                                        style="width:100%;min-height:600px;border:0;display:block;"
-                                        loading="lazy"
-                                        referrerpolicy="no-referrer">
-                                    </iframe>
-                                </div>
-                            </div>
-                        </div><!-- /entrafalcon -->
-
                     </div><!-- /nb-content -->
                 </div><!-- /nb-layout -->
             </section>
@@ -656,6 +870,11 @@
                             <span class="nb-tab-label">Domeinen</span>
                             <span class="nb-tab-count" id="nbCountDomains">—</span>
                         </a>
+                        <a href="#" class="nb-tab" data-kb-tab="appregs">
+                            <span class="nb-tab-icon">⬡</span>
+                            <span class="nb-tab-label">App Registraties</span>
+                            <span class="nb-tab-count" id="nbCountAppRegs">—</span>
+                        </a>
                         <a href="#" class="nb-tab" data-kb-tab="m365">
                             <span class="nb-tab-icon">☁️</span>
                             <span class="nb-tab-label">M365</span>
@@ -675,7 +894,7 @@
                                 <span class="nb-bc-current">Overzicht</span>
                             </div>
                             <div class="nb-page-header">
-                                <h2 class="nb-page-title">NetDocs overzicht</h2>
+                                <h2 class="nb-page-title">Kennisbank overzicht</h2>
                             </div>
                             <div id="kbOverviewPane" class="nb-overview-pane">
                                 <p class="nb-empty">Selecteer een tenant.</p>
@@ -878,6 +1097,21 @@
                             <div id="kbDomainDetail" class="nb-detail-panel" style="display:none;"></div>
                         </div>
 
+                        <div class="nb-pane" data-kb-pane="appregs">
+                            <div class="nb-breadcrumb">
+                                <span>Kennisbank</span><span class="nb-bc-sep">›</span>
+                                <span class="nb-bc-current">App Registraties</span>
+                            </div>
+                            <div class="nb-page-header">
+                                <div>
+                                    <h2 class="nb-page-title">App Registraties <span id="nbAppRegListCount" style="font-size:.9rem;font-weight:400;color:var(--text-muted)"></span></h2>
+                                    <p class="nb-page-sub">API-rechten, credentials en enterprise app-status vanuit assessment.</p>
+                                </div>
+                            </div>
+                            <div id="kbAppRegsTable" class="nb-object-list"><p class="nb-empty">Selecteer een tenant.</p></div>
+                            <div id="kbAppRegDetail" class="nb-detail-panel" style="display:none;"></div>
+                        </div>
+
                         <div class="nb-pane" data-kb-pane="m365">
                             <div class="nb-breadcrumb">
                                 <span>Kennisbank</span><span class="nb-bc-sep">›</span>
@@ -886,29 +1120,29 @@
                             <div class="nb-page-header">
                                 <h2 class="nb-page-title">Microsoft 365</h2>
                                 <div class="nb-page-actions">
-                                    <button type="button" class="nb-btn nb-btn-primary" id="kbSaveM365Btn">Opslaan</button>
+                                    <span class="nb-badge nb-badge-type">Automatisch uit assessment</span>
                                 </div>
                             </div>
                             <div class="nb-detail-panel" style="display:block;max-height:none;">
                                 <div id="kbM365AssessmentInfo" class="nb-assessment-banner" style="display:none;"></div>
                                 <div class="nb-form-grid">
-                                    <label>Tenant naam<input type="text" id="kbM365TenantName" class="nb-input"></label>
-                                    <label>Tenant ID<input type="text" id="kbM365TenantId" class="nb-input"></label>
-                                    <label>Global admin<input type="text" id="kbM365GlobalAdmin" class="nb-input"></label>
-                                    <label>Licentietype<input type="text" id="kbM365LicenseType" class="nb-input"></label>
-                                    <label>Licenties totaal<input type="number" id="kbM365LicensesTotal" class="nb-input"></label>
-                                    <label>Licenties gebruikt<input type="number" id="kbM365LicensesUsed" class="nb-input"></label>
-                                    <label>MFA<input type="text" id="kbM365Mfa" class="nb-input" placeholder="Entra ID MFA"></label>
-                                    <label>MDM / Intune<input type="text" id="kbM365Mdm" class="nb-input"></label>
-                                    <label>AD Connect<input type="text" id="kbM365AdConnect" class="nb-input"></label>
-                                    <label>Shared mailboxes<input type="number" id="kbM365SharedMailboxes" class="nb-input"></label>
-                                    <label>Guest users<input type="number" id="kbM365GuestUsers" class="nb-input"></label>
-                                    <label class="nb-form-inline"><input type="checkbox" id="kbM365ConditionalAccess"> Conditional Access actief</label>
-                                    <label class="nb-form-inline"><input type="checkbox" id="kbM365Defender"> Defender actief</label>
-                                    <label class="nb-form-inline"><input type="checkbox" id="kbM365Purview"> Purview actief</label>
-                                    <label class="nb-form-inline"><input type="checkbox" id="kbM365Hybrid"> Hybrid actief</label>
-                                    <label class="nb-form-inline"><input type="checkbox" id="kbM365ExchangeHybrid"> Exchange Hybrid actief</label>
-                                    <label class="nb-form-full">Notities<textarea id="kbM365Notes" class="nb-input nb-textarea" rows="4"></textarea></label>
+                                    <label>Tenant naam<input type="text" id="kbM365TenantName" class="nb-input" disabled></label>
+                                    <label>Tenant ID<input type="text" id="kbM365TenantId" class="nb-input" disabled></label>
+                                    <label>Global admin<input type="text" id="kbM365GlobalAdmin" class="nb-input" disabled></label>
+                                    <label>Licentietype<input type="text" id="kbM365LicenseType" class="nb-input" disabled></label>
+                                    <label>Licenties totaal<input type="number" id="kbM365LicensesTotal" class="nb-input" disabled></label>
+                                    <label>Licenties gebruikt<input type="number" id="kbM365LicensesUsed" class="nb-input" disabled></label>
+                                    <label>MFA<input type="text" id="kbM365Mfa" class="nb-input" disabled></label>
+                                    <label>MDM / Intune<input type="text" id="kbM365Mdm" class="nb-input" disabled></label>
+                                    <label>AD Connect<input type="text" id="kbM365AdConnect" class="nb-input" disabled></label>
+                                    <label>Shared mailboxes<input type="number" id="kbM365SharedMailboxes" class="nb-input" disabled></label>
+                                    <label>Guest users<input type="number" id="kbM365GuestUsers" class="nb-input" disabled></label>
+                                    <label class="nb-form-inline"><input type="checkbox" id="kbM365ConditionalAccess" disabled> Conditional Access actief</label>
+                                    <label class="nb-form-inline"><input type="checkbox" id="kbM365Defender" disabled> Defender actief</label>
+                                    <label class="nb-form-inline"><input type="checkbox" id="kbM365Purview" disabled> Purview actief</label>
+                                    <label class="nb-form-inline"><input type="checkbox" id="kbM365Hybrid" disabled> Hybrid actief</label>
+                                    <label class="nb-form-inline"><input type="checkbox" id="kbM365ExchangeHybrid" disabled> Exchange Hybrid actief</label>
+                                    <label class="nb-form-full">Notities<textarea id="kbM365Notes" class="nb-input nb-textarea" rows="4" disabled></textarea></label>
                                 </div>
                                 <div class="nb-m365-license-wrap">
                                     <div class="nb-detail-header">
@@ -1136,6 +1370,417 @@
 
             </section>
 
+            <!-- ── GEBRUIKERS & IDENTITEIT HUB ── -->
+            <section id="gbidHubSection" class="content-section">
+                <div class="section-label">Identiteit</div>
+                <h2>Gebruikers &amp; Identiteit</h2>
+                <div class="hub-grid" id="gbidHubGrid">
+                    <a class="hub-tile" href="#" data-section="gebruikers" data-gb-tab="gebruikers">
+                        <span class="hub-tile-icon"><img src="images/m365/users.svg" alt="Gebruikers"></span>
+                        <strong>Gebruikers</strong>
+                        <small>Accounts en lifecycle</small>
+                        <span class="hub-tile-stat" id="hubStatUsers">—</span>
+                    </a>
+                    <a class="hub-tile" href="#" data-section="gebruikers" data-gb-tab="licenties">
+                        <span class="hub-tile-icon"><img src="images/m365/licenses.svg" alt="Licenties"></span>
+                        <strong>Licenties</strong>
+                        <small>Toewijzingen en gebruik</small>
+                        <span class="hub-tile-stat" id="hubStatLicenses">—</span>
+                    </a>
+                    <a class="hub-tile" href="#" data-section="identity" data-live-tab="mfa">
+                        <span class="hub-tile-icon"><img src="images/m365/identity.svg" alt="MFA"></span>
+                        <strong>MFA</strong>
+                        <small>Registratiestatus</small>
+                        <span class="hub-tile-stat" id="hubStatMfa">—</span>
+                    </a>
+                    <a class="hub-tile" href="#" data-section="identity" data-live-tab="guests">
+                        <span class="hub-tile-icon"><img src="images/m365/identity.svg" alt="Gasten"></span>
+                        <strong>Gasten</strong>
+                        <small>Gastaccounts</small>
+                        <span class="hub-tile-stat" id="hubStatGuests">—</span>
+                    </a>
+                    <a class="hub-tile" href="#" data-section="identity" data-live-tab="admin-roles">
+                        <span class="hub-tile-icon"><img src="images/m365/identity.svg" alt="Admin Rollen"></span>
+                        <strong>Admin Rollen</strong>
+                        <small>Rollen en leden</small>
+                        <span class="hub-tile-stat" id="hubStatAdminRoles">—</span>
+                    </a>
+                    <a class="hub-tile" href="#" data-section="ca" data-ca-tab="policies">
+                        <span class="hub-tile-icon"><img src="images/m365/conditional-access.svg" alt="CA"></span>
+                        <strong>Conditional Access</strong>
+                        <small>Policies en locaties</small>
+                        <span class="hub-tile-stat" id="hubStatCA">—</span>
+                    </a>
+                    <a class="hub-tile" href="#" data-section="apps" data-live-tab="registrations">
+                        <span class="hub-tile-icon"><img src="images/m365/apps.svg" alt="App Regs"></span>
+                        <strong>App Registraties</strong>
+                        <small>Secrets en permissies</small>
+                        <span class="hub-tile-stat" id="hubStatApps">—</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- ── SECURITY & COMPLIANCE HUB ── -->
+            <section id="securityHubSection" class="content-section">
+                <div class="section-label">Security</div>
+                <h2>Security &amp; Compliance</h2>
+                <div class="hub-grid" id="securityHubGrid">
+                    <a class="hub-tile" href="#" data-section="alerts" data-live-tab="securescr">
+                        <span class="hub-tile-icon"><img src="images/m365/alerts.svg" alt="Secure Score"></span>
+                        <strong>Secure Score</strong>
+                        <small>Score en aanbevelingen</small>
+                        <span class="hub-tile-stat" id="hubStatSecureScore">—</span>
+                    </a>
+                    <a class="hub-tile" href="#" data-section="alerts" data-live-tab="auditlog">
+                        <span class="hub-tile-icon"><img src="images/m365/alerts.svg" alt="Audit Log"></span>
+                        <strong>Audit Log</strong>
+                        <small>Events en wijzigingen</small>
+                        <span class="hub-tile-stat" id="hubStatAudit">—</span>
+                    </a>
+                    <a class="hub-tile" href="#" data-section="alerts" data-live-tab="signins">
+                        <span class="hub-tile-icon"><img src="images/m365/alerts.svg" alt="Aanmeldingen"></span>
+                        <strong>Aanmeldingen</strong>
+                        <small>Sign-ins en risico</small>
+                        <span class="hub-tile-stat" id="hubStatSignins">—</span>
+                    </a>
+                    <a class="hub-tile" href="#" data-section="bevindingen">
+                        <span class="hub-tile-icon"><img src="images/m365/alerts.svg" alt="Bevindingen"></span>
+                        <strong>Bevindingen</strong>
+                        <small>Openstaande findings</small>
+                        <span class="hub-tile-stat" id="hubStatFindings">—</span>
+                    </a>
+                    <a class="hub-tile" href="#" data-section="identity" data-live-tab="legacy-auth">
+                        <span class="hub-tile-icon"><img src="images/m365/identity.svg" alt="Legacy Auth"></span>
+                        <strong>Legacy Auth</strong>
+                        <small>Activiteit en risico</small>
+                        <span class="hub-tile-stat" id="hubStatLegacy">—</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- ── SAMENWERKING & EMAIL HUB ── -->
+            <section id="collabHubSection" class="content-section">
+                <div class="section-label">Samenwerking</div>
+                <h2>Samenwerking &amp; Email</h2>
+                <div class="hub-grid" id="collabHubGrid">
+                    <a class="hub-tile" href="#" data-section="exchange" data-live-tab="mailboxen">
+                        <span class="hub-tile-icon"><img src="images/m365/exchange.svg" alt="Exchange"></span>
+                        <strong>Exchange</strong>
+                        <small>Mailboxen en regels</small>
+                        <span class="hub-tile-stat" id="hubStatExchange">—</span>
+                    </a>
+                    <a class="hub-tile" href="#" data-section="teams" data-live-tab="teams">
+                        <span class="hub-tile-icon"><img src="images/m365/teams.svg" alt="Teams"></span>
+                        <strong>Teams</strong>
+                        <small>Teams en leden</small>
+                        <span class="hub-tile-stat" id="hubStatTeams">—</span>
+                    </a>
+                    <a class="hub-tile" href="#" data-section="sharepoint" data-live-tab="sharepoint-sites">
+                        <span class="hub-tile-icon"><img src="images/m365/sharepoint.svg" alt="SharePoint"></span>
+                        <strong>SharePoint</strong>
+                        <small>Sites en instellingen</small>
+                        <span class="hub-tile-stat" id="hubStatSharePoint">—</span>
+                    </a>
+                    <a class="hub-tile" href="#" data-section="domains" data-live-tab="domains-list">
+                        <span class="hub-tile-icon"><img src="images/m365/domains.svg" alt="Domeinen"></span>
+                        <strong>Domeinen</strong>
+                        <small>DNS, SPF, DKIM, DMARC</small>
+                        <span class="hub-tile-stat" id="hubStatDomains">—</span>
+                    </a>
+                    <a class="hub-tile" href="#" data-section="backup" data-live-tab="overzicht">
+                        <span class="hub-tile-icon"><img src="images/m365/microsoft365.svg" alt="Backup"></span>
+                        <strong>Backup</strong>
+                        <small>M365 Backup policies</small>
+                        <span class="hub-tile-stat" id="hubStatBackup">—</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- ── DEVICES & INTUNE HUB ── -->
+            <section id="devicesHubSection" class="content-section">
+                <div class="section-label">Devices</div>
+                <h2>Devices &amp; Intune</h2>
+                <div class="hub-grid" id="devicesHubGrid">
+                    <a class="hub-tile" href="#" data-section="intune" data-live-tab="overzicht">
+                        <span class="hub-tile-icon"><img src="images/m365/intune.svg" alt="Overzicht"></span>
+                        <strong>Overzicht</strong>
+                        <small>Device posture en compliance</small>
+                        <span class="hub-tile-stat" id="hubStatIntuneOvz">—</span>
+                    </a>
+                    <a class="hub-tile" href="#" data-section="intune" data-live-tab="apparaten">
+                        <span class="hub-tile-icon"><img src="images/m365/intune.svg" alt="Apparaten"></span>
+                        <strong>Apparaten</strong>
+                        <small>Managed devices</small>
+                        <span class="hub-tile-stat" id="hubStatDevices">—</span>
+                    </a>
+                    <a class="hub-tile" href="#" data-section="intune" data-live-tab="compliance">
+                        <span class="hub-tile-icon"><img src="images/m365/intune.svg" alt="Compliance"></span>
+                        <strong>Compliance</strong>
+                        <small>Policies en status</small>
+                        <span class="hub-tile-stat" id="hubStatCompliance">—</span>
+                    </a>
+                    <a class="hub-tile" href="#" data-section="intune" data-live-tab="configuratie">
+                        <span class="hub-tile-icon"><img src="images/m365/intune.svg" alt="Configuratie"></span>
+                        <strong>Configuratie</strong>
+                        <small>Profielen en instellingen</small>
+                        <span class="hub-tile-stat" id="hubStatIntuneConfig">—</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- ── ASSESSMENT HUB ── -->
+            <section id="assessmentHubSection" class="content-section">
+                <div class="section-label">Assessment</div>
+                <h2>Assessment &amp; Opvolging</h2>
+                <div id="assessmentHubMeta" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:1.25rem;padding:0 2rem;"></div>
+                <div class="hub-grid" id="assessmentHubGrid" style="padding:0 2rem 2rem;">
+                    <a class="hub-tile" href="#" data-section="assessment">
+                        <span class="hub-tile-icon" style="font-size:1.4rem;">▶</span>
+                        <strong>Assessment starten</strong>
+                        <small>Nieuwe scan uitvoeren</small>
+                        <span class="hub-tile-stat" id="hubStatAssessmentLast">—</span>
+                    </a>
+                    <a class="hub-tile" href="#" data-section="results" data-results-panel="viewer">
+                        <span class="hub-tile-icon" style="font-size:1.4rem;">◫</span>
+                        <strong>Rapporten</strong>
+                        <small>Scores en viewer</small>
+                        <span class="hub-tile-stat" id="hubStatAssessmentScore">—</span>
+                    </a>
+                    <a class="hub-tile" href="#" data-section="results" data-results-panel="actions">
+                        <span class="hub-tile-icon" style="font-size:1.4rem;">✓</span>
+                        <strong>Acties</strong>
+                        <small>Findings en opvolging</small>
+                        <span class="hub-tile-stat" id="hubStatAssessmentActions">—</span>
+                    </a>
+                    <a class="hub-tile" href="#" data-section="herstel">
+                        <span class="hub-tile-icon" style="font-size:1.4rem;">✦</span>
+                        <strong>Herstel</strong>
+                        <small>Remediations uitvoeren</small>
+                        <span class="hub-tile-stat" id="hubStatHerstel">—</span>
+                    </a>
+                    <a class="hub-tile" href="#" data-section="baseline">
+                        <span class="hub-tile-icon" style="font-size:1.4rem;">▣</span>
+                        <strong>Baseline</strong>
+                        <small>Gold tenant-profielen</small>
+                        <span class="hub-tile-stat" id="hubStatBaseline">—</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- ── TENANT OVERZICHT (admin only) ── -->
+            <section id="tenantoverzichtSection" class="content-section">
+                <div class="section-label">Administrator</div>
+                <h2>Tenant Overzicht</h2>
+
+                <div class="dashboard-main" style="padding: 1.5rem 2rem;">
+                    <!-- MSP Aggregaat KPI balk -->
+                    <div id="mspAggregateBar" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0.75rem;margin-bottom:1.5rem;"></div>
+
+                    <!-- Toolbar: samenvattingspillen + actieknoppen -->
+                    <div class="th-toolbar">
+                        <div class="th-toolbar-left">
+                            <div class="th-summary-pills" id="thSummaryPills">
+                                <!-- wordt gevuld door JS -->
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:.5rem;">
+                            <button type="button" class="btn btn-secondary" id="thRefreshBtn" style="font-size:.82rem;padding:.4rem .9rem;">↻ Vernieuwen</button>
+                        </div>
+                    </div>
+
+                    <!-- Tenant kaarten grid -->
+                    <div class="th-grid" id="thGrid">
+                        <!-- wordt gevuld door loadTenantHealthDashboard() -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── KLANTENBEHEER (admin only) ── -->
+            <section id="klantenbeheerSection" class="content-section">
+                <div class="section-label">Administrator</div>
+                <h2>Klantenbeheer</h2>
+                <div class="dashboard-main" style="padding:1.5rem 2rem;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+                        <div id="kbhSummary" style="display:flex;gap:.75rem;flex-wrap:wrap;"></div>
+                        <div style="display:flex;gap:.5rem;">
+                            <input type="text" id="kbhSearch" placeholder="Zoeken op naam…" style="padding:.35rem .7rem;border:1px solid var(--border-color,#d1d5db);border-radius:6px;font-size:.85rem;background:var(--input-bg,#fff);color:var(--text-primary,#111);">
+                            <button type="button" class="btn btn-secondary" id="kbhRefreshBtn" style="font-size:.82rem;padding:.4rem .9rem;">↻ Vernieuwen</button>
+                            <button type="button" class="btn btn-primary" id="kbhAddBtn" style="font-size:.82rem;padding:.4rem .9rem;">+ Klant toevoegen</button>
+                        </div>
+                    </div>
+                    <!-- Klanten tabel -->
+                    <div class="nb-table-wrap" style="overflow-x:auto;">
+                        <table class="nb-table" id="kbhTable" style="width:100%;">
+                            <thead><tr>
+                                <th>Naam</th><th>Status</th><th>Tenants</th><th>Contactpersoon</th><th>Aangemaakt</th><th></th>
+                            </tr></thead>
+                            <tbody id="kbhTableBody">
+                                <tr><td colspan="6" style="text-align:center;color:var(--text-muted,#6b7280);padding:2rem;">Laden…</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Detail panel (rechts of modal) -->
+                    <div id="kbhDetailPanel" style="display:none;margin-top:1.5rem;border:1px solid var(--border-color,#d1d5db);border-radius:8px;padding:1.25rem;background:var(--card-bg,#fff);">
+                        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+                            <h3 id="kbhDetailName" style="margin:0;font-size:1.1rem;"></h3>
+                            <button type="button" id="kbhDetailClose" style="background:none;border:none;cursor:pointer;font-size:1.2rem;color:var(--text-muted,#6b7280);">✕</button>
+                        </div>
+                        <div id="kbhDetailBody"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── GOEDKEURINGEN (admin only) ── -->
+            <section id="goedkeuringenSection" class="content-section">
+                <div class="section-label">Administrator</div>
+                <h2>Goedkeuringen</h2>
+                <div class="dashboard-main" style="padding:1.5rem 2rem;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+                        <div style="display:flex;gap:.5rem;">
+                            <button type="button" class="gdk-filter-btn active" data-status="pending" style="padding:.35rem .8rem;border-radius:6px;border:1px solid var(--border-color,#d1d5db);background:var(--btn-bg,#f3f4f6);font-size:.82rem;cursor:pointer;">Openstaand</button>
+                            <button type="button" class="gdk-filter-btn" data-status="approved" style="padding:.35rem .8rem;border-radius:6px;border:1px solid var(--border-color,#d1d5db);background:var(--btn-bg,#f3f4f6);font-size:.82rem;cursor:pointer;">Goedgekeurd</button>
+                            <button type="button" class="gdk-filter-btn" data-status="rejected" style="padding:.35rem .8rem;border-radius:6px;border:1px solid var(--border-color,#d1d5db);background:var(--btn-bg,#f3f4f6);font-size:.82rem;cursor:pointer;">Afgewezen</button>
+                            <button type="button" class="gdk-filter-btn" data-status="" style="padding:.35rem .8rem;border-radius:6px;border:1px solid var(--border-color,#d1d5db);background:var(--btn-bg,#f3f4f6);font-size:.82rem;cursor:pointer;">Alle</button>
+                        </div>
+                        <button type="button" class="btn btn-secondary" id="gdkRefreshBtn" style="font-size:.82rem;padding:.4rem .9rem;">↻ Vernieuwen</button>
+                    </div>
+                    <div class="nb-table-wrap" style="overflow-x:auto;">
+                        <table class="nb-table" id="gdkTable" style="width:100%;">
+                            <thead><tr>
+                                <th>Actie</th><th>Status</th><th>Aangevraagd door</th><th>Aangevraagd op</th><th>Reden</th><th>Goedgekeurd door</th><th></th>
+                            </tr></thead>
+                            <tbody id="gdkTableBody">
+                                <tr><td colspan="7" style="text-align:center;color:var(--text-muted,#6b7280);padding:2rem;">Laden…</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── KOSTEN (admin / billing_analyst) ── -->
+            <section id="kostenSection" class="content-section">
+                <div class="section-label">Financieel</div>
+                <h2>Kosten Overzicht</h2>
+                <div class="dashboard-main" style="padding:1.5rem 2rem;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem;">
+                        <div style="display:flex;gap:.5rem;align-items:center;">
+                            <label style="font-size:.85rem;color:var(--text-muted,#6b7280);">Tenant:</label>
+                            <select id="kostenTenantSel" style="padding:.35rem .6rem;border:1px solid var(--border-color,#d1d5db);border-radius:6px;font-size:.85rem;background:var(--input-bg,#fff);color:var(--text-primary,#111);">
+                                <option value="">— alle tenants —</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-secondary" id="kostenRefreshBtn" style="font-size:.82rem;padding:.4rem .9rem;">↻ Vernieuwen</button>
+                    </div>
+                    <!-- Totaal-pillen -->
+                    <div id="kostenSummary" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:1.25rem;"></div>
+                    <!-- Kosten tabel -->
+                    <div class="nb-table-wrap" style="overflow-x:auto;">
+                        <table class="nb-table" style="width:100%;">
+                            <thead><tr>
+                                <th>Tenant</th><th>Subscription</th><th>Periode</th><th>Totaal kosten</th><th>Valuta</th><th>Gegenereerd op</th>
+                            </tr></thead>
+                            <tbody id="kostenTableBody">
+                                <tr><td colspan="6" style="text-align:center;color:var(--text-muted,#6b7280);padding:2rem;">Selecteer een tenant of vernieuw.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── JOB MONITOR (admin only) ── -->
+            <section id="jobmonitorSection" class="content-section">
+                <div class="section-label">Administrator</div>
+                <h2>Job Monitor</h2>
+                <div class="dashboard-main" style="padding:1.5rem 2rem;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem;">
+                        <div style="display:flex;gap:.5rem;">
+                            <button type="button" class="jm-filter active" data-status="pending" style="padding:.35rem .8rem;border-radius:6px;border:1px solid var(--border-color,#d1d5db);background:var(--btn-bg,#f3f4f6);font-size:.82rem;cursor:pointer;">Wachtend</button>
+                            <button type="button" class="jm-filter" data-status="running" style="padding:.35rem .8rem;border-radius:6px;border:1px solid var(--border-color,#d1d5db);background:var(--btn-bg,#f3f4f6);font-size:.82rem;cursor:pointer;">Bezig</button>
+                            <button type="button" class="jm-filter" data-status="failed" style="padding:.35rem .8rem;border-radius:6px;border:1px solid var(--border-color,#d1d5db);background:var(--btn-bg,#f3f4f6);font-size:.82rem;cursor:pointer;">Mislukt</button>
+                            <button type="button" class="jm-filter" data-status="completed" style="padding:.35rem .8rem;border-radius:6px;border:1px solid var(--border-color,#d1d5db);background:var(--btn-bg,#f3f4f6);font-size:.82rem;cursor:pointer;">Voltooid</button>
+                            <button type="button" class="jm-filter" data-status="" style="padding:.35rem .8rem;border-radius:6px;border:1px solid var(--border-color,#d1d5db);background:var(--btn-bg,#f3f4f6);font-size:.82rem;cursor:pointer;">Alle</button>
+                        </div>
+                        <div style="display:flex;gap:.5rem;">
+                            <button type="button" class="btn btn-primary" id="jmEnqueueBtn" style="font-size:.82rem;padding:.4rem .9rem;">+ Taak aanmaken</button>
+                            <button type="button" class="btn btn-secondary" id="jmRefreshBtn" style="font-size:.82rem;padding:.4rem .9rem;">↻ Vernieuwen</button>
+                        </div>
+                    </div>
+                    <div id="jmSummary" style="display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:1rem;"></div>
+                    <div class="nb-table-wrap" style="overflow-x:auto;">
+                        <table class="nb-table" style="width:100%;">
+                            <thead><tr>
+                                <th>Type</th><th>Tenant</th><th>Status</th><th>Prioriteit</th><th>Pogingen</th><th>Gepland op</th><th>Voltooid op</th><th>Fout</th><th></th>
+                            </tr></thead>
+                            <tbody id="jmTableBody">
+                                <tr><td colspan="9" style="text-align:center;color:var(--text-muted,#6b7280);padding:2rem;">Laden…</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── BEVINDINGEN & HEALTH ── -->
+            <section id="bevindingenSection" class="content-section">
+                <div class="section-label">Security</div>
+                <h2>Bevindingen &amp; Health</h2>
+
+                <!-- Health score balk -->
+                <div class="bev-health-bar" id="bevHealthBar">
+                    <div class="bev-health-score-wrap">
+                        <div class="bev-health-score" id="bevHealthScore">—</div>
+                        <div class="bev-health-score-label">Health Score</div>
+                    </div>
+                    <div class="bev-domain-pills" id="bevDomainPills">
+                        <!-- gevuld door JS -->
+                    </div>
+                    <div class="bev-health-actions">
+                        <button type="button" class="btn btn-outline bev-refresh-btn" id="bevRefreshBtn" style="font-size:.82rem;padding:.4rem .9rem;">↻ Vernieuwen</button>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="bev-toolbar">
+                    <div class="bev-filters">
+                        <select id="bevDomainFilter" class="bev-filter-select">
+                            <option value="">Alle domeinen</option>
+                            <option value="identity">Identity</option>
+                            <option value="appregs">App Registraties</option>
+                            <option value="exchange">Exchange</option>
+                            <option value="collaboration">Samenwerking</option>
+                            <option value="ca">Conditional Access</option>
+                        </select>
+                        <select id="bevStatusFilter" class="bev-filter-select">
+                            <option value="">Alle statussen</option>
+                            <option value="ok">OK</option>
+                            <option value="warning">Waarschuwing</option>
+                            <option value="critical">Kritiek</option>
+                            <option value="info">Informatie</option>
+                        </select>
+                    </div>
+                    <span class="bev-count" id="bevCount"></span>
+                </div>
+
+                <!-- Bevindingen tabel -->
+                <div class="bev-table-wrap" id="bevFindingsWrap">
+                    <table class="bev-table" id="bevFindingsTable">
+                        <thead>
+                            <tr>
+                                <th>Status</th>
+                                <th>Domein</th>
+                                <th>Control</th>
+                                <th>Bevinding</th>
+                                <th>Impact</th>
+                                <th>Aanbeveling</th>
+                                <th>Gescand</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bevFindingsBody">
+                            <tr><td colspan="7" class="bev-empty">Selecteer een tenant om bevindingen te laden.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
             <!-- ── SETTINGS ── -->
             <section id="settingsSection" class="content-section">
                 <div class="section-label">Admin</div>
@@ -1144,7 +1789,7 @@
                 <div class="settings-panel">
                     <div class="settings-tabs" role="tablist">
                         <button type="button" class="settings-tab active" data-tab="tenant" onclick="switchSettingsTab('tenant')">Tenants</button>
-                        <button type="button" class="settings-tab" data-tab="users" onclick="switchSettingsTab('users')">Gebruikers</button>
+                        <button type="button" class="settings-tab" data-tab="roles" onclick="switchSettingsTab('roles')">Gebruikers &amp; Rollen</button>
                         <button type="button" class="settings-tab" data-tab="general" onclick="switchSettingsTab('general')">Configuratie</button>
                         <button type="button" class="settings-tab" data-tab="integrations" onclick="switchSettingsTab('integrations')">Integraties</button>
                     </div>
@@ -1278,73 +1923,10 @@
                         <div class="settings-actions-row" style="margin-top:10px;">
                             <button id="refreshTenantManagementButton" class="btn btn-secondary">Lijst verversen</button>
                         </div>
-                    </div>
 
-                    <!-- ── GEBRUIKERSBEHEER TAB ── -->
-                    <div class="settings-pane" data-tab="users">
-                        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;">
-                            <h3 style="margin:0;">Accounts</h3>
-                            <button type="button" class="btn btn-primary" id="openCreateUserModalBtn">+ Nieuw account</button>
-                        </div>
-                        <p class="setting-info" style="margin-bottom:1rem;">
-                            Beheer lokale accounts. Het <strong>God-Admin</strong> account is vergrendeld en kan niet worden verwijderd of gewijzigd in rol.
-                        </p>
-                        <div class="results-runs-table-wrap">
-                            <table class="results-runs-table" id="usersTable">
-                                <thead>
-                                    <tr>
-                                        <th>Naam</th>
-                                        <th>E-mail</th>
-                                        <th>Rol</th>
-                                        <th>Tenant</th>
-                                        <th>Status</th>
-                                        <th>Aangemaakt</th>
-                                        <th>Acties</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="usersTableBody">
-                                    <tr><td colspan="7" class="empty-state">Gebruikers laden...</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="settings-actions-row" style="margin-top:10px;">
-                            <button type="button" class="btn btn-secondary" id="refreshUsersBtn">Lijst verversen</button>
-                        </div>
-                    </div>
-
-                    <!-- ── MODAL: Gebruiker aanmaken / bewerken ── -->
-                    <div id="userModal" class="nb-modal" style="display:none;" role="dialog" aria-modal="true">
-                        <div class="nb-modal-inner" style="max-width:480px;">
-                            <h3 id="userModalTitle">Nieuw account</h3>
-                            <input type="hidden" id="userModalId">
-                            <div class="nb-form-grid">
-                                <label class="nb-form-full">Naam<input type="text" id="userModalName" class="nb-input" placeholder="Volledige naam"></label>
-                                <label class="nb-form-full">E-mailadres *<input type="email" id="userModalEmail" class="nb-input" placeholder="naam@bedrijf.nl"></label>
-                                <label>Rol *
-                                    <select id="userModalRole" class="nb-input">
-                                        <option value="klant">Klant (alleen lezen)</option>
-                                        <option value="admin">Admin (volledig beheer)</option>
-                                    </select>
-                                </label>
-                                <label>Gekoppelde Tenant
-                                    <select id="userModalTenant" class="nb-input">
-                                        <option value="">— Geen —</option>
-                                    </select>
-                                </label>
-                                <label class="nb-form-full" id="userModalPasswordGroup">Wachtwoord *<input type="password" id="userModalPassword" class="nb-input" placeholder="Minimaal 8 tekens" autocomplete="new-password"></label>
-                                <label class="nb-form-full" id="userModalPasswordHint" style="display:none;">Nieuw wachtwoord<input type="password" id="userModalPasswordEdit" class="nb-input" placeholder="Leeglaten om ongewijzigd te laten" autocomplete="new-password"></label>
-                                <label class="nb-form-full" id="userModalActiveGroup">
-                                    <span style="display:flex;align-items:center;gap:.5rem;margin-top:.4rem;">
-                                        <input type="checkbox" id="userModalActive" checked style="width:15px;height:15px;accent-color:var(--orange);">
-                                        <span>Account actief</span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div id="userModalError" style="display:none;margin-top:.75rem;padding:.65rem 1rem;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:8px;font-size:.82rem;color:#dc2626;"></div>
-                            <div class="nb-modal-actions">
-                                <button type="button" class="nb-btn nb-btn-primary" id="userModalSaveBtn">Opslaan</button>
-                                <button type="button" class="nb-btn nb-btn-secondary" id="userModalCancelBtn">Annuleren</button>
-                            </div>
+                        <h3 style="margin-top:1.5rem;">Integratiestatus per tenant</h3>
+                        <div id="integratieStatusGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.75rem;">
+                            <p style="color:var(--text-muted,#6b7280);font-size:.875rem;grid-column:1/-1;">Selecteer een tenant om integratiestatus te laden.</p>
                         </div>
                     </div>
 
@@ -1395,6 +1977,30 @@
                         </div>
                     </div>
 
+                    <div class="settings-pane" data-tab="roles">
+                        <h3>Gebruikers &amp; Rollen</h3>
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem;">
+                            <p style="margin:0;font-size:.875rem;color:var(--text-muted,#6b7280);">Beheer portaalgebruikers en hun toegangsrechten per klant.</p>
+                            <div style="display:flex;gap:.5rem;">
+                                <button type="button" class="btn btn-secondary" id="rolesRefreshBtn" style="font-size:.82rem;padding:.4rem .9rem;">↻ Vernieuwen</button>
+                                <button type="button" class="btn btn-primary" id="rolesAddUserBtn" style="font-size:.82rem;padding:.4rem .9rem;">+ Gebruiker toevoegen</button>
+                            </div>
+                        </div>
+                        <!-- Beschikbare rollen -->
+                        <div id="rolesRolePills" style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem;"></div>
+                        <!-- Gebruikers tabel -->
+                        <div class="nb-table-wrap" style="overflow-x:auto;">
+                            <table class="nb-table" style="width:100%;">
+                                <thead><tr>
+                                    <th>Naam</th><th>E-mail</th><th>Portaalrol</th><th>Klant-toegang</th><th>Actief</th><th>Laatste login</th><th></th>
+                                </tr></thead>
+                                <tbody id="rolesUsersTableBody">
+                                    <tr><td colspan="7" style="text-align:center;color:var(--text-muted,#6b7280);padding:1.5rem;">Laden…</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
                     <div class="settings-pane" data-tab="integrations">
                         <h3>Integraties</h3>
                         <div class="setting-item">
@@ -1413,26 +2019,467 @@
                 </div>
             </section>
 
+            <!-- ── HERSTEL (REMEDIATION) ── -->
+            <section id="herstelSection" class="content-section">
+                <div class="section-label">Fase 1 — Active Remediation</div>
+                <h2>Herstel &amp; Beveiliging</h2>
+                <p class="section-intro">
+                    Voer beveiligingsherstelacties direct uit op de geselecteerde tenant via Microsoft Graph API.
+                    Gebruik de <strong>Voorbeeld</strong>-knop om eerst te controleren wat er verandert, zonder iets te wijzigen.
+                </p>
+
+                <!-- Tabs -->
+                <div class="rem-tabs">
+                    <button class="rem-tab active" data-rem-tab="catalogus">Catalogus</button>
+                    <button class="rem-tab" data-rem-tab="geschiedenis">Geschiedenis</button>
+                </div>
+
+                <!-- Tab: Catalogus -->
+                <div class="rem-tab-panel" data-rem-panel="catalogus">
+                    <div class="rem-toolbar">
+                        <input
+                            type="search"
+                            id="remFilterInput"
+                            class="rem-filter-input"
+                            placeholder="Zoeken in catalogus..."
+                            aria-label="Filter remediations"
+                        >
+                        <div class="rem-toolbar-info">
+                            Vereist: admin-rol + geconfigureerde app-registratie per tenant
+                        </div>
+                    </div>
+                    <div id="remCatalogGrid" class="rem-catalog-grid">
+                        <p class="rem-empty">Selecteer een tenant om de catalogus te laden.</p>
+                    </div>
+                </div>
+
+                <!-- Tab: Geschiedenis -->
+                <div class="rem-tab-panel" data-rem-panel="geschiedenis" style="display:none">
+                    <div class="rem-table-wrap">
+                        <table class="rem-table">
+                            <thead>
+                                <tr>
+                                    <th>Tijdstip</th>
+                                    <th>Actie</th>
+                                    <th>Status</th>
+                                    <th>Resultaat</th>
+                                    <th>Uitgevoerd door</th>
+                                    <th>Type</th>
+                                </tr>
+                            </thead>
+                            <tbody id="remHistoryBody">
+                                <tr><td colspan="6" class="rem-table-empty">Selecteer een tenant.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── GEBRUIKERSBEHEER (USER MANAGEMENT) ── -->
+            <section id="gebruikersSection" class="content-section">
+                <div class="section-label">Fase 2 — User Management</div>
+                <h2>Gebruikersbeheer</h2>
+                <p class="section-intro">
+                    Beheer Microsoft 365-gebruikers: bekijk gebruikersdetails, maak nieuwe accounts aan met licentietoewijzing,
+                    of voer gestructureerde offboarding uit. Alle acties verlopen via Microsoft Graph API.
+                </p>
+
+                <!-- Tab: Gebruikers -->
+                <div class="gb-tab-panel" data-gb-panel="gebruikers">
+                    <div id="gbCapabilityBanner"></div>
+                    <div id="gbSnapshotBanner" class="snapshot-banner" style="display:none"></div>
+                    <section class="gb-overview-card">
+                        <div class="gb-overview-head">
+                            <h3>Gebruikers Overzicht</h3>
+                        </div>
+                        <div class="gb-overview-grid">
+                            <article class="gb-overview-stat">
+                                <strong id="gbStatTotal">—</strong>
+                                <span>Totaal Gebruikers</span>
+                            </article>
+                            <article class="gb-overview-stat">
+                                <strong id="gbStatActive">—</strong>
+                                <span>Actieve Gebruikers</span>
+                            </article>
+                            <article class="gb-overview-stat">
+                                <strong id="gbStatDisabled">—</strong>
+                                <span>Uitgeschakelde Gebruikers</span>
+                            </article>
+                            <article class="gb-overview-stat">
+                                <strong id="gbStatGuests">—</strong>
+                                <span>Guest Gebruikers</span>
+                            </article>
+                        </div>
+                    </section>
+                    <div class="gb-toolbar">
+                        <input
+                            type="search"
+                            id="gbSearchInput"
+                            class="gb-search"
+                            placeholder="Zoek op naam, UPN, afdeling..."
+                            aria-label="Zoek gebruikers"
+                        >
+                        <div class="gb-filter-tabs">
+                            <button class="gb-filter-tab active" data-filter="all">Alle</button>
+                            <button class="gb-filter-tab" data-filter="enabled">Actief</button>
+                            <button class="gb-filter-tab" data-filter="disabled">Uitgeschakeld</button>
+                        </div>
+                        <div class="gb-toolbar-info" id="gbUserCount">— gebruikers</div>
+                        <button class="gb-btn gb-btn-secondary" id="gbBtnLiveScan" title="Voer een gerichte live scan uit voor gebruikers">Live scan</button>
+                        <button class="gb-btn gb-btn-secondary" id="gbBtnRefresh" title="Ververs gebruikerslijst">⟳ Verversen</button>
+                        <button class="gb-btn gb-btn-primary" id="gbBtnNieuw">+ Nieuw</button>
+                    </div>
+                    <div class="gb-table-wrap">
+                        <table class="gb-table">
+                            <thead>
+                                <tr>
+                                    <th>Naam</th>
+                                    <th>Afdeling</th>
+                                    <th>Functie</th>
+                                    <th>Status</th>
+                                    <th>Licenties</th>
+                                    <th>Acties</th>
+                                </tr>
+                            </thead>
+                            <tbody id="gbUserTableBody">
+                                <tr><td colspan="6" class="gb-table-empty">Selecteer een tenant om gebruikers te laden.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tab: Licenties -->
+                <div class="gb-tab-panel" data-gb-panel="licenties" style="display:none">
+                    <div class="gb-lic-toolbar">
+                        <div class="gb-toolbar-info" id="gbLicCount">— licenties</div>
+                        <button class="gb-btn gb-btn-secondary" id="gbBtnRefreshLic">⟳ Verversen</button>
+                    </div>
+                    <div id="gbLicGrid" class="gb-lic-grid">
+                        <p class="gb-empty">Selecteer een tenant om licenties te laden.</p>
+                    </div>
+                </div>
+
+                <!-- Tab: Geschiedenis -->
+                <div class="gb-tab-panel" data-gb-panel="geschiedenis" style="display:none">
+                    <div class="gb-table-wrap">
+                        <table class="gb-table">
+                            <thead>
+                                <tr>
+                                    <th>Tijdstip</th>
+                                    <th>Actie</th>
+                                    <th>Gebruiker</th>
+                                    <th>Status</th>
+                                    <th>Uitgevoerd door</th>
+                                    <th>Melding</th>
+                                </tr>
+                            </thead>
+                            <tbody id="gbHistoryBody">
+                                <tr><td colspan="6" class="gb-table-empty">Nog geen activiteit gelogd.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="teamsSection" class="content-section">
+                <div class="section-label">Live Module — Teams</div>
+                <h2>Teams</h2>
+                <p class="section-intro">
+                    Haal Teams-data live op voor de geselecteerde tenant. Deze werkruimte richt zich alleen op Microsoft Teams.
+                </p>
+                <div id="teamsModuleRoot" class="live-module-root">
+                    <p class="live-module-empty">Selecteer een tenant om Teams-data op te halen.</p>
+                </div>
+            </section>
+
+            <section id="sharepointSection" class="content-section">
+                <div class="section-label">Live Module — SharePoint</div>
+                <h2>SharePoint</h2>
+                <p class="section-intro">
+                    Haal SharePoint-data live op voor de geselecteerde tenant. Sites, instellingen en SharePoint-backup staan hier samen.
+                </p>
+                <div id="sharepointModuleRoot" class="live-module-root">
+                    <p class="live-module-empty">Selecteer een tenant om SharePoint-data op te halen.</p>
+                </div>
+            </section>
+
+            <section id="identitySection" class="content-section">
+                <div class="section-label">Live Module — Identity</div>
+                <h2>Identity &amp; Access</h2>
+                <p class="section-intro">
+                    MFA, gastgebruikers, adminrollen, security defaults en legacy-auth live voor de geselecteerde tenant.
+                </p>
+                <div id="identityModuleRoot" class="live-module-root">
+                    <p class="live-module-empty">Selecteer een tenant om identitydata op te halen.</p>
+                </div>
+            </section>
+
+            <section id="appsSection" class="content-section">
+                <div class="section-label">Live Module — App Registrations</div>
+                <h2>App Registraties</h2>
+                <p class="section-intro">
+                    Bekijk app-registraties, expirerende secrets en certificaten live per tenant in plaats van alleen via assessment snapshots.
+                </p>
+                <div id="appsModuleRoot" class="live-module-root">
+                    <p class="live-module-empty">Selecteer een tenant om app-registratiedata op te halen.</p>
+                </div>
+            </section>
+
+            <!-- ── CIS M365 BENCHMARK ── -->
+            <section id="complianceSection" class="content-section">
+                <div class="section-label">Security — CIS M365 Benchmark</div>
+                <h2>CIS M365 Foundations Benchmark</h2>
+                <p class="section-intro">
+                    CIS M365 Foundations Benchmark v3.0 — pass/fail per control met NIST, ISO 27001, PCI DSS en HIPAA framework-mapping. Resultaten worden gegenereerd bij een assessment-run.
+                </p>
+                <div id="complianceModuleRoot" class="live-module-root">
+                    <p class="live-module-empty">Selecteer een tenant om CIS-benchmarkdata op te halen.</p>
+                </div>
+            </section>
+
+            <!-- ── HYBRID IDENTITY & AD CONNECT ── -->
+            <section id="hybridSection" class="content-section">
+                <div class="section-label">Identiteit — Hybrid Identity</div>
+                <h2>Hybrid Identity &amp; AD Connect</h2>
+                <p class="section-intro">
+                    Synchronisatiestatus van AD Connect, authenticatietype (PHS/PTA/Federated) en domeinconfiguratie voor hybrid-tenants.
+                </p>
+                <div id="hybridModuleRoot" class="live-module-root">
+                    <p class="live-module-empty">Selecteer een tenant om hybrid identity-data op te halen.</p>
+                </div>
+            </section>
+
+            <!-- ── BASELINE & GOLD TENANT ── -->
+            <section id="baselineSection" class="content-section">
+                <div class="section-label">Fase 3 — Baseline & Gold Tenant</div>
+                <h2>Desired State Engine</h2>
+                <p class="section-intro">
+                    Definieer beveiligingsbaselines vanuit een Gold Tenant en zorg dat alle klanttenants
+                    voldoen aan de gewenste configuratie. Voer compliance checks en geautomatiseerde toepassing uit.
+                </p>
+
+                <!-- Tabs -->
+                <div class="bl-tabs">
+                    <button class="bl-tab active" data-tab="baselines">Baselines</button>
+                    <button class="bl-tab" data-tab="gold">Gold Tenant Export</button>
+                    <button class="bl-tab" data-tab="assignments">Koppelingen</button>
+                    <button class="bl-tab" data-tab="history">Geschiedenis</button>
+                </div>
+
+                <!-- ── Tab: Baselines ── -->
+                <div class="bl-tab-panel" data-panel="baselines">
+                    <div class="bl-toolbar">
+                        <input type="search" id="blSearchInput" class="bl-search" placeholder="Zoek baseline...">
+                        <div id="blBaselineCount" class="gb-toolbar-info">— baselines</div>
+                        <button class="bl-btn bl-btn-primary" id="blBtnNieuw">+ Nieuwe baseline</button>
+                    </div>
+                    <div class="bl-grid" id="blBaselineGrid">
+                        <div class="bl-empty">
+                            <div class="bl-empty-icon">📋</div>
+                            <div class="bl-empty-title">Nog geen baselines</div>
+                            <div>Exporteer een Gold Tenant of maak een baseline handmatig aan.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── Tab: Gold Tenant Export ── -->
+                <div class="bl-tab-panel" data-panel="gold" style="display:none">
+                    <div id="blGoldPanel">
+                        <div style="padding:2rem;text-align:center;color:var(--text-muted)">Laden...</div>
+                    </div>
+                </div>
+
+                <!-- ── Tab: Koppelingen ── -->
+                <div class="bl-tab-panel" data-panel="assignments" style="display:none">
+                    <div class="bl-assign-table-wrap">
+                        <table class="bl-assign-table">
+                            <thead>
+                                <tr>
+                                    <th>Baseline</th>
+                                    <th>Tenant</th>
+                                    <th>Status</th>
+                                    <th>Compliance</th>
+                                    <th>Laatste check</th>
+                                    <th>Toegepast op</th>
+                                    <th>Acties</th>
+                                </tr>
+                            </thead>
+                            <tbody id="blAssignBody">
+                                <tr><td colspan="7" style="text-align:center;padding:2rem;color:var(--text-muted)">Selecteer de Koppelingen tab om te laden.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ── Tab: Geschiedenis ── -->
+                <div class="bl-tab-panel" data-panel="history" style="display:none">
+                    <div class="bl-findings-wrap">
+                        <table class="bl-findings-table">
+                            <thead>
+                                <tr>
+                                    <th>Tijdstip</th>
+                                    <th>Actie</th>
+                                    <th>Baseline ID</th>
+                                    <th>Tenant ID</th>
+                                    <th>Status</th>
+                                    <th>Uitgevoerd door</th>
+                                </tr>
+                            </thead>
+                            <tbody id="blHistoryBody">
+                                <tr><td colspan="6" style="text-align:center;padding:2rem;color:var(--text-muted)">Selecteer Geschiedenis tab om te laden.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── INTUNE & DEVICE MANAGEMENT ── -->
+            <section id="intuneSection" class="content-section">
+                <div class="section-label">Fase 4 — Intune & Device Management</div>
+                <h2>Apparaatbeheer</h2>
+                <p class="section-intro">
+                    Beheer Intune managed devices, compliance policies en configuratieprofielen via Microsoft Graph API.
+                    Klik op een apparaat voor volledig detail inclusief hardware, encryption en gekoppelde policies.
+                </p>
+                <div id="intuneModuleRoot" class="live-module-root">
+                    <p class="live-module-empty">Selecteer een tenant om Intunedata op te halen.</p>
+                </div>
+            </section>
+
+            <!-- ── BACKUP (Fase 5) ── -->
+            <section id="backupSection" class="content-section">
+                <div class="section-label">Fase 5 — Backup Module</div>
+                <h2>Microsoft 365 Backup</h2>
+                <p class="section-intro">
+                    Inzicht in de Microsoft 365 Backup Storage bescherming per tenant — SharePoint sites,
+                    OneDrive drives en Exchange mailboxen. Beheerd via de Microsoft Graph Backup Storage API.
+                </p>
+                <div id="backupModuleRoot" class="live-module-root">
+                    <p class="live-module-empty">Selecteer een tenant om backupdata op te halen.</p>
+                </div>
+            </section>
+
+            <!-- ── CONDITIONAL ACCESS (Fase 6) ── -->
+            <section id="caSection" class="content-section">
+                <div class="section-label">Fase 6 — Conditional Access</div>
+                <h2>CA Policies</h2>
+                <p class="section-intro">Beheer Conditional Access policies en named locations via Microsoft Graph. Schakel policies in of uit en bekijk de volledige configuratie per policy.</p>
+                <div id="caCapabilityBanner"></div>
+                <div id="caWorkspaceSource"></div>
+                <div id="caServiceOverview"></div>
+                <div id="caSnapshotBanner" class="snapshot-banner" style="display:none"></div>
+
+                <div class="ca-tabs">
+                    <button class="ca-tab active" data-ca-tab="policies">Policies</button>
+                    <button class="ca-tab" data-ca-tab="locations">Named Locations</button>
+                    <button class="ca-tab" data-ca-tab="geschiedenis">Geschiedenis</button>
+                </div>
+
+                <div class="ca-tab-panel" data-ca-panel="policies">
+                    <div class="ca-toolbar">
+                        <div class="ca-toolbar-info" id="caPolicyCount">— policies</div>
+                        <button class="ca-btn ca-btn-secondary" id="caBtnRefresh">⟳ Verversen</button>
+                    </div>
+                    <div id="caPoliciesWrap"><p class="ca-empty">Selecteer een tenant om CA policies te laden.</p></div>
+                </div>
+
+                <div class="ca-tab-panel" data-ca-panel="locations" style="display:none">
+                    <div class="ca-toolbar">
+                        <div class="ca-toolbar-info" id="caLocCount">— locaties</div>
+                        <button class="ca-btn ca-btn-secondary" id="caBtnRefreshLoc">⟳ Verversen</button>
+                    </div>
+                    <div id="caLocationsWrap"><p class="ca-empty">Selecteer een tenant om named locations te laden.</p></div>
+                </div>
+
+                <div class="ca-tab-panel" data-ca-panel="geschiedenis" style="display:none">
+                    <div class="ca-history-wrap">
+                        <table class="ca-history-table">
+                            <thead><tr><th>Tijdstip</th><th>Actie</th><th>Policy ID</th><th>Status</th><th>Uitgevoerd door</th></tr></thead>
+                            <tbody id="caHistoryBody">
+                                <tr><td colspan="5" class="ca-history-table-empty">Nog geen CA acties gelogd.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── DOMAINS ANALYSER (Fase 7) ── -->
+            <section id="domainsSection" class="content-section">
+                <div class="section-label">Fase 7 — Domains Analyser</div>
+                <h2>DNS &amp; Domeinen</h2>
+                <p class="section-intro">Analyseer SPF, DKIM, DMARC en MX records per domein. Elke analyse geeft een score en concrete verbeterpunten voor e-mailbeveiliging.</p>
+                <div id="domainsModuleRoot" class="live-module-root">
+                    <p class="live-module-empty">Selecteer een tenant om domeindata op te halen.</p>
+                </div>
+            </section>
+
+            <!-- ── ALERTS & NOTIFICATIES (Fase 8) ── -->
+            <section id="alertsSection" class="content-section">
+                <div class="section-label">Fase 8 — Alerts &amp; Notificaties</div>
+                <h2>Alerts &amp; Beveiliging</h2>
+                <p class="section-intro">Microsoft Secure Score, directory audit log, risico-aanmeldingen en webhook-notificaties naar Teams of Slack.</p>
+                <div id="alertsModuleRoot" class="live-module-root">
+                    <p class="live-module-empty">Selecteer een tenant om alertdata op te halen.</p>
+                </div>
+            </section>
+
+            <!-- ── EXCHANGE & EMAIL (Fase 9) ── -->
+            <section id="exchangeSection" class="content-section">
+                <div class="section-label">Fase 9 — Exchange &amp; Email</div>
+                <h2>Exchange &amp; Mailboxen</h2>
+                <p class="section-intro">Overzicht van alle mailboxen, actieve e-mail forwarding en inbox-regels. Verdachte regels (doorsturen, verwijderen) worden automatisch gemarkeerd.</p>
+                <div id="exchangeModuleRoot" class="live-module-root">
+                    <p class="live-module-empty">Selecteer een tenant om exchangedata op te halen.</p>
+                </div>
+            </section>
+
         </div><!-- /dashboard-main -->
+
+        <aside id="portalContextRail" class="portal-context-rail" aria-label="Aanbevelingen en opmerkingen">
+            <div class="portal-context-header">
+                <div>
+                    <span class="portal-context-eyebrow">Context</span>
+                    <h3 id="portalContextTitle">Inzichten</h3>
+                </div>
+                <button type="button" class="portal-context-close" id="portalContextClose" aria-label="Sluit inzichten">✕</button>
+            </div>
+            <div id="portalContextContent" class="portal-context-content"></div>
+        </aside>
     </main><!-- /content-area -->
 
 </div><!-- /dashboard-container -->
 </div><!-- /site-wrap -->
 
 <script src="js/dashboard.js"></script>
+<script src="js/live-modules.js"></script>
 <script src="js/assessment-ui.js"></script>
 <script src="js/assessment.js"></script>
 <script src="js/results-viewer.js"></script>
-<script src="js/entrafalcon.js"></script>
 <script src="js/kb.js"></script>
+<script src="js/remediate.js"></script>
+<script src="js/gebruikers.js"></script>
+<script src="js/baseline.js"></script>
+<script src="js/intune.js"></script>
+<script src="js/backup.js"></script>
+<script src="js/ca.js"></script>
+<script src="js/domains.js"></script>
+<script src="js/alerts.js"></script>
+<script src="js/exchange.js"></script>
+<script src="js/bevindingen.js"></script>
 
 <script>
+// ══════════════════════════════════════════════════════════
+// DENJOY PORTAL — Auth & Role-based access control
+// ══════════════════════════════════════════════════════════
+
+let _currentRole = 'klant';
+let _msalAppInstance = null;
+
 async function _initAuth() {
   let role = 'klant';
   let name = 'Ingelogd';
-
-  // Token kan in localStorage OF sessionStorage staan (we ondersteunen beide)
-  let token = localStorage.getItem('denjoy_token') || sessionStorage.getItem('denjoy_token');
+  // localStorage zodat token bewaard blijft na page refresh
+  let token = localStorage.getItem('denjoy_token');
 
   // ── 1. Lokale sessie (admin of klant met lokaal account) ──
   if (token) {
@@ -1449,11 +2496,7 @@ async function _initAuth() {
         return;
       }
     } catch (_) {}
-
-    // Token ongeldig/verlopen → opruimen
     localStorage.removeItem('denjoy_token');
-    sessionStorage.removeItem('denjoy_token');
-    token = null;
   }
 
   // ── 2. MSAL redirect afhandeling (klant via Microsoft) ──
@@ -1466,12 +2509,10 @@ async function _initAuth() {
         auth: {
           clientId,
           authority: `https://login.microsoftonline.com/${tenantId}`,
-          // FIX: dashboard staat in /portal/
-          redirectUri: window.location.origin + '/portal/dashboard.html'
+          redirectUri: window.location.origin + '/dashboard.html'
         },
         cache: { cacheLocation: 'sessionStorage' }
       });
-
       await msalApp.initialize();
       _msalAppInstance = msalApp;
 
@@ -1492,14 +2533,9 @@ async function _initAuth() {
             body: JSON.stringify({ email, name, tenant_id: msalTenantId }),
             credentials: 'include'
           });
-
           if (regRes.ok) {
             const regData = await regRes.json();
-
-            // FIX: token opslaan in localStorage én sessionStorage
             localStorage.setItem('denjoy_token', regData.token);
-            sessionStorage.setItem('denjoy_token', regData.token);
-
             role = regData.role || 'klant';
             name = regData.display_name || name;
           }
@@ -1507,12 +2543,11 @@ async function _initAuth() {
 
         sessionStorage.setItem('denjoy_user_name',  name);
         sessionStorage.setItem('denjoy_user_email', email);
-
         _applyRole(role, name, 'msal');
         return;
       }
     } catch (err) {
-      console.warn('MSAL init:', err && err.message ? err.message : err);
+      console.warn('MSAL init:', err.message);
     }
   }
 
@@ -1521,14 +2556,88 @@ async function _initAuth() {
   try {
     const health = await fetch('/api/health');
     if (health.ok) {
-      // FIX: login staat op /login.html (niet /site/login.html)
-      window.location.href = '/login.html';
+      window.location.href = '/site/login.html';
     }
   } catch (_) {
     // Backend niet bereikbaar — toon portaal zonder auth (lokale bestand-open)
     _applyRole('admin', 'Lokaal', 'local');
   }
 }
+
+function _applyRole(role, name, method) {
+  _currentRole = role;
+
+  // Synchroniseer met dashboard.js zodat admin-only UI direct zichtbaar wordt,
+  // ongeacht welk auth-pad (lokaal of MSAL) als eerste klaar is.
+  if (typeof window._setDashboardRole === 'function') {
+    window._setDashboardRole(role);
+  }
+
+  // Naam tonen in topbar
+  const nameEl = document.getElementById('userName');
+  if (nameEl) nameEl.textContent = name;
+
+  // Role-badge onder de naam
+  const badge = document.createElement('span');
+  badge.style.cssText = 'font-family:var(--mono);font-size:0.58rem;opacity:0.45;display:block;margin-top:1px;';
+  badge.textContent = role === 'admin' ? '⚙ Beheerder' : '👁 Alleen lezen';
+  if (nameEl) nameEl.appendChild(badge);
+
+  // ── Klant: verberg beheer-functies ──
+  if (role === 'klant') {
+    // Verberg: Start Assessment, Instellingen, Ververs-knop
+    const adminSections = ['assessment', 'settings'];
+    adminSections.forEach(s => {
+      const navItem = document.querySelector(`.portal-nav-link[data-section="${s}"], .nav-dropdown-link[data-section="${s}"]`);
+      if (navItem) navItem.style.display = 'none';
+    });
+    const refreshBtn = document.getElementById('logoutButton');
+    if (refreshBtn) refreshBtn.style.display = 'none';
+
+    // Als huidige sectie een admin-sectie is, switch naar overview
+    if (adminSections.includes(window._currentSection)) {
+      if (typeof showSection === 'function') showSection('overview');
+    }
+  }
+
+  // ── Afmeld-knop koppelen ──
+  const logoutBtn = document.querySelector('.sidebar-logout-btn');
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      // Backend sessie verwijderen
+      const t = localStorage.getItem('denjoy_token');
+      if (t) {
+        await fetch('/api/auth/logout', {
+          method: 'POST',
+          headers: { 'Authorization': `Bearer ${t}` },
+          credentials: 'include'
+        }).catch(() => {});
+      }
+      localStorage.removeItem('denjoy_token');
+      // MSAL logout indien van toepassing
+      if (method === 'msal' && _msalAppInstance) {
+        try {
+          const accounts = _msalAppInstance.getAllAccounts();
+          if (accounts.length > 0) {
+            await _msalAppInstance.logoutRedirect({
+              account: accounts[0],
+              postLogoutRedirectUri: window.location.origin + '/site/index.html'
+            });
+            return;
+          }
+        } catch (_) {}
+      }
+      sessionStorage.clear();
+      window.location.href = '/site/index.html';
+    });
+  }
+}
+
+// Start auth-controle zodra pagina geladen is
+_initAuth();
 </script>
+<!-- Toast notification container -->
+<div id="toast-container" aria-live="polite" aria-atomic="false"></div>
 </body>
 </html>

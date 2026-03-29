@@ -1,0 +1,273 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Bevindingen & Health — sectie-stijlen
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* Health balk bovenaan */
+.bev-health-bar {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  background: var(--surface-alt, #f8f8f8);
+  border: 1px solid var(--border, #e2e2e2);
+  border-radius: 10px;
+  padding: 1.1rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Score cirkel / getal */
+.bev-health-score-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 72px;
+}
+
+.bev-health-score {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-family: var(--mono, monospace);
+  color: var(--text, #1a1a1a);
+  transition: color .2s;
+}
+
+.bev-health-score.bev-score--ok   { color: #16a34a; }
+.bev-health-score.bev-score--warn { color: #d97706; }
+.bev-health-score.bev-score--crit { color: #dc2626; }
+
+.bev-health-score-label {
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  opacity: .55;
+  margin-top: .25rem;
+  white-space: nowrap;
+}
+
+/* Domain pills */
+.bev-domain-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  flex: 1;
+}
+
+.bev-domain-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .3rem .75rem;
+  border-radius: 20px;
+  font-size: .78rem;
+  border: 1px solid transparent;
+  background: var(--surface, #fff);
+}
+
+.bev-domain-pill strong { font-weight: 700; }
+
+.bev-domain-pill.bev-pill--ok   { border-color: #86efac; background: #f0fdf4; color: #166534; }
+.bev-domain-pill.bev-pill--warn { border-color: #fde68a; background: #fffbeb; color: #92400e; }
+.bev-domain-pill.bev-pill--crit { border-color: #fca5a5; background: #fef2f2; color: #7f1d1d; }
+
+.bev-health-actions { margin-left: auto; }
+
+/* Toolbar / filters */
+.bev-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.bev-filters {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.bev-filter-select {
+  padding: .35rem .65rem;
+  border: 1px solid var(--border, #d1d5db);
+  border-radius: 6px;
+  background: var(--surface, #fff);
+  color: var(--text, #1a1a1a);
+  font-size: .82rem;
+  cursor: pointer;
+}
+
+.bev-filter-select:focus {
+  outline: none;
+  border-color: var(--accent, #4f46e5);
+}
+
+.bev-count {
+  font-size: .8rem;
+  opacity: .6;
+  white-space: nowrap;
+}
+
+/* Tabel wrapper */
+.bev-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border, #e2e2e2);
+  border-radius: 10px;
+}
+
+/* Tabel */
+.bev-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .84rem;
+}
+
+.bev-table thead th {
+  padding: .7rem 1rem;
+  text-align: left;
+  font-size: .72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--text-muted, #6b7280);
+  background: var(--surface-alt, #f9fafb);
+  border-bottom: 1px solid var(--border, #e5e7eb);
+  white-space: nowrap;
+}
+
+.bev-table tbody tr {
+  border-bottom: 1px solid var(--border, #f3f4f6);
+  transition: background .12s;
+}
+
+.bev-table tbody tr:last-child { border-bottom: none; }
+.bev-table tbody tr:hover { background: var(--surface-hover, #f9fafb); }
+
+.bev-table td {
+  padding: .65rem 1rem;
+  vertical-align: top;
+  color: var(--text, #1a1a1a);
+}
+
+/* Row accent by status */
+.bev-row--critical td:first-child { border-left: 3px solid #dc2626; }
+.bev-row--warning  td:first-child { border-left: 3px solid #f59e0b; }
+.bev-row--ok       td:first-child { border-left: 3px solid #16a34a; }
+.bev-row--info     td:first-child { border-left: 3px solid #3b82f6; }
+
+.bev-domain-tag {
+  display: inline-block;
+  padding: .18rem .55rem;
+  border-radius: 4px;
+  background: var(--surface-alt, #f3f4f6);
+  font-size: .76rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.bev-control {
+  font-family: var(--mono, monospace);
+  font-size: .78rem;
+  white-space: nowrap;
+  color: var(--text-muted, #6b7280);
+}
+
+.bev-finding {
+  max-width: 260px;
+}
+
+.bev-recommendation {
+  max-width: 260px;
+  color: var(--text-muted, #6b7280);
+  font-size: .8rem;
+}
+
+.bev-date {
+  white-space: nowrap;
+  font-size: .76rem;
+  color: var(--text-muted, #6b7280);
+}
+
+.bev-na {
+  opacity: .35;
+}
+
+.bev-empty {
+  text-align: center;
+  padding: 2.5rem 1rem !important;
+  color: var(--text-muted, #9ca3af);
+  font-size: .88rem;
+}
+
+.bev-loading::before {
+  content: '⟳ ';
+  animation: bev-spin 1s linear infinite;
+  display: inline-block;
+}
+
+@keyframes bev-spin {
+  to { transform: rotate(360deg); }
+}
+
+.bev-error {
+  color: #dc2626 !important;
+}
+
+/* small badge variant (impact) */
+.live-badge-sm {
+  font-size: .68rem;
+  padding: .12rem .45rem;
+}
+
+/* ── Dark mode ────────────────────────────────────────────────────────────── */
+[data-theme="dark"] .bev-health-bar,
+body.dark .bev-health-bar {
+  background: var(--surface-alt, #1e1e2e);
+  border-color: var(--border, #313145);
+}
+
+[data-theme="dark"] .bev-domain-pill,
+body.dark .bev-domain-pill {
+  background: var(--surface, #16161e);
+}
+
+[data-theme="dark"] .bev-domain-pill.bev-pill--ok   { background: #14532d33; border-color: #16a34a55; color: #86efac; }
+[data-theme="dark"] .bev-domain-pill.bev-pill--warn { background: #78350f33; border-color: #d9770655; color: #fde68a; }
+[data-theme="dark"] .bev-domain-pill.bev-pill--crit { background: #7f1d1d33; border-color: #dc262655; color: #fca5a5; }
+
+[data-theme="dark"] .bev-filter-select,
+body.dark .bev-filter-select {
+  background: var(--surface, #1e1e2e);
+  border-color: var(--border, #313145);
+  color: var(--text, #e2e8f0);
+}
+
+[data-theme="dark"] .bev-table-wrap,
+body.dark .bev-table-wrap {
+  border-color: var(--border, #313145);
+}
+
+[data-theme="dark"] .bev-table thead th,
+body.dark .bev-table thead th {
+  background: var(--surface-alt, #16161e);
+  color: var(--text-muted, #94a3b8);
+  border-bottom-color: var(--border, #313145);
+}
+
+[data-theme="dark"] .bev-table tbody tr,
+body.dark .bev-table tbody tr {
+  border-bottom-color: var(--border, #23233a);
+}
+
+[data-theme="dark"] .bev-table td,
+body.dark .bev-table td {
+  color: var(--text, #e2e8f0);
+}
+
+[data-theme="dark"] .bev-domain-tag,
+body.dark .bev-domain-tag {
+  background: var(--surface-alt, #23233a);
+  color: var(--text, #e2e8f0);
+}

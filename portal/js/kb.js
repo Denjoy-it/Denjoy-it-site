@@ -6,12 +6,12 @@
 // ---------------------------------------------------------------------------
 // State
 // ---------------------------------------------------------------------------
-let kbCurrentTab   = 'overview';
-let kbAssetTypes   = [];
-let kbAssetsCache  = [];
-let kbVlansCache   = [];
-let kbPagesCache   = [];
-let kbContactsCache= [];
+let kbCurrentTab = 'overview';
+let kbAssetTypes = [];
+let kbAssetsCache = [];
+let kbVlansCache = [];
+let kbPagesCache = [];
+let kbContactsCache = [];
 let kbPasswordsCache = [];
 let kbSoftwareCache = [];
 let kbDomainsCache = [];
@@ -21,16 +21,16 @@ let kbM365Cache = null;
 // Cache-TTL: herlaad uiterlijk elke 5 minuten of bij tenantwissel
 const _KB_CACHE_TTL = 5 * 60 * 1000;
 let _kbCacheTime = 0;
-let _kbCacheTid  = null;
+let _kbCacheTid = null;
 
 /** Forceer herlaad bij volgende kbRefreshCounts-aanroep (gebruik na mutaties). */
 function kbInvalidateCache() {
   _kbCacheTime = 0;
 }
-let kbEditingPageId= null;
-let kbSelectedAssetId  = null;
-let kbSelectedVlanId   = null;
-let kbSelectedContactId= null;
+let kbEditingPageId = null;
+let kbSelectedAssetId = null;
+let kbSelectedVlanId = null;
+let kbSelectedContactId = null;
 let kbSelectedPasswordId = null;
 let kbSelectedSoftwareId = null;
 let kbSelectedDomainId = null;
@@ -39,6 +39,34 @@ let kbSelectedSwitchNode = null;
 let kbSwitchTabAssets = [];
 let kbSoftwareSourceFilter = 'all';
 let kbContactSourceFilter = 'all';
+
+function kbHandleTenantSwitch(tid) {
+  // Reset tenant-bound caches so no data leaks between tenants in UI state.
+  kbAssetTypes = [];
+  kbAssetsCache = [];
+  kbVlansCache = [];
+  kbPagesCache = [];
+  kbContactsCache = [];
+  kbPasswordsCache = [];
+  kbSoftwareCache = [];
+  kbDomainsCache = [];
+  kbAppRegsCache = [];
+  kbChangelogCache = [];
+  kbM365Cache = null;
+  kbSwitchTabAssets = [];
+  kbSelectedAssetId = null;
+  kbSelectedVlanId = null;
+  kbSelectedContactId = null;
+  kbSelectedPasswordId = null;
+  kbSelectedSoftwareId = null;
+  kbSelectedDomainId = null;
+  kbSelectedAppRegId = null;
+  kbSelectedChangelogId = null;
+  kbSelectedSwitchNode = null;
+  _kbCacheTid = tid || null;
+  kbInvalidateCache();
+}
+window.kbHandleTenantSwitch = kbHandleTenantSwitch;
 
 // ---------------------------------------------------------------------------
 // Sub-nav switching
@@ -59,13 +87,14 @@ function kbSwitchTab(tabName) {
   const tid = currentTenantId;
   if (!tid) return;
   if (tabName === 'overview') kbLoadOverview(tid);
-  if (tabName === 'assets')   kbLoadAssets(tid);
-  if (tabName === 'vlans')    kbLoadVlans(tid);
-  if (tabName === 'pages')    kbLoadPages(tid);
+  if (tabName === 'assets') kbLoadAssets(tid);
+  if (tabName === 'vlans') kbLoadVlans(tid);
+  if (tabName === 'pages') kbLoadPages(tid);
   if (tabName === 'contacts') kbLoadContacts(tid);
   if (tabName === 'passwords') kbLoadPasswords(tid);
   if (tabName === 'software') kbLoadSoftware(tid);
   if (tabName === 'domains') kbLoadDomains(tid);
+  if (tabName === 'appregs') kbLoadAppRegs(tid);
   if (tabName === 'm365') kbLoadM365(tid);
   if (tabName === 'changelog') kbLoadChangelog(tid);
   if (tabName.startsWith('switch-')) kbRenderSwitchTab(tabName);
@@ -87,11 +116,11 @@ async function kbInit() {
     return;
   }
 
-  if (!kbAssetTypes.length) {
+  if (!kbAssetTypes.length || _kbCacheTid !== tid) {
     try {
       kbAssetTypes = await apiFetch(`/api/kb/${tid}/asset-types`);
       _populateTypeDropdowns(kbAssetTypes);
-    } catch (_) {}
+    } catch (_) { }
   }
 
   await kbRefreshCounts(tid);
@@ -117,35 +146,35 @@ async function kbRefreshCounts(tid, { force = false } = {}) {
       apiFetch(`/api/kb/${tid}/m365`),
       apiFetch(`/api/kb/${tid}/changelog`),
     ]);
-    kbAssetsCache    = assets;
-    kbVlansCache     = vlans;
-    kbPagesCache     = pages;
-    kbContactsCache  = contacts;
+    kbAssetsCache = assets;
+    kbVlansCache = vlans;
+    kbPagesCache = pages;
+    kbContactsCache = contacts;
     kbPasswordsCache = passwords;
-    kbSoftwareCache  = software;
-    kbDomainsCache   = domains;
-    kbM365Cache      = m365;
+    kbSoftwareCache = software;
+    kbDomainsCache = domains;
+    kbM365Cache = m365;
     kbChangelogCache = changelog;
     kbSwitchTabAssets = assets.filter((a) => _isSwitchAsset(a));
 
-    _kbCacheTid  = tid;
+    _kbCacheTid = tid;
     _kbCacheTime = Date.now();
 
     _updateCountBadges();
     kbRenderSwitchTabs();
     if (kbCurrentTab === 'overview') kbLoadOverview(tid);
-  } catch (_) {}
+  } catch (_) { }
 }
 
 function _updateCountBadges() {
   const m365 = kbM365Cache;
-  _setCount('nbCountAssets',    kbAssetsCache.length);
-  _setCount('nbCountVlans',     kbVlansCache.length);
-  _setCount('nbCountPages',     kbPagesCache.length);
-  _setCount('nbCountContacts',  kbContactsCache.length + ((m365?.assessment_user_mailboxes || []).filter((item) => _looksLikePersonName(item.DisplayName || item.display_name)).length));
+  _setCount('nbCountAssets', kbAssetsCache.length);
+  _setCount('nbCountVlans', kbVlansCache.length);
+  _setCount('nbCountPages', kbPagesCache.length);
+  _setCount('nbCountContacts', kbContactsCache.length + ((m365?.assessment_user_mailboxes || []).filter((item) => _looksLikePersonName(item.DisplayName || item.display_name)).length));
   _setCount('nbCountPasswords', kbPasswordsCache.length);
-  _setCount('nbCountSoftware',  kbSoftwareCache.length + ((m365?.assessment_app_registrations || []).length));
-  _setCount('nbCountDomains',   kbDomainsCache.length);
+  _setCount('nbCountSoftware', kbSoftwareCache.length + ((m365?.assessment_app_registrations || []).length));
+  _setCount('nbCountDomains', kbDomainsCache.length);
   _setCount('nbCountChangelog', kbChangelogCache.length);
 }
 
@@ -156,7 +185,7 @@ function _setCount(id, n) {
 
 function _populateTypeDropdowns(types) {
   const filterSel = document.getElementById('kbAssetTypeFilter');
-  const formSel   = document.getElementById('kbAssetType');
+  const formSel = document.getElementById('kbAssetType');
   if (filterSel) {
     filterSel.innerHTML = '<option value="">Alle typen</option>' +
       types.map((t) => `<option value="${t.id}">${t.icon} ${t.name}</option>`).join('');
@@ -300,6 +329,47 @@ const PAGE_CAT_LABELS = {
   procedures: '📋 Procedures', contacts: '👥 Contacten',
 };
 
+const KB_FRIENDLY_SKU_MAP = {
+  AAD_PREMIUM: 'Azure AD Premium P1',
+  AAD_PREMIUM_P2: 'Azure AD Premium P2',
+  ENTERPRISEPACK: 'Office 365 E3',
+  ENTERPRISEPREMIUM: 'Office 365 E5',
+  EXCHANGESTANDARD: 'Exchange Online Plan 1',
+  EXCHANGEENTERPRISE: 'Exchange Online Plan 2',
+  EMS: 'Enterprise Mobility + Security E3',
+  EMSPREMIUM: 'Enterprise Mobility + Security E5',
+  EMS_E3: 'Enterprise Mobility + Security E3',
+  EMS_E5: 'Enterprise Mobility + Security E5',
+  FLOW_FREE: 'Power Automate Free',
+  INTUNE_A: 'Microsoft Intune',
+  M365_BUSINESS_PREMIUM: 'Microsoft 365 Business Premium',
+  M365_BUSINESS_STANDARD: 'Microsoft 365 Business Standard',
+  MCOEV: 'Microsoft Teams Phone Standard',
+  Microsoft_365_Copilot: 'Microsoft 365 Copilot',
+  Microsoft_Teams_Rooms_Basic: 'Microsoft Teams Rooms Basic',
+  O365_BUSINESS_ESSENTIALS: 'Microsoft 365 Business Basic',
+  O365_BUSINESS_PREMIUM: 'Microsoft 365 Business Premium',
+  O365_BUSINESS_STANDARD: 'Microsoft 365 Business Standard',
+  PHONESYSTEM_VIRTUALUSER: 'Teams Phone Resource Account',
+  POWER_BI_PRO: 'Power BI Pro',
+  POWER_BI_PRO_CE: 'Power BI Pro',
+  POWER_BI_STANDARD: 'Power BI (Standard)',
+  PROJECTPREMIUM: 'Project Plan 5',
+  SP_T_STORAGE: 'SharePoint Extra Storage',
+  SPB: 'Microsoft 365 Business Premium',
+  SPE_E3: 'Microsoft 365 E3',
+  SPE_E5: 'Microsoft 365 E5',
+  TEAMS_EXPLORATORY: 'Microsoft Teams Exploratory',
+  VISIOCLIENT: 'Visio Plan 2',
+  WINDOWS_STORE: 'Windows Store',
+};
+
+function kbFriendlySkuName(value) {
+  const raw = String(value || '').trim();
+  if (!raw) return 'Onbekend';
+  return KB_FRIENDLY_SKU_MAP[raw] || raw;
+}
+
 // ---------------------------------------------------------------------------
 // OVERVIEW
 // ---------------------------------------------------------------------------
@@ -367,27 +437,52 @@ function kbLoadOverview() {
   const recentChanges = [...kbChangelogCache]
     .sort((a, b) => String(b.change_date || '').localeCompare(String(a.change_date || '')))
     .slice(0, 6);
+  const routeCards = [
+    { tab: 'assets', title: 'Apparaten', meta: `${kbAssetsCache.length} items`, sub: `${switchCount} switches gedocumenteerd`, icon: 'images/kb/assets.svg' },
+    { tab: 'vlans', title: 'Netwerk', meta: `${kbVlansCache.length} VLANs`, sub: `${kbPagesCache.length} documenten beschikbaar`, icon: 'images/kb/network.svg' },
+    { tab: 'pages', title: 'Documenten', meta: `${kbPagesCache.length} pagina\'s`, sub: `${kbContactsCache.length} contacten gekoppeld`, icon: 'images/kb/documents.svg' },
+    { tab: 'software', title: 'Software & Licenties', meta: `${softwareItems.length} items`, sub: `${kbDomainsCache.length} domeinen in beheer`, icon: 'images/kb/software.svg' },
+    { tab: 'm365', title: 'Microsoft 365', meta: _dash(kbM365Cache?.tenant_name), sub: `Licenties ${_dash(kbM365Cache?.licenses_used)} / ${_dash(kbM365Cache?.licenses_total)}`, icon: 'images/m365/microsoft365.svg' },
+    { tab: 'changelog', title: 'Wijzigingslog', meta: `${recentChanges.length} recente wijzigingen`, sub: 'Laatste mutaties en opvolging', icon: 'images/kb/changelog.svg' },
+  ];
 
   wrap.innerHTML = `
     <div class="nb-overview-grid">
       <section class="nb-overview-card nb-overview-hero">
         <div>
-          <div class="nb-overview-eyebrow">Kennisbank</div>
-          <h3>Centraal NetDocs-overzicht</h3>
-          <p>Alle netwerkdocumentatie, licenties, domeinen, M365 en wijzigingen per tenant op een plek.</p>
+          <div class="nb-overview-eyebrow"><img src="images/m365/microsoft365.svg" alt="" class="nb-overview-eyebrow-icon"> Documentatie</div>
+          <h3>Kennisbank cockpit</h3>
+          <p>Startpunt voor tenantdocumentatie, inventaris, M365-profiel en wijzigingen. Werk vanuit hier gericht verder in de juiste kennisbankmodule.</p>
         </div>
         <div class="nb-overview-actions">
           <button type="button" class="nb-btn nb-btn-primary" onclick="kbSwitchTab('assets')">Apparaten</button>
-          <button type="button" class="nb-btn nb-btn-ghost" onclick="kbSwitchTab('software')">Licenties</button>
-          <button type="button" class="nb-btn nb-btn-ghost" onclick="kbSwitchTab('domains')">Domeinen</button>
+          <button type="button" class="nb-btn nb-btn-ghost" onclick="kbSwitchTab('pages')">Documenten</button>
+          <button type="button" class="nb-btn nb-btn-ghost" onclick="kbSwitchTab('m365')">M365</button>
         </div>
       </section>
 
       <section class="nb-overview-stats">
-        <article class="nb-overview-stat"><span class="nb-overview-stat-value">${kbAssetsCache.length}</span><span class="nb-overview-stat-label">Apparaten</span><span class="nb-overview-stat-sub">${switchCount} switches</span></article>
-        <article class="nb-overview-stat"><span class="nb-overview-stat-value">${kbVlansCache.length}</span><span class="nb-overview-stat-label">VLANs</span><span class="nb-overview-stat-sub">${kbPagesCache.length} documenten</span></article>
-        <article class="nb-overview-stat"><span class="nb-overview-stat-value">${kbPasswordsCache.length}</span><span class="nb-overview-stat-label">Passwords</span><span class="nb-overview-stat-sub">${kbContactsCache.length} contacten</span></article>
-        <article class="nb-overview-stat"><span class="nb-overview-stat-value">${softwareItems.length}</span><span class="nb-overview-stat-label">Software</span><span class="nb-overview-stat-sub">${kbDomainsCache.length} domeinen</span></article>
+        <article class="nb-overview-stat"><span class="nb-overview-stat-icon"><img src="images/kb/assets.svg" alt=""></span><span class="nb-overview-stat-value">${kbAssetsCache.length}</span><span class="nb-overview-stat-label">Apparaten</span><span class="nb-overview-stat-sub">${switchCount} switches</span></article>
+        <article class="nb-overview-stat"><span class="nb-overview-stat-icon"><img src="images/kb/documents.svg" alt=""></span><span class="nb-overview-stat-value">${kbPagesCache.length}</span><span class="nb-overview-stat-label">Documenten</span><span class="nb-overview-stat-sub">${kbVlansCache.length} VLANs</span></article>
+        <article class="nb-overview-stat"><span class="nb-overview-stat-icon"><img src="images/m365/domains.svg" alt=""></span><span class="nb-overview-stat-value">${kbDomainsCache.length}</span><span class="nb-overview-stat-label">Domeinen</span><span class="nb-overview-stat-sub">${softwareItems.length} software-items</span></article>
+        <article class="nb-overview-stat"><span class="nb-overview-stat-icon"><img src="images/kb/changelog.svg" alt=""></span><span class="nb-overview-stat-value">${recentChanges.length}</span><span class="nb-overview-stat-label">Wijzigingen</span><span class="nb-overview-stat-sub">${kbPasswordsCache.length} passwords</span></article>
+      </section>
+
+      <section class="nb-overview-card nb-overview-card--routes">
+        <div class="nb-overview-card-head">
+          <h3>Werkgebieden</h3>
+          <button type="button" class="nb-btn nb-btn-xs nb-btn-ghost" onclick="kbSwitchTab('overview')">Startpunt</button>
+        </div>
+        <div class="nb-overview-routes">
+          ${routeCards.map((item) => `
+            <button type="button" class="nb-overview-route" onclick="kbSwitchTab('${esc(item.tab)}')">
+              <span class="nb-overview-route-icon"><img src="${esc(item.icon)}" alt=""></span>
+              <strong>${esc(item.title)}</strong>
+              <span>${esc(item.meta)}</span>
+              <small>${esc(item.sub)}</small>
+            </button>
+          `).join('')}
+        </div>
       </section>
 
       <section class="nb-overview-card">
@@ -405,27 +500,28 @@ function kbLoadOverview() {
 
       <section class="nb-overview-card">
         <div class="nb-overview-card-head">
-          <h3>Domein & SSL alerts</h3>
-          <button type="button" class="nb-btn nb-btn-xs nb-btn-ghost" onclick="kbSwitchTab('domains')">Domeinen</button>
+          <h3>Domein & M365 signalen</h3>
+          <button type="button" class="nb-btn nb-btn-xs nb-btn-ghost" onclick="kbSwitchTab('m365')">M365</button>
         </div>
-        ${(expiringDomains.length || tenantDomainAlerts.length) ? `
+        ${(expiringDomains.length || tenantDomainAlerts.length || kbM365Cache) ? `
           <div class="nb-overview-list">
+            <div class="nb-overview-list-item"><strong>Tenant</strong><span>${_dash(kbM365Cache?.tenant_name)} · MFA ${_dash(kbM365Cache?.mfa)} · CA ${kbM365Cache?.conditional_access ? 'Actief' : 'Niet ingesteld'}</span></div>
             ${expiringDomains.map((item) => `<div class="nb-overview-list-item"><strong>${esc(item.name)}</strong><span>${esc(item.source)} · ${esc(item.date)} · ${item.days} dagen</span></div>`).join('')}
             ${tenantDomainAlerts.map((item) => `<div class="nb-overview-list-item"><strong>${esc(item.name)}</strong><span>${esc(item.source)} · ${esc(item.issue)}</span></div>`).join('')}
           </div>
-        ` : '<p class="nb-empty nb-empty-inline">Geen domein-, SSL- of tenant DNS-waarschuwingen gevonden.</p>'}
+        ` : '<p class="nb-empty nb-empty-inline">Geen domein-, SSL- of tenantwaarschuwingen gevonden.</p>'}
       </section>
 
       <section class="nb-overview-card">
         <div class="nb-overview-card-head">
-          <h3>Microsoft 365</h3>
-          <button type="button" class="nb-btn nb-btn-xs nb-btn-ghost" onclick="kbSwitchTab('m365')">M365</button>
+          <h3>Documentatieposture</h3>
+          <button type="button" class="nb-btn nb-btn-xs nb-btn-ghost" onclick="kbSwitchTab('assets')">Inventaris</button>
         </div>
         <div class="nb-overview-m365">
-          <div><span>Tenant</span><strong>${_dash(kbM365Cache?.tenant_name)}</strong></div>
-          <div><span>Licenties</span><strong>${_dash(kbM365Cache?.licenses_used)} / ${_dash(kbM365Cache?.licenses_total)}</strong></div>
-          <div><span>MFA</span><strong>${_dash(kbM365Cache?.mfa)}</strong></div>
-          <div><span>Conditional Access</span><strong>${kbM365Cache?.conditional_access ? 'Actief' : 'Niet ingesteld'}</strong></div>
+          <div><span>Apparaten</span><strong>${kbAssetsCache.length}</strong></div>
+          <div><span>Documenten</span><strong>${kbPagesCache.length}</strong></div>
+          <div><span>Contacten</span><strong>${kbContactsCache.length}</strong></div>
+          <div><span>Passwords</span><strong>${kbPasswordsCache.length}</strong></div>
         </div>
       </section>
 
@@ -587,19 +683,19 @@ async function kbLoadAssets(tid) {
 }
 
 function _renderAssetsTable() {
-  const wrap   = document.getElementById('kbAssetsTable');
+  const wrap = document.getElementById('kbAssetsTable');
   const search = (document.getElementById('kbAssetSearch')?.value || '').toLowerCase();
-  const type   = document.getElementById('kbAssetTypeFilter')?.value || '';
+  const type = document.getElementById('kbAssetTypeFilter')?.value || '';
   const status = document.getElementById('kbAssetStatusFilter')?.value;
 
   const filtered = kbAssetsCache.filter((a) => {
     const matchSearch = !search ||
-      (a.name        || '').toLowerCase().includes(search) ||
-      (a.ip_address  || '').toLowerCase().includes(search) ||
-      (a.hostname    || '').toLowerCase().includes(search) ||
-      (a.location    || '').toLowerCase().includes(search) ||
-      (a.vendor      || '').toLowerCase().includes(search);
-    const matchType   = !type   || String(a.asset_type_id) === type;
+      (a.name || '').toLowerCase().includes(search) ||
+      (a.ip_address || '').toLowerCase().includes(search) ||
+      (a.hostname || '').toLowerCase().includes(search) ||
+      (a.location || '').toLowerCase().includes(search) ||
+      (a.vendor || '').toLowerCase().includes(search);
+    const matchType = !type || String(a.asset_type_id) === type;
     const matchStatus = status === '' || status == null || String(a.is_active) === status;
     return matchSearch && matchType && matchStatus;
   });
@@ -687,7 +783,7 @@ function _showAssetDetail(a) {
       <div class="nb-detail-field"><span class="nb-detail-field-label">Model</span><span class="nb-detail-field-value">${_dash(a.model)}</span></div>
       <div class="nb-detail-field"><span class="nb-detail-field-label">Firmware</span><span class="nb-detail-field-value">${_dash(a.firmware)}</span></div>
       <div class="nb-detail-field"><span class="nb-detail-field-label">Serienummer</span><span class="nb-detail-field-value">${_dash(a.serial)}</span></div>
-      <div class="nb-detail-field"><span class="nb-detail-field-label">Aangemaakt</span><span class="nb-detail-field-value">${_dash(a.created_at?.substring(0,10))}</span></div>
+      <div class="nb-detail-field"><span class="nb-detail-field-label">Aangemaakt</span><span class="nb-detail-field-value">${_dash(a.created_at?.substring(0, 10))}</span></div>
     </div>
     ${a.notes ? `<div class="nb-detail-notes"><strong>Notities</strong><br>${esc(a.notes)}</div>` : ''}
     ${switchSection}`;
@@ -711,7 +807,7 @@ function _renderAssetMetaBlock(a) {
       <div class="nb-detail-field"><span class="nb-detail-field-label">Model</span><span class="nb-detail-field-value">${_dash(a.model)}</span></div>
       <div class="nb-detail-field"><span class="nb-detail-field-label">Firmware</span><span class="nb-detail-field-value">${_dash(a.firmware)}</span></div>
       <div class="nb-detail-field"><span class="nb-detail-field-label">Serienummer</span><span class="nb-detail-field-value">${_dash(a.serial)}</span></div>
-      <div class="nb-detail-field"><span class="nb-detail-field-label">Aangemaakt</span><span class="nb-detail-field-value">${_dash(a.created_at?.substring(0,10))}</span></div>
+      <div class="nb-detail-field"><span class="nb-detail-field-label">Aangemaakt</span><span class="nb-detail-field-value">${_dash(a.created_at?.substring(0, 10))}</span></div>
     </div>`;
 }
 
@@ -754,7 +850,7 @@ window.kbOpenAddAsset = kbOpenAddAsset;
 
 async function kbOpenEditAsset(assetId) {
   const a = kbAssetsCache.find((x) => x.id === assetId)
-         || await apiFetch(`/api/kb/${currentTenantId}/assets/${assetId}`).catch(() => null);
+    || await apiFetch(`/api/kb/${currentTenantId}/assets/${assetId}`).catch(() => null);
   if (!a) return;
   _resetAssetModal('Apparaat bewerken', a);
   document.getElementById('kbAssetModal').style.display = 'flex';
@@ -763,18 +859,18 @@ window.kbOpenEditAsset = kbOpenEditAsset;
 
 function _resetAssetModal(title, a) {
   document.getElementById('kbAssetModalTitle').textContent = title;
-  document.getElementById('kbAssetId').value        = a?.id ?? '';
-  document.getElementById('kbAssetName').value      = a?.name ?? '';
-  document.getElementById('kbAssetType').value      = a?.asset_type_id ?? '';
-  document.getElementById('kbAssetHostname').value  = a?.hostname ?? '';
-  document.getElementById('kbAssetIP').value        = a?.ip_address ?? '';
-  document.getElementById('kbAssetLocation').value  = a?.location ?? '';
-  document.getElementById('kbAssetVendor').value    = a?.vendor ?? '';
-  document.getElementById('kbAssetModel').value     = a?.model ?? '';
-  document.getElementById('kbAssetFirmware').value  = a?.firmware ?? '';
-  document.getElementById('kbAssetSerial').value    = a?.serial ?? '';
-  document.getElementById('kbAssetNotes').value     = a?.notes ?? '';
-  document.getElementById('kbAssetActive').checked  = a ? !!a.is_active : true;
+  document.getElementById('kbAssetId').value = a?.id ?? '';
+  document.getElementById('kbAssetName').value = a?.name ?? '';
+  document.getElementById('kbAssetType').value = a?.asset_type_id ?? '';
+  document.getElementById('kbAssetHostname').value = a?.hostname ?? '';
+  document.getElementById('kbAssetIP').value = a?.ip_address ?? '';
+  document.getElementById('kbAssetLocation').value = a?.location ?? '';
+  document.getElementById('kbAssetVendor').value = a?.vendor ?? '';
+  document.getElementById('kbAssetModel').value = a?.model ?? '';
+  document.getElementById('kbAssetFirmware').value = a?.firmware ?? '';
+  document.getElementById('kbAssetSerial').value = a?.serial ?? '';
+  document.getElementById('kbAssetNotes').value = a?.notes ?? '';
+  document.getElementById('kbAssetActive').checked = a ? !!a.is_active : true;
   const switchConfig = _buildSwitchConfig(a || {});
   document.getElementById('kbAssetSwitchPortCount').value = String(switchConfig.port_count);
   document.getElementById('kbAssetSwitchSfpCount').value = String(switchConfig.sfp_count);
@@ -784,19 +880,19 @@ function _resetAssetModal(title, a) {
 
 async function kbSaveAsset() {
   const tid = currentTenantId;
-  const id  = document.getElementById('kbAssetId').value;
+  const id = document.getElementById('kbAssetId').value;
   const existingAsset = kbAssetsCache.find((item) => String(item.id) === String(id));
   const payload = {
     name: document.getElementById('kbAssetName').value.trim(),
     asset_type_id: document.getElementById('kbAssetType').value || null,
-    hostname:  document.getElementById('kbAssetHostname').value.trim() || null,
-    ip_address:document.getElementById('kbAssetIP').value.trim() || null,
-    location:  document.getElementById('kbAssetLocation').value.trim() || null,
-    vendor:    document.getElementById('kbAssetVendor').value.trim() || null,
-    model:     document.getElementById('kbAssetModel').value.trim() || null,
-    firmware:  document.getElementById('kbAssetFirmware').value.trim() || null,
-    serial:    document.getElementById('kbAssetSerial').value.trim() || null,
-    notes:     document.getElementById('kbAssetNotes').value.trim() || null,
+    hostname: document.getElementById('kbAssetHostname').value.trim() || null,
+    ip_address: document.getElementById('kbAssetIP').value.trim() || null,
+    location: document.getElementById('kbAssetLocation').value.trim() || null,
+    vendor: document.getElementById('kbAssetVendor').value.trim() || null,
+    model: document.getElementById('kbAssetModel').value.trim() || null,
+    firmware: document.getElementById('kbAssetFirmware').value.trim() || null,
+    serial: document.getElementById('kbAssetSerial').value.trim() || null,
+    notes: document.getElementById('kbAssetNotes').value.trim() || null,
     is_active: document.getElementById('kbAssetActive').checked ? 1 : 0,
     switch_config: _collectSwitchConfigFromModal(existingAsset),
   };
@@ -1051,7 +1147,7 @@ window.kbResetSwitchLayout = kbResetSwitchLayout;
 
 async function kbDeleteAsset() {
   const tid = currentTenantId;
-  const id  = document.getElementById('kbAssetId').value;
+  const id = document.getElementById('kbAssetId').value;
   if (!id || !confirm('Apparaat verwijderen?')) return;
   try {
     await apiFetch(`/api/kb/${tid}/assets/${id}`, { method: 'DELETE' });
@@ -1080,15 +1176,15 @@ async function kbLoadVlans(tid) {
 }
 
 function _renderVlansTable() {
-  const wrap    = document.getElementById('kbVlansTable');
-  const search  = (document.getElementById('kbVlanSearch')?.value || '').toLowerCase();
+  const wrap = document.getElementById('kbVlansTable');
+  const search = (document.getElementById('kbVlanSearch')?.value || '').toLowerCase();
   const purpose = document.getElementById('kbVlanPurposeFilter')?.value || '';
 
   const filtered = kbVlansCache.filter((v) => {
     const matchSearch = !search ||
       String(v.vlan_id).includes(search) ||
-      (v.name    || '').toLowerCase().includes(search) ||
-      (v.subnet  || '').toLowerCase().includes(search);
+      (v.name || '').toLowerCase().includes(search) ||
+      (v.subnet || '').toLowerCase().includes(search);
     const matchPurpose = !purpose || v.purpose === purpose;
     return matchSearch && matchPurpose;
   });
@@ -1161,7 +1257,7 @@ function _showVlanDetail(v) {
       <div class="nb-detail-field"><span class="nb-detail-field-label">Subnet</span><span class="nb-detail-field-value"><code>${_dash(v.subnet)}</code></span></div>
       <div class="nb-detail-field"><span class="nb-detail-field-label">Gateway</span><span class="nb-detail-field-value"><code>${_dash(v.gateway)}</code></span></div>
       <div class="nb-detail-field"><span class="nb-detail-field-label">Beschrijving</span><span class="nb-detail-field-value">${_dash(v.description)}</span></div>
-      <div class="nb-detail-field"><span class="nb-detail-field-label">Aangemaakt</span><span class="nb-detail-field-value">${_dash(v.created_at?.substring(0,10))}</span></div>
+      <div class="nb-detail-field"><span class="nb-detail-field-label">Aangemaakt</span><span class="nb-detail-field-value">${_dash(v.created_at?.substring(0, 10))}</span></div>
     </div>
     ${v.notes ? `<div class="nb-detail-notes"><strong>Notities</strong><br>${esc(v.notes)}</div>` : ''}`;
   panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -1183,28 +1279,28 @@ window.kbOpenEditVlan = kbOpenEditVlan;
 
 function _resetVlanModal(title, v) {
   document.getElementById('kbVlanModalTitle').textContent = title;
-  document.getElementById('kbVlanDbId').value      = v?.id ?? '';
-  document.getElementById('kbVlanId').value        = v?.vlan_id ?? '';
-  document.getElementById('kbVlanName').value      = v?.name ?? '';
-  document.getElementById('kbVlanSubnet').value    = v?.subnet ?? '';
-  document.getElementById('kbVlanGateway').value   = v?.gateway ?? '';
-  document.getElementById('kbVlanPurpose').value   = v?.purpose ?? 'user';
+  document.getElementById('kbVlanDbId').value = v?.id ?? '';
+  document.getElementById('kbVlanId').value = v?.vlan_id ?? '';
+  document.getElementById('kbVlanName').value = v?.name ?? '';
+  document.getElementById('kbVlanSubnet').value = v?.subnet ?? '';
+  document.getElementById('kbVlanGateway').value = v?.gateway ?? '';
+  document.getElementById('kbVlanPurpose').value = v?.purpose ?? 'user';
   document.getElementById('kbVlanDescription').value = v?.description ?? '';
-  document.getElementById('kbVlanNotes').value     = v?.notes ?? '';
+  document.getElementById('kbVlanNotes').value = v?.notes ?? '';
   document.getElementById('kbDeleteVlanBtn').style.display = v ? '' : 'none';
 }
 
 async function kbSaveVlan() {
-  const tid  = currentTenantId;
+  const tid = currentTenantId;
   const dbId = document.getElementById('kbVlanDbId').value;
   const payload = {
-    vlan_id:     document.getElementById('kbVlanId').value,
-    name:        document.getElementById('kbVlanName').value.trim(),
-    subnet:      document.getElementById('kbVlanSubnet').value.trim() || null,
-    gateway:     document.getElementById('kbVlanGateway').value.trim() || null,
-    purpose:     document.getElementById('kbVlanPurpose').value,
+    vlan_id: document.getElementById('kbVlanId').value,
+    name: document.getElementById('kbVlanName').value.trim(),
+    subnet: document.getElementById('kbVlanSubnet').value.trim() || null,
+    gateway: document.getElementById('kbVlanGateway').value.trim() || null,
+    purpose: document.getElementById('kbVlanPurpose').value,
     description: document.getElementById('kbVlanDescription').value.trim() || null,
-    notes:       document.getElementById('kbVlanNotes').value.trim() || null,
+    notes: document.getElementById('kbVlanNotes').value.trim() || null,
   };
   if (!payload.vlan_id || !payload.name) { alert('VLAN-ID en naam zijn verplicht.'); return; }
   try {
@@ -1223,7 +1319,7 @@ async function kbSaveVlan() {
 }
 
 async function kbDeleteVlan() {
-  const tid  = currentTenantId;
+  const tid = currentTenantId;
   const dbId = document.getElementById('kbVlanDbId').value;
   if (!dbId || !confirm('VLAN verwijderen?')) return;
   try {
@@ -1280,11 +1376,11 @@ async function kbOpenPage(pageId) {
   try {
     const p = await apiFetch(`/api/kb/${tid}/pages/${pageId}`);
     kbEditingPageId = p.id;
-    document.getElementById('kbPageTitleInput').value    = p.title || '';
-    document.getElementById('kbPageCategorySelect').value= p.category || 'network';
-    document.getElementById('kbPageContent').value       = p.content || '';
+    document.getElementById('kbPageTitleInput').value = p.title || '';
+    document.getElementById('kbPageCategorySelect').value = p.category || 'network';
+    document.getElementById('kbPageContent').value = p.content || '';
     document.getElementById('kbDeletePageBtn').style.display = '';
-    document.getElementById('kbPageEditor').style.display   = 'flex';
+    document.getElementById('kbPageEditor').style.display = 'flex';
     kbUpdatePreview();
     _renderPagesList();
   } catch (e) { alert('Laden mislukt: ' + e.message); }
@@ -1293,12 +1389,12 @@ window.kbOpenPage = kbOpenPage;
 
 function kbOpenNewPage() {
   kbEditingPageId = null;
-  document.getElementById('kbPageTitleInput').value     = '';
+  document.getElementById('kbPageTitleInput').value = '';
   document.getElementById('kbPageCategorySelect').value = 'network';
-  document.getElementById('kbPageContent').value        = '';
+  document.getElementById('kbPageContent').value = '';
   document.getElementById('kbDeletePageBtn').style.display = 'none';
-  document.getElementById('kbPageEditor').style.display    = 'flex';
-  document.getElementById('kbPagePreview').innerHTML       = '';
+  document.getElementById('kbPageEditor').style.display = 'flex';
+  document.getElementById('kbPagePreview').innerHTML = '';
   document.getElementById('kbPageTitleInput').focus();
   _renderPagesList();
 }
@@ -1306,8 +1402,8 @@ function kbOpenNewPage() {
 async function kbSavePage() {
   const tid = currentTenantId;
   const payload = {
-    title:    document.getElementById('kbPageTitleInput').value.trim(),
-    content:  document.getElementById('kbPageContent').value,
+    title: document.getElementById('kbPageTitleInput').value.trim(),
+    content: document.getElementById('kbPageContent').value,
     category: document.getElementById('kbPageCategorySelect').value,
   };
   if (!payload.title) { alert('Titel is verplicht.'); return; }
@@ -1356,7 +1452,7 @@ function _mdToHtml(md) {
     .replace(/^#{4} (.+)$/gm, '<h4>$1</h4>')
     .replace(/^#{3} (.+)$/gm, '<h3>$1</h3>')
     .replace(/^#{2} (.+)$/gm, '<h2>$1</h2>')
-    .replace(/^# (.+)$/gm,   '<h1>$1</h1>')
+    .replace(/^# (.+)$/gm, '<h1>$1</h1>')
     .replace(/^---+$/gm, '<hr>')
     .replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>')
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
@@ -1472,26 +1568,26 @@ window.kbOpenEditContact = kbOpenEditContact;
 
 function _resetContactModal(title, c) {
   document.getElementById('kbContactModalTitle').textContent = title;
-  document.getElementById('kbContactId').value      = c?.id ?? '';
-  document.getElementById('kbContactName').value    = c?.name ?? '';
-  document.getElementById('kbContactRole').value    = c?.role ?? '';
-  document.getElementById('kbContactPhone').value   = c?.phone ?? '';
-  document.getElementById('kbContactEmail').value   = c?.email ?? '';
+  document.getElementById('kbContactId').value = c?.id ?? '';
+  document.getElementById('kbContactName').value = c?.name ?? '';
+  document.getElementById('kbContactRole').value = c?.role ?? '';
+  document.getElementById('kbContactPhone').value = c?.phone ?? '';
+  document.getElementById('kbContactEmail').value = c?.email ?? '';
   document.getElementById('kbContactPrimary').checked = c ? !!c.is_primary_contact : false;
-  document.getElementById('kbContactNotes').value   = c?.notes ?? '';
+  document.getElementById('kbContactNotes').value = c?.notes ?? '';
   document.getElementById('kbDeleteContactBtn').style.display = c ? '' : 'none';
 }
 
 async function kbSaveContact() {
   const tid = currentTenantId;
-  const id  = document.getElementById('kbContactId').value;
+  const id = document.getElementById('kbContactId').value;
   const payload = {
-    name:               document.getElementById('kbContactName').value.trim(),
-    role:               document.getElementById('kbContactRole').value.trim() || null,
-    phone:              document.getElementById('kbContactPhone').value.trim() || null,
-    email:              document.getElementById('kbContactEmail').value.trim() || null,
+    name: document.getElementById('kbContactName').value.trim(),
+    role: document.getElementById('kbContactRole').value.trim() || null,
+    phone: document.getElementById('kbContactPhone').value.trim() || null,
+    email: document.getElementById('kbContactEmail').value.trim() || null,
     is_primary_contact: document.getElementById('kbContactPrimary').checked ? 1 : 0,
-    notes:              document.getElementById('kbContactNotes').value.trim() || null,
+    notes: document.getElementById('kbContactNotes').value.trim() || null,
   };
   if (!payload.name) { alert('Naam is verplicht.'); return; }
   try {
@@ -1511,7 +1607,7 @@ async function kbSaveContact() {
 
 async function kbDeleteContact() {
   const tid = currentTenantId;
-  const id  = document.getElementById('kbContactId').value;
+  const id = document.getElementById('kbContactId').value;
   if (!id || !confirm('Contact verwijderen?')) return;
   try {
     await apiFetch(`/api/kb/${tid}/contacts/${id}`, { method: 'DELETE' });
@@ -1735,14 +1831,29 @@ async function kbLoadDomains(tid) {
   }
   _renderDomainsTable();
 }
+function _dnsBadge(val) {
+  const v = String(val || '').toLowerCase().trim();
+  if (!v || v === 'unknown') return '<span class="kb-dns-badge kb-dns-na">—</span>';
+  return (v === 'present' || v.startsWith('present'))
+    ? '<span class="kb-dns-badge kb-dns-ok">✓</span>'
+    : '<span class="kb-dns-badge kb-dns-fail">✗</span>';
+}
+function _sourceBadge(source) {
+  return source === 'assessment'
+    ? '<span class="kb-source-badge kb-source-assessment">assessment</span>'
+    : '<span class="kb-source-badge kb-source-manual">handmatig</span>';
+}
 function _renderDomainsTable() {
   const wrap = document.getElementById('kbDomainsTable');
   const countEl = document.getElementById('nbDomainListCount');
   if (countEl) countEl.textContent = `(${kbDomainsCache.length})`;
   if (!kbDomainsCache.length) { wrap.innerHTML = '<p class="nb-empty">Geen domeinen gevonden.</p>'; return; }
-  wrap.innerHTML = `<table><thead><tr><th>Domein</th><th>Type</th><th>Registrar</th><th>Expiry</th><th>SSL</th><th>Status</th></tr></thead><tbody>
-    ${kbDomainsCache.map((d) => `<tr data-id="${d.id}" class="${kbSelectedDomainId === d.id ? 'nb-row-selected' : ''}">
-      <td class="nb-td-name">${esc(d.domain)}</td><td>${_dash(d.domain_type)}</td><td>${_dash(d.registrar)}</td><td>${_dash(d.expiry)}</td><td>${_dash(d.ssl_expiry)}</td><td>${_dash(d.status)}</td>
+  wrap.innerHTML = `<table><thead><tr><th>Domein</th><th>Bron</th><th>SPF</th><th>DMARC</th><th>DKIM</th><th>Type</th><th>Registrar</th><th>Expiry</th><th>Status</th></tr></thead><tbody>
+    ${kbDomainsCache.map((d) => `<tr data-id="${d.id}" class="${kbSelectedDomainId === d.id ? 'nb-row-selected' : ''}${d.source === 'assessment' ? ' kb-row-assessment' : ''}">
+      <td class="nb-td-name">${esc(d.domain)}</td>
+      <td>${_sourceBadge(d.source)}</td>
+      <td>${_dnsBadge(d.spf)}</td><td>${_dnsBadge(d.dmarc)}</td><td>${_dnsBadge(d.dkim)}</td>
+      <td>${_dash(d.domain_type)}</td><td>${_dash(d.registrar)}</td><td>${_dash(d.expiry)}</td><td>${_dash(d.status)}</td>
     </tr>`).join('')}</tbody></table>`;
   wrap.querySelectorAll('tbody tr').forEach((row) => row.addEventListener('click', () => {
     const id = parseInt(row.dataset.id, 10);
@@ -1754,19 +1865,37 @@ function _renderDomainsTable() {
 function _showDomainDetail(d) {
   const panel = document.getElementById('kbDomainDetail'); if (!d || !panel) return;
   panel.style.display = 'block';
-  panel.innerHTML = `<div class="nb-detail-header"><h3 class="nb-detail-title">${esc(d.domain)}</h3><div class="nb-detail-actions"><button class="nb-btn nb-btn-ghost nb-btn-sm" onclick="kbOpenEditDomain(${d.id})">✏️ Bewerken</button></div></div>
-  <div class="nb-detail-grid">
-    <div class="nb-detail-field"><span class="nb-detail-field-label">Type</span><span class="nb-detail-field-value">${_dash(d.domain_type)}</span></div>
-    <div class="nb-detail-field"><span class="nb-detail-field-label">Registrar</span><span class="nb-detail-field-value">${_dash(d.registrar)}</span></div>
-    <div class="nb-detail-field"><span class="nb-detail-field-label">Expiry</span><span class="nb-detail-field-value">${_dash(d.expiry)}</span></div>
-    <div class="nb-detail-field"><span class="nb-detail-field-label">SSL expiry</span><span class="nb-detail-field-value">${_dash(d.ssl_expiry)}</span></div>
-    <div class="nb-detail-field"><span class="nb-detail-field-label">SSL issuer</span><span class="nb-detail-field-value">${_dash(d.ssl_issuer)}</span></div>
-    <div class="nb-detail-field"><span class="nb-detail-field-label">Nameservers</span><span class="nb-detail-field-value">${_dash(d.nameservers)}</span></div>
-  </div>${d.notes ? `<div class="nb-detail-notes"><strong>Notities</strong><br>${esc(d.notes)}</div>` : ''}`;
+  const isAssessmentOnly = d.source === 'assessment' && d.id < 0;
+  const editBtn = isAssessmentOnly
+    ? `<span class="nb-detail-readonly-note">Alleen-lezen (assessment)</span>`
+    : `<button class="nb-btn nb-btn-ghost nb-btn-sm" onclick="kbOpenEditDomain(${d.id})">✏️ Bewerken</button>`;
+  const hasDns = d.spf || d.dmarc || d.dkim;
+  const dnsSection = hasDns ? `
+    <div class="nb-detail-section-label">M365 DNS signalen</div>
+    <div class="nb-detail-grid">
+      <div class="nb-detail-field"><span class="nb-detail-field-label">SPF</span><span class="nb-detail-field-value">${_dnsBadge(d.spf)} ${esc(d.spf || '—')}</span></div>
+      <div class="nb-detail-field"><span class="nb-detail-field-label">DMARC</span><span class="nb-detail-field-value">${_dnsBadge(d.dmarc)} ${esc(d.dmarc || '—')}</span></div>
+      <div class="nb-detail-field"><span class="nb-detail-field-label">DKIM</span><span class="nb-detail-field-value">${_dnsBadge(d.dkim)} ${esc(d.dkim || '—')}</span></div>
+    </div>` : '';
+  panel.innerHTML = `
+    <div class="nb-detail-header">
+      <h3 class="nb-detail-title">${esc(d.domain)} ${_sourceBadge(d.source)}</h3>
+      <div class="nb-detail-actions">${editBtn}</div>
+    </div>
+    ${dnsSection}
+    <div class="nb-detail-grid">
+      <div class="nb-detail-field"><span class="nb-detail-field-label">Type</span><span class="nb-detail-field-value">${_dash(d.domain_type)}</span></div>
+      <div class="nb-detail-field"><span class="nb-detail-field-label">Registrar</span><span class="nb-detail-field-value">${_dash(d.registrar)}</span></div>
+      <div class="nb-detail-field"><span class="nb-detail-field-label">Expiry</span><span class="nb-detail-field-value">${_dash(d.expiry)}</span></div>
+      <div class="nb-detail-field"><span class="nb-detail-field-label">SSL expiry</span><span class="nb-detail-field-value">${_dash(d.ssl_expiry)}</span></div>
+      <div class="nb-detail-field"><span class="nb-detail-field-label">SSL issuer</span><span class="nb-detail-field-value">${_dash(d.ssl_issuer)}</span></div>
+      <div class="nb-detail-field"><span class="nb-detail-field-label">Nameservers</span><span class="nb-detail-field-value">${_dash(d.nameservers)}</span></div>
+    </div>
+    ${d.notes ? `<div class="nb-detail-notes"><strong>Notities</strong><br>${esc(d.notes)}</div>` : ''}`;
 }
 function kbOpenAddDomain() { _resetDomainModal('Domein toevoegen', null); document.getElementById('kbDomainModal').style.display = 'flex'; }
 window.kbOpenAddDomain = kbOpenAddDomain;
-function kbOpenEditDomain(id) { const d = kbDomainsCache.find((x) => x.id === id); if (!d) return; _resetDomainModal('Domein bewerken', d); document.getElementById('kbDomainModal').style.display = 'flex'; }
+function kbOpenEditDomain(id) { const d = kbDomainsCache.find((x) => x.id === id); if (!d || (d.source === 'assessment' && id < 0)) return; _resetDomainModal('Domein bewerken', d); document.getElementById('kbDomainModal').style.display = 'flex'; }
 window.kbOpenEditDomain = kbOpenEditDomain;
 function _resetDomainModal(title, d) {
   document.getElementById('kbDomainModalTitle').textContent = title;
@@ -1807,14 +1936,100 @@ async function kbDeleteDomain() {
 }
 
 // ---------------------------------------------------------------------------
+// App Registraties (read-only, assessment data)
+// ---------------------------------------------------------------------------
+let kbAppRegsCache = [];
+let kbSelectedAppRegId = null;
+
+async function kbLoadAppRegs(tid) {
+  const wrap = document.getElementById('kbAppRegsTable');
+  if (!wrap) return;
+  if (!kbAppRegsCache.length) {
+    wrap.innerHTML = '<p class="nb-empty">Laden…</p>';
+    try {
+      const data = await apiFetch(`/api/kb/${tid}/appregs`);
+      kbAppRegsCache = Array.isArray(data?.items) ? data.items : [];
+    } catch (e) { wrap.innerHTML = `<p class="nb-empty">${esc(e.message)}</p>`; return; }
+  }
+  _renderAppRegsTable();
+}
+
+function _credStatus(status) {
+  if (!status) return '<span style="color:var(--text-muted)">—</span>';
+  const s = String(status).toLowerCase();
+  if (s.includes('expired')) return `<span class="nb-badge" style="background:#fee2e2;color:#991b1b">${esc(status)}</span>`;
+  if (s.includes('soon') || s.includes('expir')) return `<span class="nb-badge" style="background:#fef3c7;color:#92400e">${esc(status)}</span>`;
+  return `<span class="nb-badge" style="background:#d1fae5;color:#065f46">${esc(status)}</span>`;
+}
+
+function _renderAppRegsTable() {
+  const wrap = document.getElementById('kbAppRegsTable');
+  const countEl = document.getElementById('nbAppRegListCount');
+  const tabEl = document.getElementById('nbCountAppRegs');
+  if (countEl) countEl.textContent = `(${kbAppRegsCache.length})`;
+  if (tabEl) tabEl.textContent = kbAppRegsCache.length || '';
+  if (!kbAppRegsCache.length) { wrap.innerHTML = '<p class="nb-empty">Geen app registraties gevonden in assessment.</p>'; return; }
+  wrap.innerHTML = `<table><thead><tr>
+    <th>Naam</th><th>Secrets</th><th>Certificaten</th><th>Rechten</th><th>Enterprise</th>
+  </tr></thead><tbody>
+    ${kbAppRegsCache.map((a, i) => `<tr data-idx="${i}" class="${kbSelectedAppRegId === i ? 'nb-row-selected' : ''}">
+      <td class="nb-td-name">${esc(a.displayName || a.appId || '—')}</td>
+      <td>${a.secretCount > 0 ? _credStatus(a.secretExpirationStatus) : '<span style="color:var(--text-muted)">Geen</span>'}</td>
+      <td>${a.certificateCount > 0 ? _credStatus(a.certificateExpirationStatus) : '<span style="color:var(--text-muted)">Geen</span>'}</td>
+      <td>${a.permissionCount || 0}</td>
+      <td>${a.hasEnterpriseApp ? '<span class="nb-badge nb-badge-active">Ja</span>' : '<span class="nb-badge nb-badge-inactive">Nee</span>'}</td>
+    </tr>`).join('')}
+  </tbody></table>`;
+  wrap.querySelectorAll('tbody tr').forEach((row) => row.addEventListener('click', () => {
+    const idx = parseInt(row.dataset.idx, 10);
+    kbSelectedAppRegId = idx;
+    wrap.querySelectorAll('tr').forEach((r) => r.classList.toggle('nb-row-selected', parseInt(r.dataset.idx, 10) === idx));
+    _showAppRegDetail(kbAppRegsCache[idx]);
+  }));
+}
+
+function _showAppRegDetail(a) {
+  const panel = document.getElementById('kbAppRegDetail');
+  if (!a || !panel) return;
+  panel.style.display = 'block';
+  const perms = Array.isArray(a.permissions) ? a.permissions : [];
+  const grouped = {};
+  perms.forEach((p) => {
+    const res = p.Resource || p.resource || 'Onbekend';
+    if (!grouped[res]) grouped[res] = [];
+    grouped[res].push({ type: p.Type || p.type || '', name: p.Permission || p.permission || '?' });
+  });
+  const permHtml = Object.keys(grouped).length
+    ? Object.entries(grouped).map(([res, ps]) =>
+        `<div style="margin-bottom:.5rem"><strong style="font-size:.8rem">${esc(res)}</strong><ul style="margin:.25rem 0 0 1rem;padding:0;list-style:disc;font-size:.8rem">${ps.map((p) => `<li>${esc(p.name)} <span style="color:var(--text-muted);font-size:.75rem">(${esc(p.type)})</span></li>`).join('')}</ul></div>`
+      ).join('')
+    : `<p style="color:var(--text-muted);font-size:.85rem">${a.permissionCount ? a.permissionCount + ' rechten (namen niet beschikbaar in dit snapshot)' : 'Geen rechten'}</p>`;
+  panel.innerHTML = `
+    <div class="nb-detail-header">
+      <h3 class="nb-detail-title">${esc(a.displayName || a.appId || '—')}</h3>
+      <span class="nb-detail-readonly-note">Assessment (alleen-lezen)</span>
+    </div>
+    <div class="nb-detail-grid">
+      <div class="nb-detail-field"><span class="nb-detail-field-label">App ID</span><span class="nb-detail-field-value" style="font-size:.75rem;font-family:monospace">${esc(a.appId || '—')}</span></div>
+      <div class="nb-detail-field"><span class="nb-detail-field-label">Enterprise App</span><span class="nb-detail-field-value">${a.hasEnterpriseApp ? 'Ja' : 'Nee'}</span></div>
+      <div class="nb-detail-field"><span class="nb-detail-field-label">Aangemaakt</span><span class="nb-detail-field-value">${a.createdAt ? new Date(a.createdAt).toLocaleDateString('nl-NL') : '—'}</span></div>
+      <div class="nb-detail-field"><span class="nb-detail-field-label">Secrets</span><span class="nb-detail-field-value">${a.secretCount || 0} ${a.secretExpirationStatus ? '· ' + a.secretExpirationStatus : ''}</span></div>
+      <div class="nb-detail-field"><span class="nb-detail-field-label">Certificaten</span><span class="nb-detail-field-value">${a.certificateCount || 0} ${a.certificateExpirationStatus ? '· ' + a.certificateExpirationStatus : ''}</span></div>
+    </div>
+    <div class="nb-detail-section-label">API-rechten</div>
+    ${permHtml}`;
+}
+
+// ---------------------------------------------------------------------------
 // M365
 // ---------------------------------------------------------------------------
 async function kbLoadM365(tid) {
-  try { kbM365Cache = await apiFetch(`/api/kb/${tid}/m365`); } catch (_) {}
+  try { kbM365Cache = await apiFetch(`/api/kb/${tid}/m365`); } catch (_) { }
   const p = kbM365Cache || {};
   const set = (id, v) => { const el = document.getElementById(id); if (!el) return; if (el.type === 'checkbox') el.checked = !!v; else el.value = v ?? ''; };
   set('kbM365TenantName', p.tenant_name); set('kbM365TenantId', p.tenant_id); set('kbM365GlobalAdmin', p.global_admin);
-  set('kbM365LicenseType', p.license_type); set('kbM365LicensesTotal', p.licenses_total); set('kbM365LicensesUsed', p.licenses_used);
+  set('kbM365LicenseType', (p.license_type && !/licentietypen/i.test(String(p.license_type))) ? kbFriendlySkuName(p.license_type) : p.license_type);
+  set('kbM365LicensesTotal', p.licenses_total); set('kbM365LicensesUsed', p.licenses_used);
   set('kbM365Mfa', p.mfa); set('kbM365Mdm', p.mdm); set('kbM365AdConnect', p.ad_connect);
   set('kbM365SharedMailboxes', p.shared_mailboxes); set('kbM365GuestUsers', p.guest_users); set('kbM365Notes', p.notes);
   set('kbM365ConditionalAccess', p.conditional_access); set('kbM365Defender', p.defender); set('kbM365Purview', p.purview); set('kbM365Hybrid', p.hybrid); set('kbM365ExchangeHybrid', p.exchange_hybrid);
@@ -1831,7 +2046,7 @@ function _renderM365AssessmentInfo(profile) {
     return;
   }
   el.style.display = 'block';
-  el.innerHTML = `Laatste assessment synchronisatie: <strong>${esc(profile.assessment_generated_at)}</strong>${profile.assessment_report_id ? ` · Run ${esc(profile.assessment_report_id)}` : ''}. Tenant- en licentievelden zijn hiermee automatisch aangevuld.`;
+  el.innerHTML = `Laatste assessment synchronisatie: <strong>${esc(profile.assessment_generated_at)}</strong>${profile.assessment_report_id ? ` · Run ${esc(profile.assessment_report_id)}` : ''}. Deze velden zijn read-only en worden automatisch vanuit assessmentdata gevuld.`;
 }
 
 function _renderM365LicenseOverview(licenses) {
@@ -1841,38 +2056,15 @@ function _renderM365LicenseOverview(licenses) {
     wrap.innerHTML = '<p class="nb-empty">Nog geen licentiegegevens uit assessment beschikbaar.</p>';
     return;
   }
-  wrap.innerHTML = `<table><thead><tr><th>SKU</th><th>Totaal</th><th>Gebruikt</th><th>Beschikbaar</th><th>Benutting</th></tr></thead><tbody>
+  wrap.innerHTML = `<table><thead><tr><th>Licentie</th><th>Totaal</th><th>Gebruikt</th><th>Beschikbaar</th><th>Benutting</th></tr></thead><tbody>
     ${licenses.map((lic) => `<tr>
-      <td class="nb-td-name">${esc(lic.SkuPartNumber || lic.sku_part_number || 'Onbekend')}</td>
+      <td class="nb-td-name">${esc(lic.displayName || lic.DisplayName || kbFriendlySkuName(lic.SkuPartNumber || lic.sku_part_number || ''))}</td>
       <td>${_dash(lic.Total ?? lic.total)}</td>
       <td>${_dash(lic.Consumed ?? lic.consumed)}</td>
       <td>${_dash(lic.Available ?? lic.available)}</td>
       <td>${lic.Utilization != null || lic.utilization != null ? `${esc(String(lic.Utilization ?? lic.utilization))}%` : '—'}</td>
     </tr>`).join('')}
   </tbody></table>`;
-}
-async function kbSaveM365() {
-  const tid = currentTenantId;
-  const payload = {
-    tenant_name: document.getElementById('kbM365TenantName').value.trim() || null,
-    tenant_id: document.getElementById('kbM365TenantId').value.trim() || null,
-    global_admin: document.getElementById('kbM365GlobalAdmin').value.trim() || null,
-    license_type: document.getElementById('kbM365LicenseType').value.trim() || null,
-    licenses_total: document.getElementById('kbM365LicensesTotal').value || null,
-    licenses_used: document.getElementById('kbM365LicensesUsed').value || null,
-    mfa: document.getElementById('kbM365Mfa').value.trim() || null,
-    mdm: document.getElementById('kbM365Mdm').value.trim() || null,
-    ad_connect: document.getElementById('kbM365AdConnect').value.trim() || null,
-    shared_mailboxes: document.getElementById('kbM365SharedMailboxes').value || 0,
-    guest_users: document.getElementById('kbM365GuestUsers').value || 0,
-    notes: document.getElementById('kbM365Notes').value.trim() || null,
-    conditional_access: document.getElementById('kbM365ConditionalAccess').checked ? 1 : 0,
-    defender: document.getElementById('kbM365Defender').checked ? 1 : 0,
-    purview: document.getElementById('kbM365Purview').checked ? 1 : 0,
-    hybrid: document.getElementById('kbM365Hybrid').checked ? 1 : 0,
-    exchange_hybrid: document.getElementById('kbM365ExchangeHybrid').checked ? 1 : 0,
-  };
-  try { kbM365Cache = await apiFetch(`/api/kb/${tid}/m365`, { method: 'PUT', body: JSON.stringify(payload) }); alert('M365 profiel opgeslagen.'); } catch (e) { alert('Opslaan mislukt: ' + e.message); }
 }
 
 // ---------------------------------------------------------------------------
@@ -2047,7 +2239,7 @@ async function kbSettingsLoad() {
   const infoEl = document.getElementById('kbSettingsTenantInfo');
   if (!tid) {
     if (infoEl) infoEl.textContent = 'Selecteer eerst een tenant in de topbar om kennisbank-instellingen te beheren.';
-    ['kbSettingsAssetTypesList','kbSettingsCategoriesList','kbSettingsVlanPurposesList']
+    ['kbSettingsAssetTypesList', 'kbSettingsCategoriesList', 'kbSettingsVlanPurposesList']
       .forEach(id => { const el = document.getElementById(id); if (el) el.innerHTML = '<span style="color:#aaa">Geen tenant geselecteerd.</span>'; });
     return;
   }
@@ -2170,7 +2362,7 @@ window.kbSettingsDeleteCategory = kbSettingsDeleteCategory;
 async function kbSettingsAddVlanPurpose() {
   const tid = currentTenantId;
   if (!tid) return;
-  const key   = (document.getElementById('kbNewVlanPurposeKey').value || '').trim().toLowerCase();
+  const key = (document.getElementById('kbNewVlanPurposeKey').value || '').trim().toLowerCase();
   const label = (document.getElementById('kbNewVlanPurposeLabel').value || '').trim();
   if (!key || !label) { alert('Voer zowel sleutel als label in.'); return; }
   try {
@@ -2200,8 +2392,8 @@ window.kbSettingsDeleteVlanPurpose = kbSettingsDeleteVlanPurpose;
 
 // Hook into showSection — toggle body scroll lock for KB
 const _origShowSection = window.showSection;
-window.showSection = function (sectionName) {
-  _origShowSection(sectionName);
+window.showSection = function (sectionName, opts = {}) {
+  _origShowSection(sectionName, opts);
   document.body.classList.toggle('kb-active', sectionName === 'kb');
   if (sectionName === 'kb') kbInit();
 };

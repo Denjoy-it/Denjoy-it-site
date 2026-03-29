@@ -5,24 +5,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 :root {
-  --dark:       #0f1117;
-  --dark2:      #14181f;
-  --dark3:      #1c2130;
-  --dark4:      #222a3a;
-  --orange:     #ff6b2b;
-  --orange-dim: rgba(255,107,43,0.11);
-  --orange-glow:rgba(255,107,43,0.18);
-  --green:      #22c55e;
-  --light:      #faf9f7;
-  --white:      #ffffff;
-  --text:       #1a1a2e;
-  --muted:      #737373;
-  --border-l:   #e8e7e2;
-  --border-d:   rgba(255,255,255,0.07);
-  --font:       'Outfit', sans-serif;
-  --mono:       'JetBrains Mono', monospace;
-  --box:        1140px;
-  --radius:     18px;
+  /* ── Basis kleuren — zelfde als portal/css/portal.css ── */
+  --dark:        #0f1117;
+  --dark2:       #14181f;
+  --dark3:       #1c2130;
+  --dark4:       #222a3a;
+  --orange:      #ff6b2b;
+  --orange-dim:  rgba(255,107,43,0.13);
+  --orange-glow: rgba(255,107,43,0.22);
+  --green:       #22c55e;
+  --red:         #ef4444;
+  --yellow:      #f59e0b;
+  --light:       #f6f5f3;
+  --white:       #ffffff;
+  --text:        #111827;
+  --muted:       #6b7280;
+  --border-l:    #e4e4e8;   /* = portal --border */
+  --border-d:    rgba(255,255,255,0.07);
+  --font:        'Outfit', sans-serif;
+  --mono:        'JetBrains Mono', monospace;
+  --box:         1140px;
+  --radius:      14px;      /* compromis: website was 18, portal 12 → 14 */
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -84,12 +87,13 @@ nav {
 }
 
 .logo-img {
-  width: 140px;
+  width: 190px;
   max-width: 100%;
-  max-height: 40px;
+  max-height: 52px;
   height: auto;
   object-fit: contain;
   flex-shrink: 0;
+  display: block;
 }
 
 .logo-mark::before {

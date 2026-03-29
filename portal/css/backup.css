@@ -1,0 +1,418 @@
+/* ── Fase 5: Backup Module ─────────────────────────────────────────────────── */
+
+/* Tab bar */
+.bk-tabs {
+  display: flex;
+  gap: .375rem;
+  padding: .5rem 0 1rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.bk-tab {
+  padding: .375rem .875rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: .8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .15s, color .15s, border-color .15s;
+}
+
+.bk-tab:hover {
+  background: var(--surface-hover, rgba(0,0,0,.04));
+  color: var(--text);
+}
+
+.bk-tab.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* Tab toolbar */
+.bk-toolbar {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.bk-toolbar-info {
+  font-size: .8125rem;
+  color: var(--text-muted);
+  margin-right: auto;
+}
+
+.bk-btn {
+  padding: .375rem .875rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-size: .8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .15s;
+}
+
+.bk-btn-secondary {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.bk-btn-secondary:hover {
+  background: var(--surface-hover, rgba(0,0,0,.04));
+}
+
+/* ── Overzicht: status card ── */
+.bk-status-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  margin-bottom: 1.25rem;
+  max-width: 540px;
+}
+
+.bk-status-icon {
+  font-size: 2rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.bk-status-label {
+  font-size: .8125rem;
+  color: var(--text-muted);
+  margin-bottom: .2rem;
+}
+
+.bk-status-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.bk-status-sub {
+  font-size: .75rem;
+  color: var(--text-muted);
+  margin-top: .15rem;
+}
+
+/* Status badge kleuren */
+.bk-badge {
+  display: inline-block;
+  padding: .15rem .55rem;
+  border-radius: 999px;
+  font-size: .75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.bk-badge-active,
+.bk-badge-enabled,
+.bk-badge-protected { background: #dcfce7; color: #166534; }
+
+[data-theme="dark"] .bk-badge-active,
+[data-theme="dark"] .bk-badge-enabled,
+[data-theme="dark"] .bk-badge-protected { background: #14532d; color: #86efac; }
+
+.bk-badge-inactive,
+.bk-badge-disabled,
+.bk-badge-notEnabled { background: #fee2e2; color: #991b1b; }
+
+[data-theme="dark"] .bk-badge-inactive,
+[data-theme="dark"] .bk-badge-disabled,
+[data-theme="dark"] .bk-badge-notEnabled { background: #450a0a; color: #fca5a5; }
+
+.bk-badge-unknown,
+.bk-badge-partial { background: #fef9c3; color: #854d0e; }
+
+[data-theme="dark"] .bk-badge-unknown,
+[data-theme="dark"] .bk-badge-partial { background: #422006; color: #fde68a; }
+
+/* ── Summary grid (3 service kaarten) ── */
+.bk-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.bk-summary-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.1rem 1.25rem;
+}
+
+.bk-summary-card-header {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: .75rem;
+}
+
+.bk-summary-card-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.bk-summary-card-title {
+  font-size: .875rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.bk-summary-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .8125rem;
+  padding: .2rem 0;
+  color: var(--text-muted);
+}
+
+.bk-summary-stat strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ── Policy kaarten (SharePoint / OneDrive / Exchange) ── */
+.bk-policy-list {
+  display: flex;
+  flex-direction: column;
+  gap: .875rem;
+}
+
+.bk-policy-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bk-policy-header {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .875rem 1.1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.bk-policy-header:hover {
+  background: var(--surface-hover, rgba(0,0,0,.025));
+}
+
+.bk-policy-name {
+  font-weight: 600;
+  font-size: .9rem;
+  color: var(--text);
+  flex: 1;
+}
+
+.bk-policy-meta {
+  font-size: .775rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.bk-policy-chevron {
+  font-size: .75rem;
+  color: var(--text-muted);
+  transition: transform .2s;
+  flex-shrink: 0;
+}
+
+.bk-policy-card.expanded .bk-policy-chevron {
+  transform: rotate(90deg);
+}
+
+.bk-policy-body {
+  display: none;
+  border-top: 1px solid var(--border);
+  padding: 0;
+}
+
+.bk-policy-card.expanded .bk-policy-body {
+  display: block;
+}
+
+/* Resource tabel binnen policy */
+.bk-resource-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .8125rem;
+}
+
+.bk-resource-table th {
+  text-align: left;
+  font-size: .75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--text-muted);
+  padding: .5rem 1.1rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-alt, var(--surface));
+}
+
+.bk-resource-table td {
+  padding: .55rem 1.1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  vertical-align: middle;
+}
+
+.bk-resource-table tr:last-child td {
+  border-bottom: none;
+}
+
+.bk-resource-table tr:hover td {
+  background: var(--surface-hover, rgba(0,0,0,.02));
+}
+
+/* Lege staat */
+.bk-empty {
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: .875rem;
+}
+
+.bk-empty-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: .75rem;
+  opacity: .4;
+}
+
+.bk-not-enabled {
+  padding: 2rem 1.5rem;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: .875rem;
+  background: var(--surface);
+}
+
+.bk-not-enabled strong {
+  display: block;
+  color: var(--text);
+  font-size: 1rem;
+  margin-bottom: .4rem;
+}
+
+.bk-not-enabled code {
+  font-family: monospace;
+  font-size: .8125rem;
+  background: var(--surface-alt, rgba(0,0,0,.05));
+  padding: .15rem .4rem;
+  border-radius: 4px;
+}
+
+/* Geschiedenis tabel */
+.bk-history-wrap {
+  overflow-x: auto;
+}
+
+.bk-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .8125rem;
+}
+
+.bk-history-table th {
+  text-align: left;
+  font-size: .75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--text-muted);
+  padding: .5rem .875rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.bk-history-table td {
+  padding: .55rem .875rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  vertical-align: middle;
+}
+
+.bk-history-table tbody tr:hover td {
+  background: var(--surface-hover, rgba(0,0,0,.02));
+}
+
+.bk-history-table-empty {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 1.5rem !important;
+}
+
+/* Spinner */
+.bk-loading {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  color: var(--text-muted);
+  font-size: .875rem;
+  padding: 1.5rem 0;
+}
+
+.bk-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: bk-spin .7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes bk-spin { to { transform: rotate(360deg); } }
+
+/* Dark mode */
+[data-theme="dark"] .bk-summary-card,
+[data-theme="dark"] .bk-policy-card,
+[data-theme="dark"] .bk-status-card {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .bk-resource-table th {
+  background: var(--surface);
+}
+
+/* Portal alignment overrides */
+.content-section .bk-tabs {
+  width: 100%;
+  margin-bottom: 0.2rem;
+}
+
+.content-section .bk-toolbar {
+  margin-bottom: 0;
+}
+
+.content-section .bk-status-card {
+  max-width: none;
+  border-radius: 18px;
+}
+
+.content-section .bk-summary-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.content-section .bk-summary-card,
+.content-section .bk-policy-card,
+.content-section .bk-history-wrap {
+  border-radius: 20px;
+}

@@ -1,0 +1,85 @@
+/* ── Fase 9: Exchange & Email module ─────────────────────────────────────── */
+
+.ex-tabs { display:flex; gap:.375rem; padding:.5rem 0 1rem; border-bottom:1px solid var(--border); margin-bottom:1.25rem; flex-wrap:wrap; }
+.ex-tab { padding:.375rem .875rem; border-radius:999px; border:1px solid var(--border); background:transparent; color:var(--text-muted); font-size:.8125rem; font-weight:500; cursor:pointer; transition:background .15s,color .15s; }
+.ex-tab:hover { background:var(--surface-hover,rgba(0,0,0,.04)); color:var(--text); }
+.ex-tab.active { background:var(--accent); border-color:var(--accent); color:#fff; }
+
+.ex-toolbar { display:flex; align-items:center; gap:.75rem; margin-bottom:1rem; flex-wrap:wrap; }
+.ex-toolbar-info { font-size:.8125rem; color:var(--text-muted); margin-right:auto; }
+.ex-btn { padding:.375rem .875rem; border-radius:6px; border:1px solid var(--border); font-size:.8125rem; font-weight:500; cursor:pointer; background:var(--surface); color:var(--text); }
+.ex-btn:hover { background:var(--surface-hover,rgba(0,0,0,.04)); }
+.ex-btn-primary { background:var(--accent); border-color:var(--accent); color:#fff; }
+.ex-btn-primary:hover { opacity:.9; }
+.ex-search { padding:.375rem .75rem; border:1px solid var(--border); border-radius:6px; font-size:.8125rem; background:var(--surface); color:var(--text); width:220px; }
+.ex-search:focus { outline:none; border-color:var(--accent); }
+
+/* Mailbox tabel */
+.ex-table-wrap { overflow-x:auto; }
+.ex-table { width:100%; border-collapse:collapse; font-size:.8125rem; }
+.ex-table th { text-align:left; font-size:.75rem; font-weight:600; text-transform:uppercase; letter-spacing:.04em; color:var(--text-muted); padding:.5rem .875rem; border-bottom:1px solid var(--border); background:var(--surface); white-space:nowrap; }
+.ex-table td { padding:.6rem .875rem; border-bottom:1px solid var(--border); color:var(--text); vertical-align:middle; }
+.ex-table tbody tr:hover td { cursor:pointer; background:var(--surface-hover,rgba(0,0,0,.02)); }
+.ex-table-empty { text-align:center; color:var(--text-muted); padding:1.5rem !important; cursor:default !important; }
+
+/* Mailbox icon */
+.ex-mailbox-cell { display:flex; align-items:center; gap:.625rem; }
+.ex-mailbox-avatar { width:30px; height:30px; border-radius:50%; background:var(--accent); color:#fff; font-size:.7rem; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+
+/* Status badges */
+.ex-badge { display:inline-block; padding:.1rem .45rem; border-radius:4px; font-size:.7rem; font-weight:600; }
+.ex-badge-active   { background:#dcfce7; color:#166534; }
+.ex-badge-disabled { background:#fee2e2; color:#991b1b; }
+.ex-badge-sync     { background:#dbeafe; color:#1e40af; }
+.ex-badge-shared   { background:#f3e8ff; color:#6b21a8; }
+.ex-badge-warn     { background:#fef9c3; color:#854d0e; }
+[data-theme="dark"] .ex-badge-active   { background:#14532d; color:#86efac; }
+[data-theme="dark"] .ex-badge-disabled { background:#450a0a; color:#fca5a5; }
+[data-theme="dark"] .ex-badge-sync     { background:#1e3a5f; color:#93c5fd; }
+[data-theme="dark"] .ex-badge-shared   { background:#3b0764; color:#d8b4fe; }
+[data-theme="dark"] .ex-badge-warn     { background:#422006; color:#fde68a; }
+
+/* Forwarding alert */
+.ex-fwd-alert { display:inline-flex; align-items:center; gap:.35rem; padding:.15rem .55rem; border-radius:4px; font-size:.75rem; font-weight:600; background:#fee2e2; color:#991b1b; }
+[data-theme="dark"] .ex-fwd-alert { background:#450a0a; color:#fca5a5; }
+
+/* Verdachte regel badge */
+.ex-rule-suspicious { display:inline-flex; align-items:center; gap:.3rem; padding:.1rem .45rem; border-radius:4px; font-size:.7rem; font-weight:600; background:#fee2e2; color:#991b1b; }
+[data-theme="dark"] .ex-rule-suspicious { background:#450a0a; color:#fca5a5; }
+
+/* Forwarding overzicht kaartjes */
+.ex-fwd-empty { padding:1.5rem; text-align:center; color:var(--text-muted); font-size:.875rem; }
+.ex-fwd-banner { display:flex; align-items:center; gap:.75rem; padding:.875rem 1rem; background:#fef2f2; border:1px solid #fca5a5; border-radius:8px; margin-bottom:1rem; font-size:.8125rem; color:#991b1b; }
+[data-theme="dark"] .ex-fwd-banner { background:#450a0a; border-color:#7f1d1d; color:#fca5a5; }
+
+/* Mailbox detail modal */
+.ex-modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:1000; display:flex; align-items:flex-start; justify-content:center; padding:2rem 1rem; overflow-y:auto; }
+.ex-modal { background:var(--bg); border:1px solid var(--border); border-radius:14px; width:100%; max-width:640px; padding:1.5rem; position:relative; }
+.ex-modal-close { position:absolute; top:1rem; right:1rem; background:none; border:none; font-size:1.25rem; cursor:pointer; color:var(--text-muted); }
+.ex-modal-title { font-size:1.1rem; font-weight:700; color:var(--text); margin-bottom:1.25rem; padding-right:2rem; }
+.ex-detail-grid { display:grid; grid-template-columns:1fr 1fr; gap:.75rem 1.25rem; margin-bottom:1rem; }
+.ex-detail-item label { display:block; font-size:.75rem; font-weight:600; text-transform:uppercase; letter-spacing:.04em; color:var(--text-muted); margin-bottom:.2rem; }
+.ex-detail-item span { font-size:.875rem; color:var(--text); }
+.ex-detail-section { border-top:1px solid var(--border); padding-top:.875rem; margin-top:.875rem; }
+.ex-detail-section-title { font-size:.8125rem; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:.04em; margin-bottom:.6rem; }
+
+.ex-empty { padding:2.5rem 1.5rem; text-align:center; color:var(--text-muted); font-size:.875rem; }
+.ex-loading { display:flex; align-items:center; gap:.75rem; color:var(--text-muted); font-size:.875rem; padding:1.5rem 0; }
+.ex-spinner { width:18px; height:18px; border:2px solid var(--border); border-top-color:var(--accent); border-radius:50%; animation:ex-spin .7s linear infinite; flex-shrink:0; }
+@keyframes ex-spin { to { transform:rotate(360deg); } }
+
+/* Portal alignment overrides */
+.content-section .ex-tabs {
+  width: 100%;
+  margin-bottom: 0.2rem;
+  border-bottom: 0;
+}
+
+.content-section .ex-toolbar {
+  margin-bottom: 0;
+}
+
+.content-section .ex-fwd-banner,
+.content-section .ex-table-wrap {
+  border-radius: 20px;
+}

@@ -1,0 +1,488 @@
+/* ═══════════════════════════════════════════════════════════════
+   Denjoy IT Platform — Herstel (Remediation) styles
+   Fase 1: Active Remediation
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Tabs ────────────────────────────────────────────────────── */
+.rem-tabs {
+  display: flex;
+  gap: 0.25rem;
+  background: var(--tag-bg, #f1f5f9);
+  padding: 0.25rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  width: fit-content;
+}
+
+.rem-tab {
+  padding: 0.45rem 1.1rem;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary, #64748b);
+  border-radius: 7px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .15s;
+}
+.rem-tab:hover { background: var(--card-bg, #fff); color: var(--text-primary, #1e293b); }
+.rem-tab.active {
+  background: var(--card-bg, #fff);
+  color: var(--accent, #FF6B2B);
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+}
+[data-theme="dark"] .rem-tab.active { background: var(--surface2, #2a2a3a); }
+
+/* ── Toolbar ─────────────────────────────────────────────────── */
+.rem-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.rem-filter-input {
+  flex: 1;
+  min-width: 200px;
+  max-width: 360px;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 8px;
+  background: var(--card-bg, #fff);
+  color: var(--text-primary, #1e293b);
+  font-size: 0.875rem;
+}
+.rem-filter-input:focus {
+  outline: none;
+  border-color: var(--accent, #FF6B2B);
+  box-shadow: 0 0 0 3px rgba(255,107,43,.15);
+}
+
+.rem-toolbar-info {
+  font-size: 0.78rem;
+  color: var(--text-muted, #64748b);
+  padding: 0.4rem 0.75rem;
+  background: var(--tag-bg, #f1f5f9);
+  border-radius: 6px;
+}
+
+/* ── Groepen & Cards ─────────────────────────────────────────── */
+.rem-catalog-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.rem-group-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--text-muted, #64748b);
+  margin: 0 0 0.75rem;
+}
+
+.rem-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.rem-card {
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+.rem-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,.08);
+  border-color: var(--accent, #FF6B2B);
+}
+
+.rem-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.rem-card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary, #1e293b);
+  line-height: 1.3;
+}
+
+.rem-card-badges {
+  display: flex;
+  gap: 0.35rem;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.rem-card-desc {
+  font-size: 0.825rem;
+  color: var(--text-secondary, #475569);
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+}
+
+.rem-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+}
+
+.rem-card-endpoint {
+  font-size: 0.72rem;
+  color: var(--text-muted, #94a3b8);
+  font-family: ui-monospace, monospace;
+  background: var(--tag-bg, #f1f5f9);
+  padding: 0.2rem 0.45rem;
+  border-radius: 4px;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rem-card-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* ── Badges ──────────────────────────────────────────────────── */
+.rem-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.rem-badge-critical { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+.rem-badge-warning  { background: #fffbeb; color: #d97706; border: 1px solid #fde68a; }
+.rem-badge-info     { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
+.rem-badge-dryrun   { background: #f0f9ff; color: #0369a1; border: 1px solid #bae6fd; }
+
+.rem-risk {
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.rem-risk-low    { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
+.rem-risk-medium { background: #fffbeb; color: #b45309; border: 1px solid #fde68a; }
+.rem-risk-high   { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+
+.rem-status {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+}
+.rem-status-success { background: #f0fdf4; color: #16a34a; }
+.rem-status-failed  { background: #fef2f2; color: #dc2626; }
+.rem-status-dryrun  { background: #f0f9ff; color: #0369a1; }
+
+/* ── Knoppen ─────────────────────────────────────────────────── */
+.rem-btn {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+.rem-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.rem-btn-execute {
+  background: var(--accent, #FF6B2B);
+  color: #fff;
+}
+.rem-btn-execute:hover:not(:disabled) { background: #e55a20; }
+
+.rem-btn-preview {
+  background: var(--card-bg, #fff);
+  color: var(--text-primary, #1e293b);
+  border: 1px solid var(--border-color, #e2e8f0);
+}
+.rem-btn-preview:hover:not(:disabled) {
+  border-color: var(--accent, #FF6B2B);
+  color: var(--accent, #FF6B2B);
+}
+
+.rem-btn-cancel {
+  background: transparent;
+  color: var(--text-secondary, #475569);
+  border: 1px solid var(--border-color, #e2e8f0);
+}
+.rem-btn-cancel:hover:not(:disabled) { background: var(--tag-bg, #f1f5f9); }
+
+/* ── Geschiedenis tabel ──────────────────────────────────────── */
+.rem-history-section {
+  margin-top: 2rem;
+}
+
+.rem-history-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary, #1e293b);
+  margin: 0 0 0.75rem;
+}
+
+.rem-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 10px;
+}
+
+.rem-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.83rem;
+}
+.rem-table th {
+  background: var(--table-header-bg, #f8fafc);
+  color: var(--text-muted, #64748b);
+  font-weight: 600;
+  padding: 0.65rem 0.9rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+  white-space: nowrap;
+}
+.rem-table td {
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+  color: var(--text-secondary, #475569);
+  vertical-align: middle;
+}
+.rem-table tr:last-child td { border-bottom: none; }
+.rem-table tr:hover td { background: var(--hover-bg, #f8fafc); }
+
+.rem-td-msg {
+  max-width: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rem-table-empty {
+  text-align: center;
+  color: var(--text-muted, #94a3b8);
+  padding: 2rem 1rem !important;
+}
+
+/* ── Leeg / fout state ───────────────────────────────────────── */
+.rem-empty {
+  color: var(--text-muted, #94a3b8);
+  font-size: 0.875rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+/* ── Modal ───────────────────────────────────────────────────── */
+.rem-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9000;
+  padding: 1rem;
+}
+
+.rem-modal {
+  background: var(--card-bg, #fff);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+  display: flex;
+  flex-direction: column;
+}
+
+.rem-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.25rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+  gap: 0.5rem;
+}
+
+.rem-modal-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary, #1e293b);
+  margin-bottom: 0.4rem;
+}
+
+.rem-modal-badges {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.rem-modal-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--text-muted, #94a3b8);
+  padding: 0.25rem;
+  flex-shrink: 0;
+}
+.rem-modal-close:hover { color: var(--text-primary, #1e293b); }
+
+.rem-modal-body {
+  padding: 1.25rem 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rem-modal-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #475569);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.rem-modal-risk-warn {
+  font-size: 0.82rem;
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  border-left: 3px solid #f59e0b;
+  color: #92400e;
+  padding: 0.65rem 0.9rem;
+  border-radius: 6px;
+}
+.rem-modal-risk-warn.rem-modal-risk-medium {
+  background: #fff7ed;
+  border-color: #fed7aa;
+  border-left-color: #f97316;
+  color: #7c2d12;
+}
+
+/* Formulier */
+.rem-form { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.rem-form-group { display: flex; flex-direction: column; gap: 0.3rem; }
+
+.rem-form-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary, #475569);
+}
+.rem-required { color: #dc2626; }
+
+.rem-form-input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  background: var(--card-bg, #fff);
+  color: var(--text-primary, #1e293b);
+}
+.rem-form-input:focus {
+  outline: none;
+  border-color: var(--accent, #FF6B2B);
+  box-shadow: 0 0 0 3px rgba(255,107,43,.12);
+}
+.rem-form-input.rem-input-error {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220,38,38,.12);
+}
+
+/* Resultaat blok */
+.rem-modal-result {
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.rem-result-ok    { background: #f0fdf4; border: 1px solid #bbf7d0; }
+.rem-result-error { background: #fef2f2; border: 1px solid #fecaca; }
+
+.rem-result-icon { font-size: 1.25rem; }
+.rem-result-msg  { font-size: 0.875rem; font-weight: 600; color: var(--text-primary, #1e293b); }
+
+.rem-detail-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.78rem;
+  color: var(--text-muted, #64748b);
+  border-top: 1px solid var(--border-color, #e2e8f0);
+  padding-top: 0.5rem;
+  margin-top: 0.25rem;
+}
+.rem-detail-key { font-weight: 600; }
+
+.rem-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border-color, #e2e8f0);
+}
+
+/* ── Dark mode overrides ─────────────────────────────────────── */
+[data-theme="dark"] .rem-card {
+  background: var(--card-bg, #1e293b);
+  border-color: var(--border-color, #334155);
+}
+[data-theme="dark"] .rem-card:hover { border-color: var(--accent, #FF6B2B); }
+[data-theme="dark"] .rem-card-endpoint { background: #0f172a; }
+[data-theme="dark"] .rem-filter-input  { background: #1e293b; border-color: #334155; color: #e2e8f0; }
+[data-theme="dark"] .rem-toolbar-info  { background: #1e293b; }
+[data-theme="dark"] .rem-table th      { background: #1e293b; }
+[data-theme="dark"] .rem-table tr:hover td { background: #1e293b; }
+[data-theme="dark"] .rem-table-wrap    { border-color: #334155; }
+[data-theme="dark"] .rem-modal         { background: #1e293b; }
+[data-theme="dark"] .rem-form-input    { background: #0f172a; border-color: #334155; color: #e2e8f0; }
+[data-theme="dark"] .rem-modal-header,
+[data-theme="dark"] .rem-modal-footer  { border-color: #334155; }
+[data-theme="dark"] .rem-btn-preview   { background: #0f172a; color: #e2e8f0; border-color: #334155; }
+[data-theme="dark"] .rem-btn-cancel    { border-color: #334155; color: #94a3b8; }
+[data-theme="dark"] .rem-btn-cancel:hover { background: #0f172a; }
+
+/* Portal alignment overrides */
+.content-section .rem-tabs {
+  width: 100%;
+  margin-bottom: 0.2rem;
+}
+
+.content-section .rem-toolbar {
+  margin-bottom: 0;
+}
+
+.content-section .rem-cards {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.content-section .rem-card,
+.content-section .rem-table-wrap,
+.content-section .rem-runner-card,
+.content-section .rem-modal {
+  border-radius: 20px;
+}
