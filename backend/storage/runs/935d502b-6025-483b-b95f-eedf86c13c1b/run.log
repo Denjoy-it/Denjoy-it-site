@@ -1,0 +1,23 @@
+[15:25:52] Run queued.
+[15:25:52] Run mode: script
+[15:25:52] Scan type: full
+[15:25:52] Phases: phase1, phase2, phase3, phase4, phase5, phase6
+[15:25:52] Starting PowerShell assessment.
+[15:25:52] Command: /usr/local/bin/pwsh -NoLogo -NoProfile -NonInteractive -File /Users/demac/Downloads/Denjoy-it-site-main-2/assessment/Start-M365BaselineAssessment.ps1 -OutputPath /Users/demac/Downloads/Denjoy-it-site-main-2/backend/storage/runs/935d502b-6025-483b-b95f-eedf86c13c1b -ExportCsv -ExportJson -TenantId 229f88d7-1d50-48ed-821e-76d45d2aa4d8 -ClientId 599793e6-e507-46d3-95a0-c0597251bd84
+[15:25:53] ╔══════════════════════════════════════════════════════════════╗
+[15:25:53] ║   M365 COMPLETE BASELINE ASSESSMENT (MODULAR)                ║
+[15:25:53] ║   Version: 3.1.0                                             ║
+[15:25:53] ╚══════════════════════════════════════════════════════════════╝
+[15:25:53] [*] Loading modules...
+[15:25:53]   ✓ Authentication module loaded
+[15:25:53] ✗ Failed to load modules: The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: At /Users/demac/Downloads/Denjoy-it-site-main-2/assessment/Modules/HtmlReporting-Core.psm1:34 char:82
+[15:25:53] + … U friendly-name mapping kon niet worden geladen uit $mapPath: $($_.Ex …
+[15:25:53] +                                                       ~~~~~~~~~
+[15:25:53] Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+[15:25:53]   Ensure all module files are present in: /Users/demac/Downloads/Denjoy-it-site-main-2/assessment/Modules
+[15:25:53] [15:25:53] PowerShell.Exiting detected - performing best-effort disconnect
+[15:25:53] [15:25:53] Closing connections...
+[15:25:53] [15:25:53] Post-cleanup state: Graph=NotConnected, EXO=NotConnected, Teams=NotConnected, Azure=NotConnected
+[15:25:53] [15:25:53] All sessions closed.
+[15:25:53] PowerShell process exited with code 1
+[15:25:53] Run failed: PowerShell exited with code 1
