@@ -331,7 +331,7 @@ def default_config() -> Dict[str, Any]:
     return {
         "default_run_mode": "demo",
         "assessment_ui_v1": True,
-        "script_path": str(PLATFORM_DIR / "assessment" / "Start-M365BaselineAssessment.ps1"),
+        "script_path": str(PLATFORM_DIR / "assessment" / "Start-LiveAssessment.ps1"),
         # App-registratie authenticatie (optioneel, laat leeg voor interactieve auth)
         "auth_tenant_id":       "",   # Azure Tenant ID (bijv. contoso.onmicrosoft.com)
         "auth_client_id":       "",   # App registratie Client ID
@@ -2840,7 +2840,7 @@ def _snapshot_as_cis_data(tid: str) -> Optional[Dict[str, Any]]:
 _ZT_SCRIPT = PLATFORM_DIR / "assessment" / "Invoke-ZeroTrustAssessment.ps1"
 
 
-def _run_zerotrust_ps(tenant_id: str, action: str, output_folder: str = "") -> Dict[str, Any]:
+def _run_zerotrust_ps(tenant_id: str, action: str, output_folder: str = "", force_interactive: bool = False) -> Dict[str, Any]:
     """Roept de Zero Trust Assessment PS wrapper aan."""
     profile = get_tenant_auth_profile(tenant_id, include_secret=True)
     ps_script = _ZT_SCRIPT.resolve()
@@ -2849,7 +2849,9 @@ def _run_zerotrust_ps(tenant_id: str, action: str, output_folder: str = "") -> D
     pwsh = shutil.which("pwsh") or shutil.which("powershell")
     if not pwsh:
         raise RuntimeError("PowerShell niet gevonden")
-    cmd = [pwsh, "-NonInteractive", "-NoProfile", "-File", str(ps_script), "-Action", action]
+    cmd = [pwsh, "-NoProfile", "-File", str(ps_script), "-Action", action]
+    if action != "run":
+        cmd.insert(1, "-NonInteractive")
     if profile.get("auth_tenant_id"):
         cmd += ["-TenantId", profile["auth_tenant_id"]]
     if profile.get("auth_client_id"):
@@ -2858,8 +2860,16 @@ def _run_zerotrust_ps(tenant_id: str, action: str, output_folder: str = "") -> D
         cmd += ["-CertThumbprint", profile["auth_cert_thumbprint"]]
     if output_folder:
         cmd += ["-OutputFolder", output_folder]
+    if force_interactive:
+        cmd += ["-ForceInteractive"]
     try:
-        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=86400)
+        proc = subprocess.run(
+            cmd,
+            capture_output=True,
+            text=True,
+            timeout=86400,
+            cwd=str(PLATFORM_DIR / "assessment"),
+        )
         output = (proc.stdout or "") + (proc.stderr or "")
         if "##RESULT##" in output:
             return json.loads(output.split("##RESULT##")[-1].strip().split("\n")[0])
@@ -2870,11 +2880,273 @@ def _run_zerotrust_ps(tenant_id: str, action: str, output_folder: str = "") -> D
     return {"ok": False, "error": "Geen output van PS script"}
 
 
+ZT_REFERENCE_PERMISSIONS = {
+    "AuditLog.Read.All",
+    "CrossTenantInformation.ReadBasic.All",
+    "DeviceManagementApps.Read.All",
+    "DeviceManagementConfiguration.Read.All",
+    "DeviceManagementManagedDevices.Read.All",
+    "DeviceManagementRBAC.Read.All",
+    "DeviceManagementServiceConfig.Read.All",
+    "Directory.Read.All",
+    "DirectoryRecommendations.Read.All",
+    "EntitlementManagement.Read.All",
+    "IdentityRiskEvent.Read.All",
+    "IdentityRiskyUser.Read.All",
+    "IdentityRiskyServicePrincipal.Read.All",
+    "NetworkAccess.Read.All",
+    "Policy.Read.All",
+    "Policy.Read.ConditionalAccess",
+    "Policy.Read.PermissionGrant",
+    "PrivilegedAccess.Read.AzureAD",
+    "Reports.Read.All",
+    "RoleManagement.Read.All",
+    "UserAuthenticationMethod.Read.All",
+}
+
+
+def _zt_auth_profile_summary(tenant_id: str) -> Dict[str, Any]:
+    profile = get_tenant_auth_profile(tenant_id, include_secret=True)
+    cfg = load_config()
+    tenant_auth_id = (profile.get("auth_tenant_id") or cfg.get("auth_tenant_id") or "").strip()
+    client_id = (profile.get("auth_client_id") or cfg.get("auth_client_id") or "").strip()
+    cert_thumb = (profile.get("auth_cert_thumbprint") or cfg.get("auth_cert_thumbprint") or "").strip()
+    client_secret = (profile.get("auth_client_secret") or cfg.get("auth_client_secret") or "").strip()
+
+    credential_type = "none"
+    if cert_thumb:
+        credential_type = "certificate"
+    elif client_secret:
+        credential_type = "client_secret"
+
+    app_auth_ready = bool(client_id and tenant_auth_id and cert_thumb)
+    return {
+        "tenant_id": tenant_auth_id,
+        "client_id": client_id,
+        "credential_type": credential_type,
+        "has_certificate": bool(cert_thumb),
+        "has_client_secret": bool(client_secret),
+        "app_auth_ready": app_auth_ready,
+        "preferred_auth_mode": "app" if app_auth_ready else "interactive",
+        "fallback_reason": "" if app_auth_ready else (
+            "App-registratie gebruikt in deze integratie op dit moment alleen certificaat-auth. Zonder certificaat valt de run terug op interactieve browser-login."
+            if client_id and tenant_auth_id else
+            "Er is nog geen complete tenant-appregistratie gekoppeld voor Zero Trust."
+        ),
+    }
+
+
+def _zt_linked_app_registration(tenant_id: str, client_id: str) -> Dict[str, Any]:
+    client_id = (client_id or "").strip()
+    if not client_id:
+        return {}
+
+    try:
+        data = _run_appregs_ps(tenant_id, "get-appreg", {"app_id": client_id})
+        if isinstance(data, dict) and data.get("ok") is not False:
+            return data
+    except Exception:
+        pass
+
+    snap = _latest_assessment_snapshot_for_tenant(tenant_id)
+    payload = _assessment_json_payload(snap, "apps", "registrations")
+    if isinstance(payload, dict):
+        for item in payload.get("items") or []:
+            if not isinstance(item, dict):
+                continue
+            if (_payload_value(item, "AppId", "appId", default="") or "").lower() != client_id.lower():
+                continue
+            perms = _payload_value(item, "Permissions", "permissions", default=None)
+            return _attach_source_meta({
+                "ok": True,
+                "displayName": _payload_value(item, "DisplayName", "displayName", default=""),
+                "appId": _payload_value(item, "AppId", "appId", default=""),
+                "signInAudience": None,
+                "createdAt": _payload_value(item, "CreatedDateTime", "createdAt"),
+                "hasEnterpriseApp": bool(_payload_value(item, "HasEnterpriseApp", "hasEnterpriseApp", default=False)),
+                "secrets": ([{"hint": "•••", "statusLabel": _payload_value(item, "SecretExpirationStatus", "secretExpirationStatus")}]
+                            if int(_payload_value(item, "SecretCount", "secretCount", default=0) or 0) > 0 else []),
+                "certs": ([{"type": "Certificate", "statusLabel": _payload_value(item, "CertificateExpirationStatus", "certificateExpirationStatus")}]
+                          if int(_payload_value(item, "CertificateCount", "certificateCount", default=0) or 0) > 0 else []),
+                "redirectUris": [],
+                "identifierUris": [],
+                "requiredResourceAccess": [],
+                "permissions": list(perms) if isinstance(perms, list) else [],
+            }, "assessment_snapshot", tenant_id=tenant_id)
+    return {}
+
+
+def _zt_permission_summary(app_data: Dict[str, Any]) -> Dict[str, Any]:
+    permissions = app_data.get("permissions") if isinstance(app_data, dict) else None
+    normalized = []
+    seen = set()
+    for item in permissions or []:
+        if not isinstance(item, dict):
+            continue
+        name = (item.get("Permission") or item.get("permission") or item.get("value") or "").strip()
+        if not name:
+            continue
+        key = name.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        normalized.append({
+            "resource": (item.get("Resource") or item.get("resource") or "Onbekend").strip(),
+            "type": (item.get("Type") or item.get("type") or "").strip(),
+            "permission": name,
+            "is_reference": name in ZT_REFERENCE_PERMISSIONS,
+        })
+
+    configured_names = {item["permission"] for item in normalized}
+    missing_reference = sorted(ZT_REFERENCE_PERMISSIONS - configured_names)
+    additional_permissions = [item for item in normalized if not item["is_reference"]]
+
+    return {
+        "reference_permissions": sorted(ZT_REFERENCE_PERMISSIONS),
+        "configured_permissions": normalized,
+        "configured_count": len(normalized),
+        "reference_count": len(ZT_REFERENCE_PERMISSIONS),
+        "additional_permissions": additional_permissions,
+        "additional_count": len(additional_permissions),
+        "has_additional_permissions": bool(additional_permissions),
+        "missing_reference_permissions": missing_reference,
+        "missing_reference_count": len(missing_reference),
+        "reference_note": "Vergelijking op basis van de Microsoft Learn Zero Trust Assessment permissielijst voor Connect-ZtAssessment.",
+    }
+
+
 def _zt_output_folder(tenant_id: str) -> str:
     """Standaard outputpad voor ZT-rapporten per tenant (binnen storage — schrijfbaar door service)."""
     base = PLATFORM_DIR / "backend" / "storage" / "zerotrust_reports" / tenant_id
     base.mkdir(parents=True, exist_ok=True)
     return str(base)
+
+
+def _zt_status_path(tenant_id: str) -> Path:
+    return Path(_zt_output_folder(tenant_id)) / "_status.json"
+
+
+def _zt_log_path(tenant_id: str) -> Path:
+    return Path(_zt_output_folder(tenant_id)) / "zerotrust.log"
+
+
+def _zt_write_status(tenant_id: str, payload: Dict[str, Any]) -> Dict[str, Any]:
+    data = dict(payload or {})
+    data["updated_at"] = now_iso()
+    path = _zt_status_path(tenant_id)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, indent=2), encoding="utf-8")
+    return data
+
+
+def _zt_read_status(tenant_id: str) -> Dict[str, Any]:
+    path = _zt_status_path(tenant_id)
+    if not path.exists():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+def _zt_append_log(tenant_id: str, message: str) -> None:
+    path = _zt_log_path(tenant_id)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    stamp = datetime.now().strftime("%H:%M:%S")
+    with path.open("a", encoding="utf-8") as fh:
+        fh.write(f"[{stamp}] {message}\n")
+
+
+def _zt_tail_log(tenant_id: str, limit: int = 40) -> List[str]:
+    path = _zt_log_path(tenant_id)
+    if not path.exists():
+        return []
+    try:
+        lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
+        return lines[-max(1, min(limit, 200)):]
+    except Exception:
+        return []
+
+
+def _zt_clear_log(tenant_id: str) -> None:
+    path = _zt_log_path(tenant_id)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("", encoding="utf-8")
+
+
+def _run_zerotrust_worker(tenant_id: str, action: str, output_folder: str = "", force_interactive: bool = False) -> Dict[str, Any]:
+    profile = get_tenant_auth_profile(tenant_id, include_secret=True)
+    ps_script = _ZT_SCRIPT.resolve()
+    if not ps_script.exists():
+        raise FileNotFoundError(f"ZeroTrust script niet gevonden: {ps_script}")
+    pwsh = shutil.which("pwsh") or shutil.which("powershell")
+    if not pwsh:
+        raise RuntimeError("PowerShell niet gevonden")
+
+    cmd = [pwsh, "-NoProfile", "-File", str(ps_script), "-Action", action]
+    if action != "run":
+        cmd.insert(1, "-NonInteractive")
+    if profile.get("auth_tenant_id"):
+        cmd += ["-TenantId", profile["auth_tenant_id"]]
+    if profile.get("auth_client_id"):
+        cmd += ["-ClientId", profile["auth_client_id"]]
+    if profile.get("auth_cert_thumbprint"):
+        cmd += ["-CertThumbprint", profile["auth_cert_thumbprint"]]
+    if output_folder:
+        cmd += ["-OutputFolder", output_folder]
+    if force_interactive:
+        cmd += ["-ForceInteractive"]
+
+    _zt_clear_log(tenant_id)
+    _zt_append_log(tenant_id, f"Actie gestart: {action}")
+    if force_interactive:
+        _zt_append_log(tenant_id, "Interactieve browser-login is afgedwongen voor deze run.")
+    _zt_append_log(tenant_id, "Command: " + " ".join(cmd))
+
+    result_payload: Dict[str, Any] = {}
+    output_lines: List[str] = []
+    proc = None
+    try:
+        proc = subprocess.Popen(
+            cmd,
+            cwd=str(PLATFORM_DIR / "assessment"),
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            bufsize=1,
+        )
+        assert proc.stdout is not None
+        for raw_line in proc.stdout:
+            line = raw_line.rstrip("\r\n")
+            output_lines.append(line)
+            if line.startswith("##RESULT##"):
+                try:
+                    result_payload = json.loads(line.split("##RESULT##", 1)[1].strip())
+                except Exception:
+                    result_payload = {"ok": False, "error": "Kon JSON-resultaat niet parsen."}
+                continue
+            if line.strip():
+                _zt_append_log(tenant_id, line)
+
+        rc = proc.wait(timeout=86400)
+        _zt_append_log(tenant_id, f"Proces voltooid met exit code {rc}")
+        if not result_payload:
+            combined = "\n".join(output_lines[-20:])
+            result_payload = {
+                "ok": False,
+                "error": "Geen output van PS script",
+                "returncode": rc,
+                "output_tail": combined,
+            }
+        return result_payload
+    except subprocess.TimeoutExpired:
+        if proc:
+            proc.kill()
+        _zt_append_log(tenant_id, "Timeout: assessment duurt te lang")
+        return {"ok": False, "error": "Timeout: assessment duurt te lang"}
+    except Exception as e:
+        _zt_append_log(tenant_id, f"Fout: {e}")
+        return {"ok": False, "error": str(e)}
 
 
 def _snapshot_as_hybrid_sync(tid: str) -> Optional[Dict[str, Any]]:
@@ -5564,6 +5836,254 @@ def _persist_live_findings(tenant_id: str, domain: str, action: str, data: Dict[
         conn.close()
 
 
+def _persist_snapshot_findings(tenant_id: str, run_id: str) -> int:
+    """
+    Leid gestructureerde scan_findings af uit de summary.json van een assessment-run.
+    Gebruikt dezelfde scan_findings tabel als _persist_live_findings.
+    Retourneert het aantal geschreven findings.
+    """
+    run_dir = RUNS_DIR / run_id
+    summary_file = find_latest_summary_file(run_dir)
+    if not summary_file or not summary_file.exists():
+        return 0
+    try:
+        snap = json.loads(summary_file.read_text(encoding="utf-8"))
+    except Exception:
+        return 0
+    if not isinstance(snap, dict):
+        return 0
+
+    metrics = snap.get("Metrics") or {}
+    ts = snap.get("GeneratedAt") or now_iso()
+    raw_json = json.dumps({"source": "snapshot", "run_id": run_id}, ensure_ascii=False)
+    findings: List[Dict[str, Any]] = []
+
+    def _pct_status(pct, ok_thresh=90, warn_thresh=75):
+        if pct is None:
+            return "info"
+        if pct >= ok_thresh:
+            return "ok"
+        if pct >= warn_thresh:
+            return "warning"
+        return "critical"
+
+    def _inv_pct_status(count, warn_thresh=1, crit_thresh=5):
+        """Status voor telling waarbij 0 = OK."""
+        if count is None:
+            return "info"
+        if count == 0:
+            return "ok"
+        if count <= warn_thresh:
+            return "warning"
+        return "critical"
+
+    # ── Identity & MFA ────────────────────────────────────────────────────────
+    mfa_pct = metrics.get("MfaCoveragePct")
+    if mfa_pct is not None:
+        status = _pct_status(mfa_pct, ok_thresh=95, warn_thresh=75)
+        missing = metrics.get("MfaMissing", 0)
+        findings.append({
+            "domain": "identity", "control": "mfa-coverage",
+            "title": "MFA-registratie dekking",
+            "status": status,
+            "finding": f"{mfa_pct}% MFA-dekking ({missing} gebruikers zonder MFA)",
+            "impact": "high" if status == "critical" else ("medium" if status == "warning" else "low"),
+            "recommendation": (
+                "Verplicht MFA via Conditional Access voor alle gebruikers."
+                if status != "ok" else None
+            ),
+            "service": "Identity Beheer",
+            "metric_value": mfa_pct,
+        })
+
+    ca_enabled = metrics.get("CAEnabled")
+    if ca_enabled is not None:
+        ca_count = int(ca_enabled)
+        status = "ok" if ca_count >= 3 else ("warning" if ca_count >= 1 else "critical")
+        findings.append({
+            "domain": "identity", "control": "ca-policies",
+            "title": "Conditional Access policies",
+            "status": status,
+            "finding": f"{ca_count} actieve Conditional Access policy/policies",
+            "impact": "high" if status == "critical" else ("medium" if status == "warning" else "low"),
+            "recommendation": (
+                "Implementeer minimaal 3 CA-policies: MFA, admin-bescherming en legacy auth blokkade."
+                if status != "ok" else None
+            ),
+            "service": "Zero Trust Baseline",
+            "metric_value": float(ca_count),
+        })
+
+    # ── Security Baseline ─────────────────────────────────────────────────────
+    score_pct = metrics.get("SecureScorePct")
+    if score_pct is not None:
+        status = _pct_status(score_pct, ok_thresh=70, warn_thresh=50)
+        findings.append({
+            "domain": "identity", "control": "secure-score",
+            "title": "Microsoft Secure Score",
+            "status": status,
+            "finding": f"Secure Score: {score_pct}%",
+            "impact": "high" if status == "critical" else ("medium" if status == "warning" else "low"),
+            "recommendation": (
+                "Voer de top Secure Score aanbevelingen uit in het Microsoft 365 Defender portal."
+                if status != "ok" else None
+            ),
+            "service": "Security Monitoring",
+            "metric_value": score_pct,
+        })
+
+    alerts_high = metrics.get("AlertsHigh")
+    if alerts_high is not None:
+        status = _inv_pct_status(int(alerts_high), warn_thresh=0, crit_thresh=1)
+        if status == "ok":
+            status = "ok"  # 0 high alerts is OK
+        else:
+            status = "critical"
+        findings.append({
+            "domain": "identity", "control": "security-alerts-high",
+            "title": "Hoge prioriteit beveiligingsalarmen",
+            "status": status,
+            "finding": f"{alerts_high} hoge prioriteitsalarmen actief",
+            "impact": "high" if int(alerts_high) > 0 else "low",
+            "recommendation": (
+                "Onderzoek en verhelp direct alle hoge prioriteitsalarmen in Microsoft 365 Defender."
+                if int(alerts_high) > 0 else None
+            ),
+            "service": "Security Monitoring",
+            "metric_value": float(alerts_high),
+        })
+
+    alerts_medium = metrics.get("AlertsMedium")
+    if alerts_medium is not None:
+        a = int(alerts_medium)
+        status = "ok" if a == 0 else ("warning" if a <= 5 else "critical")
+        findings.append({
+            "domain": "identity", "control": "security-alerts-medium",
+            "title": "Gemiddelde prioriteit beveiligingsalarmen",
+            "status": status,
+            "finding": f"{a} gemiddelde prioriteitsalarmen actief",
+            "impact": "medium" if a > 0 else "low",
+            "recommendation": (
+                "Bekijk en prioriteer gemiddelde alarmen; zorg dat er geen achterstanden ontstaan."
+                if a > 0 else None
+            ),
+            "service": "Security Monitoring",
+            "metric_value": float(a),
+        })
+
+    # ── Device Compliance ─────────────────────────────────────────────────────
+    intune_pct = metrics.get("IntuneCompliancePct")
+    if intune_pct is not None:
+        status = _pct_status(intune_pct, ok_thresh=95, warn_thresh=75)
+        findings.append({
+            "domain": "collaboration", "control": "intune-compliance",
+            "title": "Intune device compliance dekking",
+            "status": status,
+            "finding": f"{intune_pct}% van beheerde apparaten is compliant",
+            "impact": "high" if status == "critical" else ("medium" if status == "warning" else "low"),
+            "recommendation": (
+                "Stel compliance policies in en herstel non-compliant apparaten via Intune."
+                if status != "ok" else None
+            ),
+            "service": "Modern Device Management",
+            "metric_value": intune_pct,
+        })
+
+    # ── License utilization ────────────────────────────────────────────────────
+    licenses = snap.get("Licenses") or []
+    low_util = [
+        lic for lic in licenses
+        if isinstance(lic, dict)
+        and (lic.get("Total") or 0) > 5
+        and (lic.get("Utilization") or 100) < 80
+    ]
+    if licenses:
+        status = "ok" if not low_util else ("warning" if len(low_util) <= 2 else "critical")
+        findings.append({
+            "domain": "collaboration", "control": "license-efficiency",
+            "title": "Licentie-efficiëntie",
+            "status": status,
+            "finding": (
+                f"{len(low_util)} licentietypen met lage bezettingsgraad (<80%) van de {len(licenses)} totaal"
+                if low_util else f"Alle {len(licenses)} licentietypen hebben voldoende bezettingsgraad"
+            ),
+            "impact": "medium" if low_util else "low",
+            "recommendation": (
+                "Verlaag het aantal licenties voor onderbenutte SKU's of herverdelens ze naar actieve gebruikers."
+                if low_util else None
+            ),
+            "service": "Licentie Optimalisatie",
+            "metric_value": float(len(low_util)),
+        })
+
+    # ── App Registrations ─────────────────────────────────────────────────────
+    app_regs = snap.get("AppRegistrations") or []
+    expired_secrets = [
+        a for a in app_regs
+        if isinstance(a, dict) and "Expired" in str(a.get("SecretExpirationStatus") or "")
+    ]
+    expiring_soon = [
+        a for a in app_regs
+        if isinstance(a, dict) and "soon" in str(a.get("SecretExpirationStatus") or "").lower()
+    ]
+    if app_regs:
+        status = "ok" if not expired_secrets else "critical"
+        if status == "ok" and expiring_soon:
+            status = "warning"
+        findings.append({
+            "domain": "appregs", "control": "appreg-secrets",
+            "title": "App registraties — secrets & certificaten",
+            "status": status,
+            "finding": (
+                f"{len(expired_secrets)} verlopen secret(s), {len(expiring_soon)} verloopt binnenkort "
+                f"van de {len(app_regs)} app registraties"
+                if (expired_secrets or expiring_soon) else
+                f"Alle {len(app_regs)} app registraties hebben geldige credentials"
+            ),
+            "impact": "high" if expired_secrets else ("medium" if expiring_soon else "low"),
+            "recommendation": (
+                "Vernieuw verlopen secrets/certificaten voor app registraties direct."
+                if expired_secrets else (
+                    "Vernieuw binnenkort verlopende secrets/certificaten proactief."
+                    if expiring_soon else None
+                )
+            ),
+            "service": "App Beheer",
+            "metric_value": float(len(expired_secrets)),
+        })
+
+    if not findings:
+        return 0
+
+    conn = get_conn()
+    try:
+        with conn:
+            conn.executemany(
+                """
+                INSERT INTO scan_findings
+                    (id, tenant_id, domain, control, title, status, finding,
+                     impact, recommendation, service, metric_value, raw_json, scanned_at)
+                VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
+                """,
+                [
+                    (
+                        str(uuid.uuid4()), tenant_id,
+                        f["domain"], f["control"], f["title"], f["status"],
+                        f.get("finding"), f.get("impact", "low"),
+                        f.get("recommendation"), f.get("service"),
+                        f.get("metric_value"), raw_json if i == 0 else None, ts,
+                    )
+                    for i, f in enumerate(findings)
+                ],
+            )
+        return len(findings)
+    except Exception as e:
+        logger.warning("[snapshot_findings] DB write fout tenant=%s run=%s: %s", tenant_id, run_id, e)
+        return 0
+    finally:
+        conn.close()
+
+
 def _get_tenant_health_score(tenant_id: str) -> Dict[str, Any]:
     """Bereken health score op basis van meest recente findings per control."""
     conn = get_conn()
@@ -5656,6 +6176,74 @@ def _run_identity_ps(tenant_id: str, action: str, params: Dict[str, Any]) -> Dic
         try:
             data = json.loads(output.split("##RESULT##")[-1].strip().split("\n")[0])
             threading.Thread(target=_persist_live_findings, args=(tenant_id, "identity", action, data), daemon=True).start()
+            return data
+        except Exception:
+            return {"ok": False, "error": "Parse fout"}
+    return {"ok": False, "error": output[-500:] if output else "Geen output"}
+
+
+# ── Hybrid Identity ───────────────────────────────────────────────────────────
+
+_HYBRID_SCRIPT = PLATFORM_DIR / "assessment" / "Invoke-DenjoyHybrid.ps1"
+
+
+def _run_hybrid_ps(tenant_id: str, action: str, params: Dict[str, Any]) -> Dict[str, Any]:
+    profile = get_tenant_auth_profile(tenant_id, include_secret=True)
+    ps_script = _HYBRID_SCRIPT.resolve()
+    if not ps_script.exists():
+        raise FileNotFoundError(f"Hybrid script niet gevonden: {ps_script}")
+    cmd = [
+        "pwsh", "-NonInteractive", "-NoProfile", "-File", str(ps_script),
+        "-Action", action,
+        "-TenantId", profile["auth_tenant_id"],
+        "-ClientId", profile["auth_client_id"],
+        "-ParamsJson", json.dumps(params),
+    ]
+    if profile.get("auth_cert_thumbprint"):
+        cmd += ["-CertThumbprint", profile["auth_cert_thumbprint"]]
+    elif profile.get("auth_client_secret"):
+        cmd += ["-ClientSecret", profile["auth_client_secret"]]
+    proc = subprocess.run(cmd, capture_output=True, text=True, timeout=180)
+    output = proc.stdout + proc.stderr
+    logger.info("[Hybrid] action=%s tenant=%s exit=%s", action, tenant_id, proc.returncode)
+    if "##RESULT##" in output:
+        try:
+            data = json.loads(output.split("##RESULT##")[-1].strip().split("\n")[0])
+            threading.Thread(target=_persist_live_findings, args=(tenant_id, "hybrid", action, data), daemon=True).start()
+            return data
+        except Exception:
+            return {"ok": False, "error": "Parse fout"}
+    return {"ok": False, "error": output[-500:] if output else "Geen output"}
+
+
+# ── CIS Compliance ────────────────────────────────────────────────────────────
+
+_CIS_SCRIPT = PLATFORM_DIR / "assessment" / "Invoke-DenjoyCis.ps1"
+
+
+def _run_cis_ps(tenant_id: str, action: str, params: Dict[str, Any]) -> Dict[str, Any]:
+    profile = get_tenant_auth_profile(tenant_id, include_secret=True)
+    ps_script = _CIS_SCRIPT.resolve()
+    if not ps_script.exists():
+        raise FileNotFoundError(f"CIS script niet gevonden: {ps_script}")
+    cmd = [
+        "pwsh", "-NonInteractive", "-NoProfile", "-File", str(ps_script),
+        "-Action", action,
+        "-TenantId", profile["auth_tenant_id"],
+        "-ClientId", profile["auth_client_id"],
+        "-ParamsJson", json.dumps(params),
+    ]
+    if profile.get("auth_cert_thumbprint"):
+        cmd += ["-CertThumbprint", profile["auth_cert_thumbprint"]]
+    elif profile.get("auth_client_secret"):
+        cmd += ["-ClientSecret", profile["auth_client_secret"]]
+    proc = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
+    output = proc.stdout + proc.stderr
+    logger.info("[CIS] action=%s tenant=%s exit=%s", action, tenant_id, proc.returncode)
+    if "##RESULT##" in output:
+        try:
+            data = json.loads(output.split("##RESULT##")[-1].strip().split("\n")[0])
+            threading.Thread(target=_persist_live_findings, args=(tenant_id, "compliance", action, data), daemon=True).start()
             return data
         except Exception:
             return {"ok": False, "error": "Parse fout"}
@@ -5844,6 +6432,18 @@ class RunManager:
                     append_run_log(run_id, f"{snap_count} portal JSON snapshots opgeslagen in database.")
             except Exception as snap_exc:
                 logger.warning("Snapshot import mislukt voor run %s: %s", run_id, snap_exc)
+            # Bevindingen uit summary.json opslaan in scan_findings (voor Bevindingen & Health sectie)
+            try:
+                run_meta = db_fetchone("SELECT tenant_id FROM assessment_runs WHERE id=?", (run_id,))
+                if run_meta and run_meta.get("tenant_id"):
+                    def _bg_persist_snapshot():
+                        n = _persist_snapshot_findings(run_meta["tenant_id"], run_id)
+                        if n:
+                            append_run_log(run_id, f"{n} assessment-bevindingen opgeslagen in scan_findings.")
+                    import threading as _threading
+                    _threading.Thread(target=_bg_persist_snapshot, daemon=True).start()
+            except Exception as sf_exc:
+                logger.warning("Snapshot findings import mislukt voor run %s: %s", run_id, sf_exc)
             # Webhook notificatie na voltooide assessment
             try:
                 run_meta = db_fetchone("SELECT tenant_id, score_overall, critical_count FROM assessment_runs WHERE id=?", (run_id,))
@@ -7910,6 +8510,12 @@ class Handler(BaseHTTPRequestHandler):
             # ── Compliance routes (GET) ──
             if re.fullmatch(r"/api/compliance/[^/]+/cis", path):
                 tid = path.split("/")[3]
+                try:
+                    data = _run_cis_ps(tid, "run-checks", {})
+                    if data.get("ok"):
+                        return self._json(200, _attach_source_meta(data, "live", tenant_id=tid))
+                except Exception as e:
+                    logger.warning("[CIS] Live script mislukt, valt terug op snapshot: %s", e)
                 payload = _snapshot_as_cis_data(tid)
                 if isinstance(payload, dict):
                     return self._json(200, _attach_source_meta(payload, "assessment_snapshot", tenant_id=tid))
@@ -7920,20 +8526,62 @@ class Handler(BaseHTTPRequestHandler):
             if re.fullmatch(r"/api/compliance/[^/]+/zerotrust", path):
                 tid = path.split("/")[3]
                 folder = _zt_output_folder(tid)
+                status_info = _zt_read_status(tid)
+                recent_logs = _zt_tail_log(tid, 30)
+                auth_profile = _zt_auth_profile_summary(tid)
+                linked_app = _zt_linked_app_registration(tid, auth_profile.get("client_id") or "")
+                permission_summary = _zt_permission_summary(linked_app)
                 try:
                     data = _run_zerotrust_ps(tid, "get-status", folder)
+                    data["install_supported"] = True
+                    data["status"] = status_info
+                    data["recent_logs"] = recent_logs
+                    data["auth_profile"] = auth_profile
+                    data["linked_app_registration"] = linked_app
+                    data["permission_summary"] = permission_summary
                     if data.get("ok"):
                         if data.get("last_report"):
                             results = _run_zerotrust_ps(tid, "get-results", folder)
                             data["results"] = results if isinstance(results, dict) else None
+                            if isinstance(data.get("status"), dict) and data["status"].get("state") == "running":
+                                data["status"]["detail"] = "Assessment draait nog. Laatste rapport is van een eerdere run."
+                        elif not data.get("last_report") and isinstance(data.get("status"), dict) and data["status"].get("state") == "running":
+                            data["status"]["detail"] = "Assessment draait nog. Er is nog geen nieuw rapport gevonden."
                         return self._json(200, data)
                 except Exception as e:
-                    return self._json(200, {"ok": True, "module": {"installed": False}, "last_report": None, "error": str(e)})
-                return self._json(200, {"ok": True, "module": {"installed": False}, "last_report": None})
+                    return self._json(200, {
+                        "ok": True,
+                        "module": {"installed": False},
+                        "last_report": None,
+                        "install_supported": True,
+                        "status": status_info,
+                        "recent_logs": recent_logs,
+                        "auth_profile": auth_profile,
+                        "linked_app_registration": linked_app,
+                        "permission_summary": permission_summary,
+                        "error": str(e),
+                    })
+                return self._json(200, {
+                    "ok": True,
+                    "module": {"installed": False},
+                    "last_report": None,
+                    "install_supported": True,
+                    "status": status_info,
+                    "recent_logs": recent_logs,
+                    "auth_profile": auth_profile,
+                    "linked_app_registration": linked_app,
+                    "permission_summary": permission_summary,
+                })
 
             # ── Hybrid Identity routes (GET) ──
             if re.fullmatch(r"/api/hybrid/[^/]+/sync", path):
                 tid = path.split("/")[3]
+                try:
+                    data = _run_hybrid_ps(tid, "get-hybrid-sync", {})
+                    if data.get("ok"):
+                        return self._json(200, _attach_source_meta(data, "live", tenant_id=tid))
+                except Exception as e:
+                    logger.warning("[Hybrid] Live script mislukt, valt terug op snapshot: %s", e)
                 payload = _snapshot_as_hybrid_sync(tid)
                 if isinstance(payload, dict):
                     return self._json(200, _attach_source_meta(payload, "assessment_snapshot", tenant_id=tid))
@@ -8776,6 +9424,13 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(200, cancel_job(job_id))
             if path == "/api/actions":
                 return self._json(201, create_action(self._read_json()))
+            if re.fullmatch(r"/api/findings/[^/]+/import-snapshot", path):
+                tid = path.split("/")[3]
+                run = _latest_completed_run_for_tenant(tid)
+                if not run:
+                    return self._json(404, {"ok": False, "error": "Geen voltooide assessment-run gevonden voor deze tenant."})
+                n = _persist_snapshot_findings(tid, run["id"])
+                return self._json(200, {"ok": True, "tenant_id": tid, "run_id": run["id"], "findings_written": n})
             if re.fullmatch(r"/api/runs/[^/]+/stop", path):
                 run_id = path.split("/")[3]
                 ok = RUN_MANAGER.stop(run_id)
@@ -8817,16 +9472,119 @@ class Handler(BaseHTTPRequestHandler):
                 )
                 return self._json(201, {"ok": True, "job": job})
             # ── Zero Trust Assessment run ──
+            if re.fullmatch(r"/api/compliance/[^/]+/zerotrust/install", path):
+                tid = path.split("/")[3]
+                folder = _zt_output_folder(tid)
+                started_at = now_iso()
+                _zt_write_status(tid, {
+                    "state": "queued",
+                    "action": "install",
+                    "message": "Zero Trust module-installatie staat in de wachtrij.",
+                    "started_at": started_at,
+                })
+                def _zt_install_bg():
+                    try:
+                        _zt_write_status(tid, {
+                            "state": "running",
+                            "action": "install",
+                            "message": "Zero Trust module wordt op de backend geïnstalleerd.",
+                            "started_at": started_at,
+                        })
+                        result = _run_zerotrust_worker(tid, "install-module", folder)
+                        completed_at = now_iso()
+                        if result.get("ok"):
+                            _zt_write_status(tid, {
+                                "state": "completed",
+                                "action": "install",
+                                "message": "Zero Trust module is geïnstalleerd.",
+                                "started_at": started_at,
+                                "completed_at": completed_at,
+                                "result": result,
+                            })
+                        else:
+                            _zt_write_status(tid, {
+                                "state": "failed",
+                                "action": "install",
+                                "message": result.get("error") or "Module-installatie mislukt.",
+                                "started_at": started_at,
+                                "completed_at": completed_at,
+                                "result": result,
+                            })
+                    except Exception as e:
+                        _zt_append_log(tid, f"Installatiefout: {e}")
+                        _zt_write_status(tid, {
+                            "state": "failed",
+                            "action": "install",
+                            "message": str(e),
+                            "started_at": started_at,
+                            "completed_at": now_iso(),
+                        })
+                threading.Thread(target=_zt_install_bg, daemon=True).start()
+                return self._json(202, {"ok": True, "message": "Zero Trust module installatie gestart op de backend.", "tenant_id": tid})
             if re.fullmatch(r"/api/compliance/[^/]+/zerotrust/run", path):
                 tid = path.split("/")[3]
                 folder = _zt_output_folder(tid)
+                body = self._read_json()
+                auth_profile = _zt_auth_profile_summary(tid)
+                force_interactive = bool(body.get("force_interactive", False))
+                effective_auth_mode = "interactive" if force_interactive else auth_profile.get("preferred_auth_mode", "interactive")
+                started_at = now_iso()
+                _zt_write_status(tid, {
+                    "state": "queued",
+                    "action": "run",
+                    "message": "Zero Trust Assessment staat in de wachtrij.",
+                    "started_at": started_at,
+                    "auth_mode": effective_auth_mode,
+                })
                 def _zt_bg():
                     try:
-                        _run_zerotrust_ps(tid, "run", folder)
-                    except Exception:
-                        pass
+                        _zt_write_status(tid, {
+                            "state": "running",
+                            "action": "run",
+                            "message": "Zero Trust Assessment draait op de backend.",
+                            "started_at": started_at,
+                            "auth_mode": effective_auth_mode,
+                        })
+                        result = _run_zerotrust_worker(tid, "run", folder, force_interactive=force_interactive)
+                        completed_at = now_iso()
+                        if result.get("ok"):
+                            _zt_write_status(tid, {
+                                "state": "completed",
+                                "action": "run",
+                                "message": "Zero Trust Assessment afgerond.",
+                                "started_at": started_at,
+                                "completed_at": completed_at,
+                                "result": result,
+                                "auth_mode": effective_auth_mode,
+                            })
+                        else:
+                            _zt_write_status(tid, {
+                                "state": "failed",
+                                "action": "run",
+                                "message": result.get("error") or "Zero Trust Assessment mislukt.",
+                                "started_at": started_at,
+                                "completed_at": completed_at,
+                                "result": result,
+                                "auth_mode": effective_auth_mode,
+                            })
+                    except Exception as e:
+                        _zt_append_log(tid, f"Assessmentfout: {e}")
+                        _zt_write_status(tid, {
+                            "state": "failed",
+                            "action": "run",
+                            "message": str(e),
+                            "started_at": started_at,
+                            "completed_at": now_iso(),
+                            "auth_mode": effective_auth_mode,
+                        })
                 threading.Thread(target=_zt_bg, daemon=True).start()
-                return self._json(202, {"ok": True, "message": "Zero Trust Assessment gestart als achtergrondtaak. Dit kan uren duren.", "tenant_id": tid})
+                launch_text = (
+                    "Zero Trust Assessment gestart met afgedwongen interactieve loginflow."
+                    if force_interactive else
+                    ("Zero Trust Assessment gestart met app-registratie authenticatie." if effective_auth_mode == "app"
+                     else "Zero Trust Assessment gestart. Omdat er geen bruikbare certificaat-auth is gekoppeld, wordt interactieve login gebruikt.")
+                )
+                return self._json(202, {"ok": True, "message": launch_text, "tenant_id": tid, "auth_mode": effective_auth_mode})
             # ── Gebruikersbeheer ──
             if path == "/api/users":
                 return self._json(201, create_user_account(self._read_json()))
