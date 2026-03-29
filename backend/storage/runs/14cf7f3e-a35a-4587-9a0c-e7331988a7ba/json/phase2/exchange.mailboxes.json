@@ -1,0 +1,1608 @@
+{
+  "section": "exchange",
+  "subsection": "mailboxes",
+  "label": "Mailboxen",
+  "source": "assessment",
+  "generated_at": "2026-03-28T11:11:36.0822680+01:00",
+  "assessmentId": "20260328-101414",
+  "summary": {
+    "roomMailboxes": 0,
+    "totalUserMailboxes": 264,
+    "sharedMailboxes": 71,
+    "equipmentMailboxes": 0
+  },
+  "items": [
+    {
+      "DisplayName": "QUBE  Beheer",
+      "PrimarySmtpAddress": "aazmee@meerwaarde.onmicrosoft.com",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-09-03T09:36:33Z"
+    },
+    {
+      "DisplayName": "Abdelwahid Agzennay",
+      "PrimarySmtpAddress": "Abdelwahid.Agzennay@meerwaarde.onmicrosoft.com",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-10-21T10:26:57Z"
+    },
+    {
+      "DisplayName": "Admin Qube ICT",
+      "PrimarySmtpAddress": "admin.qubeict@smwnet.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-09-02T14:06:04Z"
+    },
+    {
+      "DisplayName": "admin",
+      "PrimarySmtpAddress": "admin@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-03-19T08:47:59Z"
+    },
+    {
+      "DisplayName": "Administrator Meerwaarde",
+      "PrimarySmtpAddress": "fa@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Anass Azouag",
+      "PrimarySmtpAddress": "anass.azouag@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-09-12T13:03:02Z"
+    },
+    {
+      "DisplayName": "Andre Pijnaker",
+      "PrimarySmtpAddress": "andre.pijnaker@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Angela Nicolai",
+      "PrimarySmtpAddress": "angela.nicolai@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2018-07-26T06:21:55Z"
+    },
+    {
+      "DisplayName": "Angelique Koenders",
+      "PrimarySmtpAddress": "angelique.koenders@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-01-24T09:00:08Z"
+    },
+    {
+      "DisplayName": "Anja Maars",
+      "PrimarySmtpAddress": "anja.maars@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-09-05T13:30:11Z"
+    },
+    {
+      "DisplayName": "Anne-Mieke Gerrits",
+      "PrimarySmtpAddress": "annemieke.gerrits@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-03-26T14:17:14Z"
+    },
+    {
+      "DisplayName": "Annette van Groen",
+      "PrimarySmtpAddress": "annette.vangroen@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "August Lagadeau",
+      "PrimarySmtpAddress": "August.lagadeau@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2026-01-23T11:17:15Z"
+    },
+    {
+      "DisplayName": "Aukje Jonkhout",
+      "PrimarySmtpAddress": "aukje.jonkhout@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2020-12-10T12:17:23Z"
+    },
+    {
+      "DisplayName": "Aya Youssef",
+      "PrimarySmtpAddress": "aya.youssef@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-11-12T08:04:12Z"
+    },
+    {
+      "DisplayName": "Aysun Aydemir",
+      "PrimarySmtpAddress": "aysun.aydemir@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Balie",
+      "PrimarySmtpAddress": "balie@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Baudien Ekkel",
+      "PrimarySmtpAddress": "baudien.ekkel@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-08-24T14:31:30Z"
+    },
+    {
+      "DisplayName": "BBM Afke",
+      "PrimarySmtpAddress": "afkebuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-03-15T09:31:13Z"
+    },
+    {
+      "DisplayName": "BBM Alexandra",
+      "PrimarySmtpAddress": "alexandrabuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2019-12-12T10:37:58Z"
+    },
+    {
+      "DisplayName": "BBM Anneke",
+      "PrimarySmtpAddress": "bbm.anneke@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-03-13T10:12:04Z"
+    },
+    {
+      "DisplayName": "BBM Anne Marie",
+      "PrimarySmtpAddress": "annemariebuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "BBM Annemarie",
+      "PrimarySmtpAddress": "annemariebbuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-05-28T14:15:19Z"
+    },
+    {
+      "DisplayName": "BBM Annemarieke",
+      "PrimarySmtpAddress": "annemariekebuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2021-07-27T13:03:57Z"
+    },
+    {
+      "DisplayName": "BBM Annemieke",
+      "PrimarySmtpAddress": "annemiekebuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "BBM Annette",
+      "PrimarySmtpAddress": "annettebuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2019-09-12T07:29:47Z"
+    },
+    {
+      "DisplayName": "BBM Barbara",
+      "PrimarySmtpAddress": "barbarabuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-09-20T13:13:56Z"
+    },
+    {
+      "DisplayName": "BBM Belinda",
+      "PrimarySmtpAddress": "belindabuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-07-11T10:00:26Z"
+    },
+    {
+      "DisplayName": "BBM Brenda",
+      "PrimarySmtpAddress": "brendabuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2019-10-08T12:15:55Z"
+    },
+    {
+      "DisplayName": "BBM Carine",
+      "PrimarySmtpAddress": "carinebuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-05-18T16:28:41Z"
+    },
+    {
+      "DisplayName": "BBM Cees",
+      "PrimarySmtpAddress": "bbm.cees@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-03-13T10:12:04Z"
+    },
+    {
+      "DisplayName": "BBM Clemens",
+      "PrimarySmtpAddress": "clemenesbuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2020-09-18T06:40:04Z"
+    },
+    {
+      "DisplayName": "BBM Ella",
+      "PrimarySmtpAddress": "ellabuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2020-01-20T10:42:17Z"
+    },
+    {
+      "DisplayName": "BBM Eloise",
+      "PrimarySmtpAddress": "bbm.eloise@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-07-11T09:00:27Z"
+    },
+    {
+      "DisplayName": "BBM Els",
+      "PrimarySmtpAddress": "elsbuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-09-20T11:57:58Z"
+    },
+    {
+      "DisplayName": "BBM Elvira",
+      "PrimarySmtpAddress": "bbm.elvira@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-01-22T15:12:58Z"
+    },
+    {
+      "DisplayName": "BBM Emilie",
+      "PrimarySmtpAddress": "emiliebuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2021-09-16T07:34:15Z"
+    },
+    {
+      "DisplayName": "BBM Emilie",
+      "PrimarySmtpAddress": "bbm.emiliex@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-12-05T13:25:39Z"
+    },
+    {
+      "DisplayName": "BBM Esther",
+      "PrimarySmtpAddress": "bbm.esther@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-02-04T14:06:25Z"
+    },
+    {
+      "DisplayName": "BBM Fahrida",
+      "PrimarySmtpAddress": "bbm.fahrida@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-05-09T12:41:39Z"
+    },
+    {
+      "DisplayName": "BBM Floor",
+      "PrimarySmtpAddress": "bbm.floor@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-12-08T13:55:41Z"
+    },
+    {
+      "DisplayName": "BBM Florentyna",
+      "PrimarySmtpAddress": "florentynabuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-08-09T12:05:00Z"
+    },
+    {
+      "DisplayName": "BBM Fran",
+      "PrimarySmtpAddress": "franbuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-06-12T07:36:28Z"
+    },
+    {
+      "DisplayName": "BBM Francien",
+      "PrimarySmtpAddress": "bbm.francien@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-11-24T13:51:00Z"
+    },
+    {
+      "DisplayName": "BBM Gaby",
+      "PrimarySmtpAddress": "gabybuurtbemiddeling@meerwaarde.onmicrosoft.com",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-03-13T10:12:04Z"
+    },
+    {
+      "DisplayName": "BBM Nederbragt",
+      "PrimarySmtpAddress": "bbm.gertjan@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-01-15T11:07:27Z"
+    },
+    {
+      "DisplayName": "BBM Greetje",
+      "PrimarySmtpAddress": "greetjebuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2021-04-09T09:38:04Z"
+    },
+    {
+      "DisplayName": "BBM Guido",
+      "PrimarySmtpAddress": "guidobuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "BBM Hans Peter",
+      "PrimarySmtpAddress": "hanspeterbuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "BBM Harald",
+      "PrimarySmtpAddress": "haraldbuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-11-16T12:41:10Z"
+    },
+    {
+      "DisplayName": "BBM Heleen",
+      "PrimarySmtpAddress": "heleenbuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-05-28T14:15:19Z"
+    },
+    {
+      "DisplayName": "BBM Hella",
+      "PrimarySmtpAddress": "bbm.hella@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-07-07T07:59:24Z"
+    },
+    {
+      "DisplayName": "BBM Henriette",
+      "PrimarySmtpAddress": "henriettebuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-03-15T09:31:13Z"
+    },
+    {
+      "DisplayName": "BBM Hiltje",
+      "PrimarySmtpAddress": "bbm.hiltje@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-01-15T11:07:27Z"
+    },
+    {
+      "DisplayName": "BBM Ineke",
+      "PrimarySmtpAddress": "inekebuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "BBM Ingeborg",
+      "PrimarySmtpAddress": "ingeborgbuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2020-09-18T06:40:04Z"
+    },
+    {
+      "DisplayName": "BBM Ingrid",
+      "PrimarySmtpAddress": "ingridbuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2020-07-15T06:33:40Z"
+    },
+    {
+      "DisplayName": "BBM Ivo",
+      "PrimarySmtpAddress": "bbm.ivo@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-10-30T09:42:24Z"
+    },
+    {
+      "DisplayName": "BBM Jantine",
+      "PrimarySmtpAddress": "jantinebuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "BBM Jos",
+      "PrimarySmtpAddress": "josbuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2020-05-12T11:07:51Z"
+    },
+    {
+      "DisplayName": "BBM Judith",
+      "PrimarySmtpAddress": "judithbuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-07-11T10:00:26Z"
+    },
+    {
+      "DisplayName": "BBM Kees",
+      "PrimarySmtpAddress": "keesbuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2020-04-21T13:17:41Z"
+    },
+    {
+      "DisplayName": "BBM Kim",
+      "PrimarySmtpAddress": "kimbuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-11-16T12:41:10Z"
+    },
+    {
+      "DisplayName": "BBM Laura",
+      "PrimarySmtpAddress": "laurabuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-05-28T14:15:19Z"
+    },
+    {
+      "DisplayName": "BBM Leonie",
+      "PrimarySmtpAddress": "leoniebuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-11-16T12:41:10Z"
+    },
+    {
+      "DisplayName": "BBM Leonoor",
+      "PrimarySmtpAddress": "leonoorbuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-05-19T09:57:33Z"
+    },
+    {
+      "DisplayName": "BBM Marja",
+      "PrimarySmtpAddress": "marjabuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2021-04-20T07:25:58Z"
+    },
+    {
+      "DisplayName": "BBM Marjolein",
+      "PrimarySmtpAddress": "bbm.marjolein@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-03-13T10:12:04Z"
+    },
+    {
+      "DisplayName": "BBM Marjolijn",
+      "PrimarySmtpAddress": "marjolijnbuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "BBM Martie",
+      "PrimarySmtpAddress": "martiebuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2019-02-05T10:16:53Z"
+    },
+    {
+      "DisplayName": "BBM Martine",
+      "PrimarySmtpAddress": "bbm.martine@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-11-28T14:13:05Z"
+    },
+    {
+      "DisplayName": "BBM Melda",
+      "PrimarySmtpAddress": "meldabuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2021-07-13T09:21:12Z"
+    },
+    {
+      "DisplayName": "BBM Micha",
+      "PrimarySmtpAddress": "michabuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2021-04-09T09:38:05Z"
+    },
+    {
+      "DisplayName": "BBM Miriam",
+      "PrimarySmtpAddress": "miriambuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2021-07-13T09:21:12Z"
+    },
+    {
+      "DisplayName": "BBM Monique",
+      "PrimarySmtpAddress": "bbm.monique@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-12-08T13:55:41Z"
+    },
+    {
+      "DisplayName": "BBM Patricia",
+      "PrimarySmtpAddress": "bbm.patricia@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-12-01T15:34:26Z"
+    },
+    {
+      "DisplayName": "BBM Peter",
+      "PrimarySmtpAddress": "bbm.peter@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2026-01-05T09:58:41Z"
+    },
+    {
+      "DisplayName": "BBM Petra",
+      "PrimarySmtpAddress": "bbm.petra@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-10-17T13:57:44Z"
+    },
+    {
+      "DisplayName": "BBM Pien",
+      "PrimarySmtpAddress": "bbm.pien@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-12-08T13:55:41Z"
+    },
+    {
+      "DisplayName": "BBM Rob",
+      "PrimarySmtpAddress": "robbuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2019-10-18T07:16:08Z"
+    },
+    {
+      "DisplayName": "BBM Roger",
+      "PrimarySmtpAddress": "rogerbuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-05-28T14:15:19Z"
+    },
+    {
+      "DisplayName": "BBM Sabine",
+      "PrimarySmtpAddress": "bbm.sabine@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-03-13T10:12:04Z"
+    },
+    {
+      "DisplayName": "BBM Sacha",
+      "PrimarySmtpAddress": "sachabuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "BBM Sander Haarlemmermeer",
+      "PrimarySmtpAddress": "sanderbuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2020-04-28T08:23:44Z"
+    },
+    {
+      "DisplayName": "BBM Saskia",
+      "PrimarySmtpAddress": "bbm.saskia@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-03-24T09:25:56Z"
+    },
+    {
+      "DisplayName": "BBM Serge",
+      "PrimarySmtpAddress": "bbm.serge@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-03-24T09:25:56Z"
+    },
+    {
+      "DisplayName": "BBM Sheila",
+      "PrimarySmtpAddress": "bbm.sheila@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-12-05T07:55:18Z"
+    },
+    {
+      "DisplayName": "BBM Sigrid",
+      "PrimarySmtpAddress": "bbm.sigrid@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-12-08T13:55:41Z"
+    },
+    {
+      "DisplayName": "BBM Simone",
+      "PrimarySmtpAddress": "simonebuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2020-09-22T09:40:13Z"
+    },
+    {
+      "DisplayName": "BBM Suzanne",
+      "PrimarySmtpAddress": "suzannebuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2021-09-16T07:34:15Z"
+    },
+    {
+      "DisplayName": "BBM Sylvia",
+      "PrimarySmtpAddress": "sylviabuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "BBM Tanja",
+      "PrimarySmtpAddress": "tanjabuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "BBM Tessa",
+      "PrimarySmtpAddress": "tessabuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-03-15T09:31:13Z"
+    },
+    {
+      "DisplayName": "BBM Tijl",
+      "PrimarySmtpAddress": "bbm.tijl@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-01-15T11:07:27Z"
+    },
+    {
+      "DisplayName": "BBM Ton",
+      "PrimarySmtpAddress": "tonbuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "BBM Wendy",
+      "PrimarySmtpAddress": "wendybuurtbemiddeling@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-05-19T09:57:33Z"
+    },
+    {
+      "DisplayName": "BBM Wilfred",
+      "PrimarySmtpAddress": "bbm.wilfred@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2021-07-05T08:22:07Z"
+    },
+    {
+      "DisplayName": "Bestuurskamer",
+      "PrimarySmtpAddress": "bestuurskamer.dovd@meerwaarde.onmicrosoft.com",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2021-01-06T13:41:19Z"
+    },
+    {
+      "DisplayName": "Betul Manisa",
+      "PrimarySmtpAddress": "betul.manisa@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2019-03-07T15:19:23Z"
+    },
+    {
+      "DisplayName": "Bianca Van Walbeek",
+      "PrimarySmtpAddress": "Bianca.vanwalbeek@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2026-03-09T09:34:22Z"
+    },
+    {
+      "DisplayName": "Bidi Stam",
+      "PrimarySmtpAddress": "bidi.stam@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Brahim Raissouni",
+      "PrimarySmtpAddress": "brahim.raissouni@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-04-18T12:35:12Z"
+    },
+    {
+      "DisplayName": "Caroline Roelfs",
+      "PrimarySmtpAddress": "caroline.roelfs@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-09-13T07:57:23Z"
+    },
+    {
+      "DisplayName": "Caroline van de Merwe",
+      "PrimarySmtpAddress": "Caroline.vandemerwe@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-04-04T09:29:25Z"
+    },
+    {
+      "DisplayName": "Celeste Koster",
+      "PrimarySmtpAddress": "celeste.koster@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2026-01-23T12:56:55Z"
+    },
+    {
+      "DisplayName": "Chaib Saber",
+      "PrimarySmtpAddress": "chaib.saber@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-10-27T08:27:34Z"
+    },
+    {
+      "DisplayName": "Chamira Breslau",
+      "PrimarySmtpAddress": "Chamira.breslau@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-11-11T15:57:13Z"
+    },
+    {
+      "DisplayName": "Chantal Slotemaker",
+      "PrimarySmtpAddress": "chantal.slotemaker@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-09-23T08:03:19Z"
+    },
+    {
+      "DisplayName": "Cherish Hellings",
+      "PrimarySmtpAddress": "cherish.hellings@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-04-20T12:49:44Z"
+    },
+    {
+      "DisplayName": "Claudia Boelee",
+      "PrimarySmtpAddress": "claudia.boelee@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "CV Hulp",
+      "PrimarySmtpAddress": "cvhulp@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-03-05T08:34:20Z"
+    },
+    {
+      "DisplayName": "Cynthia de Vries",
+      "PrimarySmtpAddress": "cynthia.devries@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Dachar Wills",
+      "PrimarySmtpAddress": "dachar.wills@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-05-31T13:09:55Z"
+    },
+    {
+      "DisplayName": "Daniel Siwpersad",
+      "PrimarySmtpAddress": "daniel.siwpersad@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2020-10-20T12:11:57Z"
+    },
+    {
+      "DisplayName": "David Oldenburg",
+      "PrimarySmtpAddress": "david.oldenburg@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-02-17T15:55:07Z"
+    },
+    {
+      "DisplayName": "Devi van Woudenberg",
+      "PrimarySmtpAddress": "devi.vanwoudenberg@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-06-30T07:26:57Z"
+    },
+    {
+      "DisplayName": "Ellen Kieftenbeld",
+      "PrimarySmtpAddress": "ellen.kieftenbeld@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-12-13T08:01:19Z"
+    },
+    {
+      "DisplayName": "Els van der Jagt",
+      "PrimarySmtpAddress": "els.vanderjagt@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-01-19T11:59:26Z"
+    },
+    {
+      "DisplayName": "Erik Schoe",
+      "PrimarySmtpAddress": "erik.schoe@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Eveline van Dam",
+      "PrimarySmtpAddress": "eveline.vandam@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Fabian van Tol",
+      "PrimarySmtpAddress": "fabian.vantol@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-01-26T11:13:16Z"
+    },
+    {
+      "DisplayName": "Fatiha Ayyad",
+      "PrimarySmtpAddress": "fatiha.ayyad@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Fatima El Idrissi",
+      "PrimarySmtpAddress": "fatima.elidrissi@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-11-22T09:15:15Z"
+    },
+    {
+      "DisplayName": "Fatima Eloche",
+      "PrimarySmtpAddress": "fatima.eloche@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Fleur Neeskens",
+      "PrimarySmtpAddress": "fleur.neeskens@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-08-30T09:21:21Z"
+    },
+    {
+      "DisplayName": "Florentyna Kerkmeer",
+      "PrimarySmtpAddress": "florentyna.kerkmeer@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-09-11T10:55:48Z"
+    },
+    {
+      "DisplayName": "Frank Groot",
+      "PrimarySmtpAddress": "frank.groot@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2021-08-02T15:04:36Z"
+    },
+    {
+      "DisplayName": "Friso Spring in 't veld",
+      "PrimarySmtpAddress": "Friso.springintveld@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2020-09-15T08:40:02Z"
+    },
+    {
+      "DisplayName": "Gaby Stoop",
+      "PrimarySmtpAddress": "Gaby.Stoop@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-09-29T11:44:58Z"
+    },
+    {
+      "DisplayName": "Guido Dankerlui",
+      "PrimarySmtpAddress": "Guido.Dankerlui@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-12-02T10:07:30Z"
+    },
+    {
+      "DisplayName": "Hannelore de Vries",
+      "PrimarySmtpAddress": "hannelore.devries@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Hans Louter",
+      "PrimarySmtpAddress": "hans.louter@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Hiljan Hoek",
+      "PrimarySmtpAddress": "hiljan.hoek@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-08-03T13:27:52Z"
+    },
+    {
+      "DisplayName": "Annet van de Plas",
+      "PrimarySmtpAddress": "Hmve_annet.vdplas@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-10-31T08:22:56Z"
+    },
+    {
+      "DisplayName": "Caroline Blommers",
+      "PrimarySmtpAddress": "Hmve_caroline.blommers@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-12-22T14:28:53Z"
+    },
+    {
+      "DisplayName": "Erik Romijn",
+      "PrimarySmtpAddress": "hmve_Erik.Romijn@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-12-13T08:03:45Z"
+    },
+    {
+      "DisplayName": "HMVE Jessica Talaa",
+      "PrimarySmtpAddress": "hmve_Jessica.Talaa@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-12-13T08:03:45Z"
+    },
+    {
+      "DisplayName": "Mallory Roo van der Haagen",
+      "PrimarySmtpAddress": "Hmve_mallory.roovanderhaagen@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-04-04T08:43:20Z"
+    },
+    {
+      "DisplayName": "HMVE Monique Worm",
+      "PrimarySmtpAddress": "hmve_monique.worm@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2026-01-30T15:23:06Z"
+    },
+    {
+      "DisplayName": "Hyan Taleb",
+      "PrimarySmtpAddress": "hyan.taleb@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-11-10T07:51:19Z"
+    },
+    {
+      "DisplayName": "Ilona van Es",
+      "PrimarySmtpAddress": "ilona.vanes@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Imad Talhaoui",
+      "PrimarySmtpAddress": "imad.talhaoui@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-11-07T11:08:31Z"
+    },
+    {
+      "DisplayName": "Inge Janssen",
+      "PrimarySmtpAddress": "inge.janssen@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2019-11-13T09:55:51Z"
+    },
+    {
+      "DisplayName": "Jamal Bouraajaj",
+      "PrimarySmtpAddress": "jamal.bouraajaj@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-12-07T08:43:11Z"
+    },
+    {
+      "DisplayName": "Jareth Westerman",
+      "PrimarySmtpAddress": "Jareth.westerman@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-03-14T15:06:33Z"
+    },
+    {
+      "DisplayName": "Jinan Raissouni",
+      "PrimarySmtpAddress": "jinan.raissouni@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-09-29T08:35:05Z"
+    },
+    {
+      "DisplayName": "Jorien Reinderink",
+      "PrimarySmtpAddress": "jorien.reinderink@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Josefine Scheepmaker",
+      "PrimarySmtpAddress": "josefine.scheepmaker@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-05-17T11:57:10Z"
+    },
+    {
+      "DisplayName": "Joyce van Bemmelen",
+      "PrimarySmtpAddress": "joyce.vanbemmelen@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-08-24T12:59:18Z"
+    },
+    {
+      "DisplayName": "Judy de Leeuw",
+      "PrimarySmtpAddress": "judy.deleeuw@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-01-25T09:00:14Z"
+    },
+    {
+      "DisplayName": "Juliette Jansen",
+      "PrimarySmtpAddress": "juliette.jansen@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-11-07T14:38:53Z"
+    },
+    {
+      "DisplayName": "Kantine DOVD",
+      "PrimarySmtpAddress": "Kantine@meerwaarde.onmicrosoft.com",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-01-11T09:02:19Z"
+    },
+    {
+      "DisplayName": "Karin Babeliowsky-v.d. Woord",
+      "PrimarySmtpAddress": "karin.babeliowsky@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-03-14T09:13:29Z"
+    },
+    {
+      "DisplayName": "Kavindra Richards",
+      "PrimarySmtpAddress": "kavindra.richards@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2021-01-21T13:56:57Z"
+    },
+    {
+      "DisplayName": "Khadija Mallouk",
+      "PrimarySmtpAddress": "khadija.mallouk@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Kracht",
+      "PrimarySmtpAddress": "Kracht@meerwaarde.onmicrosoft.com",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-12-13T09:39:11Z"
+    },
+    {
+      "DisplayName": "Laila Ameziane",
+      "PrimarySmtpAddress": "Laila.Ameziane@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-10-23T08:30:45Z"
+    },
+    {
+      "DisplayName": "Laila el Hafidi",
+      "PrimarySmtpAddress": "laila.elhafidi@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2021-09-13T09:33:42Z"
+    },
+    {
+      "DisplayName": "Lara Holst",
+      "PrimarySmtpAddress": "lara.holst@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2026-01-14T07:34:31Z"
+    },
+    {
+      "DisplayName": "Larissa Wladimiroff",
+      "PrimarySmtpAddress": "Larissa.Wladimiroff@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2026-01-07T13:19:06Z"
+    },
+    {
+      "DisplayName": "Leena Scheffer - Manapong",
+      "PrimarySmtpAddress": "leena.scheffer@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-09-01T09:53:52Z"
+    },
+    {
+      "DisplayName": "Lia Duivenvoorden",
+      "PrimarySmtpAddress": "lia.duivenvoorden@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Liesbeth Kila",
+      "PrimarySmtpAddress": "liesbeth.Kila@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-04-29T12:47:55Z"
+    },
+    {
+      "DisplayName": "Linda Steeman",
+      "PrimarySmtpAddress": "linda.steeman@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-07-25T13:01:12Z"
+    },
+    {
+      "DisplayName": "Lisa de Best",
+      "PrimarySmtpAddress": "lisa.debest@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-09-10T07:54:55Z"
+    },
+    {
+      "DisplayName": "Lisette Piepers",
+      "PrimarySmtpAddress": "lisette.piepers@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-05-23T08:58:02Z"
+    },
+    {
+      "DisplayName": "Lotte Verhofstad",
+      "PrimarySmtpAddress": "lotte.verhofstad@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Magne de Kreek",
+      "PrimarySmtpAddress": "magne.dekreek@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Maira Wouter",
+      "PrimarySmtpAddress": "maira.wouter@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-12-24T13:04:13Z"
+    },
+    {
+      "DisplayName": "Marie-Jose Keijman",
+      "PrimarySmtpAddress": "mariejose.keijman@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-07-04T12:31:48Z"
+    },
+    {
+      "DisplayName": "Mariëtte Bouterse",
+      "PrimarySmtpAddress": "mariette.bouterse@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Mariska Spikmans",
+      "PrimarySmtpAddress": "mariska.spikmans@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Marith Elfering",
+      "PrimarySmtpAddress": "marith.elfering@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-01-28T14:41:03Z"
+    },
+    {
+      "DisplayName": "Marjorie Mesman",
+      "PrimarySmtpAddress": "marjorie.mesman@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-05-14T13:22:52Z"
+    },
+    {
+      "DisplayName": "Mark Ostendorf",
+      "PrimarySmtpAddress": "mark.ostendorf@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Martijn Kool",
+      "PrimarySmtpAddress": "martijn.kool@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-11-29T11:01:00Z"
+    },
+    {
+      "DisplayName": "Martine Heeremans",
+      "PrimarySmtpAddress": "martine.heeremans@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-11-14T06:50:42Z"
+    },
+    {
+      "DisplayName": "Mary van der Drift",
+      "PrimarySmtpAddress": "mary.vanderdrift@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Maryam Aourag",
+      "PrimarySmtpAddress": "Maryam.Aourag@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-12-09T13:48:09Z"
+    },
+    {
+      "DisplayName": "Maud Tromp",
+      "PrimarySmtpAddress": "maud.tromp@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Merel Jansen",
+      "PrimarySmtpAddress": "merel.jansen@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Michiel Poorter",
+      "PrimarySmtpAddress": "michiel.poorter@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-09-10T12:41:27Z"
+    },
+    {
+      "DisplayName": "Mireille Paardenkooper",
+      "PrimarySmtpAddress": "mireille.paardenkooper@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-09-11T11:39:21Z"
+    },
+    {
+      "DisplayName": "Miriam Naluzinda",
+      "PrimarySmtpAddress": "Miriam.Naluzinda@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-08-29T11:24:03Z"
+    },
+    {
+      "DisplayName": "Mirjam Gans",
+      "PrimarySmtpAddress": "mirjam.gans@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-12-24T13:04:13Z"
+    },
+    {
+      "DisplayName": "Mohammed Abraimi",
+      "PrimarySmtpAddress": "mohammed.abraimi@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-05-10T09:52:56Z"
+    },
+    {
+      "DisplayName": "Mustapha El Moumene",
+      "PrimarySmtpAddress": "mustapha.elmoumene@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Team Haarlemmermeervoorelkaar",
+      "PrimarySmtpAddress": "haarlemmermeervoorelkaar@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Nancy van den Burg",
+      "PrimarySmtpAddress": "nancy.vandenburg@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2019-03-26T13:49:13Z"
+    },
+    {
+      "DisplayName": "Natasja Lie",
+      "PrimarySmtpAddress": "natasja.lie@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-03-26T14:17:14Z"
+    },
+    {
+      "DisplayName": "Nelleke van Wonderen",
+      "PrimarySmtpAddress": "Nelleke.vanWonderen@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Nina Liang",
+      "PrimarySmtpAddress": "nina.liang@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-05-17T08:27:07Z"
+    },
+    {
+      "DisplayName": "Nissrin Zafzafi",
+      "PrimarySmtpAddress": "Nissrin.Zafzafi@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-08-22T06:28:39Z"
+    },
+    {
+      "DisplayName": "no-reply Meerwaarde",
+      "PrimarySmtpAddress": "noreply@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Noa Janssen",
+      "PrimarySmtpAddress": "noa.janssen@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-09-23T08:03:19Z"
+    },
+    {
+      "DisplayName": "Norhan Ali",
+      "PrimarySmtpAddress": "Norhan.Ali@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-09-26T08:47:37Z"
+    },
+    {
+      "DisplayName": "Norman Kortekaas",
+      "PrimarySmtpAddress": "norman.kortekaas@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Nynke Wijbenga",
+      "PrimarySmtpAddress": "nynke.wijbenga@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "O365 Facturen",
+      "PrimarySmtpAddress": "o365.facturen@meerwaarde.onmicrosoft.com",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2019-04-09T08:30:47Z"
+    },
+    {
+      "DisplayName": "O365 FacturenControle",
+      "PrimarySmtpAddress": "o365.facturencontrole@meerwaarde.onmicrosoft.com",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-01-05T16:08:16Z"
+    },
+    {
+      "DisplayName": "Postbus Facturen",
+      "PrimarySmtpAddress": "facturen@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2021-08-12T08:21:53Z"
+    },
+    {
+      "DisplayName": "Raad van Toezicht",
+      "PrimarySmtpAddress": "raadvantoezicht@meerwaarde.onmicrosoft.com",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2026-02-18T08:26:48Z"
+    },
+    {
+      "DisplayName": "Rachelle Paalvast",
+      "PrimarySmtpAddress": "rachelle.paalvast@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Riguillo Terhaar",
+      "PrimarySmtpAddress": "riguillo.terhaar@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-12-22T11:25:18Z"
+    },
+    {
+      "DisplayName": "Rijnaldo Wilson",
+      "PrimarySmtpAddress": "rijnaldo.wilson@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-05-29T09:15:35Z"
+    },
+    {
+      "DisplayName": "Roxanna Booms",
+      "PrimarySmtpAddress": "roxanna.booms@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2020-03-11T10:54:41Z"
+    },
+    {
+      "DisplayName": "Sebastiaan Timmermans",
+      "PrimarySmtpAddress": "sebastiaan.timmermans@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-06-27T12:12:56Z"
+    },
+    {
+      "DisplayName": "Sandra Spoelstra",
+      "PrimarySmtpAddress": "sandra.aartse-spoelstra@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-08-01T08:21:44Z"
+    },
+    {
+      "DisplayName": "Sandy Frederiks",
+      "PrimarySmtpAddress": "sandy.frederiks@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Sawinah Voortman",
+      "PrimarySmtpAddress": "sawinah.voortman@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-04-06T14:04:08Z"
+    },
+    {
+      "DisplayName": "Selina Veerman",
+      "PrimarySmtpAddress": "selina.veerman@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2026-02-02T14:51:46Z"
+    },
+    {
+      "DisplayName": "Serena Blank",
+      "PrimarySmtpAddress": "serena.blank@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-01-27T12:35:01Z"
+    },
+    {
+      "DisplayName": "Sieben van Maarseveen",
+      "PrimarySmtpAddress": "sieben.vanmaarseveen@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-03-01T12:26:43Z"
+    },
+    {
+      "DisplayName": "Simone Duin",
+      "PrimarySmtpAddress": "simone.duin@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Sjoerd Mercera",
+      "PrimarySmtpAddress": "sjoerd.mercera@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Team Social Impact",
+      "PrimarySmtpAddress": "socialimpact@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-09-12T12:21:35Z"
+    },
+    {
+      "DisplayName": "Somaya Es Sannouni",
+      "PrimarySmtpAddress": "somaya.essannouni@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-06-24T12:26:05Z"
+    },
+    {
+      "DisplayName": "Sophie Hirs",
+      "PrimarySmtpAddress": "sophie.hirs@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-03-01T12:26:43Z"
+    },
+    {
+      "DisplayName": "Betrokken (130)",
+      "PrimarySmtpAddress": "spreekkamer.dovd@meerwaarde.onmicrosoft.com",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2021-01-06T13:46:10Z"
+    },
+    {
+      "DisplayName": "Stien de Rooij",
+      "PrimarySmtpAddress": "stien.derooij@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-12-23T08:17:40Z"
+    },
+    {
+      "DisplayName": "Suzanne van Varik",
+      "PrimarySmtpAddress": "suzanne.vanvarik@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-12-23T08:17:40Z"
+    },
+    {
+      "DisplayName": "ServiceAccount - Orbis",
+      "PrimarySmtpAddress": "svc_orbis@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-12-19T12:01:17Z"
+    },
+    {
+      "DisplayName": "TAH Ben",
+      "PrimarySmtpAddress": "tah.ben@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-01-25T13:42:05Z"
+    },
+    {
+      "DisplayName": "TAH Bob",
+      "PrimarySmtpAddress": "tah.bob@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-02-01T13:48:11Z"
+    },
+    {
+      "DisplayName": "TAH CynthiaW",
+      "PrimarySmtpAddress": "TAH.cynthiaw@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2019-05-31T09:38:15Z"
+    },
+    {
+      "DisplayName": "TAH Ed",
+      "PrimarySmtpAddress": "tah.ed@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-02-01T13:48:11Z"
+    },
+    {
+      "DisplayName": "TAH Ferhat",
+      "PrimarySmtpAddress": "tah.ferhat@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-11-07T08:07:14Z"
+    },
+    {
+      "DisplayName": "TAH Hans",
+      "PrimarySmtpAddress": "TAH.hans@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2019-05-31T09:38:15Z"
+    },
+    {
+      "DisplayName": "TAH Jan",
+      "PrimarySmtpAddress": "tah.jan@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2020-12-29T09:19:27Z"
+    },
+    {
+      "DisplayName": "TAH Jeanette",
+      "PrimarySmtpAddress": "tah.jeanette@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2020-12-29T09:19:27Z"
+    },
+    {
+      "DisplayName": "TAH Jolanda",
+      "PrimarySmtpAddress": "tah.jolanda@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-11-29T11:29:59Z"
+    },
+    {
+      "DisplayName": "TAH Leen",
+      "PrimarySmtpAddress": "TAH.leen@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2019-05-31T09:38:15Z"
+    },
+    {
+      "DisplayName": "TAH Lilian",
+      "PrimarySmtpAddress": "tah.lilian@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-04-05T08:27:40Z"
+    },
+    {
+      "DisplayName": "TAH Marcella",
+      "PrimarySmtpAddress": "tah.marcella@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2021-08-10T06:35:50Z"
+    },
+    {
+      "DisplayName": "TAH Michiel",
+      "PrimarySmtpAddress": "TAH.michiel@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2019-05-31T09:38:15Z"
+    },
+    {
+      "DisplayName": "TAH Paul",
+      "PrimarySmtpAddress": "tah.paul@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2020-10-01T11:41:40Z"
+    },
+    {
+      "DisplayName": "TAH Piet",
+      "PrimarySmtpAddress": "tah.piet@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-07-19T08:45:20Z"
+    },
+    {
+      "DisplayName": "TAH Ria",
+      "PrimarySmtpAddress": "TAH.ria@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2019-05-31T09:38:15Z"
+    },
+    {
+      "DisplayName": "TAH Sander",
+      "PrimarySmtpAddress": "TAH.sander@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2020-01-23T09:42:24Z"
+    },
+    {
+      "DisplayName": "Frank Veenman",
+      "PrimarySmtpAddress": "TAH_Frank@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2019-08-29T12:59:46Z"
+    },
+    {
+      "DisplayName": "Tamira Meeues",
+      "PrimarySmtpAddress": "tamira.meeues@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-04-22T14:12:01Z"
+    },
+    {
+      "DisplayName": "Teamsbellen",
+      "PrimarySmtpAddress": "Teamsbellen@meerwaarde.pri.msft.voipitworld.com",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-02-05T08:48:55Z"
+    },
+    {
+      "DisplayName": "Teamsbellen",
+      "PrimarySmtpAddress": "Teamsbellen@meerwaarde.sec.msft.voipitworld.com",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-02-05T08:49:17Z"
+    },
+    {
+      "DisplayName": "Test QUBEMDM",
+      "PrimarySmtpAddress": "test.qubemdm@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-10-10T11:09:37Z"
+    },
+    {
+      "DisplayName": "Tim Sebel",
+      "PrimarySmtpAddress": "tim.sebel@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-08-24T14:31:30Z"
+    },
+    {
+      "DisplayName": "Track the Talent",
+      "PrimarySmtpAddress": "trackthetalent@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Umaimah El Abddellaoui",
+      "PrimarySmtpAddress": "Umaimah.elabddellaoui@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-11-27T14:40:04Z"
+    },
+    {
+      "DisplayName": "uService Daywize",
+      "PrimarySmtpAddress": "sa-daywize@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-04-12T10:45:53Z"
+    },
+    {
+      "DisplayName": "Vrijwilliger PlusPunt Zuid",
+      "PrimarySmtpAddress": "v.pluspuntzuid@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Caroline Roelfs VGT",
+      "PrimarySmtpAddress": "vgt.Caroline@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-11-22T14:57:03Z"
+    },
+    {
+      "DisplayName": "Chadia Boulgalag",
+      "PrimarySmtpAddress": "vgt.Chadia@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-11-22T14:57:44Z"
+    },
+    {
+      "DisplayName": "Debby de Heus - de Vos",
+      "PrimarySmtpAddress": "vgt.Debby@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-11-22T14:58:54Z"
+    },
+    {
+      "DisplayName": "Elly van Dyck",
+      "PrimarySmtpAddress": "vgt.Elly@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-11-22T14:59:29Z"
+    },
+    {
+      "DisplayName": "Erik Romijn",
+      "PrimarySmtpAddress": "vgt.erik@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2026-01-30T08:37:16Z"
+    },
+    {
+      "DisplayName": "Femmy Klootwijk",
+      "PrimarySmtpAddress": "vgt.femmy@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Fiona Van den Acker",
+      "PrimarySmtpAddress": "vgt.fiona@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-02-05T14:03:24Z"
+    },
+    {
+      "DisplayName": "Marianne Uitendaal",
+      "PrimarySmtpAddress": "vgt.marianne@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-09-05T13:00:12Z"
+    },
+    {
+      "DisplayName": "Vilma Sedaria",
+      "PrimarySmtpAddress": "vgt.vilma@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-02-05T14:03:24Z"
+    },
+    {
+      "DisplayName": "Professioneel VK",
+      "PrimarySmtpAddress": "vissenkom.dovd@meerwaarde.onmicrosoft.com",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2021-01-06T13:46:28Z"
+    },
+    {
+      "DisplayName": "Vrijwilliger",
+      "PrimarySmtpAddress": "vrijwilliger@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-07-23T07:34:30Z"
+    },
+    {
+      "DisplayName": "Wendy Amsing",
+      "PrimarySmtpAddress": "wendy.amsing@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Yvonne van den Berg",
+      "PrimarySmtpAddress": "yvonne.vandenberg@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "ZMP-Contracten",
+      "PrimarySmtpAddress": "ZMP-Contracten@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Zondagmiddagpodium",
+      "PrimarySmtpAddress": "zondagmiddagpodium@meerwaarde.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": null
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Exchange mailboxsnapshot uit Phase 2."
+    ],
+    "permissions": [
+      "Exchange reader / Exchange admin"
+    ]
+  }
+}

@@ -1,0 +1,5128 @@
+{
+  "SchemaVersion": 1,
+  "GeneratedAt": "2026-03-28T11:11:32.8674910+01:00",
+  "ReportFile": "M365-Complete-Baseline-20260328-101414.html",
+  "AssessmentId": "20260328-101414",
+  "TenantName": "Stichting Meerwaarde",
+  "TenantId": "229f88d7-1d50-48ed-821e-76d45d2aa4d8",
+  "Totals": {
+    "Critical": 1,
+    "Warning": 4,
+    "Info": 5,
+    "Score": 16
+  },
+  "Metrics": {
+    "MfaMissing": 137,
+    "MfaCoveragePct": 48.1,
+    "CAEnabled": 3,
+    "AlertsHigh": 0,
+    "AlertsMedium": 5,
+    "SecureScorePct": 56.83,
+    "IntuneCompliancePct": 39,
+    "AzureResourceGroups": 9,
+    "AzureResources": 1
+  },
+  "Licenses": [
+    {
+      "SkuPartNumber": "Microsoft_365_Copilot",
+      "Total": 3,
+      "Consumed": 3,
+      "Available": 0,
+      "Utilization": 100.0
+    },
+    {
+      "SkuPartNumber": "POWER_BI_PRO_CE",
+      "Total": 1,
+      "Consumed": 1,
+      "Available": 0,
+      "Utilization": 100.0
+    },
+    {
+      "SkuPartNumber": "MCOEV",
+      "Total": 106,
+      "Consumed": 98,
+      "Available": 8,
+      "Utilization": 92.45
+    },
+    {
+      "SkuPartNumber": "PHONESYSTEM_VIRTUALUSER",
+      "Total": 40,
+      "Consumed": 22,
+      "Available": 18,
+      "Utilization": 55.0
+    },
+    {
+      "SkuPartNumber": "SPB",
+      "Total": 157,
+      "Consumed": 144,
+      "Available": 13,
+      "Utilization": 91.72
+    },
+    {
+      "SkuPartNumber": "EXCHANGESTANDARD",
+      "Total": 1,
+      "Consumed": 1,
+      "Available": 0,
+      "Utilization": 100.0
+    },
+    {
+      "SkuPartNumber": "Microsoft_Teams_Rooms_Basic",
+      "Total": 5,
+      "Consumed": 4,
+      "Available": 1,
+      "Utilization": 80.0
+    },
+    {
+      "SkuPartNumber": "O365_BUSINESS_ESSENTIALS",
+      "Total": 154,
+      "Consumed": 117,
+      "Available": 37,
+      "Utilization": 75.97
+    }
+  ],
+  "AppRegistrations": [
+    {
+      "DisplayName": "Exact_OAuth",
+      "AppId": "e0267fd9-caad-4fbc-82fe-a4778bf69305",
+      "SecretCount": 1,
+      "SecretExpiration": "2027-01-28T09:41:45.244Z",
+      "SecretExpirationStatus": "🟢 Valid (305 days)",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 7,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "P2P Server",
+      "AppId": "4123aeb1-c225-4930-b278-6c20169d9057",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 0,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "Exact Synergy Globe  MFA",
+      "AppId": "6f95942d-d2c8-419e-8478-c2a77ea2f51a",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 0,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "Scansys_OAuth",
+      "AppId": "f9f3da9f-17e8-4c2d-ab03-807b04327583",
+      "SecretCount": 1,
+      "SecretExpiration": "2027-01-28T10:33:44.736Z",
+      "SecretExpirationStatus": "🟢 Valid (305 days)",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 4,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "Zivver",
+      "AppId": "7159dd5e-5076-40fd-8d6e-daf75b863372",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 0,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "Exact MFA - WEBAPP",
+      "AppId": "2a54233e-3ccf-4eb8-8190-8a361479f86b",
+      "SecretCount": 2,
+      "SecretExpiration": "2027-11-10T12:14:03.026Z",
+      "SecretExpirationStatus": "🟢 Valid (592 days)",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 1,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "Scansys-SSO-OPENID",
+      "AppId": "aeec9a97-6e6f-4c11-848f-c07651a865ea",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 4,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "resources-check",
+      "AppId": "0b059013-cb88-4189-b0ba-16280d286e42",
+      "SecretCount": 1,
+      "SecretExpiration": "2028-02-11T09:54:00.185Z",
+      "SecretExpirationStatus": "🟢 Valid (684 days)",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 3,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "Regicare",
+      "AppId": "d1ca5455-ee5d-425e-ae07-b49c528a7fc9",
+      "SecretCount": 1,
+      "SecretExpiration": "2026-12-04T09:35:05.002Z",
+      "SecretExpirationStatus": "🟢 Valid (250 days)",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 1,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "Baseline-scan",
+      "AppId": "599793e6-e507-46d3-95a0-c0597251bd84",
+      "SecretCount": 1,
+      "SecretExpiration": "2027-03-24T15:07:03.022Z",
+      "SecretExpirationStatus": "🟢 Valid (361 days)",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 41,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "Synergy Email Service",
+      "AppId": "8bbd9246-3cbf-45e4-a32b-2f460cc1aa92",
+      "SecretCount": 1,
+      "SecretExpiration": "2026-05-06T13:29:58.96Z",
+      "SecretExpirationStatus": "🟠 Expires in 39 days",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 2,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "EXACT MFA - PUBLIC APP",
+      "AppId": "815820a1-6ad3-49db-8ad9-63e61dfdf45b",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 2,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "Arda Online",
+      "AppId": "0e00d923-edee-4390-8f8c-d4dad2646f72",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 0,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "ConnectSyncProvisioning_SRV-MEE-DC01_8d9ae538c4bd",
+      "AppId": "711dcc3b-c9e8-4586-84d6-b082dbe6bb56",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 1,
+      "CertificateExpiration": "2026-09-22T19:22:59Z",
+      "CertificateExpirationStatus": "🟢 Valid (178 days)",
+      "PermissionCount": 4,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "Zivver",
+      "AppId": "7367fce5-f910-4bc6-9f12-7cd49dee346f",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 0,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "Orbis SMTP",
+      "AppId": "54509e72-665d-4752-a818-aa9314ad3511",
+      "SecretCount": 1,
+      "SecretExpiration": "2026-05-06T13:31:11.792Z",
+      "SecretExpirationStatus": "🟠 Expires in 39 days",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 7,
+      "HasEnterpriseApp": true
+    }
+  ],
+  "CAPolicies": [
+    {
+      "Id": "c97b1554-6f69-4798-a454-2f459ae61722",
+      "DisplayName": "CA001: Meervoudige verificatie vereisen voor beheerders",
+      "State": "enabled",
+      "CreatedAt": "2021-11-16T13:26:54.3468584Z",
+      "ModifiedAt": "2025-11-27T15:34:39.1782395Z",
+      "UserScope": "14 rol(len)",
+      "AppScope": "Alle apps",
+      "GrantControl": "OR: mfa",
+      "SessionCtrl": "Ja"
+    },
+    {
+      "Id": "490f36da-3afb-40f1-b8e0-6fd6e060d7b1",
+      "DisplayName": "CA003: verouderde verificatie blokkeren",
+      "State": "enabled",
+      "CreatedAt": "2021-11-16T13:27:39.1004394Z",
+      "ModifiedAt": "2025-12-22T08:35:58.4220023Z",
+      "UserScope": "Alle gebruikers",
+      "AppScope": "Alle apps",
+      "GrantControl": "OR: block",
+      "SessionCtrl": "Ja"
+    },
+    {
+      "Id": "96a88a64-3e59-4b75-8299-f316fb66b0a7",
+      "DisplayName": "CA004: Meervoudige verificatie vereisen voor alle gebruikers",
+      "State": "disabled",
+      "CreatedAt": "2021-11-30T09:59:14.1691661Z",
+      "ModifiedAt": "2025-12-16T13:20:56.1323807Z",
+      "UserScope": "1 gebruiker(s)",
+      "AppScope": "Alle apps",
+      "GrantControl": "OR: mfa",
+      "SessionCtrl": "Ja"
+    },
+    {
+      "Id": "bd7e43a2-746e-42ee-8b97-6edec141d1ad",
+      "DisplayName": "Microsoft-managed: Multifactor authentication for admins accessing Microsoft Admin Portals",
+      "State": "enabledForReportingButNotEnforced",
+      "CreatedAt": "2023-11-15T19:39:39.1145852Z",
+      "ModifiedAt": null,
+      "UserScope": "14 rol(len)",
+      "AppScope": "1 app(s)",
+      "GrantControl": "OR: mfa",
+      "SessionCtrl": "Ja"
+    },
+    {
+      "Id": "2e6b1567-08ed-4db1-84fe-1b6f2a8a0d37",
+      "DisplayName": "Allowed Countries",
+      "State": "enabled",
+      "CreatedAt": "2024-10-30T14:56:25.0338553Z",
+      "ModifiedAt": "2024-10-30T14:57:26.8385031Z",
+      "UserScope": "Alle gebruikers",
+      "AppScope": "Alle apps",
+      "GrantControl": "OR: block",
+      "SessionCtrl": "Ja"
+    },
+    {
+      "Id": "734d62fb-ce5c-4bdf-9ec6-a39ad14541d9",
+      "DisplayName": "Microsoft-managed: Require phishing-resistant multifactor authentication for admins",
+      "State": "disabled",
+      "CreatedAt": "2026-01-12T09:24:51.2924546Z",
+      "ModifiedAt": null,
+      "UserScope": "19 rol(len)",
+      "AppScope": "Alle apps",
+      "GrantControl": "OR: ",
+      "SessionCtrl": "Ja"
+    },
+    {
+      "Id": "699dbf4d-049f-45bc-8c5a-b26ac4879ebf",
+      "DisplayName": "Microsoft-managed: Block legacy authentication",
+      "State": "disabled",
+      "CreatedAt": "2026-01-12T09:24:51.5194829Z",
+      "ModifiedAt": null,
+      "UserScope": "Alle gebruikers",
+      "AppScope": "Alle apps",
+      "GrantControl": "OR: block",
+      "SessionCtrl": "Ja"
+    }
+  ],
+  "DomainDnsChecks": [
+    {
+      "Domain": null,
+      "SPF": null,
+      "DKIM": null,
+      "DMARC": null
+    }
+  ],
+  "UserMailboxes": [
+    {
+      "DisplayName": "QUBE  Beheer",
+      "PrimarySmtpAddress": "aazmee@meerwaarde.onmicrosoft.com",
+      "WhenCreated": "2024-09-03T09:36:33Z"
+    },
+    {
+      "DisplayName": "Abdelwahid Agzennay",
+      "PrimarySmtpAddress": "Abdelwahid.Agzennay@meerwaarde.onmicrosoft.com",
+      "WhenCreated": "2025-10-21T10:26:57Z"
+    },
+    {
+      "DisplayName": "Admin Qube ICT",
+      "PrimarySmtpAddress": "admin.qubeict@smwnet.nl",
+      "WhenCreated": "2024-09-02T14:06:04Z"
+    },
+    {
+      "DisplayName": "admin",
+      "PrimarySmtpAddress": "admin@meerwaarde.nl",
+      "WhenCreated": "2025-03-19T08:47:59Z"
+    },
+    {
+      "DisplayName": "Administrator Meerwaarde",
+      "PrimarySmtpAddress": "fa@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Anass Azouag",
+      "PrimarySmtpAddress": "anass.azouag@meerwaarde.nl",
+      "WhenCreated": "2025-09-12T13:03:02Z"
+    },
+    {
+      "DisplayName": "Andre Pijnaker",
+      "PrimarySmtpAddress": "andre.pijnaker@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Angela Nicolai",
+      "PrimarySmtpAddress": "angela.nicolai@meerwaarde.nl",
+      "WhenCreated": "2018-07-26T06:21:55Z"
+    },
+    {
+      "DisplayName": "Angelique Koenders",
+      "PrimarySmtpAddress": "angelique.koenders@meerwaarde.nl",
+      "WhenCreated": "2022-01-24T09:00:08Z"
+    },
+    {
+      "DisplayName": "Anja Maars",
+      "PrimarySmtpAddress": "anja.maars@meerwaarde.nl",
+      "WhenCreated": "2022-09-05T13:30:11Z"
+    },
+    {
+      "DisplayName": "Anne-Mieke Gerrits",
+      "PrimarySmtpAddress": "annemieke.gerrits@meerwaarde.nl",
+      "WhenCreated": "2025-03-26T14:17:14Z"
+    },
+    {
+      "DisplayName": "Annette van Groen",
+      "PrimarySmtpAddress": "annette.vangroen@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "August Lagadeau",
+      "PrimarySmtpAddress": "August.lagadeau@meerwaarde.nl",
+      "WhenCreated": "2026-01-23T11:17:15Z"
+    },
+    {
+      "DisplayName": "Aukje Jonkhout",
+      "PrimarySmtpAddress": "aukje.jonkhout@meerwaarde.nl",
+      "WhenCreated": "2020-12-10T12:17:23Z"
+    },
+    {
+      "DisplayName": "Aya Youssef",
+      "PrimarySmtpAddress": "aya.youssef@meerwaarde.nl",
+      "WhenCreated": "2025-11-12T08:04:12Z"
+    },
+    {
+      "DisplayName": "Aysun Aydemir",
+      "PrimarySmtpAddress": "aysun.aydemir@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Balie",
+      "PrimarySmtpAddress": "balie@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Baudien Ekkel",
+      "PrimarySmtpAddress": "baudien.ekkel@meerwaarde.nl",
+      "WhenCreated": "2023-08-24T14:31:30Z"
+    },
+    {
+      "DisplayName": "BBM Afke",
+      "PrimarySmtpAddress": "afkebuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2022-03-15T09:31:13Z"
+    },
+    {
+      "DisplayName": "BBM Alexandra",
+      "PrimarySmtpAddress": "alexandrabuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2019-12-12T10:37:58Z"
+    },
+    {
+      "DisplayName": "BBM Anneke",
+      "PrimarySmtpAddress": "bbm.anneke@meerwaarde.nl",
+      "WhenCreated": "2023-03-13T10:12:04Z"
+    },
+    {
+      "DisplayName": "BBM Anne Marie",
+      "PrimarySmtpAddress": "annemariebuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "BBM Annemarie",
+      "PrimarySmtpAddress": "annemariebbuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2024-05-28T14:15:19Z"
+    },
+    {
+      "DisplayName": "BBM Annemarieke",
+      "PrimarySmtpAddress": "annemariekebuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2021-07-27T13:03:57Z"
+    },
+    {
+      "DisplayName": "BBM Annemieke",
+      "PrimarySmtpAddress": "annemiekebuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "BBM Annette",
+      "PrimarySmtpAddress": "annettebuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2019-09-12T07:29:47Z"
+    },
+    {
+      "DisplayName": "BBM Barbara",
+      "PrimarySmtpAddress": "barbarabuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2022-09-20T13:13:56Z"
+    },
+    {
+      "DisplayName": "BBM Belinda",
+      "PrimarySmtpAddress": "belindabuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2022-07-11T10:00:26Z"
+    },
+    {
+      "DisplayName": "BBM Brenda",
+      "PrimarySmtpAddress": "brendabuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2019-10-08T12:15:55Z"
+    },
+    {
+      "DisplayName": "BBM Carine",
+      "PrimarySmtpAddress": "carinebuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2022-05-18T16:28:41Z"
+    },
+    {
+      "DisplayName": "BBM Cees",
+      "PrimarySmtpAddress": "bbm.cees@meerwaarde.nl",
+      "WhenCreated": "2023-03-13T10:12:04Z"
+    },
+    {
+      "DisplayName": "BBM Clemens",
+      "PrimarySmtpAddress": "clemenesbuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2020-09-18T06:40:04Z"
+    },
+    {
+      "DisplayName": "BBM Ella",
+      "PrimarySmtpAddress": "ellabuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2020-01-20T10:42:17Z"
+    },
+    {
+      "DisplayName": "BBM Eloise",
+      "PrimarySmtpAddress": "bbm.eloise@meerwaarde.nl",
+      "WhenCreated": "2022-07-11T09:00:27Z"
+    },
+    {
+      "DisplayName": "BBM Els",
+      "PrimarySmtpAddress": "elsbuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2022-09-20T11:57:58Z"
+    },
+    {
+      "DisplayName": "BBM Elvira",
+      "PrimarySmtpAddress": "bbm.elvira@meerwaarde.nl",
+      "WhenCreated": "2024-01-22T15:12:58Z"
+    },
+    {
+      "DisplayName": "BBM Emilie",
+      "PrimarySmtpAddress": "emiliebuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2021-09-16T07:34:15Z"
+    },
+    {
+      "DisplayName": "BBM Emilie",
+      "PrimarySmtpAddress": "bbm.emiliex@meerwaarde.nl",
+      "WhenCreated": "2022-12-05T13:25:39Z"
+    },
+    {
+      "DisplayName": "BBM Esther",
+      "PrimarySmtpAddress": "bbm.esther@meerwaarde.nl",
+      "WhenCreated": "2025-02-04T14:06:25Z"
+    },
+    {
+      "DisplayName": "BBM Fahrida",
+      "PrimarySmtpAddress": "bbm.fahrida@meerwaarde.nl",
+      "WhenCreated": "2023-05-09T12:41:39Z"
+    },
+    {
+      "DisplayName": "BBM Floor",
+      "PrimarySmtpAddress": "bbm.floor@meerwaarde.nl",
+      "WhenCreated": "2025-12-08T13:55:41Z"
+    },
+    {
+      "DisplayName": "BBM Florentyna",
+      "PrimarySmtpAddress": "florentynabuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2022-08-09T12:05:00Z"
+    },
+    {
+      "DisplayName": "BBM Fran",
+      "PrimarySmtpAddress": "franbuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2024-06-12T07:36:28Z"
+    },
+    {
+      "DisplayName": "BBM Francien",
+      "PrimarySmtpAddress": "bbm.francien@meerwaarde.nl",
+      "WhenCreated": "2025-11-24T13:51:00Z"
+    },
+    {
+      "DisplayName": "BBM Gaby",
+      "PrimarySmtpAddress": "gabybuurtbemiddeling@meerwaarde.onmicrosoft.com",
+      "WhenCreated": "2023-03-13T10:12:04Z"
+    },
+    {
+      "DisplayName": "BBM Nederbragt",
+      "PrimarySmtpAddress": "bbm.gertjan@meerwaarde.nl",
+      "WhenCreated": "2025-01-15T11:07:27Z"
+    },
+    {
+      "DisplayName": "BBM Greetje",
+      "PrimarySmtpAddress": "greetjebuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2021-04-09T09:38:04Z"
+    },
+    {
+      "DisplayName": "BBM Guido",
+      "PrimarySmtpAddress": "guidobuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "BBM Hans Peter",
+      "PrimarySmtpAddress": "hanspeterbuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "BBM Harald",
+      "PrimarySmtpAddress": "haraldbuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2023-11-16T12:41:10Z"
+    },
+    {
+      "DisplayName": "BBM Heleen",
+      "PrimarySmtpAddress": "heleenbuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2024-05-28T14:15:19Z"
+    },
+    {
+      "DisplayName": "BBM Hella",
+      "PrimarySmtpAddress": "bbm.hella@meerwaarde.nl",
+      "WhenCreated": "2022-07-07T07:59:24Z"
+    },
+    {
+      "DisplayName": "BBM Henriette",
+      "PrimarySmtpAddress": "henriettebuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2022-03-15T09:31:13Z"
+    },
+    {
+      "DisplayName": "BBM Hiltje",
+      "PrimarySmtpAddress": "bbm.hiltje@meerwaarde.nl",
+      "WhenCreated": "2025-01-15T11:07:27Z"
+    },
+    {
+      "DisplayName": "BBM Ineke",
+      "PrimarySmtpAddress": "inekebuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "BBM Ingeborg",
+      "PrimarySmtpAddress": "ingeborgbuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2020-09-18T06:40:04Z"
+    },
+    {
+      "DisplayName": "BBM Ingrid",
+      "PrimarySmtpAddress": "ingridbuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2020-07-15T06:33:40Z"
+    },
+    {
+      "DisplayName": "BBM Ivo",
+      "PrimarySmtpAddress": "bbm.ivo@meerwaarde.nl",
+      "WhenCreated": "2025-10-30T09:42:24Z"
+    },
+    {
+      "DisplayName": "BBM Jantine",
+      "PrimarySmtpAddress": "jantinebuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "BBM Jos",
+      "PrimarySmtpAddress": "josbuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2020-05-12T11:07:51Z"
+    },
+    {
+      "DisplayName": "BBM Judith",
+      "PrimarySmtpAddress": "judithbuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2022-07-11T10:00:26Z"
+    },
+    {
+      "DisplayName": "BBM Kees",
+      "PrimarySmtpAddress": "keesbuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2020-04-21T13:17:41Z"
+    },
+    {
+      "DisplayName": "BBM Kim",
+      "PrimarySmtpAddress": "kimbuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2023-11-16T12:41:10Z"
+    },
+    {
+      "DisplayName": "BBM Laura",
+      "PrimarySmtpAddress": "laurabuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2024-05-28T14:15:19Z"
+    },
+    {
+      "DisplayName": "BBM Leonie",
+      "PrimarySmtpAddress": "leoniebuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2023-11-16T12:41:10Z"
+    },
+    {
+      "DisplayName": "BBM Leonoor",
+      "PrimarySmtpAddress": "leonoorbuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2022-05-19T09:57:33Z"
+    },
+    {
+      "DisplayName": "BBM Marja",
+      "PrimarySmtpAddress": "marjabuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2021-04-20T07:25:58Z"
+    },
+    {
+      "DisplayName": "BBM Marjolein",
+      "PrimarySmtpAddress": "bbm.marjolein@meerwaarde.nl",
+      "WhenCreated": "2023-03-13T10:12:04Z"
+    },
+    {
+      "DisplayName": "BBM Marjolijn",
+      "PrimarySmtpAddress": "marjolijnbuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "BBM Martie",
+      "PrimarySmtpAddress": "martiebuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2019-02-05T10:16:53Z"
+    },
+    {
+      "DisplayName": "BBM Martine",
+      "PrimarySmtpAddress": "bbm.martine@meerwaarde.nl",
+      "WhenCreated": "2024-11-28T14:13:05Z"
+    },
+    {
+      "DisplayName": "BBM Melda",
+      "PrimarySmtpAddress": "meldabuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2021-07-13T09:21:12Z"
+    },
+    {
+      "DisplayName": "BBM Micha",
+      "PrimarySmtpAddress": "michabuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2021-04-09T09:38:05Z"
+    },
+    {
+      "DisplayName": "BBM Miriam",
+      "PrimarySmtpAddress": "miriambuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2021-07-13T09:21:12Z"
+    },
+    {
+      "DisplayName": "BBM Monique",
+      "PrimarySmtpAddress": "bbm.monique@meerwaarde.nl",
+      "WhenCreated": "2025-12-08T13:55:41Z"
+    },
+    {
+      "DisplayName": "BBM Patricia",
+      "PrimarySmtpAddress": "bbm.patricia@meerwaarde.nl",
+      "WhenCreated": "2022-12-01T15:34:26Z"
+    },
+    {
+      "DisplayName": "BBM Peter",
+      "PrimarySmtpAddress": "bbm.peter@meerwaarde.nl",
+      "WhenCreated": "2026-01-05T09:58:41Z"
+    },
+    {
+      "DisplayName": "BBM Petra",
+      "PrimarySmtpAddress": "bbm.petra@meerwaarde.nl",
+      "WhenCreated": "2024-10-17T13:57:44Z"
+    },
+    {
+      "DisplayName": "BBM Pien",
+      "PrimarySmtpAddress": "bbm.pien@meerwaarde.nl",
+      "WhenCreated": "2025-12-08T13:55:41Z"
+    },
+    {
+      "DisplayName": "BBM Rob",
+      "PrimarySmtpAddress": "robbuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2019-10-18T07:16:08Z"
+    },
+    {
+      "DisplayName": "BBM Roger",
+      "PrimarySmtpAddress": "rogerbuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2024-05-28T14:15:19Z"
+    },
+    {
+      "DisplayName": "BBM Sabine",
+      "PrimarySmtpAddress": "bbm.sabine@meerwaarde.nl",
+      "WhenCreated": "2023-03-13T10:12:04Z"
+    },
+    {
+      "DisplayName": "BBM Sacha",
+      "PrimarySmtpAddress": "sachabuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "BBM Sander Haarlemmermeer",
+      "PrimarySmtpAddress": "sanderbuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2020-04-28T08:23:44Z"
+    },
+    {
+      "DisplayName": "BBM Saskia",
+      "PrimarySmtpAddress": "bbm.saskia@meerwaarde.nl",
+      "WhenCreated": "2022-03-24T09:25:56Z"
+    },
+    {
+      "DisplayName": "BBM Serge",
+      "PrimarySmtpAddress": "bbm.serge@meerwaarde.nl",
+      "WhenCreated": "2022-03-24T09:25:56Z"
+    },
+    {
+      "DisplayName": "BBM Sheila",
+      "PrimarySmtpAddress": "bbm.sheila@meerwaarde.nl",
+      "WhenCreated": "2022-12-05T07:55:18Z"
+    },
+    {
+      "DisplayName": "BBM Sigrid",
+      "PrimarySmtpAddress": "bbm.sigrid@meerwaarde.nl",
+      "WhenCreated": "2025-12-08T13:55:41Z"
+    },
+    {
+      "DisplayName": "BBM Simone",
+      "PrimarySmtpAddress": "simonebuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2020-09-22T09:40:13Z"
+    },
+    {
+      "DisplayName": "BBM Suzanne",
+      "PrimarySmtpAddress": "suzannebuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2021-09-16T07:34:15Z"
+    },
+    {
+      "DisplayName": "BBM Sylvia",
+      "PrimarySmtpAddress": "sylviabuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "BBM Tanja",
+      "PrimarySmtpAddress": "tanjabuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "BBM Tessa",
+      "PrimarySmtpAddress": "tessabuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2022-03-15T09:31:13Z"
+    },
+    {
+      "DisplayName": "BBM Tijl",
+      "PrimarySmtpAddress": "bbm.tijl@meerwaarde.nl",
+      "WhenCreated": "2025-01-15T11:07:27Z"
+    },
+    {
+      "DisplayName": "BBM Ton",
+      "PrimarySmtpAddress": "tonbuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "BBM Wendy",
+      "PrimarySmtpAddress": "wendybuurtbemiddeling@meerwaarde.nl",
+      "WhenCreated": "2022-05-19T09:57:33Z"
+    },
+    {
+      "DisplayName": "BBM Wilfred",
+      "PrimarySmtpAddress": "bbm.wilfred@meerwaarde.nl",
+      "WhenCreated": "2021-07-05T08:22:07Z"
+    },
+    {
+      "DisplayName": "Bestuurskamer",
+      "PrimarySmtpAddress": "bestuurskamer.dovd@meerwaarde.onmicrosoft.com",
+      "WhenCreated": "2021-01-06T13:41:19Z"
+    },
+    {
+      "DisplayName": "Betul Manisa",
+      "PrimarySmtpAddress": "betul.manisa@meerwaarde.nl",
+      "WhenCreated": "2019-03-07T15:19:23Z"
+    },
+    {
+      "DisplayName": "Bianca Van Walbeek",
+      "PrimarySmtpAddress": "Bianca.vanwalbeek@meerwaarde.nl",
+      "WhenCreated": "2026-03-09T09:34:22Z"
+    },
+    {
+      "DisplayName": "Bidi Stam",
+      "PrimarySmtpAddress": "bidi.stam@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Brahim Raissouni",
+      "PrimarySmtpAddress": "brahim.raissouni@meerwaarde.nl",
+      "WhenCreated": "2024-04-18T12:35:12Z"
+    },
+    {
+      "DisplayName": "Caroline Roelfs",
+      "PrimarySmtpAddress": "caroline.roelfs@meerwaarde.nl",
+      "WhenCreated": "2024-09-13T07:57:23Z"
+    },
+    {
+      "DisplayName": "Caroline van de Merwe",
+      "PrimarySmtpAddress": "Caroline.vandemerwe@meerwaarde.nl",
+      "WhenCreated": "2025-04-04T09:29:25Z"
+    },
+    {
+      "DisplayName": "Celeste Koster",
+      "PrimarySmtpAddress": "celeste.koster@meerwaarde.nl",
+      "WhenCreated": "2026-01-23T12:56:55Z"
+    },
+    {
+      "DisplayName": "Chaib Saber",
+      "PrimarySmtpAddress": "chaib.saber@meerwaarde.nl",
+      "WhenCreated": "2025-10-27T08:27:34Z"
+    },
+    {
+      "DisplayName": "Chamira Breslau",
+      "PrimarySmtpAddress": "Chamira.breslau@meerwaarde.nl",
+      "WhenCreated": "2024-11-11T15:57:13Z"
+    },
+    {
+      "DisplayName": "Chantal Slotemaker",
+      "PrimarySmtpAddress": "chantal.slotemaker@meerwaarde.nl",
+      "WhenCreated": "2022-09-23T08:03:19Z"
+    },
+    {
+      "DisplayName": "Cherish Hellings",
+      "PrimarySmtpAddress": "cherish.hellings@meerwaarde.nl",
+      "WhenCreated": "2023-04-20T12:49:44Z"
+    },
+    {
+      "DisplayName": "Claudia Boelee",
+      "PrimarySmtpAddress": "claudia.boelee@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "CV Hulp",
+      "PrimarySmtpAddress": "cvhulp@meerwaarde.nl",
+      "WhenCreated": "2024-03-05T08:34:20Z"
+    },
+    {
+      "DisplayName": "Cynthia de Vries",
+      "PrimarySmtpAddress": "cynthia.devries@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Dachar Wills",
+      "PrimarySmtpAddress": "dachar.wills@meerwaarde.nl",
+      "WhenCreated": "2023-05-31T13:09:55Z"
+    },
+    {
+      "DisplayName": "Daniel Siwpersad",
+      "PrimarySmtpAddress": "daniel.siwpersad@meerwaarde.nl",
+      "WhenCreated": "2020-10-20T12:11:57Z"
+    },
+    {
+      "DisplayName": "David Oldenburg",
+      "PrimarySmtpAddress": "david.oldenburg@meerwaarde.nl",
+      "WhenCreated": "2022-02-17T15:55:07Z"
+    },
+    {
+      "DisplayName": "Devi van Woudenberg",
+      "PrimarySmtpAddress": "devi.vanwoudenberg@meerwaarde.nl",
+      "WhenCreated": "2022-06-30T07:26:57Z"
+    },
+    {
+      "DisplayName": "Ellen Kieftenbeld",
+      "PrimarySmtpAddress": "ellen.kieftenbeld@meerwaarde.nl",
+      "WhenCreated": "2023-12-13T08:01:19Z"
+    },
+    {
+      "DisplayName": "Els van der Jagt",
+      "PrimarySmtpAddress": "els.vanderjagt@meerwaarde.nl",
+      "WhenCreated": "2022-01-19T11:59:26Z"
+    },
+    {
+      "DisplayName": "Erik Schoe",
+      "PrimarySmtpAddress": "erik.schoe@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Eveline van Dam",
+      "PrimarySmtpAddress": "eveline.vandam@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Fabian van Tol",
+      "PrimarySmtpAddress": "fabian.vantol@meerwaarde.nl",
+      "WhenCreated": "2023-01-26T11:13:16Z"
+    },
+    {
+      "DisplayName": "Fatiha Ayyad",
+      "PrimarySmtpAddress": "fatiha.ayyad@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Fatima El Idrissi",
+      "PrimarySmtpAddress": "fatima.elidrissi@meerwaarde.nl",
+      "WhenCreated": "2022-11-22T09:15:15Z"
+    },
+    {
+      "DisplayName": "Fatima Eloche",
+      "PrimarySmtpAddress": "fatima.eloche@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Fleur Neeskens",
+      "PrimarySmtpAddress": "fleur.neeskens@meerwaarde.nl",
+      "WhenCreated": "2024-08-30T09:21:21Z"
+    },
+    {
+      "DisplayName": "Florentyna Kerkmeer",
+      "PrimarySmtpAddress": "florentyna.kerkmeer@meerwaarde.nl",
+      "WhenCreated": "2024-09-11T10:55:48Z"
+    },
+    {
+      "DisplayName": "Frank Groot",
+      "PrimarySmtpAddress": "frank.groot@meerwaarde.nl",
+      "WhenCreated": "2021-08-02T15:04:36Z"
+    },
+    {
+      "DisplayName": "Friso Spring in 't veld",
+      "PrimarySmtpAddress": "Friso.springintveld@meerwaarde.nl",
+      "WhenCreated": "2020-09-15T08:40:02Z"
+    },
+    {
+      "DisplayName": "Gaby Stoop",
+      "PrimarySmtpAddress": "Gaby.Stoop@meerwaarde.nl",
+      "WhenCreated": "2025-09-29T11:44:58Z"
+    },
+    {
+      "DisplayName": "Guido Dankerlui",
+      "PrimarySmtpAddress": "Guido.Dankerlui@meerwaarde.nl",
+      "WhenCreated": "2024-12-02T10:07:30Z"
+    },
+    {
+      "DisplayName": "Hannelore de Vries",
+      "PrimarySmtpAddress": "hannelore.devries@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Hans Louter",
+      "PrimarySmtpAddress": "hans.louter@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Hiljan Hoek",
+      "PrimarySmtpAddress": "hiljan.hoek@meerwaarde.nl",
+      "WhenCreated": "2023-08-03T13:27:52Z"
+    },
+    {
+      "DisplayName": "Annet van de Plas",
+      "PrimarySmtpAddress": "Hmve_annet.vdplas@meerwaarde.nl",
+      "WhenCreated": "2025-10-31T08:22:56Z"
+    },
+    {
+      "DisplayName": "Caroline Blommers",
+      "PrimarySmtpAddress": "Hmve_caroline.blommers@meerwaarde.nl",
+      "WhenCreated": "2025-12-22T14:28:53Z"
+    },
+    {
+      "DisplayName": "Erik Romijn",
+      "PrimarySmtpAddress": "hmve_Erik.Romijn@meerwaarde.nl",
+      "WhenCreated": "2024-12-13T08:03:45Z"
+    },
+    {
+      "DisplayName": "HMVE Jessica Talaa",
+      "PrimarySmtpAddress": "hmve_Jessica.Talaa@meerwaarde.nl",
+      "WhenCreated": "2024-12-13T08:03:45Z"
+    },
+    {
+      "DisplayName": "Mallory Roo van der Haagen",
+      "PrimarySmtpAddress": "Hmve_mallory.roovanderhaagen@meerwaarde.nl",
+      "WhenCreated": "2025-04-04T08:43:20Z"
+    },
+    {
+      "DisplayName": "HMVE Monique Worm",
+      "PrimarySmtpAddress": "hmve_monique.worm@meerwaarde.nl",
+      "WhenCreated": "2026-01-30T15:23:06Z"
+    },
+    {
+      "DisplayName": "Hyan Taleb",
+      "PrimarySmtpAddress": "hyan.taleb@meerwaarde.nl",
+      "WhenCreated": "2023-11-10T07:51:19Z"
+    },
+    {
+      "DisplayName": "Ilona van Es",
+      "PrimarySmtpAddress": "ilona.vanes@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Imad Talhaoui",
+      "PrimarySmtpAddress": "imad.talhaoui@meerwaarde.nl",
+      "WhenCreated": "2025-11-07T11:08:31Z"
+    },
+    {
+      "DisplayName": "Inge Janssen",
+      "PrimarySmtpAddress": "inge.janssen@meerwaarde.nl",
+      "WhenCreated": "2019-11-13T09:55:51Z"
+    },
+    {
+      "DisplayName": "Jamal Bouraajaj",
+      "PrimarySmtpAddress": "jamal.bouraajaj@meerwaarde.nl",
+      "WhenCreated": "2023-12-07T08:43:11Z"
+    },
+    {
+      "DisplayName": "Jareth Westerman",
+      "PrimarySmtpAddress": "Jareth.westerman@meerwaarde.nl",
+      "WhenCreated": "2025-03-14T15:06:33Z"
+    },
+    {
+      "DisplayName": "Jinan Raissouni",
+      "PrimarySmtpAddress": "jinan.raissouni@meerwaarde.nl",
+      "WhenCreated": "2022-09-29T08:35:05Z"
+    },
+    {
+      "DisplayName": "Jorien Reinderink",
+      "PrimarySmtpAddress": "jorien.reinderink@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Josefine Scheepmaker",
+      "PrimarySmtpAddress": "josefine.scheepmaker@meerwaarde.nl",
+      "WhenCreated": "2022-05-17T11:57:10Z"
+    },
+    {
+      "DisplayName": "Joyce van Bemmelen",
+      "PrimarySmtpAddress": "joyce.vanbemmelen@meerwaarde.nl",
+      "WhenCreated": "2022-08-24T12:59:18Z"
+    },
+    {
+      "DisplayName": "Judy de Leeuw",
+      "PrimarySmtpAddress": "judy.deleeuw@meerwaarde.nl",
+      "WhenCreated": "2022-01-25T09:00:14Z"
+    },
+    {
+      "DisplayName": "Juliette Jansen",
+      "PrimarySmtpAddress": "juliette.jansen@meerwaarde.nl",
+      "WhenCreated": "2024-11-07T14:38:53Z"
+    },
+    {
+      "DisplayName": "Kantine DOVD",
+      "PrimarySmtpAddress": "Kantine@meerwaarde.onmicrosoft.com",
+      "WhenCreated": "2024-01-11T09:02:19Z"
+    },
+    {
+      "DisplayName": "Karin Babeliowsky-v.d. Woord",
+      "PrimarySmtpAddress": "karin.babeliowsky@meerwaarde.nl",
+      "WhenCreated": "2023-03-14T09:13:29Z"
+    },
+    {
+      "DisplayName": "Kavindra Richards",
+      "PrimarySmtpAddress": "kavindra.richards@meerwaarde.nl",
+      "WhenCreated": "2021-01-21T13:56:57Z"
+    },
+    {
+      "DisplayName": "Khadija Mallouk",
+      "PrimarySmtpAddress": "khadija.mallouk@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Kracht",
+      "PrimarySmtpAddress": "Kracht@meerwaarde.onmicrosoft.com",
+      "WhenCreated": "2024-12-13T09:39:11Z"
+    },
+    {
+      "DisplayName": "Laila Ameziane",
+      "PrimarySmtpAddress": "Laila.Ameziane@meerwaarde.nl",
+      "WhenCreated": "2024-10-23T08:30:45Z"
+    },
+    {
+      "DisplayName": "Laila el Hafidi",
+      "PrimarySmtpAddress": "laila.elhafidi@meerwaarde.nl",
+      "WhenCreated": "2021-09-13T09:33:42Z"
+    },
+    {
+      "DisplayName": "Lara Holst",
+      "PrimarySmtpAddress": "lara.holst@meerwaarde.nl",
+      "WhenCreated": "2026-01-14T07:34:31Z"
+    },
+    {
+      "DisplayName": "Larissa Wladimiroff",
+      "PrimarySmtpAddress": "Larissa.Wladimiroff@meerwaarde.nl",
+      "WhenCreated": "2026-01-07T13:19:06Z"
+    },
+    {
+      "DisplayName": "Leena Scheffer - Manapong",
+      "PrimarySmtpAddress": "leena.scheffer@meerwaarde.nl",
+      "WhenCreated": "2022-09-01T09:53:52Z"
+    },
+    {
+      "DisplayName": "Lia Duivenvoorden",
+      "PrimarySmtpAddress": "lia.duivenvoorden@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Liesbeth Kila",
+      "PrimarySmtpAddress": "liesbeth.Kila@meerwaarde.nl",
+      "WhenCreated": "2024-04-29T12:47:55Z"
+    },
+    {
+      "DisplayName": "Linda Steeman",
+      "PrimarySmtpAddress": "linda.steeman@meerwaarde.nl",
+      "WhenCreated": "2024-07-25T13:01:12Z"
+    },
+    {
+      "DisplayName": "Lisa de Best",
+      "PrimarySmtpAddress": "lisa.debest@meerwaarde.nl",
+      "WhenCreated": "2024-09-10T07:54:55Z"
+    },
+    {
+      "DisplayName": "Lisette Piepers",
+      "PrimarySmtpAddress": "lisette.piepers@meerwaarde.nl",
+      "WhenCreated": "2022-05-23T08:58:02Z"
+    },
+    {
+      "DisplayName": "Lotte Verhofstad",
+      "PrimarySmtpAddress": "lotte.verhofstad@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Magne de Kreek",
+      "PrimarySmtpAddress": "magne.dekreek@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Maira Wouter",
+      "PrimarySmtpAddress": "maira.wouter@meerwaarde.nl",
+      "WhenCreated": "2024-12-24T13:04:13Z"
+    },
+    {
+      "DisplayName": "Marie-Jose Keijman",
+      "PrimarySmtpAddress": "mariejose.keijman@meerwaarde.nl",
+      "WhenCreated": "2024-07-04T12:31:48Z"
+    },
+    {
+      "DisplayName": "Mariëtte Bouterse",
+      "PrimarySmtpAddress": "mariette.bouterse@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Mariska Spikmans",
+      "PrimarySmtpAddress": "mariska.spikmans@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Marith Elfering",
+      "PrimarySmtpAddress": "marith.elfering@meerwaarde.nl",
+      "WhenCreated": "2025-01-28T14:41:03Z"
+    },
+    {
+      "DisplayName": "Marjorie Mesman",
+      "PrimarySmtpAddress": "marjorie.mesman@meerwaarde.nl",
+      "WhenCreated": "2024-05-14T13:22:52Z"
+    },
+    {
+      "DisplayName": "Mark Ostendorf",
+      "PrimarySmtpAddress": "mark.ostendorf@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Martijn Kool",
+      "PrimarySmtpAddress": "martijn.kool@meerwaarde.nl",
+      "WhenCreated": "2022-11-29T11:01:00Z"
+    },
+    {
+      "DisplayName": "Martine Heeremans",
+      "PrimarySmtpAddress": "martine.heeremans@meerwaarde.nl",
+      "WhenCreated": "2025-11-14T06:50:42Z"
+    },
+    {
+      "DisplayName": "Mary van der Drift",
+      "PrimarySmtpAddress": "mary.vanderdrift@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Maryam Aourag",
+      "PrimarySmtpAddress": "Maryam.Aourag@meerwaarde.nl",
+      "WhenCreated": "2025-12-09T13:48:09Z"
+    },
+    {
+      "DisplayName": "Maud Tromp",
+      "PrimarySmtpAddress": "maud.tromp@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Merel Jansen",
+      "PrimarySmtpAddress": "merel.jansen@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Michiel Poorter",
+      "PrimarySmtpAddress": "michiel.poorter@meerwaarde.nl",
+      "WhenCreated": "2025-09-10T12:41:27Z"
+    },
+    {
+      "DisplayName": "Mireille Paardenkooper",
+      "PrimarySmtpAddress": "mireille.paardenkooper@meerwaarde.nl",
+      "WhenCreated": "2025-09-11T11:39:21Z"
+    },
+    {
+      "DisplayName": "Miriam Naluzinda",
+      "PrimarySmtpAddress": "Miriam.Naluzinda@meerwaarde.nl",
+      "WhenCreated": "2025-08-29T11:24:03Z"
+    },
+    {
+      "DisplayName": "Mirjam Gans",
+      "PrimarySmtpAddress": "mirjam.gans@meerwaarde.nl",
+      "WhenCreated": "2024-12-24T13:04:13Z"
+    },
+    {
+      "DisplayName": "Mohammed Abraimi",
+      "PrimarySmtpAddress": "mohammed.abraimi@meerwaarde.nl",
+      "WhenCreated": "2024-05-10T09:52:56Z"
+    },
+    {
+      "DisplayName": "Mustapha El Moumene",
+      "PrimarySmtpAddress": "mustapha.elmoumene@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Team Haarlemmermeervoorelkaar",
+      "PrimarySmtpAddress": "haarlemmermeervoorelkaar@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Nancy van den Burg",
+      "PrimarySmtpAddress": "nancy.vandenburg@meerwaarde.nl",
+      "WhenCreated": "2019-03-26T13:49:13Z"
+    },
+    {
+      "DisplayName": "Natasja Lie",
+      "PrimarySmtpAddress": "natasja.lie@meerwaarde.nl",
+      "WhenCreated": "2025-03-26T14:17:14Z"
+    },
+    {
+      "DisplayName": "Nelleke van Wonderen",
+      "PrimarySmtpAddress": "Nelleke.vanWonderen@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Nina Liang",
+      "PrimarySmtpAddress": "nina.liang@meerwaarde.nl",
+      "WhenCreated": "2022-05-17T08:27:07Z"
+    },
+    {
+      "DisplayName": "Nissrin Zafzafi",
+      "PrimarySmtpAddress": "Nissrin.Zafzafi@meerwaarde.nl",
+      "WhenCreated": "2025-08-22T06:28:39Z"
+    },
+    {
+      "DisplayName": "no-reply Meerwaarde",
+      "PrimarySmtpAddress": "noreply@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Noa Janssen",
+      "PrimarySmtpAddress": "noa.janssen@meerwaarde.nl",
+      "WhenCreated": "2022-09-23T08:03:19Z"
+    },
+    {
+      "DisplayName": "Norhan Ali",
+      "PrimarySmtpAddress": "Norhan.Ali@meerwaarde.nl",
+      "WhenCreated": "2025-09-26T08:47:37Z"
+    },
+    {
+      "DisplayName": "Norman Kortekaas",
+      "PrimarySmtpAddress": "norman.kortekaas@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Nynke Wijbenga",
+      "PrimarySmtpAddress": "nynke.wijbenga@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "O365 Facturen",
+      "PrimarySmtpAddress": "o365.facturen@meerwaarde.onmicrosoft.com",
+      "WhenCreated": "2019-04-09T08:30:47Z"
+    },
+    {
+      "DisplayName": "O365 FacturenControle",
+      "PrimarySmtpAddress": "o365.facturencontrole@meerwaarde.onmicrosoft.com",
+      "WhenCreated": "2022-01-05T16:08:16Z"
+    },
+    {
+      "DisplayName": "Postbus Facturen",
+      "PrimarySmtpAddress": "facturen@meerwaarde.nl",
+      "WhenCreated": "2021-08-12T08:21:53Z"
+    },
+    {
+      "DisplayName": "Raad van Toezicht",
+      "PrimarySmtpAddress": "raadvantoezicht@meerwaarde.onmicrosoft.com",
+      "WhenCreated": "2026-02-18T08:26:48Z"
+    },
+    {
+      "DisplayName": "Rachelle Paalvast",
+      "PrimarySmtpAddress": "rachelle.paalvast@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Riguillo Terhaar",
+      "PrimarySmtpAddress": "riguillo.terhaar@meerwaarde.nl",
+      "WhenCreated": "2023-12-22T11:25:18Z"
+    },
+    {
+      "DisplayName": "Rijnaldo Wilson",
+      "PrimarySmtpAddress": "rijnaldo.wilson@meerwaarde.nl",
+      "WhenCreated": "2024-05-29T09:15:35Z"
+    },
+    {
+      "DisplayName": "Roxanna Booms",
+      "PrimarySmtpAddress": "roxanna.booms@meerwaarde.nl",
+      "WhenCreated": "2020-03-11T10:54:41Z"
+    },
+    {
+      "DisplayName": "Sebastiaan Timmermans",
+      "PrimarySmtpAddress": "sebastiaan.timmermans@meerwaarde.nl",
+      "WhenCreated": "2024-06-27T12:12:56Z"
+    },
+    {
+      "DisplayName": "Sandra Spoelstra",
+      "PrimarySmtpAddress": "sandra.aartse-spoelstra@meerwaarde.nl",
+      "WhenCreated": "2023-08-01T08:21:44Z"
+    },
+    {
+      "DisplayName": "Sandy Frederiks",
+      "PrimarySmtpAddress": "sandy.frederiks@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Sawinah Voortman",
+      "PrimarySmtpAddress": "sawinah.voortman@meerwaarde.nl",
+      "WhenCreated": "2023-04-06T14:04:08Z"
+    },
+    {
+      "DisplayName": "Selina Veerman",
+      "PrimarySmtpAddress": "selina.veerman@meerwaarde.nl",
+      "WhenCreated": "2026-02-02T14:51:46Z"
+    },
+    {
+      "DisplayName": "Serena Blank",
+      "PrimarySmtpAddress": "serena.blank@meerwaarde.nl",
+      "WhenCreated": "2022-01-27T12:35:01Z"
+    },
+    {
+      "DisplayName": "Sieben van Maarseveen",
+      "PrimarySmtpAddress": "sieben.vanmaarseveen@meerwaarde.nl",
+      "WhenCreated": "2022-03-01T12:26:43Z"
+    },
+    {
+      "DisplayName": "Simone Duin",
+      "PrimarySmtpAddress": "simone.duin@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Sjoerd Mercera",
+      "PrimarySmtpAddress": "sjoerd.mercera@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Team Social Impact",
+      "PrimarySmtpAddress": "socialimpact@meerwaarde.nl",
+      "WhenCreated": "2023-09-12T12:21:35Z"
+    },
+    {
+      "DisplayName": "Somaya Es Sannouni",
+      "PrimarySmtpAddress": "somaya.essannouni@meerwaarde.nl",
+      "WhenCreated": "2024-06-24T12:26:05Z"
+    },
+    {
+      "DisplayName": "Sophie Hirs",
+      "PrimarySmtpAddress": "sophie.hirs@meerwaarde.nl",
+      "WhenCreated": "2022-03-01T12:26:43Z"
+    },
+    {
+      "DisplayName": "Betrokken (130)",
+      "PrimarySmtpAddress": "spreekkamer.dovd@meerwaarde.onmicrosoft.com",
+      "WhenCreated": "2021-01-06T13:46:10Z"
+    },
+    {
+      "DisplayName": "Stien de Rooij",
+      "PrimarySmtpAddress": "stien.derooij@meerwaarde.nl",
+      "WhenCreated": "2024-12-23T08:17:40Z"
+    },
+    {
+      "DisplayName": "Suzanne van Varik",
+      "PrimarySmtpAddress": "suzanne.vanvarik@meerwaarde.nl",
+      "WhenCreated": "2024-12-23T08:17:40Z"
+    },
+    {
+      "DisplayName": "ServiceAccount - Orbis",
+      "PrimarySmtpAddress": "svc_orbis@meerwaarde.nl",
+      "WhenCreated": "2025-12-19T12:01:17Z"
+    },
+    {
+      "DisplayName": "TAH Ben",
+      "PrimarySmtpAddress": "tah.ben@meerwaarde.nl",
+      "WhenCreated": "2023-01-25T13:42:05Z"
+    },
+    {
+      "DisplayName": "TAH Bob",
+      "PrimarySmtpAddress": "tah.bob@meerwaarde.nl",
+      "WhenCreated": "2024-02-01T13:48:11Z"
+    },
+    {
+      "DisplayName": "TAH CynthiaW",
+      "PrimarySmtpAddress": "TAH.cynthiaw@meerwaarde.nl",
+      "WhenCreated": "2019-05-31T09:38:15Z"
+    },
+    {
+      "DisplayName": "TAH Ed",
+      "PrimarySmtpAddress": "tah.ed@meerwaarde.nl",
+      "WhenCreated": "2024-02-01T13:48:11Z"
+    },
+    {
+      "DisplayName": "TAH Ferhat",
+      "PrimarySmtpAddress": "tah.ferhat@meerwaarde.nl",
+      "WhenCreated": "2023-11-07T08:07:14Z"
+    },
+    {
+      "DisplayName": "TAH Hans",
+      "PrimarySmtpAddress": "TAH.hans@meerwaarde.nl",
+      "WhenCreated": "2019-05-31T09:38:15Z"
+    },
+    {
+      "DisplayName": "TAH Jan",
+      "PrimarySmtpAddress": "tah.jan@meerwaarde.nl",
+      "WhenCreated": "2020-12-29T09:19:27Z"
+    },
+    {
+      "DisplayName": "TAH Jeanette",
+      "PrimarySmtpAddress": "tah.jeanette@meerwaarde.nl",
+      "WhenCreated": "2020-12-29T09:19:27Z"
+    },
+    {
+      "DisplayName": "TAH Jolanda",
+      "PrimarySmtpAddress": "tah.jolanda@meerwaarde.nl",
+      "WhenCreated": "2024-11-29T11:29:59Z"
+    },
+    {
+      "DisplayName": "TAH Leen",
+      "PrimarySmtpAddress": "TAH.leen@meerwaarde.nl",
+      "WhenCreated": "2019-05-31T09:38:15Z"
+    },
+    {
+      "DisplayName": "TAH Lilian",
+      "PrimarySmtpAddress": "tah.lilian@meerwaarde.nl",
+      "WhenCreated": "2022-04-05T08:27:40Z"
+    },
+    {
+      "DisplayName": "TAH Marcella",
+      "PrimarySmtpAddress": "tah.marcella@meerwaarde.nl",
+      "WhenCreated": "2021-08-10T06:35:50Z"
+    },
+    {
+      "DisplayName": "TAH Michiel",
+      "PrimarySmtpAddress": "TAH.michiel@meerwaarde.nl",
+      "WhenCreated": "2019-05-31T09:38:15Z"
+    },
+    {
+      "DisplayName": "TAH Paul",
+      "PrimarySmtpAddress": "tah.paul@meerwaarde.nl",
+      "WhenCreated": "2020-10-01T11:41:40Z"
+    },
+    {
+      "DisplayName": "TAH Piet",
+      "PrimarySmtpAddress": "tah.piet@meerwaarde.nl",
+      "WhenCreated": "2022-07-19T08:45:20Z"
+    },
+    {
+      "DisplayName": "TAH Ria",
+      "PrimarySmtpAddress": "TAH.ria@meerwaarde.nl",
+      "WhenCreated": "2019-05-31T09:38:15Z"
+    },
+    {
+      "DisplayName": "TAH Sander",
+      "PrimarySmtpAddress": "TAH.sander@meerwaarde.nl",
+      "WhenCreated": "2020-01-23T09:42:24Z"
+    },
+    {
+      "DisplayName": "Frank Veenman",
+      "PrimarySmtpAddress": "TAH_Frank@meerwaarde.nl",
+      "WhenCreated": "2019-08-29T12:59:46Z"
+    },
+    {
+      "DisplayName": "Tamira Meeues",
+      "PrimarySmtpAddress": "tamira.meeues@meerwaarde.nl",
+      "WhenCreated": "2024-04-22T14:12:01Z"
+    },
+    {
+      "DisplayName": "Teamsbellen",
+      "PrimarySmtpAddress": "Teamsbellen@meerwaarde.pri.msft.voipitworld.com",
+      "WhenCreated": "2025-02-05T08:48:55Z"
+    },
+    {
+      "DisplayName": "Teamsbellen",
+      "PrimarySmtpAddress": "Teamsbellen@meerwaarde.sec.msft.voipitworld.com",
+      "WhenCreated": "2025-02-05T08:49:17Z"
+    },
+    {
+      "DisplayName": "Test QUBEMDM",
+      "PrimarySmtpAddress": "test.qubemdm@meerwaarde.nl",
+      "WhenCreated": "2024-10-10T11:09:37Z"
+    },
+    {
+      "DisplayName": "Tim Sebel",
+      "PrimarySmtpAddress": "tim.sebel@meerwaarde.nl",
+      "WhenCreated": "2023-08-24T14:31:30Z"
+    },
+    {
+      "DisplayName": "Track the Talent",
+      "PrimarySmtpAddress": "trackthetalent@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Umaimah El Abddellaoui",
+      "PrimarySmtpAddress": "Umaimah.elabddellaoui@meerwaarde.nl",
+      "WhenCreated": "2025-11-27T14:40:04Z"
+    },
+    {
+      "DisplayName": "uService Daywize",
+      "PrimarySmtpAddress": "sa-daywize@meerwaarde.nl",
+      "WhenCreated": "2022-04-12T10:45:53Z"
+    },
+    {
+      "DisplayName": "Vrijwilliger PlusPunt Zuid",
+      "PrimarySmtpAddress": "v.pluspuntzuid@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Caroline Roelfs VGT",
+      "PrimarySmtpAddress": "vgt.Caroline@meerwaarde.nl",
+      "WhenCreated": "2024-11-22T14:57:03Z"
+    },
+    {
+      "DisplayName": "Chadia Boulgalag",
+      "PrimarySmtpAddress": "vgt.Chadia@meerwaarde.nl",
+      "WhenCreated": "2024-11-22T14:57:44Z"
+    },
+    {
+      "DisplayName": "Debby de Heus - de Vos",
+      "PrimarySmtpAddress": "vgt.Debby@meerwaarde.nl",
+      "WhenCreated": "2024-11-22T14:58:54Z"
+    },
+    {
+      "DisplayName": "Elly van Dyck",
+      "PrimarySmtpAddress": "vgt.Elly@meerwaarde.nl",
+      "WhenCreated": "2024-11-22T14:59:29Z"
+    },
+    {
+      "DisplayName": "Erik Romijn",
+      "PrimarySmtpAddress": "vgt.erik@meerwaarde.nl",
+      "WhenCreated": "2026-01-30T08:37:16Z"
+    },
+    {
+      "DisplayName": "Femmy Klootwijk",
+      "PrimarySmtpAddress": "vgt.femmy@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Fiona Van den Acker",
+      "PrimarySmtpAddress": "vgt.fiona@meerwaarde.nl",
+      "WhenCreated": "2025-02-05T14:03:24Z"
+    },
+    {
+      "DisplayName": "Marianne Uitendaal",
+      "PrimarySmtpAddress": "vgt.marianne@meerwaarde.nl",
+      "WhenCreated": "2022-09-05T13:00:12Z"
+    },
+    {
+      "DisplayName": "Vilma Sedaria",
+      "PrimarySmtpAddress": "vgt.vilma@meerwaarde.nl",
+      "WhenCreated": "2025-02-05T14:03:24Z"
+    },
+    {
+      "DisplayName": "Professioneel VK",
+      "PrimarySmtpAddress": "vissenkom.dovd@meerwaarde.onmicrosoft.com",
+      "WhenCreated": "2021-01-06T13:46:28Z"
+    },
+    {
+      "DisplayName": "Vrijwilliger",
+      "PrimarySmtpAddress": "vrijwilliger@meerwaarde.nl",
+      "WhenCreated": "2025-07-23T07:34:30Z"
+    },
+    {
+      "DisplayName": "Wendy Amsing",
+      "PrimarySmtpAddress": "wendy.amsing@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Yvonne van den Berg",
+      "PrimarySmtpAddress": "yvonne.vandenberg@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "ZMP-Contracten",
+      "PrimarySmtpAddress": "ZMP-Contracten@meerwaarde.nl",
+      "WhenCreated": null
+    },
+    {
+      "DisplayName": "Zondagmiddagpodium",
+      "PrimarySmtpAddress": "zondagmiddagpodium@meerwaarde.nl",
+      "WhenCreated": null
+    }
+  ],
+  "IntuneDevices": [
+    {
+      "Id": "f1831277-25de-4089-be26-ff72d45d2a40",
+      "DeviceName": "kavindra.richards_AndroidEnterprise_12/4/2024_2:30 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "kavindra.richards@meerwaarde.nl",
+      "UserDisplayName": "kavindra.richards_AndroidEnterprise_12/4/2024_2:30 PM",
+      "LastSyncDateTime": "2026-03-28T08:44:13Z",
+      "EnrolledDateTime": "2024-12-04T14:30:10Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "9bc35872-05be-474b-acf7-fc0239649324",
+      "DeviceName": "hyan.taleb_AndroidEnterprise_12/4/2024_10:31 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "hyan.taleb@meerwaarde.nl",
+      "UserDisplayName": "hyan.taleb_AndroidEnterprise_12/4/2024_10:31 AM",
+      "LastSyncDateTime": "2026-03-28T10:01:54Z",
+      "EnrolledDateTime": "2024-12-04T10:31:03Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "f7f43e07-abec-4a29-9fe7-f790261f0f8a",
+      "DeviceName": "charlotte.mosk_AndroidEnterprise_12/4/2024_2:30 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "charlotte.mosk_AndroidEnterprise_12/4/2024_2:30 PM",
+      "LastSyncDateTime": "2025-10-29T17:40:08Z",
+      "EnrolledDateTime": "2024-12-04T14:30:14Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "96a4bed6-4821-4ee2-986f-ef656055413d",
+      "DeviceName": "NB-MEE-2302A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26200.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "claudia.boelee@meerwaarde.nl",
+      "UserDisplayName": "claudia.boelee_Windows_2/24/2026_9:39 AM",
+      "LastSyncDateTime": "2026-03-26T08:01:58Z",
+      "EnrolledDateTime": "2026-02-24T09:39:29Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G8 Notebook PC"
+    },
+    {
+      "Id": "ffc27a6f-4cb3-45ab-a1f3-ece3f7296635",
+      "DeviceName": "NB-MEE-2501I",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "norman.kortekaas@meerwaarde.nl",
+      "UserDisplayName": "87bfcb6a-170f-4705-a4fd-ccd681a3904f_Windows_12/23/2024_3:49 PM",
+      "LastSyncDateTime": "2026-03-27T12:04:18Z",
+      "EnrolledDateTime": "2024-12-23T15:09:09Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "eb80733b-74cd-480a-8fc1-ea4f2ac4914a",
+      "DeviceName": "frank.groot_AndroidEnterprise_12/4/2024_10:30 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "frank.groot@meerwaarde.nl",
+      "UserDisplayName": "frank.groot_AndroidEnterprise_12/4/2024_10:30 AM",
+      "LastSyncDateTime": "2026-03-27T13:52:10Z",
+      "EnrolledDateTime": "2024-12-04T10:30:56Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "27320f4b-7367-4b42-8002-e52f2f6426d2",
+      "DeviceName": "NB-MEE-2412H",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "lisette.piepers@meerwaarde.nl",
+      "UserDisplayName": "lisette.piepers_Windows_12/10/2024_12:46 PM",
+      "LastSyncDateTime": "2026-03-27T11:38:58Z",
+      "EnrolledDateTime": "2024-12-10T12:44:45Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "78603c46-7b9f-44ec-bf54-e0f7f2862c85",
+      "DeviceName": "Staging_38597a3ac02a2236_AndroidEnterprise_12/1/2025_1:49 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_38597a3ac02a2236_AndroidEnterprise_12/1/2025_1:49 PM",
+      "LastSyncDateTime": "2026-03-28T06:21:51Z",
+      "EnrolledDateTime": "2025-12-01T13:49:36Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "ce1bcca3-ffb8-4cae-a940-dac5a8115e59",
+      "DeviceName": "SMWLT5CD2457MLQ",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.22621.3155",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "fatiha.ayyad@meerwaarde.nl",
+      "UserDisplayName": "146022e1-0144-4f66-8c4a-7b0594b63ebe_Windows_2/7/2023_10:08 AM",
+      "LastSyncDateTime": "2026-03-04T23:13:18Z",
+      "EnrolledDateTime": "2023-02-07T10:08:26Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G8 Notebook PC"
+    },
+    {
+      "Id": "004ca9c8-836c-4a76-ae01-cf52a15408d4",
+      "DeviceName": "SMWLT5CD2457N4G",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "hiljan.hoek@meerwaarde.nl",
+      "UserDisplayName": "146022e1-0144-4f66-8c4a-7b0594b63ebe_Windows_2/7/2023_8:46 AM",
+      "LastSyncDateTime": "2026-03-27T12:48:54Z",
+      "EnrolledDateTime": "2023-02-07T08:46:26Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G8 Notebook PC"
+    },
+    {
+      "Id": "acee45e9-f054-400c-99f4-cac99fbcd3fb",
+      "DeviceName": "Staging_3f2c5e46775ef931_AndroidEnterprise_3/11/2025_10:32 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_3f2c5e46775ef931_AndroidEnterprise_3/11/2025_10:32 AM",
+      "LastSyncDateTime": "2025-05-08T10:06:04Z",
+      "EnrolledDateTime": "2025-03-11T10:32:36Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "712e9ac6-561e-4a06-a63d-c3edde675f9c",
+      "DeviceName": "NB-MEE-2501H",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "mirjam.gans@meerwaarde.nl",
+      "UserDisplayName": "b8e2a298-a280-41b8-b0d7-693fd99db7ed_Windows_12/23/2024_3:52 PM",
+      "LastSyncDateTime": "2026-03-26T10:58:39Z",
+      "EnrolledDateTime": "2024-12-23T15:09:10Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "a62eff70-a7cd-4e3e-8fa5-c13b113d622d",
+      "DeviceName": "NB-MEE-2412AC",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "joyce.vanbemmelen@meerwaarde.nl",
+      "UserDisplayName": "joyce.vanbemmelen_Windows_12/10/2024_2:45 PM",
+      "LastSyncDateTime": "2026-03-27T11:46:32Z",
+      "EnrolledDateTime": "2024-12-10T14:41:40Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "927f8030-9254-418d-ad7f-ba0ec58012b6",
+      "DeviceName": "DESKTOP-PA51KIP",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7171",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "c84ee30cf8eb40b5bfa75dc6d23179ddKim.vanhilten@meerwaarde.nl",
+      "UserDisplayName": "Kim.vanhilten_Windows_2/12/2026_8:27 AM",
+      "LastSyncDateTime": "2026-03-03T09:41:35Z",
+      "EnrolledDateTime": "2026-02-12T08:27:40Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G8 Notebook PC"
+    },
+    {
+      "Id": "05e473f9-c277-49d5-a178-b6abb88f3578",
+      "DeviceName": "Staging_337d7fb318856003_AndroidEnterprise_3/2/2026_9:27 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_337d7fb318856003_AndroidEnterprise_3/2/2026_9:27 AM",
+      "LastSyncDateTime": "2026-03-28T08:43:36Z",
+      "EnrolledDateTime": "2026-03-02T09:27:02Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "faf59cb4-a277-4865-a7a6-b30285e6e139",
+      "DeviceName": "mustapha.elmoumene_AndroidEnterprise_12/4/2024_2:53 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "mustapha.elmoumene@meerwaarde.nl",
+      "UserDisplayName": "mustapha.elmoumene_AndroidEnterprise_12/4/2024_2:53 PM",
+      "LastSyncDateTime": "2026-03-27T19:53:07Z",
+      "EnrolledDateTime": "2024-12-04T14:53:55Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "20c6d4ff-553b-4e9d-b8cd-b0fb0c16d6e1",
+      "DeviceName": "NB-MEE-2412N",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "inge.janssen@meerwaarde.nl",
+      "UserDisplayName": "inge.janssen_Windows_12/10/2024_1:31 PM",
+      "LastSyncDateTime": "2026-03-26T15:15:39Z",
+      "EnrolledDateTime": "2024-12-10T13:27:00Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "d18c57cd-3c94-4540-ab56-ab756157ae82",
+      "DeviceName": "DT-MEE-2412G",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "balie@meerwaarde.nl",
+      "UserDisplayName": "balie_Windows_12/12/2024_1:50 PM",
+      "LastSyncDateTime": "2026-03-27T11:57:37Z",
+      "EnrolledDateTime": "2024-12-12T13:50:41Z",
+      "Manufacturer": "HP",
+      "Model": "HP Pro Mini 400 G9 Desktop PC"
+    },
+    {
+      "Id": "37590938-668f-40ba-8cae-a53ee85e0fd5",
+      "DeviceName": "laila.elhafidi_AndroidEnterprise_12/4/2024_2:53 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "laila.elhafidi@meerwaarde.nl",
+      "UserDisplayName": "laila.elhafidi_AndroidEnterprise_12/4/2024_2:53 PM",
+      "LastSyncDateTime": "2026-03-28T09:20:48Z",
+      "EnrolledDateTime": "2024-12-04T14:53:43Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "e3c87561-8381-46e5-a8dc-a1760604b536",
+      "DeviceName": "norman.kortekaas_AndroidEnterprise_12/4/2024_2:02 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "norman.kortekaas@meerwaarde.nl",
+      "UserDisplayName": "norman.kortekaas_AndroidEnterprise_12/4/2024_2:02 PM",
+      "LastSyncDateTime": "2026-03-27T21:01:56Z",
+      "EnrolledDateTime": "2024-12-04T14:02:39Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "39950113-a17e-4b7b-89c6-a06e960ed130",
+      "DeviceName": "NB-MEE-2412A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "frank.groot@meerwaarde.nl",
+      "UserDisplayName": "frank.groot_Windows_12/12/2024_9:02 AM",
+      "LastSyncDateTime": "2026-03-27T12:01:01Z",
+      "EnrolledDateTime": "2024-12-12T09:02:49Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "659f0ee0-de0f-4e1a-869a-9ce96150290d",
+      "DeviceName": "Staging_3a15d21db42e19e6_AndroidEnterprise_12/2/2025_1:19 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_3a15d21db42e19e6_AndroidEnterprise_12/2/2025_1:19 PM",
+      "LastSyncDateTime": "2026-03-27T22:58:29Z",
+      "EnrolledDateTime": "2025-12-02T13:19:55Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "608ccc2a-7d7b-46a6-8b40-97c39f9cbe35",
+      "DeviceName": "ilona.vanes_AndroidEnterprise_12/4/2024_1:31 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "ilona.vanes@meerwaarde.nl",
+      "UserDisplayName": "ilona.vanes_AndroidEnterprise_12/4/2024_1:31 PM",
+      "LastSyncDateTime": "2026-03-25T10:57:06Z",
+      "EnrolledDateTime": "2024-12-04T13:31:36Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "3f45c522-4ded-4bf3-8b73-8f88b5bc4dee",
+      "DeviceName": "erik.schoe_AndroidEnterprise_12/4/2024_2:30 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "erik.schoe@meerwaarde.nl",
+      "UserDisplayName": "erik.schoe_AndroidEnterprise_12/4/2024_2:30 PM",
+      "LastSyncDateTime": "2026-03-28T09:20:28Z",
+      "EnrolledDateTime": "2024-12-04T14:30:14Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "9a95cc82-6406-46cd-aadc-86a225425914",
+      "DeviceName": "NB-MEE-2412Q",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7628",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "Guido.Dankerlui@meerwaarde.nl",
+      "UserDisplayName": "111d4e78-adcf-4520-b558-fd99492028c0_Windows_12/2/2024_12:27 PM",
+      "LastSyncDateTime": "2026-03-27T19:44:26Z",
+      "EnrolledDateTime": "2024-11-28T16:08:12Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "506b69c6-5a6f-4d84-8a03-81138e161539",
+      "DeviceName": "Staging_3337a97e58ded897_AndroidEnterprise_11/6/2025_9:46 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_3337a97e58ded897_AndroidEnterprise_11/6/2025_9:46 AM",
+      "LastSyncDateTime": "2025-11-06T14:39:25Z",
+      "EnrolledDateTime": "2025-11-06T09:46:56Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "cf097316-84f6-493c-8189-7b7c8c73b1f4",
+      "DeviceName": "NB-MEE-2412Z",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "sieben.vanmaarseveen@meerwaarde.nl",
+      "UserDisplayName": "sieben.vanmaarseveen_Windows_12/23/2024_10:32 AM",
+      "LastSyncDateTime": "2026-03-26T12:39:37Z",
+      "EnrolledDateTime": "2024-12-23T10:32:48Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "26b2772d-a807-4279-b78b-766aa1203db3",
+      "DeviceName": "tamira.meeues_AndroidEnterprise_12/4/2024_2:53 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "tamira.meeues@meerwaarde.nl",
+      "UserDisplayName": "tamira.meeues_AndroidEnterprise_12/4/2024_2:53 PM",
+      "LastSyncDateTime": "2026-03-28T05:33:15Z",
+      "EnrolledDateTime": "2024-12-04T14:53:27Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "84518b9b-e0c7-496a-a061-735c779f102d",
+      "DeviceName": "Staging_376733ffcc212e5b_AndroidEnterprise_1/29/2026_3:17 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_376733ffcc212e5b_AndroidEnterprise_1/29/2026_3:17 PM",
+      "LastSyncDateTime": "2026-01-29T16:22:23Z",
+      "EnrolledDateTime": "2026-01-29T15:17:14Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "43cd27da-202e-407f-b4f0-7304700d7265",
+      "DeviceName": "serena.blank_AndroidEnterprise_10/20/2025_10:15 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "serena.blank@meerwaarde.nl",
+      "UserDisplayName": "serena.blank_AndroidEnterprise_10/20/2025_10:15 AM",
+      "LastSyncDateTime": "2026-03-12T23:18:10Z",
+      "EnrolledDateTime": "2025-10-20T10:15:34Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "ae60e4d2-2b63-48c6-88ec-6ef948c0c10e",
+      "DeviceName": "Staging_380af0a65e637189_AndroidEnterprise_1/27/2026_12:44 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_380af0a65e637189_AndroidEnterprise_1/27/2026_12:44 PM",
+      "LastSyncDateTime": "2026-02-26T07:32:07Z",
+      "EnrolledDateTime": "2026-01-27T12:44:46Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "6da7ecee-5c95-4743-a153-673b384500ea",
+      "DeviceName": "noa.janssen_AndroidEnterprise_12/4/2024_9:15 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "noa.janssen@meerwaarde.nl",
+      "UserDisplayName": "noa.janssen_AndroidEnterprise_12/4/2024_9:15 AM",
+      "LastSyncDateTime": "2026-03-27T14:27:46Z",
+      "EnrolledDateTime": "2024-12-04T09:15:29Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "e5ec4ad7-ea3e-4184-aac3-629ce7bcecb4",
+      "DeviceName": "sawinah.voortman_AndroidEnterprise_12/4/2024_11:07 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "sawinah.voortman@meerwaarde.nl",
+      "UserDisplayName": "sawinah.voortman_AndroidEnterprise_12/4/2024_11:07 AM",
+      "LastSyncDateTime": "2026-03-26T23:57:57Z",
+      "EnrolledDateTime": "2024-12-04T11:07:55Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "7ba29450-ad0b-4b54-b6fa-60e5da7d2d3d",
+      "DeviceName": "Staging_305c1596a69d3435_AndroidEnterprise_11/11/2025_3:42 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_305c1596a69d3435_AndroidEnterprise_11/11/2025_3:42 PM",
+      "LastSyncDateTime": "2025-12-05T16:45:09Z",
+      "EnrolledDateTime": "2025-11-11T15:42:47Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "0c980d0a-b8a3-4b08-bed5-592f3d9503c2",
+      "DeviceName": "annemieke.gerrits_AndroidEnterprise_4/28/2025_11:51 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "annemieke.gerrits@meerwaarde.nl",
+      "UserDisplayName": "annemieke.gerrits_AndroidEnterprise_4/28/2025_11:51 AM",
+      "LastSyncDateTime": "2026-03-27T22:29:14Z",
+      "EnrolledDateTime": "2025-04-28T11:51:18Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "20bead56-8b7d-408e-901c-57fd6c6c0d89",
+      "DeviceName": "sjoerd.mercera_AndroidEnterprise_7/24/2025_11:48 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "sjoerd.mercera@meerwaarde.nl",
+      "UserDisplayName": "sjoerd.mercera_AndroidEnterprise_7/24/2025_11:48 AM",
+      "LastSyncDateTime": "2026-03-28T01:38:49Z",
+      "EnrolledDateTime": "2025-07-24T11:48:01Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "566956b5-e1ad-42e4-87d5-5369cc48dfd1",
+      "DeviceName": "Staging_376a4f65ae6950b9_AndroidEnterprise_6/30/2025_7:57 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_376a4f65ae6950b9_AndroidEnterprise_6/30/2025_7:57 AM",
+      "LastSyncDateTime": "2026-01-29T09:42:05Z",
+      "EnrolledDateTime": "2025-06-30T07:57:13Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "c088c49f-11b9-46e3-bbf7-506f50e3be1a",
+      "DeviceName": "NB-MEE-2307A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7628",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "Miriam.Naluzinda@meerwaarde.nl",
+      "UserDisplayName": "c2096448-d98f-4d82-8a30-bbabc7273d83_Windows_8/12/2025_2:53 PM",
+      "LastSyncDateTime": "2026-03-26T19:44:27Z",
+      "EnrolledDateTime": "2025-08-12T14:53:53Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G9 Notebook PC"
+    },
+    {
+      "Id": "6382fd8d-b4a5-4e15-bfe7-4feb88f3432d",
+      "DeviceName": "devi.vanwoudenberg_AndroidEnterprise_12/4/2024_10:30 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "devi.vanwoudenberg@meerwaarde.nl",
+      "UserDisplayName": "devi.vanwoudenberg_AndroidEnterprise_12/4/2024_10:30 AM",
+      "LastSyncDateTime": "2026-03-28T04:26:38Z",
+      "EnrolledDateTime": "2024-12-04T10:30:47Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "e16f8b33-5170-4562-9609-4907341fddc7",
+      "DeviceName": "cherish.hellings_AndroidEnterprise_12/4/2024_2:30 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "cherish.hellings@meerwaarde.nl",
+      "UserDisplayName": "cherish.hellings_AndroidEnterprise_12/4/2024_2:30 PM",
+      "LastSyncDateTime": "2026-03-26T15:55:50Z",
+      "EnrolledDateTime": "2024-12-04T14:30:31Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "4289df2d-77cc-4d68-b2d4-41dd448edce7",
+      "DeviceName": "NB-MEE-2507B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.4349",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "c251c363-01d6-4097-869e-dd1afe6c5e93_Windows_7/16/2025_8:55 AM",
+      "LastSyncDateTime": "2025-07-16T09:28:55Z",
+      "EnrolledDateTime": "2025-07-16T07:47:51Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "556b5b2f-c8df-400a-9563-40535ce80c00",
+      "DeviceName": "NB-MEE-2507C",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.4351",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "871be170-d322-4ff3-a22f-6314f9bb9d6a_Windows_7/7/2025_12:46 PM",
+      "LastSyncDateTime": "2025-07-16T07:06:17Z",
+      "EnrolledDateTime": "2025-07-07T12:30:58Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "e74315d7-7315-4f72-b47c-3c293930686e",
+      "DeviceName": "eveline.vandam_AndroidEnterprise_12/4/2024_2:02 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "eveline.vandam@meerwaarde.nl",
+      "UserDisplayName": "eveline.vandam_AndroidEnterprise_12/4/2024_2:02 PM",
+      "LastSyncDateTime": "2026-03-28T08:13:44Z",
+      "EnrolledDateTime": "2024-12-04T14:02:52Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "7c910b3e-e5a5-44fc-b2ac-3735bac08e27",
+      "DeviceName": "tim.sebel_AndroidEnterprise_12/4/2024_10:30 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "tim.sebel@meerwaarde.nl",
+      "UserDisplayName": "tim.sebel_AndroidEnterprise_12/4/2024_10:30 AM",
+      "LastSyncDateTime": "2026-03-28T08:43:41Z",
+      "EnrolledDateTime": "2024-12-04T10:30:58Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "af5e1d2d-6190-4c1a-9c10-3550234acaf3",
+      "DeviceName": "NB-MEE-2507D",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.4351",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "b399c9ad-1095-4ac3-9c22-8f10cf97de19_Windows_7/7/2025_12:45 PM",
+      "LastSyncDateTime": "2025-07-16T07:04:38Z",
+      "EnrolledDateTime": "2025-07-07T12:39:03Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "66f57711-8768-42b1-ad65-2ee4ae892c11",
+      "DeviceName": "els.vanderjagt_AndroidEnterprise_12/4/2024_2:54 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "els.vanderjagt@meerwaarde.nl",
+      "UserDisplayName": "els.vanderjagt_AndroidEnterprise_12/4/2024_2:54 PM",
+      "LastSyncDateTime": "2026-03-28T08:20:39Z",
+      "EnrolledDateTime": "2024-12-04T14:54:06Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "5e03f91d-d188-4f9b-81f6-2cc85fa18298",
+      "DeviceName": "NB-MEE-2511A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "martine.heeremans@meerwaarde.nl",
+      "UserDisplayName": "d7bd30ac-166b-437c-ae8f-cbe75935bf8c_Windows_11/4/2025_10:49 AM",
+      "LastSyncDateTime": "2026-03-27T15:56:58Z",
+      "EnrolledDateTime": "2025-11-04T10:49:28Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G8 Notebook PC"
+    },
+    {
+      "Id": "ad96990b-076c-4739-b101-2c16c15e352a",
+      "DeviceName": "peter.wortel_AndroidEnterprise_12/4/2024_2:02 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "peter.wortel_AndroidEnterprise_12/4/2024_2:02 PM",
+      "LastSyncDateTime": "2025-12-29T13:31:09Z",
+      "EnrolledDateTime": "2024-12-04T14:02:52Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "d238d7cf-b563-4c1a-90a7-27738dc9b2bd",
+      "DeviceName": "inge.janssen_AndroidEnterprise_12/4/2024_2:30 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "inge.janssen@meerwaarde.nl",
+      "UserDisplayName": "inge.janssen_AndroidEnterprise_12/4/2024_2:30 PM",
+      "LastSyncDateTime": "2026-03-26T15:57:54Z",
+      "EnrolledDateTime": "2024-12-04T14:30:10Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "b1ccfb05-195d-4177-b38f-23e6e7858c66",
+      "DeviceName": "Laila.Ameziane_AndroidEnterprise_12/4/2024_1:31 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "Laila.Ameziane@meerwaarde.nl",
+      "UserDisplayName": "Laila.Ameziane_AndroidEnterprise_12/4/2024_1:31 PM",
+      "LastSyncDateTime": "2026-03-17T14:05:21Z",
+      "EnrolledDateTime": "2024-12-04T13:31:52Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "e0273cb2-7b41-4d5d-b8b2-1da373457aa0",
+      "DeviceName": "NB-MEE-2312A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.3476",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "d65589e3-fa44-40f2-b5cc-9dea011e90b7_Windows_12/22/2023_5:31 PM",
+      "LastSyncDateTime": "2026-03-25T19:21:47Z",
+      "EnrolledDateTime": "2023-12-22T16:54:24Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G9 Notebook PC"
+    },
+    {
+      "Id": "7085de0a-585e-4bc3-9b28-16c0d16adb4d",
+      "DeviceName": "SMWLT5CD2434NPG",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "sawinah.voortman@meerwaarde.nl",
+      "UserDisplayName": "146022e1-0144-4f66-8c4a-7b0594b63ebe_Windows_4/7/2023_7:50 AM",
+      "LastSyncDateTime": "2026-03-27T12:10:21Z",
+      "EnrolledDateTime": "2023-04-07T07:50:56Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G8 Notebook PC"
+    },
+    {
+      "Id": "1db3883c-5f28-4c48-9616-10c8dc643ff4",
+      "DeviceName": "NB-MEE-2412AD",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.4946",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "mariejose.keijman@meerwaarde.nl",
+      "UserDisplayName": "mariejose.keijman_Windows_12/10/2024_8:15 AM",
+      "LastSyncDateTime": "2026-03-26T02:39:59Z",
+      "EnrolledDateTime": "2024-12-10T08:15:20Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "1480ec6f-0f29-4679-b780-0d92a03220f4",
+      "DeviceName": "Staging_339aa295c85477ee_AndroidEnterprise_3/6/2025_12:06 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_339aa295c85477ee_AndroidEnterprise_3/6/2025_12:06 PM",
+      "LastSyncDateTime": "2026-03-27T23:39:08Z",
+      "EnrolledDateTime": "2025-03-06T12:06:54Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "7c443f1e-b1c8-4582-aa32-098c82379f66",
+      "DeviceName": "DT-MEE-2412A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "hans.louter@meerwaarde.nl",
+      "UserDisplayName": "hans.louter_Windows_12/12/2024_11:44 AM",
+      "LastSyncDateTime": "2026-03-28T07:32:02Z",
+      "EnrolledDateTime": "2024-12-12T11:43:34Z",
+      "Manufacturer": "HP",
+      "Model": "HP Pro Mini 400 G9 Desktop PC"
+    },
+    {
+      "Id": "e0a05604-e3d1-4f08-90c0-06eb0cbfe27a",
+      "DeviceName": "maud.tromp_AndroidEnterprise_11/26/2024_10:28 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "maud.tromp@meerwaarde.nl",
+      "UserDisplayName": "maud.tromp_AndroidEnterprise_11/26/2024_10:28 AM",
+      "LastSyncDateTime": "2026-03-14T08:24:25Z",
+      "EnrolledDateTime": "2024-11-26T10:28:33Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "a37ab65e-806d-42bd-b1de-015637a0cde3",
+      "DeviceName": "NB-MEE-2412AA",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "linda.steeman@meerwaarde.nl",
+      "UserDisplayName": "linda.steeman_Windows_12/9/2024_8:03 AM",
+      "LastSyncDateTime": "2026-03-27T11:35:46Z",
+      "EnrolledDateTime": "2024-12-09T08:03:33Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "a2401c67-edbf-491a-ad57-fda7bb60e450",
+      "DeviceName": "SMWLT5CD2457N3N",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "annemieke.gerrits@meerwaarde.nl",
+      "UserDisplayName": "d0e9bc19-2b90-4dd7-a953-cb1a9863d57a_Windows_3/5/2025_11:22 AM",
+      "LastSyncDateTime": "2026-03-25T13:42:08Z",
+      "EnrolledDateTime": "2025-03-05T11:22:06Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G8 Notebook PC"
+    },
+    {
+      "Id": "5deeacf4-7697-48bf-9132-f87ab608382c",
+      "DeviceName": "NB-MEE-2412U",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "yvonne.vandenberg@meerwaarde.nl",
+      "UserDisplayName": "b207bc1b-e693-4fc6-8b5c-6a3dfe5d0960_Windows_12/2/2024_1:50 PM",
+      "LastSyncDateTime": "2026-03-26T16:24:13Z",
+      "EnrolledDateTime": "2024-11-28T16:08:11Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "a311e84a-7a56-4612-93bf-ef4d60355acf",
+      "DeviceName": "NB-MEE-2411C",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7985",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "noa.janssen@meerwaarde.nl",
+      "UserDisplayName": "aazmee_Windows_9/12/2025_11:47 AM",
+      "LastSyncDateTime": "2026-03-27T15:02:45Z",
+      "EnrolledDateTime": "2025-09-12T11:47:48Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G10 Notebook PC"
+    },
+    {
+      "Id": "dd259c16-2d27-462e-937e-eb981882cb75",
+      "DeviceName": "NB-MEE-2501C",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "els.vanderjagt@meerwaarde.nl",
+      "UserDisplayName": "els.vanderjagt_Windows_2/12/2025_7:41 AM",
+      "LastSyncDateTime": "2026-03-26T18:00:38Z",
+      "EnrolledDateTime": "2025-02-12T07:41:16Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "4d71c9f3-7cc5-436f-aa3d-e9614c028302",
+      "DeviceName": "suzanne.vanvarik_AndroidEnterprise_12/4/2024_1:07 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "suzanne.vanvarik@meerwaarde.nl",
+      "UserDisplayName": "suzanne.vanvarik_AndroidEnterprise_12/4/2024_1:07 PM",
+      "LastSyncDateTime": "2026-03-27T12:58:34Z",
+      "EnrolledDateTime": "2024-12-04T13:07:47Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "398c1b3b-72ff-49b2-8e31-e47e710e9f9d",
+      "DeviceName": "SMWLT5CD3112G63",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "nancy.vandenburg@meerwaarde.nl",
+      "UserDisplayName": "146022e1-0144-4f66-8c4a-7b0594b63ebe_Windows_6/28/2023_8:49 AM",
+      "LastSyncDateTime": "2026-03-23T06:59:33Z",
+      "EnrolledDateTime": "2023-06-28T08:49:38Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G9 Notebook PC"
+    },
+    {
+      "Id": "abfd5266-2704-4aac-a7c4-dbdfd7579786",
+      "DeviceName": "ineke.koersvelt_AndroidEnterprise_12/4/2024_1:33 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "ineke.koersvelt_AndroidEnterprise_12/4/2024_1:33 PM",
+      "LastSyncDateTime": "2025-10-30T13:06:37Z",
+      "EnrolledDateTime": "2024-12-04T13:33:00Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "ce6731c6-43ca-424f-962f-d65352dba55f",
+      "DeviceName": "SMWLT5CD3112G5J",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "mariette.bouterse@meerwaarde.nl",
+      "UserDisplayName": "80f983ad-8710-42b0-9a63-af2b659ac9d1_Windows_7/5/2023_9:52 AM",
+      "LastSyncDateTime": "2026-03-24T13:18:33Z",
+      "EnrolledDateTime": "2023-07-05T09:52:41Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G9 Notebook PC"
+    },
+    {
+      "Id": "5b48ccbe-abf6-4dd4-bd02-ce9a9b00988e",
+      "DeviceName": "NB-MEE-2412K",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "merel.jansen@meerwaarde.nl",
+      "UserDisplayName": "merel.jansen_Windows_12/10/2024_11:11 AM",
+      "LastSyncDateTime": "2026-03-27T13:30:57Z",
+      "EnrolledDateTime": "2024-12-10T11:11:55Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "7de1c87f-d869-4da3-afa1-c508aa44acb2",
+      "DeviceName": "NB-MEE-2412W",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "lisa.debest@meerwaarde.nl",
+      "UserDisplayName": "lisa.debest_Windows_12/10/2024_9:45 AM",
+      "LastSyncDateTime": "2026-03-27T12:24:56Z",
+      "EnrolledDateTime": "2024-12-10T09:43:29Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "f1fd294f-d6fc-4681-a001-bd87f110754e",
+      "DeviceName": "SMWLT5CD3112G4R",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "mary.vanderdrift@meerwaarde.nl",
+      "UserDisplayName": "146022e1-0144-4f66-8c4a-7b0594b63ebe_Windows_6/28/2023_10:40 AM",
+      "LastSyncDateTime": "2026-03-26T15:12:49Z",
+      "EnrolledDateTime": "2023-06-28T10:40:13Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G9 Notebook PC"
+    },
+    {
+      "Id": "85cc3a30-4a8c-4dc0-893d-b896b2f3fd7c",
+      "DeviceName": "NB-MEE-2412AH",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "Nelleke.vanWonderen@meerwaarde.nl",
+      "UserDisplayName": "c93db1c4-2957-4cd5-908e-4f8667087911_Windows_12/2/2024_2:31 PM",
+      "LastSyncDateTime": "2026-03-25T13:30:06Z",
+      "EnrolledDateTime": "2024-11-28T16:08:11Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "0b1bfe8d-b9e3-4aca-b7d6-b513091a28ea",
+      "DeviceName": "joyce.vanbemmelen_AndroidEnterprise_12/4/2024_2:02 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "joyce.vanbemmelen@meerwaarde.nl",
+      "UserDisplayName": "joyce.vanbemmelen_AndroidEnterprise_12/4/2024_2:02 PM",
+      "LastSyncDateTime": "2026-03-28T07:16:57Z",
+      "EnrolledDateTime": "2024-12-04T14:02:59Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "1901e330-275f-42c7-b80d-b07cf4ff41cf",
+      "DeviceName": "Staging_34b7e55141323933_AndroidEnterprise_9/4/2025_12:35 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_34b7e55141323933_AndroidEnterprise_9/4/2025_12:35 PM",
+      "LastSyncDateTime": "2025-09-04T12:44:29Z",
+      "EnrolledDateTime": "2025-09-04T12:35:20Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "12babbfa-fdde-4fa5-b069-ab2756c3d333",
+      "DeviceName": "DT-MEE-2412E",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "ae94290a-9d67-4415-acd2-3bfb03f51b0e_Windows_12/18/2024_1:35 PM",
+      "LastSyncDateTime": "2026-03-26T09:06:05Z",
+      "EnrolledDateTime": "2024-11-28T15:59:00Z",
+      "Manufacturer": "HP",
+      "Model": "HP Pro Mini 400 G9 Desktop PC"
+    },
+    {
+      "Id": "c0bdc405-59b5-4cc5-bec8-a1af69f37f12",
+      "DeviceName": "sandy.frederiks_AndroidEnterprise_12/4/2024_1:32 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "sandy.frederiks@meerwaarde.nl",
+      "UserDisplayName": "sandy.frederiks_AndroidEnterprise_12/4/2024_1:32 PM",
+      "LastSyncDateTime": "2026-03-26T15:51:39Z",
+      "EnrolledDateTime": "2024-12-04T13:32:47Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "6bf90c19-31b2-4d82-93d7-a10bcf0151f3",
+      "DeviceName": "fleur.neeskens_AndroidEnterprise_12/4/2024_2:02 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "fleur.neeskens@meerwaarde.nl",
+      "UserDisplayName": "fleur.neeskens_AndroidEnterprise_12/4/2024_2:02 PM",
+      "LastSyncDateTime": "2025-10-20T11:28:29Z",
+      "EnrolledDateTime": "2024-12-04T14:02:41Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "d127d3f5-22a8-49c7-90ef-9c7058b4b055",
+      "DeviceName": "NB-MEE-2503D",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "fabian.vantol@meerwaarde.nl",
+      "UserDisplayName": "070e1f84-28cb-412f-a4b0-8760311a944e_Windows_3/5/2025_10:19 AM",
+      "LastSyncDateTime": "2026-03-27T15:59:36Z",
+      "EnrolledDateTime": "2025-03-05T09:43:40Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "1a6b21ef-7855-4686-a115-97a1d1c7a872",
+      "DeviceName": "NB-MEE-2411A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "maud.tromp@meerwaarde.nl",
+      "UserDisplayName": "maud.tromp_Windows_11/26/2024_9:57 AM",
+      "LastSyncDateTime": "2026-03-26T10:55:19Z",
+      "EnrolledDateTime": "2024-11-26T09:57:12Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G10 Notebook PC"
+    },
+    {
+      "Id": "6e3b91c5-2dce-494f-92bd-94213641ef72",
+      "DeviceName": "NB-MEE-2412S",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "chantal.slotemaker@meerwaarde.nl",
+      "UserDisplayName": "chantal.slotemaker_Windows_12/12/2024_10:05 AM",
+      "LastSyncDateTime": "2026-03-27T12:24:44Z",
+      "EnrolledDateTime": "2024-12-12T10:04:33Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "c1c1b1c0-f509-4e85-b1b4-8b07b9b975be",
+      "DeviceName": "desiree.vanderterp_AndroidEnterprise_12/4/2024_2:53 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "desiree.vanderterp_AndroidEnterprise_12/4/2024_2:53 PM",
+      "LastSyncDateTime": "2025-04-24T01:09:31Z",
+      "EnrolledDateTime": "2024-12-04T14:53:54Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "178c4b7c-cb36-443d-b2e1-81e1abb7ef7b",
+      "DeviceName": "NB-MEE-2412AQ",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "judy.deleeuw@meerwaarde.nl",
+      "UserDisplayName": "judy.deleeuw_Windows_12/10/2024_12:46 PM",
+      "LastSyncDateTime": "2026-03-27T15:13:00Z",
+      "EnrolledDateTime": "2024-12-10T12:43:52Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "93916d5e-78d7-448f-8559-7766b1454c90",
+      "DeviceName": "NB-MEE-2412T",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "sophie.hirs@meerwaarde.nl",
+      "UserDisplayName": "sophie.hirs_Windows_12/10/2024_12:46 PM",
+      "LastSyncDateTime": "2026-03-26T15:05:40Z",
+      "EnrolledDateTime": "2024-12-10T12:45:06Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "e25e2b22-ccc9-4e80-95d3-732358ccbcb8",
+      "DeviceName": "NB-MEE-2101E",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "ae4bb5a4-31d9-44d5-9d82-becc9befa8f3_Windows_12/18/2024_9:02 AM",
+      "LastSyncDateTime": "2026-03-27T08:22:45Z",
+      "EnrolledDateTime": "2024-12-18T08:09:25Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G7"
+    },
+    {
+      "Id": "6302b6c8-8b64-4c83-8dc0-713abeeea247",
+      "DeviceName": "DT-MEE-2412H",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.4652",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "1ff0b21e-7f07-471a-a9e7-c67fb179230a_Windows_12/18/2024_1:21 PM",
+      "LastSyncDateTime": "2025-11-24T23:52:17Z",
+      "EnrolledDateTime": "2024-11-28T15:59:00Z",
+      "Manufacturer": "HP",
+      "Model": "HP Pro Mini 400 G9 Desktop PC"
+    },
+    {
+      "Id": "879383bb-e1a1-4e89-9dc7-6d5b91727a8c",
+      "DeviceName": "jinan.raissouni_AndroidEnterprise_12/4/2024_10:59 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "jinan.raissouni@meerwaarde.nl",
+      "UserDisplayName": "jinan.raissouni_AndroidEnterprise_12/4/2024_10:59 AM",
+      "LastSyncDateTime": "2026-03-19T00:26:08Z",
+      "EnrolledDateTime": "2024-12-04T10:59:52Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "6d2e22d7-8afd-4a83-bed4-65e41336d053",
+      "DeviceName": "NB-MEE-2603C",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7392",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "993833e8-cfb7-452a-942b-3a075d5fda78_Windows_3/2/2026_1:32 PM",
+      "LastSyncDateTime": "2026-03-09T10:47:14Z",
+      "EnrolledDateTime": "2026-03-02T13:32:55Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "6d2b74db-f3e7-4341-b45b-61a05083ff2a",
+      "DeviceName": "betul.manisa_AndroidEnterprise_12/4/2024_1:07 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "betul.manisa@meerwaarde.nl",
+      "UserDisplayName": "betul.manisa_AndroidEnterprise_12/4/2024_1:07 PM",
+      "LastSyncDateTime": "2026-03-28T07:47:22Z",
+      "EnrolledDateTime": "2024-12-04T13:07:56Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "a54ab404-3a17-49ab-937f-59ea335a142a",
+      "DeviceName": "linda.steeman_AndroidEnterprise_12/4/2024_2:27 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "linda.steeman@meerwaarde.nl",
+      "UserDisplayName": "linda.steeman_AndroidEnterprise_12/4/2024_2:27 PM",
+      "LastSyncDateTime": "2026-03-28T09:01:27Z",
+      "EnrolledDateTime": "2024-12-04T14:27:22Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "7de30f55-af00-425d-b16f-5863d9409b08",
+      "DeviceName": "lisette.piepers_AndroidEnterprise_12/4/2024_1:32 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "lisette.piepers@meerwaarde.nl",
+      "UserDisplayName": "lisette.piepers_AndroidEnterprise_12/4/2024_1:32 PM",
+      "LastSyncDateTime": "2026-03-27T15:38:52Z",
+      "EnrolledDateTime": "2024-12-04T13:32:18Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "9cb8a44d-bbcd-459e-b7c8-54cbaccded05",
+      "DeviceName": "SMW-0F027ZG23093BF",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "bidi.stam@meerwaarde.nl",
+      "UserDisplayName": "146022e1-0144-4f66-8c4a-7b0594b63ebe_Windows_6/14/2023_8:09 AM",
+      "LastSyncDateTime": "2026-03-27T11:17:27Z",
+      "EnrolledDateTime": "2023-06-14T08:09:57Z",
+      "Manufacturer": "Microsoft Corporation",
+      "Model": "Surface Pro 9"
+    },
+    {
+      "Id": "1680f913-c46b-4f5b-8efc-5016c7a16275",
+      "DeviceName": "SMWLT5CD3112G4C",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "Friso.springintveld@meerwaarde.nl",
+      "UserDisplayName": "f006c0c9-a571-4ade-bce3-9aad990570f4_Windows_10/26/2023_8:47 AM",
+      "LastSyncDateTime": "2026-03-26T12:59:40Z",
+      "EnrolledDateTime": "2023-10-26T08:47:49Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G9 Notebook PC"
+    },
+    {
+      "Id": "5877d514-42e5-4e42-a90a-49a386d85ca4",
+      "DeviceName": "SMWLT5CD3112G1G",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "mark.ostendorf@meerwaarde.nl",
+      "UserDisplayName": "146022e1-0144-4f66-8c4a-7b0594b63ebe_Windows_6/28/2023_8:47 AM",
+      "LastSyncDateTime": "2026-03-26T16:03:23Z",
+      "EnrolledDateTime": "2023-06-28T08:47:50Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G9 Notebook PC"
+    },
+    {
+      "Id": "36d93a1e-d0e5-4dc8-a46b-47c383f2aa27",
+      "DeviceName": "SMWLT5CD309D2D6",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "cherish.hellings@meerwaarde.nl",
+      "UserDisplayName": "146022e1-0144-4f66-8c4a-7b0594b63ebe_Windows_5/1/2023_9:15 AM",
+      "LastSyncDateTime": "2026-03-26T13:57:45Z",
+      "EnrolledDateTime": "2023-05-01T09:15:11Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G9 Notebook PC"
+    },
+    {
+      "Id": "8a076513-3136-4ceb-a9be-40f272f64e8f",
+      "DeviceName": "karin.babeliowsky_AndroidEnterprise_12/4/2024_2:53 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "karin.babeliowsky@meerwaarde.nl",
+      "UserDisplayName": "karin.babeliowsky_AndroidEnterprise_12/4/2024_2:53 PM",
+      "LastSyncDateTime": "2025-12-13T05:09:27Z",
+      "EnrolledDateTime": "2024-12-04T14:53:28Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "e5727599-cc94-4b5d-a479-3c3bc2863454",
+      "DeviceName": "somaya.essannouni_AndroidEnterprise_12/4/2024_1:35 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "somaya.essannouni@meerwaarde.nl",
+      "UserDisplayName": "somaya.essannouni_AndroidEnterprise_12/4/2024_1:35 PM",
+      "LastSyncDateTime": "2026-03-28T01:39:40Z",
+      "EnrolledDateTime": "2024-12-04T13:35:04Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "f5fa8d96-da7d-4a08-aacf-365e2d0dfa77",
+      "DeviceName": "NB-MEE-2101G",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7462",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "6b64514e-1eb3-4506-9191-d9621acfcedc_Windows_12/13/2024_11:12 AM",
+      "LastSyncDateTime": "2026-03-12T08:14:51Z",
+      "EnrolledDateTime": "2024-12-13T10:25:48Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G7"
+    },
+    {
+      "Id": "124f663e-9b6e-42eb-805d-35496d2fff92",
+      "DeviceName": "NB-MEE-2503A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "Jareth.westerman@meerwaarde.nl",
+      "UserDisplayName": "1bf1a036-c8d7-4367-8aac-389f2b4ce590_Windows_3/5/2025_10:41 AM",
+      "LastSyncDateTime": "2026-03-27T14:17:26Z",
+      "EnrolledDateTime": "2025-03-05T09:43:40Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "add6e869-b570-44fb-947a-2e7c3b2f5fd5",
+      "DeviceName": "NB-MEE-2412AJ",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "marjorie.mesman@meerwaarde.nl",
+      "UserDisplayName": "marjorie.mesman_Windows_12/11/2024_9:10 AM",
+      "LastSyncDateTime": "2026-03-27T07:38:22Z",
+      "EnrolledDateTime": "2024-12-11T09:10:55Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "18566619-b102-475b-8d5c-2c4333c1aa47",
+      "DeviceName": "NB-MEE-2412AM",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26200.7922",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "212b4f30-8c1e-4b9d-b3ad-a21c4dedee66_Windows_3/3/2026_1:43 PM",
+      "LastSyncDateTime": "2026-03-03T13:46:22Z",
+      "EnrolledDateTime": "2026-03-03T13:43:08Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "21600f36-0261-4497-ab31-27b7fd159697",
+      "DeviceName": "Nelleke.vanWonderen_AndroidEnterprise_12/4/2024_2:31 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "Nelleke.vanWonderen@meerwaarde.nl",
+      "UserDisplayName": "Nelleke.vanWonderen_AndroidEnterprise_12/4/2024_2:31 PM",
+      "LastSyncDateTime": "2026-02-03T10:15:06Z",
+      "EnrolledDateTime": "2024-12-04T14:31:30Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "aa10a1bc-cf1c-4f05-8441-2706193e9742",
+      "DeviceName": "NB-MEE-2507E",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.4351",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "fb06a43b-d09d-43bc-8573-e4bfc20a57c6_Windows_7/7/2025_12:51 PM",
+      "LastSyncDateTime": "2025-07-15T23:10:01Z",
+      "EnrolledDateTime": "2025-07-07T12:46:12Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "a5219191-276c-4e71-b870-1efb9aadaa2d",
+      "DeviceName": "SMWLT5CD3112G4B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "simone.duin@meerwaarde.nl",
+      "UserDisplayName": "146022e1-0144-4f66-8c4a-7b0594b63ebe_Windows_6/28/2023_9:28 AM",
+      "LastSyncDateTime": "2026-03-26T15:54:47Z",
+      "EnrolledDateTime": "2023-06-28T09:28:14Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G9 Notebook PC"
+    },
+    {
+      "Id": "b2b06b3e-4c4f-4090-949d-196715f24b68",
+      "DeviceName": "Larissa.Wladimiroff_AndroidEnterprise_1/29/2026_4:31 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "Larissa.Wladimiroff@meerwaarde.nl",
+      "UserDisplayName": "Larissa.Wladimiroff_AndroidEnterprise_1/29/2026_4:31 PM",
+      "LastSyncDateTime": "2026-03-28T06:20:41Z",
+      "EnrolledDateTime": "2026-01-29T16:31:44Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "f69ae60d-dca9-4219-b8dc-1734e15f9e47",
+      "DeviceName": "baudien.ekkel_AndroidEnterprise_7/3/2025_9:18 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "baudien.ekkel@meerwaarde.nl",
+      "UserDisplayName": "baudien.ekkel_AndroidEnterprise_7/3/2025_9:18 AM",
+      "LastSyncDateTime": "2026-03-27T14:56:33Z",
+      "EnrolledDateTime": "2025-07-03T09:18:34Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "32613154-f907-4df6-876c-13419e49a4a1",
+      "DeviceName": "NB-MEE-2412AG",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "nina.liang@meerwaarde.nl",
+      "UserDisplayName": "nina.liang_Windows_12/12/2024_7:56 AM",
+      "LastSyncDateTime": "2026-03-26T14:49:34Z",
+      "EnrolledDateTime": "2024-12-12T07:56:51Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "3c7f4462-374f-4a9c-8177-0e201f8746f0",
+      "DeviceName": "DT-MEE-2412C",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.1150",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "9cf9976e-4b0d-49e5-91ba-465649306dbe_Windows_12/18/2024_2:13 PM",
+      "LastSyncDateTime": "2026-03-28T08:31:25Z",
+      "EnrolledDateTime": "2024-11-28T15:58:59Z",
+      "Manufacturer": "HP",
+      "Model": "HP Pro Mini 400 G9 Desktop PC"
+    },
+    {
+      "Id": "dacd570d-385a-4d65-b78d-0cafd5cc3415",
+      "DeviceName": "angelique.koenders_AndroidEnterprise_12/4/2024_8:56 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "angelique.koenders@meerwaarde.nl",
+      "UserDisplayName": "angelique.koenders_AndroidEnterprise_12/4/2024_8:56 AM",
+      "LastSyncDateTime": "2026-03-28T03:34:03Z",
+      "EnrolledDateTime": "2024-12-04T08:56:22Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "09d28a35-ed34-4efa-a3ab-0a2f9eb525ba",
+      "DeviceName": "magne.dekreek_AndroidEnterprise_12/4/2024_2:02 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "magne.dekreek@meerwaarde.nl",
+      "UserDisplayName": "magne.dekreek_AndroidEnterprise_12/4/2024_2:02 PM",
+      "LastSyncDateTime": "2026-03-13T15:12:59Z",
+      "EnrolledDateTime": "2024-12-04T14:02:42Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "521a8669-d87d-4427-9da2-0861d10198e6",
+      "DeviceName": "sophie.hirs_AndroidEnterprise_12/4/2024_2:02 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "sophie.hirs@meerwaarde.nl",
+      "UserDisplayName": "sophie.hirs_AndroidEnterprise_12/4/2024_2:02 PM",
+      "LastSyncDateTime": "2026-03-26T16:21:01Z",
+      "EnrolledDateTime": "2024-12-04T14:02:40Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "8f4bae45-d518-4488-8a12-02183217782e",
+      "DeviceName": "angela.nicolai_AndroidEnterprise_12/4/2024_11:00 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "angela.nicolai@meerwaarde.nl",
+      "UserDisplayName": "angela.nicolai_AndroidEnterprise_12/4/2024_11:00 AM",
+      "LastSyncDateTime": "2026-03-28T10:02:35Z",
+      "EnrolledDateTime": "2024-12-04T11:00:00Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "dfb80362-4957-49dc-9f83-ffd859101d32",
+      "DeviceName": "NB-MEE-2101D",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26200.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "468e328c-942c-409c-ae5b-9f822d7a3533_Windows_12/18/2024_11:10 AM",
+      "LastSyncDateTime": "2026-03-27T08:27:23Z",
+      "EnrolledDateTime": "2024-12-18T07:21:38Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G7"
+    },
+    {
+      "Id": "3a00d612-7712-4347-83b5-fbfa2ca5f8ba",
+      "DeviceName": "fatima.eloche_AndroidEnterprise_12/4/2024_2:53 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "fatima.eloche@meerwaarde.nl",
+      "UserDisplayName": "fatima.eloche_AndroidEnterprise_12/4/2024_2:53 PM",
+      "LastSyncDateTime": "2026-03-28T05:11:23Z",
+      "EnrolledDateTime": "2024-12-04T14:53:58Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "c3a71bdc-a26e-4214-a2a2-f57b65492d3c",
+      "DeviceName": "NB-MEE-2501F",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "Gaby.Stoop@meerwaarde.nl",
+      "UserDisplayName": "b933e764-3180-41ef-9f4a-4e9a1ffed255_Windows_7/18/2025_1:45 PM",
+      "LastSyncDateTime": "2026-03-27T10:52:13Z",
+      "EnrolledDateTime": "2025-07-18T13:45:04Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "e7d0e181-ed69-44ec-8bf0-f29aae22f0ef",
+      "DeviceName": "Staging_326174a82f189977_AndroidEnterprise_4/28/2025_12:45 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_326174a82f189977_AndroidEnterprise_4/28/2025_12:45 PM",
+      "LastSyncDateTime": "2025-05-01T13:18:01Z",
+      "EnrolledDateTime": "2025-04-28T12:45:07Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "67a61483-28ca-4f81-b7b2-ed6265c0826e",
+      "DeviceName": "roxanna.booms_AndroidEnterprise_12/4/2024_11:24 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "roxanna.booms@meerwaarde.nl",
+      "UserDisplayName": "roxanna.booms_AndroidEnterprise_12/4/2024_11:24 AM",
+      "LastSyncDateTime": "2026-03-27T20:47:05Z",
+      "EnrolledDateTime": "2024-12-04T11:24:32Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "260fb594-ed3f-4194-bc3e-eb315916c766",
+      "DeviceName": "NB-MEE-2412AN",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "devi.vanwoudenberg@meerwaarde.nl",
+      "UserDisplayName": "32f5de25-2b91-4fd2-a0bb-5595f7d6abfd_Windows_12/3/2024_9:32 AM",
+      "LastSyncDateTime": "2026-03-27T11:51:40Z",
+      "EnrolledDateTime": "2024-11-28T16:08:11Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "4d0e8b42-6106-4353-b4b2-e8979d2da27e",
+      "DeviceName": "lotte.verhofstad_AndroidEnterprise_12/4/2024_10:59 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "lotte.verhofstad@meerwaarde.nl",
+      "UserDisplayName": "lotte.verhofstad_AndroidEnterprise_12/4/2024_10:59 AM",
+      "LastSyncDateTime": "2026-03-26T13:14:47Z",
+      "EnrolledDateTime": "2024-12-04T10:59:20Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "1660a09d-eff2-4b14-8a47-e3a0c8c2426f",
+      "DeviceName": "natasja.lie_AndroidEnterprise_5/6/2025_12:14 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "natasja.lie@meerwaarde.nl",
+      "UserDisplayName": "natasja.lie_AndroidEnterprise_5/6/2025_12:14 PM",
+      "LastSyncDateTime": "2026-02-19T05:34:15Z",
+      "EnrolledDateTime": "2025-05-06T12:14:44Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "8387eded-3919-4064-bd8a-dec0506157b9",
+      "DeviceName": "ellen.kieftenbeld_AndroidEnterprise_11/26/2024_8:46 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "ellen.kieftenbeld@meerwaarde.nl",
+      "UserDisplayName": "ellen.kieftenbeld_AndroidEnterprise_11/26/2024_8:46 AM",
+      "LastSyncDateTime": "2026-03-27T18:58:03Z",
+      "EnrolledDateTime": "2024-11-26T08:46:47Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "8016378f-c1a4-4f81-b12e-d6e4ad8a0e1a",
+      "DeviceName": "wendy.amsing_AndroidEnterprise_12/4/2024_2:53 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "wendy.amsing@meerwaarde.nl",
+      "UserDisplayName": "wendy.amsing_AndroidEnterprise_12/4/2024_2:53 PM",
+      "LastSyncDateTime": "2026-03-28T09:32:29Z",
+      "EnrolledDateTime": "2024-12-04T14:53:27Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "936ea030-1cb6-47a8-be5b-d37c0a94c99d",
+      "DeviceName": "NB-MEE-2501J",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7628",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "chamira.breslau@meerwaarde.nl",
+      "UserDisplayName": "dc915fc7-afd5-42cb-b2c0-053ddf74dd77_Windows_12/23/2024_3:50 PM",
+      "LastSyncDateTime": "2026-03-27T14:44:40Z",
+      "EnrolledDateTime": "2024-12-23T15:09:10Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "35deeab1-897b-4aa7-9415-cd5badb6bbf6",
+      "DeviceName": "Staging_3bc8b01212c16cd4_AndroidEnterprise_5/1/2025_1:40 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_3bc8b01212c16cd4_AndroidEnterprise_5/1/2025_1:40 PM",
+      "LastSyncDateTime": "2025-05-06T13:04:19Z",
+      "EnrolledDateTime": "2025-05-01T13:40:52Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "e67e989c-2aa8-40b8-8df7-ca1f41c382be",
+      "DeviceName": "merel.jansen_AndroidEnterprise_12/4/2024_2:02 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "merel.jansen@meerwaarde.nl",
+      "UserDisplayName": "merel.jansen_AndroidEnterprise_12/4/2024_2:02 PM",
+      "LastSyncDateTime": "2026-03-27T13:44:29Z",
+      "EnrolledDateTime": "2024-12-04T14:02:37Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "e8e0d3c9-2dd2-47b9-8665-c3377fa5d041",
+      "DeviceName": "NB-MEE-2412AE",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "kavindra.richards@meerwaarde.nl",
+      "UserDisplayName": "kavindra.richards_Windows_12/10/2024_9:40 AM",
+      "LastSyncDateTime": "2026-03-25T10:57:32Z",
+      "EnrolledDateTime": "2024-12-10T09:33:18Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "94271ade-0c97-4f23-a072-c18636bc1c22",
+      "DeviceName": "NB-MEE-2412I",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "sandy.frederiks@meerwaarde.nl",
+      "UserDisplayName": "sandy.frederiks_Windows_2/19/2026_8:03 AM",
+      "LastSyncDateTime": "2026-03-27T15:44:51Z",
+      "EnrolledDateTime": "2026-02-19T08:03:47Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "198feb95-e936-47ae-8297-baefbc1f770b",
+      "DeviceName": "stien.derooij_AndroidEnterprise_12/4/2024_1:08 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "stien.derooij@meerwaarde.nl",
+      "UserDisplayName": "stien.derooij_AndroidEnterprise_12/4/2024_1:08 PM",
+      "LastSyncDateTime": "2025-07-24T08:45:22Z",
+      "EnrolledDateTime": "2024-12-04T13:08:01Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "60c625a1-a344-4bb8-bc91-b89534d2df82",
+      "DeviceName": "NB-MEE-2503C",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "sandra.spoelstra@meerwaarde.nl",
+      "UserDisplayName": "c1e47f04-82d4-4989-baf6-ad12a5a59f33_Windows_8/12/2025_2:58 PM",
+      "LastSyncDateTime": "2026-03-26T09:04:11Z",
+      "EnrolledDateTime": "2025-08-12T14:58:06Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "1b6097af-0823-44c1-aafc-b5480d1ada75",
+      "DeviceName": "fabian.vantol_AndroidEnterprise_12/10/2024_9:39 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "fabian.vantol@meerwaarde.nl",
+      "UserDisplayName": "fabian.vantol_AndroidEnterprise_12/10/2024_9:39 AM",
+      "LastSyncDateTime": "2026-03-27T23:56:25Z",
+      "EnrolledDateTime": "2024-12-10T09:39:49Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "0b19d2a3-6d05-4597-9982-b253ea9896cb",
+      "DeviceName": "NB-MEE-2412V",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7628",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "hyan.taleb@meerwaarde.nl",
+      "UserDisplayName": "hyan.taleb_Windows_12/12/2024_11:04 AM",
+      "LastSyncDateTime": "2026-03-25T16:02:16Z",
+      "EnrolledDateTime": "2024-12-12T11:03:02Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "481c6276-15bf-4a31-9418-ae12ef1ead6e",
+      "DeviceName": "david.oldenburg_AndroidEnterprise_12/4/2024_3:07 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "david.oldenburg@meerwaarde.nl",
+      "UserDisplayName": "david.oldenburg_AndroidEnterprise_12/4/2024_3:07 PM",
+      "LastSyncDateTime": "2026-03-27T14:54:51Z",
+      "EnrolledDateTime": "2024-12-04T15:07:12Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "0e4ec10a-7f30-498f-8789-a9f29641fe0e",
+      "DeviceName": "SMW-WI0012",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "fatima.elidrissi@meerwaarde.nl",
+      "UserDisplayName": "f2889274-019c-4a81-bdd5-5464508edd59_Windows_9/27/2022_9:32 AM",
+      "LastSyncDateTime": "2026-03-26T12:34:06Z",
+      "EnrolledDateTime": "2022-09-27T09:32:08Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G8 Notebook PC"
+    },
+    {
+      "Id": "9aac5eb4-f379-4c76-b727-a11079e927b3",
+      "DeviceName": "NB-MEE-2412R",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "josefine.scheepmaker@meerwaarde.nl",
+      "UserDisplayName": "a770bec3-214e-430f-90af-2526f5b21d3b_Windows_12/2/2024_12:30 PM",
+      "LastSyncDateTime": "2026-03-26T09:09:48Z",
+      "EnrolledDateTime": "2024-11-28T16:08:13Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "5bee54d9-ba95-40f8-bd72-9fb819d230e1",
+      "DeviceName": "NB-MEE-2412AL",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7628",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "rachelle.paalvast@meerwaarde.nl",
+      "UserDisplayName": "23fc53d4-1735-4324-a9b9-bcd8dc8644ea_Windows_7/18/2025_1:56 PM",
+      "LastSyncDateTime": "2026-03-25T14:32:02Z",
+      "EnrolledDateTime": "2025-07-18T13:56:37Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "8cbe71df-e44b-4fea-81ca-98896a6be2c7",
+      "DeviceName": "Staging_3d97ad7336d90f49_AndroidEnterprise_10/23/2025_2:08 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_3d97ad7336d90f49_AndroidEnterprise_10/23/2025_2:08 PM",
+      "LastSyncDateTime": "2026-03-28T06:08:04Z",
+      "EnrolledDateTime": "2025-10-23T14:08:45Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "54a9cdbd-3518-4695-b772-932f496e577f",
+      "DeviceName": "Staging_30bc5c3fa124e129_AndroidEnterprise_10/23/2025_1:25 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_30bc5c3fa124e129_AndroidEnterprise_10/23/2025_1:25 PM",
+      "LastSyncDateTime": "2025-11-27T11:10:12Z",
+      "EnrolledDateTime": "2025-10-23T13:25:05Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "0c3fcf61-b5d1-4ad4-ae17-84273dd8ae5d",
+      "DeviceName": "NB-MEE-PROBE",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "aazmee@meerwaarde.onmicrosoft.com",
+      "UserDisplayName": "aazmee_Windows_2/12/2025_9:22 AM",
+      "LastSyncDateTime": "2026-03-28T03:40:58Z",
+      "EnrolledDateTime": "2025-02-12T09:01:57Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G8 Notebook PC"
+    },
+    {
+      "Id": "b39ca0bf-c653-415e-97d4-7ca3acc04bca",
+      "DeviceName": "judy.deleeuw_AndroidEnterprise_12/4/2024_1:35 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "judy.deleeuw@meerwaarde.nl",
+      "UserDisplayName": "judy.deleeuw_AndroidEnterprise_12/4/2024_1:35 PM",
+      "LastSyncDateTime": "2025-10-01T13:35:25Z",
+      "EnrolledDateTime": "2024-12-04T13:35:58Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "4c96f016-33a2-4e3a-bcde-79d2fb40af5e",
+      "DeviceName": "SMWLT5CD2457MJW",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "khadija.mallouk@meerwaarde.nl",
+      "UserDisplayName": "146022e1-0144-4f66-8c4a-7b0594b63ebe_Windows_2/6/2023_9:45 AM",
+      "LastSyncDateTime": "2026-03-25T15:30:19Z",
+      "EnrolledDateTime": "2023-02-06T09:45:50Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G8 Notebook PC"
+    },
+    {
+      "Id": "f2c8d918-fd76-4963-afc5-74fc148740c9",
+      "DeviceName": "DT-MEE-2412F",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "5ee9d835-4a53-4427-a488-dddc770df27a_Windows_12/18/2024_12:45 PM",
+      "LastSyncDateTime": "2026-03-04T10:55:26Z",
+      "EnrolledDateTime": "2024-11-28T15:59:00Z",
+      "Manufacturer": "HP",
+      "Model": "HP Pro Mini 400 G9 Desktop PC"
+    },
+    {
+      "Id": "1b6b4e6d-ac2d-463f-bddd-7318517b6401",
+      "DeviceName": "Staging_3c5c9f080d798e58_AndroidEnterprise_7/15/2025_12:22 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_3c5c9f080d798e58_AndroidEnterprise_7/15/2025_12:22 PM",
+      "LastSyncDateTime": "2025-08-14T13:14:03Z",
+      "EnrolledDateTime": "2025-07-15T12:22:40Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "d33669eb-f37d-40c2-b6ae-6fe7428a88c9",
+      "DeviceName": "Kim.aukema_AndroidEnterprise_7/3/2025_8:43 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Kim.aukema_AndroidEnterprise_7/3/2025_8:43 AM",
+      "LastSyncDateTime": "2025-09-09T11:37:55Z",
+      "EnrolledDateTime": "2025-07-03T08:43:38Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "08a1248c-c6ae-4468-aa3d-69f01ba37e08",
+      "DeviceName": "Staging_361c08b9193c56f2_AndroidEnterprise_7/24/2025_8:42 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_361c08b9193c56f2_AndroidEnterprise_7/24/2025_8:42 AM",
+      "LastSyncDateTime": "2026-03-28T07:42:28Z",
+      "EnrolledDateTime": "2025-07-24T08:42:22Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "ac37e6e6-18ae-4938-bbfb-6465d93f3682",
+      "DeviceName": "Staging_3d858f61f9b183e4_AndroidEnterprise_4/28/2025_1:16 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_3d858f61f9b183e4_AndroidEnterprise_4/28/2025_1:16 PM",
+      "LastSyncDateTime": "2025-04-29T12:51:02Z",
+      "EnrolledDateTime": "2025-04-28T13:16:39Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "ff5535c5-5f73-4bb8-bdb8-5be121966036",
+      "DeviceName": "Staging_3f1e2c14104d3ac8_AndroidEnterprise_2/12/2026_10:37 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_3f1e2c14104d3ac8_AndroidEnterprise_2/12/2026_10:37 AM",
+      "LastSyncDateTime": "2026-03-05T09:51:02Z",
+      "EnrolledDateTime": "2026-02-12T10:37:10Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "a65c7322-b771-49b9-8022-5858f8be6508",
+      "DeviceName": "Friso.springintveld_AndroidEnterprise_12/4/2024_1:35 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "Friso.springintveld@meerwaarde.nl",
+      "UserDisplayName": "Friso.springintveld_AndroidEnterprise_12/4/2024_1:35 PM",
+      "LastSyncDateTime": "2026-03-27T09:41:01Z",
+      "EnrolledDateTime": "2024-12-04T13:35:57Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "dd8dca9f-3d15-43bb-9e4d-5230f2315ea9",
+      "DeviceName": "NB-MEE-2412X",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.4946",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "riguillo.terhaar@meerwaarde.nl",
+      "UserDisplayName": "d07e1cbc-b6bc-4c5c-8738-8563d0adf825_Windows_12/2/2024_1:50 PM",
+      "LastSyncDateTime": "2026-03-24T18:42:00Z",
+      "EnrolledDateTime": "2024-11-28T16:08:11Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "1cac0c79-76a8-451b-b461-4d7f331675bb",
+      "DeviceName": "NB-MEE-2412P",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.6901",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "jinan.raissouni@meerwaarde.nl",
+      "UserDisplayName": "jinan.raissouni_Windows_12/12/2024_1:33 PM",
+      "LastSyncDateTime": "2025-12-18T08:09:32Z",
+      "EnrolledDateTime": "2024-12-12T13:33:48Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "b948181c-1b8f-4492-afa8-482a03434727",
+      "DeviceName": "annette.vangroen_AndroidEnterprise_12/4/2024_10:34 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "annette.vangroen@meerwaarde.nl",
+      "UserDisplayName": "annette.vangroen_AndroidEnterprise_12/4/2024_10:34 AM",
+      "LastSyncDateTime": "2026-03-28T06:25:28Z",
+      "EnrolledDateTime": "2024-12-04T10:34:30Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "565d7d95-cd60-4963-b9bb-40a9cf798f37",
+      "DeviceName": "NB-MEE-2603D",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26200.7462",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "7f5152ea-fa7f-442d-8ebe-99642c24873e_Windows_3/2/2026_1:22 PM",
+      "LastSyncDateTime": "2026-03-02T15:38:54Z",
+      "EnrolledDateTime": "2026-03-02T13:22:05Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G9 Notebook PC"
+    },
+    {
+      "Id": "f2358d7c-31ae-4240-b5b3-3c005a4fa8f7",
+      "DeviceName": "NB-MEE-2412F",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "claudia.boelee@meerwaarde.nl",
+      "UserDisplayName": "claudia.boelee_Windows_12/10/2024_10:45 AM",
+      "LastSyncDateTime": "2026-02-24T09:17:18Z",
+      "EnrolledDateTime": "2024-12-10T10:41:08Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "22fb12c7-177c-44f1-a2ee-364ccbd0b66f",
+      "DeviceName": "simone.duin_AndroidEnterprise_12/4/2024_2:27 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "simone.duin@meerwaarde.nl",
+      "UserDisplayName": "simone.duin_AndroidEnterprise_12/4/2024_2:27 PM",
+      "LastSyncDateTime": "2026-03-26T17:17:17Z",
+      "EnrolledDateTime": "2024-12-04T14:27:22Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "9e22892c-0670-4a03-8ece-3003e2b47c77",
+      "DeviceName": "NB-MEE-2412AO",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "daniel.siwpersad@meerwaarde.nl",
+      "UserDisplayName": "daniel.siwpersad_Windows_12/18/2024_9:56 AM",
+      "LastSyncDateTime": "2026-03-27T12:14:44Z",
+      "EnrolledDateTime": "2024-12-18T09:56:00Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "326ffc18-7f14-4920-97b7-2d9af01c358a",
+      "DeviceName": "sandra.spoelstra_AndroidEnterprise_12/4/2024_2:53 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "sandra.spoelstra@meerwaarde.nl",
+      "UserDisplayName": "sandra.spoelstra_AndroidEnterprise_12/4/2024_2:53 PM",
+      "LastSyncDateTime": "2026-03-28T06:45:54Z",
+      "EnrolledDateTime": "2024-12-04T14:53:29Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "b60b3926-b5a9-41e1-8316-27fcb77ce418",
+      "DeviceName": "SMWLT5CD2457N09",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "aukje.jonkhout@meerwaarde.nl",
+      "UserDisplayName": "146022e1-0144-4f66-8c4a-7b0594b63ebe_Windows_2/6/2023_3:10 PM",
+      "LastSyncDateTime": "2026-03-26T08:35:57Z",
+      "EnrolledDateTime": "2023-02-06T15:10:46Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G8 Notebook PC"
+    },
+    {
+      "Id": "03996ce8-eda6-4cb2-8e43-20c2ca05854c",
+      "DeviceName": "SMWLT5CD3112G6F",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "ilona.vanes@meerwaarde.nl",
+      "UserDisplayName": "146022e1-0144-4f66-8c4a-7b0594b63ebe_Windows_6/29/2023_7:25 AM",
+      "LastSyncDateTime": "2026-03-26T10:07:48Z",
+      "EnrolledDateTime": "2023-06-29T07:25:50Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G9 Notebook PC"
+    },
+    {
+      "Id": "0d0d6cd9-a9cc-4a84-b3c5-1ad3d67cd57f",
+      "DeviceName": "bart.roest_AndroidEnterprise_11/6/2025_3:19 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "3b8b5b57debd42d3a19627025bbaf4d1bart.roest@meerwaarde.nl",
+      "UserDisplayName": "bart.roest_AndroidEnterprise_11/6/2025_3:19 PM",
+      "LastSyncDateTime": "2026-01-23T12:19:28Z",
+      "EnrolledDateTime": "2025-11-06T15:19:55Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "0ff30bc5-e363-4da5-9063-16a1a31b915a",
+      "DeviceName": "Staging_33975bcd67941471_AndroidEnterprise_4/29/2025_1:05 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_33975bcd67941471_AndroidEnterprise_4/29/2025_1:05 PM",
+      "LastSyncDateTime": "2025-05-19T12:14:29Z",
+      "EnrolledDateTime": "2025-04-29T13:05:16Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "a76ff957-6a07-4107-9dde-0f05be6e5646",
+      "DeviceName": "DT-MEE-2412D",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "6f433753-8674-474b-859d-073713d693f6_Windows_12/18/2024_12:57 PM",
+      "LastSyncDateTime": "2026-03-27T15:16:08Z",
+      "EnrolledDateTime": "2024-11-28T15:58:59Z",
+      "Manufacturer": "HP",
+      "Model": "HP Pro Mini 400 G9 Desktop PC"
+    },
+    {
+      "Id": "39a369b7-62db-4340-b833-0ad8c7dd5de8",
+      "DeviceName": "serena.blank_AndroidEnterprise_11/26/2024_9:32 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "serena.blank@meerwaarde.nl",
+      "UserDisplayName": "serena.blank_AndroidEnterprise_11/26/2024_9:32 AM",
+      "LastSyncDateTime": "2025-10-05T08:52:35Z",
+      "EnrolledDateTime": "2024-11-26T09:32:21Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "264acd70-641a-4b41-bd99-094546d6d0f5",
+      "DeviceName": "Jareth.westerman_AndroidEnterprise_5/1/2025_9:27 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "Jareth.westerman@meerwaarde.nl",
+      "UserDisplayName": "Jareth.westerman_AndroidEnterprise_5/1/2025_9:27 AM",
+      "LastSyncDateTime": "2026-03-28T07:15:02Z",
+      "EnrolledDateTime": "2025-05-01T09:27:09Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "5b39eabd-fa67-441c-8742-01cc0ecafe62",
+      "DeviceName": "bidi.stam_AndroidEnterprise_12/4/2024_11:11 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "bidi.stam@meerwaarde.nl",
+      "UserDisplayName": "bidi.stam_AndroidEnterprise_12/4/2024_11:11 AM",
+      "LastSyncDateTime": "2026-03-26T15:54:52Z",
+      "EnrolledDateTime": "2024-12-04T11:11:40Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "c4b1d7e2-79a7-4901-8971-fde6291b4f6a",
+      "DeviceName": "NB-MEE-2501G",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "angela.nicolai@meerwaarde.nl",
+      "UserDisplayName": "angela.nicolai_Windows_10/20/2025_2:02 PM",
+      "LastSyncDateTime": "2026-03-26T12:19:42Z",
+      "EnrolledDateTime": "2025-10-20T14:02:41Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "71651e04-4ed5-465e-b51d-f89df7ac095e",
+      "DeviceName": "NB-MEE-2411E",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "serena.blank@meerwaarde.nl",
+      "UserDisplayName": "186b066d-134c-41b5-9a8e-68c6f3163b18_Windows_5/27/2025_1:58 PM",
+      "LastSyncDateTime": "2026-03-25T16:21:10Z",
+      "EnrolledDateTime": "2025-05-27T11:40:27Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G10 Notebook PC"
+    },
+    {
+      "Id": "8aa26e33-c518-4724-a95a-f2e4b5fa38f9",
+      "DeviceName": "juliette.jansen_AndroidEnterprise_11/27/2024_9:10 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "juliette.jansen@meerwaarde.nl",
+      "UserDisplayName": "juliette.jansen_AndroidEnterprise_11/27/2024_9:10 AM",
+      "LastSyncDateTime": "2026-03-28T06:57:30Z",
+      "EnrolledDateTime": "2024-11-27T09:10:58Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "abba79a2-b82b-4fa5-89c6-ed2cad8bcec5",
+      "DeviceName": "NB-MEE-2412AI",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "wendy.amsing@meerwaarde.nl",
+      "UserDisplayName": "wendy.amsing_Windows_4/3/2025_10:41 AM",
+      "LastSyncDateTime": "2026-03-27T18:27:14Z",
+      "EnrolledDateTime": "2025-04-03T10:41:29Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "d38225de-9708-4f0a-a245-e8b5ae604ad6",
+      "DeviceName": "daniel.siwpersad_AndroidEnterprise_12/4/2024_2:53 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "daniel.siwpersad@meerwaarde.nl",
+      "UserDisplayName": "daniel.siwpersad_AndroidEnterprise_12/4/2024_2:53 PM",
+      "LastSyncDateTime": "2026-03-28T07:47:37Z",
+      "EnrolledDateTime": "2024-12-04T14:53:30Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "74823d35-f23f-4a69-a776-e319afae0dc8",
+      "DeviceName": "Staging_3bac8155a61cc2fc_AndroidEnterprise_10/2/2025_10:44 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_3bac8155a61cc2fc_AndroidEnterprise_10/2/2025_10:44 AM",
+      "LastSyncDateTime": "2025-10-30T14:17:10Z",
+      "EnrolledDateTime": "2025-10-02T10:44:59Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "541ec2d6-1c59-4970-89f2-d9e73eafe20e",
+      "DeviceName": "SMWLT5CD3173Y6P",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "roxanna.booms@meerwaarde.nl",
+      "UserDisplayName": "146022e1-0144-4f66-8c4a-7b0594b63ebe_Windows_5/23/2023_11:54 AM",
+      "LastSyncDateTime": "2026-03-26T17:26:11Z",
+      "EnrolledDateTime": "2023-05-23T11:54:51Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G9 Notebook PC"
+    },
+    {
+      "Id": "f182ea1a-bc4a-404d-94ed-d445a160bead",
+      "DeviceName": "NB-MEE-2412AF",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "magne.dekreek@meerwaarde.nl",
+      "UserDisplayName": "e7392554-142c-445b-997c-712ad19ea365_Windows_12/2/2024_2:31 PM",
+      "LastSyncDateTime": "2026-03-17T14:32:58Z",
+      "EnrolledDateTime": "2024-11-28T16:08:13Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "73994cea-55af-4d6a-b444-cb07a7854a6d",
+      "DeviceName": "Staging_35190fa1d8659c5a_AndroidEnterprise_11/13/2025_3:16 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_35190fa1d8659c5a_AndroidEnterprise_11/13/2025_3:16 PM",
+      "LastSyncDateTime": "2026-03-28T09:25:34Z",
+      "EnrolledDateTime": "2025-11-13T15:16:43Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "47c19e97-e352-4209-8227-c86e767b1cd6",
+      "DeviceName": "NB-MEE-2501D",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "angelique.koenders@meerwaarde.nl",
+      "UserDisplayName": "angelique.koenders_Windows_2/18/2025_7:18 AM",
+      "LastSyncDateTime": "2026-03-27T19:35:37Z",
+      "EnrolledDateTime": "2025-02-18T07:18:42Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "7efaa0a2-4233-4e2c-8a3a-c32ba6d9f4e8",
+      "DeviceName": "NB-MEE-2603B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26200.7840",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "lia.duivenvoorden@meerwaarde.nl",
+      "UserDisplayName": "b4e623d6-7102-40f2-b72a-a879aaa763f2_Windows_3/2/2026_1:33 PM",
+      "LastSyncDateTime": "2026-03-23T12:58:12Z",
+      "EnrolledDateTime": "2026-03-02T13:33:03Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G9 Notebook PC"
+    },
+    {
+      "Id": "989abd11-2be1-4b2e-912a-bc7fd266e1b9",
+      "DeviceName": "DT-MEE-2412B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "7b13498d-2ede-4b5b-924a-001f39137501_Windows_12/18/2024_2:02 PM",
+      "LastSyncDateTime": "2026-03-26T09:58:38Z",
+      "EnrolledDateTime": "2024-11-28T15:58:59Z",
+      "Manufacturer": "HP",
+      "Model": "HP Pro Mini 400 G9 Desktop PC"
+    },
+    {
+      "Id": "95355f1e-c9c2-4a32-a177-b737851d180a",
+      "DeviceName": "NB-MEE-2412B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "laila.elhafidi@meerwaarde.nl",
+      "UserDisplayName": "laila.elhafidi_Windows_12/10/2024_8:17 AM",
+      "LastSyncDateTime": "2026-03-26T10:37:33Z",
+      "EnrolledDateTime": "2024-12-10T08:17:47Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "4149cf1e-93ba-4330-baf4-b3ad11c8a2a7",
+      "DeviceName": "jorien.reinderink_AndroidEnterprise_12/4/2024_1:32 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "jorien.reinderink@meerwaarde.nl",
+      "UserDisplayName": "jorien.reinderink_AndroidEnterprise_12/4/2024_1:32 PM",
+      "LastSyncDateTime": "2026-03-28T06:34:25Z",
+      "EnrolledDateTime": "2024-12-04T13:32:19Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "3f29a42a-1abe-4fa8-9372-ae3d22e900e7",
+      "DeviceName": "Staging_3fdfd1844ff57d18_AndroidEnterprise_3/3/2026_3:20 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_3fdfd1844ff57d18_AndroidEnterprise_3/3/2026_3:20 PM",
+      "LastSyncDateTime": "2026-03-03T15:24:23Z",
+      "EnrolledDateTime": "2026-03-03T15:20:22Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "7c859839-701e-4f81-baa8-a08101069d80",
+      "DeviceName": "NB-MEE-2412J",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26200.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "jorien.reinderink@meerwaarde.nl",
+      "UserDisplayName": "db9b7030-8ab5-4a1f-a31a-e8706c1a758f_Windows_12/3/2024_11:09 AM",
+      "LastSyncDateTime": "2026-03-27T08:49:45Z",
+      "EnrolledDateTime": "2024-11-28T16:08:14Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "c52ad2ef-8b82-454a-b0d6-9a3cbade7fce",
+      "DeviceName": "NB-MEE-2411D",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "juliette.jansen@meerwaarde.nl",
+      "UserDisplayName": "juliette.jansen_Windows_11/27/2024_9:04 AM",
+      "LastSyncDateTime": "2026-03-26T13:57:56Z",
+      "EnrolledDateTime": "2024-11-27T08:59:39Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G10 Notebook PC"
+    },
+    {
+      "Id": "a4e9deeb-a352-4f8b-a536-967b03fa02c8",
+      "DeviceName": "khadija.mallouk_AndroidEnterprise_12/11/2024_8:49 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "khadija.mallouk@meerwaarde.nl",
+      "UserDisplayName": "khadija.mallouk_AndroidEnterprise_12/11/2024_8:49 AM",
+      "LastSyncDateTime": "2026-03-21T23:12:05Z",
+      "EnrolledDateTime": "2024-12-11T08:49:23Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "f5f23192-124c-4578-a9b5-8956027dbe13",
+      "DeviceName": "hiljan.hoek_AndroidEnterprise_12/4/2024_10:59 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "hiljan.hoek@meerwaarde.nl",
+      "UserDisplayName": "hiljan.hoek_AndroidEnterprise_12/4/2024_10:59 AM",
+      "LastSyncDateTime": "2026-03-28T06:16:00Z",
+      "EnrolledDateTime": "2024-12-04T10:59:18Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "bd389324-7479-4a55-88f0-7c91e87fd18a",
+      "DeviceName": "SMWLT5CD351490B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26200.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "lara.holst@meerwaarde.nl",
+      "UserDisplayName": "826702fa-af5a-42c2-8ef5-35b582dfb123_Windows_10/31/2025_11:28 AM",
+      "LastSyncDateTime": "2026-03-27T13:47:47Z",
+      "EnrolledDateTime": "2025-10-31T11:28:50Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G9 Notebook PC"
+    },
+    {
+      "Id": "aa2c6deb-08bd-4d14-88b3-7a480bde2ab5",
+      "DeviceName": "mirjam.gans_AndroidEnterprise_12/4/2024_11:23 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "mirjam.gans@meerwaarde.nl",
+      "UserDisplayName": "mirjam.gans_AndroidEnterprise_12/4/2024_11:23 AM",
+      "LastSyncDateTime": "2026-03-27T10:04:43Z",
+      "EnrolledDateTime": "2024-12-04T11:23:57Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "88933d3e-a6be-44b3-8798-773832f827a8",
+      "DeviceName": "Staging_3d6b5196e372b2a2_AndroidEnterprise_8/26/2025_8:13 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_3d6b5196e372b2a2_AndroidEnterprise_8/26/2025_8:13 AM",
+      "LastSyncDateTime": "2026-03-28T05:27:27Z",
+      "EnrolledDateTime": "2025-08-26T08:13:01Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "f6c0b2ce-68f6-45d1-9849-737f14446199",
+      "DeviceName": "mariska.spikmans_AndroidEnterprise_12/4/2024_1:08 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "mariska.spikmans@meerwaarde.nl",
+      "UserDisplayName": "mariska.spikmans_AndroidEnterprise_12/4/2024_1:08 PM",
+      "LastSyncDateTime": "2026-03-28T06:18:46Z",
+      "EnrolledDateTime": "2024-12-04T13:08:03Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "76905134-1bcc-4f6d-b354-7293cf74f681",
+      "DeviceName": "SMWLT5CD309D2TK",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "natasja.lie@meerwaarde.nl",
+      "UserDisplayName": "fad420d0-55b7-420f-9897-7d15ba37a08b_Windows_3/6/2025_2:10 PM",
+      "LastSyncDateTime": "2026-02-18T02:56:48Z",
+      "EnrolledDateTime": "2025-03-05T15:32:50Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G9 Notebook PC"
+    },
+    {
+      "Id": "8b0d834e-836b-4824-8f60-6d3cacbe3164",
+      "DeviceName": "NB-MEE-2603A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26200.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "Bianca.vanwalbeek@meerwaarde.nl",
+      "UserDisplayName": "12056702-d055-4bd6-8fdd-051e0d2cf219_Windows_3/2/2026_1:22 PM",
+      "LastSyncDateTime": "2026-03-26T15:45:39Z",
+      "EnrolledDateTime": "2026-03-02T13:22:07Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G8 Notebook PC"
+    },
+    {
+      "Id": "5b3455a9-b9dd-40e6-9606-6940202fca6b",
+      "DeviceName": "maryam.shaham_AndroidEnterprise_12/4/2024_11:23 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "maryam.shaham_AndroidEnterprise_12/4/2024_11:23 AM",
+      "LastSyncDateTime": "2025-06-23T12:45:45Z",
+      "EnrolledDateTime": "2024-12-04T11:23:37Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "610d087f-e39a-4a5d-b9dc-637383593c20",
+      "DeviceName": "martijn.kool_AndroidEnterprise_12/4/2024_2:02 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "martijn.kool@meerwaarde.nl",
+      "UserDisplayName": "martijn.kool_AndroidEnterprise_12/4/2024_2:02 PM",
+      "LastSyncDateTime": "2026-01-02T19:11:06Z",
+      "EnrolledDateTime": "2024-12-04T14:02:51Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "aa5ca5f0-65c7-4a25-8197-60f68ec4e5d2",
+      "DeviceName": "nynke.wijbenga_AndroidEnterprise_12/4/2024_1:31 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "nynke.wijbenga@meerwaarde.nl",
+      "UserDisplayName": "nynke.wijbenga_AndroidEnterprise_12/4/2024_1:31 PM",
+      "LastSyncDateTime": "2026-03-27T13:45:16Z",
+      "EnrolledDateTime": "2024-12-04T13:31:45Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "3146b715-c309-4f9d-97d8-59a1927d59af",
+      "DeviceName": "mary.vanderdrift_AndroidEnterprise_12/4/2024_2:30 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "mary.vanderdrift@meerwaarde.nl",
+      "UserDisplayName": "mary.vanderdrift_AndroidEnterprise_12/4/2024_2:30 PM",
+      "LastSyncDateTime": "2026-03-28T08:28:49Z",
+      "EnrolledDateTime": "2024-12-04T14:30:31Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "96f3948b-888c-477b-9aaa-58c744ccd4c0",
+      "DeviceName": "NB-TEST-QUBE",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.2033",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "test.qubemdm@meerwaarde.nl",
+      "UserDisplayName": "test.qubemdm_Windows_6/26/2025_11:37 AM",
+      "LastSyncDateTime": "2025-06-26T14:17:03Z",
+      "EnrolledDateTime": "2025-06-26T11:34:49Z",
+      "Manufacturer": "Dell Inc.",
+      "Model": "Latitude 7400"
+    },
+    {
+      "Id": "b7d2f72a-8824-4758-9d74-56d576b8433d",
+      "DeviceName": "Caroline.vandemerwe_AndroidEnterprise_12/4/2024_11:24 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "Caroline.vandemerwe@meerwaarde.nl",
+      "UserDisplayName": "Caroline.vandemerwe_AndroidEnterprise_12/4/2024_11:24 AM",
+      "LastSyncDateTime": "2026-03-26T15:09:18Z",
+      "EnrolledDateTime": "2024-12-04T11:24:57Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "f53c43e9-1a24-45bb-a464-50b242ae58a3",
+      "DeviceName": "Staging_38d9b7253a35a9c3_AndroidEnterprise_6/3/2025_9:31 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_38d9b7253a35a9c3_AndroidEnterprise_6/3/2025_9:31 AM",
+      "LastSyncDateTime": "2025-10-10T18:54:19Z",
+      "EnrolledDateTime": "2025-06-03T09:31:32Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "b0d96770-a09c-443b-8d89-500cf77ae26e",
+      "DeviceName": "SMWLT5CD2434NFC",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "sandra.spoelstra@meerwaarde.nl",
+      "UserDisplayName": "146022e1-0144-4f66-8c4a-7b0594b63ebe_Windows_2/14/2023_9:34 AM",
+      "LastSyncDateTime": "2026-03-12T14:22:25Z",
+      "EnrolledDateTime": "2023-02-14T09:34:35Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G8 Notebook PC"
+    },
+    {
+      "Id": "87b120ef-1ad3-49e0-8040-496059937d2b",
+      "DeviceName": "mariejose.keijman_AndroidEnterprise_12/4/2024_2:53 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "mariejose.keijman@meerwaarde.nl",
+      "UserDisplayName": "mariejose.keijman_AndroidEnterprise_12/4/2024_2:53 PM",
+      "LastSyncDateTime": "2026-03-26T16:46:22Z",
+      "EnrolledDateTime": "2024-12-04T14:53:45Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "137c8060-35ca-4623-b13e-446e52aa8359",
+      "DeviceName": "NB-MEE-2412C",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "david.oldenburg@meerwaarde.nl",
+      "UserDisplayName": "david.oldenburg_Windows_12/9/2024_11:31 AM",
+      "LastSyncDateTime": "2026-03-27T10:26:08Z",
+      "EnrolledDateTime": "2024-12-09T11:22:37Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "2b70bfa9-ef21-4a2f-a58c-3d97aaf091a6",
+      "DeviceName": "SMWLT5CD3112G3B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7628",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "fatima.eloche@meerwaarde.nl",
+      "UserDisplayName": "146022e1-0144-4f66-8c4a-7b0594b63ebe_Windows_6/28/2023_10:17 AM",
+      "LastSyncDateTime": "2026-03-26T08:58:42Z",
+      "EnrolledDateTime": "2023-06-28T10:17:27Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G9 Notebook PC"
+    },
+    {
+      "Id": "cd7b664e-1ece-49b8-ad05-37f61c402a8f",
+      "DeviceName": "NB-MEE-2503E",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "mariska.spikmans@meerwaarde.nl",
+      "UserDisplayName": "mariska.spikmans_Windows_2/9/2026_11:36 AM",
+      "LastSyncDateTime": "2026-03-28T07:27:24Z",
+      "EnrolledDateTime": "2026-02-09T11:36:16Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "ff091d0a-3f0f-41d0-91b6-3224ecbf4081",
+      "DeviceName": "SMWLT5CD3112G3N",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "eveline.vandam@meerwaarde.nl",
+      "UserDisplayName": "282d7d09-aff0-43c6-a2fa-86307665dcb6_Windows_11/28/2023_9:27 AM",
+      "LastSyncDateTime": "2026-03-27T19:49:08Z",
+      "EnrolledDateTime": "2023-11-28T09:27:11Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G9 Notebook PC"
+    },
+    {
+      "Id": "d80e3421-522e-4dd7-9681-2e1a31b68a7e",
+      "DeviceName": "mark.ostendorf_AndroidEnterprise_12/4/2024_2:02 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "mark.ostendorf@meerwaarde.nl",
+      "UserDisplayName": "mark.ostendorf_AndroidEnterprise_12/4/2024_2:02 PM",
+      "LastSyncDateTime": "2026-03-28T02:28:32Z",
+      "EnrolledDateTime": "2024-12-04T14:02:40Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "9d2484ac-6527-4290-b64d-2b08d810c475",
+      "DeviceName": "SMWLTD5CD247MLK",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "Larissa.Wladimiroff@meerwaarde.nl",
+      "UserDisplayName": "2189a213-644c-4fe8-8337-eb97391a50b7_Windows_10/30/2025_11:04 AM",
+      "LastSyncDateTime": "2026-03-27T07:34:13Z",
+      "EnrolledDateTime": "2025-10-30T11:04:19Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G8 Notebook PC"
+    },
+    {
+      "Id": "e7139440-b91c-4210-85d4-274cb1f50ef1",
+      "DeviceName": "Staging_3a91331dfc91e2aa_AndroidEnterprise_3/9/2026_8:48 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_3a91331dfc91e2aa_AndroidEnterprise_3/9/2026_8:48 AM",
+      "LastSyncDateTime": "2026-03-16T12:29:04Z",
+      "EnrolledDateTime": "2026-03-09T08:48:53Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "c0fcdbf6-dfc8-4727-a479-26805fa4982b",
+      "DeviceName": "SWHLT5CD9364FQQ",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.22631.4890",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "ab960488-7345-468e-af56-22394758e221_Windows_9/10/2024_8:14 AM",
+      "LastSyncDateTime": "2025-07-10T23:06:08Z",
+      "EnrolledDateTime": "2024-09-10T08:14:22Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G6"
+    },
+    {
+      "Id": "9acc7e56-e0bc-4988-af46-1e8e78cc0e69",
+      "DeviceName": "Staging_35c97693f6ea23ce_AndroidEnterprise_1/13/2026_9:09 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_35c97693f6ea23ce_AndroidEnterprise_1/13/2026_9:09 AM",
+      "LastSyncDateTime": "2026-01-29T14:54:19Z",
+      "EnrolledDateTime": "2026-01-13T09:09:06Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "01cab7b5-7b45-44da-838c-1a9d80a6dd61",
+      "DeviceName": "SMWLT5CD2457MK8",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "baudien.ekkel@meerwaarde.nl",
+      "UserDisplayName": "146022e1-0144-4f66-8c4a-7b0594b63ebe_Windows_2/7/2023_8:43 AM",
+      "LastSyncDateTime": "2026-03-27T10:01:40Z",
+      "EnrolledDateTime": "2023-02-07T08:43:43Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G8 Notebook PC"
+    },
+    {
+      "Id": "b8d9d024-b325-4dd0-92d0-187ae1b53b63",
+      "DeviceName": "mariette.bouterse_AndroidEnterprise_12/4/2024_2:02 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "mariette.bouterse@meerwaarde.nl",
+      "UserDisplayName": "mariette.bouterse_AndroidEnterprise_12/4/2024_2:02 PM",
+      "LastSyncDateTime": "2026-03-28T09:26:15Z",
+      "EnrolledDateTime": "2024-12-04T14:02:38Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "1207972a-4091-413a-bfd1-13525cb84ac8",
+      "DeviceName": "NB-MEE-2412AP",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "somaya.essannouni@meerwaarde.nl",
+      "UserDisplayName": "somaya.essannouni_Windows_12/10/2024_1:02 PM",
+      "LastSyncDateTime": "2026-03-26T23:21:40Z",
+      "EnrolledDateTime": "2024-12-10T12:59:12Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "79dcee5d-4639-4010-aa7e-0fd7dbecc186",
+      "DeviceName": "hannelore.devries_AndroidEnterprise_12/4/2024_2:38 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "hannelore.devries@meerwaarde.nl",
+      "UserDisplayName": "hannelore.devries_AndroidEnterprise_12/4/2024_2:38 PM",
+      "LastSyncDateTime": "2026-03-27T14:40:40Z",
+      "EnrolledDateTime": "2024-12-04T14:38:40Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "4bc0c05d-177b-4680-b2c6-0dbe2db11fe3",
+      "DeviceName": "aysun.aydemir_AndroidEnterprise_12/4/2024_11:04 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "aysun.aydemir@meerwaarde.nl",
+      "UserDisplayName": "aysun.aydemir_AndroidEnterprise_12/4/2024_11:04 AM",
+      "LastSyncDateTime": "2026-03-28T08:15:08Z",
+      "EnrolledDateTime": "2024-12-04T11:04:42Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "234e5d22-fc2c-417a-8e40-0a54e828aa78",
+      "DeviceName": "rachelle.paalvast_AndroidEnterprise_12/4/2024_1:35 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "rachelle.paalvast@meerwaarde.nl",
+      "UserDisplayName": "rachelle.paalvast_AndroidEnterprise_12/4/2024_1:35 PM",
+      "LastSyncDateTime": "2026-03-28T10:05:16Z",
+      "EnrolledDateTime": "2024-12-04T13:35:55Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "4214335c-768c-4d1b-88b7-09666330c9bb",
+      "DeviceName": "claudia.boelee_AndroidEnterprise_12/4/2024_2:27 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "claudia.boelee@meerwaarde.nl",
+      "UserDisplayName": "claudia.boelee_AndroidEnterprise_12/4/2024_2:27 PM",
+      "LastSyncDateTime": "2026-03-07T16:46:10Z",
+      "EnrolledDateTime": "2024-12-04T14:27:22Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "c17a9fa9-1e36-4079-8c80-0590b631d4a7",
+      "DeviceName": "Guido.Dankerlui_AndroidEnterprise_12/2/2024_1:50 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "Guido.Dankerlui@meerwaarde.nl",
+      "UserDisplayName": "Guido.Dankerlui_AndroidEnterprise_12/2/2024_1:50 PM",
+      "LastSyncDateTime": "2025-07-26T18:54:12Z",
+      "EnrolledDateTime": "2024-12-02T13:50:07Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "553e2b1c-1c53-4044-8f73-fea93cce9f0f",
+      "DeviceName": "Staging_3e187c8246af5859_AndroidEnterprise_10/23/2025_1:10 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_3e187c8246af5859_AndroidEnterprise_10/23/2025_1:10 PM",
+      "LastSyncDateTime": "2025-11-03T10:18:12Z",
+      "EnrolledDateTime": "2025-10-23T13:10:42Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "d80ad7a7-db50-4a34-8f38-fa3fea37a7df",
+      "DeviceName": "NB-MEE-2111A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "52be90ea-929b-4109-89de-f7a55ca1e562_Windows_5/20/2025_9:40 AM",
+      "LastSyncDateTime": "2026-03-26T08:25:35Z",
+      "EnrolledDateTime": "2025-05-20T09:24:25Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G8 Notebook PC"
+    },
+    {
+      "Id": "59b052ee-2506-40a0-979b-f4aeb9eee54a",
+      "DeviceName": "Staging_3f60569c5be12a9f_AndroidEnterprise_3/3/2026_3:11 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_3f60569c5be12a9f_AndroidEnterprise_3/3/2026_3:11 PM",
+      "LastSyncDateTime": "2026-03-27T11:08:54Z",
+      "EnrolledDateTime": "2026-03-03T15:11:26Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "92933eea-5ced-4eba-9687-f16268474c3f",
+      "DeviceName": "marnix.zuidema_AndroidEnterprise_11/29/2024_9:09 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "marnix.zuidema_AndroidEnterprise_11/29/2024_9:09 AM",
+      "LastSyncDateTime": "2025-07-17T12:28:16Z",
+      "EnrolledDateTime": "2024-11-29T09:09:39Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "1e5bf433-67b1-4c13-b020-ed2bb653d95d",
+      "DeviceName": "nancy.vandenburg_AndroidEnterprise_12/4/2024_2:30 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "nancy.vandenburg@meerwaarde.nl",
+      "UserDisplayName": "nancy.vandenburg_AndroidEnterprise_12/4/2024_2:30 PM",
+      "LastSyncDateTime": "2026-03-28T02:34:41Z",
+      "EnrolledDateTime": "2024-12-04T14:30:45Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "b6ce9b91-1276-4fda-9838-e992e1905bbb",
+      "DeviceName": "SMWLT5CD3112G5Z",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "annette.vangroen@meerwaarde.nl",
+      "UserDisplayName": "146022e1-0144-4f66-8c4a-7b0594b63ebe_Windows_6/28/2023_10:24 AM",
+      "LastSyncDateTime": "2026-03-26T14:06:46Z",
+      "EnrolledDateTime": "2023-06-28T10:24:09Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G9 Notebook PC"
+    },
+    {
+      "Id": "385c0f1b-ca87-412f-82dc-e7e7ea00a217",
+      "DeviceName": "NB-MEE-2412D",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26200.7922",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "aae58725-50b2-4d06-ae3d-fdc4348dfbcf_Windows_3/3/2026_1:45 PM",
+      "LastSyncDateTime": "2026-03-09T16:04:55Z",
+      "EnrolledDateTime": "2026-03-03T13:45:24Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "fe719452-bf5f-4304-83c2-df1c1c02ddd2",
+      "DeviceName": "NB-MEE-2412G",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "nynke.wijbenga@meerwaarde.nl",
+      "UserDisplayName": "nynke.wijbenga_Windows_12/10/2024_2:46 PM",
+      "LastSyncDateTime": "2026-03-26T09:23:49Z",
+      "EnrolledDateTime": "2024-12-10T14:41:50Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "dc1686b5-a3bf-42f3-bb16-db29d35857d4",
+      "DeviceName": "sieben.vanmaarseveen_AndroidEnterprise_12/4/2024_2:27 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "sieben.vanmaarseveen@meerwaarde.nl",
+      "UserDisplayName": "sieben.vanmaarseveen_AndroidEnterprise_12/4/2024_2:27 PM",
+      "LastSyncDateTime": "2026-03-26T18:05:30Z",
+      "EnrolledDateTime": "2024-12-04T14:27:23Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "a2638560-fa3f-4e91-9bc2-d584bc6f243a",
+      "DeviceName": "NB-MEE-2101F",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.6584",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "6ec6582d-5550-4c8f-8193-21f7e73bb005_Windows_12/18/2024_8:44 AM",
+      "LastSyncDateTime": "2026-03-26T09:30:13Z",
+      "EnrolledDateTime": "2024-12-18T08:27:55Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G7"
+    },
+    {
+      "Id": "9ea8f526-d132-4aa1-81ea-cd71de85176b",
+      "DeviceName": "NB-MEE-2412L",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "hannelore.devries@meerwaarde.nl",
+      "UserDisplayName": "hannelore.devries_Windows_12/10/2024_8:18 AM",
+      "LastSyncDateTime": "2026-03-27T12:37:03Z",
+      "EnrolledDateTime": "2024-12-10T08:18:26Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "ae7438d1-b1aa-4adf-9b9b-ca4c88b1b0fc",
+      "DeviceName": "Staging_321b53c287dc58fe_AndroidEnterprise_6/3/2025_1:51 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_321b53c287dc58fe_AndroidEnterprise_6/3/2025_1:51 PM",
+      "LastSyncDateTime": "2025-06-12T15:32:34Z",
+      "EnrolledDateTime": "2025-06-03T13:51:37Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "d699be30-2e54-40cd-98f2-c4d49f5e3e00",
+      "DeviceName": "maira.wouter_AndroidEnterprise_12/4/2024_1:08 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "maira.wouter@meerwaarde.nl",
+      "UserDisplayName": "maira.wouter_AndroidEnterprise_12/4/2024_1:08 PM",
+      "LastSyncDateTime": "2026-03-26T16:13:41Z",
+      "EnrolledDateTime": "2024-12-04T13:08:01Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "4194cffb-29aa-44da-b433-c214c926ef69",
+      "DeviceName": "fatima.elidrissi_AndroidEnterprise_12/4/2024_10:59 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "fatima.elidrissi@meerwaarde.nl",
+      "UserDisplayName": "fatima.elidrissi_AndroidEnterprise_12/4/2024_10:59 AM",
+      "LastSyncDateTime": "2026-03-28T09:30:50Z",
+      "EnrolledDateTime": "2024-12-04T10:59:26Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "1f068010-8ced-4f03-af37-bcdd5522858f",
+      "DeviceName": "NB-MEE-2412M",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "aysun.aydemir@meerwaarde.nl",
+      "UserDisplayName": "aysun.aydemir_Windows_12/11/2024_12:24 PM",
+      "LastSyncDateTime": "2026-03-27T09:07:05Z",
+      "EnrolledDateTime": "2024-12-11T12:08:33Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "247b410d-7c4d-4f97-baaf-b9fd5255978e",
+      "DeviceName": "NB-MEE-2101A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.4946",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "1062d949-0ded-4add-9184-89104d4d31f5_Windows_12/16/2024_9:01 AM",
+      "LastSyncDateTime": "2026-02-02T08:22:10Z",
+      "EnrolledDateTime": "2024-12-16T08:40:01Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G7"
+    },
+    {
+      "Id": "141b9e2f-96e2-461d-934e-b57ee608796f",
+      "DeviceName": "lisa.debest_AndroidEnterprise_12/4/2024_2:30 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "lisa.debest@meerwaarde.nl",
+      "UserDisplayName": "lisa.debest_AndroidEnterprise_12/4/2024_2:30 PM",
+      "LastSyncDateTime": "2026-03-28T00:02:49Z",
+      "EnrolledDateTime": "2024-12-04T14:30:11Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "25076c26-bf4a-4fdc-9a43-b2f8b07d7a83",
+      "DeviceName": "Staging_30a1094185b3efc1_AndroidEnterprise_9/1/2025_9:03 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_30a1094185b3efc1_AndroidEnterprise_9/1/2025_9:03 AM",
+      "LastSyncDateTime": "2026-03-28T09:20:12Z",
+      "EnrolledDateTime": "2025-09-01T09:03:02Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "a2dc46e1-6403-420d-90dd-ac9701260191",
+      "DeviceName": "yvonne.vandenberg_AndroidEnterprise_12/4/2024_9:59 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "yvonne.vandenberg@meerwaarde.nl",
+      "UserDisplayName": "yvonne.vandenberg_AndroidEnterprise_12/4/2024_9:59 AM",
+      "LastSyncDateTime": "2026-03-28T06:32:27Z",
+      "EnrolledDateTime": "2024-12-04T09:59:54Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "4ce6a1cb-69d4-4f03-ab8a-a388c3b12a9e",
+      "DeviceName": "NB-MEE-2506B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "Nissrin.Zafzafi@meerwaarde.nl",
+      "UserDisplayName": "da8156c8-111b-48dc-a555-89dc3e4c0373_Windows_8/15/2025_12:01 PM",
+      "LastSyncDateTime": "2026-03-26T14:29:57Z",
+      "EnrolledDateTime": "2025-08-15T12:01:26Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G9 Notebook PC"
+    },
+    {
+      "Id": "4a4fd48e-b13d-461f-ab26-a03fd8b198d8",
+      "DeviceName": "NB-MEE-2506A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "Maryam.Aourag@meerwaarde.nl",
+      "UserDisplayName": "8ed4697c-cdf5-4ab4-9c54-2b4d1d331d7e_Windows_6/25/2025_10:16 AM",
+      "LastSyncDateTime": "2026-03-26T14:02:32Z",
+      "EnrolledDateTime": "2025-06-25T10:16:28Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G9 Notebook PC"
+    },
+    {
+      "Id": "0a55127e-72aa-425c-bea4-96e3a46f650b",
+      "DeviceName": "NB-MEE-2412AB",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7985",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "sjoerd.mercera@meerwaarde.nl",
+      "UserDisplayName": "26490c9e-d3ca-4859-a58d-fd75caa47060_Windows_11/4/2025_10:07 AM",
+      "LastSyncDateTime": "2026-03-27T12:35:27Z",
+      "EnrolledDateTime": "2025-11-04T10:07:45Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "52f98321-a46e-48be-8195-9086e98a622f",
+      "DeviceName": "sabiet.balwantgir_AndroidEnterprise_12/4/2024_10:31 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "sabiet.balwantgir_AndroidEnterprise_12/4/2024_10:31 AM",
+      "LastSyncDateTime": "2025-08-11T08:16:13Z",
+      "EnrolledDateTime": "2024-12-04T10:31:42Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "6b2a8df1-0f75-4479-bba5-87a8340b4d1b",
+      "DeviceName": "NB-MEE-2507A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.4351",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "34612075-4068-4a18-bca3-7c78a21245fc_Windows_7/7/2025_12:47 PM",
+      "LastSyncDateTime": "2025-07-16T07:05:48Z",
+      "EnrolledDateTime": "2025-07-07T12:27:54Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "5ae8c47f-2292-46ab-9619-83fb9027291e",
+      "DeviceName": "Staging_30e8a5ea73e19cc0_AndroidEnterprise_4/28/2025_1:01 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "Staging_30e8a5ea73e19cc0_AndroidEnterprise_4/28/2025_1:01 PM",
+      "LastSyncDateTime": "2025-04-28T13:05:41Z",
+      "EnrolledDateTime": "2025-04-28T13:01:37Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "291ba0fd-5880-4ecb-8ac4-7a0cf66e31d9",
+      "DeviceName": "NB-MEE-2412AK",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "mustapha.elmoumene@meerwaarde.nl",
+      "UserDisplayName": "a56c10c0-8432-46c8-9cf4-8eb29f819a6b_Windows_3/5/2025_11:16 AM",
+      "LastSyncDateTime": "2026-03-26T18:53:14Z",
+      "EnrolledDateTime": "2025-03-05T11:16:20Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "5b036e58-464b-4c9d-9ab5-741b6940beee",
+      "DeviceName": "NB-MEE-2501E",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "maira.wouter@meerwaarde.nl",
+      "UserDisplayName": "b7dbbf73-8817-4bae-9e57-f7850dc5f95c_Windows_12/23/2024_1:37 PM",
+      "LastSyncDateTime": "2026-03-26T13:21:19Z",
+      "EnrolledDateTime": "2024-12-23T13:21:07Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "1a67d445-0a64-4e1b-9024-72026c642c3b",
+      "DeviceName": "SMWLT5CD3112G5H",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "betul.manisa@meerwaarde.nl",
+      "UserDisplayName": "146022e1-0144-4f66-8c4a-7b0594b63ebe_Windows_6/28/2023_8:53 AM",
+      "LastSyncDateTime": "2026-03-26T13:32:43Z",
+      "EnrolledDateTime": "2023-06-28T08:53:05Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G9 Notebook PC"
+    },
+    {
+      "Id": "b3f35f94-cf13-462d-bddb-6acc40534b0b",
+      "DeviceName": "NB-MEE-2603B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.3775",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "test.qubemdm@meerwaarde.nl",
+      "UserDisplayName": "test.qubemdm_Windows_3/6/2026_11:05 AM",
+      "LastSyncDateTime": "2026-03-13T11:21:13Z",
+      "EnrolledDateTime": "2026-03-06T11:05:55Z",
+      "Manufacturer": "Microsoft Corporation",
+      "Model": "Virtual Machine"
+    },
+    {
+      "Id": "19f58455-a712-4238-ad18-64ad565ff7cd",
+      "DeviceName": "chantal.slotemaker_AndroidEnterprise_12/4/2024_1:40 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "chantal.slotemaker@meerwaarde.nl",
+      "UserDisplayName": "chantal.slotemaker_AndroidEnterprise_12/4/2024_1:40 PM",
+      "LastSyncDateTime": "2026-03-27T15:16:18Z",
+      "EnrolledDateTime": "2024-12-04T13:40:14Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "81e28b9a-e313-4b0b-8723-5ed3a3ca168a",
+      "DeviceName": "nina.liang_AndroidEnterprise_12/4/2024_1:08 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "14",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "nina.liang@meerwaarde.nl",
+      "UserDisplayName": "nina.liang_AndroidEnterprise_12/4/2024_1:08 PM",
+      "LastSyncDateTime": "2026-03-26T18:44:52Z",
+      "EnrolledDateTime": "2024-12-04T13:08:05Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "29ccf654-5c25-43a6-9b2e-58eb4883bede",
+      "DeviceName": "marjorie.mesman_AndroidEnterprise_12/4/2024_10:59 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "marjorie.mesman@meerwaarde.nl",
+      "UserDisplayName": "marjorie.mesman_AndroidEnterprise_12/4/2024_10:59 AM",
+      "LastSyncDateTime": "2026-03-27T15:07:37Z",
+      "EnrolledDateTime": "2024-12-04T10:59:22Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "834e1f3a-fcc1-4429-81b3-529f9982aa16",
+      "DeviceName": "NB-MEE-2411B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "ellen.kieftenbeld@meerwaarde.nl",
+      "UserDisplayName": "ellen.kieftenbeld_Windows_11/26/2024_8:28 AM",
+      "LastSyncDateTime": "2026-03-27T11:36:57Z",
+      "EnrolledDateTime": "2024-11-26T08:28:37Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G10 Notebook PC"
+    },
+    {
+      "Id": "82cfcff5-f172-49be-a328-4c6ed2e2cd30",
+      "DeviceName": "NB-MEE-2601A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "erik.schoe@meerwaarde.nl",
+      "UserDisplayName": "erik.schoe_Windows_2/3/2026_2:20 PM",
+      "LastSyncDateTime": "2026-03-27T10:19:14Z",
+      "EnrolledDateTime": "2026-02-03T14:20:16Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G8 Notebook PC"
+    },
+    {
+      "Id": "5207c06c-12f7-4a45-9f01-462e666a5d78",
+      "DeviceName": "SMWLT5CD2457MJQ",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.6901",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "tim.sebel@meerwaarde.nl",
+      "UserDisplayName": "c436d126-faa5-4a33-9441-eced5ce8aaa6_Windows_12/31/2024_12:06 PM",
+      "LastSyncDateTime": "2025-12-15T12:14:53Z",
+      "EnrolledDateTime": "2024-12-19T09:34:10Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G8 Notebook PC"
+    },
+    {
+      "Id": "b1560c36-eea8-45ba-b02d-3c5d686012ce",
+      "DeviceName": "NB-MEE-2501B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "suzanne.vanvarik@meerwaarde.nl",
+      "UserDisplayName": "cf45bac0-6ec4-436d-acf4-d120245fa1db_Windows_12/23/2024_1:54 PM",
+      "LastSyncDateTime": "2026-03-26T16:13:42Z",
+      "EnrolledDateTime": "2024-12-23T13:35:07Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "d4029833-b65a-40e0-8749-39d449b22e3a",
+      "DeviceName": "riguillo.terhaar_AndroidEnterprise_12/4/2024_1:34 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "riguillo.terhaar@meerwaarde.nl",
+      "UserDisplayName": "riguillo.terhaar_AndroidEnterprise_12/4/2024_1:34 PM",
+      "LastSyncDateTime": "2026-03-28T07:24:53Z",
+      "EnrolledDateTime": "2024-12-04T13:34:50Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "cc75636d-bf32-487c-a1a7-33fc9924a7bd",
+      "DeviceName": "SMW-WI0001",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7840",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "wendy.amsing@meerwaarde.nl",
+      "UserDisplayName": "cd9917f1-b468-43c1-b61e-6a5e9c7cd26d_Windows_2/4/2022_12:54 PM",
+      "LastSyncDateTime": "2026-03-27T17:40:22Z",
+      "EnrolledDateTime": "2022-02-04T12:54:09Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G8 Notebook PC"
+    },
+    {
+      "Id": "1d788084-2994-46bf-893b-2e1210fcbe8a",
+      "DeviceName": "NB-MEE-2101B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7628",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "94372060-3669-4d81-9a41-c2d7e5d4f3ce_Windows_12/16/2024_11:16 AM",
+      "LastSyncDateTime": "2026-03-26T09:09:47Z",
+      "EnrolledDateTime": "2024-12-16T10:17:10Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G7"
+    },
+    {
+      "Id": "a1992449-3397-48ba-a10f-2889848b4a11",
+      "DeviceName": "aukje.jonkhout_AndroidEnterprise_12/4/2024_2:02 PM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "aukje.jonkhout@meerwaarde.nl",
+      "UserDisplayName": "aukje.jonkhout_AndroidEnterprise_12/4/2024_2:02 PM",
+      "LastSyncDateTime": "2026-02-26T16:35:50Z",
+      "EnrolledDateTime": "2024-12-04T14:02:54Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "c72f2153-e6ff-457e-a048-233ee81dd4eb",
+      "DeviceName": "NB-MEE-2101C",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.7628",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "4a2e7012-e5cc-4620-9cea-2ae4e69df346_Windows_12/16/2024_9:53 AM",
+      "LastSyncDateTime": "2026-03-23T09:06:19Z",
+      "EnrolledDateTime": "2024-12-16T09:43:46Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G7"
+    },
+    {
+      "Id": "88ab7f02-504b-4007-880c-1c2ab6cac198",
+      "DeviceName": "NB-MEE-2302B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26200.7922",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "2354d3ed-75cb-4953-b462-9bd0891c3d55_Windows_3/3/2026_12:05 PM",
+      "LastSyncDateTime": "2026-03-03T12:47:02Z",
+      "EnrolledDateTime": "2026-03-03T12:05:56Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 G8 Notebook PC"
+    },
+    {
+      "Id": "f5122ae7-b8de-44c3-a3ae-1473e1abe15e",
+      "DeviceName": "NB-MEE-2412E",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8037",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "lotte.verhofstad@meerwaarde.nl",
+      "UserDisplayName": "3196b294-c4b0-4a7a-be0c-42705ea434a6_Windows_12/2/2024_9:08 AM",
+      "LastSyncDateTime": "2026-03-26T12:06:06Z",
+      "EnrolledDateTime": "2024-11-28T16:08:11Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    },
+    {
+      "Id": "0d980664-7504-4056-9ef0-1069a38bca1c",
+      "DeviceName": "NB-MEE-2312B",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26200.7922",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "",
+      "UserDisplayName": "3d894570-018c-4990-b747-26e322f59097_Windows_3/3/2026_1:42 PM",
+      "LastSyncDateTime": "2026-03-03T13:46:27Z",
+      "EnrolledDateTime": "2026-03-03T13:42:29Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 450 15.6 inch G9 Notebook PC"
+    },
+    {
+      "Id": "40764b52-b94d-4ba3-b6fb-0c7920adcce8",
+      "DeviceName": "josefine.scheepmaker_AndroidEnterprise_12/4/2024_10:31 AM",
+      "OperatingSystem": "Android",
+      "OsVersion": "15",
+      "ComplianceState": "noncompliant",
+      "UserPrincipalName": "josefine.scheepmaker@meerwaarde.nl",
+      "UserDisplayName": "josefine.scheepmaker_AndroidEnterprise_12/4/2024_10:31 AM",
+      "LastSyncDateTime": "2026-03-28T02:30:13Z",
+      "EnrolledDateTime": "2024-12-04T10:31:01Z",
+      "Manufacturer": "Fairphone",
+      "Model": "FP5"
+    },
+    {
+      "Id": "9b030f31-a5fd-4148-9db3-062f3bd42a66",
+      "DeviceName": "NB-MEE-2501A",
+      "OperatingSystem": "Windows",
+      "OsVersion": "10.0.26100.8039",
+      "ComplianceState": "compliant",
+      "UserPrincipalName": "tamira.meeues@meerwaarde.nl",
+      "UserDisplayName": "a7799ff7-14ae-49ff-8686-3ec8bd18b2ac_Windows_12/23/2024_2:59 PM",
+      "LastSyncDateTime": "2026-03-27T11:48:43Z",
+      "EnrolledDateTime": "2024-12-23T14:04:17Z",
+      "Manufacturer": "HP",
+      "Model": "HP ProBook 460 16 inch G11 Notebook PC"
+    }
+  ],
+  "IntuneCompliance": [
+    {
+      "DisplayName": "Default compliance policy for Android",
+      "Platform": "android",
+      "CreatedDateTime": "29-12-2021",
+      "LastModifiedDateTime": "12-11-2024"
+    },
+    {
+      "DisplayName": "MeerWaarde Compliance Android",
+      "Platform": "",
+      "CreatedDateTime": "13-11-2024",
+      "LastModifiedDateTime": "14-11-2024"
+    },
+    {
+      "DisplayName": "Meerwaarde Compliance Windows",
+      "Platform": "windows10",
+      "CreatedDateTime": "29-12-2021",
+      "LastModifiedDateTime": "23-10-2025"
+    }
+  ],
+  "IntuneConfigProfiles": [
+    {
+      "DisplayName": "CFG_INTUNE_DEVICE_DISABLEUSERESP",
+      "Platform": "windows10Custom",
+      "CreatedDateTime": "15-09-2023",
+      "LastModifiedDateTime": "15-09-2023"
+    },
+    {
+      "DisplayName": "WIndows -  EndPoint Protection",
+      "Platform": "windows10EndpointProtection",
+      "CreatedDateTime": "29-12-2021",
+      "LastModifiedDateTime": "24-10-2024"
+    },
+    {
+      "DisplayName": "Windows - Multi User device Configuration- part 1/2",
+      "Platform": "sharedPC",
+      "CreatedDateTime": "29-12-2021",
+      "LastModifiedDateTime": "16-12-2024"
+    },
+    {
+      "DisplayName": "Windows - Multi User device Configuration- part 2/2",
+      "Platform": "windows10Custom",
+      "CreatedDateTime": "12-12-2024",
+      "LastModifiedDateTime": "12-12-2024"
+    }
+  ],
+  "IntuneSummary": {
+    "TotalDevices": 256,
+    "CompliantDevices": 100,
+    "NonCompliantDevices": 156,
+    "CompliancePercentage": 39.06
+  },
+  "IntuneDevicesByOS": [
+    {
+      "Name": "Android",
+      "Count": 129
+    },
+    {
+      "Name": "Windows",
+      "Count": 127
+    }
+  ],
+  "Phases": [
+    {
+      "Id": "phase1",
+      "Label": "Gebruikers en licenties",
+      "Critical": 1,
+      "Warning": 0,
+      "Info": 1,
+      "Score": 4
+    },
+    {
+      "Id": "phase2",
+      "Label": "Samenwerking en opslag",
+      "Critical": 0,
+      "Warning": 0,
+      "Info": 0,
+      "Score": 0
+    },
+    {
+      "Id": "phase3",
+      "Label": "Compliance en beveiliging",
+      "Critical": 0,
+      "Warning": 0,
+      "Info": 2,
+      "Score": 2
+    },
+    {
+      "Id": "phase4",
+      "Label": "Geavanceerde beveiliging",
+      "Critical": 0,
+      "Warning": 2,
+      "Info": 1,
+      "Score": 5
+    },
+    {
+      "Id": "phase5",
+      "Label": "Intune",
+      "Critical": 0,
+      "Warning": 1,
+      "Info": 1,
+      "Score": 3
+    },
+    {
+      "Id": "phase6",
+      "Label": "Azure",
+      "Critical": 0,
+      "Warning": 1,
+      "Info": 0,
+      "Score": 2
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "section": "identity",
+  "subsection": "admin-roles",
+  "label": "Admin Password Ages",
+  "source": "assessment",
+  "generated_at": "2026-03-28T11:11:36.2346760+01:00",
+  "assessmentId": "20260328-101414",
+  "summary": {
+    "breakGlassCandidates": 1,
+    "totalAdmins": 9,
+    "oldPasswords": 9
+  },
+  "items": [
+    {
+      "DisplayName": "O365 Facturen",
+      "UserPrincipalName": "o365.facturen@meerwaarde.onmicrosoft.com",
+      "LastPasswordChange": "26-09-2022",
+      "PasswordAgeDays": 1278,
+      "Status": "🔴 >180 dagen"
+    },
+    {
+      "DisplayName": "O365 FacturenControle",
+      "UserPrincipalName": "o365.facturencontrole@meerwaarde.onmicrosoft.com",
+      "LastPasswordChange": "05-01-2022",
+      "PasswordAgeDays": 1542,
+      "Status": "🔴 >180 dagen"
+    },
+    {
+      "DisplayName": "Administrator Meerwaarde",
+      "UserPrincipalName": "administrator@meerwaarde.onmicrosoft.com",
+      "LastPasswordChange": "14-02-2025",
+      "PasswordAgeDays": 406,
+      "Status": "🔴 >180 dagen"
+    },
+    {
+      "DisplayName": "QUBE  Beheer",
+      "UserPrincipalName": "aazmee@meerwaarde.onmicrosoft.com",
+      "LastPasswordChange": "03-09-2024",
+      "PasswordAgeDays": 571,
+      "Status": "🔴 >180 dagen"
+    },
+    {
+      "DisplayName": "On-Premises Directory Synchronization Service Account",
+      "UserPrincipalName": "Sync_SMW-SD301_14b7791c1437@meerwaarde.onmicrosoft.com",
+      "LastPasswordChange": "09-08-2018",
+      "PasswordAgeDays": 2787,
+      "Status": "🔴 >180 dagen"
+    },
+    {
+      "DisplayName": "On-Premises Directory Synchronization Service Account",
+      "UserPrincipalName": "Sync_SMW-SM205_bbe9bcf1cc76@meerwaarde.onmicrosoft.com",
+      "LastPasswordChange": "04-02-2017",
+      "PasswordAgeDays": 3339,
+      "Status": "🔴 >180 dagen"
+    },
+    {
+      "DisplayName": "QUBE_breakglass@meerwaarde.onmicrosoft.com",
+      "UserPrincipalName": "QUBE_breakglass@meerwaarde.onmicrosoft.com",
+      "LastPasswordChange": "14-02-2025",
+      "PasswordAgeDays": 406,
+      "Status": "🔴 >180 dagen"
+    },
+    {
+      "DisplayName": "Admin Qube ICT",
+      "UserPrincipalName": "admin.qubeict@smwnet.nl",
+      "LastPasswordChange": "24-09-2024",
+      "PasswordAgeDays": 550,
+      "Status": "🔴 >180 dagen"
+    },
+    {
+      "DisplayName": "Qube Beheer2",
+      "UserPrincipalName": "pormee@meerwaarde.onmicrosoft.com",
+      "LastPasswordChange": "10-06-2025",
+      "PasswordAgeDays": 290,
+      "Status": "🔴 >180 dagen"
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Admin wachtwoordleeftijden en break-glass heuristiek uit Phase 4."
+    ],
+    "permissions": [
+      "Directory.Read.All",
+      "RoleManagement.Read.Directory"
+    ]
+  }
+}

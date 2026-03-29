@@ -1,0 +1,185 @@
+{
+  "section": "apps",
+  "subsection": "registrations",
+  "label": "App Registrations",
+  "source": "assessment",
+  "generated_at": "2026-03-28T11:11:36.2311450+01:00",
+  "assessmentId": "20260328-101414",
+  "summary": {
+    "expiringSecrets": 0,
+    "total": 16,
+    "expiredCerts": 0,
+    "expiredSecrets": 0
+  },
+  "items": [
+    {
+      "DisplayName": "Exact_OAuth",
+      "AppId": "e0267fd9-caad-4fbc-82fe-a4778bf69305",
+      "SecretCount": 1,
+      "SecretExpirationStatus": "🟢 Valid (305 days)",
+      "CertificateCount": 0,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 7,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "P2P Server",
+      "AppId": "4123aeb1-c225-4930-b278-6c20169d9057",
+      "SecretCount": 0,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 0,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "Exact Synergy Globe  MFA",
+      "AppId": "6f95942d-d2c8-419e-8478-c2a77ea2f51a",
+      "SecretCount": 0,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 0,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "Scansys_OAuth",
+      "AppId": "f9f3da9f-17e8-4c2d-ab03-807b04327583",
+      "SecretCount": 1,
+      "SecretExpirationStatus": "🟢 Valid (305 days)",
+      "CertificateCount": 0,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 4,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "Zivver",
+      "AppId": "7159dd5e-5076-40fd-8d6e-daf75b863372",
+      "SecretCount": 0,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 0,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "Exact MFA - WEBAPP",
+      "AppId": "2a54233e-3ccf-4eb8-8190-8a361479f86b",
+      "SecretCount": 2,
+      "SecretExpirationStatus": "🟢 Valid (592 days)",
+      "CertificateCount": 0,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 1,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "Scansys-SSO-OPENID",
+      "AppId": "aeec9a97-6e6f-4c11-848f-c07651a865ea",
+      "SecretCount": 0,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 4,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "resources-check",
+      "AppId": "0b059013-cb88-4189-b0ba-16280d286e42",
+      "SecretCount": 1,
+      "SecretExpirationStatus": "🟢 Valid (684 days)",
+      "CertificateCount": 0,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 3,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "Regicare",
+      "AppId": "d1ca5455-ee5d-425e-ae07-b49c528a7fc9",
+      "SecretCount": 1,
+      "SecretExpirationStatus": "🟢 Valid (250 days)",
+      "CertificateCount": 0,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 1,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "Baseline-scan",
+      "AppId": "599793e6-e507-46d3-95a0-c0597251bd84",
+      "SecretCount": 1,
+      "SecretExpirationStatus": "🟢 Valid (361 days)",
+      "CertificateCount": 0,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 41,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "Synergy Email Service",
+      "AppId": "8bbd9246-3cbf-45e4-a32b-2f460cc1aa92",
+      "SecretCount": 1,
+      "SecretExpirationStatus": "🟠 Expires in 39 days",
+      "CertificateCount": 0,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 2,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "EXACT MFA - PUBLIC APP",
+      "AppId": "815820a1-6ad3-49db-8ad9-63e61dfdf45b",
+      "SecretCount": 0,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 2,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "Arda Online",
+      "AppId": "0e00d923-edee-4390-8f8c-d4dad2646f72",
+      "SecretCount": 0,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 0,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "ConnectSyncProvisioning_SRV-MEE-DC01_8d9ae538c4bd",
+      "AppId": "711dcc3b-c9e8-4586-84d6-b082dbe6bb56",
+      "SecretCount": 0,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 1,
+      "CertificateExpirationStatus": "🟢 Valid (178 days)",
+      "PermissionCount": 4,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "Zivver",
+      "AppId": "7367fce5-f910-4bc6-9f12-7cd49dee346f",
+      "SecretCount": 0,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 0,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "Orbis SMTP",
+      "AppId": "54509e72-665d-4752-a818-aa9314ad3511",
+      "SecretCount": 1,
+      "SecretExpirationStatus": "🟠 Expires in 39 days",
+      "CertificateCount": 0,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 7,
+      "HasEnterpriseApp": true
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Application snapshot uit Phase 3."
+    ],
+    "permissions": [
+      "Application.Read.All",
+      "Directory.Read.All"
+    ]
+  }
+}

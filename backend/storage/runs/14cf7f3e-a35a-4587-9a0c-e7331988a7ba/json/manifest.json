@@ -1,0 +1,139 @@
+{
+  "assessmentId": "20260328-101414",
+  "generated_at": "2026-03-28T11:11:36.3464910+01:00",
+  "version": 1,
+  "files": [
+    {
+      "section": "gebruikers",
+      "subsection": "users",
+      "label": "Gebruikers",
+      "relative": "phase1/gebruikers.users.json"
+    },
+    {
+      "section": "gebruikers",
+      "subsection": "licenses",
+      "label": "Licenties",
+      "relative": "phase1/gebruikers.licenses.json"
+    },
+    {
+      "section": "identity",
+      "subsection": "mfa",
+      "label": "MFA",
+      "relative": "phase4/identity.mfa.json"
+    },
+    {
+      "section": "teams",
+      "subsection": "teams",
+      "label": "Teams",
+      "relative": "phase2/teams.teams.json"
+    },
+    {
+      "section": "sharepoint",
+      "subsection": "sharepoint-sites",
+      "label": "SharePoint Sites",
+      "relative": "phase2/sharepoint.sharepoint-sites.json"
+    },
+    {
+      "section": "sharepoint",
+      "subsection": "sharepoint-settings",
+      "label": "SharePoint Instellingen",
+      "relative": "phase2/sharepoint.sharepoint-settings.json"
+    },
+    {
+      "section": "backup",
+      "subsection": "onedrive",
+      "label": "OneDrive",
+      "relative": "phase2/backup.onedrive.json"
+    },
+    {
+      "section": "exchange",
+      "subsection": "mailboxes",
+      "label": "Mailboxen",
+      "relative": "phase2/exchange.mailboxes.json"
+    },
+    {
+      "section": "ca",
+      "subsection": "policies",
+      "label": "Conditional Access Policies",
+      "relative": "phase3/ca.policies.json"
+    },
+    {
+      "section": "apps",
+      "subsection": "registrations",
+      "label": "App Registrations",
+      "relative": "phase3/apps.registrations.json"
+    },
+    {
+      "section": "alerts",
+      "subsection": "secure-score",
+      "label": "Secure Score",
+      "relative": "phase4/alerts.secure-score.json"
+    },
+    {
+      "section": "alerts",
+      "subsection": "audit-logs",
+      "label": "Security Alerts",
+      "relative": "phase4/alerts.audit-logs.json"
+    },
+    {
+      "section": "identity",
+      "subsection": "admin-roles",
+      "label": "Admin Password Ages",
+      "relative": "phase4/identity.admin-roles.json"
+    },
+    {
+      "section": "intune",
+      "subsection": "summary",
+      "label": "Intune Overzicht",
+      "relative": "phase5/intune.summary.json"
+    },
+    {
+      "section": "intune",
+      "subsection": "devices",
+      "label": "Intune Apparaten",
+      "relative": "phase5/intune.devices.json"
+    },
+    {
+      "section": "intune",
+      "subsection": "compliance",
+      "label": "Compliance Policies",
+      "relative": "phase5/intune.compliance.json"
+    },
+    {
+      "section": "intune",
+      "subsection": "config",
+      "label": "Configuratie",
+      "relative": "phase5/intune.config.json"
+    },
+    {
+      "section": "azure",
+      "subsection": "subscriptions",
+      "label": "Subscriptions",
+      "relative": "phase6/azure.subscriptions.json"
+    },
+    {
+      "section": "azure",
+      "subsection": "resources",
+      "label": "Resources",
+      "relative": "phase6/azure.resources.json"
+    },
+    {
+      "section": "azure",
+      "subsection": "alerts",
+      "label": "Azure Security",
+      "relative": "phase6/azure.alerts.json"
+    },
+    {
+      "section": "compliance",
+      "subsection": "cis",
+      "label": "CIS M365 Foundations Benchmark",
+      "relative": "compliance/compliance.cis.json"
+    },
+    {
+      "section": "hybrid",
+      "subsection": "sync",
+      "label": "Hybrid Identity & AD Connect",
+      "relative": "hybrid/hybrid.sync.json"
+    }
+  ]
+}
