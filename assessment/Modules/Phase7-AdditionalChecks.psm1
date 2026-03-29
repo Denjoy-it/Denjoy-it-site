@@ -1,13 +1,24 @@
 # Phase7-AdditionalChecks.psm1
-# Placeholder module for additional planned checks that don't fit existing phases
-# Created: 2025-12-21
-# Author: Automated placeholder
+# Legacy-auth detectie via SignIn logs + extra tenant checks
+# Vereiste permissies: AuditLog.Read.All, SignIn.Read.All
 
 <#
 Module: Phase7-AdditionalChecks.psm1
 Doel: Tenant- en mailbox-level detectie van legacy/auth protocols (IMAP/POP/SMTP/ActiveSync/Other) via SignIn logs.
 Voorwaarden: Microsoft.Graph.Authentication en permissies (AuditLog.Read.All / SignIn.Read.All).
 Structuur gelijk aan andere Phase modules: Invoke-Phase7Assessment is entrypoint en vult $global:Phase7Data.
+
+Geïmplementeerd:
+  P7-LEGACY  Legacy authenticatie detectie via SignIn logs (IMAP/POP/SMTP/ActiveSync)
+  P7-GUESTS  Gastinvitatie-beleid controle (authorizationPolicy)
+
+Gepland (vereist Exchange/Teams PowerShell):
+  P7-001  SMTP AUTH per-mailbox status  (Get-CASMailbox — Exchange PS vereist)
+  P7-003  Teams external access         (Get-CsTenantFederationConfiguration — Teams PS vereist)
+  P7-004  SharePoint default link type  (PnP PowerShell vereist)
+  P7-005  Autopilot config              (zie Phase5-IntuneConfig)
+  P7-006  CA <-> Intune cross-checks    (zie Phase3 + Phase5)
+  P7-007  Alert policies listing        (zie Invoke-DenjoyAlerts.ps1)
 #>
 
 #region Helpers
@@ -30,19 +41,43 @@ function Invoke-Phase7Log {
 }
 #endregion
 
-function Get-Phase7PlannedChecks {
-	[CmdletBinding()]
-	param()
-	$notes = @(
-		[pscustomobject]@{ Id='P7-001'; Title='SMTP AUTH status'; Status='Planned' },
-		[pscustomobject]@{ Id='P7-002'; Title='DKIM/DMARC/SPF'; Status='Planned' },
-		[pscustomobject]@{ Id='P7-003'; Title='Teams external access'; Status='Planned' },
-		[pscustomobject]@{ Id='P7-004'; Title='SharePoint default link type'; Status='Planned' },
-		[pscustomobject]@{ Id='P7-005'; Title='Autopilot config'; Status='Planned' },
-		[pscustomobject]@{ Id='P7-006'; Title='CA <-> Intune cross-checks'; Status='Planned' },
-		[pscustomobject]@{ Id='P7-007'; Title='Alert policies listing'; Status='Planned' }
-	)
-	return $notes
+function Get-Phase7GuestPolicy {
+    <#
+    .SYNOPSIS
+        Controleert het gastuitnodigingsbeleid van de tenant via Graph API.
+        Vereiste permissie: Policy.Read.All
+    #>
+    [CmdletBinding()]
+    param()
+
+    try {
+        $policy = Invoke-MgGraphRequest -Method GET -Uri 'https://graph.microsoft.com/v1.0/policies/authorizationPolicy' -ErrorAction Stop
+        $setting = $policy.allowInvitesFrom
+
+        $status = switch ($setting) {
+            'adminsOnly'                { 'Pass' }
+            'adminsAndGuestInviters'    { 'Pass' }
+            'adminsAndMembers'          { 'Warning' }
+            'everyone'                  { 'Fail' }
+            default                     { 'Unknown' }
+        }
+
+        return [PSCustomObject]@{
+            CheckId          = 'P7-GUESTS'
+            Title            = 'Gastuitnodigingsbeleid'
+            Status           = $status
+            CurrentSetting   = $setting
+            Recommendation   = if ($status -eq 'Fail') { "Beperk gastuitnodigingen: stel 'adminsAndGuestInviters' in via Entra of de Remediation module." } else { $null }
+        }
+    } catch {
+        return [PSCustomObject]@{
+            CheckId        = 'P7-GUESTS'
+            Title          = 'Gastuitnodigingsbeleid'
+            Status         = 'Error'
+            CurrentSetting = $null
+            Recommendation = "Fout bij ophalen: $($_.Exception.Message)"
+        }
+    }
 }
 
 function Invoke-Phase7Assessment {
@@ -90,11 +125,11 @@ function Invoke-Phase7Assessment {
 		[PSCustomObject]@{
 			UserPrincipalName = $sample.UserPrincipalName
 			DisplayName       = $sample.UserDisplayName
-			ClientAppUsed     = ($sample.ClientAppUsed -or 'Unknown')
-			Resource          = ($sample.ResourceDisplayName -or $sample.ResourceId -or 'Unknown')
+			ClientAppUsed     = if ($sample.ClientAppUsed) { $sample.ClientAppUsed } else { 'Unknown' }
+			Resource          = if ($sample.ResourceDisplayName) { $sample.ResourceDisplayName } elseif ($sample.ResourceId) { $sample.ResourceId } else { 'Unknown' }
 			TenantId          = $sample.TenantId
 			SignInCount       = $_.Count
-			LastSignIn        = ([datetime]$sample.CreatedDateTime).ToLocalTime()
+			LastSignIn        = if ($sample.CreatedDateTime) { ([datetime]$sample.CreatedDateTime).ToLocalTime() } else { $null }
 		}
 	} | Sort-Object -Property SignInCount -Descending
 
@@ -110,10 +145,20 @@ function Invoke-Phase7Assessment {
 		GeneratedAt = (Get-Date)
 	}
 
+	# Gastbeleid check (aparte Graph call, geen SignIn logs nodig)
+	$guestCheck = $null
+	if (Get-Command -Name Invoke-MgGraphRequest -ErrorAction SilentlyContinue) {
+		$guestCheck = Get-Phase7GuestPolicy
+		Invoke-Phase7Log "P7-GUESTS: $($guestCheck.Status) — $($guestCheck.CurrentSetting)" -Level $(
+			switch ($guestCheck.Status) { 'Pass' { 'Success' } 'Fail' { 'Warning' } default { 'Info' } }
+		)
+	}
+
 	$global:Phase7Data = @{
 		LegacyProtocolSignIns = $report
 		LegacySignInRaw       = $legacySignIns
 		Summary               = $summary
+		GuestPolicy           = $guestCheck
 	}
 
 	Invoke-Phase7Log "Phase7: $($summary.LegacySignIns) legacy sign-ins across $($summary.AffectedUsers) user(s)" -Level Info
@@ -179,4 +224,4 @@ $rows
 	}
 }
 
-Export-ModuleMember -Function Get-Phase7PlannedChecks, Invoke-Phase7Assessment, Export-Phase7LegacyAuthCsv, Format-Phase7HtmlSummary
+Export-ModuleMember -Function Get-Phase7GuestPolicy, Invoke-Phase7Assessment, Export-Phase7LegacyAuthCsv, Format-Phase7HtmlSummary

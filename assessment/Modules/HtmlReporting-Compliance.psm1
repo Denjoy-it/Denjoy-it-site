@@ -514,4 +514,33 @@ function New-ComplianceFrameworkMatrix {
 
 #endregion
 
-Export-ModuleMember -Function 'New-CisComplianceSection', 'New-ComplianceFrameworkMatrix'
+function Get-CisCheckResults {
+    <#
+    .SYNOPSIS
+        Voert alle CIS controles uit en retourneert de resultaten als array van PSCustomObjects.
+        Wordt aangeroepen door Export-AssessmentJson om CIS-data in portal JSON te exporteren.
+    #>
+    [CmdletBinding()]
+    param()
+
+    $results = @()
+    foreach ($control in $script:CisControls) {
+        $status = try { & $control.Check } catch { 'NA' }
+        $detail = try { & $control.Detail } catch { '' }
+        $results += [PSCustomObject]@{
+            Id       = $control.Id
+            Level    = $control.Level
+            Category = $control.Category
+            Title    = $control.Title
+            Status   = $status
+            Detail   = [string]$detail
+            NIST     = $control.NIST
+            ISO27001 = $control.ISO27001
+            PCIDSS   = $control.PCIDSS
+            HIPAA    = $control.HIPAA
+        }
+    }
+    return $results
+}
+
+Export-ModuleMember -Function 'New-CisComplianceSection', 'New-ComplianceFrameworkMatrix', 'Get-CisCheckResults'

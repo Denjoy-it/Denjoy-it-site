@@ -165,7 +165,11 @@ param(
 
     # Feature 7: CSV export naast het HTML rapport
     [Parameter(Mandatory = $false)]
-    [switch]$ExportCsv
+    [switch]$ExportCsv,
+
+    # Feature 8: Portal JSON export naast HTML/CSV
+    [Parameter(Mandatory = $false)]
+    [switch]$ExportJson
 )
 
 #Requires -Version 5.1
@@ -405,6 +409,7 @@ $global:Phase3Data = @{}
 $global:Phase4Data = @{}
 $global:Phase5Data = @{}
 $global:Phase6Data = @{}
+$global:Phase7Data = @{}
 $global:TenantInfo = @{}
 
 # Als backend het secret via env var doorgeeft, zet het hier om naar SecureString.
@@ -475,6 +480,9 @@ try {
     Import-Module (Join-Path $ModulePath "Phase6-AzureInfrastructure.psm1")  -Force -ErrorAction Stop
     Write-Host "  ✓ Phase6-AzureInfrastructure module loaded" -ForegroundColor Green
 
+    Import-Module (Join-Path $ModulePath "Phase7-AdditionalChecks.psm1")    -Force -ErrorAction Stop
+    Write-Host "  ✓ Phase7-AdditionalChecks module loaded" -ForegroundColor Green
+
     # ── v3.2: Nieuwe modules ──
     $hybridModPath = Join-Path $ModulePath "Phase-HybridIdentity.psm1"
     if (Test-Path $hybridModPath) {
@@ -486,6 +494,12 @@ try {
     if (Test-Path $complianceModPath) {
         Import-Module $complianceModPath -Force -ErrorAction SilentlyContinue
         Write-Host "  ✓ HtmlReporting-Compliance module loaded" -ForegroundColor Green
+    }
+
+    $jsonExportPath = Join-Path $ModulePath "Export-AssessmentJson.psm1"
+    if (Test-Path $jsonExportPath) {
+        Import-Module $jsonExportPath -Force -ErrorAction SilentlyContinue
+        Write-Host "  ✓ Export-AssessmentJson module loaded" -ForegroundColor Green
     }
 
     $csvModPath = Join-Path $ModulePath "Export-AssessmentCsv.psm1"
@@ -552,15 +566,11 @@ try {
                     $global:ExoConnected = $false
                 }
             } else {
-                try {
-                    # Interactive fallback - will prompt the user if required
-                    Connect-ExchangeOnline -ShowBanner:$false -ErrorAction Stop
-                    Write-LogSafe "✓ Connected to Exchange Online (interactive)" "Success"
-                    $global:ExoConnected = $true
-                } catch {
-                    Write-LogSafe "Interactive Exchange connection failed or requires credentials: $($_.Exception.Message)" "Warning"
-                    $global:ExoConnected = $false
-                }
+                # No app credentials available — skip Exchange connection entirely.
+                # Interactive auth does not work in a headless/daemon context and causes
+                # assembly conflicts. Exchange data will be collected via Graph fallback.
+                Write-LogSafe "Exchange Online: geen app-credentials geconfigureerd. Exchange-checks verlopen via Graph-fallback." "Info"
+                $global:ExoConnected = $false
             }
         } else {
             Write-LogSafe "Exchange Online PowerShell module not installed; Exchange-only checks will be skipped or use Graph fallback." "Info"
@@ -607,6 +617,17 @@ try {
         } catch {}
     }
 
+    # ── Phase 7: Additional Checks (Legacy sign-ins, Guest policy) ──
+    if (Get-Command -Name Invoke-Phase7Assessment -ErrorAction SilentlyContinue) {
+        Write-LogSafe "Starting Phase 7 assessment..." "Info"
+        try {
+            Invoke-Phase7Assessment
+            Write-LogSafe "✓ Phase 7 assessment voltooid" "Success"
+        } catch {
+            Write-LogSafe "Phase 7 assessment fout: $($_.Exception.Message)" "Warning"
+        }
+    }
+
     # ── Feature 3: Hybrid Identity Assessment ──
     if (-not $SkipHybrid) {
         if (Get-Command -Name Invoke-HybridIdentityAssessment -ErrorAction SilentlyContinue) {
@@ -650,6 +671,24 @@ try {
             Write-LogSafe "✓ CSV export voltooid → $csvOutputDir" "Success"
         } catch {
             Write-LogSafe "CSV export fout: $($_.Exception.Message)" "Warning"
+        }
+    }
+
+    if ($ExportJson -and (Get-Command -Name Export-AssessmentPortalJson -ErrorAction SilentlyContinue)) {
+        Write-LogSafe "Portal JSON export starten..." "Info"
+        try {
+            $jsonRootDir = if ($global:ReportFullPath -and (Test-Path (Split-Path $global:ReportFullPath -Parent))) {
+                Join-Path (Split-Path $global:ReportFullPath -Parent) "json"
+            } elseif ($OutputPath -and (Test-Path $OutputPath)) {
+                Join-Path $OutputPath "json"
+            } else {
+                Join-Path $PSScriptRoot "json"
+            }
+
+            Export-AssessmentPortalJson -OutputDirectory $jsonRootDir -AssessmentId $global:AssessmentId
+            Write-LogSafe "✓ Portal JSON export voltooid → $jsonRootDir" "Success"
+        } catch {
+            Write-LogSafe "Portal JSON export fout: $($_.Exception.Message)" "Warning"
         }
     }
 

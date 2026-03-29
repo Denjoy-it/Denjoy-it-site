@@ -156,18 +156,37 @@ function Invoke-Phase5Assessment {
             $totalDevices = $managedDevices.value.Count
             $compliantDevices = ($managedDevices.value | Where-Object { $_.complianceState -eq 'compliant' }).Count
             $nonCompliantDevices = ($managedDevices.value | Where-Object { $_.complianceState -eq 'noncompliant' }).Count
-            
+
             # Per OS breakdown
             $devicesByOS = $managedDevices.value | Group-Object -Property operatingSystem | Select-Object Name, Count
-            
+
             $global:Phase5Data.ManagedDevicesSummary = [PSCustomObject]@{
                 TotalDevices = $totalDevices
                 CompliantDevices = $compliantDevices
                 NonCompliantDevices = $nonCompliantDevices
                 CompliancePercentage = if ($totalDevices -gt 0) { [math]::Round(($compliantDevices / $totalDevices) * 100, 2) } else { 0 }
             }
-            
+
             $global:Phase5Data.DevicesByOS = $devicesByOS
+
+            # Store raw device list for portal sections
+            $global:Phase5Data.ManagedDevices = @(
+                $managedDevices.value | ForEach-Object {
+                    [PSCustomObject]@{
+                        Id                = $_.id
+                        DeviceName        = $_.deviceName
+                        OperatingSystem   = $_.operatingSystem
+                        OsVersion         = $_.osVersion
+                        ComplianceState   = $_.complianceState
+                        UserPrincipalName = $_.userPrincipalName
+                        UserDisplayName   = $_.managedDeviceName
+                        LastSyncDateTime  = $_.lastSyncDateTime
+                        EnrolledDateTime  = $_.enrolledDateTime
+                        Manufacturer      = $_.manufacturer
+                        Model             = $_.model
+                    }
+                }
+            )
         } else {
             $global:Phase5Data.ManagedDevicesSummary = [PSCustomObject]@{
                 TotalDevices = 0
@@ -176,6 +195,7 @@ function Invoke-Phase5Assessment {
                 CompliancePercentage = 0
             }
             $global:Phase5Data.DevicesByOS = @()
+            $global:Phase5Data.ManagedDevices = @()
         }
     } catch {
         Write-AssessmentLog "Could not retrieve managed devices: $_" -Level Warning
@@ -186,6 +206,7 @@ function Invoke-Phase5Assessment {
             CompliancePercentage = 0
         }
         $global:Phase5Data.DevicesByOS = @()
+        $global:Phase5Data.ManagedDevices = @()
     }
     
     # 5. App Protection Policies (MAM)

@@ -13,24 +13,30 @@
 #>
 
 # ---------------------------------------------------------------------------
-# SKU friendly name mapping (display names for common Microsoft SKUs)
+# SKU friendly name mapping (shared JSON source)
 # ---------------------------------------------------------------------------
-$script:SkuFriendlyMap = @{
-    'AAD_PREMIUM_P2'         = 'Azure AD Premium P2'
-    'ENTERPRISEPACK'         = 'Microsoft 365 E3'
-    'M365_BUSINESS_PREMIUM'  = 'Microsoft 365 Business Premium'
-    'O365_BUSINESS_PREMIUM'  = 'Microsoft 365 Business Premium'
-    'M365_BUSINESS_STANDARD' = 'Microsoft 365 Business Standard'
-    'O365_BUSINESS_STANDARD' = 'Microsoft 365 Business Standard'
-    'EMS_E5'                 = 'Enterprise Mobility + Security E5'
-    'EMS_E3'                 = 'Enterprise Mobility + Security E3'
-    'POWER_BI_PRO'           = 'Power BI Pro'
-    'FLOW_FREE'              = 'Power Automate Free'
-    'POWER_BI_STANDARD'      = 'Power BI (Standard)'
-    'WINDOWS_STORE'          = 'Windows Store'
-    'AAD_PREMIUM'            = 'Azure AD Premium'
-    'SP_T_STORAGE'           = 'SharePoint Extra Storage'
+$script:SkuFriendlyMap = @{}
+
+function Initialize-SkuFriendlyMap {
+    if ($script:SkuFriendlyMap.Count -gt 0) { return }
+
+    $moduleRoot = Split-Path -Parent $PSScriptRoot
+    $repoRoot = Split-Path -Parent $moduleRoot
+    $mapPath = Join-Path $repoRoot "shared/m365-sku-friendly-names.json"
+
+    if (Test-Path $mapPath) {
+        try {
+            $json = Get-Content -Path $mapPath -Raw -Encoding UTF8 | ConvertFrom-Json -AsHashtable
+            foreach ($key in $json.Keys) {
+                $script:SkuFriendlyMap[$key.ToString().ToUpperInvariant()] = [string]$json[$key]
+            }
+        } catch {
+            Write-Warning "SKU friendly-name mapping kon niet worden geladen uit ${mapPath}: $($_.Exception.Message)"
+        }
+    }
 }
+
+Initialize-SkuFriendlyMap
 
 # ---------------------------------------------------------------------------
 # Helper functions (module-level)
@@ -880,6 +886,49 @@ function New-M365ReportSnapshot {
                 }
             }
         )
+        CAPolicies       = @(
+            @($global:Phase3Data.CAPolicies) | ForEach-Object {
+                $pol = $_
+                $inclUsers = @()
+                try {
+                    $users = $pol.Conditions.Users
+                    if ($users) {
+                        if ($users.IncludeUsers -contains 'All') { $inclUsers += 'Alle gebruikers' }
+                        elseif ($users.IncludeUsers -and $users.IncludeUsers.Count -gt 0) { $inclUsers += "$($users.IncludeUsers.Count) gebruiker(s)" }
+                        if ($users.IncludeGroups -and $users.IncludeGroups.Count -gt 0) { $inclUsers += "$($users.IncludeGroups.Count) groep(en)" }
+                        if ($users.IncludeRoles -and $users.IncludeRoles.Count -gt 0) { $inclUsers += "$($users.IncludeRoles.Count) rol(len)" }
+                    }
+                } catch { }
+                $inclApps = '—'
+                try {
+                    $apps = $pol.Conditions.Applications
+                    if ($apps) {
+                        $inclApps = if ($apps.IncludeApplications -contains 'All') { 'Alle apps' }
+                                    elseif ($apps.IncludeApplications -contains 'Office365') { 'Office 365' }
+                                    elseif ($apps.IncludeApplications -and $apps.IncludeApplications.Count -gt 0) { "$($apps.IncludeApplications.Count) app(s)" }
+                                    else { '—' }
+                    }
+                } catch { }
+                $grant = 'Geen'
+                try {
+                    if ($pol.GrantControls) {
+                        $ctrls = ($pol.GrantControls.BuiltInControls -join ', ')
+                        $grant = if ($pol.GrantControls.Operator) { "$($pol.GrantControls.Operator): $ctrls" } else { $ctrls }
+                    }
+                } catch { }
+                [PSCustomObject]@{
+                    Id           = $pol.Id
+                    DisplayName  = $pol.DisplayName
+                    State        = $pol.State
+                    CreatedAt    = $pol.CreatedDateTime
+                    ModifiedAt   = $pol.ModifiedDateTime
+                    UserScope    = ($inclUsers -join ', ')
+                    AppScope     = $inclApps
+                    GrantControl = $grant
+                    SessionCtrl  = if ($pol.SessionControls) { 'Ja' } else { 'Nee' }
+                }
+            }
+        )
         DomainDnsChecks  = @(
             @($global:Phase3Data.DomainDnsChecks) | ForEach-Object {
                 [PSCustomObject]@{
@@ -898,6 +947,35 @@ function New-M365ReportSnapshot {
                     WhenCreated        = $_.WhenCreated
                 }
             }
+        )
+        IntuneDevices    = @(
+            if ($global:Phase5Data.ManagedDevices) {
+                @($global:Phase5Data.ManagedDevices) | ForEach-Object {
+                    [PSCustomObject]@{
+                        Id                = $_.Id
+                        DeviceName        = $_.DeviceName
+                        OperatingSystem   = $_.OperatingSystem
+                        OsVersion         = $_.OsVersion
+                        ComplianceState   = $_.ComplianceState
+                        UserPrincipalName = $_.UserPrincipalName
+                        UserDisplayName   = $_.UserDisplayName
+                        LastSyncDateTime  = $_.LastSyncDateTime
+                        EnrolledDateTime  = $_.EnrolledDateTime
+                        Manufacturer      = $_.Manufacturer
+                        Model             = $_.Model
+                    }
+                }
+            }
+        )
+        IntuneCompliance = @(
+            if ($global:Phase5Data.CompliancePolicies) { @($global:Phase5Data.CompliancePolicies) }
+        )
+        IntuneConfigProfiles = @(
+            if ($global:Phase5Data.ConfigurationProfiles) { @($global:Phase5Data.ConfigurationProfiles) }
+        )
+        IntuneSummary    = $global:Phase5Data.ManagedDevicesSummary
+        IntuneDevicesByOS = @(
+            if ($global:Phase5Data.DevicesByOS) { @($global:Phase5Data.DevicesByOS) }
         )
         Phases           = @($phaseRows)
     }

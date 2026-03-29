@@ -64,8 +64,8 @@ function Export-AssessmentToCsv {
     # ── 01 Gebruikers overzicht ──
     try {
         $d = $global:Phase1Data
-        if ($d -and $d.Users) {
-            $rows = $d.Users | ForEach-Object {
+        if ($d -and $d.AllUsersRaw) {
+            $rows = $d.AllUsersRaw | ForEach-Object {
                 [PSCustomObject]@{
                     DisplayName        = $_.DisplayName
                     UPN                = $_.UserPrincipalName
@@ -85,14 +85,12 @@ function Export-AssessmentToCsv {
         if ($d -and $d.Licenses) {
             $rows = $d.Licenses | ForEach-Object {
                 [PSCustomObject]@{
-                    LicenseName       = $_.DisplayName
-                    SkuPartNumber     = $_.SkuPartNumber
-                    TotalUnits        = $_.PrepaidUnits.Enabled
-                    ConsumedUnits     = $_.ConsumedUnits
-                    AvailableUnits    = ($_.PrepaidUnits.Enabled - $_.ConsumedUnits)
-                    UtilizationPct    = if ($_.PrepaidUnits.Enabled -gt 0) {
-                                            [math]::Round(($_.ConsumedUnits / $_.PrepaidUnits.Enabled) * 100, 1)
-                                        } else { 0 }
+                    LicenseName    = $_.SkuPartNumber
+                    SkuPartNumber  = $_.SkuPartNumber
+                    TotalUnits     = $_.Total
+                    ConsumedUnits  = $_.Consumed
+                    AvailableUnits = $_.Available
+                    UtilizationPct = $_.Utilization
                 }
             }
             Write-CsvSafe -Path (Join-Path $OutputDirectory "02_Licenties.csv") -Data $rows -Label "Licenties"
@@ -102,17 +100,24 @@ function Export-AssessmentToCsv {
     # ── 03 MFA Status ──
     try {
         $d = $global:Phase1Data
-        if ($d -and $d.MfaDetails) {
-            $rows = $d.MfaDetails | ForEach-Object {
+        $withMfa    = @($d.UsersWithMFA)
+        $withoutMfa = @($d.UsersWithoutMFA)
+        if ($d -and ($withMfa.Count -gt 0 -or $withoutMfa.Count -gt 0)) {
+            $rows = @()
+            $rows += $withMfa | ForEach-Object {
                 [PSCustomObject]@{
-                    DisplayName          = $_.DisplayName
-                    UPN                  = $_.UserPrincipalName
-                    MfaRegistered        = $_.IsMfaRegistered
-                    DefaultMethod        = $_.DefaultMfaMethod
-                    AuthenticatorApp     = $_.HasAuthenticatorApp
-                    Phone                = $_.HasPhone
-                    Fido2                = $_.HasFido2
-                    WindowsHello         = $_.HasWindowsHello
+                    DisplayName    = $_.DisplayName
+                    UPN            = $_.UserPrincipalName
+                    AccountEnabled = $_.AccountEnabled
+                    MfaRegistered  = $true
+                }
+            }
+            $rows += $withoutMfa | ForEach-Object {
+                [PSCustomObject]@{
+                    DisplayName    = $_.DisplayName
+                    UPN            = $_.UserPrincipalName
+                    AccountEnabled = $_.AccountEnabled
+                    MfaRegistered  = $false
                 }
             }
             Write-CsvSafe -Path (Join-Path $OutputDirectory "03_MFA_Status.csv") -Data $rows -Label "MFA Status"
@@ -351,7 +356,7 @@ function Export-AssessmentToCsv {
             TenantName           = try { $global:HybridData.OrgDisplayName } catch { '' }
             TenantId             = try { $global:HybridData.OrgTenantId } catch { '' }
             TotalUsers           = try { $global:Phase1Data.TotalUsers } catch { 0 }
-            MfaRegisteredPct     = try { [math]::Round(($global:Phase1Data.MfaRegisteredCount / $global:Phase1Data.TotalUsers) * 100) } catch { 0 }
+            MfaRegisteredPct     = try { $mfaWith = @($global:Phase1Data.UsersWithMFA).Count; $total = [int]$global:Phase1Data.EnabledMemberUsers; if ($total -gt 0) { [math]::Round(($mfaWith / $total) * 100) } else { 0 } } catch { 0 }
             LicensesTotal        = try { ($global:Phase1Data.Licenses | Measure-Object).Count } catch { 0 }
             LegacyAuthCount      = try { $global:Phase2Data.LegacyAuthEnabledCount } catch { 0 }
             CaPolicyCount        = try { $global:Phase3Data.CaPolicyCount } catch { 0 }

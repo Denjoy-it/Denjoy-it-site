@@ -31,6 +31,127 @@
     
     Results are stored in script:Phase1Data hashtable.
 #>
+function Initialize-Phase1SkuFriendlyMap {
+    if ($script:Phase1SkuFriendlyMap -and $script:Phase1SkuFriendlyMap.Count -gt 0) { return }
+
+    $script:Phase1SkuFriendlyMap = @{}
+    try {
+        $moduleRoot = Split-Path -Parent $PSScriptRoot
+        $repoRoot = Split-Path -Parent $moduleRoot
+        $mapPath = Join-Path $repoRoot "shared/m365-sku-friendly-names.json"
+        if (Test-Path $mapPath) {
+            $json = Get-Content -Path $mapPath -Raw -Encoding UTF8 | ConvertFrom-Json -AsHashtable
+            foreach ($key in $json.Keys) {
+                $script:Phase1SkuFriendlyMap[$key.ToString().ToUpperInvariant()] = [string]$json[$key]
+            }
+        }
+    } catch {
+        Write-AssessmentLog "Kon friendly SKU mapping niet laden: $($_.Exception.Message)" -Level Warning
+    }
+}
+
+function Get-Phase1FriendlySkuName {
+    param([AllowNull()][string]$SkuPartNumber)
+    Initialize-Phase1SkuFriendlyMap
+    if ([string]::IsNullOrWhiteSpace($SkuPartNumber)) { return "" }
+    $key = $SkuPartNumber.ToUpperInvariant()
+    if ($script:Phase1SkuFriendlyMap.ContainsKey($key)) {
+        return $script:Phase1SkuFriendlyMap[$key]
+    }
+    return $SkuPartNumber
+}
+
+function Convert-Phase1UsersToPortalItems {
+    param([object[]]$Users)
+
+    return @($Users | ForEach-Object {
+        [PSCustomObject]@{
+            id                    = $_.Id
+            displayName           = $_.DisplayName
+            userPrincipalName     = $_.UserPrincipalName
+            mail                  = $_.Mail
+            accountEnabled        = $_.AccountEnabled
+            userType              = $_.UserType
+            createdDateTime       = $_.CreatedDateTime
+            licenseCount          = @($_.AssignedLicenses).Count
+            onPremisesSyncEnabled = if ($null -ne $_.OnPremisesSyncEnabled) { [bool]$_.OnPremisesSyncEnabled } else { $false }
+            department            = $_.Department
+            jobTitle              = $_.JobTitle
+            officeLocation        = $_.OfficeLocation
+            preferredLanguage     = $_.PreferredLanguage
+        }
+    })
+}
+
+function Convert-Phase1MfaUsersToPortalItems {
+    param([object[]]$Users, [bool]$MfaRegistered = $false)
+
+    return @($Users | ForEach-Object {
+        [PSCustomObject]@{
+            id                = $_.Id
+            displayName       = $_.DisplayName
+            userPrincipalName = $_.UserPrincipalName
+            accountEnabled    = $_.AccountEnabled
+            userType          = $_.UserType
+            mfaRegistered     = $MfaRegistered
+        }
+    })
+}
+
+function Convert-Phase1LicensesToPortalItems {
+    param([object[]]$Licenses)
+
+    return @($Licenses | ForEach-Object {
+        [PSCustomObject]@{
+            skuPartNumber = $_.SkuPartNumber
+            displayName   = Get-Phase1FriendlySkuName -SkuPartNumber $_.SkuPartNumber
+            total         = $_.Total
+            consumed      = $_.Consumed
+            available     = $_.Available
+            utilization   = $_.Utilization
+            assignedUsers = @($_.AssignedUsers | ForEach-Object {
+                [PSCustomObject]@{
+                    displayName       = $_.DisplayName
+                    userPrincipalName = $_.UserPrincipalName
+                }
+            })
+        }
+    })
+}
+
+function New-Phase1PortalPayload {
+    param(
+        [Parameter(Mandatory)]
+        [string]$Section,
+        [Parameter(Mandatory)]
+        [string]$Subsection,
+        [Parameter(Mandatory)]
+        [string]$Label,
+        [Parameter(Mandatory)]
+        [hashtable]$Summary,
+        [Parameter(Mandatory)]
+        [object[]]$Items,
+        [string[]]$Notes = @(),
+        [string[]]$Permissions = @(),
+        [string]$AssessmentId = ""
+    )
+
+    [PSCustomObject]@{
+        section      = $Section
+        subsection   = $Subsection
+        label        = $Label
+        source       = "assessment"
+        generated_at = (Get-Date -Format "o")
+        assessmentId = $AssessmentId
+        summary      = [PSCustomObject]$Summary
+        items        = @($Items)
+        meta         = [PSCustomObject]@{
+            notes       = @($Notes)
+            permissions = @($Permissions)
+        }
+    }
+}
+
 function Invoke-Phase1Assessment {
     Write-AssessmentLog "`n=== PHASE 1: Users, Licensing & Security Basics ===" -Level Info
     
@@ -61,7 +182,7 @@ function Invoke-Phase1Assessment {
     
     # All Users (exclude shared mailboxes)
     Write-AssessmentLog "Collecting all users..." -Level Info
-    $allUsersRaw = Get-MgUser -All -Property Id, DisplayName, UserPrincipalName, AccountEnabled, UserType, CreatedDateTime, AssignedLicenses, Mail
+    $allUsersRaw = Get-MgUser -All -Property Id, DisplayName, UserPrincipalName, AccountEnabled, UserType, CreatedDateTime, AssignedLicenses, Mail, OnPremisesSyncEnabled, Department, JobTitle, OfficeLocation, PreferredLanguage
     
     # Get counts from RAW data first (before filtering)
     $global:Phase1Data.TotalUsersRaw = $allUsersRaw.Count
@@ -222,6 +343,114 @@ function Invoke-Phase1Assessment {
     Write-AssessmentLog "✓ Phase 1 complete" -Level Success
 }
 
+function Get-Phase1PortalPayloads {
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory = $false)]
+        [string]$AssessmentId = ""
+    )
+
+    $phase1 = if ($global:Phase1Data) { $global:Phase1Data } else { @{} }
+
+    $totalUsersRaw = if ($null -ne $phase1.TotalUsersRaw) { [int]$phase1.TotalUsersRaw } else { 0 }
+    $enabledUsers = if ($null -ne $phase1.EnabledUsers) { [int]$phase1.EnabledUsers } else { 0 }
+    $disabledUsersRaw = if ($null -ne $phase1.DisabledUsersRaw) { [int]$phase1.DisabledUsersRaw } else { 0 }
+    $enabledMemberUsers = if ($null -ne $phase1.EnabledMemberUsers) { [int]$phase1.EnabledMemberUsers } else { 0 }
+    $mfaCheckFailed = if ($null -ne $phase1.MFACheckFailed) { [bool]$phase1.MFACheckFailed } else { $false }
+    $mfaCheckNote = if (-not [string]::IsNullOrWhiteSpace([string]$phase1.MFACheckNote)) { [string]$phase1.MFACheckNote } else { "Assessment snapshot voor MFA registratie." }
+
+    $usersPayload = New-Phase1PortalPayload `
+        -Section "gebruikers" `
+        -Subsection "users" `
+        -Label "Gebruikers" `
+        -Summary @{
+            total    = $totalUsersRaw
+            enabled  = $enabledUsers
+            disabled = $disabledUsersRaw
+            guests   = @($phase1.GuestUsersRaw).Count
+        } `
+        -Items (Convert-Phase1UsersToPortalItems -Users @($phase1.AllUsersRaw)) `
+        -Notes @(
+            "Assessment snapshot gebaseerd op Phase 1 gebruikersanalyse.",
+            "Gebruikerslijst komt uit AllUsersRaw zodat disabled users en guests behouden blijven."
+        ) `
+        -Permissions @("User.Read.All", "Directory.Read.All") `
+        -AssessmentId $AssessmentId
+
+    $licensesPayload = New-Phase1PortalPayload `
+        -Section "gebruikers" `
+        -Subsection "licenses" `
+        -Label "Licenties" `
+        -Summary @{
+            totalLicenses     = @($phase1.Licenses).Count
+            assignedUsers     = @($phase1.AllUsers).Count
+            lowUtilization    = @($phase1.Licenses | Where-Object { $_.Utilization -lt 80 -and $_.Total -gt 5 }).Count
+            friendlyNameCount = @($phase1.Licenses | Where-Object { -not [string]::IsNullOrWhiteSpace((Get-Phase1FriendlySkuName -SkuPartNumber $_.SkuPartNumber)) }).Count
+        } `
+        -Items (Convert-Phase1LicensesToPortalItems -Licenses @($phase1.Licenses)) `
+        -Notes @(
+            "Alleen betaalde licenties met toegewezen gebruikers zijn opgenomen.",
+            "Friendly SKU namen worden uit shared mapping geladen."
+        ) `
+        -Permissions @("Organization.Read.All", "Directory.Read.All") `
+        -AssessmentId $AssessmentId
+
+    $mfaWith = @($phase1.UsersWithMFA).Count
+    $mfaWithout = @($phase1.UsersWithoutMFA).Count
+    $mfaCoverage = 0
+    if ($enabledMemberUsers -gt 0 -and -not $mfaCheckFailed) {
+        $mfaCoverage = [math]::Round(($mfaWith / $enabledMemberUsers) * 100, 1)
+    }
+    $mfaItems = @(
+        (Convert-Phase1MfaUsersToPortalItems -Users @($phase1.UsersWithMFA)    -MfaRegistered $true)
+        (Convert-Phase1MfaUsersToPortalItems -Users @($phase1.UsersWithoutMFA) -MfaRegistered $false)
+    )
+    $identityMfaPayload = New-Phase1PortalPayload `
+        -Section "identity" `
+        -Subsection "mfa" `
+        -Label "MFA" `
+        -Summary @{
+            enabledMemberUsers = $enabledMemberUsers
+            usersWithMfa       = $mfaWith
+            usersWithoutMfa    = $mfaWithout
+            mfaCoveragePct     = $mfaCoverage
+            checkFailed        = $mfaCheckFailed
+        } `
+        -Items $mfaItems `
+        -Notes @(
+            $mfaCheckNote
+        ) `
+        -Permissions @("UserAuthenticationMethod.Read.All", "Reports.Read.All") `
+        -AssessmentId $AssessmentId
+
+    return @($usersPayload, $licensesPayload, $identityMfaPayload)
+}
+
+function Export-Phase1PortalJson {
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory)]
+        [string]$OutputDirectory,
+
+        [Parameter(Mandatory = $false)]
+        [string]$AssessmentId = ""
+    )
+
+    if (-not (Test-Path $OutputDirectory)) {
+        New-Item -ItemType Directory -Path $OutputDirectory -Force | Out-Null
+    }
+
+    $payloads = @(Get-Phase1PortalPayloads -AssessmentId $AssessmentId)
+    foreach ($payload in $payloads) {
+        $fileName = "{0}.{1}.json" -f $payload.section, $payload.subsection
+        $filePath = Join-Path $OutputDirectory $fileName
+        $payload | ConvertTo-Json -Depth 12 | Set-Content -Path $filePath -Encoding UTF8
+    }
+
+    Write-AssessmentLog "✓ Phase 1 portal JSON geëxporteerd naar $OutputDirectory" -Level Success
+    return $payloads
+}
+
 function Invoke-CAtoMFACrossCheck {
     <#
     .SYNOPSIS
@@ -334,4 +563,4 @@ function Invoke-CAtoMFACrossCheck {
     Write-AssessmentLog "CA↔MFA cross-check completed: found $($results.Count) enabled policies requiring MFA" -Level Success
 }
 
-Export-ModuleMember -Function Invoke-Phase1Assessment, Invoke-CAtoMFACrossCheck
+Export-ModuleMember -Function Invoke-Phase1Assessment, Invoke-CAtoMFACrossCheck, Get-Phase1PortalPayloads, Export-Phase1PortalJson
