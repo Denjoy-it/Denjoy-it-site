@@ -250,20 +250,7 @@ Wants=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/pwsh -NonInteractive -NoProfile -Command "\
-    Set-PSRepository -Name PSGallery -InstallationPolicy Trusted; \
-    Install-Module Microsoft.Graph.Authentication     -Scope AllUsers -Force -SkipPublisherCheck; \
-    Install-Module Microsoft.Graph.Users              -Scope AllUsers -Force -SkipPublisherCheck; \
-    Install-Module Microsoft.Graph.Groups             -Scope AllUsers -Force -SkipPublisherCheck; \
-    Install-Module Microsoft.Graph.Identity.SignIns   -Scope AllUsers -Force -SkipPublisherCheck; \
-    Install-Module Microsoft.Graph.Reports            -Scope AllUsers -Force -SkipPublisherCheck; \
-    Install-Module Microsoft.Graph.Teams              -Scope AllUsers -Force -SkipPublisherCheck; \
-    Install-Module Microsoft.Graph.Sites              -Scope AllUsers -Force -SkipPublisherCheck; \
-    Install-Module Microsoft.Graph.DeviceManagement   -Scope AllUsers -Force -SkipPublisherCheck; \
-    Install-Module ExchangeOnlineManagement           -Scope AllUsers -Force -SkipPublisherCheck; \
-    Install-Module ZeroTrustAssessment                -Scope AllUsers -Force -SkipPublisherCheck; \
-    Write-Host 'PS modules OK'; \
-"
+ExecStart=/usr/bin/pwsh -NonInteractive -NoProfile -File ${PLATFORM_DIR}/deploy/install-powershell-modules.ps1
 RemainAfterExit=yes
 StandardOutput=journal
 StandardError=journal

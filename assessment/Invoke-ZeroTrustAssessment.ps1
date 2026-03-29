@@ -3,7 +3,7 @@
     Denjoy IT Platform — Zero Trust Assessment Engine
 .DESCRIPTION
     Wrapper rond de officiële Microsoft ZeroTrustAssessment PowerShell-module.
-    Actions: get-status | run | get-results
+    Actions: get-status | install-module | run | get-results
     Uitvoer: logs gevolgd door ##RESULT## en een JSON-object.
 .PARAMETER Action
     get-status | run | get-results
@@ -15,11 +15,13 @@
     Certificaat thumbprint voor app-gebaseerde authenticatie
 .PARAMETER OutputFolder
     Map waar het rapport wordt opgeslagen (default: temp)
+.PARAMETER ForceInteractive
+    Forceert interactieve browser-login en negeert app-cert authenticatie.
 #>
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet("get-status", "run", "get-results")]
+    [ValidateSet("get-status", "install-module", "run", "get-results")]
     [string]$Action,
 
     [Parameter(Mandatory = $false)]
@@ -32,7 +34,10 @@ param(
     [string]$CertThumbprint,
 
     [Parameter(Mandatory = $false)]
-    [string]$OutputFolder = ""
+    [string]$OutputFolder = "",
+
+    [Parameter(Mandatory = $false)]
+    [switch]$ForceInteractive
 )
 
 $ErrorActionPreference = "Stop"
@@ -59,6 +64,130 @@ function Get-ZtModuleInfo {
         return @{ installed = $true; version = [string]$mod.Version; path = [string]$mod.ModuleBase }
     }
     return @{ installed = $false; version = $null; path = $null }
+}
+
+function Ensure-ZtModule {
+    $modInfo = Get-ZtModuleInfo
+    if ($modInfo.installed) {
+        Write-Log "ZeroTrustAssessment module al aanwezig (v$($modInfo.version))" "INFO"
+        return $modInfo
+    }
+
+    Write-Log "ZeroTrustAssessment module niet gevonden. Installeren..." "INFO"
+    try {
+        Set-PSRepository -Name PSGallery -InstallationPolicy Trusted -ErrorAction SilentlyContinue
+    } catch {}
+
+    try {
+        Install-Module ZeroTrustAssessment -Scope CurrentUser -Force -AllowClobber -SkipPublisherCheck -ErrorAction Stop
+        $modInfo = Get-ZtModuleInfo
+        if (-not $modInfo.installed) {
+            throw "Module installatie gaf geen bruikbaar resultaat terug."
+        }
+        Write-Log "✓ Module geïnstalleerd" "INFO"
+        return $modInfo
+    } catch {
+        throw $_
+    }
+}
+
+function Open-MicrosoftSignIn {
+    param(
+        [string]$Url = "https://login.microsoftonline.com/"
+    )
+    try {
+        Write-Log "Microsoft aanmeldscherm openen: $Url" "INFO"
+        Start-Process $Url -ErrorAction Stop | Out-Null
+        Write-Log "✓ Browser geopend voor Microsoft login" "INFO"
+    } catch {
+        Write-Log "Kon browser niet automatisch openen. Open handmatig: $Url" "WARNING"
+    }
+}
+
+function New-ExoRuntimePaths {
+    param(
+        [string]$BaseFolder
+    )
+
+    $root = if ($BaseFolder) {
+        Join-Path $BaseFolder ".exo-runtime"
+    } else {
+        Join-Path ([System.IO.Path]::GetTempPath()) "denjoy-zerotrust-exo"
+    }
+
+    $moduleBase = Join-Path $root "module"
+    $logBase = Join-Path $root "logs"
+    New-Item -ItemType Directory -Path $moduleBase -Force | Out-Null
+    New-Item -ItemType Directory -Path $logBase -Force | Out-Null
+
+    return @{
+        Root       = $root
+        ModuleBase = $moduleBase
+        LogBase    = $logBase
+    }
+}
+
+function Connect-OptionalExoServices {
+    param(
+        [hashtable]$RuntimePaths
+    )
+
+    $moduleBase = [string]$RuntimePaths.ModuleBase
+    $logBase = [string]$RuntimePaths.LogBase
+    $graphContext = $null
+    try { $graphContext = Get-MgContext -ErrorAction SilentlyContinue } catch {}
+    $upn = ""
+    if ($graphContext -and $graphContext.Account) {
+        $upn = [string]$graphContext.Account
+    }
+
+    try {
+        Write-Log "Connecting to Exchange Online via lokale runtime-map: $moduleBase" "INFO"
+        $exoParams = @{
+            ShowBanner        = $false
+            EXOModuleBasePath = $moduleBase
+            LogDirectoryPath  = $logBase
+            ErrorAction       = 'Stop'
+        }
+        if ($TenantId -and $ClientId -and $CertThumbprint) {
+            $exoParams.AppId = $ClientId
+            $exoParams.Organization = $TenantId
+            $exoParams.CertificateThumbprint = $CertThumbprint
+        } elseif ($upn) {
+            $exoParams.UserPrincipalName = $upn
+            $exoParams.DisableWAM = $true
+        } else {
+            $exoParams.DisableWAM = $true
+        }
+        Connect-ExchangeOnline @exoParams | Out-Null
+        Write-Log "✓ Exchange Online verbonden via eigen runtime-pad" "INFO"
+    } catch {
+        Write-Log "Exchange Online verbinding niet gelukt: $($_.Exception.Message)" "WARNING"
+    }
+
+    try {
+        Write-Log "Connecting to Security & Compliance via lokale runtime-map: $moduleBase" "INFO"
+        $ippsParams = @{
+            ShowBanner        = $false
+            EXOModuleBasePath = $moduleBase
+            LogDirectoryPath  = $logBase
+            ErrorAction       = 'Stop'
+        }
+        if ($TenantId -and $ClientId -and $CertThumbprint) {
+            $ippsParams.AppId = $ClientId
+            $ippsParams.Organization = $TenantId
+            $ippsParams.CertificateThumbprint = $CertThumbprint
+        } elseif ($upn) {
+            $ippsParams.UserPrincipalName = $upn
+            $ippsParams.DisableWAM = $true
+        } else {
+            $ippsParams.DisableWAM = $true
+        }
+        Connect-IPPSSession @ippsParams | Out-Null
+        Write-Log "✓ Security & Compliance verbonden via eigen runtime-pad" "INFO"
+    } catch {
+        Write-Log "Security & Compliance verbinding niet gelukt: $($_.Exception.Message)" "WARNING"
+    }
 }
 
 # ── Find last report ───────────────────────────────────────────────────────────
@@ -120,10 +249,10 @@ function Parse-ZtReport {
         $line = $m.Value
         $passed = [int]$m.Groups[1].Value
         $total  = [int]$m.Groups[2].Value
-        if ($line -match 'Identity') { $pillars['Identity']  = if ($total -gt 0) { [int](($passed / $total) * 100) } else { 0 } }
-        if ($line -match 'Devices')  { $pillars['Devices']   = if ($total -gt 0) { [int](($passed / $total) * 100) } else { 0 } }
-        if ($line -match 'Network')  { $pillars['Network']   = if ($total -gt 0) { [int](($passed / $total) * 100) } else { 0 } }
-        if ($line -match 'Data')     { $pillars['Data']      = if ($total -gt 0) { [int](($passed / $total) * 100) } else { 0 } }
+        if ($line -match 'Identity') { $pillars['Identity']  = $(if ($total -gt 0) { [int](($passed / $total) * 100) } else { 0 }) }
+        if ($line -match 'Devices')  { $pillars['Devices']   = $(if ($total -gt 0) { [int](($passed / $total) * 100) } else { 0 }) }
+        if ($line -match 'Network')  { $pillars['Network']   = $(if ($total -gt 0) { [int](($passed / $total) * 100) } else { 0 }) }
+        if ($line -match 'Data')     { $pillars['Data']      = $(if ($total -gt 0) { [int](($passed / $total) * 100) } else { 0 }) }
     }
 
     # Control row extraction
@@ -138,12 +267,13 @@ function Parse-ZtReport {
                       elseif ($rowHtml -match '(?i)class="[^"]*fail') { 'Fail' }
                       elseif ($rowHtml -match '(?i)class="[^"]*warn') { 'Warning' }
                       else { 'NA' }
-            $controls.Add(@{
-                title      = $cells[0] -replace '\s+', ' '
-                pillar     = if ($cells.Count -gt 1) { $cells[1] } else { '' }
+            $controlRow = @{
+                title      = $($cells[0] -replace '\s+', ' ')
+                pillar     = $(if ($cells.Count -gt 1) { $cells[1] } else { '' })
                 status     = $status
-                riskLevel  = if ($cells.Count -gt 2) { $cells[2] } else { '' }
-            }) | Out-Null
+                riskLevel  = $(if ($cells.Count -gt 2) { $cells[2] } else { '' })
+            }
+            $controls.Add($controlRow) | Out-Null
         }
     }
 
@@ -161,9 +291,9 @@ function Parse-ZtReport {
             fail    = $failCount
             warning = $warnCount
             total   = ($passCount + $failCount + $warnCount)
-            score   = if (($passCount + $failCount + $warnCount) -gt 0) {
+            score   = $(if (($passCount + $failCount + $warnCount) -gt 0) {
                           [int](($passCount / ($passCount + $failCount + $warnCount)) * 100)
-                      } else { 0 }
+                      } else { 0 })
         }
     }
 }
@@ -201,42 +331,66 @@ switch ($Action) {
         }
     }
 
-    "run" {
-        $modInfo = Get-ZtModuleInfo
-        if (-not $modInfo.installed) {
-            Write-Log "ZeroTrustAssessment module niet gevonden. Installeren..." "INFO"
-            try {
-                Install-Module ZeroTrustAssessment -Scope CurrentUser -Force -AllowClobber -ErrorAction Stop
-                Write-Log "✓ Module geïnstalleerd" "INFO"
-            } catch {
-                Write-Result @{ ok = $false; error = "Module installatie mislukt: $($_.Exception.Message)"; install_failed = $true }
-                return
+    "install-module" {
+        try {
+            $modInfo = Ensure-ZtModule
+            Write-Result @{
+                ok      = $true
+                module  = $modInfo
+                action  = "install-module"
             }
+        } catch {
+            Write-Result @{
+                ok             = $false
+                error          = "Module installatie mislukt: $($_.Exception.Message)"
+                install_failed = $true
+            }
+        }
+    }
+
+    "run" {
+        try {
+            $modInfo = Ensure-ZtModule
+        } catch {
+            Write-Result @{ ok = $false; error = "Module installatie mislukt: $($_.Exception.Message)"; install_failed = $true }
+            return
         }
 
         Import-Module ZeroTrustAssessment -Force -ErrorAction Stop
+        Import-Module ExchangeOnlineManagement -ErrorAction SilentlyContinue | Out-Null
 
-        # Authenticatie — app-cert preferred, anders interactief
+        $outFolder = $(if ($OutputFolder) { $OutputFolder } else { Join-Path $PSScriptRoot "ZeroTrustReport" })
+        if (-not (Test-Path $outFolder)) { New-Item -Path $outFolder -ItemType Directory -Force | Out-Null }
+        $exoRuntime = New-ExoRuntimePaths -BaseFolder $outFolder
+
+        # Authenticatie — Graph/Azure via Zero Trust module, EXO/SCC via eigen runtime-map
         try {
-            if ($TenantId -and $ClientId -and $CertThumbprint) {
+            if ($ForceInteractive) {
+                Write-Log "Interactieve browser-login afgedwongen. Verwacht Microsoft aanmeldvenster." "INFO"
+                Open-MicrosoftSignIn
+                if ($TenantId) {
+                    Connect-ZtAssessment -TenantId $TenantId -Service Graph,Azure -ErrorAction Stop
+                } else {
+                    Connect-ZtAssessment -Service Graph,Azure -ErrorAction Stop
+                }
+            } elseif ($TenantId -and $ClientId -and $CertThumbprint) {
                 Write-Log "Verbinden via app-certificaat (TenantId=$TenantId, ClientId=$ClientId)" "INFO"
-                Connect-ZtAssessment -TenantId $TenantId -ClientId $ClientId -CertificateThumbprint $CertThumbprint -ErrorAction Stop
+                Connect-ZtAssessment -TenantId $TenantId -ClientId $ClientId -CertificateThumbprint $CertThumbprint -Service Graph,Azure -ErrorAction Stop
             } elseif ($TenantId -and $ClientId) {
-                Write-Log "Verbinden via app (geen cert, interactief device code)" "INFO"
-                Connect-ZtAssessment -TenantId $TenantId -ErrorAction Stop
+                Write-Log "Verbinden via app-registratie zonder certificaat. Microsoft browser-login wordt gebruikt." "INFO"
+                Open-MicrosoftSignIn
+                Connect-ZtAssessment -TenantId $TenantId -Service Graph,Azure -ErrorAction Stop
             } else {
-                Write-Log "Verbinden interactief (geen app-credentials)" "INFO"
-                Connect-ZtAssessment -ErrorAction Stop
+                Write-Log "Verbinden interactief via Microsoft browser-login (geen app-credentials)" "INFO"
+                Open-MicrosoftSignIn
+                Connect-ZtAssessment -Service Graph,Azure -ErrorAction Stop
             }
+            Connect-OptionalExoServices -RuntimePaths $exoRuntime
             Write-Log "✓ Verbonden" "INFO"
         } catch {
             Write-Result @{ ok = $false; error = "Authenticatie mislukt: $($_.Exception.Message)" }
             return
         }
-
-        # Output folder bepalen
-        $outFolder = if ($OutputFolder) { $OutputFolder } else { Join-Path $PSScriptRoot "ZeroTrustReport" }
-        if (-not (Test-Path $outFolder)) { New-Item -Path $outFolder -ItemType Directory -Force | Out-Null }
 
         Write-Log "Zero Trust Assessment starten → $outFolder (kan uren duren)" "INFO"
         try {

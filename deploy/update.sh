@@ -38,6 +38,11 @@ chown -R "${APP_USER}:${APP_USER}" \
 # pip update
 "${PLATFORM_DIR}/.venv/bin/pip" install --quiet --upgrade flask flask-cors
 
+log "Zero Trust backend-module controleren en indien nodig installeren..."
+PS_UPDATE_LOG="/var/log/denjoy-psmodules-update.log"
+nohup /usr/bin/pwsh -NonInteractive -NoProfile -File "${PLATFORM_DIR}/deploy/install-powershell-modules.ps1" > "${PS_UPDATE_LOG}" 2>&1 &
+log "PowerShell module-update gestart op de achtergrond. Log: ${PS_UPDATE_LOG}"
+
 log "Services herstarten..."
 systemctl start denjoy-platform denjoy-upload
 systemctl status denjoy-platform denjoy-upload --no-pager -l

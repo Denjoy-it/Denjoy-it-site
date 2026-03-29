@@ -166,7 +166,7 @@ function Invoke-Phase1Assessment {
         }
         else {
             $globalAdmins = @(Get-MgDirectoryRoleMember -DirectoryRoleId $globalAdminRole.Id -ErrorAction Stop | ForEach-Object {
-                Get-MgUser -UserId $_.Id -Property DisplayName, UserPrincipalName, AccountEnabled
+                Get-MgUser -UserId $_.Id -Property DisplayName, UserPrincipalName, AccountEnabled, OnPremisesSyncEnabled
             })
         }
     }

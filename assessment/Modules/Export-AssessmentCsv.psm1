@@ -142,18 +142,20 @@ function Export-AssessmentToCsv {
 
     # ── 05 Legacy Auth ──
     try {
-        $d = $global:Phase2Data
-        if ($d -and $d.LegacyAuthMailboxes) {
-            $rows = $d.LegacyAuthMailboxes | ForEach-Object {
+        $d = $global:Phase3Data
+        $legacyUsers = if ($d -and $d.LegacyAuthUsers) { @($d.LegacyAuthUsers) } else { @() }
+        $legacySignIns = if ($d -and $null -ne $d.LegacyAuthSignIns) { [int]$d.LegacyAuthSignIns } else { 0 }
+        if ($legacyUsers.Count -gt 0 -or $legacySignIns -gt 0) {
+            $rows = $legacyUsers | ForEach-Object {
                 [PSCustomObject]@{
-                    DisplayName              = $_.DisplayName
-                    UPN                      = $_.UserPrincipalName
-                    SmtpAuthEnabled          = -not $_.SmtpClientAuthenticationDisabled
-                    PopEnabled               = $_.PopEnabled
-                    ImapEnabled              = $_.ImapEnabled
+                    UserPrincipalName = $_
+                    RecentLegacySignIn = $true
                 }
             }
-            Write-CsvSafe -Path (Join-Path $OutputDirectory "05_LegacyAuth.csv") -Data $rows -Label "Legacy Auth mailboxen"
+            if ($rows.Count -eq 0) {
+                $rows = @([PSCustomObject]@{ UserPrincipalName = 'n.v.t.'; RecentLegacySignIn = $false })
+            }
+            Write-CsvSafe -Path (Join-Path $OutputDirectory "05_LegacyAuth.csv") -Data $rows -Label "Legacy Auth gebruikers"
         }
     } catch { Write-Host "[CSV] 05_LegacyAuth fout: $($_.Exception.Message)" -ForegroundColor Yellow }
 
@@ -177,8 +179,8 @@ function Export-AssessmentToCsv {
     # ── 07 Conditional Access ──
     try {
         $d = $global:Phase3Data
-        if ($d -and $d.CaPolicies) {
-            $rows = $d.CaPolicies | ForEach-Object {
+        if ($d -and $d.CAPolicies) {
+            $rows = $d.CAPolicies | ForEach-Object {
                 [PSCustomObject]@{
                     PolicyName    = $_.DisplayName
                     State         = $_.State
@@ -198,14 +200,18 @@ function Export-AssessmentToCsv {
         if ($d -and $d.AppRegistrations) {
             $rows = $d.AppRegistrations | ForEach-Object {
                 [PSCustomObject]@{
-                    AppName           = $_.DisplayName
-                    AppId             = $_.AppId
-                    CreatedDate       = $_.CreatedDateTime
-                    SecretCount       = $_.PasswordCredentialCount
-                    ExpiredSecrets    = $_.ExpiredSecretCount
-                    CertCount         = $_.KeyCredentialCount
-                    ExpiredCerts      = $_.ExpiredCertCount
-                    HasHighPrivPerms  = $_.HasHighPrivilegePermissions
+                    AppName                    = $_.DisplayName
+                    AppId                      = $_.AppId
+                    ObjectId                   = $_.ObjectId
+                    CreatedDate                = $_.CreatedDateTime
+                    SecretCount                = $_.SecretCount
+                    SecretExpiration           = $_.SecretExpiration
+                    SecretExpirationStatus     = $_.SecretExpirationStatus
+                    CertificateCount           = $_.CertificateCount
+                    CertificateExpiration      = $_.CertificateExpiration
+                    CertificateExpirationStatus = $_.CertificateExpirationStatus
+                    PermissionCount            = $_.PermissionCount
+                    HasEnterpriseApp           = $_.HasEnterpriseApp
                 }
             }
             Write-CsvSafe -Path (Join-Path $OutputDirectory "08_AppRegistraties.csv") -Data $rows -Label "App Registraties"
