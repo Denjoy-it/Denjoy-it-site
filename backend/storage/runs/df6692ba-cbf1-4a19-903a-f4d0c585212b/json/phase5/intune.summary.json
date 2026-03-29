@@ -1,0 +1,24 @@
+{
+  "section": "intune",
+  "subsection": "summary",
+  "label": "Intune Overzicht",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:33:27.7016770+01:00",
+  "assessmentId": "20260328-232848",
+  "summary": {
+    "compliantDevices": 0,
+    "intuneAvailable": false,
+    "totalDevices": 0,
+    "compliancePercentage": 0
+  },
+  "items": [],
+  "meta": {
+    "notes": [
+      "Intune snapshot uit Phase 5."
+    ],
+    "permissions": [
+      "DeviceManagementManagedDevices.Read.All",
+      "DeviceManagementConfiguration.Read.All"
+    ]
+  }
+}

@@ -1,0 +1,277 @@
+{
+  "assessmentId": "20260328-232848",
+  "generated_at": "2026-03-28T23:33:27.7350860+01:00",
+  "version": 1,
+  "files": [
+    {
+      "section": "gebruikers",
+      "subsection": "users",
+      "label": "Gebruikers",
+      "relative": "phase1/gebruikers.users.json"
+    },
+    {
+      "section": "gebruikers",
+      "subsection": "licenses",
+      "label": "Licenties",
+      "relative": "phase1/gebruikers.licenses.json"
+    },
+    {
+      "section": "identity",
+      "subsection": "mfa",
+      "label": "MFA",
+      "relative": "phase4/identity.mfa.json"
+    },
+    {
+      "section": "teams",
+      "subsection": "teams",
+      "label": "Teams",
+      "relative": "phase2/teams.teams.json"
+    },
+    {
+      "section": "sharepoint",
+      "subsection": "sharepoint-sites",
+      "label": "SharePoint Sites",
+      "relative": "phase2/sharepoint.sharepoint-sites.json"
+    },
+    {
+      "section": "sharepoint",
+      "subsection": "sharepoint-settings",
+      "label": "SharePoint Instellingen",
+      "relative": "phase2/sharepoint.sharepoint-settings.json"
+    },
+    {
+      "section": "backup",
+      "subsection": "onedrive",
+      "label": "OneDrive",
+      "relative": "phase2/backup.onedrive.json"
+    },
+    {
+      "section": "exchange",
+      "subsection": "mailboxes",
+      "label": "Mailboxen",
+      "relative": "phase2/exchange.mailboxes.json"
+    },
+    {
+      "section": "teams",
+      "subsection": "groepen",
+      "label": "M365 Groepen",
+      "relative": "phase2/teams.groepen.json"
+    },
+    {
+      "section": "exchange",
+      "subsection": "smtp-auth",
+      "label": "SMTP Authenticatie",
+      "relative": "phase2/exchange.smtp-auth.json"
+    },
+    {
+      "section": "exchange",
+      "subsection": "security",
+      "label": "Exchange Beveiliging",
+      "relative": "phase2/exchange.security.json"
+    },
+    {
+      "section": "domains",
+      "subsection": "dns",
+      "label": "DNS Records",
+      "relative": "phase3/domains.dns.json"
+    },
+    {
+      "section": "identity",
+      "subsection": "guest-access",
+      "label": "Gastgebruiker Instellingen",
+      "relative": "phase4/identity.guest-access.json"
+    },
+    {
+      "section": "ca",
+      "subsection": "policies",
+      "label": "Conditional Access Policies",
+      "relative": "phase3/ca.policies.json"
+    },
+    {
+      "section": "apps",
+      "subsection": "registrations",
+      "label": "App Registrations",
+      "relative": "phase3/apps.registrations.json"
+    },
+    {
+      "section": "identity",
+      "subsection": "security-defaults",
+      "label": "Security Defaults & Audit",
+      "relative": "phase4/identity.security-defaults.json"
+    },
+    {
+      "section": "identity",
+      "subsection": "legacy-auth",
+      "label": "Legacy Authenticatie",
+      "relative": "phase4/identity.legacy-auth.json"
+    },
+    {
+      "section": "domains",
+      "subsection": "dns-auth",
+      "label": "DKIM / SPF / DMARC",
+      "relative": "phase3/domains.dns-auth.json"
+    },
+    {
+      "section": "compliance",
+      "subsection": "retention",
+      "label": "Retentiebeleid",
+      "relative": "compliance/compliance.retention.json"
+    },
+    {
+      "section": "compliance",
+      "subsection": "sensitivity",
+      "label": "Gevoeligheidslabels",
+      "relative": "compliance/compliance.sensitivity.json"
+    },
+    {
+      "section": "alerts",
+      "subsection": "secure-score",
+      "label": "Secure Score",
+      "relative": "phase4/alerts.secure-score.json"
+    },
+    {
+      "section": "alerts",
+      "subsection": "audit-logs",
+      "label": "Security Alerts",
+      "relative": "phase4/alerts.audit-logs.json"
+    },
+    {
+      "section": "identity",
+      "subsection": "admin-roles",
+      "label": "Admin Password Ages",
+      "relative": "phase4/identity.admin-roles.json"
+    },
+    {
+      "section": "identity",
+      "subsection": "break-glass",
+      "label": "Break-Glass Accounts",
+      "relative": "phase4/identity.break-glass.json"
+    },
+    {
+      "section": "identity",
+      "subsection": "password-policy",
+      "label": "Wachtwoord- & Apparaatbeleid",
+      "relative": "phase4/identity.password-policy.json"
+    },
+    {
+      "section": "identity",
+      "subsection": "risky-users",
+      "label": "Risico Gebruikers",
+      "relative": "phase4/identity.risky-users.json"
+    },
+    {
+      "section": "alerts",
+      "subsection": "policies",
+      "label": "Waarschuwingsbeleid",
+      "relative": "phase4/alerts.policies.json"
+    },
+    {
+      "section": "intune",
+      "subsection": "summary",
+      "label": "Intune Overzicht",
+      "relative": "phase5/intune.summary.json"
+    },
+    {
+      "section": "intune",
+      "subsection": "devices",
+      "label": "Intune Apparaten",
+      "relative": "phase5/intune.devices.json"
+    },
+    {
+      "section": "intune",
+      "subsection": "compliance",
+      "label": "Compliance Policies",
+      "relative": "phase5/intune.compliance.json"
+    },
+    {
+      "section": "intune",
+      "subsection": "config",
+      "label": "Configuratie",
+      "relative": "phase5/intune.config.json"
+    },
+    {
+      "section": "intune",
+      "subsection": "app-protection",
+      "label": "App Beveiliging (MAM)",
+      "relative": "phase5/intune.app-protection.json"
+    },
+    {
+      "section": "intune",
+      "subsection": "autopilot",
+      "label": "Windows Autopilot",
+      "relative": "phase5/intune.autopilot.json"
+    },
+    {
+      "section": "intune",
+      "subsection": "enrollment",
+      "label": "Inschrijvingsrestricties",
+      "relative": "phase5/intune.enrollment.json"
+    },
+    {
+      "section": "azure",
+      "subsection": "subscriptions",
+      "label": "Subscriptions",
+      "relative": "phase6/azure.subscriptions.json"
+    },
+    {
+      "section": "azure",
+      "subsection": "resources",
+      "label": "Resources",
+      "relative": "phase6/azure.resources.json"
+    },
+    {
+      "section": "azure",
+      "subsection": "alerts",
+      "label": "Azure Security",
+      "relative": "phase6/azure.alerts.json"
+    },
+    {
+      "section": "azure",
+      "subsection": "compute",
+      "label": "Virtual Machines",
+      "relative": "phase6/azure.compute.json"
+    },
+    {
+      "section": "azure",
+      "subsection": "networking",
+      "label": "Netwerk & NSG's",
+      "relative": "phase6/azure.networking.json"
+    },
+    {
+      "section": "azure",
+      "subsection": "storage",
+      "label": "Storage Accounts",
+      "relative": "phase6/azure.storage.json"
+    },
+    {
+      "section": "azure",
+      "subsection": "avd",
+      "label": "Azure Virtual Desktop",
+      "relative": "phase6/azure.avd.json"
+    },
+    {
+      "section": "compliance",
+      "subsection": "cis",
+      "label": "CIS M365 Foundations Benchmark",
+      "relative": "compliance/compliance.cis.json"
+    },
+    {
+      "section": "hybrid",
+      "subsection": "sync",
+      "label": "Hybrid Identity & AD Connect",
+      "relative": "hybrid/hybrid.sync.json"
+    },
+    {
+      "section": "identity",
+      "subsection": "legacy-signins",
+      "label": "Legacy Sign-ins",
+      "relative": "phase4/identity.legacy-signins.json"
+    },
+    {
+      "section": "identity",
+      "subsection": "guest-policy",
+      "label": "Gastbeleid Check",
+      "relative": "phase4/identity.guest-policy.json"
+    }
+  ]
+}

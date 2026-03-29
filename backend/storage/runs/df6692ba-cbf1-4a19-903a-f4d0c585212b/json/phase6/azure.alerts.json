@@ -1,0 +1,144 @@
+{
+  "section": "azure",
+  "subsection": "alerts",
+  "label": "Azure Security",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:33:27.7094640+01:00",
+  "assessmentId": "20260328-232848",
+  "summary": {
+    "policyAssignments": 1,
+    "defenderPlans": 18
+  },
+  "items": [
+    {
+      "Name": "VirtualMachines",
+      "Tier": "Free",
+      "Issues": [
+        "Using Free tier - upgrade to Standard for full protection"
+      ]
+    },
+    {
+      "Name": "SqlServers",
+      "Tier": "Free",
+      "Issues": [
+        "Using Free tier - upgrade to Standard for full protection"
+      ]
+    },
+    {
+      "Name": "AppServices",
+      "Tier": "Free",
+      "Issues": [
+        "Using Free tier - upgrade to Standard for full protection"
+      ]
+    },
+    {
+      "Name": "StorageAccounts",
+      "Tier": "Free",
+      "Issues": [
+        "Using Free tier - upgrade to Standard for full protection"
+      ]
+    },
+    {
+      "Name": "SqlServerVirtualMachines",
+      "Tier": "Free",
+      "Issues": [
+        "Using Free tier - upgrade to Standard for full protection"
+      ]
+    },
+    {
+      "Name": "KubernetesService",
+      "Tier": "Free",
+      "Issues": [
+        "Using Free tier - upgrade to Standard for full protection"
+      ]
+    },
+    {
+      "Name": "ContainerRegistry",
+      "Tier": "Free",
+      "Issues": [
+        "Using Free tier - upgrade to Standard for full protection"
+      ]
+    },
+    {
+      "Name": "KeyVaults",
+      "Tier": "Free",
+      "Issues": [
+        "Using Free tier - upgrade to Standard for full protection"
+      ]
+    },
+    {
+      "Name": "Dns",
+      "Tier": "Free",
+      "Issues": [
+        "Using Free tier - upgrade to Standard for full protection"
+      ]
+    },
+    {
+      "Name": "Arm",
+      "Tier": "Free",
+      "Issues": [
+        "Using Free tier - upgrade to Standard for full protection"
+      ]
+    },
+    {
+      "Name": "OpenSourceRelationalDatabases",
+      "Tier": "Free",
+      "Issues": [
+        "Using Free tier - upgrade to Standard for full protection"
+      ]
+    },
+    {
+      "Name": "CosmosDbs",
+      "Tier": "Free",
+      "Issues": [
+        "Using Free tier - upgrade to Standard for full protection"
+      ]
+    },
+    {
+      "Name": "Containers",
+      "Tier": "Free",
+      "Issues": [
+        "Using Free tier - upgrade to Standard for full protection"
+      ]
+    },
+    {
+      "Name": "CloudPosture",
+      "Tier": "Free",
+      "Issues": [
+        "Using Free tier - upgrade to Standard for full protection"
+      ]
+    },
+    {
+      "Name": "Api",
+      "Tier": "Free",
+      "Issues": [
+        "Using Free tier - upgrade to Standard for full protection"
+      ]
+    },
+    {
+      "Name": "AI",
+      "Tier": "Free",
+      "Issues": [
+        "Using Free tier - upgrade to Standard for full protection"
+      ]
+    },
+    {
+      "Name": "Discovery",
+      "Tier": "Standard",
+      "Issues": []
+    },
+    {
+      "Name": "FoundationalCspm",
+      "Tier": "Standard",
+      "Issues": []
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Azure security snapshot uit Phase 6."
+    ],
+    "permissions": [
+      "Monitoring Reader / Security Reader"
+    ]
+  }
+}

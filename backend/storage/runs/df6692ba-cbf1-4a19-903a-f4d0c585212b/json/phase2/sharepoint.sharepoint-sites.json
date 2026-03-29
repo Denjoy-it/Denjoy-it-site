@@ -1,0 +1,352 @@
+{
+  "section": "sharepoint",
+  "subsection": "sharepoint-sites",
+  "label": "SharePoint Sites",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:33:27.6660940+01:00",
+  "assessmentId": "20260328-232848",
+  "summary": {
+    "totalSites": 41,
+    "inactiveSites": 0,
+    "totalStorageUsedGB": 95.85,
+    "sitesWithStorage": 10
+  },
+  "items": [
+    {
+      "DisplayName": "Communicatiesite",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 8,
+      "IsInactive": false,
+      "LastModifiedDateTime": "2026-03-20T15:18:26Z"
+    },
+    {
+      "DisplayName": "All Company",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/allcompany",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "All_users365",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/All_users365",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Sales",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/sales",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Zorg&Vrij communicatie",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/ZorgVrijcommunicatie",
+      "StorageUsedGB": 0.34,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Wijzijnzorgenvrij",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/zorgenvrij",
+      "StorageUsedGB": 18.83,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Team site",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/contentTypeHub",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": null,
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/search",
+      "StorageUsedGB": 0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Communicatiesite",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "All Company",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/allcompany",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "All_users365",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/All_users365",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Sales",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/sales",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Zorg&Vrij communicatie",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/ZorgVrijcommunicatie",
+      "StorageUsedGB": 0.34,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Wijzijnzorgenvrij",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/zorgenvrij",
+      "StorageUsedGB": 18.83,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Team site",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/contentTypeHub",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": null,
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/search",
+      "StorageUsedGB": 0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Communicatiesite",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "All Company",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/allcompany",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "All_users365",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/All_users365",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Sales",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/sales",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Zorg&Vrij communicatie",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/ZorgVrijcommunicatie",
+      "StorageUsedGB": 0.34,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Wijzijnzorgenvrij",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/zorgenvrij",
+      "StorageUsedGB": 18.83,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Team site",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/contentTypeHub",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": null,
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/search",
+      "StorageUsedGB": 0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Communicatiesite",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "All Company",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/allcompany",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "All_users365",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/All_users365",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Sales",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/sales",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Zorg&Vrij communicatie",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/ZorgVrijcommunicatie",
+      "StorageUsedGB": 0.34,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Wijzijnzorgenvrij",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/zorgenvrij",
+      "StorageUsedGB": 18.83,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Team site",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/contentTypeHub",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": null,
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/search",
+      "StorageUsedGB": 0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Communicatiesite",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "All Company",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/allcompany",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "All_users365",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/All_users365",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Sales",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/sales",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Zorg&Vrij communicatie",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/ZorgVrijcommunicatie",
+      "StorageUsedGB": 0.34,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Wijzijnzorgenvrij",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/zorgenvrij",
+      "StorageUsedGB": 18.83,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Team site",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/sites/contentTypeHub",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": null,
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/search",
+      "StorageUsedGB": 0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    },
+    {
+      "DisplayName": "Communicatiesite",
+      "WebUrl": "https://zorgenvrij075.sharepoint.com/",
+      "StorageUsedGB": 0.0,
+      "DaysSinceModified": 0,
+      "IsInactive": false,
+      "LastModifiedDateTime": null
+    }
+  ],
+  "meta": {
+    "notes": [
+      "SharePoint sites snapshot uit Phase 2."
+    ],
+    "permissions": [
+      "Sites.Read.All"
+    ]
+  }
+}

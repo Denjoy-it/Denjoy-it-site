@@ -1,0 +1,56 @@
+{
+  "section": "domains",
+  "subsection": "dns",
+  "label": "DNS Records",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:33:27.6681660+01:00",
+  "assessmentId": "20260328-232848",
+  "summary": {
+    "totalDomains": 5
+  },
+  "items": [
+    {
+      "Domain": "zorgenvrij075.onmicrosoft.com",
+      "SpfRecord": null,
+      "DkimEnabled": null,
+      "DmarcRecord": null,
+      "HasMx": null
+    },
+    {
+      "Domain": "wijzijnzorgenvrij.com",
+      "SpfRecord": null,
+      "DkimEnabled": null,
+      "DmarcRecord": null,
+      "HasMx": null
+    },
+    {
+      "Domain": "zorgenvrij.nu",
+      "SpfRecord": null,
+      "DkimEnabled": null,
+      "DmarcRecord": null,
+      "HasMx": null
+    },
+    {
+      "Domain": "wijzijnzorgenvrij.nl",
+      "SpfRecord": null,
+      "DkimEnabled": null,
+      "DmarcRecord": null,
+      "HasMx": null
+    },
+    {
+      "Domain": "zorgenvrijleren.nl",
+      "SpfRecord": null,
+      "DkimEnabled": null,
+      "DmarcRecord": null,
+      "HasMx": null
+    }
+  ],
+  "meta": {
+    "notes": [
+      "DNS record snapshot per domein uit Phase 2."
+    ],
+    "permissions": [
+      "Domain.Read.All"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "section": "intune",
+  "subsection": "app-protection",
+  "label": "App Beveiliging (MAM)",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:33:27.7030630+01:00",
+  "assessmentId": "20260328-232848",
+  "summary": {
+    "totalPolicies": 1
+  },
+  "items": [],
+  "meta": {
+    "notes": [
+      "Mobile Application Management (MAM) beveiligingsbeleid uit Phase 5."
+    ],
+    "permissions": [
+      "DeviceManagementApps.Read.All"
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "section": "ca",
+  "subsection": "policies",
+  "label": "Conditional Access Policies",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:33:27.6795210+01:00",
+  "assessmentId": "20260328-232848",
+  "summary": {
+    "disabled": 2,
+    "enabled": 5,
+    "securityDefaultsEnabled": false,
+    "total": 9
+  },
+  "items": [
+    {
+      "Id": "1552de3e-50d2-4727-ad74-7e6e8ff52323",
+      "DisplayName": "Meervoudige verificatie vereisen voor beheerders",
+      "State": "enabled",
+      "CreatedDateTime": "2024-08-29T09:00:17.0388141Z",
+      "ModifiedDateTime": null
+    },
+    {
+      "Id": "1736e657-3457-4161-82d6-b9cc07079255",
+      "DisplayName": "Verouderde verificatie blokkeren",
+      "State": "enabled",
+      "CreatedDateTime": "2024-08-29T09:00:17.9141651Z",
+      "ModifiedDateTime": "2024-08-29T09:04:38.4885893Z"
+    },
+    {
+      "Id": "8956595f-8e54-4d40-a909-8d42cdc10658",
+      "DisplayName": "Meervoudige verificatie vereisen voor alle gebruikers",
+      "State": "enabled",
+      "CreatedDateTime": "2024-08-29T09:00:18.9629938Z",
+      "ModifiedDateTime": "2024-08-29T09:02:23.8010039Z"
+    },
+    {
+      "Id": "fa2172fe-9be3-4b28-bd05-66b9e2036d62",
+      "DisplayName": "Meervoudige verificatie vereisen voor Azure-beheer",
+      "State": "enabled",
+      "CreatedDateTime": "2024-08-29T09:00:20.1613548Z",
+      "ModifiedDateTime": null
+    },
+    {
+      "Id": "9235aa37-ef08-4ef8-84c4-bc13588086cf",
+      "DisplayName": "MFA exclusions",
+      "State": "enabled",
+      "CreatedDateTime": "2024-08-29T09:11:00.200084Z",
+      "ModifiedDateTime": "2025-11-27T21:38:27.8317127Z"
+    },
+    {
+      "Id": "53432264-f486-4800-9d6a-573e2c52c1e1",
+      "DisplayName": "Verouderde verificatie blokkeren",
+      "State": "enabledForReportingButNotEnforced",
+      "CreatedDateTime": "2025-10-13T20:20:27.7728464Z",
+      "ModifiedDateTime": null
+    },
+    {
+      "Id": "984f1662-977f-43ab-a3fd-c2dc6f2c7ad0",
+      "DisplayName": "Blokkeer toegang vanuit risicolanden",
+      "State": "enabledForReportingButNotEnforced",
+      "CreatedDateTime": "2025-10-13T21:12:48.4998493Z",
+      "ModifiedDateTime": null
+    },
+    {
+      "Id": "c9dd4ace-9d45-4164-9ecc-aa435b329061",
+      "DisplayName": "Microsoft-managed: Require phishing-resistant multifactor authentication for admins",
+      "State": "disabled",
+      "CreatedDateTime": "2026-01-28T10:00:39.2353881Z",
+      "ModifiedDateTime": null
+    },
+    {
+      "Id": "bca459c2-569e-4348-b383-6736e7e654d8",
+      "DisplayName": "Microsoft-managed: Block legacy authentication",
+      "State": "disabled",
+      "CreatedDateTime": "2026-01-28T10:00:39.3361534Z",
+      "ModifiedDateTime": null
+    }
+  ],
+  "meta": {
+    "notes": [
+      "CA snapshot uit Phase 3."
+    ],
+    "permissions": [
+      "Policy.Read.All"
+    ]
+  }
+}

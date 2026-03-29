@@ -1,0 +1,102 @@
+{
+  "section": "gebruikers",
+  "subsection": "licenses",
+  "label": "Licenties",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:33:27.6609100+01:00",
+  "assessmentId": "20260328-232848",
+  "summary": {
+    "totalLicenses": 2,
+    "assignedUsers": 13,
+    "lowUtilization": 0,
+    "friendlyNameCount": 2
+  },
+  "items": [
+    {
+      "skuPartNumber": "AAD_PREMIUM_P2",
+      "displayName": "Azure AD Premium P2",
+      "total": 1,
+      "consumed": 1,
+      "available": 0,
+      "utilization": 100.0,
+      "assignedUsers": [
+        {
+          "displayName": "cloudadmin",
+          "userPrincipalName": "cloudadmin@wijzijnzorgenvrij.nl"
+        }
+      ]
+    },
+    {
+      "skuPartNumber": "O365_BUSINESS_PREMIUM",
+      "displayName": "Microsoft 365 Business Premium",
+      "total": 13,
+      "consumed": 13,
+      "available": 0,
+      "utilization": 100.0,
+      "assignedUsers": [
+        {
+          "displayName": "Ronald van Adrichem",
+          "userPrincipalName": "Afspraakplannen@wijzijnzorgenvrij.nl"
+        },
+        {
+          "displayName": "cloudadmin",
+          "userPrincipalName": "cloudadmin@wijzijnzorgenvrij.nl"
+        },
+        {
+          "displayName": "Froukje Sierksma",
+          "userPrincipalName": "Froukje@wijzijnzorgenvrij.nl"
+        },
+        {
+          "displayName": "Gerard Lether",
+          "userPrincipalName": "gerard@wijzijnzorgenvrij.nl"
+        },
+        {
+          "displayName": "info | Wijzijnzorgenvrij.nl",
+          "userPrincipalName": "info@wijzijnzorgenvrij.nl"
+        },
+        {
+          "displayName": "Kaan Kaya",
+          "userPrincipalName": "Kaan@wijzijnzorgenvrij.nl"
+        },
+        {
+          "displayName": "Kath Brink",
+          "userPrincipalName": "kath@wijzijnzorgenvrij.nl"
+        },
+        {
+          "displayName": "Michelle Hubers",
+          "userPrincipalName": "Michelle@wijzijnzorgenvrij.nl"
+        },
+        {
+          "displayName": "printer | Wijzijnzorgenvrij.nl",
+          "userPrincipalName": "printer@wijzijnzorgenvrij.nl"
+        },
+        {
+          "displayName": "Ron van Loenen",
+          "userPrincipalName": "ron@wijzijnzorgenvrij.nl"
+        },
+        {
+          "displayName": "Ronald van Adrichem",
+          "userPrincipalName": "ronald@wijzijnzorgenvrij.nl"
+        },
+        {
+          "displayName": "Stephanie Proost",
+          "userPrincipalName": "stephanie@wijzijnzorgenvrij.nl"
+        },
+        {
+          "displayName": "Tess Oude Hendrikman",
+          "userPrincipalName": "Tess@wijzijnzorgenvrij.nl"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Alleen betaalde licenties met toegewezen gebruikers zijn opgenomen.",
+      "Friendly SKU namen worden uit shared mapping geladen."
+    ],
+    "permissions": [
+      "Organization.Read.All",
+      "Directory.Read.All"
+    ]
+  }
+}

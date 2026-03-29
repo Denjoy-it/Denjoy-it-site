@@ -1,0 +1,24 @@
+{
+  "section": "identity",
+  "subsection": "security-defaults",
+  "label": "Security Defaults & Audit",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:33:27.6808570+01:00",
+  "assessmentId": "20260328-232848",
+  "summary": {
+    "auditEnabled": true,
+    "blockMsolPowerShell": false,
+    "securityDefaultsEnabled": false,
+    "guestUserRoleId": "10dae51f-b6af-4016-8d66-8c2a99b929b3"
+  },
+  "items": [],
+  "meta": {
+    "notes": [
+      "Security Defaults, tenant-audit en authenticatieconfiguratie uit Phase 3."
+    ],
+    "permissions": [
+      "Policy.Read.All",
+      "AuditLog.Read.All"
+    ]
+  }
+}

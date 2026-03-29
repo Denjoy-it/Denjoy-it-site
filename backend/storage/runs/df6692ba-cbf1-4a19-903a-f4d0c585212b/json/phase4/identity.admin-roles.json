@@ -1,0 +1,45 @@
+{
+  "section": "identity",
+  "subsection": "admin-roles",
+  "label": "Admin Password Ages",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:33:27.6866050+01:00",
+  "assessmentId": "20260328-232848",
+  "summary": {
+    "totalAdmins": 3,
+    "breakGlassCandidates": 0,
+    "oldPasswords": 1
+  },
+  "items": [
+    {
+      "DisplayName": "Stephanie Proost",
+      "UserPrincipalName": "stephanie@wijzijnzorgenvrij.nl",
+      "LastPasswordChange": "27-11-2025",
+      "PasswordAgeDays": 121,
+      "Status": "🟡 >90 dagen"
+    },
+    {
+      "DisplayName": "Ronald van Adrichem",
+      "UserPrincipalName": "ronald@wijzijnzorgenvrij.nl",
+      "LastPasswordChange": "13-10-2025",
+      "PasswordAgeDays": 166,
+      "Status": "🟡 >90 dagen"
+    },
+    {
+      "DisplayName": "cloudadmin",
+      "UserPrincipalName": "cloudadmin@wijzijnzorgenvrij.nl",
+      "LastPasswordChange": "08-02-2022",
+      "PasswordAgeDays": 1509,
+      "Status": "🔴 >180 dagen"
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Admin wachtwoordleeftijden en break-glass heuristiek uit Phase 4."
+    ],
+    "permissions": [
+      "Directory.Read.All",
+      "RoleManagement.Read.Directory"
+    ]
+  }
+}

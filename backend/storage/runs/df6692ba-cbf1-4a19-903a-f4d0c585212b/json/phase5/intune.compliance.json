@@ -1,0 +1,20 @@
+{
+  "section": "intune",
+  "subsection": "compliance",
+  "label": "Compliance Policies",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:33:27.7017970+01:00",
+  "assessmentId": "20260328-232848",
+  "summary": {
+    "totalPolicies": 1
+  },
+  "items": [],
+  "meta": {
+    "notes": [
+      "Compliance policy snapshot uit Phase 5."
+    ],
+    "permissions": [
+      "DeviceManagementConfiguration.Read.All"
+    ]
+  }
+}

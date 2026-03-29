@@ -1,0 +1,22 @@
+{
+  "section": "identity",
+  "subsection": "risky-users",
+  "label": "Risico Gebruikers",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:33:27.6868110+01:00",
+  "assessmentId": "20260328-232848",
+  "summary": {
+    "riskDetectionsCount": 0,
+    "riskyUsersCount": 0,
+    "identityProtectionAvailable": true
+  },
+  "items": [],
+  "meta": {
+    "notes": [
+      ""
+    ],
+    "permissions": [
+      "IdentityRiskyUser.Read.All"
+    ]
+  }
+}

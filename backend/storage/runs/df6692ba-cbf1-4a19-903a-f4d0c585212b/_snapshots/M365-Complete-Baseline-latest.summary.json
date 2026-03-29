@@ -1,0 +1,358 @@
+{
+  "SchemaVersion": 1,
+  "GeneratedAt": "2026-03-28T23:33:27.3292970+01:00",
+  "ReportFile": "M365-Complete-Baseline-20260328-232848.html",
+  "AssessmentId": "20260328-232848",
+  "TenantName": "Zorg en Vrij",
+  "TenantId": "5949c95e-86e7-4c31-ae4e-ba49d0477959",
+  "Totals": {
+    "Critical": 2,
+    "Warning": 2,
+    "Info": 3,
+    "Score": 13
+  },
+  "Metrics": {
+    "MfaMissing": 3,
+    "MfaCoveragePct": 76.9,
+    "CAEnabled": 5,
+    "AlertsHigh": 0,
+    "AlertsMedium": 0,
+    "SecureScorePct": 36.63,
+    "IntuneCompliancePct": null,
+    "AzureResourceGroups": 9,
+    "AzureResources": 1
+  },
+  "Licenses": [
+    {
+      "SkuPartNumber": "AAD_PREMIUM_P2",
+      "Total": 1,
+      "Consumed": 1,
+      "Available": 0,
+      "Utilization": 100.0
+    },
+    {
+      "SkuPartNumber": "O365_BUSINESS_PREMIUM",
+      "Total": 13,
+      "Consumed": 13,
+      "Available": 0,
+      "Utilization": 100.0
+    }
+  ],
+  "AppRegistrations": [
+    {
+      "DisplayName": "M365-Baseline-Assessment-Bootstrap",
+      "AppId": "a37575b5-9a82-4244-98dd-e8180df8540f",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 35,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "Baseline rapport",
+      "AppId": "2c6c9d78-f907-4912-a4a7-24c98e45eb99",
+      "SecretCount": 1,
+      "SecretExpiration": "2027-03-24T15:14:54.555Z",
+      "SecretExpirationStatus": "🟢 Valid (360 days)",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 45,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "P2P Server",
+      "AppId": "17e08697-d427-4419-922f-a4ac26a30337",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 0,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "Intune Package Manager",
+      "AppId": "cc36f094-edf5-4469-9deb-d27d7cfba8b8",
+      "SecretCount": 1,
+      "SecretExpiration": "2026-09-19T14:05:31.308Z",
+      "SecretExpirationStatus": "🟢 Valid (174 days)",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 3,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "M365-Baseline-Assessment-Bootstrap",
+      "AppId": "f8039d3d-9516-4e8a-b5d0-fd8c4d3e792d",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 36,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "M365-Baseline-Assessment-Bootstrap",
+      "AppId": "172ddf13-2ff2-4be3-a04b-77d8905dd6cc",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 36,
+      "HasEnterpriseApp": true
+    },
+    {
+      "DisplayName": "M365-Baseline-Assessment-Bootstrap",
+      "AppId": "3ca20c8d-08a6-4126-941c-e858967a572e",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 36,
+      "HasEnterpriseApp": true
+    }
+  ],
+  "CAPolicies": [
+    {
+      "Id": "1552de3e-50d2-4727-ad74-7e6e8ff52323",
+      "DisplayName": "Meervoudige verificatie vereisen voor beheerders",
+      "State": "enabled",
+      "CreatedAt": "2024-08-29T09:00:17.0388141Z",
+      "ModifiedAt": null,
+      "UserScope": "14 rol(len)",
+      "AppScope": "Alle apps",
+      "GrantControl": "OR: mfa",
+      "SessionCtrl": "Ja"
+    },
+    {
+      "Id": "1736e657-3457-4161-82d6-b9cc07079255",
+      "DisplayName": "Verouderde verificatie blokkeren",
+      "State": "enabled",
+      "CreatedAt": "2024-08-29T09:00:17.9141651Z",
+      "ModifiedAt": "2024-08-29T09:04:38.4885893Z",
+      "UserScope": "Alle gebruikers",
+      "AppScope": "Alle apps",
+      "GrantControl": "OR: block",
+      "SessionCtrl": "Ja"
+    },
+    {
+      "Id": "8956595f-8e54-4d40-a909-8d42cdc10658",
+      "DisplayName": "Meervoudige verificatie vereisen voor alle gebruikers",
+      "State": "enabled",
+      "CreatedAt": "2024-08-29T09:00:18.9629938Z",
+      "ModifiedAt": "2024-08-29T09:02:23.8010039Z",
+      "UserScope": "Alle gebruikers",
+      "AppScope": "Alle apps",
+      "GrantControl": "OR: mfa",
+      "SessionCtrl": "Ja"
+    },
+    {
+      "Id": "fa2172fe-9be3-4b28-bd05-66b9e2036d62",
+      "DisplayName": "Meervoudige verificatie vereisen voor Azure-beheer",
+      "State": "enabled",
+      "CreatedAt": "2024-08-29T09:00:20.1613548Z",
+      "ModifiedAt": null,
+      "UserScope": "Alle gebruikers",
+      "AppScope": "1 app(s)",
+      "GrantControl": "OR: mfa",
+      "SessionCtrl": "Ja"
+    },
+    {
+      "Id": "9235aa37-ef08-4ef8-84c4-bc13588086cf",
+      "DisplayName": "MFA exclusions",
+      "State": "enabled",
+      "CreatedAt": "2024-08-29T09:11:00.200084Z",
+      "ModifiedAt": "2025-11-27T21:38:27.8317127Z",
+      "UserScope": "Alle gebruikers",
+      "AppScope": "1 app(s)",
+      "GrantControl": "OR: mfa",
+      "SessionCtrl": "Ja"
+    },
+    {
+      "Id": "53432264-f486-4800-9d6a-573e2c52c1e1",
+      "DisplayName": "Verouderde verificatie blokkeren",
+      "State": "enabledForReportingButNotEnforced",
+      "CreatedAt": "2025-10-13T20:20:27.7728464Z",
+      "ModifiedAt": null,
+      "UserScope": "Alle gebruikers",
+      "AppScope": "Alle apps",
+      "GrantControl": "OR: block",
+      "SessionCtrl": "Ja"
+    },
+    {
+      "Id": "984f1662-977f-43ab-a3fd-c2dc6f2c7ad0",
+      "DisplayName": "Blokkeer toegang vanuit risicolanden",
+      "State": "enabledForReportingButNotEnforced",
+      "CreatedAt": "2025-10-13T21:12:48.4998493Z",
+      "ModifiedAt": null,
+      "UserScope": "Alle gebruikers",
+      "AppScope": "1 app(s)",
+      "GrantControl": "OR: block",
+      "SessionCtrl": "Ja"
+    },
+    {
+      "Id": "c9dd4ace-9d45-4164-9ecc-aa435b329061",
+      "DisplayName": "Microsoft-managed: Require phishing-resistant multifactor authentication for admins",
+      "State": "disabled",
+      "CreatedAt": "2026-01-28T10:00:39.2353881Z",
+      "ModifiedAt": null,
+      "UserScope": "19 rol(len)",
+      "AppScope": "Alle apps",
+      "GrantControl": "OR: ",
+      "SessionCtrl": "Ja"
+    },
+    {
+      "Id": "bca459c2-569e-4348-b383-6736e7e654d8",
+      "DisplayName": "Microsoft-managed: Block legacy authentication",
+      "State": "disabled",
+      "CreatedAt": "2026-01-28T10:00:39.3361534Z",
+      "ModifiedAt": null,
+      "UserScope": "Alle gebruikers",
+      "AppScope": "Alle apps",
+      "GrantControl": "OR: block",
+      "SessionCtrl": "Ja"
+    }
+  ],
+  "DomainDnsChecks": [
+    {
+      "Domain": null,
+      "SPF": null,
+      "DKIM": null,
+      "DMARC": null
+    }
+  ],
+  "UserMailboxes": [
+    {
+      "DisplayName": "Ronald van Adrichem",
+      "PrimarySmtpAddress": "Afspraakplannen@wijzijnzorgenvrij.nl",
+      "WhenCreated": "2023-03-22T19:37:08Z"
+    },
+    {
+      "DisplayName": "cloudadmin",
+      "PrimarySmtpAddress": "cloudadmin@wijzijnzorgenvrij.nl",
+      "WhenCreated": "2022-02-08T10:23:48Z"
+    },
+    {
+      "DisplayName": "Froukje Sierksma",
+      "PrimarySmtpAddress": "Froukje@wijzijnzorgenvrij.nl",
+      "WhenCreated": "2026-01-28T19:14:24Z"
+    },
+    {
+      "DisplayName": "Gerard Lether",
+      "PrimarySmtpAddress": "gerard@wijzijnzorgenvrij.nl",
+      "WhenCreated": "2022-05-30T18:59:17Z"
+    },
+    {
+      "DisplayName": "info | Wijzijnzorgenvrij.nl",
+      "PrimarySmtpAddress": "info@wijzijnzorgenvrij.nl",
+      "WhenCreated": "2022-02-24T18:46:39Z"
+    },
+    {
+      "DisplayName": "Kaan Kaya",
+      "PrimarySmtpAddress": "Kaan@wijzijnzorgenvrij.nl",
+      "WhenCreated": "2024-12-01T19:33:57Z"
+    },
+    {
+      "DisplayName": "Kath Brink",
+      "PrimarySmtpAddress": "kath@wijzijnzorgenvrij.nl",
+      "WhenCreated": "2022-03-07T13:47:35Z"
+    },
+    {
+      "DisplayName": "Michelle Hubers",
+      "PrimarySmtpAddress": "Michelle@wijzijnzorgenvrij.nl",
+      "WhenCreated": "2025-06-01T17:56:52Z"
+    },
+    {
+      "DisplayName": "printer | Wijzijnzorgenvrij.nl",
+      "PrimarySmtpAddress": "printer@wijzijnzorgenvrij.nl",
+      "WhenCreated": "2022-08-01T07:53:31Z"
+    },
+    {
+      "DisplayName": "Ron van Loenen",
+      "PrimarySmtpAddress": "ron@wijzijnzorgenvrij.nl",
+      "WhenCreated": "2022-03-11T09:23:35Z"
+    },
+    {
+      "DisplayName": "Ronald van Adrichem",
+      "PrimarySmtpAddress": "ronald@wijzijnzorgenvrij.nl",
+      "WhenCreated": "2022-02-09T13:12:24Z"
+    },
+    {
+      "DisplayName": "Stephanie Proost",
+      "PrimarySmtpAddress": "stephanie@wijzijnzorgenvrij.nl",
+      "WhenCreated": "2022-02-09T13:06:47Z"
+    },
+    {
+      "DisplayName": "Tess Oude Hendrikman",
+      "PrimarySmtpAddress": "Tess@wijzijnzorgenvrij.nl",
+      "WhenCreated": "2026-01-28T19:16:44Z"
+    }
+  ],
+  "IntuneDevices": [],
+  "IntuneCompliance": [],
+  "IntuneConfigProfiles": [],
+  "IntuneSummary": null,
+  "IntuneDevicesByOS": [],
+  "Phases": [
+    {
+      "Id": "phase1",
+      "Label": "Gebruikers en licenties",
+      "Critical": 2,
+      "Warning": 0,
+      "Info": 1,
+      "Score": 7
+    },
+    {
+      "Id": "phase2",
+      "Label": "Samenwerking en opslag",
+      "Critical": 0,
+      "Warning": 0,
+      "Info": 0,
+      "Score": 0
+    },
+    {
+      "Id": "phase3",
+      "Label": "Compliance en beveiliging",
+      "Critical": 0,
+      "Warning": 0,
+      "Info": 2,
+      "Score": 2
+    },
+    {
+      "Id": "phase4",
+      "Label": "Geavanceerde beveiliging",
+      "Critical": 0,
+      "Warning": 1,
+      "Info": 0,
+      "Score": 2
+    },
+    {
+      "Id": "phase5",
+      "Label": "Intune",
+      "Critical": 0,
+      "Warning": 0,
+      "Info": 0,
+      "Score": 0
+    },
+    {
+      "Id": "phase6",
+      "Label": "Azure",
+      "Critical": 0,
+      "Warning": 1,
+      "Info": 0,
+      "Score": 2
+    }
+  ]
+}

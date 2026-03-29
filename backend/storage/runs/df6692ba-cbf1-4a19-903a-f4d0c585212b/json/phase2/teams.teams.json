@@ -1,0 +1,36 @@
+{
+  "section": "teams",
+  "subsection": "teams",
+  "label": "Teams",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:33:27.6654920+01:00",
+  "assessmentId": "20260328-232848",
+  "summary": {
+    "totalTeams": 2,
+    "meetingPolicies": 7,
+    "externalDomains": 0
+  },
+  "items": [
+    {
+      "DisplayName": "Wijzijnzorgenvrij",
+      "Mail": "zorgenvrij@zorgenvrij075.onmicrosoft.com",
+      "CreatedDateTime": "2022-02-08T16:19:11Z",
+      "MemberCount": 5
+    },
+    {
+      "DisplayName": "Sales",
+      "Mail": "sales@wijzijnzorgenvrij.nl",
+      "CreatedDateTime": "2023-05-31T19:07:42Z",
+      "MemberCount": 0
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Teams snapshot uit Phase 2 collaboration assessment."
+    ],
+    "permissions": [
+      "Team.ReadBasic.All",
+      "Group.Read.All"
+    ]
+  }
+}

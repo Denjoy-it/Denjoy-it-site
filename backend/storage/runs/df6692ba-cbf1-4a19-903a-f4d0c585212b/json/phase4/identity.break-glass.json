@@ -1,0 +1,21 @@
+{
+  "section": "identity",
+  "subsection": "break-glass",
+  "label": "Break-Glass Accounts",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:33:27.6866640+01:00",
+  "assessmentId": "20260328-232848",
+  "summary": {
+    "count": 0
+  },
+  "items": [],
+  "meta": {
+    "notes": [
+      "Break-glass accountdetectie op basis van naamheuristiek en rollidmaatschap uit Phase 4."
+    ],
+    "permissions": [
+      "Directory.Read.All",
+      "RoleManagement.Read.Directory"
+    ]
+  }
+}

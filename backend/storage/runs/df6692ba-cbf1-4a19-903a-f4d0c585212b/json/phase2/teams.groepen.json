@@ -1,0 +1,89 @@
+{
+  "section": "teams",
+  "subsection": "groepen",
+  "label": "M365 Groepen",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:33:27.6676370+01:00",
+  "assessmentId": "20260328-232848",
+  "summary": {
+    "totalGroups": 9,
+    "distributionGroups": 0,
+    "m365Groups": 5,
+    "mailEnabledSecurity": 0,
+    "securityGroups": 4
+  },
+  "items": [
+    {
+      "DisplayName": "Wijzijnzorgenvrij",
+      "Mail": "zorgenvrij@zorgenvrij075.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 5,
+      "CreatedDateTime": "2022-02-08T16:19:11Z"
+    },
+    {
+      "DisplayName": "M365-STD-Base",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2025-11-09T22:35:21Z"
+    },
+    {
+      "DisplayName": "M365-BP-Base",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2025-11-09T22:35:20Z"
+    },
+    {
+      "DisplayName": "Sales",
+      "Mail": "sales@wijzijnzorgenvrij.nl",
+      "GroupType": "M365 Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2023-05-31T19:07:42Z"
+    },
+    {
+      "DisplayName": "Zorg&Vrij communicatie",
+      "Mail": "ZorgVrijcommunicatie@wijzijnzorgenvrij.nl",
+      "GroupType": "M365 Group",
+      "MemberCount": 2,
+      "CreatedDateTime": "2022-05-23T08:31:12Z"
+    },
+    {
+      "DisplayName": "mfa_exclusion",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 6,
+      "CreatedDateTime": "2024-08-15T11:00:40Z"
+    },
+    {
+      "DisplayName": "All_Users",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 13,
+      "CreatedDateTime": "2024-08-14T18:19:28Z"
+    },
+    {
+      "DisplayName": "All_users365",
+      "Mail": "All_users365@wijzijnzorgenvrij.nl",
+      "GroupType": "M365 Group",
+      "MemberCount": 8,
+      "CreatedDateTime": "2024-08-14T18:32:01Z"
+    },
+    {
+      "DisplayName": "All Company",
+      "Mail": "allcompany@zorgenvrij075.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 2,
+      "CreatedDateTime": "2022-02-08T16:19:53Z"
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Groepenoverzicht snapshot uit Phase 2 assessment."
+    ],
+    "permissions": [
+      "Group.Read.All",
+      "Directory.Read.All"
+    ]
+  }
+}

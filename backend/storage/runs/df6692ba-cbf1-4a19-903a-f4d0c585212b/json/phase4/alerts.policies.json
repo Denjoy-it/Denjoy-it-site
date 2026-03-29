@@ -1,0 +1,21 @@
+{
+  "section": "alerts",
+  "subsection": "policies",
+  "label": "Waarschuwingsbeleid",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:33:27.6874580+01:00",
+  "assessmentId": "20260328-232848",
+  "summary": {
+    "totalPolicies": 1,
+    "totalAlerts": 1
+  },
+  "items": [],
+  "meta": {
+    "notes": [
+      "Microsoft 365 Defender waarschuwingsbeleidsregels uit Phase 4."
+    ],
+    "permissions": [
+      "SecurityEvents.Read.All"
+    ]
+  }
+}

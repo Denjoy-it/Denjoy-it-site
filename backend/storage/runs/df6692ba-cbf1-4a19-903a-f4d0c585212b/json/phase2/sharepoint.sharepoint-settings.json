@@ -1,0 +1,108 @@
+{
+  "section": "sharepoint",
+  "subsection": "sharepoint-settings",
+  "label": "SharePoint Instellingen",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:33:27.6668140+01:00",
+  "assessmentId": "20260328-232848",
+  "summary": {
+    "defaultLinkTypeEntries": 17,
+    "anonymousLinkSites": 0,
+    "tenantSettingsAvailable": true
+  },
+  "items": [
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    },
+    {
+      "SiteUrl": null,
+      "DefaultSharingLinkType": null,
+      "DefaultLinkPermission": null
+    }
+  ],
+  "meta": {
+    "notes": [
+      "@{ExternalSharing=externalUserAndGuestSharing; DefaultLinkPermission=; LoopDefaultSharingLinkScope=}"
+    ],
+    "permissions": [
+      "Sites.Read.All"
+    ]
+  }
+}

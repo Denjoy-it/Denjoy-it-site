@@ -1,0 +1,47 @@
+{
+  "section": "identity",
+  "subsection": "mfa",
+  "label": "MFA",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:33:27.6611030+01:00",
+  "assessmentId": "20260328-232848",
+  "summary": {
+    "checkFailed": false,
+    "usersWithoutMfa": 3,
+    "enabledMemberUsers": 13,
+    "mfaCoveragePct": 76.9,
+    "usersWithMfa": 10
+  },
+  "items": [
+    {
+      "id": "b24086c8-3128-4088-a280-8d3272fc877e",
+      "displayName": "Ronald van Adrichem",
+      "userPrincipalName": "Afspraakplannen@wijzijnzorgenvrij.nl",
+      "accountEnabled": true,
+      "userType": "Member"
+    },
+    {
+      "id": "9f34725c-7feb-4e5a-ba4f-b18db7106677",
+      "displayName": "info | Wijzijnzorgenvrij.nl",
+      "userPrincipalName": "info@wijzijnzorgenvrij.nl",
+      "accountEnabled": true,
+      "userType": "Member"
+    },
+    {
+      "id": "fc977ef1-f610-46b6-a47c-8ba4afa781e4",
+      "displayName": "printer | Wijzijnzorgenvrij.nl",
+      "userPrincipalName": "printer@wijzijnzorgenvrij.nl",
+      "accountEnabled": true,
+      "userType": "Member"
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Let op: Dit rapport toont MFA registratie-gegevens (geregistreerde methodes), niet de per-user MFA status. Controleer de Azure AD Portal voor details."
+    ],
+    "permissions": [
+      "UserAuthenticationMethod.Read.All",
+      "Reports.Read.All"
+    ]
+  }
+}

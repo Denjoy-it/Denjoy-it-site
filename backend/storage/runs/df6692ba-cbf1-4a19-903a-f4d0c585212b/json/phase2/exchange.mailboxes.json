@@ -1,0 +1,102 @@
+{
+  "section": "exchange",
+  "subsection": "mailboxes",
+  "label": "Mailboxen",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:33:27.6670250+01:00",
+  "assessmentId": "20260328-232848",
+  "summary": {
+    "roomMailboxes": 0,
+    "totalUserMailboxes": 13,
+    "equipmentMailboxes": 0,
+    "sharedMailboxes": 5
+  },
+  "items": [
+    {
+      "DisplayName": "Ronald van Adrichem",
+      "PrimarySmtpAddress": "Afspraakplannen@wijzijnzorgenvrij.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2023-03-22T19:37:08Z"
+    },
+    {
+      "DisplayName": "cloudadmin",
+      "PrimarySmtpAddress": "cloudadmin@wijzijnzorgenvrij.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-02-08T10:23:48Z"
+    },
+    {
+      "DisplayName": "Froukje Sierksma",
+      "PrimarySmtpAddress": "Froukje@wijzijnzorgenvrij.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2026-01-28T19:14:24Z"
+    },
+    {
+      "DisplayName": "Gerard Lether",
+      "PrimarySmtpAddress": "gerard@wijzijnzorgenvrij.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-05-30T18:59:17Z"
+    },
+    {
+      "DisplayName": "info | Wijzijnzorgenvrij.nl",
+      "PrimarySmtpAddress": "info@wijzijnzorgenvrij.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-02-24T18:46:39Z"
+    },
+    {
+      "DisplayName": "Kaan Kaya",
+      "PrimarySmtpAddress": "Kaan@wijzijnzorgenvrij.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2024-12-01T19:33:57Z"
+    },
+    {
+      "DisplayName": "Kath Brink",
+      "PrimarySmtpAddress": "kath@wijzijnzorgenvrij.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-03-07T13:47:35Z"
+    },
+    {
+      "DisplayName": "Michelle Hubers",
+      "PrimarySmtpAddress": "Michelle@wijzijnzorgenvrij.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2025-06-01T17:56:52Z"
+    },
+    {
+      "DisplayName": "printer | Wijzijnzorgenvrij.nl",
+      "PrimarySmtpAddress": "printer@wijzijnzorgenvrij.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-08-01T07:53:31Z"
+    },
+    {
+      "DisplayName": "Ron van Loenen",
+      "PrimarySmtpAddress": "ron@wijzijnzorgenvrij.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-03-11T09:23:35Z"
+    },
+    {
+      "DisplayName": "Ronald van Adrichem",
+      "PrimarySmtpAddress": "ronald@wijzijnzorgenvrij.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-02-09T13:12:24Z"
+    },
+    {
+      "DisplayName": "Stephanie Proost",
+      "PrimarySmtpAddress": "stephanie@wijzijnzorgenvrij.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2022-02-09T13:06:47Z"
+    },
+    {
+      "DisplayName": "Tess Oude Hendrikman",
+      "PrimarySmtpAddress": "Tess@wijzijnzorgenvrij.nl",
+      "RecipientTypeDetails": null,
+      "WhenCreated": "2026-01-28T19:16:44Z"
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Exchange mailboxsnapshot uit Phase 2."
+    ],
+    "permissions": [
+      "Exchange reader / Exchange admin"
+    ]
+  }
+}

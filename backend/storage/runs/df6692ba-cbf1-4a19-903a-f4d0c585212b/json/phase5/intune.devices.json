@@ -1,0 +1,20 @@
+{
+  "section": "intune",
+  "subsection": "devices",
+  "label": "Intune Apparaten",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:33:27.7017460+01:00",
+  "assessmentId": "20260328-232848",
+  "summary": {
+    "total": 1
+  },
+  "items": [],
+  "meta": {
+    "notes": [
+      "Managed devices snapshot uit Phase 5."
+    ],
+    "permissions": [
+      "DeviceManagementManagedDevices.Read.All"
+    ]
+  }
+}

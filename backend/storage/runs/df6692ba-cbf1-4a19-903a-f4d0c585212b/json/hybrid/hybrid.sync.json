@@ -1,0 +1,63 @@
+{
+  "section": "hybrid",
+  "subsection": "sync",
+  "label": "Hybrid Identity & AD Connect",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:33:27.7286980+01:00",
+  "assessmentId": "20260328-232848",
+  "summary": {
+    "authType": "Cloud Only",
+    "seamlessSsoEnabled": false,
+    "syncedUsersPercent": 0.0,
+    "syncEnabled": false,
+    "syncedUsers": 0,
+    "lastSyncAgeHours": null,
+    "cloudOnlyUsers": 18,
+    "isHybrid": false,
+    "lastSyncDateTime": "",
+    "totalUsers": 18,
+    "lastSyncStatus": "Unknown",
+    "syncClientVersion": ""
+  },
+  "items": [
+    {
+      "Domain": "zorgenvrij075.onmicrosoft.com",
+      "AuthType": "Managed",
+      "IsVerified": true,
+      "IsDefault": false
+    },
+    {
+      "Domain": "wijzijnzorgenvrij.com",
+      "AuthType": "Managed",
+      "IsVerified": true,
+      "IsDefault": false
+    },
+    {
+      "Domain": "zorgenvrij.nu",
+      "AuthType": "Managed",
+      "IsVerified": true,
+      "IsDefault": false
+    },
+    {
+      "Domain": "wijzijnzorgenvrij.nl",
+      "AuthType": "Managed",
+      "IsVerified": true,
+      "IsDefault": true
+    },
+    {
+      "Domain": "zorgenvrijleren.nl",
+      "AuthType": "Managed",
+      "IsVerified": true,
+      "IsDefault": false
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Hybrid Identity & AD Connect snapshot."
+    ],
+    "permissions": [
+      "Directory.Read.All",
+      "Domain.Read.All"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "section": "compliance",
+  "subsection": "retention",
+  "label": "Retentiebeleid",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:33:27.6816700+01:00",
+  "assessmentId": "20260328-232848",
+  "summary": {
+    "coversTeams": false,
+    "coversSharePoint": false,
+    "coversOneDrive": false,
+    "totalPolicies": 0,
+    "coversExchange": false
+  },
+  "items": [],
+  "meta": {
+    "notes": [
+      "Microsoft Purview retentiebeleid snapshot uit Phase 3."
+    ],
+    "permissions": [
+      "InformationProtectionPolicy.Read.All",
+      "RecordsManagement.Read.All"
+    ]
+  }
+}

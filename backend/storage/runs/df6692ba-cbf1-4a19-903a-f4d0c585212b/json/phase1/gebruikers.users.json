@@ -1,0 +1,206 @@
+{
+  "section": "gebruikers",
+  "subsection": "users",
+  "label": "Gebruikers",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:33:27.6578150+01:00",
+  "assessmentId": "20260328-232848",
+  "summary": {
+    "guests": 1,
+    "disabled": 0,
+    "enabled": 13,
+    "total": 18
+  },
+  "items": [
+    {
+      "id": "33ba5013-893f-49c7-8a7f-085726de07c9",
+      "displayName": "Admin | wijzijnzorgenvrij.nl",
+      "userPrincipalName": "admin@wijzijnzorgenvrij.nl",
+      "mail": "admin@wijzijnzorgenvrij.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-03-11T09:35:23Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "b24086c8-3128-4088-a280-8d3272fc877e",
+      "displayName": "Ronald van Adrichem",
+      "userPrincipalName": "Afspraakplannen@wijzijnzorgenvrij.nl",
+      "mail": "Afspraakplannen@wijzijnzorgenvrij.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-03-22T19:37:08Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "697bde20-bd75-435f-bf8d-d8fd4c01ba12",
+      "displayName": "cloudadmin",
+      "userPrincipalName": "cloudadmin@wijzijnzorgenvrij.nl",
+      "mail": "cloudadmin@wijzijnzorgenvrij.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-02-08T10:23:48Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "ab1b3406-7129-42ec-b4fe-f3ba6d7bd8c3",
+      "displayName": "Communicatie | Wijzijnzorgenvrij.nl",
+      "userPrincipalName": "communicatie@wijzijnzorgenvrij.nl",
+      "mail": "communicatie@wijzijnzorgenvrij.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-03-02T13:16:21Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "33866beb-c377-4df3-b7fb-baf8ae55f2d6",
+      "displayName": "Finance | Wijzijnzorgenvrij.nl",
+      "userPrincipalName": "finance@wijzijnzorgenvrij.nl",
+      "mail": "finance@wijzijnzorgenvrij.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-03-07T11:17:56Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "0d50bbdb-45d7-494e-81ec-a620e4ea4fda",
+      "displayName": "Froukje Sierksma",
+      "userPrincipalName": "Froukje@wijzijnzorgenvrij.nl",
+      "mail": "Froukje@wijzijnzorgenvrij.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2026-01-28T19:14:24Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "4a114dd2-2c35-4cd1-9d0a-e768cc91351f",
+      "displayName": "Gerard Lether",
+      "userPrincipalName": "gerard@wijzijnzorgenvrij.nl",
+      "mail": "gerard@wijzijnzorgenvrij.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-05-30T18:59:17Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "9f34725c-7feb-4e5a-ba4f-b18db7106677",
+      "displayName": "info | Wijzijnzorgenvrij.nl",
+      "userPrincipalName": "info@wijzijnzorgenvrij.nl",
+      "mail": "info@wijzijnzorgenvrij.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-02-24T18:46:39Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "916c6119-de4a-4a07-8c65-a8435f67baf6",
+      "displayName": "Kaan Kaya",
+      "userPrincipalName": "Kaan@wijzijnzorgenvrij.nl",
+      "mail": "Kaan@wijzijnzorgenvrij.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2024-12-01T19:33:57Z",
+      "licenseCount": 2
+    },
+    {
+      "id": "150ba6aa-fbb6-4d8b-aeb8-3feea6555ba7",
+      "displayName": "Kath Brink",
+      "userPrincipalName": "kath@wijzijnzorgenvrij.nl",
+      "mail": "kath@wijzijnzorgenvrij.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-03-07T13:47:35Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "cb6196b4-2b25-4775-b79b-bca4fc38b50b",
+      "displayName": "Michelle Hubers",
+      "userPrincipalName": "Michelle@wijzijnzorgenvrij.nl",
+      "mail": "Michelle@wijzijnzorgenvrij.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2025-06-01T17:56:52Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "fc977ef1-f610-46b6-a47c-8ba4afa781e4",
+      "displayName": "printer | Wijzijnzorgenvrij.nl",
+      "userPrincipalName": "printer@wijzijnzorgenvrij.nl",
+      "mail": "printer@wijzijnzorgenvrij.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-08-01T07:53:31Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "57a12e34-dc6d-4525-849a-5a2744ee2bc2",
+      "displayName": "Ron van Loenen",
+      "userPrincipalName": "ron@wijzijnzorgenvrij.nl",
+      "mail": "ron@wijzijnzorgenvrij.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-03-11T09:23:35Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "d93bb17d-4e1f-49f1-86a0-84cba24ffb4c",
+      "displayName": "Ronald van Adrichem",
+      "userPrincipalName": "ronald@wijzijnzorgenvrij.nl",
+      "mail": "ronald@wijzijnzorgenvrij.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-02-09T13:12:24Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "536196d3-5bda-47d8-a5a1-5ca0e4df090b",
+      "displayName": "Salarisstrook | Wijzijnzorgenvrij.nl",
+      "userPrincipalName": "salarisstrook@wijzijnzorgenvrij.nl",
+      "mail": "salarisstrook@wijzijnzorgenvrij.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-03-07T11:14:16Z",
+      "licenseCount": 0
+    },
+    {
+      "id": "150f4c4f-b3eb-453e-8582-eeeff90e3458",
+      "displayName": "Stephanie Proost",
+      "userPrincipalName": "stephanie@wijzijnzorgenvrij.nl",
+      "mail": "stephanie@wijzijnzorgenvrij.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2022-02-09T13:06:47Z",
+      "licenseCount": 3
+    },
+    {
+      "id": "10dae82b-02b5-40a5-b702-d333bd5d6245",
+      "displayName": "Tess Oude Hendrikman",
+      "userPrincipalName": "Tess@wijzijnzorgenvrij.nl",
+      "mail": "Tess@wijzijnzorgenvrij.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2026-01-28T19:16:44Z",
+      "licenseCount": 1
+    },
+    {
+      "id": "70363bdc-87eb-4f0a-94e2-4164de10d217",
+      "displayName": "Stephanie Proost",
+      "userPrincipalName": "ZorgVrij@wijzijnzorgenvrij.nl",
+      "mail": "ZorgVrij@wijzijnzorgenvrij.nl",
+      "accountEnabled": true,
+      "userType": "Member",
+      "createdDateTime": "2023-03-22T13:33:47Z",
+      "licenseCount": 0
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Assessment snapshot gebaseerd op Phase 1 gebruikersanalyse.",
+      "Gebruikerslijst komt uit AllUsersRaw zodat disabled users en guests behouden blijven."
+    ],
+    "permissions": [
+      "User.Read.All",
+      "Directory.Read.All"
+    ]
+  }
+}

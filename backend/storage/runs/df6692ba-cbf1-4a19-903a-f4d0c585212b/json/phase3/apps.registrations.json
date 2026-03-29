@@ -1,0 +1,1091 @@
+{
+  "section": "apps",
+  "subsection": "registrations",
+  "label": "App Registrations",
+  "source": "assessment",
+  "generated_at": "2026-03-28T23:33:27.6799340+01:00",
+  "assessmentId": "20260328-232848",
+  "summary": {
+    "expiredCerts": 0,
+    "expiredSecrets": 0,
+    "expiringSecrets": 0,
+    "total": 7
+  },
+  "items": [
+    {
+      "DisplayName": "M365-Baseline-Assessment-Bootstrap",
+      "AppId": "a37575b5-9a82-4244-98dd-e8180df8540f",
+      "ObjectId": "03cff969-ec29-4667-93b8-72b97222eab9",
+      "CreatedDateTime": "2026-02-20T13:26:59Z",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 35,
+      "HasEnterpriseApp": true,
+      "Permissions": [
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "User.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Group.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Directory.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "AuditLog.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Policy.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Sites.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Team.ReadBasic.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Organization.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Reports.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "ReportSettings.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "UserAuthenticationMethod.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "SecurityEvents.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "DelegatedAdminRelationship.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "DeviceManagementConfiguration.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "DeviceManagementManagedDevices.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Policy.Read.ConditionalAccess",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "openid",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "profile",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "offline_access",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "TeamMember.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "DeviceManagementManagedDevices.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "UserAuthenticationMethod.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "SecurityEvents.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Group.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Sites.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Sites.Manage.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Directory.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "User.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "DeviceManagementConfiguration.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Organization.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "AuditLog.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Policy.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Application.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Reports.Read.All",
+          "Type": "Application"
+        }
+      ]
+    },
+    {
+      "DisplayName": "Baseline rapport",
+      "AppId": "2c6c9d78-f907-4912-a4a7-24c98e45eb99",
+      "ObjectId": "04750ec9-c98d-44af-9dd7-7e4ecea397f4",
+      "CreatedDateTime": "2025-12-17T19:24:50Z",
+      "SecretCount": 1,
+      "SecretExpiration": "2027-03-24T15:14:54.555Z",
+      "SecretExpirationStatus": "🟢 Valid (360 days)",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 45,
+      "HasEnterpriseApp": true,
+      "Permissions": [
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Directory.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Organization.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Policy.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Policy.Read.AuthenticationMethod",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Policy.Read.ConditionalAccess",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Policy.Read.DeviceConfiguration",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Policy.Read.IdentityProtection",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "SecurityEvents.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "User.Read",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "User.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "openid",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "profile",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "offline_access",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "User.ReadBasic.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Policy.Read.ConditionalAccess",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Policy.Read.DeviceConfiguration",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "ServiceActivity-Exchange.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Policy.Read.AuthenticationMethod",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "PartnerSecurity.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "DeviceManagementManagedDevices.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Device.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "UserAuthenticationMethod.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Policy.Read.PermissionGrant",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "SharePointTenantSettings.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "SecurityEvents.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "RoleManagement.Read.Directory",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "SecurityAlert.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Group.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "RoleManagement.Read.Exchange",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Sites.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "SecurityIdentitiesHealth.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Directory.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "RoleManagement.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "User.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "DeviceManagementConfiguration.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Team.ReadBasic.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "IdentityRiskyUser.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Organization.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "IdentityRiskEvent.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "RoleManagement.Read.Defender",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "AuditLog.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Policy.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "ThreatIntelligence.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Reports.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Policy.Read.IdentityProtection",
+          "Type": "Application"
+        }
+      ]
+    },
+    {
+      "DisplayName": "P2P Server",
+      "AppId": "17e08697-d427-4419-922f-a4ac26a30337",
+      "ObjectId": "47e47235-21bc-48e0-9e12-47305f6c2d1c",
+      "CreatedDateTime": "2022-06-06T13:38:41Z",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 0,
+      "HasEnterpriseApp": true,
+      "Permissions": []
+    },
+    {
+      "DisplayName": "Intune Package Manager",
+      "AppId": "cc36f094-edf5-4469-9deb-d27d7cfba8b8",
+      "ObjectId": "c0d4f120-6bfb-4e99-ba0b-cfce7cb90f26",
+      "CreatedDateTime": "2026-03-23T15:03:31Z",
+      "SecretCount": 1,
+      "SecretExpiration": "2026-09-19T14:05:31.308Z",
+      "SecretExpirationStatus": "🟢 Valid (174 days)",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 3,
+      "HasEnterpriseApp": true,
+      "Permissions": [
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "User.Read",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "DeviceManagementConfiguration.ReadWrite.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "DeviceManagementApps.ReadWrite.All",
+          "Type": "Application"
+        }
+      ]
+    },
+    {
+      "DisplayName": "M365-Baseline-Assessment-Bootstrap",
+      "AppId": "f8039d3d-9516-4e8a-b5d0-fd8c4d3e792d",
+      "ObjectId": "d1c4fedf-ccd6-4242-a879-aa9d65596a95",
+      "CreatedDateTime": "2026-02-06T22:13:23Z",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 36,
+      "HasEnterpriseApp": true,
+      "Permissions": [
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "User.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Group.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Directory.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "AuditLog.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Policy.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Sites.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Team.ReadBasic.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Organization.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Reports.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "ReportSettings.ReadWrite.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "UserAuthenticationMethod.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "SecurityEvents.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "DelegatedAdminRelationship.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "DeviceManagementConfiguration.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "DeviceManagementManagedDevices.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Policy.Read.ConditionalAccess",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Application.ReadWrite.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "openid",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "profile",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "offline_access",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "TeamMember.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "DeviceManagementManagedDevices.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "UserAuthenticationMethod.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "SecurityEvents.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Group.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Sites.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Sites.Manage.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Directory.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "User.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "DeviceManagementConfiguration.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Organization.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "AuditLog.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Policy.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Application.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Reports.Read.All",
+          "Type": "Application"
+        }
+      ]
+    },
+    {
+      "DisplayName": "M365-Baseline-Assessment-Bootstrap",
+      "AppId": "172ddf13-2ff2-4be3-a04b-77d8905dd6cc",
+      "ObjectId": "e98500bf-5e7a-4c0d-9d5a-5d656e743620",
+      "CreatedDateTime": "2026-01-05T21:49:58Z",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 36,
+      "HasEnterpriseApp": true,
+      "Permissions": [
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "User.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Group.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Directory.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "AuditLog.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Policy.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Sites.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Team.ReadBasic.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Organization.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Reports.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "ReportSettings.ReadWrite.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "UserAuthenticationMethod.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "SecurityEvents.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "DelegatedAdminRelationship.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "DeviceManagementConfiguration.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "DeviceManagementManagedDevices.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Policy.Read.ConditionalAccess",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Application.ReadWrite.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "openid",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "profile",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "offline_access",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "TeamMember.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "DeviceManagementManagedDevices.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "UserAuthenticationMethod.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "SecurityEvents.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Group.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Sites.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Sites.Manage.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Directory.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "User.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "DeviceManagementConfiguration.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Organization.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "AuditLog.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Policy.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Application.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Reports.Read.All",
+          "Type": "Application"
+        }
+      ]
+    },
+    {
+      "DisplayName": "M365-Baseline-Assessment-Bootstrap",
+      "AppId": "3ca20c8d-08a6-4126-941c-e858967a572e",
+      "ObjectId": "edd81ce6-7da6-4ede-9ff2-aea97c270288",
+      "CreatedDateTime": "2026-01-05T18:22:16Z",
+      "SecretCount": 0,
+      "SecretExpiration": null,
+      "SecretExpirationStatus": "No secrets",
+      "CertificateCount": 0,
+      "CertificateExpiration": null,
+      "CertificateExpirationStatus": "No certificates",
+      "PermissionCount": 36,
+      "HasEnterpriseApp": true,
+      "Permissions": [
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "User.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Group.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Directory.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "AuditLog.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Policy.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Sites.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Team.ReadBasic.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Organization.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Reports.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "ReportSettings.ReadWrite.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "UserAuthenticationMethod.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "SecurityEvents.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "DelegatedAdminRelationship.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "DeviceManagementConfiguration.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "DeviceManagementManagedDevices.Read.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Policy.Read.ConditionalAccess",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "Application.ReadWrite.All",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "openid",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "profile",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "7101e921-d91a-4bca-a6b6-1d0b98970483",
+          "Permission": "offline_access",
+          "Type": "Delegated"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "TeamMember.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "DeviceManagementManagedDevices.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "UserAuthenticationMethod.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "SecurityEvents.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Group.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Sites.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Sites.Manage.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Directory.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "User.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "DeviceManagementConfiguration.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Organization.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "AuditLog.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Policy.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Application.Read.All",
+          "Type": "Application"
+        },
+        {
+          "Resource": "Microsoft Graph",
+          "Permission": "Reports.Read.All",
+          "Type": "Application"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Application snapshot uit Phase 3."
+    ],
+    "permissions": [
+      "Application.Read.All",
+      "Directory.Read.All"
+    ]
+  }
+}
