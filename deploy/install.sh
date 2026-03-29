@@ -261,6 +261,7 @@ ExecStart=/usr/bin/pwsh -NonInteractive -NoProfile -Command "\
     Install-Module Microsoft.Graph.Sites              -Scope AllUsers -Force -SkipPublisherCheck; \
     Install-Module Microsoft.Graph.DeviceManagement   -Scope AllUsers -Force -SkipPublisherCheck; \
     Install-Module ExchangeOnlineManagement           -Scope AllUsers -Force -SkipPublisherCheck; \
+    Install-Module ZeroTrustAssessment                -Scope AllUsers -Force -SkipPublisherCheck; \
     Write-Host 'PS modules OK'; \
 "
 RemainAfterExit=yes
