@@ -1,0 +1,28 @@
+{
+  "section": "identity",
+  "subsection": "break-glass",
+  "label": "Break-Glass Accounts",
+  "source": "assessment",
+  "generated_at": "2026-03-29T01:20:59.9803400+01:00",
+  "assessmentId": "20260329-001610",
+  "summary": {
+    "count": 1
+  },
+  "items": [
+    {
+      "DisplayName": "QUBE_breakglass@meerwaarde.onmicrosoft.com",
+      "UserPrincipalName": "QUBE_breakglass@meerwaarde.onmicrosoft.com",
+      "AccountEnabled": null,
+      "LastPasswordChange": null
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Break-glass accountdetectie op basis van naamheuristiek en rollidmaatschap uit Phase 4."
+    ],
+    "permissions": [
+      "Directory.Read.All",
+      "RoleManagement.Read.Directory"
+    ]
+  }
+}

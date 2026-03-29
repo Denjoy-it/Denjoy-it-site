@@ -1,0 +1,2021 @@
+{
+  "section": "teams",
+  "subsection": "groepen",
+  "label": "M365 Groepen",
+  "source": "assessment",
+  "generated_at": "2026-03-29T01:20:59.8104810+01:00",
+  "assessmentId": "20260329-001610",
+  "summary": {
+    "mailEnabledSecurity": 98,
+    "securityGroups": 150,
+    "totalGroups": 285,
+    "m365Groups": 32,
+    "distributionGroups": 5
+  },
+  "items": [
+    {
+      "DisplayName": "SSGG-Postbus_Vrijwillig_Traineeship",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 2,
+      "CreatedDateTime": "2020-09-15T13:40:00Z"
+    },
+    {
+      "DisplayName": "Groep: RegiTijd Helpdesk Meerwaarde",
+      "Mail": "OGGG-Regitijd_Helpdesk_Meerwaarde@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:34:18Z"
+    },
+    {
+      "DisplayName": "Groep: Vakgroep Sociaal Makelen",
+      "Mail": "vakgroepsociaalmakelen@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 13,
+      "CreatedDateTime": "2024-06-27T08:12:52Z"
+    },
+    {
+      "DisplayName": "Groep: Personenalarmering",
+      "Mail": "Personenalarmering@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2018-09-21T12:16:55Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Voorleesexpress",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 5,
+      "CreatedDateTime": "2017-01-13T13:59:52Z"
+    },
+    {
+      "DisplayName": "PFGG-Agenda_SRL_Hoofddorp",
+      "Mail": "PFGG-Agenda_SRL_Hoofddorp@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 7,
+      "CreatedDateTime": "2017-06-13T19:34:29Z"
+    },
+    {
+      "DisplayName": "SSGG-Team_Haarlemmermeervoorelkaar",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 11,
+      "CreatedDateTime": "2016-09-06T15:39:16Z"
+    },
+    {
+      "DisplayName": "SG-Sharepoint-VCH",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 117,
+      "CreatedDateTime": "2024-12-27T14:55:45Z"
+    },
+    {
+      "DisplayName": "SEC_INTUNE_DEVICES_*WINDOWS11",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 138,
+      "CreatedDateTime": "2023-12-22T13:43:43Z"
+    },
+    {
+      "DisplayName": "SMSMSE Viewers",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:32:41Z"
+    },
+    {
+      "DisplayName": "SG-Rabobank-app",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2026-01-27T21:11:56Z"
+    },
+    {
+      "DisplayName": "Groep: Raad van Bestuur",
+      "Mail": "RaadVanBestuur@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:34:06Z"
+    },
+    {
+      "DisplayName": "Groep: Corona Crisisteam",
+      "Mail": "OGGG-Corona_Crisisteam@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 4,
+      "CreatedDateTime": "2020-03-16T16:16:53Z"
+    },
+    {
+      "DisplayName": "Team Advies",
+      "Mail": "TeamAdvies@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 7,
+      "CreatedDateTime": "2024-11-20T08:08:46Z"
+    },
+    {
+      "DisplayName": "Hoofdnummer Meerwaarde",
+      "Mail": "hoofdnummer-teams@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 2,
+      "CreatedDateTime": "2025-02-20T15:08:06Z"
+    },
+    {
+      "DisplayName": "SG-Sharepoint-Sociaalmakelen",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 116,
+      "CreatedDateTime": "2024-12-27T15:01:09Z"
+    },
+    {
+      "DisplayName": "Exchange All Hosted Organizations",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:32:43Z"
+    },
+    {
+      "DisplayName": "Groep: Vakgroep Participatie",
+      "Mail": "vakgroepparticipatie@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 6,
+      "CreatedDateTime": "2025-01-31T08:44:10Z"
+    },
+    {
+      "DisplayName": "PFGG-Pluspunt_Zuidwest",
+      "Mail": "PFGG-Pluspunt_Zuidwest@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 4,
+      "CreatedDateTime": "2016-12-01T10:22:51Z"
+    },
+    {
+      "DisplayName": "PFGG-Pluspunt_Zwanenburg",
+      "Mail": "PFGG-Pluspunt_Zwanenburg@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 2,
+      "CreatedDateTime": "2017-06-13T19:34:17Z"
+    },
+    {
+      "DisplayName": "PFGG-Agenda_Pluspunt_Zwanenburg",
+      "Mail": "PFGG-Agenda_Pluspunt_Zwanenburg@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:34:08Z"
+    },
+    {
+      "DisplayName": "Graph-MailSend-Scoped",
+      "Mail": "Graph-MailSend-Scoped@meerwaarde.onmicrosoft.com",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 2,
+      "CreatedDateTime": "2025-12-19T12:57:27Z"
+    },
+    {
+      "DisplayName": "SG-ManagedDevices-Windows-Shared",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2021-12-29T07:22:53Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Home_Start",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 6,
+      "CreatedDateTime": "2018-04-04T08:47:40Z"
+    },
+    {
+      "DisplayName": "SEC_INTUNE_DEVICES_*WINDOWS",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 138,
+      "CreatedDateTime": "2022-11-23T13:15:04Z"
+    },
+    {
+      "DisplayName": "Groep: Op Stap(je)",
+      "Mail": "OpStap2@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 4,
+      "CreatedDateTime": "2017-06-13T19:33:46Z"
+    },
+    {
+      "DisplayName": "Groep: ROP",
+      "Mail": "OGGG-ROP@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:34:17Z"
+    },
+    {
+      "DisplayName": "FF Doen! - Mayra",
+      "Mail": "FFDoen12@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 7,
+      "CreatedDateTime": "2025-07-10T07:38:26Z"
+    },
+    {
+      "DisplayName": "team: Hoofddorp Centrum",
+      "Mail": "OGGG-GT-Hoofddorp-Centrum@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 21,
+      "CreatedDateTime": "2017-06-13T19:34:33Z"
+    },
+    {
+      "DisplayName": "SG-Sharepoint-Sharepoint-Member",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2021-08-26T07:30:31Z"
+    },
+    {
+      "DisplayName": "teams-group-Participatie",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 5,
+      "CreatedDateTime": "2025-02-05T15:08:43Z"
+    },
+    {
+      "DisplayName": "ASLGAB-ExactGlobe",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:33:26Z"
+    },
+    {
+      "DisplayName": "SG-Sharepoint-Sociaalraadslid",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 115,
+      "CreatedDateTime": "2024-12-27T14:58:44Z"
+    },
+    {
+      "DisplayName": "team: Hoofddorp Zuid/West",
+      "Mail": "OGGG-GT-Hoofddorp-Zuid-West@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 13,
+      "CreatedDateTime": "2017-06-13T19:34:16Z"
+    },
+    {
+      "DisplayName": "FF Doen! - Algemeen",
+      "Mail": "FFDoen11@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 15,
+      "CreatedDateTime": "2025-07-10T07:37:52Z"
+    },
+    {
+      "DisplayName": "ASGG-Office365-E1",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 104,
+      "CreatedDateTime": "2019-05-29T08:31:57Z"
+    },
+    {
+      "DisplayName": "AVD-Bank-Sepa",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 3,
+      "CreatedDateTime": "2025-02-13T09:38:31Z"
+    },
+    {
+      "DisplayName": "OGGG-Pluspunt_Overbos",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 3,
+      "CreatedDateTime": "2016-08-22T12:39:00Z"
+    },
+    {
+      "DisplayName": "BL: SILO",
+      "Mail": "silo@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:34:10Z"
+    },
+    {
+      "DisplayName": "SG-Sharepoint-Jongerenwerk",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 115,
+      "CreatedDateTime": "2024-12-27T14:15:50Z"
+    },
+    {
+      "DisplayName": "Groep: Samendoen",
+      "Mail": "Samendoen@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:33:23Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_MeerCirkels",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-30T08:00:17Z"
+    },
+    {
+      "DisplayName": "ExchangeLegacyInterop",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:32:45Z"
+    },
+    {
+      "DisplayName": "DHCP Administrators",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:32:39Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Stap",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 3,
+      "CreatedDateTime": "2021-11-23T08:47:28Z"
+    },
+    {
+      "DisplayName": "FF Doen! - Roxy",
+      "Mail": "FFDoen3@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 9,
+      "CreatedDateTime": "2025-07-10T07:23:27Z"
+    },
+    {
+      "DisplayName": "SG-ManagedDevices-Hewlett Packard",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 135,
+      "CreatedDateTime": "2024-10-29T11:03:04Z"
+    },
+    {
+      "DisplayName": "Groep: Vakgroep VCH",
+      "Mail": "vakgroepvch@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 6,
+      "CreatedDateTime": "2024-06-27T08:12:52Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_MatchMentor_Pro",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2022-05-13T12:07:16Z"
+    },
+    {
+      "DisplayName": "Groep: Opvangteamleden GHOR",
+      "Mail": "OGGG-Opvangteamleden_GHOR@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:35:11Z"
+    },
+    {
+      "DisplayName": "SSGG-Track_the_Talent",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 6,
+      "CreatedDateTime": "2016-09-06T15:39:17Z"
+    },
+    {
+      "DisplayName": "team: Hoofddorp West",
+      "Mail": "OGGG-GT-Hoofddorp-West@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 17,
+      "CreatedDateTime": "2017-06-13T19:33:40Z"
+    },
+    {
+      "DisplayName": "SSGG-sql_Admin_Users",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2025-09-24T07:14:36Z"
+    },
+    {
+      "DisplayName": "BL: P-Punt",
+      "Mail": "P-Punt@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:34:07Z"
+    },
+    {
+      "DisplayName": "Meerwaarde | Test Teams groepen",
+      "Mail": "Meerwaarde|TestTeamsgroepen@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 2,
+      "CreatedDateTime": "2026-02-03T12:54:37Z"
+    },
+    {
+      "DisplayName": "ASGG-Microsoft365BusinessPremium",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 129,
+      "CreatedDateTime": "2022-09-19T08:59:50Z"
+    },
+    {
+      "DisplayName": "Groep: TAH Vrijwilligers",
+      "Mail": "OGGG-TAH-Vrijwilligers@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 14,
+      "CreatedDateTime": "2019-05-31T09:38:15Z"
+    },
+    {
+      "DisplayName": "Groep: Projectleiders",
+      "Mail": "Projectleiders@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 2,
+      "CreatedDateTime": "2017-06-13T19:35:30Z"
+    },
+    {
+      "DisplayName": "Groep: Kernteam GHOR",
+      "Mail": "Kernteam_GHOR@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:33:47Z"
+    },
+    {
+      "DisplayName": "PFGG-Agenda_OAW_Buitengebieden",
+      "Mail": "PFGG-Agenda_OAW_Buitengebieden@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 8,
+      "CreatedDateTime": "2017-06-13T19:34:30Z"
+    },
+    {
+      "DisplayName": "PFGG-Agenda_Formulieren_Spreekuur",
+      "Mail": "PFGG-Agenda_Formulieren_Spreekuur@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 18,
+      "CreatedDateTime": "2022-09-12T06:39:03Z"
+    },
+    {
+      "DisplayName": "SSGG-Nathalie_Beltman",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2024-09-24T19:19:12Z"
+    },
+    {
+      "DisplayName": "SG-ManagedDevices-Android",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 109,
+      "CreatedDateTime": "2021-12-29T07:23:51Z"
+    },
+    {
+      "DisplayName": "SG-ManagedDevices-Android - PHonetestMarnix",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2025-06-18T13:51:05Z"
+    },
+    {
+      "DisplayName": "PFGG-Agenda_Intake_AMW",
+      "Mail": "PFGG-Agenda_Intake_AMW@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 11,
+      "CreatedDateTime": "2016-01-21T15:00:19Z"
+    },
+    {
+      "DisplayName": "Alle gebruikers",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 419,
+      "CreatedDateTime": "2021-12-29T07:19:51Z"
+    },
+    {
+      "DisplayName": "OGGG-M-Volledig",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2024-11-08T11:48:03Z"
+    },
+    {
+      "DisplayName": "Hygiene Management",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:33:18Z"
+    },
+    {
+      "DisplayName": "SG-Sharepoint-Documenten MeerWaarde",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 127,
+      "CreatedDateTime": "2024-12-27T13:24:38Z"
+    },
+    {
+      "DisplayName": "SG-ManagedDevices-Windows-Default App/Configuratie",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 138,
+      "CreatedDateTime": "2021-12-29T07:22:13Z"
+    },
+    {
+      "DisplayName": "team: Haarlemmermeer Noord",
+      "Mail": "OGGG-GT-Haarlemmermeer-Noord@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 12,
+      "CreatedDateTime": "2017-06-13T19:34:07Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Familiemaatjes",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 2,
+      "CreatedDateTime": "2023-10-10T09:11:33Z"
+    },
+    {
+      "DisplayName": "DnsUpdateProxy",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:32:43Z"
+    },
+    {
+      "DisplayName": "SG-Sharepoint-Toegang",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 117,
+      "CreatedDateTime": "2024-12-27T14:56:46Z"
+    },
+    {
+      "DisplayName": "TelnetClients",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:32:39Z"
+    },
+    {
+      "DisplayName": "Groep: Receptie",
+      "Mail": "Receptie@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 4,
+      "CreatedDateTime": "2017-06-13T19:33:22Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Thuisadministratie",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 3,
+      "CreatedDateTime": "2016-09-21T07:57:26Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_FF_Doen_Met_MDT",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 2,
+      "CreatedDateTime": "2024-03-07T13:26:34Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Teamopaallaan",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 2,
+      "CreatedDateTime": "2019-02-21T07:46:04Z"
+    },
+    {
+      "DisplayName": "Groep: Kernteam Opaallaan",
+      "Mail": "Kernteam_Opaallaan@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:33:36Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Zilveren_Connectie",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2023-11-07T15:07:54Z"
+    },
+    {
+      "DisplayName": "SG-ManagedDevices-Windows-Personal",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 32,
+      "CreatedDateTime": "2021-12-29T07:22:37Z"
+    },
+    {
+      "DisplayName": "FF Doen! - Abdi",
+      "Mail": "FFDoen6@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 7,
+      "CreatedDateTime": "2025-07-10T07:29:09Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_HuiselijkGeweld",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 7,
+      "CreatedDateTime": "2021-02-04T16:44:06Z"
+    },
+    {
+      "DisplayName": "Groep: Personeel",
+      "Mail": "Personeel@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 112,
+      "CreatedDateTime": "2017-06-13T19:33:11Z"
+    },
+    {
+      "DisplayName": "Welzijn+ Rijsenhout",
+      "Mail": "WelzijnRijsenhout@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 2,
+      "CreatedDateTime": "2026-03-16T08:56:54Z"
+    },
+    {
+      "DisplayName": "Groep: Tienerwerk",
+      "Mail": "tienerwerk@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:34:26Z"
+    },
+    {
+      "DisplayName": "Groep: Opbouwwerk",
+      "Mail": "Opbouwwerk@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 3,
+      "CreatedDateTime": "2017-06-13T19:34:30Z"
+    },
+    {
+      "DisplayName": "ASLG-HostedRegiCare",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2019-12-18T12:24:56Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Sollicitatie",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 2,
+      "CreatedDateTime": "2016-09-06T15:39:17Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Vrijwilligerscentrale",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 6,
+      "CreatedDateTime": "2017-02-23T15:54:03Z"
+    },
+    {
+      "DisplayName": "ADSyncPasswordSet",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2018-07-17T12:16:03Z"
+    },
+    {
+      "DisplayName": "FF Doen! - 12",
+      "Mail": "FFDoen4@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 6,
+      "CreatedDateTime": "2025-07-10T07:24:27Z"
+    },
+    {
+      "DisplayName": "FF Doen! - Savannah",
+      "Mail": "FFDoen2@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 8,
+      "CreatedDateTime": "2025-07-10T07:22:30Z"
+    },
+    {
+      "DisplayName": "Groep: Management",
+      "Mail": "management@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 9,
+      "CreatedDateTime": "2017-06-13T19:33:46Z"
+    },
+    {
+      "DisplayName": "OGGG-Vrijwilligersacademie",
+      "Mail": "OGGG-Vrijwilligersacademie@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 3,
+      "CreatedDateTime": "2016-03-01T10:39:14Z"
+    },
+    {
+      "DisplayName": "Team MT",
+      "Mail": "TeamMT@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 10,
+      "CreatedDateTime": "2024-10-09T09:58:01Z"
+    },
+    {
+      "DisplayName": "Exchange Domain Servers",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:32:43Z"
+    },
+    {
+      "DisplayName": "Groep: Sociaal Makelaars",
+      "Mail": "SociaalMakelaars@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 11,
+      "CreatedDateTime": "2017-06-13T19:34:58Z"
+    },
+    {
+      "DisplayName": "SMSMSE Admins",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:33:19Z"
+    },
+    {
+      "DisplayName": "BL: Floriande",
+      "Mail": "FLOR@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 4,
+      "CreatedDateTime": "2017-06-13T19:34:18Z"
+    },
+    {
+      "DisplayName": "ExchangeAutomationAccess",
+      "Mail": "exchangeautomation@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 0,
+      "CreatedDateTime": "2025-07-22T10:39:43Z"
+    },
+    {
+      "DisplayName": "SG-Printix",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 270,
+      "CreatedDateTime": "2024-11-29T12:52:45Z"
+    },
+    {
+      "DisplayName": "Groep: Vakgroep Sociaal Raadslieden",
+      "Mail": "vakgroepsociaalraadslieden@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 9,
+      "CreatedDateTime": "2024-06-27T08:12:52Z"
+    },
+    {
+      "DisplayName": "ASGG-Office365-E1-NOSharepoint",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2025-04-17T11:29:14Z"
+    },
+    {
+      "DisplayName": "Team Managers MW",
+      "Mail": "managersmw@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2025-02-24T15:34:22Z"
+    },
+    {
+      "DisplayName": "teams-group-Hoofdnummer",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2025-02-06T07:51:44Z"
+    },
+    {
+      "DisplayName": "Terminal Server Computers",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:32:42Z"
+    },
+    {
+      "DisplayName": "PFGG-Agenda's-Pluspunten",
+      "Mail": "PFGG-Agenda's-Pluspunten@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 9,
+      "CreatedDateTime": "2018-07-16T12:56:54Z"
+    },
+    {
+      "DisplayName": "PFGG_Agenda_P-Punt_Inzage",
+      "Mail": "PFGG_Agenda_P-Punt_Inzage@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 2,
+      "CreatedDateTime": "2017-06-13T19:34:16Z"
+    },
+    {
+      "DisplayName": "SG-Sharepoint-Admins",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2021-08-26T07:30:15Z"
+    },
+    {
+      "DisplayName": "Groep: Cursusbureau",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:32:27Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Daywizemutaties",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 2,
+      "CreatedDateTime": "2022-06-21T07:25:58Z"
+    },
+    {
+      "DisplayName": "Project FF DOEN Jongerencoaches",
+      "Mail": "VTJongerencoaches@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 3,
+      "CreatedDateTime": "2023-09-11T11:42:17Z"
+    },
+    {
+      "DisplayName": "Groep: Opvangteam GHOR",
+      "Mail": "Opvangteam_GHOR@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:33:47Z"
+    },
+    {
+      "DisplayName": "SG-Sharepoint-Buurtbemiddeling",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 107,
+      "CreatedDateTime": "2024-12-24T13:49:47Z"
+    },
+    {
+      "DisplayName": "Groep: Aanmeldgroep",
+      "Mail": "aanmeldgroep@meerwaarde.nl",
+      "GroupType": "Distribution List",
+      "MemberCount": 3,
+      "CreatedDateTime": "2017-09-20T08:32:15Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_HR",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 3,
+      "CreatedDateTime": "2016-09-06T15:39:17Z"
+    },
+    {
+      "DisplayName": "Discovery Management",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:33:18Z"
+    },
+    {
+      "DisplayName": "SG-Safeguard-AndroidAPP",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 12,
+      "CreatedDateTime": "2025-01-15T10:05:25Z"
+    },
+    {
+      "DisplayName": "Records Management",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:33:29Z"
+    },
+    {
+      "DisplayName": "Delegated Setup",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:33:20Z"
+    },
+    {
+      "DisplayName": "OGGG-Arbo",
+      "Mail": "OGGG-Arbo@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:35:54Z"
+    },
+    {
+      "DisplayName": "BL: Ontmoetingscentrum",
+      "Mail": "Ontmoetingscentrum@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:34:09Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus OR",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 6,
+      "CreatedDateTime": "2016-09-06T15:39:17Z"
+    },
+    {
+      "DisplayName": "SEC_ENTERPRISE_APP_ARDA_USERS_*ALL",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 125,
+      "CreatedDateTime": "2024-07-02T09:58:02Z"
+    },
+    {
+      "DisplayName": "Organization Management",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 2,
+      "CreatedDateTime": "2017-06-13T19:33:06Z"
+    },
+    {
+      "DisplayName": "Team Thuisadministratie",
+      "Mail": "thuisaministratie@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2025-03-27T12:19:29Z"
+    },
+    {
+      "DisplayName": "SG-Sharepoint-Management & Directie",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 12,
+      "CreatedDateTime": "2024-12-27T08:23:21Z"
+    },
+    {
+      "DisplayName": "Groep: Stagiaires",
+      "Mail": "OGGG-Stagiaires@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:33:33Z"
+    },
+    {
+      "DisplayName": "Server Management",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:33:26Z"
+    },
+    {
+      "DisplayName": "Exchange Enterprise Servers",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:33:33Z"
+    },
+    {
+      "DisplayName": "Groep: Meer-team",
+      "Mail": "OGGG-Meer-team@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:34:06Z"
+    },
+    {
+      "DisplayName": "Groep: DOVD",
+      "Mail": "DOVD@meerwaarde.nl",
+      "GroupType": "Distribution List",
+      "MemberCount": 68,
+      "CreatedDateTime": "2017-06-13T19:35:48Z"
+    },
+    {
+      "DisplayName": "ADSyncOperators",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2018-07-17T12:16:03Z"
+    },
+    {
+      "DisplayName": "Team vakgroep-coördinatoren",
+      "Mail": "vakgroepcoordinatoren@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 15,
+      "CreatedDateTime": "2025-01-16T12:31:33Z"
+    },
+    {
+      "DisplayName": "SG-Facebook-Instagram-AndroidAPP",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 6,
+      "CreatedDateTime": "2025-01-17T08:48:21Z"
+    },
+    {
+      "DisplayName": "PFGG-Pluspunt_Nieuw-Vennep",
+      "Mail": "PFGG-Pluspunt_Nieuw-Vennep@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 2,
+      "CreatedDateTime": "2018-07-17T12:16:03Z"
+    },
+    {
+      "DisplayName": "Groep: GHOR",
+      "Mail": "GHOR@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 8,
+      "CreatedDateTime": "2017-06-13T19:33:47Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Facturen",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 3,
+      "CreatedDateTime": "2021-08-12T08:36:27Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_HoofdBHV",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2023-03-13T12:42:13Z"
+    },
+    {
+      "DisplayName": "AVD-Admins",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 2,
+      "CreatedDateTime": "2025-01-22T11:22:58Z"
+    },
+    {
+      "DisplayName": "Groep: Communicatie",
+      "Mail": "Communicatie@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 2,
+      "CreatedDateTime": "2017-06-13T19:33:08Z"
+    },
+    {
+      "DisplayName": "OGGG-HDM",
+      "Mail": "OGGG-HDM@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 2,
+      "CreatedDateTime": "2016-04-20T12:09:46Z"
+    },
+    {
+      "DisplayName": "Groep: HR",
+      "Mail": "OGGG-HR@meerwaarde.onmicrosoft.com",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 2,
+      "CreatedDateTime": "2018-05-30T08:38:11Z"
+    },
+    {
+      "DisplayName": "Team OR",
+      "Mail": "TeamOR@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 5,
+      "CreatedDateTime": "2025-01-03T13:00:23Z"
+    },
+    {
+      "DisplayName": "SG-Orbis-App",
+      "Mail": "SG-orbis-App@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2025-12-19T12:37:44Z"
+    },
+    {
+      "DisplayName": "UM Management",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:33:20Z"
+    },
+    {
+      "DisplayName": "SSGG-Social_Impact",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 2,
+      "CreatedDateTime": "2023-09-12T12:21:36Z"
+    },
+    {
+      "DisplayName": "SG-Exclude-MFA",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2025-12-19T11:57:47Z"
+    },
+    {
+      "DisplayName": "SG-Sharepoint-Hoofdpagina",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 9,
+      "CreatedDateTime": "2024-12-24T14:47:55Z"
+    },
+    {
+      "DisplayName": "SG-ManagedDevices-Windows-Default App/Configuratie - TEST",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2024-10-28T13:32:23Z"
+    },
+    {
+      "DisplayName": "MDB Windows device onboarding group",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 138,
+      "CreatedDateTime": "2024-12-20T12:40:31Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Woordvriend",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2020-08-04T06:46:36Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Pluspunt",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 10,
+      "CreatedDateTime": "2024-08-28T12:12:05Z"
+    },
+    {
+      "DisplayName": "Groep: Inkoop",
+      "Mail": "inkoop@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:34:14Z"
+    },
+    {
+      "DisplayName": "Groep: Kinderwerk",
+      "Mail": "Kinderwerk2@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 10,
+      "CreatedDateTime": "2017-06-13T19:35:06Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Buurtnetwerken",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2024-09-18T06:42:11Z"
+    },
+    {
+      "DisplayName": "PFGG-BUR-Beheer",
+      "Mail": "PFGG-BUR-Beheer@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 7,
+      "CreatedDateTime": "2018-12-18T16:08:06Z"
+    },
+    {
+      "DisplayName": "Groep: Ouderenadvies",
+      "Mail": "Ouderenadvies@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 6,
+      "CreatedDateTime": "2017-06-13T19:34:28Z"
+    },
+    {
+      "DisplayName": "Groep: Pretcommissie",
+      "Mail": "pretcommissie@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 5,
+      "CreatedDateTime": "2017-06-13T19:34:27Z"
+    },
+    {
+      "DisplayName": "OfficeFonts",
+      "Mail": "OfficeFonts@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2024-05-08T11:28:36Z"
+    },
+    {
+      "DisplayName": "OGGG-Sollicitatie",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 2,
+      "CreatedDateTime": "2017-06-13T19:33:39Z"
+    },
+    {
+      "DisplayName": "SG-Sharepoint-Ouderenadvies",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 116,
+      "CreatedDateTime": "2024-12-27T14:59:46Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Salarisadministratie",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 3,
+      "CreatedDateTime": "2019-07-23T13:20:48Z"
+    },
+    {
+      "DisplayName": "PFGG-Pluspunt_Centrum",
+      "Mail": "PFGG-Pluspunt_Centrum@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2016-12-01T10:22:51Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Cursus_Creatief_Leven",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 2,
+      "CreatedDateTime": "2022-08-25T07:59:59Z"
+    },
+    {
+      "DisplayName": "teams-group-ZONDAG",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2025-02-05T15:08:35Z"
+    },
+    {
+      "DisplayName": "Exchange Servers",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:33:21Z"
+    },
+    {
+      "DisplayName": "Groep: BHV",
+      "Mail": "BHV@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 15,
+      "CreatedDateTime": "2017-06-13T19:35:18Z"
+    },
+    {
+      "DisplayName": "Groep: Vakgroep Toegang",
+      "Mail": "vakgroeptoegang@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 10,
+      "CreatedDateTime": "2024-06-27T08:12:52Z"
+    },
+    {
+      "DisplayName": "DHCP Users",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:32:39Z"
+    },
+    {
+      "DisplayName": "All_ExchangeAppAccess",
+      "Mail": "allaccess@meerwaarde.nl",
+      "GroupType": "Distribution List",
+      "MemberCount": 0,
+      "CreatedDateTime": "2025-07-22T10:33:21Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Preventiemedewerker",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-02-17T11:41:38Z"
+    },
+    {
+      "DisplayName": "Groep: Summertime",
+      "Mail": "summertime@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:35:10Z"
+    },
+    {
+      "DisplayName": "Team Haarlemmermeervoorelkaar - Vrijwilligers",
+      "Mail": "teamhaarlemmermeervoorelkaarvrijwilligers@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 9,
+      "CreatedDateTime": "2025-04-16T07:35:56Z"
+    },
+    {
+      "DisplayName": "SG-intune-v2-devices",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 2,
+      "CreatedDateTime": "2026-03-03T15:01:09Z"
+    },
+    {
+      "DisplayName": "Groep: OR",
+      "Mail": "OGGG-Ondernemingsraad@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 5,
+      "CreatedDateTime": "2017-06-13T19:34:26Z"
+    },
+    {
+      "DisplayName": "FF Doen! - Chayenne",
+      "Mail": "FFDoen8@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 7,
+      "CreatedDateTime": "2025-07-10T07:30:37Z"
+    },
+    {
+      "DisplayName": "Groep: Administratie",
+      "Mail": "Administratie@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 2,
+      "CreatedDateTime": "2017-06-13T19:33:53Z"
+    },
+    {
+      "DisplayName": "SG-Sharepoint-Participatie",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 116,
+      "CreatedDateTime": "2024-12-27T15:00:25Z"
+    },
+    {
+      "DisplayName": "Groep: Vakgroep Ouderenadvies",
+      "Mail": "vakgroepouderenadvies@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 6,
+      "CreatedDateTime": "2024-06-27T08:12:52Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Zroute",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 8,
+      "CreatedDateTime": "2023-07-03T09:55:43Z"
+    },
+    {
+      "DisplayName": "PFGG-Agenda_Pluspunt_Overbos",
+      "Mail": "PFGG-Agenda_Pluspunt_Overbos@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:35:42Z"
+    },
+    {
+      "DisplayName": "SG-Sharepoint-HR",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 3,
+      "CreatedDateTime": "2024-12-27T14:13:39Z"
+    },
+    {
+      "DisplayName": "Welzijn+ Overbos",
+      "Mail": "WelzijnOverbos@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 2,
+      "CreatedDateTime": "2026-03-16T08:56:34Z"
+    },
+    {
+      "DisplayName": "N-Able Reg Key",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2026-01-09T08:16:43Z"
+    },
+    {
+      "DisplayName": "OGGG-Salarisadministratie",
+      "Mail": "OGGG-Salarisadministratie@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 2,
+      "CreatedDateTime": "2017-06-13T19:34:26Z"
+    },
+    {
+      "DisplayName": "DnsAdmins",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:32:39Z"
+    },
+    {
+      "DisplayName": "Samen van MeerWaarde",
+      "Mail": "samenvanmeerwaarde103@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 103,
+      "CreatedDateTime": "2024-12-08T13:21:36Z"
+    },
+    {
+      "DisplayName": "teams-group-BGH",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 2,
+      "CreatedDateTime": "2025-02-05T15:08:52Z"
+    },
+    {
+      "DisplayName": "SEC_INTUNE_USERS_*ALL",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 329,
+      "CreatedDateTime": "2023-12-22T13:43:43Z"
+    },
+    {
+      "DisplayName": "SG-Zivver Users",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 88,
+      "CreatedDateTime": "2025-05-20T08:30:10Z"
+    },
+    {
+      "DisplayName": "Groep: Meldpunt Datalekken",
+      "Mail": "Datalekken@meerwaarde.nl",
+      "GroupType": "Distribution List",
+      "MemberCount": 1,
+      "CreatedDateTime": "2016-11-21T16:35:52Z"
+    },
+    {
+      "DisplayName": "Groep: Thuisadministratie Haarlemmermeer",
+      "Mail": "Thuisadministratie_Haarlemmermeer@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 2,
+      "CreatedDateTime": "2017-06-13T19:34:57Z"
+    },
+    {
+      "DisplayName": "SG-Sharepoint-Maatschappelijkwerk",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 116,
+      "CreatedDateTime": "2024-12-27T14:57:55Z"
+    },
+    {
+      "DisplayName": "Privacy",
+      "Mail": "privacy@meerwaarde.nl",
+      "GroupType": "Distribution List",
+      "MemberCount": 1,
+      "CreatedDateTime": "2018-12-04T10:54:38Z"
+    },
+    {
+      "DisplayName": "teams-group-Buurtbemiddeling",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 3,
+      "CreatedDateTime": "2025-02-18T14:24:13Z"
+    },
+    {
+      "DisplayName": "ASLG-ExactGlobe",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:33:26Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_MeerBabbels",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 6,
+      "CreatedDateTime": "2021-09-07T07:25:01Z"
+    },
+    {
+      "DisplayName": "Groep: Managers PP",
+      "Mail": "managerspp@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:33:44Z"
+    },
+    {
+      "DisplayName": "Groep: Jongerenwerk",
+      "Mail": "Jongerenwerk@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 13,
+      "CreatedDateTime": "2017-06-13T19:34:28Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Matchmentor",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 5,
+      "CreatedDateTime": "2017-06-27T12:55:51Z"
+    },
+    {
+      "DisplayName": "Groep: team Kinderwerk",
+      "Mail": "teamkinderwerk@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 8,
+      "CreatedDateTime": "2026-01-22T08:51:08Z"
+    },
+    {
+      "DisplayName": "PFGG-Agenda_Kernteam_Opaallaan",
+      "Mail": "PFGG-Agenda_Kernteam_Opaallaan@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2016-09-29T11:11:18Z"
+    },
+    {
+      "DisplayName": "Groep: BGH",
+      "Mail": "BGH@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:33:56Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Facilitair",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 3,
+      "CreatedDateTime": "2019-07-23T13:20:48Z"
+    },
+    {
+      "DisplayName": "Groep: Coördinatoren opvanglocaties Oekraïners",
+      "Mail": "OGGG-Coordinatoren_opvanglocaties_Oekrainers@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 5,
+      "CreatedDateTime": "2022-04-28T13:02:32Z"
+    },
+    {
+      "DisplayName": "View-Only Organization Management",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:33:18Z"
+    },
+    {
+      "DisplayName": "ADSyncBrowse",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2018-07-17T12:16:03Z"
+    },
+    {
+      "DisplayName": "teams-group-VCH",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 2,
+      "CreatedDateTime": "2025-02-05T15:08:12Z"
+    },
+    {
+      "DisplayName": "FF Doen! - Firdevs",
+      "Mail": "FFDoen7@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 7,
+      "CreatedDateTime": "2025-07-10T07:29:50Z"
+    },
+    {
+      "DisplayName": "SG-Intune-v2-users-test",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2026-03-03T14:59:21Z"
+    },
+    {
+      "DisplayName": "SG-ManagedUser-Android -Default App/Configuratie _TEST",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2024-11-13T09:05:47Z"
+    },
+    {
+      "DisplayName": "FF Doen! - Bedrijven",
+      "Mail": "FFDoen@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 13,
+      "CreatedDateTime": "2025-07-10T06:35:19Z"
+    },
+    {
+      "DisplayName": "Groep: Vakgroep Kinderwerk",
+      "Mail": "vakgroepkinderwerk@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 13,
+      "CreatedDateTime": "2024-06-27T08:12:52Z"
+    },
+    {
+      "DisplayName": "Groep: Vakgroep Maatschappelijk Werk",
+      "Mail": "vakgroepmaatschappelijkwerk@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 10,
+      "CreatedDateTime": "2024-06-27T08:12:52Z"
+    },
+    {
+      "DisplayName": "FF Doen! - Noah",
+      "Mail": "FFDoen5@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 7,
+      "CreatedDateTime": "2025-07-10T07:26:15Z"
+    },
+    {
+      "DisplayName": "Groep: Beursvloer",
+      "Mail": "Beursvloer@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:34:16Z"
+    },
+    {
+      "DisplayName": "Project AVG",
+      "Mail": "ProjectAVG@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 2,
+      "CreatedDateTime": "2024-07-26T10:00:02Z"
+    },
+    {
+      "DisplayName": "OGGG-Redactie Intranet",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 5,
+      "CreatedDateTime": "2017-06-13T19:33:08Z"
+    },
+    {
+      "DisplayName": "PFGG-Agenda_SRL_Buitengebieden",
+      "Mail": "PFGG-Agenda_SRL_Buitengebieden@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 8,
+      "CreatedDateTime": "2017-06-13T19:34:30Z"
+    },
+    {
+      "DisplayName": "Zivver Cloud Sync Mail Report",
+      "Mail": "ZivverCloudSyncMailReport@meerwaarde.onmicrosoft.com",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2025-06-03T14:02:45Z"
+    },
+    {
+      "DisplayName": "Groep: Maatschappelijk Werk",
+      "Mail": "MaatschappelijkWerk@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 13,
+      "CreatedDateTime": "2017-06-13T19:34:28Z"
+    },
+    {
+      "DisplayName": "SSGG-Info",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 4,
+      "CreatedDateTime": "2016-09-06T15:39:17Z"
+    },
+    {
+      "DisplayName": "Groep: Meerbabbels",
+      "Mail": "OGGG-Meerbabbels@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 5,
+      "CreatedDateTime": "2021-02-01T08:13:56Z"
+    },
+    {
+      "DisplayName": "All Company",
+      "Mail": "AllCompany.216158.rwnqieph@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2024-12-11T18:25:18Z"
+    },
+    {
+      "DisplayName": "PFGG-Agenda_OAW_Hoofddorp",
+      "Mail": "PFGG-Agenda_OAW_Hoofddorp@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 9,
+      "CreatedDateTime": "2017-06-13T19:34:28Z"
+    },
+    {
+      "DisplayName": "Groep: Vakgroep Jongerenwerk",
+      "Mail": "vakgroepjongerenwerk@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 13,
+      "CreatedDateTime": "2024-06-27T08:12:52Z"
+    },
+    {
+      "DisplayName": "Groep: Buurtbemiddeling",
+      "Mail": "Buurtbemiddeling@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 3,
+      "CreatedDateTime": "2017-06-13T19:34:14Z"
+    },
+    {
+      "DisplayName": "Groep: SCW_Senioren",
+      "Mail": "SCW_Senioren@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 5,
+      "CreatedDateTime": "2017-06-13T19:34:28Z"
+    },
+    {
+      "DisplayName": "Groep: Maatschappelijke Stages",
+      "Mail": "mas@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:34:10Z"
+    },
+    {
+      "DisplayName": "SEC_AUTOPILOT_DEVICES_*multiuser",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 14,
+      "CreatedDateTime": "2023-12-22T13:13:04Z"
+    },
+    {
+      "DisplayName": "PFGG-Agenda_P-Punt",
+      "Mail": "PFGG-Agenda_P-Punt@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 2,
+      "CreatedDateTime": "2017-06-13T19:34:07Z"
+    },
+    {
+      "DisplayName": "Groep: Vakgroepcoordinatoren",
+      "Mail": "Vakgroepcoordinatoren@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 10,
+      "CreatedDateTime": "2024-07-29T07:03:08Z"
+    },
+    {
+      "DisplayName": "PFGG-Regas-Helpdesk",
+      "Mail": "PFGG-Regas-Helpdesk@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 7,
+      "CreatedDateTime": "2017-06-13T19:35:37Z"
+    },
+    {
+      "DisplayName": "teams-group-VG-Toegang",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 2,
+      "CreatedDateTime": "2025-02-10T09:12:00Z"
+    },
+    {
+      "DisplayName": "teams-group-HHME voor elkaar",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 4,
+      "CreatedDateTime": "2025-02-05T15:08:26Z"
+    },
+    {
+      "DisplayName": "Public Folder Management",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:33:20Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Vroegeropaf",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2016-10-31T19:05:38Z"
+    },
+    {
+      "DisplayName": "SSGG-Vrijwilligersacademie",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 4,
+      "CreatedDateTime": "2018-08-03T08:23:35Z"
+    },
+    {
+      "DisplayName": "Groep: Kernenoverleg",
+      "Mail": "Kernenoverleg@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:34:09Z"
+    },
+    {
+      "DisplayName": "N-able backup users",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2023-02-28T14:27:36Z"
+    },
+    {
+      "DisplayName": "SEC_AUTOPILOT_DEVICES_*LAPTOP",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2023-12-22T13:14:58Z"
+    },
+    {
+      "DisplayName": "Groep: Sociaal-Raadslieden",
+      "Mail": "sociaal-raadslieden@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 9,
+      "CreatedDateTime": "2017-06-13T19:33:45Z"
+    },
+    {
+      "DisplayName": "OGGG-Track_the_Talent",
+      "Mail": "OGGG-Track_the_Talent@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:34:07Z"
+    },
+    {
+      "DisplayName": "Groep: Kernteamleden GHOR",
+      "Mail": "OGGG-Kernteamleden_GHOR@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:34:27Z"
+    },
+    {
+      "DisplayName": "Groep: Vacaturebank",
+      "Mail": "OGGG-Vacaturebank@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 4,
+      "CreatedDateTime": "2017-06-13T19:33:40Z"
+    },
+    {
+      "DisplayName": "AVD-Users",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 7,
+      "CreatedDateTime": "2025-01-22T10:52:56Z"
+    },
+    {
+      "DisplayName": "ASGG-ExactGlobe",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:33:26Z"
+    },
+    {
+      "DisplayName": "Groep: Intervisors",
+      "Mail": "OGGG-Intervisors@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 16,
+      "CreatedDateTime": "2022-08-17T12:33:47Z"
+    },
+    {
+      "DisplayName": "SG-FIDOKEY-USERS",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2025-02-19T15:44:57Z"
+    },
+    {
+      "DisplayName": "SG-Sharepoint-Kinderwerk",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 116,
+      "CreatedDateTime": "2024-12-27T14:17:23Z"
+    },
+    {
+      "DisplayName": "Help Desk",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:33:06Z"
+    },
+    {
+      "DisplayName": "PFGG-Cursusbureau",
+      "Mail": "PFGG-Cursusbureau@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 3,
+      "CreatedDateTime": "2017-06-13T19:34:16Z"
+    },
+    {
+      "DisplayName": "IIS_WPG",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:33:56Z"
+    },
+    {
+      "DisplayName": "teams-group-VG-Toegang-achtervang",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 9,
+      "CreatedDateTime": "2025-02-05T15:07:54Z"
+    },
+    {
+      "DisplayName": "MeerWaarde Participatie",
+      "Mail": "ParticipatiePunt@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 5,
+      "CreatedDateTime": "2020-06-22T07:11:43Z"
+    },
+    {
+      "DisplayName": "SEC_AUTOPILOT_DEVICES_*ALL",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 113,
+      "CreatedDateTime": "2023-12-22T11:07:18Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Meetweken",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2018-11-15T13:44:36Z"
+    },
+    {
+      "DisplayName": "Groep: Kernteam Zwanenburg",
+      "Mail": "OGGG-Kernteam_Zwanenburg@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 2,
+      "CreatedDateTime": "2017-06-13T19:33:29Z"
+    },
+    {
+      "DisplayName": "ADSyncAdmins",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 2,
+      "CreatedDateTime": "2018-07-17T12:16:03Z"
+    },
+    {
+      "DisplayName": "PFAdmins",
+      "Mail": "PFAdmins@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 2,
+      "CreatedDateTime": "2017-06-13T19:34:27Z"
+    },
+    {
+      "DisplayName": "SG-Sharepoint-Hoofdpagina-Lees",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 220,
+      "CreatedDateTime": "2024-12-24T14:08:34Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Event",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 2,
+      "CreatedDateTime": "2022-09-07T12:31:48Z"
+    },
+    {
+      "DisplayName": "ASGG-HostedRegiCare",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 6,
+      "CreatedDateTime": "2019-12-18T12:24:56Z"
+    },
+    {
+      "DisplayName": "FF Doen! - Dalila",
+      "Mail": "FFDoen9@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 7,
+      "CreatedDateTime": "2025-07-10T07:36:39Z"
+    },
+    {
+      "DisplayName": "Exchange Install Domain Servers",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:32:26Z"
+    },
+    {
+      "DisplayName": "team: Zuid",
+      "Mail": "OGGG-GT-Zuid@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 5,
+      "CreatedDateTime": "2017-06-13T19:34:17Z"
+    },
+    {
+      "DisplayName": "PFGG-Agenda_Spreekuur_Woningnet",
+      "Mail": "PFGG-Agenda_Spreekuur_Woningnet@meerwaarde.nl",
+      "GroupType": "Mail-Enabled Security",
+      "MemberCount": 5,
+      "CreatedDateTime": "2020-02-04T14:12:49Z"
+    },
+    {
+      "DisplayName": "FF Doen! - Beya",
+      "Mail": "FFDoen-14@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 5,
+      "CreatedDateTime": "2025-09-11T11:56:45Z"
+    },
+    {
+      "DisplayName": "HelpServicesGroup",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:32:40Z"
+    },
+    {
+      "DisplayName": "SG-RemoteDesktopAVD",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 4,
+      "CreatedDateTime": "2025-02-04T09:17:37Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Vrijwilligers",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2024-01-22T15:43:00Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Participatie",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 7,
+      "CreatedDateTime": "2018-10-01T09:36:19Z"
+    },
+    {
+      "DisplayName": "SG-Printix-Workflow Speciaal",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 3,
+      "CreatedDateTime": "2025-02-07T10:43:38Z"
+    },
+    {
+      "DisplayName": "SG-Sharepoint-Sharepoint-Owner",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2021-08-26T07:30:45Z"
+    },
+    {
+      "DisplayName": "Recipient Management",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:33:26Z"
+    },
+    {
+      "DisplayName": "SG-Sharepoint-Financiële administratie",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 5,
+      "CreatedDateTime": "2024-12-27T10:00:45Z"
+    },
+    {
+      "DisplayName": "FF Doen! - 13",
+      "Mail": "FFDoen-13@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2025-09-11T11:56:03Z"
+    },
+    {
+      "DisplayName": "Exchange Windows Permissions",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 1,
+      "CreatedDateTime": "2017-06-13T19:33:25Z"
+    },
+    {
+      "DisplayName": "FF Doen! - Destiny",
+      "Mail": "FFDoen10@meerwaarde.onmicrosoft.com",
+      "GroupType": "M365 Group",
+      "MemberCount": 6,
+      "CreatedDateTime": "2025-07-10T07:37:16Z"
+    },
+    {
+      "DisplayName": "SSGG-Postbus_Klachten",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 3,
+      "CreatedDateTime": "2019-01-11T09:26:22Z"
+    },
+    {
+      "DisplayName": "Exchange Trusted Subsystem",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 0,
+      "CreatedDateTime": "2017-06-13T19:32:45Z"
+    },
+    {
+      "DisplayName": "SG-Intune-Favorieten-HMVE",
+      "Mail": null,
+      "GroupType": "Security Group",
+      "MemberCount": 4,
+      "CreatedDateTime": "2025-03-24T15:20:40Z"
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Groepenoverzicht snapshot uit Phase 2 assessment."
+    ],
+    "permissions": [
+      "Group.Read.All",
+      "Directory.Read.All"
+    ]
+  }
+}

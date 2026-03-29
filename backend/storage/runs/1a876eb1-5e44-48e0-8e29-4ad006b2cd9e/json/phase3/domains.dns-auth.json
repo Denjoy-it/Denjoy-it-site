@@ -1,0 +1,23 @@
+{
+  "section": "domains",
+  "subsection": "dns-auth",
+  "label": "DKIM / SPF / DMARC",
+  "source": "assessment",
+  "generated_at": "2026-03-29T01:20:59.9746140+01:00",
+  "assessmentId": "20260329-001610",
+  "summary": {
+    "domainsWithDkim": 0,
+    "totalDomains": 1,
+    "domainsWithSpf": 0,
+    "domainsWithDmarc": 0
+  },
+  "items": [],
+  "meta": {
+    "notes": [
+      "DKIM, SPF en DMARC controles per domein uit Phase 3."
+    ],
+    "permissions": [
+      "Domain.Read.All"
+    ]
+  }
+}

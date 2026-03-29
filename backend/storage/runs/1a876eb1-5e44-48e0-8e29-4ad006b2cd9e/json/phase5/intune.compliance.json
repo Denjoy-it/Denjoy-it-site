@@ -1,0 +1,39 @@
+{
+  "section": "intune",
+  "subsection": "compliance",
+  "label": "Compliance Policies",
+  "source": "assessment",
+  "generated_at": "2026-03-29T01:21:00.0334660+01:00",
+  "assessmentId": "20260329-001610",
+  "summary": {
+    "totalPolicies": 3
+  },
+  "items": [
+    {
+      "DisplayName": "Default compliance policy for Android",
+      "Platform": "android",
+      "CreatedDateTime": "29-12-2021",
+      "LastModifiedDateTime": "12-11-2024"
+    },
+    {
+      "DisplayName": "MeerWaarde Compliance Android",
+      "Platform": "",
+      "CreatedDateTime": "13-11-2024",
+      "LastModifiedDateTime": "14-11-2024"
+    },
+    {
+      "DisplayName": "Meerwaarde Compliance Windows",
+      "Platform": "windows10",
+      "CreatedDateTime": "29-12-2021",
+      "LastModifiedDateTime": "23-10-2025"
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Compliance policy snapshot uit Phase 5."
+    ],
+    "permissions": [
+      "DeviceManagementConfiguration.Read.All"
+    ]
+  }
+}

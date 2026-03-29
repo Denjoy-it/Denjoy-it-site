@@ -1,0 +1,30 @@
+{
+  "section": "azure",
+  "subsection": "resources",
+  "label": "Resources",
+  "source": "assessment",
+  "generated_at": "2026-03-29T01:21:00.0864260+01:00",
+  "assessmentId": "20260329-001610",
+  "summary": {
+    "untaggedResourceGroups": 9,
+    "totalResourceGroups": 9,
+    "totalResources": 1
+  },
+  "items": [
+    {
+      "Name": "DefaultWorkspace-7f615f1d-bae4-4985-a043-168a37bbb6fe-WEU",
+      "Type": "Microsoft.OperationalInsights/workspaces",
+      "ResourceGroup": "DefaultResourceGroup-WEU",
+      "Location": "westeurope",
+      "Tags": null
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Azure resource snapshot uit Phase 6."
+    ],
+    "permissions": [
+      "Azure Reader / Resource Graph"
+    ]
+  }
+}

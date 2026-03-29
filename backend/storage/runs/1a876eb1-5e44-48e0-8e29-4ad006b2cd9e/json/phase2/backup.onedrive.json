@@ -1,0 +1,52 @@
+{
+  "section": "backup",
+  "subsection": "onedrive",
+  "label": "OneDrive",
+  "source": "assessment",
+  "generated_at": "2026-03-29T01:20:59.7659430+01:00",
+  "assessmentId": "20260329-001610",
+  "summary": {
+    "totalOneDrives": 241,
+    "totalOneDriveStorageGB": 458.65
+  },
+  "items": [
+    {
+      "OwnerDisplayName": null,
+      "OwnerPrincipalName": null,
+      "StorageUsedGB": 168.59,
+      "Url": null
+    },
+    {
+      "OwnerDisplayName": null,
+      "OwnerPrincipalName": null,
+      "StorageUsedGB": 85.1,
+      "Url": null
+    },
+    {
+      "OwnerDisplayName": null,
+      "OwnerPrincipalName": null,
+      "StorageUsedGB": 47.8,
+      "Url": null
+    },
+    {
+      "OwnerDisplayName": null,
+      "OwnerPrincipalName": null,
+      "StorageUsedGB": 20.6,
+      "Url": null
+    },
+    {
+      "OwnerDisplayName": null,
+      "OwnerPrincipalName": null,
+      "StorageUsedGB": 11.41,
+      "Url": null
+    }
+  ],
+  "meta": {
+    "notes": [
+      "OneDrive snapshot uit Phase 2 topverbruikers."
+    ],
+    "permissions": [
+      "Sites.Read.All"
+    ]
+  }
+}

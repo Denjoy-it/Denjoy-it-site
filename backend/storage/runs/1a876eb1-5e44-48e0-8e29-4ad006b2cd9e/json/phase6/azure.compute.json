@@ -1,0 +1,24 @@
+{
+  "section": "azure",
+  "subsection": "compute",
+  "label": "Virtual Machines",
+  "source": "assessment",
+  "generated_at": "2026-03-29T01:21:00.0890550+01:00",
+  "assessmentId": "20260329-001610",
+  "summary": {
+    "totalVMs": 0,
+    "stoppedVMs": 0,
+    "issues": 0,
+    "runningVMs": 0
+  },
+  "items": [],
+  "meta": {
+    "notes": [
+      "Azure Virtual Machine overzicht uit Phase 6."
+    ],
+    "permissions": [
+      "Reader (Azure)",
+      "Microsoft.Compute/*/read"
+    ]
+  }
+}

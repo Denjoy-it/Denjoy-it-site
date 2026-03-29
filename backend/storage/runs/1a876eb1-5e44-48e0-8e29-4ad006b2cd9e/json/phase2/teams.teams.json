@@ -1,0 +1,192 @@
+{
+  "section": "teams",
+  "subsection": "teams",
+  "label": "Teams",
+  "source": "assessment",
+  "generated_at": "2026-03-29T01:20:59.6250850+01:00",
+  "assessmentId": "20260329-001610",
+  "summary": {
+    "meetingPolicies": 7,
+    "totalTeams": 28,
+    "externalDomains": 0
+  },
+  "items": [
+    {
+      "DisplayName": "MeerWaarde Participatie",
+      "Mail": "ParticipatiePunt@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2020-06-22T07:11:43Z",
+      "MemberCount": 5
+    },
+    {
+      "DisplayName": "Project FF DOEN Jongerencoaches",
+      "Mail": "VTJongerencoaches@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2023-09-11T11:42:17Z",
+      "MemberCount": 3
+    },
+    {
+      "DisplayName": "Project AVG",
+      "Mail": "ProjectAVG@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2024-07-26T10:00:02Z",
+      "MemberCount": 2
+    },
+    {
+      "DisplayName": "Team MT",
+      "Mail": "TeamMT@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2024-10-09T09:58:01Z",
+      "MemberCount": 10
+    },
+    {
+      "DisplayName": "Team Advies",
+      "Mail": "TeamAdvies@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2024-11-20T08:08:46Z",
+      "MemberCount": 7
+    },
+    {
+      "DisplayName": "Team OR",
+      "Mail": "TeamOR@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2025-01-03T13:00:23Z",
+      "MemberCount": 5
+    },
+    {
+      "DisplayName": "Team vakgroep-coördinatoren",
+      "Mail": "vakgroepcoordinatoren@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2025-01-16T12:31:33Z",
+      "MemberCount": 15
+    },
+    {
+      "DisplayName": "Hoofdnummer Meerwaarde",
+      "Mail": "hoofdnummer-teams@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2025-02-20T15:08:06Z",
+      "MemberCount": 2
+    },
+    {
+      "DisplayName": "Team Managers MW",
+      "Mail": "managersmw@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2025-02-24T15:34:22Z",
+      "MemberCount": 1
+    },
+    {
+      "DisplayName": "Team Thuisadministratie",
+      "Mail": "thuisaministratie@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2025-03-27T12:19:29Z",
+      "MemberCount": 1
+    },
+    {
+      "DisplayName": "Team Haarlemmermeervoorelkaar - Vrijwilligers",
+      "Mail": "teamhaarlemmermeervoorelkaarvrijwilligers@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2025-04-16T07:35:56Z",
+      "MemberCount": 9
+    },
+    {
+      "DisplayName": "FF Doen! - Bedrijven",
+      "Mail": "FFDoen@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2025-07-10T06:35:19Z",
+      "MemberCount": 13
+    },
+    {
+      "DisplayName": "FF Doen! - Savannah",
+      "Mail": "FFDoen2@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2025-07-10T07:22:30Z",
+      "MemberCount": 8
+    },
+    {
+      "DisplayName": "FF Doen! - Roxy",
+      "Mail": "FFDoen3@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2025-07-10T07:23:27Z",
+      "MemberCount": 9
+    },
+    {
+      "DisplayName": "FF Doen! - 12",
+      "Mail": "FFDoen4@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2025-07-10T07:24:27Z",
+      "MemberCount": 6
+    },
+    {
+      "DisplayName": "FF Doen! - Noah",
+      "Mail": "FFDoen5@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2025-07-10T07:26:15Z",
+      "MemberCount": 7
+    },
+    {
+      "DisplayName": "FF Doen! - Abdi",
+      "Mail": "FFDoen6@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2025-07-10T07:29:09Z",
+      "MemberCount": 7
+    },
+    {
+      "DisplayName": "FF Doen! - Firdevs",
+      "Mail": "FFDoen7@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2025-07-10T07:29:50Z",
+      "MemberCount": 7
+    },
+    {
+      "DisplayName": "FF Doen! - Chayenne",
+      "Mail": "FFDoen8@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2025-07-10T07:30:37Z",
+      "MemberCount": 7
+    },
+    {
+      "DisplayName": "FF Doen! - Dalila",
+      "Mail": "FFDoen9@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2025-07-10T07:36:39Z",
+      "MemberCount": 7
+    },
+    {
+      "DisplayName": "FF Doen! - Destiny",
+      "Mail": "FFDoen10@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2025-07-10T07:37:16Z",
+      "MemberCount": 6
+    },
+    {
+      "DisplayName": "FF Doen! - Algemeen",
+      "Mail": "FFDoen11@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2025-07-10T07:37:52Z",
+      "MemberCount": 15
+    },
+    {
+      "DisplayName": "FF Doen! - Mayra",
+      "Mail": "FFDoen12@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2025-07-10T07:38:26Z",
+      "MemberCount": 7
+    },
+    {
+      "DisplayName": "FF Doen! - 13",
+      "Mail": "FFDoen-13@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2025-09-11T11:56:03Z",
+      "MemberCount": 1
+    },
+    {
+      "DisplayName": "FF Doen! - Beya",
+      "Mail": "FFDoen-14@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2025-09-11T11:56:45Z",
+      "MemberCount": 5
+    },
+    {
+      "DisplayName": "Meerwaarde | Test Teams groepen",
+      "Mail": "Meerwaarde|TestTeamsgroepen@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2026-02-03T12:54:37Z",
+      "MemberCount": 2
+    },
+    {
+      "DisplayName": "Welzijn+ Overbos",
+      "Mail": "WelzijnOverbos@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2026-03-16T08:56:34Z",
+      "MemberCount": 2
+    },
+    {
+      "DisplayName": "Welzijn+ Rijsenhout",
+      "Mail": "WelzijnRijsenhout@meerwaarde.onmicrosoft.com",
+      "CreatedDateTime": "2026-03-16T08:56:54Z",
+      "MemberCount": 2
+    }
+  ],
+  "meta": {
+    "notes": [
+      "Teams snapshot uit Phase 2 collaboration assessment."
+    ],
+    "permissions": [
+      "Team.ReadBasic.All",
+      "Group.Read.All"
+    ]
+  }
+}
